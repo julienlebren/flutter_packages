@@ -2,8 +2,12 @@ library theme;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/services.dart';
 
+part 'providers.dart';
+part 'type.dart';
 part 'theme.freezed.dart';
 
 @freezed

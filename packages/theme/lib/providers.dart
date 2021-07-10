@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:theme/theme.dart';
+part of theme;
 
 /// The provider of the [AppTheme]
 /// Needs to be overridden in tne [ProviderScope] of the app
