@@ -1,12 +1,19 @@
 part of theme;
 
 /// The provider of the [AppTheme]
-/// Needs to be overridden in tne [ProviderScope] of the app
+/// Needs to be overridden in the [ProviderScope] of the app.
 final appThemeProvider = Provider<AppTheme>((_) => throw UnimplementedError());
+
+/// The provider of the [Brightness]
+/// Returns the brightness of the current device layout
+/// but can be overridden inside the app by watching a custom setting.
+final brightnessProvider = Provider<Brightness>(
+  (ref) => WidgetsBinding.instance!.window.platformBrightness,
+);
 
 /// This provider is used by [Scaafold] or other widgets that handle
 /// an [AnnotatedRegion] to specify the layout of status bars
-/// and navigation bar on Android devices
+/// and navigation bar on Android devices.
 final systemOverlayStyleProvider = Provider<SystemUiOverlayStyle>((ref) {
   final appTheme = ref.watch(appThemeProvider);
 
