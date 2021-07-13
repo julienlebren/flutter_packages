@@ -8,15 +8,15 @@ import 'package:layout_builder/theme/theme.dart';
 class PlatformTabScaffold
     extends PlatformWidgetBase<AnnotatedRegion, CupertinoTabScaffold> {
   const PlatformTabScaffold({
-    required this.tabBuilder,
     required this.onTap,
     required this.items,
+    required this.tabViews,
     required this.currentTabIndex,
   }) : super();
 
-  final IndexedWidgetBuilder tabBuilder;
   final ValueChanged<int>? onTap;
   final List<BottomNavigationBarItem> items;
+  final List<Widget> tabViews;
   final int currentTabIndex; // For Material only
 
   @override
@@ -24,17 +24,29 @@ class PlatformTabScaffold
     final systemOverlayStyle = ref.watch(systemOverlayStyleProvider);
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: systemOverlayStyle,
-      child: Scaffold(
-        body: tabBuilder(context, currentTabIndex),
-        bottomNavigationBar: BottomNavigationBar(
-          showUnselectedLabels: true,
-          selectedFontSize: 12,
-          unselectedFontSize: 12,
-          currentIndex: currentTabIndex,
-          type: BottomNavigationBarType.fixed,
-          iconSize: 30,
-          onTap: onTap,
-          items: items,
+      child: WillPopScope(
+        onWillPop: () async {
+          return true;
+        },
+        child: Scaffold(
+          body: Stack(
+            children: tabViews.asMap().entries.map((entry) {
+              return Offstage(
+                offstage: currentTabIndex != entry.key,
+                child: entry.value,
+              );
+            }).toList(),
+          ),
+          bottomNavigationBar: BottomNavigationBar(
+            showUnselectedLabels: true,
+            selectedFontSize: 12,
+            unselectedFontSize: 12,
+            currentIndex: currentTabIndex,
+            type: BottomNavigationBarType.fixed,
+            iconSize: 30,
+            onTap: onTap,
+            items: items,
+          ),
         ),
       ),
     );
@@ -55,7 +67,7 @@ class PlatformTabScaffold
           top: BorderSide(color: appTheme.navigationBarBorderColor),
         ),
       ),
-      tabBuilder: tabBuilder,
+      tabBuilder: (_, index) => tabViews[index],
     );
   }
 }
