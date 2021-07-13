@@ -1,0 +1,25 @@
+name: layout_builder
+description: A new Flutter package project.
+version: 0.1.0
+author: Julien LE BREN
+homepage: https://twitter.com/hikeland
+publish_to: none
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^1.0.0-dev.5
+  freezed_annotation: ^0.14.2
+  modal_bottom_sheet: ^2.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  build_runner: ^2.0.5
+  freezed: ^0.14.2
+
+flutter:

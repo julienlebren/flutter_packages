@@ -1,0 +1,159 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:layout_builder/platform/platform_widget_base.dart';
+import 'package:layout_builder/theme/theme.dart';
+
+class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
+  PlatformNavigationBarButton({
+    required this.onPressed,
+    this.buttonText,
+    this.icon,
+  });
+
+  final VoidCallback? onPressed;
+  final String? buttonText;
+  final IconData? icon;
+
+  @override
+  Widget createMaterialWidget(BuildContext context, WidgetRef ref) {
+    return Padding(
+      padding: EdgeInsets.only(left: 15),
+      child: GestureDetector(
+        onTap: onPressed,
+        child: Icon(icon),
+      ),
+    );
+  }
+
+  @override
+  Widget createCupertinoWidget(BuildContext context, WidgetRef ref) {
+    return CupertinoButton(
+      padding: EdgeInsets.zero,
+      child: Icon(icon),
+      onPressed: onPressed,
+    );
+  }
+}
+
+/*
+class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
+  PlatformNavigationBarButton({
+    required this.onPressed,
+    this.buttonText,
+  });
+
+  final VoidCallback? onPressed;
+  final String? buttonText;
+
+  @override
+  Widget createMaterialWidget(BuildContext context, WidgetRef ref) {
+    if (onPressed == null) {
+      return SizedBox.shrink();
+    } else {
+      return Container(
+        transform: Matrix4.translationValues(20.0, 0.0, 0.0),
+        child: TextButton(
+          onPressed: onPressed,
+          child: Icon(Icons.check, size: 28),
+        ),
+      );
+    }
+  }
+
+  @override
+  Widget createCupertinoWidget(BuildContext context, WidgetRef ref) {
+    return CupertinoButton(
+      padding: EdgeInsets.zero,
+      child: Text(
+        buttonText != null
+            ? buttonText!
+            : MaterialLocalizations.of(context).continueButtonLabel,
+      ),
+      onPressed: onPressed,
+    );
+  }
+}
+*/
+class PlatformNavigationBarCloseButton
+    extends PlatformWidgetBase<Widget, Widget> {
+  PlatformNavigationBarCloseButton({
+    this.buttonText,
+    required this.onPressed,
+    this.icon = Icons.close,
+  });
+
+  final String? buttonText;
+  final VoidCallback onPressed;
+  final IconData icon;
+
+  @override
+  Widget createMaterialWidget(BuildContext context, WidgetRef ref) {
+    return CustomPaint(
+      painter: HolePainter(context, ref),
+      child: InkWell(
+        highlightColor: Colors.grey.shade200,
+        splashColor: Colors.transparent,
+        onTap: onPressed,
+        child: Icon(icon, size: 30),
+      ),
+    );
+  }
+
+  @override
+  Widget createCupertinoWidget(BuildContext context, WidgetRef ref) {
+    return CupertinoButton(
+      padding: EdgeInsets.zero,
+      child: Text(
+        buttonText ?? MaterialLocalizations.of(context).cancelButtonLabel,
+      ),
+      onPressed: onPressed,
+    );
+  }
+}
+
+class PlatformNavigationBarBackButton extends StatelessWidget {
+  PlatformNavigationBarBackButton({
+    this.buttonText,
+    required this.onPressed,
+  });
+
+  final String? buttonText;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return PlatformNavigationBarCloseButton(
+      buttonText: buttonText,
+      onPressed: onPressed,
+      icon: Icons.arrow_back,
+    );
+  }
+}
+
+class HolePainter extends CustomPainter {
+  HolePainter(this.context, this.ref);
+  BuildContext context;
+  WidgetRef ref;
+  @override
+  void paint(Canvas canvas, Size size) {
+    final appTheme = ref.watch(appThemeProvider);
+    final paint = Paint();
+    paint.color = appTheme.scaffoldBackgroundColor;
+    canvas.drawPath(
+      Path.combine(
+        PathOperation.difference,
+        Path()..addRRect(RRect.fromLTRBR(0, 0, 60, 60, Radius.circular(0))),
+        Path()
+          ..addOval(Rect.fromCircle(center: Offset(28, 28), radius: 22))
+          ..close(),
+      ),
+      paint,
+    );
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) {
+    return false;
+  }
+}

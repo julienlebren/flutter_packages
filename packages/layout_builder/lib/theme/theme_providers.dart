@@ -42,6 +42,8 @@ final systemOverlayStyleProvider = Provider<SystemUiOverlayStyle>((ref) {
   }
 });
 
+/// The [ThemeData] that will be used in the [MaterialApp]
+/// Retrieves all the data from the [AppTheme].
 final materialThemeProvider = Provider<ThemeData>((ref) {
   final appTheme = ref.watch(appThemeProvider);
   return ThemeData(
@@ -49,6 +51,7 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
     scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
     primaryColor: appTheme.primaryColor,
     accentColor: appTheme.primaryColor,
+    toggleableActiveColor: appTheme.primaryColor,
     appBarTheme: AppBarTheme(
       shadowColor: appTheme.scaffoldBackgroundColor,
       backgroundColor: appTheme.scaffoldBackgroundColor,
@@ -56,13 +59,19 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
       foregroundColor: appTheme.textColor,
       iconTheme: IconThemeData(color: Colors.grey),
     ),
+    unselectedWidgetColor: Color(0xFF757575),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: appTheme.scaffoldBackgroundColor,
       elevation: 8,
+      selectedIconTheme: IconThemeData(
+        color: appTheme.primaryColor,
+      ),
     ),
   );
 });
 
+/// The [CupertinoThemeData] that will be used in the [CupertinoApp]
+/// Retrieves all the data from the [AppTheme].
 final cupertinoThemeProvider = Provider<CupertinoThemeData>((ref) {
   final appTheme = ref.watch(appThemeProvider);
   return CupertinoThemeData(
@@ -70,4 +79,31 @@ final cupertinoThemeProvider = Provider<CupertinoThemeData>((ref) {
     scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
     barBackgroundColor: appTheme.scaffoldBackgroundColor,
   );
+});
+
+/// Theme with specific parameters for List that can be overridden
+/// at any part of the app with inside a ProviderScope for specific needs
+/// (such as have a greater padding in a view).
+final listViewThemeProvider = Provider<ListViewTheme>((_) => ListViewTheme());
+
+/// Theme with specific parameters for Form hat can be overridden
+/// at any part of the app with inside a ProviderScope for specific needs
+/// (such as a special backgroundColor in one form).
+final formThemeProvider = Provider<FormTheme>((ref) {
+  final brightness = ref.watch(brightnessProvider);
+  if (brightness == Brightness.dark) {
+    return FormTheme(
+      backgroundColor: Color(0xFF121212),
+      rowBackgroundColor: Color(0xFF262626),
+      rowDividerColor: Color(0xFF333333),
+      sectionDividerColor: Color(0xFF333333),
+    );
+  } else {
+    return FormTheme(
+      backgroundColor: isCupertino() ? Color(0xFFF5F5F5) : Color(0xFFFFFFFF),
+      rowBackgroundColor: Color(0xFFFFFFFF),
+      rowDividerColor: Color(0xFFE6E6E6),
+      sectionDividerColor: Color(0xFFE6E6E6),
+    );
+  }
 });

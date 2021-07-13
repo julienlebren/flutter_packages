@@ -1,15 +1,31 @@
-library platform;
-
 import 'package:flutter/foundation.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-bool isMaterial() {
-  return defaultTargetPlatform == TargetPlatform.android;
-}
+@Deprecated("Changed to PlatformWidgetBase")
+class PlatformWidget extends StatelessWidget {
+  const PlatformWidget({
+    Key? key,
+    required this.androidBuilder,
+    required this.iosBuilder,
+  }) : super(key: key);
 
-bool isCupertino() {
-  return defaultTargetPlatform == TargetPlatform.iOS;
+  final WidgetBuilder androidBuilder;
+  final WidgetBuilder iosBuilder;
+
+  @override
+  Widget build(context) {
+    switch (defaultTargetPlatform) {
+      case TargetPlatform.android:
+        return androidBuilder(context);
+      case TargetPlatform.iOS:
+        return iosBuilder(context);
+      default:
+        assert(false, 'Unexpected platform $defaultTargetPlatform');
+        return iosBuilder(context);
+    }
+  }
 }
 
 abstract class PlatformWidgetBase<MaterialWidget extends Widget,

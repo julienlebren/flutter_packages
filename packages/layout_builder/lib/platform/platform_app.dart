@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:platform/platform.dart';
+import 'package:layout_builder/platform/platform_widget_base.dart';
+import 'package:layout_builder/theme/theme.dart';
 
 class PlatformApp extends PlatformWidgetBase<MaterialApp, CupertinoApp> {
   PlatformApp({
@@ -10,6 +11,8 @@ class PlatformApp extends PlatformWidgetBase<MaterialApp, CupertinoApp> {
     required this.localizationsDelegates,
     required this.supportedLocales,
     required this.navigatorKey,
+    this.builder,
+    this.locale,
   });
 
   final String initialRoute;
@@ -17,13 +20,12 @@ class PlatformApp extends PlatformWidgetBase<MaterialApp, CupertinoApp> {
   final Iterable<LocalizationsDelegate<dynamic>> localizationsDelegates;
   final Iterable<Locale> supportedLocales;
   final GlobalKey<NavigatorState> navigatorKey;
+  final Widget Function(BuildContext context, Widget? child)? builder;
+  final Locale? locale;
 
   @override
   MaterialApp createMaterialWidget(BuildContext context, WidgetRef ref) {
     final materialTheme = ref.watch(materialThemeProvider);
-    final locale = ref.watch(localeProvider);
-    print("Found a lang code: $locale");
-
     return MaterialApp(
       locale: locale,
       navigatorKey: navigatorKey,
@@ -31,15 +33,7 @@ class PlatformApp extends PlatformWidgetBase<MaterialApp, CupertinoApp> {
       supportedLocales: supportedLocales,
       debugShowCheckedModeBanner: false,
       theme: materialTheme,
-      builder: (context, child) {
-        return ProviderScope(
-          overrides: [
-            localizationProvider
-                .overrideWithValue(AppLocalizations.of(context)!),
-          ],
-          child: child!,
-        );
-      },
+      builder: builder,
       initialRoute: initialRoute,
       onGenerateRoute: onGenerateRoute,
     );
@@ -48,9 +42,6 @@ class PlatformApp extends PlatformWidgetBase<MaterialApp, CupertinoApp> {
   @override
   CupertinoApp createCupertinoWidget(BuildContext context, WidgetRef ref) {
     final cupertinoTheme = ref.watch(cupertinoThemeProvider);
-    final locale = ref.watch(localeProvider);
-    print("Found a lang code: $locale");
-
     return CupertinoApp(
       locale: locale,
       navigatorKey: navigatorKey,
@@ -58,15 +49,7 @@ class PlatformApp extends PlatformWidgetBase<MaterialApp, CupertinoApp> {
       supportedLocales: supportedLocales,
       debugShowCheckedModeBanner: false,
       theme: cupertinoTheme,
-      builder: (context, child) {
-        return ProviderScope(
-          overrides: [
-            localizationProvider
-                .overrideWithValue(AppLocalizations.of(context)!),
-          ],
-          child: child!,
-        );
-      },
+      builder: builder,
       initialRoute: initialRoute,
       onGenerateRoute: onGenerateRoute,
     );

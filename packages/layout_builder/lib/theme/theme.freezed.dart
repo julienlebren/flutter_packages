@@ -442,3 +442,446 @@ abstract class _AppTheme implements AppTheme {
   _$AppThemeCopyWith<_AppTheme> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$ListViewThemeTearOff {
+  const _$ListViewThemeTearOff();
+
+  _ListViewTheme call({double separatorPadding = 15}) {
+    return _ListViewTheme(
+      separatorPadding: separatorPadding,
+    );
+  }
+}
+
+/// @nodoc
+const $ListViewTheme = _$ListViewThemeTearOff();
+
+/// @nodoc
+mixin _$ListViewTheme {
+  double get separatorPadding => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $ListViewThemeCopyWith<ListViewTheme> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $ListViewThemeCopyWith<$Res> {
+  factory $ListViewThemeCopyWith(
+          ListViewTheme value, $Res Function(ListViewTheme) then) =
+      _$ListViewThemeCopyWithImpl<$Res>;
+  $Res call({double separatorPadding});
+}
+
+/// @nodoc
+class _$ListViewThemeCopyWithImpl<$Res>
+    implements $ListViewThemeCopyWith<$Res> {
+  _$ListViewThemeCopyWithImpl(this._value, this._then);
+
+  final ListViewTheme _value;
+  // ignore: unused_field
+  final $Res Function(ListViewTheme) _then;
+
+  @override
+  $Res call({
+    Object? separatorPadding = freezed,
+  }) {
+    return _then(_value.copyWith(
+      separatorPadding: separatorPadding == freezed
+          ? _value.separatorPadding
+          : separatorPadding // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$ListViewThemeCopyWith<$Res>
+    implements $ListViewThemeCopyWith<$Res> {
+  factory _$ListViewThemeCopyWith(
+          _ListViewTheme value, $Res Function(_ListViewTheme) then) =
+      __$ListViewThemeCopyWithImpl<$Res>;
+  @override
+  $Res call({double separatorPadding});
+}
+
+/// @nodoc
+class __$ListViewThemeCopyWithImpl<$Res>
+    extends _$ListViewThemeCopyWithImpl<$Res>
+    implements _$ListViewThemeCopyWith<$Res> {
+  __$ListViewThemeCopyWithImpl(
+      _ListViewTheme _value, $Res Function(_ListViewTheme) _then)
+      : super(_value, (v) => _then(v as _ListViewTheme));
+
+  @override
+  _ListViewTheme get _value => super._value as _ListViewTheme;
+
+  @override
+  $Res call({
+    Object? separatorPadding = freezed,
+  }) {
+    return _then(_ListViewTheme(
+      separatorPadding: separatorPadding == freezed
+          ? _value.separatorPadding
+          : separatorPadding // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ListViewTheme implements _ListViewTheme {
+  const _$_ListViewTheme({this.separatorPadding = 15});
+
+  @JsonKey(defaultValue: 15)
+  @override
+  final double separatorPadding;
+
+  @override
+  String toString() {
+    return 'ListViewTheme(separatorPadding: $separatorPadding)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ListViewTheme &&
+            (identical(other.separatorPadding, separatorPadding) ||
+                const DeepCollectionEquality()
+                    .equals(other.separatorPadding, separatorPadding)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(separatorPadding);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ListViewThemeCopyWith<_ListViewTheme> get copyWith =>
+      __$ListViewThemeCopyWithImpl<_ListViewTheme>(this, _$identity);
+}
+
+abstract class _ListViewTheme implements ListViewTheme {
+  const factory _ListViewTheme({double separatorPadding}) = _$_ListViewTheme;
+
+  @override
+  double get separatorPadding => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$ListViewThemeCopyWith<_ListViewTheme> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$FormThemeTearOff {
+  const _$FormThemeTearOff();
+
+  _FormTheme call(
+      {required Color backgroundColor,
+      required Color rowBackgroundColor,
+      required Color rowDividerColor,
+      required Color sectionDividerColor,
+      double rowDividerPadding = 15,
+      bool displayRowDivider = true,
+      double sectionDividerPadding = 10,
+      bool displaySectionDivider = true}) {
+    return _FormTheme(
+      backgroundColor: backgroundColor,
+      rowBackgroundColor: rowBackgroundColor,
+      rowDividerColor: rowDividerColor,
+      sectionDividerColor: sectionDividerColor,
+      rowDividerPadding: rowDividerPadding,
+      displayRowDivider: displayRowDivider,
+      sectionDividerPadding: sectionDividerPadding,
+      displaySectionDivider: displaySectionDivider,
+    );
+  }
+}
+
+/// @nodoc
+const $FormTheme = _$FormThemeTearOff();
+
+/// @nodoc
+mixin _$FormTheme {
+  Color get backgroundColor => throw _privateConstructorUsedError;
+  Color get rowBackgroundColor => throw _privateConstructorUsedError;
+  Color get rowDividerColor => throw _privateConstructorUsedError;
+  Color get sectionDividerColor => throw _privateConstructorUsedError;
+  double get rowDividerPadding => throw _privateConstructorUsedError;
+  bool get displayRowDivider => throw _privateConstructorUsedError;
+  double get sectionDividerPadding =>
+      throw _privateConstructorUsedError; // 20 if gray background
+  bool get displaySectionDivider => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $FormThemeCopyWith<FormTheme> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $FormThemeCopyWith<$Res> {
+  factory $FormThemeCopyWith(FormTheme value, $Res Function(FormTheme) then) =
+      _$FormThemeCopyWithImpl<$Res>;
+  $Res call(
+      {Color backgroundColor,
+      Color rowBackgroundColor,
+      Color rowDividerColor,
+      Color sectionDividerColor,
+      double rowDividerPadding,
+      bool displayRowDivider,
+      double sectionDividerPadding,
+      bool displaySectionDivider});
+}
+
+/// @nodoc
+class _$FormThemeCopyWithImpl<$Res> implements $FormThemeCopyWith<$Res> {
+  _$FormThemeCopyWithImpl(this._value, this._then);
+
+  final FormTheme _value;
+  // ignore: unused_field
+  final $Res Function(FormTheme) _then;
+
+  @override
+  $Res call({
+    Object? backgroundColor = freezed,
+    Object? rowBackgroundColor = freezed,
+    Object? rowDividerColor = freezed,
+    Object? sectionDividerColor = freezed,
+    Object? rowDividerPadding = freezed,
+    Object? displayRowDivider = freezed,
+    Object? sectionDividerPadding = freezed,
+    Object? displaySectionDivider = freezed,
+  }) {
+    return _then(_value.copyWith(
+      backgroundColor: backgroundColor == freezed
+          ? _value.backgroundColor
+          : backgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      rowBackgroundColor: rowBackgroundColor == freezed
+          ? _value.rowBackgroundColor
+          : rowBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      rowDividerColor: rowDividerColor == freezed
+          ? _value.rowDividerColor
+          : rowDividerColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      sectionDividerColor: sectionDividerColor == freezed
+          ? _value.sectionDividerColor
+          : sectionDividerColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      rowDividerPadding: rowDividerPadding == freezed
+          ? _value.rowDividerPadding
+          : rowDividerPadding // ignore: cast_nullable_to_non_nullable
+              as double,
+      displayRowDivider: displayRowDivider == freezed
+          ? _value.displayRowDivider
+          : displayRowDivider // ignore: cast_nullable_to_non_nullable
+              as bool,
+      sectionDividerPadding: sectionDividerPadding == freezed
+          ? _value.sectionDividerPadding
+          : sectionDividerPadding // ignore: cast_nullable_to_non_nullable
+              as double,
+      displaySectionDivider: displaySectionDivider == freezed
+          ? _value.displaySectionDivider
+          : displaySectionDivider // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$FormThemeCopyWith<$Res> implements $FormThemeCopyWith<$Res> {
+  factory _$FormThemeCopyWith(
+          _FormTheme value, $Res Function(_FormTheme) then) =
+      __$FormThemeCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {Color backgroundColor,
+      Color rowBackgroundColor,
+      Color rowDividerColor,
+      Color sectionDividerColor,
+      double rowDividerPadding,
+      bool displayRowDivider,
+      double sectionDividerPadding,
+      bool displaySectionDivider});
+}
+
+/// @nodoc
+class __$FormThemeCopyWithImpl<$Res> extends _$FormThemeCopyWithImpl<$Res>
+    implements _$FormThemeCopyWith<$Res> {
+  __$FormThemeCopyWithImpl(_FormTheme _value, $Res Function(_FormTheme) _then)
+      : super(_value, (v) => _then(v as _FormTheme));
+
+  @override
+  _FormTheme get _value => super._value as _FormTheme;
+
+  @override
+  $Res call({
+    Object? backgroundColor = freezed,
+    Object? rowBackgroundColor = freezed,
+    Object? rowDividerColor = freezed,
+    Object? sectionDividerColor = freezed,
+    Object? rowDividerPadding = freezed,
+    Object? displayRowDivider = freezed,
+    Object? sectionDividerPadding = freezed,
+    Object? displaySectionDivider = freezed,
+  }) {
+    return _then(_FormTheme(
+      backgroundColor: backgroundColor == freezed
+          ? _value.backgroundColor
+          : backgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      rowBackgroundColor: rowBackgroundColor == freezed
+          ? _value.rowBackgroundColor
+          : rowBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      rowDividerColor: rowDividerColor == freezed
+          ? _value.rowDividerColor
+          : rowDividerColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      sectionDividerColor: sectionDividerColor == freezed
+          ? _value.sectionDividerColor
+          : sectionDividerColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      rowDividerPadding: rowDividerPadding == freezed
+          ? _value.rowDividerPadding
+          : rowDividerPadding // ignore: cast_nullable_to_non_nullable
+              as double,
+      displayRowDivider: displayRowDivider == freezed
+          ? _value.displayRowDivider
+          : displayRowDivider // ignore: cast_nullable_to_non_nullable
+              as bool,
+      sectionDividerPadding: sectionDividerPadding == freezed
+          ? _value.sectionDividerPadding
+          : sectionDividerPadding // ignore: cast_nullable_to_non_nullable
+              as double,
+      displaySectionDivider: displaySectionDivider == freezed
+          ? _value.displaySectionDivider
+          : displaySectionDivider // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_FormTheme implements _FormTheme {
+  const _$_FormTheme(
+      {required this.backgroundColor,
+      required this.rowBackgroundColor,
+      required this.rowDividerColor,
+      required this.sectionDividerColor,
+      this.rowDividerPadding = 15,
+      this.displayRowDivider = true,
+      this.sectionDividerPadding = 10,
+      this.displaySectionDivider = true});
+
+  @override
+  final Color backgroundColor;
+  @override
+  final Color rowBackgroundColor;
+  @override
+  final Color rowDividerColor;
+  @override
+  final Color sectionDividerColor;
+  @JsonKey(defaultValue: 15)
+  @override
+  final double rowDividerPadding;
+  @JsonKey(defaultValue: true)
+  @override
+  final bool displayRowDivider;
+  @JsonKey(defaultValue: 10)
+  @override
+  final double sectionDividerPadding;
+  @JsonKey(defaultValue: true)
+  @override // 20 if gray background
+  final bool displaySectionDivider;
+
+  @override
+  String toString() {
+    return 'FormTheme(backgroundColor: $backgroundColor, rowBackgroundColor: $rowBackgroundColor, rowDividerColor: $rowDividerColor, sectionDividerColor: $sectionDividerColor, rowDividerPadding: $rowDividerPadding, displayRowDivider: $displayRowDivider, sectionDividerPadding: $sectionDividerPadding, displaySectionDivider: $displaySectionDivider)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _FormTheme &&
+            (identical(other.backgroundColor, backgroundColor) ||
+                const DeepCollectionEquality()
+                    .equals(other.backgroundColor, backgroundColor)) &&
+            (identical(other.rowBackgroundColor, rowBackgroundColor) ||
+                const DeepCollectionEquality()
+                    .equals(other.rowBackgroundColor, rowBackgroundColor)) &&
+            (identical(other.rowDividerColor, rowDividerColor) ||
+                const DeepCollectionEquality()
+                    .equals(other.rowDividerColor, rowDividerColor)) &&
+            (identical(other.sectionDividerColor, sectionDividerColor) ||
+                const DeepCollectionEquality()
+                    .equals(other.sectionDividerColor, sectionDividerColor)) &&
+            (identical(other.rowDividerPadding, rowDividerPadding) ||
+                const DeepCollectionEquality()
+                    .equals(other.rowDividerPadding, rowDividerPadding)) &&
+            (identical(other.displayRowDivider, displayRowDivider) ||
+                const DeepCollectionEquality()
+                    .equals(other.displayRowDivider, displayRowDivider)) &&
+            (identical(other.sectionDividerPadding, sectionDividerPadding) ||
+                const DeepCollectionEquality().equals(
+                    other.sectionDividerPadding, sectionDividerPadding)) &&
+            (identical(other.displaySectionDivider, displaySectionDivider) ||
+                const DeepCollectionEquality().equals(
+                    other.displaySectionDivider, displaySectionDivider)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(backgroundColor) ^
+      const DeepCollectionEquality().hash(rowBackgroundColor) ^
+      const DeepCollectionEquality().hash(rowDividerColor) ^
+      const DeepCollectionEquality().hash(sectionDividerColor) ^
+      const DeepCollectionEquality().hash(rowDividerPadding) ^
+      const DeepCollectionEquality().hash(displayRowDivider) ^
+      const DeepCollectionEquality().hash(sectionDividerPadding) ^
+      const DeepCollectionEquality().hash(displaySectionDivider);
+
+  @JsonKey(ignore: true)
+  @override
+  _$FormThemeCopyWith<_FormTheme> get copyWith =>
+      __$FormThemeCopyWithImpl<_FormTheme>(this, _$identity);
+}
+
+abstract class _FormTheme implements FormTheme {
+  const factory _FormTheme(
+      {required Color backgroundColor,
+      required Color rowBackgroundColor,
+      required Color rowDividerColor,
+      required Color sectionDividerColor,
+      double rowDividerPadding,
+      bool displayRowDivider,
+      double sectionDividerPadding,
+      bool displaySectionDivider}) = _$_FormTheme;
+
+  @override
+  Color get backgroundColor => throw _privateConstructorUsedError;
+  @override
+  Color get rowBackgroundColor => throw _privateConstructorUsedError;
+  @override
+  Color get rowDividerColor => throw _privateConstructorUsedError;
+  @override
+  Color get sectionDividerColor => throw _privateConstructorUsedError;
+  @override
+  double get rowDividerPadding => throw _privateConstructorUsedError;
+  @override
+  bool get displayRowDivider => throw _privateConstructorUsedError;
+  @override
+  double get sectionDividerPadding => throw _privateConstructorUsedError;
+  @override // 20 if gray background
+  bool get displaySectionDivider => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$FormThemeCopyWith<_FormTheme> get copyWith =>
+      throw _privateConstructorUsedError;
+}

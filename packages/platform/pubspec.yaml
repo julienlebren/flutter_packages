@@ -1,7 +1,9 @@
 name: platform
 description: A new Flutter package project.
-version: 0.0.1
-homepage:
+version: 0.1.0
+author: Julien LE BREN
+homepage: https://twitter.com/hikeland
+publish_to: none
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -10,7 +12,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  theme:
+    git:
+      url: https://github.com/julienlebren/flutter_packages
+      path: packages/theme
   flutter_riverpod: ^1.0.0-dev.5
+  modal_bottom_sheet: ^2.0.0
 
 dev_dependencies:
   flutter_test:
