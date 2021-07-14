@@ -26,3 +26,6 @@ export 'platform/platform_textfield.dart';
 export 'platform/platform_textstyle.dart';
 export 'platform/platform_widget_base.dart';
 export 'platform/platform.dart';
+
+export 'form/form.dart';
+export 'theme/theme.dart';

@@ -29,9 +29,7 @@ Future<bool?> showAlertDialog(
           if (actions != null) ...actions,
         ],
       ),
-    ).then((_) {
-      //ref.read(interceptTypeProvider).state = InterceptType.custom;
-    });
+    );
   }
   return showCupertinoDialog(
     context: context,
