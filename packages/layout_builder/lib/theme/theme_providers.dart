@@ -46,6 +46,7 @@ final systemOverlayStyleProvider = Provider<SystemUiOverlayStyle>((ref) {
 /// Retrieves all the data from the [AppTheme].
 final materialThemeProvider = Provider<ThemeData>((ref) {
   final appTheme = ref.watch(appThemeProvider);
+  print("Primary color is ${appTheme.primaryColor}");
   return ThemeData(
     brightness: appTheme.brightness,
     scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
