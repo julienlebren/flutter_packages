@@ -22,6 +22,7 @@ class PlatformTabScaffold
   @override
   AnnotatedRegion createMaterialWidget(BuildContext context, WidgetRef ref) {
     final systemOverlayStyle = ref.watch(systemOverlayStyleProvider);
+    final appTheme = ref.watch(appThemeProvider);
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: systemOverlayStyle,
       child: WillPopScope(
@@ -38,6 +39,7 @@ class PlatformTabScaffold
             }).toList(),
           ),
           bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: appTheme.scaffoldBackgroundColor,
             showUnselectedLabels: true,
             selectedFontSize: 12,
             unselectedFontSize: 12,
@@ -59,7 +61,7 @@ class PlatformTabScaffold
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
         onTap: onTap,
-        //backgroundColor: appTheme.scaffoldBackgroundColor,
+        backgroundColor: appTheme.scaffoldBackgroundColor,
         inactiveColor: Colors.grey,
         iconSize: 30,
         items: items,
