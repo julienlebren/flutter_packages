@@ -137,7 +137,7 @@ class __$TabItemCopyWithImpl<$Res> extends _$TabItemCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_TabItem implements _TabItem {
-  _$_TabItem(
+  const _$_TabItem(
       {required this.title,
       required this.icon,
       required this.selectedIcon,
@@ -187,7 +187,7 @@ class _$_TabItem implements _TabItem {
 }
 
 abstract class _TabItem implements TabItem {
-  factory _TabItem(
+  const factory _TabItem(
       {required String title,
       required IconData icon,
       required IconData selectedIcon,

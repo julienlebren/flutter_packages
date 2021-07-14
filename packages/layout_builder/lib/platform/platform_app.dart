@@ -6,22 +6,25 @@ import 'package:layout_builder/theme/theme.dart';
 
 class PlatformApp extends PlatformWidgetBase<MaterialApp, CupertinoApp> {
   PlatformApp({
-    required this.initialRoute,
-    required this.onGenerateRoute,
+    this.initialRoute,
+    this.onGenerateRoute,
     required this.localizationsDelegates,
     required this.supportedLocales,
     required this.navigatorKey,
     this.builder,
     this.locale,
-  });
+    this.home,
+  }) : assert(
+            (initialRoute != null && onGenerateRoute != null) || home != null);
 
-  final String initialRoute;
-  final RouteFactory onGenerateRoute;
+  final String? initialRoute;
+  final RouteFactory? onGenerateRoute;
   final Iterable<LocalizationsDelegate<dynamic>> localizationsDelegates;
   final Iterable<Locale> supportedLocales;
   final GlobalKey<NavigatorState> navigatorKey;
   final Widget Function(BuildContext context, Widget? child)? builder;
   final Locale? locale;
+  final Widget? home;
 
   @override
   MaterialApp createMaterialWidget(BuildContext context, WidgetRef ref) {
@@ -36,6 +39,7 @@ class PlatformApp extends PlatformWidgetBase<MaterialApp, CupertinoApp> {
       builder: builder,
       initialRoute: initialRoute,
       onGenerateRoute: onGenerateRoute,
+      home: home,
     );
   }
 
@@ -52,6 +56,7 @@ class PlatformApp extends PlatformWidgetBase<MaterialApp, CupertinoApp> {
       builder: builder,
       initialRoute: initialRoute,
       onGenerateRoute: onGenerateRoute,
+      home: home,
     );
   }
 }
