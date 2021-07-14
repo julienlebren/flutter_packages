@@ -56,6 +56,10 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
       shadowColor: appTheme.scaffoldBackgroundColor,
       backgroundColor: appTheme.navigationBarBackgroundColor,
       backwardsCompatibility: false,
+      foregroundColor:
+          appTheme.navigationBarBackgroundColor.computeLuminance() > 0.5
+              ? Colors.black
+              : Colors.white,
       iconTheme: IconThemeData(color: Colors.grey),
     ),
     unselectedWidgetColor: Color(0xFF757575),
