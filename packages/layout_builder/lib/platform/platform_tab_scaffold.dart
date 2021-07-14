@@ -20,28 +20,23 @@ class TabItem with _$TabItem {
 
 final tabsProvider = Provider<List<TabItem>>(throw UnimplementedError());
 
-final tabStateProvider = StateProvider<TabItem>((ref) {
-  return ref.watch(tabsProvider).first;
-});
+final currentTabIndexProvider = StateProvider<int>((_) => 0);
 
 class PlatformTabScaffold
     extends PlatformWidgetBase<AnnotatedRegion, CupertinoTabScaffold> {
-  const PlatformTabScaffold({
-    required this.onTap,
-    required this.items,
-    required this.tabViews,
-    required this.currentTabIndex,
-  }) : super();
+  const PlatformTabScaffold() : super();
 
-  final ValueChanged<int>? onTap;
-  final List<BottomNavigationBarItem> items;
-  final List<Widget> tabViews;
-  final int currentTabIndex; // For Material only
+  ValueChanged<int>? onTap(int index, WidgetRef ref) {
+    ref.read(currentTabIndexProvider).state = index;
+  }
 
   @override
   AnnotatedRegion createMaterialWidget(BuildContext context, WidgetRef ref) {
     final systemOverlayStyle = ref.watch(systemOverlayStyleProvider);
     final appTheme = ref.watch(appThemeProvider);
+    final tabs = ref.watch(tabsProvider);
+    final currentTabIndex = ref.watch(currentTabIndexProvider).state;
+
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: systemOverlayStyle,
       child: WillPopScope(
@@ -50,10 +45,10 @@ class PlatformTabScaffold
         },
         child: Scaffold(
           body: Stack(
-            children: tabViews.asMap().entries.map((entry) {
+            children: tabs.asMap().entries.map((entry) {
               return Offstage(
                 offstage: currentTabIndex != entry.key,
-                child: entry.value,
+                child: entry.value.router,
               );
             }).toList(),
           ),
@@ -65,11 +60,21 @@ class PlatformTabScaffold
             currentIndex: currentTabIndex,
             type: BottomNavigationBarType.fixed,
             iconSize: 30,
-            onTap: onTap,
-            items: items,
+            onTap: (index) => onTap(index, ref),
+            items: tabs.map((item) => _tabItem(item)).toList(),
           ),
         ),
       ),
+    );
+  }
+
+  BottomNavigationBarItem _tabItem(TabItem item) {
+    return BottomNavigationBarItem(
+      icon: Padding(
+        padding: EdgeInsets.symmetric(vertical: 3),
+        child: Icon(item.icon),
+      ),
+      label: item.title,
     );
   }
 
@@ -77,18 +82,19 @@ class PlatformTabScaffold
   CupertinoTabScaffold createCupertinoWidget(
       BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
+    final tabs = ref.watch(tabsProvider);
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
-        onTap: onTap,
+        onTap: (index) => onTap(index, ref),
         backgroundColor: appTheme.scaffoldBackgroundColor,
         inactiveColor: Colors.grey,
         iconSize: 30,
-        items: items,
+        items: tabs.map((item) => _tabItem(item)).toList(),
         border: Border(
           top: BorderSide(color: appTheme.navigationBarBorderColor),
         ),
       ),
-      tabBuilder: (_, index) => tabViews[index],
+      tabBuilder: (_, index) => tabs[index].router,
     );
   }
 }
