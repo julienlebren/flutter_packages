@@ -55,7 +55,7 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
     toggleableActiveColor: appTheme.primaryColor,
     appBarTheme: AppBarTheme(
       shadowColor: appTheme.scaffoldBackgroundColor,
-      backgroundColor: appTheme.scaffoldBackgroundColor,
+      backgroundColor: appTheme.navigationBarBackgroundColor,
       backwardsCompatibility: false,
       foregroundColor: appTheme.textColor,
       iconTheme: IconThemeData(color: Colors.grey),
@@ -67,6 +67,7 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
       selectedIconTheme: IconThemeData(
         color: appTheme.primaryColor,
       ),
+      selectedItemColor: appTheme.primaryColor,
     ),
   );
 });
@@ -78,7 +79,7 @@ final cupertinoThemeProvider = Provider<CupertinoThemeData>((ref) {
   return CupertinoThemeData(
     primaryColor: appTheme.primaryColor,
     scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
-    barBackgroundColor: appTheme.scaffoldBackgroundColor,
+    barBackgroundColor: appTheme.navigationBarBackgroundColor,
   );
 });
 

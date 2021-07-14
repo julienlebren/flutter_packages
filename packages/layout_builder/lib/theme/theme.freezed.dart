@@ -21,6 +21,7 @@ class _$AppThemeTearOff {
       required Color primaryColor,
       required Color secondaryColor,
       required Color scaffoldBackgroundColor,
+      required Color navigationBarBackgroundColor,
       required Color navigationBarBorderColor,
       required Color formBackgroundColor,
       required Color listTileBackground,
@@ -35,6 +36,7 @@ class _$AppThemeTearOff {
       primaryColor: primaryColor,
       secondaryColor: secondaryColor,
       scaffoldBackgroundColor: scaffoldBackgroundColor,
+      navigationBarBackgroundColor: navigationBarBackgroundColor,
       navigationBarBorderColor: navigationBarBorderColor,
       formBackgroundColor: formBackgroundColor,
       listTileBackground: listTileBackground,
@@ -57,6 +59,7 @@ mixin _$AppTheme {
   Color get primaryColor => throw _privateConstructorUsedError;
   Color get secondaryColor => throw _privateConstructorUsedError;
   Color get scaffoldBackgroundColor => throw _privateConstructorUsedError;
+  Color get navigationBarBackgroundColor => throw _privateConstructorUsedError;
   Color get navigationBarBorderColor => throw _privateConstructorUsedError;
   Color get formBackgroundColor => throw _privateConstructorUsedError;
   Color get listTileBackground => throw _privateConstructorUsedError;
@@ -81,6 +84,7 @@ abstract class $AppThemeCopyWith<$Res> {
       Color primaryColor,
       Color secondaryColor,
       Color scaffoldBackgroundColor,
+      Color navigationBarBackgroundColor,
       Color navigationBarBorderColor,
       Color formBackgroundColor,
       Color listTileBackground,
@@ -106,6 +110,7 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
     Object? primaryColor = freezed,
     Object? secondaryColor = freezed,
     Object? scaffoldBackgroundColor = freezed,
+    Object? navigationBarBackgroundColor = freezed,
     Object? navigationBarBorderColor = freezed,
     Object? formBackgroundColor = freezed,
     Object? listTileBackground = freezed,
@@ -132,6 +137,10 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
       scaffoldBackgroundColor: scaffoldBackgroundColor == freezed
           ? _value.scaffoldBackgroundColor
           : scaffoldBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      navigationBarBackgroundColor: navigationBarBackgroundColor == freezed
+          ? _value.navigationBarBackgroundColor
+          : navigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
       navigationBarBorderColor: navigationBarBorderColor == freezed
           ? _value.navigationBarBorderColor
@@ -183,6 +192,7 @@ abstract class _$AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
       Color primaryColor,
       Color secondaryColor,
       Color scaffoldBackgroundColor,
+      Color navigationBarBackgroundColor,
       Color navigationBarBorderColor,
       Color formBackgroundColor,
       Color listTileBackground,
@@ -209,6 +219,7 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
     Object? primaryColor = freezed,
     Object? secondaryColor = freezed,
     Object? scaffoldBackgroundColor = freezed,
+    Object? navigationBarBackgroundColor = freezed,
     Object? navigationBarBorderColor = freezed,
     Object? formBackgroundColor = freezed,
     Object? listTileBackground = freezed,
@@ -235,6 +246,10 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
       scaffoldBackgroundColor: scaffoldBackgroundColor == freezed
           ? _value.scaffoldBackgroundColor
           : scaffoldBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      navigationBarBackgroundColor: navigationBarBackgroundColor == freezed
+          ? _value.navigationBarBackgroundColor
+          : navigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
       navigationBarBorderColor: navigationBarBorderColor == freezed
           ? _value.navigationBarBorderColor
@@ -284,6 +299,7 @@ class _$_AppTheme implements _AppTheme {
       required this.primaryColor,
       required this.secondaryColor,
       required this.scaffoldBackgroundColor,
+      required this.navigationBarBackgroundColor,
       required this.navigationBarBorderColor,
       required this.formBackgroundColor,
       required this.listTileBackground,
@@ -302,6 +318,8 @@ class _$_AppTheme implements _AppTheme {
   final Color secondaryColor;
   @override
   final Color scaffoldBackgroundColor;
+  @override
+  final Color navigationBarBackgroundColor;
   @override
   final Color navigationBarBorderColor;
   @override
@@ -323,7 +341,7 @@ class _$_AppTheme implements _AppTheme {
 
   @override
   String toString() {
-    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, formBackgroundColor: $formBackgroundColor, listTileBackground: $listTileBackground, cupertinoBarBackgroundColor: $cupertinoBarBackgroundColor, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
+    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, formBackgroundColor: $formBackgroundColor, listTileBackground: $listTileBackground, cupertinoBarBackgroundColor: $cupertinoBarBackgroundColor, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
   }
 
   @override
@@ -342,6 +360,10 @@ class _$_AppTheme implements _AppTheme {
             (identical(other.scaffoldBackgroundColor, scaffoldBackgroundColor) ||
                 const DeepCollectionEquality().equals(
                     other.scaffoldBackgroundColor, scaffoldBackgroundColor)) &&
+            (identical(other.navigationBarBackgroundColor, navigationBarBackgroundColor) ||
+                const DeepCollectionEquality().equals(
+                    other.navigationBarBackgroundColor,
+                    navigationBarBackgroundColor)) &&
             (identical(other.navigationBarBorderColor, navigationBarBorderColor) ||
                 const DeepCollectionEquality().equals(
                     other.navigationBarBorderColor,
@@ -362,14 +384,9 @@ class _$_AppTheme implements _AppTheme {
             (identical(other.borderColor, borderColor) ||
                 const DeepCollectionEquality()
                     .equals(other.borderColor, borderColor)) &&
-            (identical(other.textColor, textColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.textColor, textColor)) &&
-            (identical(other.dividerColor, dividerColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.dividerColor, dividerColor)) &&
-            (identical(other.shadowColor, shadowColor) ||
-                const DeepCollectionEquality().equals(other.shadowColor, shadowColor)));
+            (identical(other.textColor, textColor) || const DeepCollectionEquality().equals(other.textColor, textColor)) &&
+            (identical(other.dividerColor, dividerColor) || const DeepCollectionEquality().equals(other.dividerColor, dividerColor)) &&
+            (identical(other.shadowColor, shadowColor) || const DeepCollectionEquality().equals(other.shadowColor, shadowColor)));
   }
 
   @override
@@ -379,6 +396,7 @@ class _$_AppTheme implements _AppTheme {
       const DeepCollectionEquality().hash(primaryColor) ^
       const DeepCollectionEquality().hash(secondaryColor) ^
       const DeepCollectionEquality().hash(scaffoldBackgroundColor) ^
+      const DeepCollectionEquality().hash(navigationBarBackgroundColor) ^
       const DeepCollectionEquality().hash(navigationBarBorderColor) ^
       const DeepCollectionEquality().hash(formBackgroundColor) ^
       const DeepCollectionEquality().hash(listTileBackground) ^
@@ -401,6 +419,7 @@ abstract class _AppTheme implements AppTheme {
       required Color primaryColor,
       required Color secondaryColor,
       required Color scaffoldBackgroundColor,
+      required Color navigationBarBackgroundColor,
       required Color navigationBarBorderColor,
       required Color formBackgroundColor,
       required Color listTileBackground,
@@ -419,6 +438,8 @@ abstract class _AppTheme implements AppTheme {
   Color get secondaryColor => throw _privateConstructorUsedError;
   @override
   Color get scaffoldBackgroundColor => throw _privateConstructorUsedError;
+  @override
+  Color get navigationBarBackgroundColor => throw _privateConstructorUsedError;
   @override
   Color get navigationBarBorderColor => throw _privateConstructorUsedError;
   @override
