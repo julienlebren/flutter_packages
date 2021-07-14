@@ -3,7 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:layout_builder/platform/platform_widget_base.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layout_builder/theme/theme.dart';
+
+part 'platform_tab_scaffold.freezed.dart';
+
+@freezed
+class TabItem with _$TabItem {
+  factory TabItem({
+    required String title,
+    required IconData icon,
+    required IconData selectedIcon,
+    required Widget router,
+  }) = _TabItem;
+}
+
+final tabsProvider = Provider<List<TabItem>>(throw UnimplementedError());
+
+final tabStateProvider = StateProvider<TabItem>((ref) {
+  return ref.watch(tabsProvider).first;
+});
 
 class PlatformTabScaffold
     extends PlatformWidgetBase<AnnotatedRegion, CupertinoTabScaffold> {
@@ -39,7 +58,7 @@ class PlatformTabScaffold
             }).toList(),
           ),
           bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: appTheme.scaffoldBackgroundColor,
+            backgroundColor: appTheme.scaffoldBackgroundColor,
             showUnselectedLabels: true,
             selectedFontSize: 12,
             unselectedFontSize: 12,
