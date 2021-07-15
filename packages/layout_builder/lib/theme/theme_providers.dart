@@ -29,8 +29,10 @@ final systemOverlayStyleProvider = Provider<SystemUiOverlayStyle>((ref) {
   } else {
     return SystemUiOverlayStyle(
       statusBarColor: appTheme.statusBarColor,
-      systemNavigationBarColor: appTheme.scaffoldBackgroundColor,
-      systemNavigationBarIconBrightness: appTheme.brightness,
+      systemNavigationBarColor:
+          appTheme.materialSystemBarColor ?? appTheme.scaffoldBackgroundColor,
+      systemNavigationBarIconBrightness:
+          appTheme.materialSystemBarColor != null ? appTheme.brightness : null,
     );
   }
 });

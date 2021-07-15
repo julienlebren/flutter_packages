@@ -22,6 +22,7 @@ class _$AppThemeTearOff {
       required Color secondaryColor,
       required Color scaffoldBackgroundColor,
       Color? statusBarColor,
+      Color? materialSystemBarColor,
       required Color navigationBarBackgroundColor,
       required Color navigationBarBorderColor,
       required Color formBackgroundColor,
@@ -38,6 +39,7 @@ class _$AppThemeTearOff {
       secondaryColor: secondaryColor,
       scaffoldBackgroundColor: scaffoldBackgroundColor,
       statusBarColor: statusBarColor,
+      materialSystemBarColor: materialSystemBarColor,
       navigationBarBackgroundColor: navigationBarBackgroundColor,
       navigationBarBorderColor: navigationBarBorderColor,
       formBackgroundColor: formBackgroundColor,
@@ -62,6 +64,7 @@ mixin _$AppTheme {
   Color get secondaryColor => throw _privateConstructorUsedError;
   Color get scaffoldBackgroundColor => throw _privateConstructorUsedError;
   Color? get statusBarColor => throw _privateConstructorUsedError;
+  Color? get materialSystemBarColor => throw _privateConstructorUsedError;
   Color get navigationBarBackgroundColor => throw _privateConstructorUsedError;
   Color get navigationBarBorderColor => throw _privateConstructorUsedError;
   Color get formBackgroundColor => throw _privateConstructorUsedError;
@@ -88,6 +91,7 @@ abstract class $AppThemeCopyWith<$Res> {
       Color secondaryColor,
       Color scaffoldBackgroundColor,
       Color? statusBarColor,
+      Color? materialSystemBarColor,
       Color navigationBarBackgroundColor,
       Color navigationBarBorderColor,
       Color formBackgroundColor,
@@ -115,6 +119,7 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
     Object? secondaryColor = freezed,
     Object? scaffoldBackgroundColor = freezed,
     Object? statusBarColor = freezed,
+    Object? materialSystemBarColor = freezed,
     Object? navigationBarBackgroundColor = freezed,
     Object? navigationBarBorderColor = freezed,
     Object? formBackgroundColor = freezed,
@@ -146,6 +151,10 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
       statusBarColor: statusBarColor == freezed
           ? _value.statusBarColor
           : statusBarColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      materialSystemBarColor: materialSystemBarColor == freezed
+          ? _value.materialSystemBarColor
+          : materialSystemBarColor // ignore: cast_nullable_to_non_nullable
               as Color?,
       navigationBarBackgroundColor: navigationBarBackgroundColor == freezed
           ? _value.navigationBarBackgroundColor
@@ -202,6 +211,7 @@ abstract class _$AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
       Color secondaryColor,
       Color scaffoldBackgroundColor,
       Color? statusBarColor,
+      Color? materialSystemBarColor,
       Color navigationBarBackgroundColor,
       Color navigationBarBorderColor,
       Color formBackgroundColor,
@@ -230,6 +240,7 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
     Object? secondaryColor = freezed,
     Object? scaffoldBackgroundColor = freezed,
     Object? statusBarColor = freezed,
+    Object? materialSystemBarColor = freezed,
     Object? navigationBarBackgroundColor = freezed,
     Object? navigationBarBorderColor = freezed,
     Object? formBackgroundColor = freezed,
@@ -261,6 +272,10 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
       statusBarColor: statusBarColor == freezed
           ? _value.statusBarColor
           : statusBarColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      materialSystemBarColor: materialSystemBarColor == freezed
+          ? _value.materialSystemBarColor
+          : materialSystemBarColor // ignore: cast_nullable_to_non_nullable
               as Color?,
       navigationBarBackgroundColor: navigationBarBackgroundColor == freezed
           ? _value.navigationBarBackgroundColor
@@ -315,6 +330,7 @@ class _$_AppTheme implements _AppTheme {
       required this.secondaryColor,
       required this.scaffoldBackgroundColor,
       this.statusBarColor,
+      this.materialSystemBarColor,
       required this.navigationBarBackgroundColor,
       required this.navigationBarBorderColor,
       required this.formBackgroundColor,
@@ -336,6 +352,8 @@ class _$_AppTheme implements _AppTheme {
   final Color scaffoldBackgroundColor;
   @override
   final Color? statusBarColor;
+  @override
+  final Color? materialSystemBarColor;
   @override
   final Color navigationBarBackgroundColor;
   @override
@@ -359,7 +377,7 @@ class _$_AppTheme implements _AppTheme {
 
   @override
   String toString() {
-    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, formBackgroundColor: $formBackgroundColor, listTileBackground: $listTileBackground, cupertinoBarBackgroundColor: $cupertinoBarBackgroundColor, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
+    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, formBackgroundColor: $formBackgroundColor, listTileBackground: $listTileBackground, cupertinoBarBackgroundColor: $cupertinoBarBackgroundColor, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
   }
 
   @override
@@ -381,6 +399,9 @@ class _$_AppTheme implements _AppTheme {
             (identical(other.statusBarColor, statusBarColor) ||
                 const DeepCollectionEquality()
                     .equals(other.statusBarColor, statusBarColor)) &&
+            (identical(other.materialSystemBarColor, materialSystemBarColor) ||
+                const DeepCollectionEquality().equals(
+                    other.materialSystemBarColor, materialSystemBarColor)) &&
             (identical(other.navigationBarBackgroundColor, navigationBarBackgroundColor) ||
                 const DeepCollectionEquality().equals(
                     other.navigationBarBackgroundColor,
@@ -402,8 +423,7 @@ class _$_AppTheme implements _AppTheme {
             (identical(other.selectedColor, selectedColor) ||
                 const DeepCollectionEquality()
                     .equals(other.selectedColor, selectedColor)) &&
-            (identical(other.borderColor, borderColor) ||
-                const DeepCollectionEquality().equals(other.borderColor, borderColor)) &&
+            (identical(other.borderColor, borderColor) || const DeepCollectionEquality().equals(other.borderColor, borderColor)) &&
             (identical(other.textColor, textColor) || const DeepCollectionEquality().equals(other.textColor, textColor)) &&
             (identical(other.dividerColor, dividerColor) || const DeepCollectionEquality().equals(other.dividerColor, dividerColor)) &&
             (identical(other.shadowColor, shadowColor) || const DeepCollectionEquality().equals(other.shadowColor, shadowColor)));
@@ -417,6 +437,7 @@ class _$_AppTheme implements _AppTheme {
       const DeepCollectionEquality().hash(secondaryColor) ^
       const DeepCollectionEquality().hash(scaffoldBackgroundColor) ^
       const DeepCollectionEquality().hash(statusBarColor) ^
+      const DeepCollectionEquality().hash(materialSystemBarColor) ^
       const DeepCollectionEquality().hash(navigationBarBackgroundColor) ^
       const DeepCollectionEquality().hash(navigationBarBorderColor) ^
       const DeepCollectionEquality().hash(formBackgroundColor) ^
@@ -441,6 +462,7 @@ abstract class _AppTheme implements AppTheme {
       required Color secondaryColor,
       required Color scaffoldBackgroundColor,
       Color? statusBarColor,
+      Color? materialSystemBarColor,
       required Color navigationBarBackgroundColor,
       required Color navigationBarBorderColor,
       required Color formBackgroundColor,
@@ -462,6 +484,8 @@ abstract class _AppTheme implements AppTheme {
   Color get scaffoldBackgroundColor => throw _privateConstructorUsedError;
   @override
   Color? get statusBarColor => throw _privateConstructorUsedError;
+  @override
+  Color? get materialSystemBarColor => throw _privateConstructorUsedError;
   @override
   Color get navigationBarBackgroundColor => throw _privateConstructorUsedError;
   @override
