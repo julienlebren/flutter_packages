@@ -1,9 +1,4 @@
-import 'package:flutter/cupertino.dart' show CupertinoPageRoute;
-import 'package:flutter/material.dart' show MaterialPageRoute;
-import 'package:flutter/widgets.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-
-import 'platform.dart';
+part of platform;
 
 PageRoute<T> platformPageRoute<T>({
   required BuildContext context,

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
-part of 'platform_tab_scaffold.dart';
+part of platform;
 
 // **************************************************************************
 // FreezedGenerator
@@ -136,7 +136,7 @@ class __$TabItemCopyWithImpl<$Res> extends _$TabItemCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TabItem implements _TabItem {
+class _$_TabItem with DiagnosticableTreeMixin implements _TabItem {
   const _$_TabItem(
       {required this.title,
       required this.icon,
@@ -153,8 +153,19 @@ class _$_TabItem implements _TabItem {
   final Widget router;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'TabItem(title: $title, icon: $icon, selectedIcon: $selectedIcon, router: $router)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'TabItem'))
+      ..add(DiagnosticsProperty('title', title))
+      ..add(DiagnosticsProperty('icon', icon))
+      ..add(DiagnosticsProperty('selectedIcon', selectedIcon))
+      ..add(DiagnosticsProperty('router', router));
   }
 
   @override

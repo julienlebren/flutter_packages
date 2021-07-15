@@ -1,10 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:layout_builder/platform/platform.dart';
-import 'package:layout_builder/platform/platform_icons.dart';
-import 'package:layout_builder/platform/platform_widget_base.dart';
-import 'package:layout_builder/theme/theme.dart';
+part of platform;
 
 class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
   const PlatformListTile({

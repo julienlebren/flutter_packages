@@ -1,7 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+part of platform;
 
 abstract class PlatformWidgetBase<MaterialWidget extends Widget,
     CupertinoWidget extends Widget> extends ConsumerWidget {

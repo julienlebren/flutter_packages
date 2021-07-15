@@ -1,12 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:layout_builder/platform/platform_widget_base.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:layout_builder/theme/theme.dart';
-
-part 'platform_tab_scaffold.freezed.dart';
+part of platform;
 
 @freezed
 class TabItem with _$TabItem {

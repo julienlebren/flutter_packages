@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:layout_builder/platform/platform.dart';
+part of platform;
 
 class PlatformIcons {
   PlatformIcons._();

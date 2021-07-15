@@ -1,16 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:layout_builder/form/form.dart';
-import 'package:layout_builder/platform/platform.dart';
-import 'package:layout_builder/platform/platform_alert_dialog.dart';
-import 'package:layout_builder/platform/platform_icons.dart';
-import 'package:layout_builder/platform/platform_list_tile.dart';
-import 'package:layout_builder/platform/platform_navigation_bar_button.dart';
-import 'package:layout_builder/platform/platform_navigation_bar.dart';
-import 'package:layout_builder/platform/platform_scaffold.dart';
-import 'package:layout_builder/theme/theme.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+part of platform;
 
 showPlatformMultiPicker<T>(
   BuildContext context,

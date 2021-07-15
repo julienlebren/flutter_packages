@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:layout_builder/platform/platform.dart';
-import 'package:layout_builder/platform/platform_modal_sheet.dart';
+part of platform;
 
 showPlatformSinglePicker<T>(
   BuildContext context,
