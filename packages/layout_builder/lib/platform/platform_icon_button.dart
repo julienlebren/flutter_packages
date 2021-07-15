@@ -49,7 +49,7 @@ class PlatformIconPlainButton
       onPressed: onPressed,
       fillColor: backgroundColor,
       child: Icon(icon, color: color, size: size),
-      padding: EdgeInsets.all(5.0),
+      padding: EdgeInsets.all(10.0),
       shape: CircleBorder(),
     );
   }
