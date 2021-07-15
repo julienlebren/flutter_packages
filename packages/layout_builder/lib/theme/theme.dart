@@ -18,6 +18,7 @@ class AppTheme with _$AppTheme {
     required Color primaryColor,
     required Color secondaryColor,
     required Color scaffoldBackgroundColor,
+    Color? statusBarColor,
     required Color navigationBarBackgroundColor,
     required Color navigationBarBorderColor,
     required Color formBackgroundColor,
