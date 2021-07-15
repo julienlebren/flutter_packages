@@ -29,8 +29,7 @@ final systemOverlayStyleProvider = Provider<SystemUiOverlayStyle>((ref) {
   } else {
     return SystemUiOverlayStyle(
       statusBarColor: appTheme.statusBarColor,
-      systemNavigationBarColor:
-          appTheme.materialSystemBarColor ?? appTheme.scaffoldBackgroundColor,
+      systemNavigationBarColor: appTheme.materialSystemBarColor,
       systemNavigationBarIconBrightness:
           appTheme.materialSystemBarColor != null ? appTheme.brightness : null,
     );
