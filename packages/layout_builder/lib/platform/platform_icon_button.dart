@@ -35,18 +35,20 @@ class PlatformIconPlainButton
     this.onPressed,
     this.backgroundColor = Colors.transparent,
     this.color = Colors.black,
+    this.size = 22,
   }) : super();
   final IconData icon;
   final VoidCallback? onPressed;
   final Color backgroundColor;
   final Color color;
+  final double size;
 
   @override
   RawMaterialButton createMaterialWidget(BuildContext context, WidgetRef ref) {
     return RawMaterialButton(
       onPressed: onPressed,
       fillColor: backgroundColor,
-      child: Icon(icon, color: color, size: 22),
+      child: Icon(icon, color: color, size: size),
       padding: EdgeInsets.all(5.0),
       shape: CircleBorder(),
     );
@@ -58,8 +60,8 @@ class PlatformIconPlainButton
       color: backgroundColor,
       padding: EdgeInsets.zero,
       onPressed: onPressed,
-      borderRadius: BorderRadius.circular(26.0),
-      child: Icon(icon, color: color, size: 26),
+      borderRadius: BorderRadius.circular(size + 4),
+      child: Icon(icon, color: color, size: size + 4),
       minSize: 32,
     );
   }

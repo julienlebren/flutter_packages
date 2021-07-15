@@ -19,4 +19,5 @@ class FirestoreService {
       return snapshot.docs.map((snapshot) => snapshot.data()).toList();
     });
   }
+
 }
