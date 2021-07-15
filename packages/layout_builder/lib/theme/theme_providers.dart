@@ -17,28 +17,22 @@ final brightnessProvider = Provider<Brightness>(
 final systemOverlayStyleProvider = Provider<SystemUiOverlayStyle>((ref) {
   final appTheme = ref.watch(appThemeProvider);
 
-  if (appTheme.brightness == Brightness.dark) {
-    return SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-      systemNavigationBarColor: appTheme.scaffoldBackgroundColor,
-      systemNavigationBarIconBrightness: Brightness.light,
-    );
+  // workaround because if the user is in dark mode and sets the theme of the app
+  // to dark mode, a dark layer is applied to the color passed to systemNavigationBarColor
+  // so we cannot get a full white. Instead of producing a weird behaviour with
+  // dark buttons and dark background, we skip this feature and keep the black
+  // navigation bar. Honestly, so few people will set light mode while their device
+  // is in dark mode, isn't it?
+  if (appTheme.brightness == Brightness.light &&
+      WidgetsBinding.instance!.window.platformBrightness == Brightness.dark) {
+    return SystemUiOverlayStyle(statusBarColor: Colors.transparent);
   } else {
-    // workaround because if the user is in dark mode and sets the theme of the app
-    // to dark mode, a dark layer is applied to the color passed to systemNavigationBarColor
-    // so we cannot get a full white. Instead of producing a weird behaviour with
-    // dark buttons and dark background, we skip this feature and keep the black
-    // navigation bar. Honestly, so few people will set light mode while their device
-    // is in dark mode, isn't it?
-    if (WidgetsBinding.instance!.window.platformBrightness == Brightness.dark) {
-      return SystemUiOverlayStyle(statusBarColor: Colors.transparent);
-    } else {
-      return SystemUiOverlayStyle(
-        statusBarColor: Colors.red, //Colors.transparent,
-        systemNavigationBarColor: appTheme.scaffoldBackgroundColor,
-        systemNavigationBarIconBrightness: Brightness.dark,
-      );
-    }
+    return SystemUiOverlayStyle(
+      statusBarColor: Colors.red, //Colors.transparent,
+      systemNavigationBarColor:
+          appTheme.statusBarColor ?? appTheme.scaffoldBackgroundColor,
+      systemNavigationBarIconBrightness: appTheme.brightness,
+    );
   }
 });
 
