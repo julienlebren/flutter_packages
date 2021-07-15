@@ -27,9 +27,9 @@ class PlatformTextButton
       ),
       onPressed: onPressed,
       style: TextButton.styleFrom(
+        primary: color,
         textStyle: TextStyle(
           fontSize: fontSize,
-          color: color,
         ),
       ),
     );
