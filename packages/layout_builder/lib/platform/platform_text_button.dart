@@ -8,6 +8,7 @@ class PlatformTextButton
     this.textAlign = TextAlign.center,
     this.fontSize = 16.0,
     this.padding = 16.0,
+    this.color,
   }) : super();
 
   final String title;
@@ -15,6 +16,7 @@ class PlatformTextButton
   final TextAlign textAlign;
   final double fontSize;
   final double padding;
+  final Color? color;
 
   @override
   TextButton createMaterialWidget(BuildContext context, WidgetRef ref) {
@@ -24,7 +26,12 @@ class PlatformTextButton
         textAlign: textAlign,
       ),
       onPressed: onPressed,
-      style: TextButton.styleFrom(textStyle: TextStyle(fontSize: fontSize)),
+      style: TextButton.styleFrom(
+        textStyle: TextStyle(
+          fontSize: fontSize,
+          color: color,
+        ),
+      ),
     );
   }
 
@@ -37,7 +44,10 @@ class PlatformTextButton
       child: Text(
         title,
         textAlign: textAlign,
-        style: TextStyle(fontSize: fontSize),
+        style: TextStyle(
+          fontSize: fontSize,
+          color: color,
+        ),
       ),
       onPressed: onPressed,
     );
