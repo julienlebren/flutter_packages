@@ -34,7 +34,7 @@ final systemOverlayStyleProvider = Provider<SystemUiOverlayStyle>((ref) {
       return SystemUiOverlayStyle(statusBarColor: Colors.transparent);
     } else {
       return SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
+        statusBarColor: Colors.red, //Colors.transparent,
         systemNavigationBarColor: appTheme.scaffoldBackgroundColor,
         systemNavigationBarIconBrightness: Brightness.dark,
       );
