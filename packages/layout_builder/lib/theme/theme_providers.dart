@@ -28,8 +28,7 @@ final systemOverlayStyleProvider = Provider<SystemUiOverlayStyle>((ref) {
     return SystemUiOverlayStyle(statusBarColor: Colors.transparent);
   } else {
     return SystemUiOverlayStyle(
-      statusBarColor:
-          appTheme.statusBarColor ?? appTheme.navigationBarBackgroundColor,
+      statusBarColor: appTheme.statusBarColor,
       systemNavigationBarColor: appTheme.scaffoldBackgroundColor,
       systemNavigationBarIconBrightness: appTheme.brightness,
     );
