@@ -28,6 +28,7 @@ class _$AppThemeTearOff {
       required Color formBackgroundColor,
       required Color listTileBackground,
       required Color cupertinoBarBackgroundColor,
+      double elevatedButtonRadius = 5.0,
       required Color selectedColor,
       required Color borderColor,
       required Color textColor,
@@ -45,6 +46,7 @@ class _$AppThemeTearOff {
       formBackgroundColor: formBackgroundColor,
       listTileBackground: listTileBackground,
       cupertinoBarBackgroundColor: cupertinoBarBackgroundColor,
+      elevatedButtonRadius: elevatedButtonRadius,
       selectedColor: selectedColor,
       borderColor: borderColor,
       textColor: textColor,
@@ -70,6 +72,7 @@ mixin _$AppTheme {
   Color get formBackgroundColor => throw _privateConstructorUsedError;
   Color get listTileBackground => throw _privateConstructorUsedError;
   Color get cupertinoBarBackgroundColor => throw _privateConstructorUsedError;
+  double get elevatedButtonRadius => throw _privateConstructorUsedError;
   Color get selectedColor => throw _privateConstructorUsedError;
   Color get borderColor => throw _privateConstructorUsedError;
   Color get textColor => throw _privateConstructorUsedError;
@@ -97,6 +100,7 @@ abstract class $AppThemeCopyWith<$Res> {
       Color formBackgroundColor,
       Color listTileBackground,
       Color cupertinoBarBackgroundColor,
+      double elevatedButtonRadius,
       Color selectedColor,
       Color borderColor,
       Color textColor,
@@ -125,6 +129,7 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
     Object? formBackgroundColor = freezed,
     Object? listTileBackground = freezed,
     Object? cupertinoBarBackgroundColor = freezed,
+    Object? elevatedButtonRadius = freezed,
     Object? selectedColor = freezed,
     Object? borderColor = freezed,
     Object? textColor = freezed,
@@ -176,6 +181,10 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
           ? _value.cupertinoBarBackgroundColor
           : cupertinoBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
+      elevatedButtonRadius: elevatedButtonRadius == freezed
+          ? _value.elevatedButtonRadius
+          : elevatedButtonRadius // ignore: cast_nullable_to_non_nullable
+              as double,
       selectedColor: selectedColor == freezed
           ? _value.selectedColor
           : selectedColor // ignore: cast_nullable_to_non_nullable
@@ -217,6 +226,7 @@ abstract class _$AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
       Color formBackgroundColor,
       Color listTileBackground,
       Color cupertinoBarBackgroundColor,
+      double elevatedButtonRadius,
       Color selectedColor,
       Color borderColor,
       Color textColor,
@@ -246,6 +256,7 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
     Object? formBackgroundColor = freezed,
     Object? listTileBackground = freezed,
     Object? cupertinoBarBackgroundColor = freezed,
+    Object? elevatedButtonRadius = freezed,
     Object? selectedColor = freezed,
     Object? borderColor = freezed,
     Object? textColor = freezed,
@@ -297,6 +308,10 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
           ? _value.cupertinoBarBackgroundColor
           : cupertinoBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
+      elevatedButtonRadius: elevatedButtonRadius == freezed
+          ? _value.elevatedButtonRadius
+          : elevatedButtonRadius // ignore: cast_nullable_to_non_nullable
+              as double,
       selectedColor: selectedColor == freezed
           ? _value.selectedColor
           : selectedColor // ignore: cast_nullable_to_non_nullable
@@ -336,6 +351,7 @@ class _$_AppTheme implements _AppTheme {
       required this.formBackgroundColor,
       required this.listTileBackground,
       required this.cupertinoBarBackgroundColor,
+      this.elevatedButtonRadius = 5.0,
       required this.selectedColor,
       required this.borderColor,
       required this.textColor,
@@ -364,6 +380,9 @@ class _$_AppTheme implements _AppTheme {
   final Color listTileBackground;
   @override
   final Color cupertinoBarBackgroundColor;
+  @JsonKey(defaultValue: 5.0)
+  @override
+  final double elevatedButtonRadius;
   @override
   final Color selectedColor;
   @override
@@ -377,7 +396,7 @@ class _$_AppTheme implements _AppTheme {
 
   @override
   String toString() {
-    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, formBackgroundColor: $formBackgroundColor, listTileBackground: $listTileBackground, cupertinoBarBackgroundColor: $cupertinoBarBackgroundColor, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
+    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, formBackgroundColor: $formBackgroundColor, listTileBackground: $listTileBackground, cupertinoBarBackgroundColor: $cupertinoBarBackgroundColor, elevatedButtonRadius: $elevatedButtonRadius, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
   }
 
   @override
@@ -420,9 +439,10 @@ class _$_AppTheme implements _AppTheme {
                 const DeepCollectionEquality().equals(
                     other.cupertinoBarBackgroundColor,
                     cupertinoBarBackgroundColor)) &&
-            (identical(other.selectedColor, selectedColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.selectedColor, selectedColor)) &&
+            (identical(other.elevatedButtonRadius, elevatedButtonRadius) ||
+                const DeepCollectionEquality().equals(
+                    other.elevatedButtonRadius, elevatedButtonRadius)) &&
+            (identical(other.selectedColor, selectedColor) || const DeepCollectionEquality().equals(other.selectedColor, selectedColor)) &&
             (identical(other.borderColor, borderColor) || const DeepCollectionEquality().equals(other.borderColor, borderColor)) &&
             (identical(other.textColor, textColor) || const DeepCollectionEquality().equals(other.textColor, textColor)) &&
             (identical(other.dividerColor, dividerColor) || const DeepCollectionEquality().equals(other.dividerColor, dividerColor)) &&
@@ -443,6 +463,7 @@ class _$_AppTheme implements _AppTheme {
       const DeepCollectionEquality().hash(formBackgroundColor) ^
       const DeepCollectionEquality().hash(listTileBackground) ^
       const DeepCollectionEquality().hash(cupertinoBarBackgroundColor) ^
+      const DeepCollectionEquality().hash(elevatedButtonRadius) ^
       const DeepCollectionEquality().hash(selectedColor) ^
       const DeepCollectionEquality().hash(borderColor) ^
       const DeepCollectionEquality().hash(textColor) ^
@@ -468,6 +489,7 @@ abstract class _AppTheme implements AppTheme {
       required Color formBackgroundColor,
       required Color listTileBackground,
       required Color cupertinoBarBackgroundColor,
+      double elevatedButtonRadius,
       required Color selectedColor,
       required Color borderColor,
       required Color textColor,
@@ -496,6 +518,8 @@ abstract class _AppTheme implements AppTheme {
   Color get listTileBackground => throw _privateConstructorUsedError;
   @override
   Color get cupertinoBarBackgroundColor => throw _privateConstructorUsedError;
+  @override
+  double get elevatedButtonRadius => throw _privateConstructorUsedError;
   @override
   Color get selectedColor => throw _privateConstructorUsedError;
   @override

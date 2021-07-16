@@ -25,6 +25,7 @@ class AppTheme with _$AppTheme {
     required Color formBackgroundColor,
     required Color listTileBackground,
     required Color cupertinoBarBackgroundColor,
+    @Default(5.0) double elevatedButtonRadius,
     required Color selectedColor,
     required Color borderColor,
     required Color textColor,
