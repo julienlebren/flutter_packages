@@ -11,10 +11,13 @@ class PlatformElevatedButton
 
   @override
   ElevatedButton createMaterialWidget(BuildContext context, WidgetRef ref) {
+    final elevatedButtonRadius = ref.watch(
+      appThemeProvider.select((appTheme) => appTheme.elevatedButtonRadius),
+    );
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0),
+          borderRadius: BorderRadius.circular(elevatedButtonRadius),
         ),
       ),
       child: Padding(
@@ -33,10 +36,13 @@ class PlatformElevatedButton
 
   @override
   CupertinoButton createCupertinoWidget(BuildContext context, WidgetRef ref) {
+    final elevatedButtonRadius = ref.watch(
+      appThemeProvider.select((appTheme) => appTheme.elevatedButtonRadius),
+    );
     return CupertinoButton.filled(
       padding: EdgeInsets.all(16.0),
       onPressed: onPressed,
-      borderRadius: BorderRadius.circular(32.0),
+      borderRadius: BorderRadius.circular(elevatedButtonRadius),
       child: Text(
         title,
         style: TextStyle(
