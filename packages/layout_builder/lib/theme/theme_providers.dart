@@ -68,6 +68,11 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
       ),
       selectedItemColor: appTheme.primaryColor,
     ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        primary: appTheme.primaryColor,
+      ),
+    ),
   );
 });
 
