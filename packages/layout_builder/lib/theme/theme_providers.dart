@@ -73,6 +73,11 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
         primary: appTheme.primaryColor,
       ),
     ),
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        primary: appTheme.primaryColor,
+      ),
+    ),
   );
 });
 
