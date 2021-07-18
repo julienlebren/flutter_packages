@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/services.dart';
 import 'package:layout_builder/platform/platform.dart';
+import 'package:layout_builder/theme/material_color.dart';
 
 part 'theme_providers.dart';
 part 'theme_type.dart';

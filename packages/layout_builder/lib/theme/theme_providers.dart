@@ -46,8 +46,8 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
   return ThemeData(
     brightness: appTheme.brightness,
     scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
-    primaryColor: appTheme.primaryColor,
-    accentColor: appTheme.primaryColor,
+    primarySwatch: createMaterialColor(appTheme.primaryColor),
+    //accentColor: appTheme.primaryColor,
     toggleableActiveColor: appTheme.primaryColor,
     appBarTheme: AppBarTheme(
       shadowColor: appTheme.scaffoldBackgroundColor,
