@@ -172,10 +172,10 @@ packages:
     description:
       path: "packages/layout_builder"
       ref: HEAD
-      resolved-ref: cf5d25e8921f40c6d8c96e09c028b5f678dd6167
+      resolved-ref: "7286b8856dac7e4a59b12107ac68bad8b9e12445"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.12.0"
+    version: "0.12.1"
   matcher:
     dependency: transitive
     description:
