@@ -12,6 +12,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  extensions:
+    git:
+      url: https://github.com/julienlebren/flutter_packages
+      path: packages/extensions
+    version: ^0.1.0
   flutter_riverpod: ^1.0.0-dev.5
   freezed_annotation: ^0.14.2
   modal_bottom_sheet: ^2.0.0

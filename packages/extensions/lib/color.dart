@@ -1,5 +1,4 @@
-import 'dart:math';
-import 'package:flutter/material.dart';
+part of 'extensions.dart';
 
 extension ColorX on Color {
   Color darken([double amount = .1]) {

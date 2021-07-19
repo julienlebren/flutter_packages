@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+part of 'extensions.dart';
 
 extension DateTimeX on DateTime {
   String get toHour => DateFormat('Hm').format(this);

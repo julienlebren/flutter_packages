@@ -1,7 +1,8 @@
 library extensions;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+
+part 'color.dart';
+part 'date.dart';
+part 'string.dart';
