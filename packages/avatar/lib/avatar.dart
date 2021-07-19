@@ -53,14 +53,14 @@ class Avatar extends StatelessWidget {
               return CachedNetworkAvatar(url!);
             } else if (name != "") {
               return Padding(
-                padding: EdgeInsets.all(_radius / 4),
+                padding: EdgeInsets.all(_radius / 3),
                 child: FittedBox(
                   fit: BoxFit.contain,
                   child: Text(
                     name!.initials,
                     style: TextStyle(
                       color: Colors.white,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w500,
                       letterSpacing: isCupertino() ? -1 : 0,
                     ),
                   ),
