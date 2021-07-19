@@ -25,13 +25,10 @@ class PlatformNavigationBar
   final bool needsRightTransform;
 
   Widget? middleWidget(WidgetRef ref) {
-    final textColor = ref.watch(
-      appThemeProvider.select((appTheme) => appTheme.textColor),
-    );
     if (middle != null) {
       return middle!;
     } else if (title != null) {
-      return Text(title!, style: TextStyle(color: textColor));
+      return Text(title!);
     }
   }
 
