@@ -199,7 +199,7 @@ class ListTileContents extends ConsumerWidget {
                       crossAxisAlignment: alignment,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(top: 2),
+                          padding: EdgeInsets.only(top: 3),
                           child: Text(
                             label!,
                             style: TextStyle(
