@@ -1,7 +1,13 @@
 import 'dart:io';
+import 'dart:math';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:extensions/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:layout_builder/platform/platform.dart';
+import 'package:layout_builder/theme/theme.dart';
+
+part 'avatar_colors.dart';
 
 class Avatar extends StatelessWidget {
   const Avatar({
