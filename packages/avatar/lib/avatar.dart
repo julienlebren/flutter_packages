@@ -16,7 +16,7 @@ class Avatar extends StatelessWidget {
     this.url,
     this.name,
     required this.color,
-    this.radius,
+    this.radius = 20,
   }) : super(key: key);
 
   final int color;

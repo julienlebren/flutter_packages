@@ -5,6 +5,7 @@ extension StringX on String {
     return trim().isEmpty
         ? ''
         : trim()
+            .toUpperCase()
             .replaceAll(RegExp(' +'), ' ')
             .split(' ')
             .map((l) => l[0])
