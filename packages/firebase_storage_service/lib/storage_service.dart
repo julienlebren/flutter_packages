@@ -2,10 +2,14 @@ library firebase_storage_service;
 
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class FirebaseStorageService {
-  FirebaseStorageService._();
-  static final instance = FirebaseStorageService._();
+final storageServiceProvider =
+    Provider<StorageService>((ref) => StorageService.instance);
+
+class StorageService {
+  StorageService._();
+  static final instance = StorageService._();
 
   UploadTask _upload({
     required File file,

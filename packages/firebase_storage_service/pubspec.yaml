@@ -13,6 +13,7 @@ dependencies:
   flutter:
     sdk: flutter
   firebase_storage: ^9.0.0
+  flutter_riverpod: ^1.0.0-dev.5
 
 dev_dependencies:
   flutter_test:
