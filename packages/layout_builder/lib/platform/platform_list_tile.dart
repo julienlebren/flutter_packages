@@ -194,7 +194,7 @@ class ListTileContents extends ConsumerWidget {
                 if (label != null)
                   Expanded(
                     child: Column(
-                      mainAxisSize: MainAxisSize.min,
+                      mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: alignment,
                       children: [
