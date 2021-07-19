@@ -1,6 +1,6 @@
 name: firebase_storage_service
 description: Wrapper for Firebase Storage
-version: 0.1.1
+version: 0.1.2
 author: Julien LE BREN
 homepage: https://twitter.com/hikeland
 publish_to: none
