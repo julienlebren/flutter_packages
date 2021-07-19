@@ -34,16 +34,16 @@ class StorageService {
     return storageReference.delete();
   }
 
-  Future<void> deleteFile({
-    required Reference ref,
-  }) {
+  Future<void> deleteFile(
+    Reference ref,
+  ) {
     return ref.delete();
   }
 
-  UploadTask uploadPhoto({
-    required File file,
-    required Reference ref,
-  }) {
+  UploadTask uploadPhoto(
+    Reference ref,
+    File file,
+  ) {
     return _upload(file: file, ref: ref, contentType: 'image/jpeg');
   }
 }
