@@ -48,7 +48,7 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
       return SizedBox.shrink();
     } else {
       return Container(
-        transform: Matrix4.translationValues(20.0, 0.0, 0.0),
+        transform: Matrix4.translationValues(15.0, 0.0, 0.0),
         child: IconButton(
           icon: Icon(Icons.check, size: 28),
           onPressed: onPressed,
