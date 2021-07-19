@@ -62,6 +62,11 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
             ? Colors.black
             : Colors.white,
       ),
+      actionsIconTheme: IconThemeData(
+        color: appTheme.navigationBarBackgroundColor.computeLuminance() > 0.5
+            ? Colors.black
+            : Colors.white,
+      ),
     ),
     unselectedWidgetColor: Color(0xFF757575),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(

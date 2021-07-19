@@ -150,9 +150,13 @@ class HolePainter extends CustomPainter {
   WidgetRef ref;
   @override
   void paint(Canvas canvas, Size size) {
-    final appTheme = ref.watch(appThemeProvider);
+    final navigationBarBackgroundColor = ref.watch(
+      appThemeProvider.select(
+        (appTheme) => appTheme.navigationBarBackgroundColor,
+      ),
+    );
     final paint = Paint();
-    paint.color = appTheme.scaffoldBackgroundColor;
+    paint.color = navigationBarBackgroundColor;
     canvas.drawPath(
       Path.combine(
         PathOperation.difference,
