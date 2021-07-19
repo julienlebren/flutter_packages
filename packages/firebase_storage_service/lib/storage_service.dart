@@ -2,22 +2,28 @@ library firebase_storage_service;
 
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:firebase_storage_service/storage_path.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final storageServiceProvider =
-    Provider<StorageService>((ref) => StorageService.instance);
+final storageServiceProvider = Provider.family<StorageService, String>(
+    (ref, userId) => StorageService(userId));
 
 class StorageService {
-  StorageService._();
-  static final instance = StorageService._();
+  StorageService(this.userId);
+
+  final String userId;
+
+  Reference storageRef(String path) => FirebaseStorage.instance
+      .ref()
+      .child("${StoragePath.users}/$userId")
+      .child(path);
 
   UploadTask _upload({
     required File file,
-    required String path,
+    required Reference ref,
     required String contentType,
   }) {
-    final storageReference = FirebaseStorage.instance.ref().child(path);
-    return storageReference.putFile(
+    return ref.putFile(
       File(file.path),
       SettableMetadata(contentType: contentType),
     );
@@ -29,15 +35,15 @@ class StorageService {
   }
 
   Future<void> deleteFile({
-    required String path,
+    required Reference ref,
   }) {
-    final storageReference = FirebaseStorage.instance.ref().child(path);
-    return storageReference.delete();
+    return ref.delete();
   }
 
   UploadTask uploadPhoto({
     required File file,
-    required String path,
-  }) =>
-      _upload(file: file, path: path, contentType: 'image/jpeg');
+    required Reference ref,
+  }) {
+    return _upload(file: file, ref: ref, contentType: 'image/jpeg');
+  }
 }
