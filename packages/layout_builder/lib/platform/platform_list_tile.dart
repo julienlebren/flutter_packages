@@ -198,11 +198,14 @@ class ListTileContents extends ConsumerWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: alignment,
                       children: [
-                        Text(
-                          label!,
-                          style: TextStyle(
-                            color: appTheme.textColor,
-                            fontSize: isCupertino() ? 17 : 16,
+                        Padding(
+                          padding: EdgeInsets.only(top: 2),
+                          child: Text(
+                            label!,
+                            style: TextStyle(
+                              color: appTheme.textColor,
+                              fontSize: isCupertino() ? 17 : 16,
+                            ),
                           ),
                         ),
                         if (caption != null)
