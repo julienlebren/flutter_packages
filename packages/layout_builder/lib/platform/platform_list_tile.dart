@@ -168,7 +168,7 @@ class ListTileContents extends ConsumerWidget {
     if (leading == null && label == null && trailing == null) {
       return CrossAxisAlignment.center;
     } else {
-      return CrossAxisAlignment.start;
+      return CrossAxisAlignment.center; // was start but dunno why
     }
   }
 
@@ -194,6 +194,7 @@ class ListTileContents extends ConsumerWidget {
                 if (label != null)
                   Expanded(
                     child: Column(
+                      mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: alignment,
                       children: [
                         Text(
