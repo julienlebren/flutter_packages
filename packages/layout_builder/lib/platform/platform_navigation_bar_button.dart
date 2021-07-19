@@ -1,5 +1,6 @@
 part of platform;
 
+/*
 class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
   PlatformNavigationBarButton({
     required this.onPressed,
@@ -30,9 +31,8 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
       onPressed: onPressed,
     );
   }
-}
+}*/
 
-/*
 class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
   PlatformNavigationBarButton({
     required this.onPressed,
@@ -70,7 +70,24 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
     );
   }
 }
-*/
+
+class PlatformNavigationBarSaveButton extends StatelessWidget {
+  const PlatformNavigationBarSaveButton({
+    Key? key,
+    required this.onPressed,
+  }) : super(key: key);
+
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return PlatformNavigationBarButton(
+      buttonText: MaterialLocalizations.of(context).saveButtonLabel,
+      onPressed: onPressed,
+    );
+  }
+}
+
 class PlatformNavigationBarCloseButton
     extends PlatformWidgetBase<Widget, Widget> {
   PlatformNavigationBarCloseButton({
