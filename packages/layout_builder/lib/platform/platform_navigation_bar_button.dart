@@ -49,9 +49,9 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
     } else {
       return Container(
         transform: Matrix4.translationValues(20.0, 0.0, 0.0),
-        child: TextButton(
+        child: IconButton(
+          icon: Icon(Icons.check, size: 28),
           onPressed: onPressed,
-          child: Icon(Icons.check, size: 28),
         ),
       );
     }
