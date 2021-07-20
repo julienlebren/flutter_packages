@@ -40,14 +40,14 @@ class PlatformTextField
       textInputAction: textInputAction,
       textCapitalization: textCapitalization,
       controller: controller,
-      /*decoration: InputDecoration(
+      decoration: InputDecoration(
         hintText: placeholder,
-        border: InputBorder.none,
+        /*border: InputBorder.none,
         focusedBorder: InputBorder.none,
         enabledBorder: InputBorder.none,
         errorBorder: InputBorder.none,
-        disabledBorder: InputBorder.none,
-      ),*/
+        disabledBorder: InputBorder.none,*/
+      ),
       inputFormatters: inputFormatters,
       onChanged: onChanged,
       onSubmitted: onSubmitted,
