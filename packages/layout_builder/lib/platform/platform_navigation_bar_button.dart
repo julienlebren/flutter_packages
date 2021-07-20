@@ -37,10 +37,12 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
   PlatformNavigationBarButton({
     required this.onPressed,
     this.buttonText,
+    this.icon = Icons.check,
   });
 
   final VoidCallback? onPressed;
   final String? buttonText;
+  final IconData? icon;
 
   @override
   Widget createMaterialWidget(BuildContext context, WidgetRef ref) {
@@ -50,7 +52,7 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
       return Container(
         transform: Matrix4.translationValues(15.0, 0.0, 0.0),
         child: IconButton(
-          icon: Icon(Icons.check, size: 28),
+          icon: Icon(icon, size: 28),
           onPressed: onPressed,
         ),
       );
