@@ -17,13 +17,13 @@ class PlatformPopupMenuItem {
   final dynamic value;
 }
 
-void showPlatformPopupMenu({
+Future<void> showPlatformPopupMenu({
   required BuildContext context,
   required WidgetRef ref,
   required String title,
   required List<PlatformPopupMenuItem> items,
   required void Function(dynamic) onPressed,
-}) {
+}) async {
   if (isCupertino()) {
     showCupertinoModalPopup(
       context: context,
@@ -55,7 +55,7 @@ void showPlatformPopupMenu({
       },
     );
   } else {
-    showMenu(
+    final selectedValue = await showMenu(
       context: context,
       position: RelativeRect.fromLTRB(1000.0, 0.0, 0.0, 0.0),
       items: [
@@ -69,6 +69,7 @@ void showPlatformPopupMenu({
           ),
       ],
     );
+    onPressed(selectedValue);
   }
 }
 
