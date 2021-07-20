@@ -1,7 +1,6 @@
 part of platform;
 
 PageRoute<T> platformPageRoute<T>({
-  required BuildContext context,
   required WidgetBuilder builder,
   RouteSettings? settings,
   bool maintainState = true,
@@ -27,7 +26,6 @@ PageRoute<T> platformPageRoute<T>({
 }
 
 PageRoute<T> platformRightToLeftRoute<T>({
-  required BuildContext context,
   required WidgetBuilder builder,
   RouteSettings? settings,
   bool maintainState = true,
