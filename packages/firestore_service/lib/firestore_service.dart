@@ -12,12 +12,23 @@ class FirestoreService {
   static final instance = FirestoreService._();
   static final firestore = FirebaseFirestore.instance;
 
-  Stream<List<T>> collectionStream<T>({
-    required Query<T> query,
-  }) {
+  Stream<List<T>> streamDocuments<T>(Query<T> query) {
     return query.snapshots().map((snapshot) {
       return snapshot.docs.map((snapshot) => snapshot.data()).toList();
     });
   }
 
+  Future<List<T>> getDocuments<T>(Query<T> query) {
+    return query.get().then((snapshot) {
+      return snapshot.docs.map((snapshot) => snapshot.data()).toList();
+    });
+  }
+
+  Stream<T> streamDocument<T>(DocumentReference<T> ref) {
+    return ref.snapshots().map((snapshot) => snapshot.data()!);
+  }
+
+  Future<T> getDocument<T>(DocumentReference<T> ref) async {
+    return ref.get().then((snapshot) => snapshot.data()!);
+  }
 }
