@@ -14,6 +14,9 @@ class PlatformElevatedButton
     final elevatedButtonRadius = ref.watch(
       appThemeProvider.select((appTheme) => appTheme.elevatedButtonRadius),
     );
+    final elevatedButtonPadding = ref.watch(
+      appThemeProvider.select((appTheme) => appTheme.elevatedButtonPadding),
+    );
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(
@@ -21,7 +24,7 @@ class PlatformElevatedButton
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.all(17.0),
+        padding: EdgeInsets.all(elevatedButtonPadding),
         child: Text(
           title,
           style: TextStyle(
@@ -39,8 +42,11 @@ class PlatformElevatedButton
     final elevatedButtonRadius = ref.watch(
       appThemeProvider.select((appTheme) => appTheme.elevatedButtonRadius),
     );
+    final elevatedButtonPadding = ref.watch(
+      appThemeProvider.select((appTheme) => appTheme.elevatedButtonPadding),
+    );
     return CupertinoButton.filled(
-      padding: EdgeInsets.all(16.0),
+      padding: EdgeInsets.all(elevatedButtonPadding),
       onPressed: onPressed,
       borderRadius: BorderRadius.circular(elevatedButtonRadius),
       child: Text(
