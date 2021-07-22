@@ -4,11 +4,13 @@ class PlatformTabNavigator
     extends PlatformWidgetBase<Navigator, CupertinoTabView> {
   const PlatformTabNavigator({
     required this.onGenerateRoute,
+    this.initialRoute,
     required this.navigatorKey,
     this.observers = const <NavigatorObserver>[],
   }) : super();
 
   final RouteFactory? onGenerateRoute;
+  final String? initialRoute;
   final List<NavigatorObserver> observers;
   final GlobalKey<NavigatorState> navigatorKey;
 
@@ -17,6 +19,7 @@ class PlatformTabNavigator
     return Navigator(
       key: navigatorKey,
       onGenerateRoute: onGenerateRoute,
+      initialRoute: initialRoute,
       observers: observers,
     );
   }
