@@ -1,10 +1,6 @@
 name: layout_builder
 description: A new Flutter package project.
-<<<<<<< HEAD
-version: 0.14.4
-=======
-version: 0.14.3
->>>>>>> 472bf40df226312cd4a0ae805d62f9c15295bbb6
+version: 0.14.5
 author: Julien LE BREN
 homepage: https://twitter.com/hikeland
 publish_to: none
