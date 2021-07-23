@@ -32,21 +32,7 @@ class PlatformSocialButton
       ),
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: elevatedButtonPadding),
-        child: Row(
-          children: <Widget>[
-            Image.asset(assetName),
-            Spacer(),
-            Text(
-              title,
-              style: TextStyle(
-                fontSize: 17.0,
-                fontWeight: FontWeight.w400,
-                color: textColor,
-              ),
-            ),
-            Spacer(),
-          ],
-        ),
+        child: socialButtonContents,
       ),
       onPressed: onPressed,
     );
@@ -62,15 +48,27 @@ class PlatformSocialButton
     );
     return CupertinoButton.filled(
       padding: EdgeInsets.all(elevatedButtonPadding),
-      onPressed: onPressed,
       borderRadius: BorderRadius.circular(elevatedButtonRadius),
-      child: Text(
-        title,
-        style: TextStyle(
-          fontSize: 20.0,
-          fontWeight: FontWeight.w500,
+      child: socialButtonContents,
+      onPressed: onPressed,
+    );
+  }
+
+  Widget get socialButtonContents {
+    return Row(
+      children: <Widget>[
+        Image.asset(assetName),
+        Spacer(),
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: 17.0,
+            fontWeight: FontWeight.w400,
+            color: textColor,
+          ),
         ),
-      ),
+        Spacer(),
+      ],
     );
   }
 }
