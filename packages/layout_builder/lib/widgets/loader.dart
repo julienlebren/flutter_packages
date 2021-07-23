@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:layout_builder/platform/platform.dart';
+part of 'widgets.dart';
 
 class Loader extends StatelessWidget {
   const Loader({
