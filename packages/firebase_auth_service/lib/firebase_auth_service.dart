@@ -19,6 +19,7 @@ final authStateChangesProvider = StreamProvider<User?>(
 final authServiceProvider =
     Provider<FirebaseAuthService>((ref) => FirebaseAuthService.instance);
 
+/// The service managing authentication with Firebase
 class FirebaseAuthService {
   FirebaseAuthService._();
 
