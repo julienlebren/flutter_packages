@@ -12,7 +12,7 @@ class PlatformSocialButton
   final String assetName;
   final String title;
   final VoidCallback? onPressed;
-  final Color color;
+  final Color color; 
   final Color textColor;
 
   @override
@@ -67,6 +67,27 @@ class PlatformSocialButton
             color: textColor,
           ),
         ),
+<<<<<<< HEAD
+=======
+      ),
+      onPressed: onPressed,
+    );
+  }
+
+  Widget get socialButtonContents {
+    return Row(
+      children: <Widget>[
+        Image.asset(assetName),
+        Spacer(),
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: 17.0,
+            fontWeight: FontWeight.w400,
+            color: textColor,
+          ),
+        ),
+>>>>>>> 472bf40df226312cd4a0ae805d62f9c15295bbb6
         Spacer(),
       ],
     );
