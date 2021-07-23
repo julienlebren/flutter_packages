@@ -12,12 +12,21 @@ class FormWithOverlay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return AnimatedOpacity(
+      opacity: isSaving ? 0.5 : 1,
+      duration: Duration(milliseconds: 200),
+      child: AbsorbPointer(
+        absorbing: isSaving ? true : false,
+        child: SizedBox.shrink(),
+      ),
+    );
+
+    /*Stack(
       children: <Widget>[
         child,
         FormSavingOverlay(isSaving: isSaving),
       ],
-    );
+    );*/
   }
 }
 
