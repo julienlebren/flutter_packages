@@ -17,7 +17,7 @@ class FormWithOverlay extends StatelessWidget {
       duration: Duration(milliseconds: 200),
       child: AbsorbPointer(
         absorbing: isSaving ? true : false,
-        child: SizedBox.shrink(),
+        child: child,
       ),
     );
 
