@@ -33,9 +33,9 @@ class PlatformSocialButton
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: elevatedButtonPadding),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Image.asset(assetName),
+            Spacer(),
             Text(
               title,
               style: TextStyle(
@@ -44,10 +44,7 @@ class PlatformSocialButton
                 color: textColor,
               ),
             ),
-            Opacity(
-              opacity: 0.0,
-              child: Image.asset(assetName),
-            ),
+            Spacer(),
           ],
         ),
       ),
