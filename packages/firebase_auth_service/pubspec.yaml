@@ -1,0 +1,25 @@
+name: firebase_auth_service
+description: Wrapper package for FirebaseAuth
+version: 0.1.0
+author: Julien LE BREN
+homepage: https://twitter.com/hikeland
+publish_to: none
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_auth: ^3.0.1
+  firebase_core: ^1.4.0
+  flutter_login_facebook: ^1.0.1
+  flutter_riverpod: ^1.0.0-dev.5
+  google_sign_in: ^5.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
