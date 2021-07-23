@@ -44,6 +44,10 @@ class PlatformSocialButton
                 color: textColor,
               ),
             ),
+            Opacity(
+              opacity: 0.0,
+              child: Image.asset(assetName),
+            ),
           ],
         ),
       ),
