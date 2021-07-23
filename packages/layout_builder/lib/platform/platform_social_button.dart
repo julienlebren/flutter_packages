@@ -31,7 +31,7 @@ class PlatformSocialButton
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.all(elevatedButtonPadding),
+        padding: EdgeInsets.symmetric(vertical: elevatedButtonPadding),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
