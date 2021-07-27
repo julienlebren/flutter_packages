@@ -46,7 +46,8 @@ class PlatformSocialButton
     final elevatedButtonPadding = ref.watch(
       appThemeProvider.select((appTheme) => appTheme.elevatedButtonPadding),
     );
-    return CupertinoButton.filled(
+    return CupertinoButton(
+      color: color,
       padding: EdgeInsets.all(elevatedButtonPadding),
       borderRadius: BorderRadius.circular(elevatedButtonRadius),
       child: socialButtonContents,
