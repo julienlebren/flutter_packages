@@ -14,7 +14,7 @@ class Loader extends StatelessWidget {
       builder: (_, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           return Center(
-            child: CircularProgressIndicator(),
+            child: CircularProgressIndicator.adaptive(),
           );
         } else {
           return Container();
