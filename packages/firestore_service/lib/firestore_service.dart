@@ -24,11 +24,11 @@ class FirestoreService {
     });
   }
 
-  Stream<T> streamDocument<T>(DocumentReference<T> ref) {
-    return ref.snapshots().map((snapshot) => snapshot.data()!);
+  Stream<T?> streamDocument<T>(DocumentReference<T> ref) {
+    return ref.snapshots().map((snapshot) => snapshot.data());
   }
 
-  Future<T> getDocument<T>(DocumentReference<T> ref) async {
-    return ref.get().then((snapshot) => snapshot.data()!);
+  Future<T?> getDocument<T>(DocumentReference<T> ref) async {
+    return ref.get().then((snapshot) => snapshot.data());
   }
 }
