@@ -18,11 +18,10 @@ part 'upload.freezed.dart';
 final uploadControllerProvider =
     StateNotifierProvider.autoDispose<UploadController, UploadState, Reference>(
         (ref, storageRef) {
-  final storage = ref.watch(storageProvider);
-  return UploadController(storage!, type);
+  final service = ref.watch(storageServiceProvider);
+  return UploadController(service, storageRef);
 });
 
-/*
 final photoFileProvider =
     Provider.family.autoDispose<File?, UploadType>((ref, type) {
   final controller = ref.watch(uploadControllerProvider(type));
@@ -59,4 +58,3 @@ final uploadSuccessProvider =
     orElse: () => false,
   );
 });
-*/

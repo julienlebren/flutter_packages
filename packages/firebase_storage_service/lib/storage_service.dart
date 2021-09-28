@@ -2,22 +2,12 @@ library firebase_storage_service;
 
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:firebase_storage_service/storage_path.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final storageServiceProvider = Provider.family<StorageService, String>(
-    (ref, userId) => StorageService(userId));
+final storageServiceProvider =
+    Provider<StorageService>((ref) => StorageService());
 
 class StorageService {
-  StorageService(this.userId);
-
-  final String userId;
-
-  Reference storageRef(String path) => FirebaseStorage.instance
-      .ref()
-      .child("${StoragePath.users}/$userId")
-      .child(path);
-
   UploadTask _upload({
     required File file,
     required Reference ref,
