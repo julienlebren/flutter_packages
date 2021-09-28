@@ -12,6 +12,10 @@ class FirestoreService {
   static final instance = FirestoreService._();
   static final firestore = FirebaseFirestore.instance;
 
+  String newDocument(String path) {
+    return firestore.collection(path).doc().id;
+  }
+
   Stream<List<T>> streamDocuments<T>(Query<T> query) {
     return query.snapshots().map((snapshot) {
       return snapshot.docs.map((snapshot) => snapshot.data()).toList();
