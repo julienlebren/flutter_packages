@@ -1,7 +1,6 @@
 name: photo_upload
 description: A module to handle photo upload
-version: 0.1.0
-author: Julien LE BREN
+version: 0.1.0+1
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -12,11 +11,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   firebase_storage_service:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/firebase_storage_service
-    version: ^0.2.1
+    version: ^0.3.0
+  layout_builder:
+    git:
+      url: https://github.com/julienlebren/flutter_packages
+      path: packages/layout_builder
+    version: ^0.14.7
   firebase_storage: ^10.0.1
   flutter_riverpod: ^1.0.0-dev.5
   freezed_annotation: ^0.14.2
@@ -28,5 +34,7 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^2.0.5
   freezed: ^0.14.2
+  intl: ^0.17.0
 
 flutter:
+  generate: true

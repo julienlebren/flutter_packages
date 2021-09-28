@@ -1,0 +1,8 @@
+{
+    "cropPicture": "Crop photo",
+    "takePhoto": "Take a photo",
+    "openPhotoLibrary": "Open photo library",
+    "deletePhoto": "Delete photo",
+    "errorTitle": "Oops! Something went wrong...",
+    "errorDescription": "We are unable to handle your request at the moment."
+}

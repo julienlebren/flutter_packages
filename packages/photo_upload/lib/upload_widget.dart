@@ -1,11 +1,12 @@
 part of 'upload.dart';
-/*
+
 class UploadWidget extends ConsumerWidget {
   const UploadWidget({
     Key? key,
     this.width = 120,
     this.showDeleteButton = false,
     this.isUpdateSuccess = false,
+    required this.storageRef,
     required this.title,
     required this.onDelete,
     required this.onStart,
@@ -13,6 +14,7 @@ class UploadWidget extends ConsumerWidget {
     required this.child,
   });
 
+  final Reference storageRef;
   final String title;
   final bool isUpdateSuccess;
   final bool showDeleteButton;
@@ -23,11 +25,11 @@ class UploadWidget extends ConsumerWidget {
   final Widget child;
 
   UploadController _controller(WidgetRef ref) {
-    return ref.read(uploadControllerProvider(uploadType).notifier);
+    return ref.read(uploadControllerProvider(storageRef).notifier);
   }
 
   void _showModalSheet(BuildContext context, WidgetRef ref) {
-    final l10n = ref.read(localizationProvider);
+    //final l10n = AppLocalizations.of(context);
 
     showPlatformModalSheet(
       context: context,
@@ -35,18 +37,18 @@ class UploadWidget extends ConsumerWidget {
       title: title,
       actions: [
         PlatformModalSheetAction(
-          title: l10n.takePhoto,
+          title: "l10n.takePhoto",
           icon: Icons.photo_camera_outlined,
           onPressed: () => _openCamera(ref),
         ),
         PlatformModalSheetAction(
-          title: l10n.openPhotoLibrary,
+          title: "l10n.openPhotoLibrary",
           icon: Icons.photo_library_outlined,
           onPressed: () => _openLibrary(ref),
         ),
         if (showDeleteButton)
           PlatformModalSheetAction(
-            title: l10n.deletePhoto,
+            title: "l10n.deletePhoto",
             icon: Icons.delete_outlined,
             onPressed: () {
               onDelete.call();
@@ -76,20 +78,19 @@ class UploadWidget extends ConsumerWidget {
   }
 
   Future<void> _cropImage(WidgetRef ref, File imageFile) async {
-    final l10n = ref.read(localizationProvider);
     File? croppedFile = await ImageCropper.cropImage(
       sourcePath: imageFile.path,
       aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
       cropStyle: CropStyle.circle,
       androidUiSettings: AndroidUiSettings(
-        toolbarTitle: l10n.cropPicture,
+        toolbarTitle: "l10n.cropPicture",
         toolbarColor: Colors.black,
         toolbarWidgetColor: Colors.white,
         initAspectRatio: CropAspectRatioPreset.original,
         lockAspectRatio: false,
       ),
       iosUiSettings: IOSUiSettings(
-        title: l10n.cropPicture,
+        title: "l10n.cropPicture",
       ),
     );
     if (croppedFile != null) {
@@ -100,15 +101,20 @@ class UploadWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
-    final photoFile = ref.watch(photoFileProvider(uploadType));
-    final isUploading = ref.watch(uploadingProvider(uploadType));
-    final isUploadSuccess = ref.watch(uploadSuccessProvider(uploadType));
+    final photoFile = ref.watch(photoFileProvider(storageRef));
+    final isUploading = ref.watch(uploadingProvider(storageRef));
+    final isUploadSuccess = ref.watch(uploadSuccessProvider(storageRef));
 
-    ref.listen<UploadState>(uploadControllerProvider(uploadType), (state) {
+    ref.listen<UploadState>(uploadControllerProvider(storageRef), (state) {
       state.maybeWhen(
         startingUpload: (_) => onStart,
         success: (_, url) => onSuccess(url),
-        error: (errorText) => showFirestoreErrorDialog(context, ref),
+        error: (errorText) => showAlertDialog(
+          context,
+          ref,
+          title: "l10n.errorTitle",
+          content: "l10n.errorDescription",
+        ),
         orElse: () => null,
       );
     });
@@ -142,7 +148,7 @@ class UploadWidget extends ConsumerWidget {
                   width: width,
                   child: Consumer(builder: (context, watch, child) {
                     final progress =
-                        ref.watch(uploadProgressProvider(uploadType));
+                        ref.watch(uploadProgressProvider(storageRef));
                     return CircularProgressIndicator(
                       strokeWidth: 5,
                       valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
@@ -185,4 +191,3 @@ class UploadWidget extends ConsumerWidget {
     );
   }
 }
-*/
