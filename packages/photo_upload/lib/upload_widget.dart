@@ -33,7 +33,7 @@ class UploadWidget extends ConsumerWidget {
   }
 
   void _showModalSheet(BuildContext context, WidgetRef ref) {
-    //final l10n = AppLocalizations.of(context);
+    final l10n = ref.read(localizationProvider);
 
     showPlatformModalSheet(
       context: context,
@@ -41,18 +41,18 @@ class UploadWidget extends ConsumerWidget {
       title: title,
       actions: [
         PlatformModalSheetAction(
-          title: "l10n.takePhoto",
+          title: l10n.takePhoto,
           icon: Icons.photo_camera_outlined,
           onPressed: () => _openCamera(ref),
         ),
         PlatformModalSheetAction(
-          title: "l10n.openPhotoLibrary",
+          title: l10n.openPhotoLibrary,
           icon: Icons.photo_library_outlined,
           onPressed: () => _openLibrary(ref),
         ),
         if (showDeleteButton)
           PlatformModalSheetAction(
-            title: "l10n.deletePhoto",
+            title: l10n.deletePhoto,
             icon: Icons.delete_outlined,
             onPressed: () {
               onDelete.call();
@@ -82,19 +82,21 @@ class UploadWidget extends ConsumerWidget {
   }
 
   Future<void> _cropImage(WidgetRef ref, File imageFile) async {
+    final l10n = ref.read(localizationProvider);
+
     File? croppedFile = await ImageCropper.cropImage(
       sourcePath: imageFile.path,
       aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
       cropStyle: CropStyle.circle,
       androidUiSettings: AndroidUiSettings(
-        toolbarTitle: "l10n.cropPicture",
+        toolbarTitle: l10n.cropPicture,
         toolbarColor: Colors.black,
         toolbarWidgetColor: Colors.white,
         initAspectRatio: CropAspectRatioPreset.original,
         lockAspectRatio: false,
       ),
       iosUiSettings: IOSUiSettings(
-        title: "l10n.cropPicture",
+        title: l10n.cropPicture,
       ),
     );
     if (croppedFile != null) {
@@ -104,6 +106,7 @@ class UploadWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = AppLocalizations.of(context)!;
     final appTheme = ref.watch(appThemeProvider);
     final photoFile = ref.watch(photoFileProvider(storageRef));
     final isUploading = ref.watch(uploadingProvider(storageRef));
@@ -116,85 +119,90 @@ class UploadWidget extends ConsumerWidget {
         error: (errorText) => showAlertDialog(
           context,
           ref,
-          title: "l10n.errorTitle",
-          content: "l10n.errorDescription",
+          title: l10n.errorTitle,
+          content: l10n.errorDescription,
         ),
         orElse: () => null,
       );
     });
-    return Center(
-      child: GestureDetector(
-        child: SizedBox(
-          height: height,
-          width: width,
-          child: Stack(
-            alignment: AlignmentDirectional.bottomEnd,
-            children: [
-              ClipRRect(
-                borderRadius:
-                    BorderRadius.circular(isRounded ? width / 2 : 0.0),
-                child: SizedBox(
-                  height: height,
-                  width: width,
-                  child: photoFile != null ? Image.file(photoFile) : child,
-                ),
-              ),
-              AnimatedOpacity(
-                duration: Duration(milliseconds: 200),
-                opacity: isUploading ? 0.5 : 0,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(width / 2),
-                  child: Container(
-                    color: Colors.white,
+    return ProviderScope(
+      overrides: [
+        localizationProvider.overrideWithValue(l10n),
+      ],
+      child: Center(
+        child: GestureDetector(
+          child: SizedBox(
+            height: height,
+            width: width,
+            child: Stack(
+              alignment: AlignmentDirectional.bottomEnd,
+              children: [
+                ClipRRect(
+                  borderRadius:
+                      BorderRadius.circular(isRounded ? width / 2 : 0.0),
+                  child: SizedBox(
+                    height: height,
+                    width: width,
+                    child: photoFile != null ? Image.file(photoFile) : child,
                   ),
                 ),
-              ),
-              if (isUploading)
-                SizedBox(
-                  height: width,
-                  width: width,
-                  child: Consumer(builder: (context, watch, child) {
-                    final progress =
-                        ref.watch(uploadProgressProvider(storageRef));
-                    return CircularProgressIndicator(
-                      strokeWidth: 5,
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-                      value: progress,
-                    );
-                  }),
+                AnimatedOpacity(
+                  duration: Duration(milliseconds: 200),
+                  opacity: isUploading ? 0.5 : 0,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(width / 2),
+                    child: Container(
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
-              if (isRounded)
-                Transform(
-                  transform: Matrix4.translationValues(8.0, 0.0, 0.0),
-                  child: Stack(
-                    alignment: AlignmentDirectional.center,
-                    children: [
-                      Container(
-                        width: 36,
-                        height: 36,
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                              color: appTheme.formBackgroundColor, width: 2),
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: isUploadSuccess && isUpdateSuccess
-                              ? Colors.green
-                              : appTheme.primaryColor,
+                if (isUploading)
+                  SizedBox(
+                    height: width,
+                    width: width,
+                    child: Consumer(builder: (context, watch, child) {
+                      final progress =
+                          ref.watch(uploadProgressProvider(storageRef));
+                      return CircularProgressIndicator(
+                        strokeWidth: 5,
+                        valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                        value: progress,
+                      );
+                    }),
+                  ),
+                if (isRounded)
+                  Transform(
+                    transform: Matrix4.translationValues(8.0, 0.0, 0.0),
+                    child: Stack(
+                      alignment: AlignmentDirectional.center,
+                      children: [
+                        Container(
+                          width: 36,
+                          height: 36,
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                                color: appTheme.formBackgroundColor, width: 2),
+                            borderRadius: BorderRadius.circular(20.0),
+                            color: isUploadSuccess && isUpdateSuccess
+                                ? Colors.green
+                                : appTheme.primaryColor,
+                          ),
                         ),
-                      ),
-                      Icon(
-                        isUploadSuccess && isUpdateSuccess
-                            ? PlatformIcons.checkmark
-                            : Icons.add_a_photo,
-                        size: 20,
-                        color: Colors.white,
-                      ),
-                    ],
+                        Icon(
+                          isUploadSuccess && isUpdateSuccess
+                              ? PlatformIcons.checkmark
+                              : Icons.add_a_photo,
+                          size: 20,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-            ],
+              ],
+            ),
           ),
+          onTap: isUploading ? null : () => _showModalSheet(context, ref),
         ),
-        onTap: isUploading ? null : () => _showModalSheet(context, ref),
       ),
     );
   }

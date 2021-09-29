@@ -5,17 +5,21 @@ import 'package:firebase_storage_service/storage_service.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:layout_builder/layout_builder.dart';
+import 'package:photo_upload/upload_localizations.dart';
 
 part 'upload_state.dart';
 part 'upload_controller.dart';
 part 'upload_widget.dart';
 part 'upload.freezed.dart';
+
+final localizationProvider = Provider<AppLocalizations>((ref) {
+  throw UnimplementedError();
+});
 
 final uploadControllerProvider = StateNotifierProvider.autoDispose
     .family<UploadController, UploadState, Reference>((ref, storageRef) {
