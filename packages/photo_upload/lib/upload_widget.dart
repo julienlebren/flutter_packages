@@ -5,7 +5,7 @@ class UploadWidget extends ConsumerWidget {
     Key? key,
     this.width = 120,
     this.height = 120,
-    this.isRounded = false,
+    this.isRounded = true,
     this.showDeleteButton = false,
     this.isUpdateSuccess = false,
     required this.storageRef,
