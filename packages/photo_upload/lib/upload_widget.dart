@@ -85,7 +85,7 @@ class UploadWidget extends ConsumerWidget {
     File? croppedFile = await ImageCropper.cropImage(
       sourcePath: imageFile.path,
       aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
-      cropStyle: CropStyle.circle,
+      cropStyle: isRounded ? CropStyle.circle : CropStyle.rectangle,
       androidUiSettings: AndroidUiSettings(
         toolbarTitle: l10n.cropPicture,
         toolbarColor: Colors.black,
@@ -128,7 +128,9 @@ class UploadWidget extends ConsumerWidget {
           height: height,
           width: width,
           child: Stack(
-            alignment: AlignmentDirectional.bottomEnd,
+            alignment: isRounded
+                ? AlignmentDirectional.bottomEnd
+                : AlignmentDirectional.center,
             children: [
               ClipRRect(
                 borderRadius:
@@ -151,8 +153,8 @@ class UploadWidget extends ConsumerWidget {
               ),
               if (isUploading)
                 SizedBox(
-                  height: isRounded ? width : 30,
-                  width: isRounded ? height : 30,
+                  height: isRounded ? width : 60,
+                  width: isRounded ? height : 60,
                   child: Consumer(builder: (context, watch, child) {
                     final progress =
                         ref.watch(uploadProgressProvider(storageRef));
