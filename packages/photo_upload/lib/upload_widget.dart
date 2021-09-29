@@ -133,7 +133,11 @@ class UploadWidget extends ConsumerWidget {
               ClipRRect(
                 borderRadius:
                     BorderRadius.circular(isRounded ? width / 2 : 0.0),
-                child: photoFile != null ? Image.file(photoFile) : child,
+                child: SizedBox(
+                  height: height,
+                  width: width,
+                  child: photoFile != null ? Image.file(photoFile) : child,
+                ),
               ),
               AnimatedOpacity(
                 duration: Duration(milliseconds: 200),
@@ -159,33 +163,34 @@ class UploadWidget extends ConsumerWidget {
                     );
                   }),
                 ),
-              Transform(
-                transform: Matrix4.translationValues(8.0, 0.0, 0.0),
-                child: Stack(
-                  alignment: AlignmentDirectional.center,
-                  children: [
-                    Container(
-                      width: 36,
-                      height: 36,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                            color: appTheme.formBackgroundColor, width: 2),
-                        borderRadius: BorderRadius.circular(20.0),
-                        color: isUploadSuccess && isUpdateSuccess
-                            ? Colors.green
-                            : appTheme.primaryColor,
+              if (isRounded)
+                Transform(
+                  transform: Matrix4.translationValues(8.0, 0.0, 0.0),
+                  child: Stack(
+                    alignment: AlignmentDirectional.center,
+                    children: [
+                      Container(
+                        width: 36,
+                        height: 36,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: appTheme.formBackgroundColor, width: 2),
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: isUploadSuccess && isUpdateSuccess
+                              ? Colors.green
+                              : appTheme.primaryColor,
+                        ),
                       ),
-                    ),
-                    Icon(
-                      isUploadSuccess && isUpdateSuccess
-                          ? PlatformIcons.checkmark
-                          : Icons.add_a_photo,
-                      size: 20,
-                      color: Colors.white,
-                    ),
-                  ],
+                      Icon(
+                        isUploadSuccess && isUpdateSuccess
+                            ? PlatformIcons.checkmark
+                            : Icons.add_a_photo,
+                        size: 20,
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
             ],
           ),
         ),
