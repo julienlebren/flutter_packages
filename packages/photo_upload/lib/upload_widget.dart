@@ -33,7 +33,7 @@ class UploadWidget extends ConsumerWidget {
   }
 
   void _showModalSheet(BuildContext context, WidgetRef ref) {
-    final l10n = ref.read(localizationProvider);
+    final l10n = ref.read(uploadL10nProvider);
 
     showPlatformModalSheet(
       context: context,
@@ -82,7 +82,7 @@ class UploadWidget extends ConsumerWidget {
   }
 
   Future<void> _cropImage(WidgetRef ref, File imageFile) async {
-    final l10n = ref.read(localizationProvider);
+    final l10n = ref.read(uploadL10nProvider);
 
     File? croppedFile = await ImageCropper.cropImage(
       sourcePath: imageFile.path,
@@ -127,7 +127,7 @@ class UploadWidget extends ConsumerWidget {
     });
     return ProviderScope(
       overrides: [
-        localizationProvider.overrideWithValue(l10n),
+        uploadL10nProvider.overrideWithValue(l10n),
       ],
       child: Center(
         child: GestureDetector(

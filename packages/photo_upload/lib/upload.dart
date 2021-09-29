@@ -17,7 +17,7 @@ part 'upload_controller.dart';
 part 'upload_widget.dart';
 part 'upload.freezed.dart';
 
-final localizationProvider = Provider<AppLocalizations>((ref) {
+final uploadL10nProvider = Provider<AppLocalizations>((ref) {
   throw UnimplementedError();
 });
 
