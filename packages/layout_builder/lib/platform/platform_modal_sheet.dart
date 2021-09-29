@@ -40,7 +40,12 @@ void showPlatformModalSheet({
           child: Wrap(
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.only(
+                  top: 20,
+                  left: 20,
+                  right: 20,
+                  bottom: 30,
+                ),
                 child: Text(
                   title,
                   style: TextStyle(
