@@ -4,6 +4,8 @@ class UploadWidget extends ConsumerWidget {
   const UploadWidget({
     Key? key,
     this.width = 120,
+    this.height = 120,
+    this.isRounded = false,
     this.showDeleteButton = false,
     this.isUpdateSuccess = false,
     required this.storageRef,
@@ -19,6 +21,8 @@ class UploadWidget extends ConsumerWidget {
   final bool isUpdateSuccess;
   final bool showDeleteButton;
   final double width;
+  final double height;
+  final bool isRounded;
   final VoidCallback onDelete;
   final VoidCallback onStart;
   final Function(String url) onSuccess;
@@ -121,17 +125,16 @@ class UploadWidget extends ConsumerWidget {
     return Center(
       child: GestureDetector(
         child: SizedBox(
-          height: width,
+          height: height,
           width: width,
           child: Stack(
             alignment: AlignmentDirectional.bottomEnd,
             children: [
-              child,
-              if (photoFile != null)
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(width / 2),
-                  child: Image.file(photoFile),
-                ),
+              ClipRRect(
+                borderRadius:
+                    BorderRadius.circular(isRounded ? width / 2 : 0.0),
+                child: photoFile != null ? Image.file(photoFile) : child,
+              ),
               AnimatedOpacity(
                 duration: Duration(milliseconds: 200),
                 opacity: isUploading ? 0.5 : 0,
