@@ -12,14 +12,14 @@ class TabItem with _$TabItem {
 
 final tabsProvider = Provider<List<TabItem>>((_) => throw UnimplementedError());
 
-final _currentTabIndexProvider = StateProvider<int>((_) => 0);
+final currentTabIndexProvider = StateProvider<int>((_) => 0);
 
 class PlatformTabScaffold
     extends PlatformWidgetBase<AnnotatedRegion, CupertinoTabScaffold> {
   const PlatformTabScaffold() : super();
 
   ValueChanged<int>? onTap(int index, WidgetRef ref) {
-    ref.read(_currentTabIndexProvider).state = index;
+    ref.read(currentTabIndexProvider).state = index;
   }
 
   @override
@@ -27,7 +27,7 @@ class PlatformTabScaffold
     final systemOverlayStyle = ref.watch(systemOverlayStyleProvider);
     final appTheme = ref.watch(appThemeProvider);
     final tabs = ref.watch(tabsProvider);
-    final currentTabIndex = ref.watch(_currentTabIndexProvider).state;
+    final currentTabIndex = ref.watch(currentTabIndexProvider).state;
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: systemOverlayStyle,
@@ -74,7 +74,7 @@ class PlatformTabScaffold
   CupertinoTabScaffold createCupertinoWidget(
       BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
-    final currentTabIndex = ref.watch(_currentTabIndexProvider).state;
+    final currentTabIndex = ref.watch(currentTabIndexProvider).state;
     final tabs = ref.watch(tabsProvider);
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
