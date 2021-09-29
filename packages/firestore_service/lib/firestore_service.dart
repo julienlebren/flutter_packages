@@ -12,7 +12,7 @@ class FirestoreService {
   static final instance = FirestoreService._();
   static final firestore = FirebaseFirestore.instance;
 
-  String newDocument(String path) {
+  String newDocumentId(String path) {
     return firestore.collection(path).doc().id;
   }
 
