@@ -151,8 +151,8 @@ class UploadWidget extends ConsumerWidget {
               ),
               if (isUploading)
                 SizedBox(
-                  height: width,
-                  width: width,
+                  height: isRounded ? width : 30,
+                  width: isRounded ? height : 30,
                   child: Consumer(builder: (context, watch, child) {
                     final progress =
                         ref.watch(uploadProgressProvider(storageRef));
