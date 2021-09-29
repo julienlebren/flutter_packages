@@ -1,6 +1,6 @@
 name: photo_upload
 description: A module to handle photo upload
-version: 0.2.1
+version: 0.3.0
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -10,8 +10,6 @@ environment:
 
 dependencies:
   flutter:
-    sdk: flutter
-  flutter_localizations:
     sdk: flutter
   firebase_storage_service:
     git:
@@ -34,7 +32,3 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^2.0.5
   freezed: ^0.14.2
-  intl: ^0.17.0
-
-flutter:
-  generate: true

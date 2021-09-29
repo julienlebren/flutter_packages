@@ -1,8 +1,0 @@
-{
-  "cropPicture": "Recadrer la photo",
-  "takePhoto": "Prendre une photo",
-  "openPhotoLibrary": "Choisir parmi vos photos",
-  "deletePhoto": "Supprimer la photo",
-  "errorTitle": "Il y a eu un problème...",
-  "errorDescription": "Nous ne pouvons pas traiter votre requête pour le moment."
-}

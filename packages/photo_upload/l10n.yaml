@@ -1,3 +1,0 @@
-arb-dir: lib/l10n
-template-arb-file: upload_en.arb
-output-localization-file: ../../../lib/upload_localizations.dart

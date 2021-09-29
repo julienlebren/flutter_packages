@@ -14,6 +14,7 @@ class UploadWidget extends ConsumerWidget {
     required this.onStart,
     required this.onSuccess,
     required this.child,
+    this.l10n = const UploadLocalizations(),
   });
 
   final Reference storageRef;
@@ -27,14 +28,13 @@ class UploadWidget extends ConsumerWidget {
   final VoidCallback onStart;
   final Function(String url) onSuccess;
   final Widget child;
+  final UploadLocalizations l10n;
 
   UploadController _controller(WidgetRef ref) {
     return ref.read(uploadControllerProvider(storageRef).notifier);
   }
 
   void _showModalSheet(BuildContext context, WidgetRef ref) {
-    final l10n = ref.read(uploadL10nProvider);
-
     showPlatformModalSheet(
       context: context,
       ref: ref,
@@ -82,8 +82,6 @@ class UploadWidget extends ConsumerWidget {
   }
 
   Future<void> _cropImage(WidgetRef ref, File imageFile) async {
-    final l10n = ref.read(uploadL10nProvider);
-
     File? croppedFile = await ImageCropper.cropImage(
       sourcePath: imageFile.path,
       aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
@@ -106,7 +104,6 @@ class UploadWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = AppLocalizations.of(context)!;
     final appTheme = ref.watch(appThemeProvider);
     final photoFile = ref.watch(photoFileProvider(storageRef));
     final isUploading = ref.watch(uploadingProvider(storageRef));
@@ -125,84 +122,79 @@ class UploadWidget extends ConsumerWidget {
         orElse: () => null,
       );
     });
-    return ProviderScope(
-      overrides: [
-        uploadL10nProvider.overrideWithValue(l10n),
-      ],
-      child: Center(
-        child: GestureDetector(
-          child: SizedBox(
-            height: height,
-            width: width,
-            child: Stack(
-              alignment: AlignmentDirectional.bottomEnd,
-              children: [
-                ClipRRect(
-                  borderRadius:
-                      BorderRadius.circular(isRounded ? width / 2 : 0.0),
-                  child: SizedBox(
-                    height: height,
-                    width: width,
-                    child: photoFile != null ? Image.file(photoFile) : child,
+    return Center(
+      child: GestureDetector(
+        child: SizedBox(
+          height: height,
+          width: width,
+          child: Stack(
+            alignment: AlignmentDirectional.bottomEnd,
+            children: [
+              ClipRRect(
+                borderRadius:
+                    BorderRadius.circular(isRounded ? width / 2 : 0.0),
+                child: SizedBox(
+                  height: height,
+                  width: width,
+                  child: photoFile != null ? Image.file(photoFile) : child,
+                ),
+              ),
+              AnimatedOpacity(
+                duration: Duration(milliseconds: 200),
+                opacity: isUploading ? 0.5 : 0,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(width / 2),
+                  child: Container(
+                    color: Colors.white,
                   ),
                 ),
-                AnimatedOpacity(
-                  duration: Duration(milliseconds: 200),
-                  opacity: isUploading ? 0.5 : 0,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(width / 2),
-                    child: Container(
-                      color: Colors.white,
-                    ),
+              ),
+              if (isUploading)
+                SizedBox(
+                  height: width,
+                  width: width,
+                  child: Consumer(builder: (context, watch, child) {
+                    final progress =
+                        ref.watch(uploadProgressProvider(storageRef));
+                    return CircularProgressIndicator(
+                      strokeWidth: 5,
+                      valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                      value: progress,
+                    );
+                  }),
+                ),
+              if (isRounded)
+                Transform(
+                  transform: Matrix4.translationValues(8.0, 0.0, 0.0),
+                  child: Stack(
+                    alignment: AlignmentDirectional.center,
+                    children: [
+                      Container(
+                        width: 36,
+                        height: 36,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: appTheme.formBackgroundColor, width: 2),
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: isUploadSuccess && isUpdateSuccess
+                              ? Colors.green
+                              : appTheme.primaryColor,
+                        ),
+                      ),
+                      Icon(
+                        isUploadSuccess && isUpdateSuccess
+                            ? PlatformIcons.checkmark
+                            : Icons.add_a_photo,
+                        size: 20,
+                        color: Colors.white,
+                      ),
+                    ],
                   ),
                 ),
-                if (isUploading)
-                  SizedBox(
-                    height: width,
-                    width: width,
-                    child: Consumer(builder: (context, watch, child) {
-                      final progress =
-                          ref.watch(uploadProgressProvider(storageRef));
-                      return CircularProgressIndicator(
-                        strokeWidth: 5,
-                        valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
-                        value: progress,
-                      );
-                    }),
-                  ),
-                if (isRounded)
-                  Transform(
-                    transform: Matrix4.translationValues(8.0, 0.0, 0.0),
-                    child: Stack(
-                      alignment: AlignmentDirectional.center,
-                      children: [
-                        Container(
-                          width: 36,
-                          height: 36,
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                                color: appTheme.formBackgroundColor, width: 2),
-                            borderRadius: BorderRadius.circular(20.0),
-                            color: isUploadSuccess && isUpdateSuccess
-                                ? Colors.green
-                                : appTheme.primaryColor,
-                          ),
-                        ),
-                        Icon(
-                          isUploadSuccess && isUpdateSuccess
-                              ? PlatformIcons.checkmark
-                              : Icons.add_a_photo,
-                          size: 20,
-                          color: Colors.white,
-                        ),
-                      ],
-                    ),
-                  ),
-              ],
-            ),
+            ],
           ),
-          onTap: isUploading ? null : () => _showModalSheet(context, ref),
         ),
+        onTap: isUploading ? null : () => _showModalSheet(context, ref),
       ),
     );
   }

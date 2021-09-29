@@ -10,16 +10,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:layout_builder/layout_builder.dart';
-import 'package:photo_upload/upload_localizations.dart';
 
 part 'upload_state.dart';
 part 'upload_controller.dart';
 part 'upload_widget.dart';
 part 'upload.freezed.dart';
-
-final uploadL10nProvider = Provider<AppLocalizations>((ref) {
-  throw UnimplementedError();
-});
 
 final uploadControllerProvider = StateNotifierProvider.autoDispose
     .family<UploadController, UploadState, Reference>((ref, storageRef) {
@@ -63,3 +58,16 @@ final uploadSuccessProvider =
     orElse: () => false,
   );
 });
+
+@freezed
+class UploadLocalizations with _$UploadLocalizations {
+  const factory UploadLocalizations({
+    @Default("Crop photo") String cropPicture,
+    @Default("Take a photo") String takePhoto,
+    @Default("Open photo library") String openPhotoLibrary,
+    @Default("Delete photo") String deletePhoto,
+    @Default("Oops! Something went wrong...") String errorTitle,
+    @Default("We are unable to handle your request at the moment.")
+        String errorDescription,
+  }) = _UploadLocalizations;
+}

@@ -13,6 +13,276 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
+class _$UploadLocalizationsTearOff {
+  const _$UploadLocalizationsTearOff();
+
+  _UploadLocalizations call(
+      {String cropPicture = "Crop photo",
+      String takePhoto = "Take a photo",
+      String openPhotoLibrary = "Open photo library",
+      String deletePhoto = "Delete photo",
+      String errorTitle = "Oops! Something went wrong...",
+      String errorDescription =
+          "We are unable to handle your request at the moment."}) {
+    return _UploadLocalizations(
+      cropPicture: cropPicture,
+      takePhoto: takePhoto,
+      openPhotoLibrary: openPhotoLibrary,
+      deletePhoto: deletePhoto,
+      errorTitle: errorTitle,
+      errorDescription: errorDescription,
+    );
+  }
+}
+
+/// @nodoc
+const $UploadLocalizations = _$UploadLocalizationsTearOff();
+
+/// @nodoc
+mixin _$UploadLocalizations {
+  String get cropPicture => throw _privateConstructorUsedError;
+  String get takePhoto => throw _privateConstructorUsedError;
+  String get openPhotoLibrary => throw _privateConstructorUsedError;
+  String get deletePhoto => throw _privateConstructorUsedError;
+  String get errorTitle => throw _privateConstructorUsedError;
+  String get errorDescription => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $UploadLocalizationsCopyWith<UploadLocalizations> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UploadLocalizationsCopyWith<$Res> {
+  factory $UploadLocalizationsCopyWith(
+          UploadLocalizations value, $Res Function(UploadLocalizations) then) =
+      _$UploadLocalizationsCopyWithImpl<$Res>;
+  $Res call(
+      {String cropPicture,
+      String takePhoto,
+      String openPhotoLibrary,
+      String deletePhoto,
+      String errorTitle,
+      String errorDescription});
+}
+
+/// @nodoc
+class _$UploadLocalizationsCopyWithImpl<$Res>
+    implements $UploadLocalizationsCopyWith<$Res> {
+  _$UploadLocalizationsCopyWithImpl(this._value, this._then);
+
+  final UploadLocalizations _value;
+  // ignore: unused_field
+  final $Res Function(UploadLocalizations) _then;
+
+  @override
+  $Res call({
+    Object? cropPicture = freezed,
+    Object? takePhoto = freezed,
+    Object? openPhotoLibrary = freezed,
+    Object? deletePhoto = freezed,
+    Object? errorTitle = freezed,
+    Object? errorDescription = freezed,
+  }) {
+    return _then(_value.copyWith(
+      cropPicture: cropPicture == freezed
+          ? _value.cropPicture
+          : cropPicture // ignore: cast_nullable_to_non_nullable
+              as String,
+      takePhoto: takePhoto == freezed
+          ? _value.takePhoto
+          : takePhoto // ignore: cast_nullable_to_non_nullable
+              as String,
+      openPhotoLibrary: openPhotoLibrary == freezed
+          ? _value.openPhotoLibrary
+          : openPhotoLibrary // ignore: cast_nullable_to_non_nullable
+              as String,
+      deletePhoto: deletePhoto == freezed
+          ? _value.deletePhoto
+          : deletePhoto // ignore: cast_nullable_to_non_nullable
+              as String,
+      errorTitle: errorTitle == freezed
+          ? _value.errorTitle
+          : errorTitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      errorDescription: errorDescription == freezed
+          ? _value.errorDescription
+          : errorDescription // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$UploadLocalizationsCopyWith<$Res>
+    implements $UploadLocalizationsCopyWith<$Res> {
+  factory _$UploadLocalizationsCopyWith(_UploadLocalizations value,
+          $Res Function(_UploadLocalizations) then) =
+      __$UploadLocalizationsCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String cropPicture,
+      String takePhoto,
+      String openPhotoLibrary,
+      String deletePhoto,
+      String errorTitle,
+      String errorDescription});
+}
+
+/// @nodoc
+class __$UploadLocalizationsCopyWithImpl<$Res>
+    extends _$UploadLocalizationsCopyWithImpl<$Res>
+    implements _$UploadLocalizationsCopyWith<$Res> {
+  __$UploadLocalizationsCopyWithImpl(
+      _UploadLocalizations _value, $Res Function(_UploadLocalizations) _then)
+      : super(_value, (v) => _then(v as _UploadLocalizations));
+
+  @override
+  _UploadLocalizations get _value => super._value as _UploadLocalizations;
+
+  @override
+  $Res call({
+    Object? cropPicture = freezed,
+    Object? takePhoto = freezed,
+    Object? openPhotoLibrary = freezed,
+    Object? deletePhoto = freezed,
+    Object? errorTitle = freezed,
+    Object? errorDescription = freezed,
+  }) {
+    return _then(_UploadLocalizations(
+      cropPicture: cropPicture == freezed
+          ? _value.cropPicture
+          : cropPicture // ignore: cast_nullable_to_non_nullable
+              as String,
+      takePhoto: takePhoto == freezed
+          ? _value.takePhoto
+          : takePhoto // ignore: cast_nullable_to_non_nullable
+              as String,
+      openPhotoLibrary: openPhotoLibrary == freezed
+          ? _value.openPhotoLibrary
+          : openPhotoLibrary // ignore: cast_nullable_to_non_nullable
+              as String,
+      deletePhoto: deletePhoto == freezed
+          ? _value.deletePhoto
+          : deletePhoto // ignore: cast_nullable_to_non_nullable
+              as String,
+      errorTitle: errorTitle == freezed
+          ? _value.errorTitle
+          : errorTitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      errorDescription: errorDescription == freezed
+          ? _value.errorDescription
+          : errorDescription // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_UploadLocalizations implements _UploadLocalizations {
+  const _$_UploadLocalizations(
+      {this.cropPicture = "Crop photo",
+      this.takePhoto = "Take a photo",
+      this.openPhotoLibrary = "Open photo library",
+      this.deletePhoto = "Delete photo",
+      this.errorTitle = "Oops! Something went wrong...",
+      this.errorDescription =
+          "We are unable to handle your request at the moment."});
+
+  @JsonKey(defaultValue: "Crop photo")
+  @override
+  final String cropPicture;
+  @JsonKey(defaultValue: "Take a photo")
+  @override
+  final String takePhoto;
+  @JsonKey(defaultValue: "Open photo library")
+  @override
+  final String openPhotoLibrary;
+  @JsonKey(defaultValue: "Delete photo")
+  @override
+  final String deletePhoto;
+  @JsonKey(defaultValue: "Oops! Something went wrong...")
+  @override
+  final String errorTitle;
+  @JsonKey(defaultValue: "We are unable to handle your request at the moment.")
+  @override
+  final String errorDescription;
+
+  @override
+  String toString() {
+    return 'UploadLocalizations(cropPicture: $cropPicture, takePhoto: $takePhoto, openPhotoLibrary: $openPhotoLibrary, deletePhoto: $deletePhoto, errorTitle: $errorTitle, errorDescription: $errorDescription)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _UploadLocalizations &&
+            (identical(other.cropPicture, cropPicture) ||
+                const DeepCollectionEquality()
+                    .equals(other.cropPicture, cropPicture)) &&
+            (identical(other.takePhoto, takePhoto) ||
+                const DeepCollectionEquality()
+                    .equals(other.takePhoto, takePhoto)) &&
+            (identical(other.openPhotoLibrary, openPhotoLibrary) ||
+                const DeepCollectionEquality()
+                    .equals(other.openPhotoLibrary, openPhotoLibrary)) &&
+            (identical(other.deletePhoto, deletePhoto) ||
+                const DeepCollectionEquality()
+                    .equals(other.deletePhoto, deletePhoto)) &&
+            (identical(other.errorTitle, errorTitle) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorTitle, errorTitle)) &&
+            (identical(other.errorDescription, errorDescription) ||
+                const DeepCollectionEquality()
+                    .equals(other.errorDescription, errorDescription)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(cropPicture) ^
+      const DeepCollectionEquality().hash(takePhoto) ^
+      const DeepCollectionEquality().hash(openPhotoLibrary) ^
+      const DeepCollectionEquality().hash(deletePhoto) ^
+      const DeepCollectionEquality().hash(errorTitle) ^
+      const DeepCollectionEquality().hash(errorDescription);
+
+  @JsonKey(ignore: true)
+  @override
+  _$UploadLocalizationsCopyWith<_UploadLocalizations> get copyWith =>
+      __$UploadLocalizationsCopyWithImpl<_UploadLocalizations>(
+          this, _$identity);
+}
+
+abstract class _UploadLocalizations implements UploadLocalizations {
+  const factory _UploadLocalizations(
+      {String cropPicture,
+      String takePhoto,
+      String openPhotoLibrary,
+      String deletePhoto,
+      String errorTitle,
+      String errorDescription}) = _$_UploadLocalizations;
+
+  @override
+  String get cropPicture => throw _privateConstructorUsedError;
+  @override
+  String get takePhoto => throw _privateConstructorUsedError;
+  @override
+  String get openPhotoLibrary => throw _privateConstructorUsedError;
+  @override
+  String get deletePhoto => throw _privateConstructorUsedError;
+  @override
+  String get errorTitle => throw _privateConstructorUsedError;
+  @override
+  String get errorDescription => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$UploadLocalizationsCopyWith<_UploadLocalizations> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$UploadStateTearOff {
   const _$UploadStateTearOff();
 
