@@ -16,7 +16,7 @@ class FirestoreService {
     return firestore.collection(path).doc().id;
   }
 
-  WriteBatch batch = firestore.batch();
+  WriteBatch batch() => firestore.batch();
 
   Stream<List<T>> streamDocuments<T>(Query<T> query) {
     return query.snapshots().map((snapshot) {
