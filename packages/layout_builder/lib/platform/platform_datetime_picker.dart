@@ -1,5 +1,26 @@
 part of platform;
 
+void showPlatformDatePicker(
+  BuildContext context,
+  WidgetRef ref, {
+  required DateTime initialDate,
+  required DateTime firstDate,
+  required DateTime lastDate,
+  required Function(DateTime newDate) onChanged,
+}) async {
+  if (isMaterial()) {
+    final date = await showDatePicker(
+      context: context,
+      initialDate: initialDate,
+      firstDate: firstDate,
+      lastDate: lastDate,
+    );
+    if (date != null) {
+      onChanged(date);
+    }
+  } else {}
+}
+
 void showPlatformTimePicker(
   BuildContext context,
   WidgetRef ref, {
