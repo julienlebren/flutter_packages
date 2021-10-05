@@ -51,7 +51,7 @@ void showPlatformModalSheet({
                 ),
               ),
               for (Widget widget in actions) widget,
-              Container(height: 40, color: Colors.red),
+              Container(height: 20),
             ],
           ),
         );
