@@ -50,7 +50,7 @@ void showPlatformModalSheet({
                 ),
               ),
               for (Widget widget in actions) widget,
-              SizedBox(height: 10),
+              SizedBox(height: 40),
             ],
           ),
         );
