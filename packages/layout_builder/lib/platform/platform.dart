@@ -9,6 +9,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layout_builder/form/form.dart';
 import 'package:layout_builder/theme/theme.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:numberpicker/numberpicker.dart';
 
 part 'platform_alert_dialog.dart';
 part 'platform_app.dart';
@@ -23,6 +24,7 @@ part 'platform_modal_sheet.dart';
 part 'platform_multi_picker.dart';
 part 'platform_navigation_bar_button.dart';
 part 'platform_navigation_bar.dart';
+part 'platform_number_picker.dart';
 part 'platform_page.dart';
 part 'platform_popup_menu.dart';
 part 'platform_route.dart';
