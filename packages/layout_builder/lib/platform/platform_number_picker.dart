@@ -7,7 +7,6 @@ showPlatformNumberPicker<T>(
   required int minValue,
   required int maxValue,
   required int selectedValue,
-  required Widget Function(T) itemBuilder,
   required Function(int) onChanged,
 }) {
   if (isMaterial()) {
