@@ -1,6 +1,6 @@
 part of platform;
 
-showPlatformNumberPicker<T>(
+showPlatformNumberPicker(
   BuildContext context,
   WidgetRef ref, {
   required String title,
