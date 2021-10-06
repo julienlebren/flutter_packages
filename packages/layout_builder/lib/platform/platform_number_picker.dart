@@ -19,8 +19,8 @@ showPlatformNumberPicker(
           title: Text(title),
           content: NumberPicker(
             value: selectedValue,
-            minValue: 0,
-            maxValue: 100,
+            minValue: minValue,
+            maxValue: maxValue,
             onChanged: (value) {
               ref.read(valueProvider).state = value;
             },
