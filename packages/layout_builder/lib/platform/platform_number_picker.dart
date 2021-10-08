@@ -37,7 +37,11 @@ showPlatformNumberPicker(
               buttonText: MaterialLocalizations.of(context)
                   .saveButtonLabel
                   .toUpperCase(),
-              onPressed: () => onChanged(ref.read(valueProvider).state),
+              onPressed: () {
+                print("value is ${ref.read(valueProvider).state}");
+                onChanged(ref.read(valueProvider).state);
+                Navigator.of(context).pop();
+              },
               isDefaultAction: true,
             ),
           ],
