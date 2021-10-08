@@ -19,16 +19,7 @@ showPlatformNumberPicker(
       builder: (context) {
         return AlertDialog(
           title: Text(title),
-          content: _MaterialNumberPicker(),
-          /*NumberPicker(
-            value: ref.watch(valueProvider).state,
-            minValue: minValue,
-            maxValue: maxValue,
-            onChanged: (value) {
-              print("new value is $value");
-              ref.read(valueProvider).state = value;
-            },
-          ),*/
+          content: _MaterialNumberPicker(initialValue: selectedValue),
           actions: <Widget>[
             PlatformDialogAction(
               buttonText: MaterialLocalizations.of(context)
@@ -55,22 +46,32 @@ showPlatformNumberPicker(
 }
 
 class _MaterialNumberPicker extends ConsumerStatefulWidget {
+  const _MaterialNumberPicker({
+    Key? key,
+    required this.initialValue,
+  }) : super(key: key);
+
+  final int initialValue;
+
   @override
-  _MaterialNumberPickerState createState() => _MaterialNumberPickerState();
+  _MaterialNumberPickerState createState() =>
+      _MaterialNumberPickerState(initialValue);
 }
 
 class _MaterialNumberPickerState extends ConsumerState<_MaterialNumberPicker> {
-  //int _currentValue = 3;
+  _MaterialNumberPickerState(this._currentValue);
+
+  int _currentValue = 3;
 
   @override
   Widget build(BuildContext context) {
     return NumberPicker(
-      value: ref.read(valueProvider).state,
+      value: _currentValue,
       minValue: 0,
       maxValue: 100,
       onChanged: (value) {
         ref.read(valueProvider).state = value;
-        //setState(() => _currentValue = value);
+        setState(() => _currentValue = value);
       },
     );
   }
