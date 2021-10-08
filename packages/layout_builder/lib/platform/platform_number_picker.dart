@@ -8,7 +8,7 @@ showPlatformNumberPicker(
   required int maxValue,
   required int selectedValue,
   required Function(int) onChanged,
-}) {
+}) async {
   final valueProvider = StateProvider<int>((_) => selectedValue);
 
   if (isMaterial()) {
@@ -18,7 +18,7 @@ showPlatformNumberPicker(
         return AlertDialog(
           title: Text(title),
           content: NumberPicker(
-            value: selectedValue,
+            value: ref.watch(valueProvider).state,
             minValue: minValue,
             maxValue: maxValue,
             onChanged: (value) {
