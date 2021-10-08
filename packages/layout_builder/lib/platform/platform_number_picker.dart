@@ -22,6 +22,7 @@ showPlatformNumberPicker(
             minValue: minValue,
             maxValue: maxValue,
             onChanged: (value) {
+              print("new value is $value");
               ref.read(valueProvider).state = value;
             },
           ),
