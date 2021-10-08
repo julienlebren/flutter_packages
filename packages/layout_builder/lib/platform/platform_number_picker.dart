@@ -1,5 +1,7 @@
 part of platform;
 
+final valueProvider = StateProvider<int>((_) => 0);
+
 showPlatformNumberPicker(
   BuildContext context,
   WidgetRef ref, {
@@ -9,7 +11,7 @@ showPlatformNumberPicker(
   required int selectedValue,
   required Function(int) onChanged,
 }) async {
-  final valueProvider = StateProvider<int>((_) => selectedValue);
+  ref.read(valueProvider).state = selectedValue;
 
   if (isMaterial()) {
     showDialog(
@@ -17,7 +19,16 @@ showPlatformNumberPicker(
       builder: (context) {
         return AlertDialog(
           title: Text(title),
-          content: _IntegerExample(),
+          content: _MaterialNumberPicker(),
+          /*NumberPicker(
+            value: ref.watch(valueProvider).state,
+            minValue: minValue,
+            maxValue: maxValue,
+            onChanged: (value) {
+              print("new value is $value");
+              ref.read(valueProvider).state = value;
+            },
+          ),*/
           actions: <Widget>[
             PlatformDialogAction(
               buttonText: MaterialLocalizations.of(context)
@@ -43,12 +54,12 @@ showPlatformNumberPicker(
   } else {}
 }
 
-class _IntegerExample extends StatefulWidget {
+class _MaterialNumberPicker extends ConsumerStatefulWidget {
   @override
-  __IntegerExampleState createState() => __IntegerExampleState();
+  _MaterialNumberPickerState createState() => _MaterialNumberPickerState();
 }
 
-class __IntegerExampleState extends State<_IntegerExample> {
+class _MaterialNumberPickerState extends ConsumerState<_MaterialNumberPicker> {
   int _currentValue = 3;
 
   @override
@@ -59,9 +70,11 @@ class __IntegerExampleState extends State<_IntegerExample> {
           value: _currentValue,
           minValue: 0,
           maxValue: 100,
-          onChanged: (value) => setState(() => _currentValue = value),
+          onChanged: (value) {
+            ref.read(valueProvider).state = value;
+            setState(() => _currentValue = value);
+          },
         ),
-        Text('Current value: $_currentValue'),
       ],
     );
   }
