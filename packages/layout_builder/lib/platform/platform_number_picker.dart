@@ -17,15 +17,7 @@ showPlatformNumberPicker(
       builder: (context) {
         return AlertDialog(
           title: Text(title),
-          content: NumberPicker(
-            value: ref.watch(valueProvider).state,
-            minValue: minValue,
-            maxValue: maxValue,
-            onChanged: (value) {
-              print("new value is $value");
-              ref.read(valueProvider).state = value;
-            },
-          ),
+          content: _IntegerExample(),
           actions: <Widget>[
             PlatformDialogAction(
               buttonText: MaterialLocalizations.of(context)
@@ -49,4 +41,28 @@ showPlatformNumberPicker(
       },
     );
   } else {}
+}
+
+class _IntegerExample extends StatefulWidget {
+  @override
+  __IntegerExampleState createState() => __IntegerExampleState();
+}
+
+class __IntegerExampleState extends State<_IntegerExample> {
+  int _currentValue = 3;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        NumberPicker(
+          value: _currentValue,
+          minValue: 0,
+          maxValue: 100,
+          onChanged: (value) => setState(() => _currentValue = value),
+        ),
+        Text('Current value: $_currentValue'),
+      ],
+    );
+  }
 }
