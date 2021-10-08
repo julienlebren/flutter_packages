@@ -60,22 +60,18 @@ class _MaterialNumberPicker extends ConsumerStatefulWidget {
 }
 
 class _MaterialNumberPickerState extends ConsumerState<_MaterialNumberPicker> {
-  int _currentValue = 3;
+  //int _currentValue = 3;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        NumberPicker(
-          value: _currentValue,
-          minValue: 0,
-          maxValue: 100,
-          onChanged: (value) {
-            ref.read(valueProvider).state = value;
-            setState(() => _currentValue = value);
-          },
-        ),
-      ],
+    return NumberPicker(
+      value: ref.read(valueProvider).state,
+      minValue: 0,
+      maxValue: 100,
+      onChanged: (value) {
+        ref.read(valueProvider).state = value;
+        //setState(() => _currentValue = value);
+      },
     );
   }
 }
