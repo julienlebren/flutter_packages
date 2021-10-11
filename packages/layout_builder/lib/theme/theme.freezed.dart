@@ -1008,13 +1008,13 @@ class _$ThemeLocalizationsTearOff {
   const _$ThemeLocalizationsTearOff();
 
   _ThemeLocalizations call(
-      {String darkTheme = "Dark",
-      String lightTheme = "Light",
-      String systemTheme = "System"}) {
+      {String dark = "Dark",
+      String light = "Light",
+      String system = "System"}) {
     return _ThemeLocalizations(
-      darkTheme: darkTheme,
-      lightTheme: lightTheme,
-      systemTheme: systemTheme,
+      dark: dark,
+      light: light,
+      system: system,
     );
   }
 }
@@ -1024,9 +1024,9 @@ const $ThemeLocalizations = _$ThemeLocalizationsTearOff();
 
 /// @nodoc
 mixin _$ThemeLocalizations {
-  String get darkTheme => throw _privateConstructorUsedError;
-  String get lightTheme => throw _privateConstructorUsedError;
-  String get systemTheme => throw _privateConstructorUsedError;
+  String get dark => throw _privateConstructorUsedError;
+  String get light => throw _privateConstructorUsedError;
+  String get system => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ThemeLocalizationsCopyWith<ThemeLocalizations> get copyWith =>
@@ -1038,7 +1038,7 @@ abstract class $ThemeLocalizationsCopyWith<$Res> {
   factory $ThemeLocalizationsCopyWith(
           ThemeLocalizations value, $Res Function(ThemeLocalizations) then) =
       _$ThemeLocalizationsCopyWithImpl<$Res>;
-  $Res call({String darkTheme, String lightTheme, String systemTheme});
+  $Res call({String dark, String light, String system});
 }
 
 /// @nodoc
@@ -1052,22 +1052,22 @@ class _$ThemeLocalizationsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? darkTheme = freezed,
-    Object? lightTheme = freezed,
-    Object? systemTheme = freezed,
+    Object? dark = freezed,
+    Object? light = freezed,
+    Object? system = freezed,
   }) {
     return _then(_value.copyWith(
-      darkTheme: darkTheme == freezed
-          ? _value.darkTheme
-          : darkTheme // ignore: cast_nullable_to_non_nullable
+      dark: dark == freezed
+          ? _value.dark
+          : dark // ignore: cast_nullable_to_non_nullable
               as String,
-      lightTheme: lightTheme == freezed
-          ? _value.lightTheme
-          : lightTheme // ignore: cast_nullable_to_non_nullable
+      light: light == freezed
+          ? _value.light
+          : light // ignore: cast_nullable_to_non_nullable
               as String,
-      systemTheme: systemTheme == freezed
-          ? _value.systemTheme
-          : systemTheme // ignore: cast_nullable_to_non_nullable
+      system: system == freezed
+          ? _value.system
+          : system // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -1080,7 +1080,7 @@ abstract class _$ThemeLocalizationsCopyWith<$Res>
           _ThemeLocalizations value, $Res Function(_ThemeLocalizations) then) =
       __$ThemeLocalizationsCopyWithImpl<$Res>;
   @override
-  $Res call({String darkTheme, String lightTheme, String systemTheme});
+  $Res call({String dark, String light, String system});
 }
 
 /// @nodoc
@@ -1096,22 +1096,22 @@ class __$ThemeLocalizationsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? darkTheme = freezed,
-    Object? lightTheme = freezed,
-    Object? systemTheme = freezed,
+    Object? dark = freezed,
+    Object? light = freezed,
+    Object? system = freezed,
   }) {
     return _then(_ThemeLocalizations(
-      darkTheme: darkTheme == freezed
-          ? _value.darkTheme
-          : darkTheme // ignore: cast_nullable_to_non_nullable
+      dark: dark == freezed
+          ? _value.dark
+          : dark // ignore: cast_nullable_to_non_nullable
               as String,
-      lightTheme: lightTheme == freezed
-          ? _value.lightTheme
-          : lightTheme // ignore: cast_nullable_to_non_nullable
+      light: light == freezed
+          ? _value.light
+          : light // ignore: cast_nullable_to_non_nullable
               as String,
-      systemTheme: systemTheme == freezed
-          ? _value.systemTheme
-          : systemTheme // ignore: cast_nullable_to_non_nullable
+      system: system == freezed
+          ? _value.system
+          : system // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -1121,46 +1121,41 @@ class __$ThemeLocalizationsCopyWithImpl<$Res>
 
 class _$_ThemeLocalizations implements _ThemeLocalizations {
   const _$_ThemeLocalizations(
-      {this.darkTheme = "Dark",
-      this.lightTheme = "Light",
-      this.systemTheme = "System"});
+      {this.dark = "Dark", this.light = "Light", this.system = "System"});
 
   @JsonKey(defaultValue: "Dark")
   @override
-  final String darkTheme;
+  final String dark;
   @JsonKey(defaultValue: "Light")
   @override
-  final String lightTheme;
+  final String light;
   @JsonKey(defaultValue: "System")
   @override
-  final String systemTheme;
+  final String system;
 
   @override
   String toString() {
-    return 'ThemeLocalizations(darkTheme: $darkTheme, lightTheme: $lightTheme, systemTheme: $systemTheme)';
+    return 'ThemeLocalizations(dark: $dark, light: $light, system: $system)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ThemeLocalizations &&
-            (identical(other.darkTheme, darkTheme) ||
-                const DeepCollectionEquality()
-                    .equals(other.darkTheme, darkTheme)) &&
-            (identical(other.lightTheme, lightTheme) ||
-                const DeepCollectionEquality()
-                    .equals(other.lightTheme, lightTheme)) &&
-            (identical(other.systemTheme, systemTheme) ||
-                const DeepCollectionEquality()
-                    .equals(other.systemTheme, systemTheme)));
+            (identical(other.dark, dark) ||
+                const DeepCollectionEquality().equals(other.dark, dark)) &&
+            (identical(other.light, light) ||
+                const DeepCollectionEquality().equals(other.light, light)) &&
+            (identical(other.system, system) ||
+                const DeepCollectionEquality().equals(other.system, system)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(darkTheme) ^
-      const DeepCollectionEquality().hash(lightTheme) ^
-      const DeepCollectionEquality().hash(systemTheme);
+      const DeepCollectionEquality().hash(dark) ^
+      const DeepCollectionEquality().hash(light) ^
+      const DeepCollectionEquality().hash(system);
 
   @JsonKey(ignore: true)
   @override
@@ -1170,16 +1165,14 @@ class _$_ThemeLocalizations implements _ThemeLocalizations {
 
 abstract class _ThemeLocalizations implements ThemeLocalizations {
   const factory _ThemeLocalizations(
-      {String darkTheme,
-      String lightTheme,
-      String systemTheme}) = _$_ThemeLocalizations;
+      {String dark, String light, String system}) = _$_ThemeLocalizations;
 
   @override
-  String get darkTheme => throw _privateConstructorUsedError;
+  String get dark => throw _privateConstructorUsedError;
   @override
-  String get lightTheme => throw _privateConstructorUsedError;
+  String get light => throw _privateConstructorUsedError;
   @override
-  String get systemTheme => throw _privateConstructorUsedError;
+  String get system => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ThemeLocalizationsCopyWith<_ThemeLocalizations> get copyWith =>

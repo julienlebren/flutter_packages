@@ -42,11 +42,11 @@ extension ThemeDescription on ThemeType {
   String description(ThemeLocalizations l10n) {
     switch (this) {
       case ThemeType.dark:
-        return l10n.darkTheme;
+        return l10n.dark;
       case ThemeType.light:
-        return l10n.lightTheme;
+        return l10n.light;
       default:
-        return l10n.systemTheme;
+        return l10n.system;
     }
   }
 }
@@ -54,8 +54,8 @@ extension ThemeDescription on ThemeType {
 @freezed
 class ThemeLocalizations with _$ThemeLocalizations {
   const factory ThemeLocalizations({
-    @Default("Dark") String darkTheme,
-    @Default("Light") String lightTheme,
-    @Default("System") String systemTheme,
+    @Default("Dark") String dark,
+    @Default("Light") String light,
+    @Default("System") String system,
   }) = _ThemeLocalizations;
 }
