@@ -37,3 +37,25 @@ extension ThemeBrightness on ThemeType {
     }
   }
 }
+
+extension ThemeDescription on ThemeType {
+  String description(ThemeLocalizations l10n) {
+    switch (this) {
+      case ThemeType.dark:
+        return l10n.darkTheme;
+      case ThemeType.light:
+        return l10n.lightTheme;
+      default:
+        return l10n.systemTheme;
+    }
+  }
+}
+
+@freezed
+class ThemeLocalizations with _$ThemeLocalizations {
+  const factory ThemeLocalizations({
+    @Default("Dark") String darkTheme,
+    @Default("Light") String lightTheme,
+    @Default("System") String systemTheme,
+  }) = _ThemeLocalizations;
+}
