@@ -17,10 +17,14 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$LanguageTearOff {
   const _$LanguageTearOff();
 
-  _Language call({required String identifier, required String name}) {
+  _Language call(
+      {required String identifier,
+      required String name,
+      bool isDefault = false}) {
     return _Language(
       identifier: identifier,
       name: name,
+      isDefault: isDefault,
     );
   }
 }
@@ -32,6 +36,7 @@ const $Language = _$LanguageTearOff();
 mixin _$Language {
   String get identifier => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  bool get isDefault => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $LanguageCopyWith<Language> get copyWith =>
@@ -42,7 +47,7 @@ mixin _$Language {
 abstract class $LanguageCopyWith<$Res> {
   factory $LanguageCopyWith(Language value, $Res Function(Language) then) =
       _$LanguageCopyWithImpl<$Res>;
-  $Res call({String identifier, String name});
+  $Res call({String identifier, String name, bool isDefault});
 }
 
 /// @nodoc
@@ -57,6 +62,7 @@ class _$LanguageCopyWithImpl<$Res> implements $LanguageCopyWith<$Res> {
   $Res call({
     Object? identifier = freezed,
     Object? name = freezed,
+    Object? isDefault = freezed,
   }) {
     return _then(_value.copyWith(
       identifier: identifier == freezed
@@ -67,6 +73,10 @@ class _$LanguageCopyWithImpl<$Res> implements $LanguageCopyWith<$Res> {
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      isDefault: isDefault == freezed
+          ? _value.isDefault
+          : isDefault // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -76,7 +86,7 @@ abstract class _$LanguageCopyWith<$Res> implements $LanguageCopyWith<$Res> {
   factory _$LanguageCopyWith(_Language value, $Res Function(_Language) then) =
       __$LanguageCopyWithImpl<$Res>;
   @override
-  $Res call({String identifier, String name});
+  $Res call({String identifier, String name, bool isDefault});
 }
 
 /// @nodoc
@@ -92,6 +102,7 @@ class __$LanguageCopyWithImpl<$Res> extends _$LanguageCopyWithImpl<$Res>
   $Res call({
     Object? identifier = freezed,
     Object? name = freezed,
+    Object? isDefault = freezed,
   }) {
     return _then(_Language(
       identifier: identifier == freezed
@@ -102,6 +113,10 @@ class __$LanguageCopyWithImpl<$Res> extends _$LanguageCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      isDefault: isDefault == freezed
+          ? _value.isDefault
+          : isDefault // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -109,16 +124,20 @@ class __$LanguageCopyWithImpl<$Res> extends _$LanguageCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Language implements _Language {
-  const _$_Language({required this.identifier, required this.name});
+  const _$_Language(
+      {required this.identifier, required this.name, this.isDefault = false});
 
   @override
   final String identifier;
   @override
   final String name;
+  @JsonKey(defaultValue: false)
+  @override
+  final bool isDefault;
 
   @override
   String toString() {
-    return 'Language(identifier: $identifier, name: $name)';
+    return 'Language(identifier: $identifier, name: $name, isDefault: $isDefault)';
   }
 
   @override
@@ -129,14 +148,18 @@ class _$_Language implements _Language {
                 const DeepCollectionEquality()
                     .equals(other.identifier, identifier)) &&
             (identical(other.name, name) ||
-                const DeepCollectionEquality().equals(other.name, name)));
+                const DeepCollectionEquality().equals(other.name, name)) &&
+            (identical(other.isDefault, isDefault) ||
+                const DeepCollectionEquality()
+                    .equals(other.isDefault, isDefault)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(identifier) ^
-      const DeepCollectionEquality().hash(name);
+      const DeepCollectionEquality().hash(name) ^
+      const DeepCollectionEquality().hash(isDefault);
 
   @JsonKey(ignore: true)
   @override
@@ -145,13 +168,17 @@ class _$_Language implements _Language {
 }
 
 abstract class _Language implements Language {
-  const factory _Language({required String identifier, required String name}) =
-      _$_Language;
+  const factory _Language(
+      {required String identifier,
+      required String name,
+      bool isDefault}) = _$_Language;
 
   @override
   String get identifier => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
+  @override
+  bool get isDefault => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$LanguageCopyWith<_Language> get copyWith =>
