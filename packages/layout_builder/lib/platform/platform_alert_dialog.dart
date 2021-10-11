@@ -4,6 +4,7 @@ Future<bool?> showAlertDialog(
   BuildContext context,
   WidgetRef ref, {
   required String title,
+  Widget? child,
   String? content,
   List<PlatformDialogAction>? actions,
   bool displayCancelButton = true,
@@ -13,7 +14,7 @@ Future<bool?> showAlertDialog(
       context: context,
       builder: (context) => AlertDialog(
         title: Text(title),
-        content: content != null ? Text(content) : null,
+        content: child ?? (content != null ? Text(content) : null),
         actions: <Widget>[
           if (displayCancelButton)
             TextButton(
@@ -31,7 +32,7 @@ Future<bool?> showAlertDialog(
     context: context,
     builder: (context) => CupertinoAlertDialog(
       title: Text(title),
-      content: content != null ? Text(content) : null,
+      content: child ?? (content != null ? Text(content) : null),
       actions: <Widget>[
         if (displayCancelButton)
           CupertinoDialogAction(
