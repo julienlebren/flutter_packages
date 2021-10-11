@@ -32,7 +32,6 @@ showPlatformNumberPicker(
                   .saveButtonLabel
                   .toUpperCase(),
               onPressed: () {
-                print("value is ${ref.read(valueProvider).state}");
                 onChanged(ref.read(valueProvider).state);
                 Navigator.of(context).pop();
               },

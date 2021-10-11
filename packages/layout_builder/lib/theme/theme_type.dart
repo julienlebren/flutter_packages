@@ -25,3 +25,15 @@ class ThemeTypeConverter implements JsonConverter<ThemeType, int> {
   @override
   int toJson(ThemeType value) => value.index;
 }
+
+extension ThemeBrightness on ThemeType {
+  Brightness get brightness {
+    if (this == ThemeType.dark) {
+      return Brightness.dark;
+    } else if (this == ThemeType.light) {
+      return Brightness.light;
+    } else {
+      return WidgetsBinding.instance!.window.platformBrightness;
+    }
+  }
+}
