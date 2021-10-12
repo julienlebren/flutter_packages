@@ -207,6 +207,7 @@ class ListTileContents extends ConsumerWidget {
                               fontSize: isCupertino() ? 17 : 16,
                             ),
                             maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
                         ),
                         if (caption != null)
