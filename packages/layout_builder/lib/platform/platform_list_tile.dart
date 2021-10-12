@@ -206,6 +206,7 @@ class ListTileContents extends ConsumerWidget {
                               color: appTheme.textColor,
                               fontSize: isCupertino() ? 17 : 16,
                             ),
+                            maxLines: 1,
                           ),
                         ),
                         if (caption != null)
