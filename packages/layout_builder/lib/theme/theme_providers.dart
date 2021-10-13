@@ -37,7 +37,7 @@ final systemOverlayStyleProvider = Provider<SystemUiOverlayStyle>((ref) {
           : null,
     );
   }
-});
+}, dependencies: [appThemeProvider]);
 
 /// The [ThemeData] that will be used in the [MaterialApp]
 /// Retrieves all the data from the [AppTheme].
