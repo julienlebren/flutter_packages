@@ -88,7 +88,7 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
       ),
     ),
   );
-});
+}, dependencies: [appThemeProvider]);
 
 /// The [CupertinoThemeData] that will be used in the [CupertinoApp]
 /// Retrieves all the data from the [AppTheme].
@@ -99,7 +99,7 @@ final cupertinoThemeProvider = Provider<CupertinoThemeData>((ref) {
     scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
     barBackgroundColor: appTheme.navigationBarBackgroundColor,
   );
-});
+}, dependencies: [appThemeProvider]);
 
 /// Theme with specific parameters for List that can be overridden
 /// at any part of the app with inside a ProviderScope for specific needs
