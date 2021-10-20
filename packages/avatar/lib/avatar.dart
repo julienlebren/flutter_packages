@@ -53,7 +53,7 @@ class Avatar extends StatelessWidget {
               return CachedNetworkAvatar(url!);
             } else if (name != "") {
               return Padding(
-                padding: EdgeInsets.all(_radius / 2),
+                padding: EdgeInsets.all(_radius / 3),
                 child: FittedBox(
                   fit: BoxFit.contain,
                   child: Text(
