@@ -1,6 +1,7 @@
 library firebase_auth_service;
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -51,7 +52,7 @@ class FirebaseAuthService {
     }
   }
 
-  /*Future<User?> signInWithFacebook() async {
+  Future<User?> signInWithFacebook() async {
     final fb = FacebookLogin();
     final response = await fb.logIn(permissions: [
       FacebookPermission.publicProfile,
@@ -71,7 +72,7 @@ class FirebaseAuthService {
       default:
         throw UnimplementedError();
     }
-  }*/
+  }
 
   Future<void> signOut() async {
     final googleSignIn = GoogleSignIn();
