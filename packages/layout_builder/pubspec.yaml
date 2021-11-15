@@ -1,6 +1,6 @@
 name: layout_builder
 description: A new Flutter package project.
-version: 0.16.7
+version: 0.16.8
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -17,7 +17,7 @@ dependencies:
       path: packages/extensions
     version: ^0.1.1
   cached_network_image: ^3.1.0-alpha.1 
-  flutter_riverpod: ^1.0.0-dev.11
+  flutter_riverpod: ^1.0.0
   freezed_annotation: ^0.15.0
   modal_bottom_sheet: ^2.0.0
   numberpicker: ^2.0.1

@@ -48,7 +48,8 @@ void showPlatformTimePicker(
       height: 200,
       onPressed: () {
         onChanged(
-          TimeOfDay.fromDateTime(ref.read(timeProvider).state).format(context),
+          TimeOfDay.fromDateTime(ref.read(timeProvider.state).state)
+              .format(context),
         );
         Navigator.of(context, rootNavigator: true).pop();
       },
@@ -58,7 +59,7 @@ void showPlatformTimePicker(
         minimumYear: now.year - 15,
         initialDateTime: initialDate ?? now,
         onDateTimeChanged: (value) {
-          ref.read(timeProvider).state = value;
+          ref.read(timeProvider.state).state = value;
         },
       ),
     );

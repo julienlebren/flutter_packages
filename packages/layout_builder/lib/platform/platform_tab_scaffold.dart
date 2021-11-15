@@ -19,7 +19,7 @@ class PlatformTabScaffold
   const PlatformTabScaffold() : super();
 
   ValueChanged<int>? onTap(int index, WidgetRef ref) {
-    ref.read(currentTabIndexProvider).state = index;
+    ref.read(currentTabIndexProvider.state).state = index;
   }
 
   @override
@@ -27,7 +27,7 @@ class PlatformTabScaffold
     final systemOverlayStyle = ref.watch(systemOverlayStyleProvider);
     final appTheme = ref.watch(appThemeProvider);
     final tabs = ref.watch(tabsProvider);
-    final currentTabIndex = ref.watch(currentTabIndexProvider).state;
+    final currentTabIndex = ref.watch(currentTabIndexProvider.state).state;
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: systemOverlayStyle,
@@ -74,7 +74,7 @@ class PlatformTabScaffold
   CupertinoTabScaffold createCupertinoWidget(
       BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
-    final currentTabIndex = ref.watch(currentTabIndexProvider).state;
+    final currentTabIndex = ref.watch(currentTabIndexProvider.state).state;
     final tabs = ref.watch(tabsProvider);
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(

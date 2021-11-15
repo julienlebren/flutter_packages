@@ -49,7 +49,7 @@ showPlatformSinglePicker<T>(
       ref: ref,
       height: 200,
       onPressed: () {
-        onChanged(ref.read(valueProvider).state);
+        onChanged(ref.read(valueProvider.state).state);
         Navigator.of(context, rootNavigator: true).pop();
       },
       child: CupertinoPicker(
@@ -61,7 +61,7 @@ showPlatformSinglePicker<T>(
         ),
         children: data.map((item) => itemBuilder(item)).toList(),
         onSelectedItemChanged: (index) {
-          ref.read(valueProvider).state = data[index];
+          ref.read(valueProvider.state).state = data[index];
         },
       ),
     );

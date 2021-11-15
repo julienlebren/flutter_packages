@@ -113,7 +113,7 @@ class _CupertinoListTileState extends ConsumerState<CupertinoListTile> {
   Widget build(BuildContext context) {
     ref.listen<Color>(
         appThemeProvider.select((appTheme) => appTheme.listTileBackground),
-        (listTileBackground) {
+        (_, listTileBackground) {
       setState(() {
         _tileBackground = listTileBackground;
       });

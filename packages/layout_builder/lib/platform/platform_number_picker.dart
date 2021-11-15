@@ -11,7 +11,7 @@ showPlatformNumberPicker(
   required int selectedValue,
   required Function(int) onChanged,
 }) async {
-  ref.read(valueProvider).state = selectedValue;
+  ref.read(valueProvider.state).state = selectedValue;
 
   if (isMaterial()) {
     showDialog(
@@ -32,7 +32,7 @@ showPlatformNumberPicker(
                   .saveButtonLabel
                   .toUpperCase(),
               onPressed: () {
-                onChanged(ref.read(valueProvider).state);
+                onChanged(ref.read(valueProvider.state).state);
                 Navigator.of(context).pop();
               },
               isDefaultAction: true,
@@ -69,7 +69,7 @@ class _MaterialNumberPickerState extends ConsumerState<_MaterialNumberPicker> {
       minValue: 0,
       maxValue: 100,
       onChanged: (value) {
-        ref.read(valueProvider).state = value;
+        ref.read(valueProvider.state).state = value;
         setState(() => _currentValue = value);
       },
     );
