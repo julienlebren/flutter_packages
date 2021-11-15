@@ -109,7 +109,7 @@ class UploadWidget extends ConsumerWidget {
     final isUploading = ref.watch(uploadingProvider(storageRef));
     final isUploadSuccess = ref.watch(uploadSuccessProvider(storageRef));
 
-    ref.listen<UploadState>(uploadControllerProvider(storageRef), (state) {
+    ref.listen<UploadState>(uploadControllerProvider(storageRef), (_, state) {
       state.maybeWhen(
         startingUpload: (_) => onStart,
         success: (_, url) => onSuccess(url),
