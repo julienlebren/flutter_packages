@@ -7,12 +7,14 @@ class PlatformTabNavigator
     this.initialRoute,
     required this.navigatorKey,
     this.observers = const <NavigatorObserver>[],
+    this.onUnknownRoute,
   }) : super();
 
   final RouteFactory? onGenerateRoute;
   final String? initialRoute;
   final List<NavigatorObserver> observers;
   final GlobalKey<NavigatorState> navigatorKey;
+  final RouteFactory? onUnknownRoute;
 
   @override
   Navigator createMaterialWidget(BuildContext context, WidgetRef ref) {
@@ -21,6 +23,7 @@ class PlatformTabNavigator
       onGenerateRoute: onGenerateRoute,
       initialRoute: initialRoute,
       observers: observers,
+      onUnknownRoute: onUnknownRoute,
     );
   }
 
@@ -30,6 +33,7 @@ class PlatformTabNavigator
       key: navigatorKey,
       onGenerateRoute: onGenerateRoute,
       navigatorObservers: observers,
+      onUnknownRoute: onUnknownRoute,
     );
   }
 }

@@ -74,7 +74,7 @@ class PlatformTabScaffold
   CupertinoTabScaffold createCupertinoWidget(
       BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
-    final currentTabIndex = ref.watch(currentTabIndexProvider.state).state;
+    final currentTabIndex = ref.watch(currentTabIndexProvider);
     final tabs = ref.watch(tabsProvider);
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
