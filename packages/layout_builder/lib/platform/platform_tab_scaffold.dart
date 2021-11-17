@@ -45,7 +45,8 @@ class PlatformTabScaffold
             }).toList(),
           ),
           bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: appTheme.scaffoldBackgroundColor,
+            backgroundColor: appTheme.tabBarBackgroundColor ??
+                appTheme.scaffoldBackgroundColor,
             showUnselectedLabels: true,
             selectedFontSize: 12,
             unselectedFontSize: 12,
@@ -80,7 +81,7 @@ class PlatformTabScaffold
       tabBar: CupertinoTabBar(
         currentIndex: currentTabIndex,
         onTap: (index) => onTap(index, ref),
-        backgroundColor: appTheme.scaffoldBackgroundColor,
+        backgroundColor: appTheme.cupertinoTabBarBackgroundColor,
         inactiveColor: Colors.grey,
         iconSize: 30,
         items: tabs.map((item) => _tabItem(item)).toList(),
