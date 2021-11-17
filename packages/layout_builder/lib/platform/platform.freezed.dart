@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of platform;
 
@@ -171,25 +172,18 @@ class _$_TabItem with DiagnosticableTreeMixin implements _TabItem {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TabItem &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.icon, icon) ||
-                const DeepCollectionEquality().equals(other.icon, icon)) &&
+        (other.runtimeType == runtimeType &&
+            other is _TabItem &&
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.selectedIcon, selectedIcon) ||
-                const DeepCollectionEquality()
-                    .equals(other.selectedIcon, selectedIcon)) &&
-            (identical(other.router, router) ||
-                const DeepCollectionEquality().equals(other.router, router)));
+                other.selectedIcon == selectedIcon) &&
+            (identical(other.router, router) || other.router == router));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(icon) ^
-      const DeepCollectionEquality().hash(selectedIcon) ^
-      const DeepCollectionEquality().hash(router);
+      Object.hash(runtimeType, title, icon, selectedIcon, router);
 
   @JsonKey(ignore: true)
   @override
@@ -205,13 +199,13 @@ abstract class _TabItem implements TabItem {
       required Widget router}) = _$_TabItem;
 
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
-  IconData get icon => throw _privateConstructorUsedError;
+  IconData get icon;
   @override
-  IconData get selectedIcon => throw _privateConstructorUsedError;
+  IconData get selectedIcon;
   @override
-  Widget get router => throw _privateConstructorUsedError;
+  Widget get router;
   @override
   @JsonKey(ignore: true)
   _$TabItemCopyWith<_TabItem> get copyWith =>

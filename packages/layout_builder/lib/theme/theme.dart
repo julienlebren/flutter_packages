@@ -23,6 +23,7 @@ class AppTheme with _$AppTheme {
     Color? materialSystemBarColor,
     required Color navigationBarBackgroundColor,
     required Color navigationBarBorderColor,
+    Color? cupertinoNavigationBarBackgroundColor,
     required Color formBackgroundColor,
     required Color listTileBackground,
     required Color cupertinoBarBackgroundColor,

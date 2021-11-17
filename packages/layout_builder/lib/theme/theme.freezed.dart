@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of theme;
 
@@ -25,6 +26,7 @@ class _$AppThemeTearOff {
       Color? materialSystemBarColor,
       required Color navigationBarBackgroundColor,
       required Color navigationBarBorderColor,
+      Color? cupertinoNavigationBarBackgroundColor,
       required Color formBackgroundColor,
       required Color listTileBackground,
       required Color cupertinoBarBackgroundColor,
@@ -44,6 +46,8 @@ class _$AppThemeTearOff {
       materialSystemBarColor: materialSystemBarColor,
       navigationBarBackgroundColor: navigationBarBackgroundColor,
       navigationBarBorderColor: navigationBarBorderColor,
+      cupertinoNavigationBarBackgroundColor:
+          cupertinoNavigationBarBackgroundColor,
       formBackgroundColor: formBackgroundColor,
       listTileBackground: listTileBackground,
       cupertinoBarBackgroundColor: cupertinoBarBackgroundColor,
@@ -71,6 +75,8 @@ mixin _$AppTheme {
   Color? get materialSystemBarColor => throw _privateConstructorUsedError;
   Color get navigationBarBackgroundColor => throw _privateConstructorUsedError;
   Color get navigationBarBorderColor => throw _privateConstructorUsedError;
+  Color? get cupertinoNavigationBarBackgroundColor =>
+      throw _privateConstructorUsedError;
   Color get formBackgroundColor => throw _privateConstructorUsedError;
   Color get listTileBackground => throw _privateConstructorUsedError;
   Color get cupertinoBarBackgroundColor => throw _privateConstructorUsedError;
@@ -100,6 +106,7 @@ abstract class $AppThemeCopyWith<$Res> {
       Color? materialSystemBarColor,
       Color navigationBarBackgroundColor,
       Color navigationBarBorderColor,
+      Color? cupertinoNavigationBarBackgroundColor,
       Color formBackgroundColor,
       Color listTileBackground,
       Color cupertinoBarBackgroundColor,
@@ -130,6 +137,7 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
     Object? materialSystemBarColor = freezed,
     Object? navigationBarBackgroundColor = freezed,
     Object? navigationBarBorderColor = freezed,
+    Object? cupertinoNavigationBarBackgroundColor = freezed,
     Object? formBackgroundColor = freezed,
     Object? listTileBackground = freezed,
     Object? cupertinoBarBackgroundColor = freezed,
@@ -174,6 +182,11 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
           ? _value.navigationBarBorderColor
           : navigationBarBorderColor // ignore: cast_nullable_to_non_nullable
               as Color,
+      cupertinoNavigationBarBackgroundColor:
+          cupertinoNavigationBarBackgroundColor == freezed
+              ? _value.cupertinoNavigationBarBackgroundColor
+              : cupertinoNavigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
+                  as Color?,
       formBackgroundColor: formBackgroundColor == freezed
           ? _value.formBackgroundColor
           : formBackgroundColor // ignore: cast_nullable_to_non_nullable
@@ -232,6 +245,7 @@ abstract class _$AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
       Color? materialSystemBarColor,
       Color navigationBarBackgroundColor,
       Color navigationBarBorderColor,
+      Color? cupertinoNavigationBarBackgroundColor,
       Color formBackgroundColor,
       Color listTileBackground,
       Color cupertinoBarBackgroundColor,
@@ -263,6 +277,7 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
     Object? materialSystemBarColor = freezed,
     Object? navigationBarBackgroundColor = freezed,
     Object? navigationBarBorderColor = freezed,
+    Object? cupertinoNavigationBarBackgroundColor = freezed,
     Object? formBackgroundColor = freezed,
     Object? listTileBackground = freezed,
     Object? cupertinoBarBackgroundColor = freezed,
@@ -307,6 +322,11 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
           ? _value.navigationBarBorderColor
           : navigationBarBorderColor // ignore: cast_nullable_to_non_nullable
               as Color,
+      cupertinoNavigationBarBackgroundColor:
+          cupertinoNavigationBarBackgroundColor == freezed
+              ? _value.cupertinoNavigationBarBackgroundColor
+              : cupertinoNavigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
+                  as Color?,
       formBackgroundColor: formBackgroundColor == freezed
           ? _value.formBackgroundColor
           : formBackgroundColor // ignore: cast_nullable_to_non_nullable
@@ -363,6 +383,7 @@ class _$_AppTheme implements _AppTheme {
       this.materialSystemBarColor,
       required this.navigationBarBackgroundColor,
       required this.navigationBarBorderColor,
+      this.cupertinoNavigationBarBackgroundColor,
       required this.formBackgroundColor,
       required this.listTileBackground,
       required this.cupertinoBarBackgroundColor,
@@ -391,6 +412,8 @@ class _$_AppTheme implements _AppTheme {
   @override
   final Color navigationBarBorderColor;
   @override
+  final Color? cupertinoNavigationBarBackgroundColor;
+  @override
   final Color formBackgroundColor;
   @override
   final Color listTileBackground;
@@ -415,81 +438,80 @@ class _$_AppTheme implements _AppTheme {
 
   @override
   String toString() {
-    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, formBackgroundColor: $formBackgroundColor, listTileBackground: $listTileBackground, cupertinoBarBackgroundColor: $cupertinoBarBackgroundColor, elevatedButtonRadius: $elevatedButtonRadius, elevatedButtonPadding: $elevatedButtonPadding, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
+    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, cupertinoNavigationBarBackgroundColor: $cupertinoNavigationBarBackgroundColor, formBackgroundColor: $formBackgroundColor, listTileBackground: $listTileBackground, cupertinoBarBackgroundColor: $cupertinoBarBackgroundColor, elevatedButtonRadius: $elevatedButtonRadius, elevatedButtonPadding: $elevatedButtonPadding, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AppTheme &&
+        (other.runtimeType == runtimeType &&
+            other is _AppTheme &&
             (identical(other.brightness, brightness) ||
-                const DeepCollectionEquality()
-                    .equals(other.brightness, brightness)) &&
+                other.brightness == brightness) &&
             (identical(other.primaryColor, primaryColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.primaryColor, primaryColor)) &&
+                other.primaryColor == primaryColor) &&
             (identical(other.secondaryColor, secondaryColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.secondaryColor, secondaryColor)) &&
+                other.secondaryColor == secondaryColor) &&
             (identical(other.scaffoldBackgroundColor, scaffoldBackgroundColor) ||
-                const DeepCollectionEquality().equals(
-                    other.scaffoldBackgroundColor, scaffoldBackgroundColor)) &&
+                other.scaffoldBackgroundColor == scaffoldBackgroundColor) &&
             (identical(other.statusBarColor, statusBarColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.statusBarColor, statusBarColor)) &&
+                other.statusBarColor == statusBarColor) &&
             (identical(other.materialSystemBarColor, materialSystemBarColor) ||
-                const DeepCollectionEquality().equals(
-                    other.materialSystemBarColor, materialSystemBarColor)) &&
+                other.materialSystemBarColor == materialSystemBarColor) &&
             (identical(other.navigationBarBackgroundColor, navigationBarBackgroundColor) ||
-                const DeepCollectionEquality().equals(
-                    other.navigationBarBackgroundColor,
-                    navigationBarBackgroundColor)) &&
+                other.navigationBarBackgroundColor ==
+                    navigationBarBackgroundColor) &&
             (identical(other.navigationBarBorderColor, navigationBarBorderColor) ||
-                const DeepCollectionEquality().equals(
-                    other.navigationBarBorderColor,
-                    navigationBarBorderColor)) &&
+                other.navigationBarBorderColor == navigationBarBorderColor) &&
+            (identical(other.cupertinoNavigationBarBackgroundColor,
+                    cupertinoNavigationBarBackgroundColor) ||
+                other.cupertinoNavigationBarBackgroundColor ==
+                    cupertinoNavigationBarBackgroundColor) &&
             (identical(other.formBackgroundColor, formBackgroundColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.formBackgroundColor, formBackgroundColor)) &&
+                other.formBackgroundColor == formBackgroundColor) &&
             (identical(other.listTileBackground, listTileBackground) ||
-                const DeepCollectionEquality()
-                    .equals(other.listTileBackground, listTileBackground)) &&
+                other.listTileBackground == listTileBackground) &&
             (identical(other.cupertinoBarBackgroundColor, cupertinoBarBackgroundColor) ||
-                const DeepCollectionEquality().equals(
-                    other.cupertinoBarBackgroundColor,
-                    cupertinoBarBackgroundColor)) &&
+                other.cupertinoBarBackgroundColor ==
+                    cupertinoBarBackgroundColor) &&
             (identical(other.elevatedButtonRadius, elevatedButtonRadius) ||
-                const DeepCollectionEquality().equals(
-                    other.elevatedButtonRadius, elevatedButtonRadius)) &&
-            (identical(other.elevatedButtonPadding, elevatedButtonPadding) || const DeepCollectionEquality().equals(other.elevatedButtonPadding, elevatedButtonPadding)) &&
-            (identical(other.selectedColor, selectedColor) || const DeepCollectionEquality().equals(other.selectedColor, selectedColor)) &&
-            (identical(other.borderColor, borderColor) || const DeepCollectionEquality().equals(other.borderColor, borderColor)) &&
-            (identical(other.textColor, textColor) || const DeepCollectionEquality().equals(other.textColor, textColor)) &&
-            (identical(other.dividerColor, dividerColor) || const DeepCollectionEquality().equals(other.dividerColor, dividerColor)) &&
-            (identical(other.shadowColor, shadowColor) || const DeepCollectionEquality().equals(other.shadowColor, shadowColor)));
+                other.elevatedButtonRadius == elevatedButtonRadius) &&
+            (identical(other.elevatedButtonPadding, elevatedButtonPadding) ||
+                other.elevatedButtonPadding == elevatedButtonPadding) &&
+            (identical(other.selectedColor, selectedColor) ||
+                other.selectedColor == selectedColor) &&
+            (identical(other.borderColor, borderColor) ||
+                other.borderColor == borderColor) &&
+            (identical(other.textColor, textColor) ||
+                other.textColor == textColor) &&
+            (identical(other.dividerColor, dividerColor) ||
+                other.dividerColor == dividerColor) &&
+            (identical(other.shadowColor, shadowColor) || other.shadowColor == shadowColor));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(brightness) ^
-      const DeepCollectionEquality().hash(primaryColor) ^
-      const DeepCollectionEquality().hash(secondaryColor) ^
-      const DeepCollectionEquality().hash(scaffoldBackgroundColor) ^
-      const DeepCollectionEquality().hash(statusBarColor) ^
-      const DeepCollectionEquality().hash(materialSystemBarColor) ^
-      const DeepCollectionEquality().hash(navigationBarBackgroundColor) ^
-      const DeepCollectionEquality().hash(navigationBarBorderColor) ^
-      const DeepCollectionEquality().hash(formBackgroundColor) ^
-      const DeepCollectionEquality().hash(listTileBackground) ^
-      const DeepCollectionEquality().hash(cupertinoBarBackgroundColor) ^
-      const DeepCollectionEquality().hash(elevatedButtonRadius) ^
-      const DeepCollectionEquality().hash(elevatedButtonPadding) ^
-      const DeepCollectionEquality().hash(selectedColor) ^
-      const DeepCollectionEquality().hash(borderColor) ^
-      const DeepCollectionEquality().hash(textColor) ^
-      const DeepCollectionEquality().hash(dividerColor) ^
-      const DeepCollectionEquality().hash(shadowColor);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        brightness,
+        primaryColor,
+        secondaryColor,
+        scaffoldBackgroundColor,
+        statusBarColor,
+        materialSystemBarColor,
+        navigationBarBackgroundColor,
+        navigationBarBorderColor,
+        cupertinoNavigationBarBackgroundColor,
+        formBackgroundColor,
+        listTileBackground,
+        cupertinoBarBackgroundColor,
+        elevatedButtonRadius,
+        elevatedButtonPadding,
+        selectedColor,
+        borderColor,
+        textColor,
+        dividerColor,
+        shadowColor
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -507,6 +529,7 @@ abstract class _AppTheme implements AppTheme {
       Color? materialSystemBarColor,
       required Color navigationBarBackgroundColor,
       required Color navigationBarBorderColor,
+      Color? cupertinoNavigationBarBackgroundColor,
       required Color formBackgroundColor,
       required Color listTileBackground,
       required Color cupertinoBarBackgroundColor,
@@ -519,41 +542,43 @@ abstract class _AppTheme implements AppTheme {
       required Color shadowColor}) = _$_AppTheme;
 
   @override
-  Brightness get brightness => throw _privateConstructorUsedError;
+  Brightness get brightness;
   @override
-  Color get primaryColor => throw _privateConstructorUsedError;
+  Color get primaryColor;
   @override
-  Color get secondaryColor => throw _privateConstructorUsedError;
+  Color get secondaryColor;
   @override
-  Color get scaffoldBackgroundColor => throw _privateConstructorUsedError;
+  Color get scaffoldBackgroundColor;
   @override
-  Color? get statusBarColor => throw _privateConstructorUsedError;
+  Color? get statusBarColor;
   @override
-  Color? get materialSystemBarColor => throw _privateConstructorUsedError;
+  Color? get materialSystemBarColor;
   @override
-  Color get navigationBarBackgroundColor => throw _privateConstructorUsedError;
+  Color get navigationBarBackgroundColor;
   @override
-  Color get navigationBarBorderColor => throw _privateConstructorUsedError;
+  Color get navigationBarBorderColor;
   @override
-  Color get formBackgroundColor => throw _privateConstructorUsedError;
+  Color? get cupertinoNavigationBarBackgroundColor;
   @override
-  Color get listTileBackground => throw _privateConstructorUsedError;
+  Color get formBackgroundColor;
   @override
-  Color get cupertinoBarBackgroundColor => throw _privateConstructorUsedError;
+  Color get listTileBackground;
   @override
-  double get elevatedButtonRadius => throw _privateConstructorUsedError;
+  Color get cupertinoBarBackgroundColor;
   @override
-  double get elevatedButtonPadding => throw _privateConstructorUsedError;
+  double get elevatedButtonRadius;
   @override
-  Color get selectedColor => throw _privateConstructorUsedError;
+  double get elevatedButtonPadding;
   @override
-  Color get borderColor => throw _privateConstructorUsedError;
+  Color get selectedColor;
   @override
-  Color get textColor => throw _privateConstructorUsedError;
+  Color get borderColor;
   @override
-  Color get dividerColor => throw _privateConstructorUsedError;
+  Color get textColor;
   @override
-  Color get shadowColor => throw _privateConstructorUsedError;
+  Color get dividerColor;
+  @override
+  Color get shadowColor;
   @override
   @JsonKey(ignore: true)
   _$AppThemeCopyWith<_AppTheme> get copyWith =>
@@ -664,16 +689,14 @@ class _$_ListViewTheme implements _ListViewTheme {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ListViewTheme &&
+        (other.runtimeType == runtimeType &&
+            other is _ListViewTheme &&
             (identical(other.separatorPadding, separatorPadding) ||
-                const DeepCollectionEquality()
-                    .equals(other.separatorPadding, separatorPadding)));
+                other.separatorPadding == separatorPadding));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(separatorPadding);
+  int get hashCode => Object.hash(runtimeType, separatorPadding);
 
   @JsonKey(ignore: true)
   @override
@@ -685,7 +708,7 @@ abstract class _ListViewTheme implements ListViewTheme {
   const factory _ListViewTheme({double separatorPadding}) = _$_ListViewTheme;
 
   @override
-  double get separatorPadding => throw _privateConstructorUsedError;
+  double get separatorPadding;
   @override
   @JsonKey(ignore: true)
   _$ListViewThemeCopyWith<_ListViewTheme> get copyWith =>
@@ -925,44 +948,37 @@ class _$_FormTheme implements _FormTheme {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _FormTheme &&
+        (other.runtimeType == runtimeType &&
+            other is _FormTheme &&
             (identical(other.backgroundColor, backgroundColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.backgroundColor, backgroundColor)) &&
+                other.backgroundColor == backgroundColor) &&
             (identical(other.rowBackgroundColor, rowBackgroundColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.rowBackgroundColor, rowBackgroundColor)) &&
+                other.rowBackgroundColor == rowBackgroundColor) &&
             (identical(other.rowDividerColor, rowDividerColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.rowDividerColor, rowDividerColor)) &&
+                other.rowDividerColor == rowDividerColor) &&
             (identical(other.sectionDividerColor, sectionDividerColor) ||
-                const DeepCollectionEquality()
-                    .equals(other.sectionDividerColor, sectionDividerColor)) &&
+                other.sectionDividerColor == sectionDividerColor) &&
             (identical(other.rowDividerPadding, rowDividerPadding) ||
-                const DeepCollectionEquality()
-                    .equals(other.rowDividerPadding, rowDividerPadding)) &&
+                other.rowDividerPadding == rowDividerPadding) &&
             (identical(other.displayRowDivider, displayRowDivider) ||
-                const DeepCollectionEquality()
-                    .equals(other.displayRowDivider, displayRowDivider)) &&
+                other.displayRowDivider == displayRowDivider) &&
             (identical(other.sectionDividerPadding, sectionDividerPadding) ||
-                const DeepCollectionEquality().equals(
-                    other.sectionDividerPadding, sectionDividerPadding)) &&
+                other.sectionDividerPadding == sectionDividerPadding) &&
             (identical(other.displaySectionDivider, displaySectionDivider) ||
-                const DeepCollectionEquality().equals(
-                    other.displaySectionDivider, displaySectionDivider)));
+                other.displaySectionDivider == displaySectionDivider));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(backgroundColor) ^
-      const DeepCollectionEquality().hash(rowBackgroundColor) ^
-      const DeepCollectionEquality().hash(rowDividerColor) ^
-      const DeepCollectionEquality().hash(sectionDividerColor) ^
-      const DeepCollectionEquality().hash(rowDividerPadding) ^
-      const DeepCollectionEquality().hash(displayRowDivider) ^
-      const DeepCollectionEquality().hash(sectionDividerPadding) ^
-      const DeepCollectionEquality().hash(displaySectionDivider);
+  int get hashCode => Object.hash(
+      runtimeType,
+      backgroundColor,
+      rowBackgroundColor,
+      rowDividerColor,
+      sectionDividerColor,
+      rowDividerPadding,
+      displayRowDivider,
+      sectionDividerPadding,
+      displaySectionDivider);
 
   @JsonKey(ignore: true)
   @override
@@ -982,21 +998,21 @@ abstract class _FormTheme implements FormTheme {
       bool displaySectionDivider}) = _$_FormTheme;
 
   @override
-  Color get backgroundColor => throw _privateConstructorUsedError;
+  Color get backgroundColor;
   @override
-  Color get rowBackgroundColor => throw _privateConstructorUsedError;
+  Color get rowBackgroundColor;
   @override
-  Color get rowDividerColor => throw _privateConstructorUsedError;
+  Color get rowDividerColor;
   @override
-  Color get sectionDividerColor => throw _privateConstructorUsedError;
+  Color get sectionDividerColor;
   @override
-  double get rowDividerPadding => throw _privateConstructorUsedError;
+  double get rowDividerPadding;
   @override
-  bool get displayRowDivider => throw _privateConstructorUsedError;
+  bool get displayRowDivider;
   @override
-  double get sectionDividerPadding => throw _privateConstructorUsedError;
+  double get sectionDividerPadding;
   @override // 20 if gray background
-  bool get displaySectionDivider => throw _privateConstructorUsedError;
+  bool get displaySectionDivider;
   @override
   @JsonKey(ignore: true)
   _$FormThemeCopyWith<_FormTheme> get copyWith =>
@@ -1141,21 +1157,15 @@ class _$_ThemeLocalizations implements _ThemeLocalizations {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _ThemeLocalizations &&
-            (identical(other.dark, dark) ||
-                const DeepCollectionEquality().equals(other.dark, dark)) &&
-            (identical(other.light, light) ||
-                const DeepCollectionEquality().equals(other.light, light)) &&
-            (identical(other.system, system) ||
-                const DeepCollectionEquality().equals(other.system, system)));
+        (other.runtimeType == runtimeType &&
+            other is _ThemeLocalizations &&
+            (identical(other.dark, dark) || other.dark == dark) &&
+            (identical(other.light, light) || other.light == light) &&
+            (identical(other.system, system) || other.system == system));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(dark) ^
-      const DeepCollectionEquality().hash(light) ^
-      const DeepCollectionEquality().hash(system);
+  int get hashCode => Object.hash(runtimeType, dark, light, system);
 
   @JsonKey(ignore: true)
   @override
@@ -1168,11 +1178,11 @@ abstract class _ThemeLocalizations implements ThemeLocalizations {
       {String dark, String light, String system}) = _$_ThemeLocalizations;
 
   @override
-  String get dark => throw _privateConstructorUsedError;
+  String get dark;
   @override
-  String get light => throw _privateConstructorUsedError;
+  String get light;
   @override
-  String get system => throw _privateConstructorUsedError;
+  String get system;
   @override
   @JsonKey(ignore: true)
   _$ThemeLocalizationsCopyWith<_ThemeLocalizations> get copyWith =>

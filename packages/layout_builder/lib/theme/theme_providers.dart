@@ -52,7 +52,6 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
     appBarTheme: AppBarTheme(
       shadowColor: appTheme.scaffoldBackgroundColor,
       backgroundColor: appTheme.navigationBarBackgroundColor,
-      backwardsCompatibility: false,
       foregroundColor:
           appTheme.navigationBarBackgroundColor.computeLuminance() > 0.5
               ? Colors.black
@@ -97,7 +96,7 @@ final cupertinoThemeProvider = Provider<CupertinoThemeData>((ref) {
   return CupertinoThemeData(
     primaryColor: appTheme.primaryColor,
     scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
-    barBackgroundColor: appTheme.navigationBarBackgroundColor,
+    //barBackgroundColor: appTheme.navigationBarBackgroundColor,
   );
 }, dependencies: [appThemeProvider]);
 
