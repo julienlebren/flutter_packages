@@ -64,8 +64,6 @@ class PlatformModalScaffold extends PlatformScaffold {
           isCupertinoModal: true,
         ),
         child: SafeArea(
-          top: false,
-          bottom: false,
           child: body,
         ),
       ),
