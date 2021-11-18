@@ -11,6 +11,7 @@ import 'package:layout_builder/theme/theme.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:numberpicker/numberpicker.dart';
 
+part 'platform_activity_indicator.dart';
 part 'platform_alert_dialog.dart';
 part 'platform_app.dart';
 part 'platform_datetime_picker.dart';
