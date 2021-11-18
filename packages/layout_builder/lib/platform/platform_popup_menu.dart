@@ -20,7 +20,7 @@ class PlatformPopupMenuItem {
 Future<void> showPlatformPopupMenu({
   required BuildContext context,
   required WidgetRef ref,
-  required String title,
+  String? title,
   required List<PlatformPopupMenuItem> items,
   required void Function(dynamic) onPressed,
 }) async {
@@ -29,7 +29,7 @@ Future<void> showPlatformPopupMenu({
       context: context,
       builder: (BuildContext context) {
         return CupertinoActionSheet(
-          title: Text(title),
+          title: title != null ? Text(title) : null,
           actions: [
             for (PlatformPopupMenuItem item in items)
               CupertinoActionSheetAction(
