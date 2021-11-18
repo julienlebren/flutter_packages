@@ -42,7 +42,10 @@ Future<void> showPlatformPopupMenu({
           ],
           cancelButton: CupertinoActionSheetAction(
             child: Text(
-              MaterialLocalizations.of(context).cancelButtonLabel,
+              MaterialLocalizations.of(context)
+                  .cancelButtonLabel
+                  .toLowerCase()
+                  .capitalize(),
               style: _cupertinoActionSheetTextStyle.copyWith(
                 fontWeight: FontWeight.w500,
               ),
