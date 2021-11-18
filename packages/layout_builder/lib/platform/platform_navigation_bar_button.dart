@@ -61,16 +61,19 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
 
   @override
   Widget createCupertinoWidget(BuildContext context, WidgetRef ref) {
-    return CupertinoButton(
-      padding: EdgeInsets.zero,
-      child: icon != null
-          ? Icon(icon, size: 28)
-          : Text(
-              buttonText != null
-                  ? buttonText!
-                  : MaterialLocalizations.of(context).continueButtonLabel,
-            ),
-      onPressed: onPressed,
+    return Container(
+      transform: Matrix4.translationValues(10.0, 0.0, 0.0),
+      child: CupertinoButton(
+        padding: EdgeInsets.zero,
+        child: icon != null
+            ? Icon(icon, size: 28)
+            : Text(
+                buttonText != null
+                    ? buttonText!
+                    : MaterialLocalizations.of(context).continueButtonLabel,
+              ),
+        onPressed: onPressed,
+      ),
     );
   }
 }
