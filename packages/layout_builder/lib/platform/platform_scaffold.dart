@@ -35,7 +35,9 @@ class PlatformScaffold extends PlatformWidgetBase<AnnotatedRegion, Widget> {
     return CupertinoPageScaffold(
       //backgroundColor: backgroundColor,
       navigationBar: appBar?.createCupertinoWidget(context, ref),
-      child: body,
+      child: SafeArea(
+        child: body,
+      ),
     );
   }
 }
@@ -64,6 +66,8 @@ class PlatformModalScaffold extends PlatformScaffold {
           isCupertinoModal: true,
         ),
         child: SafeArea(
+          top: false,
+          bottom: false,
           child: body,
         ),
       ),
