@@ -79,7 +79,7 @@ class FormSectionTitle extends PlatformWidgetBase<Container, Container> {
     final appTheme = ref.watch(appThemeProvider);
     return Container(
       width: double.infinity,
-      color: appTheme.listTileBackground,
+      color: Colors.transparent,
       padding: EdgeInsets.only(
         left: 15,
         bottom: 0,
