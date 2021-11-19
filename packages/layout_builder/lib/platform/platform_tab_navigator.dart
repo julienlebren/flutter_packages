@@ -30,7 +30,7 @@ class PlatformTabNavigator
   @override
   CupertinoTabView createCupertinoWidget(BuildContext context, WidgetRef ref) {
     return CupertinoTabView(
-      key: navigatorKey,
+      navigatorKey: navigatorKey,
       onGenerateRoute: onGenerateRoute,
       navigatorObservers: observers,
       onUnknownRoute: onUnknownRoute,
