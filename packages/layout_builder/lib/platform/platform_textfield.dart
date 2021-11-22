@@ -15,6 +15,7 @@ class PlatformTextField
     this.onChanged,
     this.onSubmitted,
     this.enabled = true,
+    this.decoration,
   });
 
   final TextEditingController? controller;
@@ -29,6 +30,7 @@ class PlatformTextField
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onSubmitted;
   final bool enabled;
+  final BoxDecoration? decoration;
 
   @override
   TextField createMaterialWidget(BuildContext context, WidgetRef ref) {
@@ -67,7 +69,7 @@ class PlatformTextField
       textInputAction: textInputAction,
       textCapitalization: textCapitalization,
       placeholder: placeholder,
-      decoration: null,
+      decoration: decoration,
       inputFormatters: inputFormatters,
       onChanged: onChanged,
       onSubmitted: onSubmitted,
