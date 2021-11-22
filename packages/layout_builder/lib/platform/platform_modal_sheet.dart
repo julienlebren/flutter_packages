@@ -174,7 +174,6 @@ void showPlatformModalPopup({
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   if (title != null) ...[
-                    Spacer(),
                     Container(
                       padding: EdgeInsets.all(15),
                       child: Text(title,
@@ -193,7 +192,14 @@ void showPlatformModalPopup({
                     ),
                 ],
               ),
-            FormRowDivider(),
+            ProviderScope(
+              overrides: [
+                formThemeProvider.overrideWithValue(
+                  formTheme.copyWith(rowDividerPadding: 0),
+                )
+              ],
+              child: FormRowDivider(),
+            ),
             Container(
               height: height + safePadding,
               child: Align(
