@@ -48,6 +48,7 @@ showPlatformSinglePicker<T>(
     showPlatformModalPopup(
       context: context,
       ref: ref,
+      title: title,
       height: 200,
       onPressed: () {
         onChanged(ref.read(valueProvider.state).state);
