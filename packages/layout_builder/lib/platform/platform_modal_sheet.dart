@@ -158,12 +158,13 @@ void showPlatformModalPopup({
   VoidCallback? onPressed,
   required Widget child,
 }) {
+  final appTheme = ref.watch(appThemeProvider);
   showCupertinoModalPopup(
     context: context,
     builder: (context) {
       final safePadding = MediaQuery.of(context).padding.bottom;
       return Container(
-        //color: appTheme.scaffoldBackgroundColor,
+        color: appTheme.scaffoldBackgroundColor,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           mainAxisAlignment: MainAxisAlignment.start,
