@@ -76,3 +76,28 @@ class PlatformTextField
     );
   }
 }
+
+const BorderSide kDefaultRoundedBorderSide = BorderSide(
+  color: CupertinoDynamicColor.withBrightness(
+    color: Color(0x33000000),
+    darkColor: Color(0x33FFFFFF),
+  ),
+  style: BorderStyle.solid,
+  width: 0.0,
+);
+
+const Border kDefaultRoundedBorder = Border(
+  top: kDefaultRoundedBorderSide,
+  bottom: kDefaultRoundedBorderSide,
+  left: kDefaultRoundedBorderSide,
+  right: kDefaultRoundedBorderSide,
+);
+
+const BoxDecoration kDefaultRoundedBorderDecoration = BoxDecoration(
+  color: CupertinoDynamicColor.withBrightness(
+    color: CupertinoColors.white,
+    darkColor: CupertinoColors.black,
+  ),
+  border: kDefaultRoundedBorder,
+  borderRadius: BorderRadius.all(Radius.circular(5.0)),
+);
