@@ -41,7 +41,31 @@ showPlatformNumberPicker(
         );
       },
     );
-  } else {}
+  } else {
+    var data = [for (var i = minValue; i <= maxValue; i++) i];
+
+    showPlatformModalPopup(
+      context: context,
+      ref: ref,
+      height: 200,
+      onPressed: () {
+        onChanged(ref.read(valueProvider.state).state);
+        Navigator.of(context, rootNavigator: true).pop();
+      },
+      child: CupertinoPicker(
+        backgroundColor: Colors.white,
+        itemExtent: 30,
+        useMagnifier: true,
+        scrollController: FixedExtentScrollController(
+          initialItem: selectedValue != null ? data.indexOf(selectedValue) : 0,
+        ),
+        children: data.map((item) => Text(item.toString())).toList(),
+        onSelectedItemChanged: (index) {
+          ref.read(valueProvider.state).state = data[index];
+        },
+      ),
+    );
+  }
 }
 
 class _MaterialNumberPicker extends ConsumerStatefulWidget {

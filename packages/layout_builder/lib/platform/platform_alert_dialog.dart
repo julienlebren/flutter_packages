@@ -36,7 +36,10 @@ Future<bool?> showAlertDialog(
       actions: <Widget>[
         if (displayCancelButton)
           CupertinoDialogAction(
-            child: Text(MaterialLocalizations.of(context).cancelButtonLabel),
+            child: Text(MaterialLocalizations.of(context)
+                .cancelButtonLabel
+                .toLowerCase()
+                .capitalize()),
             onPressed: () => Navigator.of(context).pop(false),
           ),
         if (actions != null) ...actions,
