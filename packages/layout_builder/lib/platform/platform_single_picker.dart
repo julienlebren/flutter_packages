@@ -44,6 +44,7 @@ showPlatformSinglePicker<T>(
     );
   } else {
     final valueProvider = StateProvider<T>((_) => selectedValue ?? data.first);
+    final formTheme = ref.watch(formThemeProvider);
     showPlatformModalPopup(
       context: context,
       ref: ref,
@@ -53,7 +54,7 @@ showPlatformSinglePicker<T>(
         Navigator.of(context, rootNavigator: true).pop();
       },
       child: CupertinoPicker(
-        backgroundColor: Colors.white,
+        backgroundColor: formTheme.rowBackgroundColor,
         itemExtent: 30,
         useMagnifier: true,
         scrollController: FixedExtentScrollController(
