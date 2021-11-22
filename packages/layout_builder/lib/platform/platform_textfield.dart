@@ -61,7 +61,10 @@ class PlatformTextField
       BuildContext context, WidgetRef ref) {
     return CupertinoTextField(
       enabled: enabled,
-      padding: EdgeInsets.symmetric(vertical: 10),
+      padding: EdgeInsets.symmetric(
+        vertical: 10,
+        horizontal: decoration != null ? 5 : 0,
+      ),
       autocorrect: autocorrect,
       focusNode: focusNode,
       controller: controller,

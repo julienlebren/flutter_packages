@@ -14,7 +14,9 @@ Future<bool?> showAlertDialog(
       context: context,
       builder: (context) => AlertDialog(
         title: Text(title),
-        content: child ?? (content != null ? Text(content) : null),
+        content: child != null
+            ? Padding(padding: EdgeInsets.only(top: 6), child: child)
+            : (content != null ? Text(content) : null),
         actions: <Widget>[
           if (displayCancelButton)
             TextButton(
