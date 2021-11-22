@@ -58,10 +58,10 @@ class PlatformIconPlainButton
   CupertinoButton createCupertinoWidget(BuildContext context, WidgetRef ref) {
     return CupertinoButton(
       color: backgroundColor,
-      padding: EdgeInsets.all(4.0),
+      padding: EdgeInsets.all(6.0),
       onPressed: onPressed,
       borderRadius: BorderRadius.circular(size + 4),
-      child: Icon(icon, color: color, size: size + 4),
+      child: Icon(icon, color: color, size: size + 2),
       minSize: 28,
     );
   }
