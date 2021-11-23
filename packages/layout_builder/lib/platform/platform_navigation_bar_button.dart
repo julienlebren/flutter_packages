@@ -125,7 +125,11 @@ class PlatformNavigationBarCloseButton
     return CupertinoButton(
       padding: EdgeInsets.zero,
       child: Text(
-        buttonText ?? MaterialLocalizations.of(context).cancelButtonLabel,
+        buttonText ??
+            MaterialLocalizations.of(context)
+                .cancelButtonLabel
+                .toLowerCase()
+                .capitalize(),
       ),
       onPressed: onPressed,
     );

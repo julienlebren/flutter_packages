@@ -16,7 +16,10 @@ void showPlatformModalSheet({
           actions: actions,
           cancelButton: CupertinoActionSheetAction(
             child: Text(
-              MaterialLocalizations.of(context).cancelButtonLabel,
+              MaterialLocalizations.of(context)
+                  .cancelButtonLabel
+                  .toLowerCase()
+                  .capitalize(),
               style: TextStyle(
                 fontSize: 19.0,
                 fontWeight: FontWeight.w500,
