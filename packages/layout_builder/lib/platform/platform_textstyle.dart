@@ -26,6 +26,11 @@ class PlatformTextStyle {
         letterSpacing: isCupertino() ? -0.3 : 0,
       );
 
+  static TextStyle get n15 => TextStyle(
+        fontSize: 15,
+        letterSpacing: isCupertino() ? -0.25 : 0,
+      );
+
   static TextStyle get n16 => TextStyle(
         fontSize: 16,
         letterSpacing: isCupertino() ? -0.25 : 0,
