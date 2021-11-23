@@ -25,4 +25,19 @@ class PlatformTextStyle {
         fontSize: 16,
         letterSpacing: isCupertino() ? -0.3 : 0,
       );
+
+  static TextStyle get n16 => TextStyle(
+        fontSize: 16,
+        letterSpacing: isCupertino() ? -0.25 : 0,
+      );
+
+  static TextStyle get n17 => TextStyle(
+        fontSize: 17,
+        letterSpacing: isCupertino() ? -0.3 : 0,
+      );
+
+  static TextStyle get n18 => TextStyle(
+        fontSize: 18,
+        letterSpacing: isCupertino() ? -0.35 : 0,
+      );
 }
