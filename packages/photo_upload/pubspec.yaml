@@ -1,6 +1,6 @@
 name: photo_upload
 description: A module to handle photo upload
-version: 0.3.7
+version: 0.3.8
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -20,7 +20,7 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/layout_builder
-    version: ^0.16.21
+    version: ^0.17.0
   firebase_storage: ^10.0.5
   flutter_riverpod: ^1.0.0
   freezed_annotation: ^0.15.0
