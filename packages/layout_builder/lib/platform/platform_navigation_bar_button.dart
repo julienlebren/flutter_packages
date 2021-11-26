@@ -1,15 +1,43 @@
 part of platform;
 
+enum NavigationBarButtonPosition { left, right }
+
 class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
   PlatformNavigationBarButton({
     required this.onPressed,
     this.buttonText,
     this.icon = Icons.check,
+    this.position = NavigationBarButtonPosition.right,
   });
+
+  factory PlatformNavigationBarButton.left({
+    onPressed,
+    buttonText,
+    icon,
+  }) =>
+      PlatformNavigationBarButton(
+        onPressed: onPressed,
+        buttonText: buttonText,
+        icon: icon,
+        position: NavigationBarButtonPosition.left,
+      );
+
+  factory PlatformNavigationBarButton.right({
+    onPressed,
+    buttonText,
+    icon,
+  }) =>
+      PlatformNavigationBarButton(
+        onPressed: onPressed,
+        buttonText: buttonText,
+        icon: icon,
+        position: NavigationBarButtonPosition.right,
+      );
 
   final VoidCallback? onPressed;
   final String? buttonText;
   final IconData? icon;
+  final NavigationBarButtonPosition position;
 
   @override
   Widget createMaterialWidget(BuildContext context, WidgetRef ref) {
@@ -29,7 +57,11 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
   @override
   Widget createCupertinoWidget(BuildContext context, WidgetRef ref) {
     return Container(
-      transform: Matrix4.translationValues(10.0, 0.0, 0.0),
+      transform: Matrix4.translationValues(
+        position == NavigationBarButtonPosition.left ? 10.0 : 0.0,
+        0.0,
+        0.0,
+      ),
       child: CupertinoButton(
         padding: EdgeInsets.zero,
         child: buttonText != null ? Text(buttonText!) : Icon(icon, size: 28),
