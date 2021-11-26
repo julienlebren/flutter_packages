@@ -45,7 +45,7 @@ class ListDivider extends ConsumerWidget {
     return Padding(
       padding: EdgeInsets.only(left: listViewTheme.separatorPadding),
       child: Divider(
-        color: appTheme.borderColor,
+        color: appTheme.dividerColor,
         height: 0.5,
       ),
     );
