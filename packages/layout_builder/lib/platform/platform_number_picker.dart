@@ -58,7 +58,7 @@ showPlatformNumberPicker(
         itemExtent: 30,
         useMagnifier: true,
         scrollController: FixedExtentScrollController(
-          initialItem: selectedValue != null ? data.indexOf(selectedValue) : 0,
+          initialItem: data.indexOf(selectedValue),
         ),
         children: data.map((item) => Text(item.toString())).toList(),
         onSelectedItemChanged: (index) {

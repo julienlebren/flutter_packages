@@ -27,6 +27,7 @@ class AppTheme with _$AppTheme {
     Color? tabBarBackgroundColor,
     Color? cupertinoTabBarBackgroundColor,
     required Color formBackgroundColor,
+    required Color formRowBackgroundColor,
     required Color listTileBackground,
     @Default(5.0) double elevatedButtonRadius,
     @Default(16.0) double elevatedButtonPadding,

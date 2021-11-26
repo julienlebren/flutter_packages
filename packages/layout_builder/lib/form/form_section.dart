@@ -98,7 +98,6 @@ class FormSectionTitle extends PlatformWidgetBase<Container, Container> {
 
   @override
   Container createCupertinoWidget(BuildContext context, WidgetRef ref) {
-    final appTheme = ref.watch(appThemeProvider);
     return Container(
       width: double.infinity,
       color: Colors.transparent,

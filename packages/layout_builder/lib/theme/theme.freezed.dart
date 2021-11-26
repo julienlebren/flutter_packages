@@ -30,6 +30,7 @@ class _$AppThemeTearOff {
       Color? tabBarBackgroundColor,
       Color? cupertinoTabBarBackgroundColor,
       required Color formBackgroundColor,
+      required Color formRowBackgroundColor,
       required Color listTileBackground,
       double elevatedButtonRadius = 5.0,
       double elevatedButtonPadding = 16.0,
@@ -52,6 +53,7 @@ class _$AppThemeTearOff {
       tabBarBackgroundColor: tabBarBackgroundColor,
       cupertinoTabBarBackgroundColor: cupertinoTabBarBackgroundColor,
       formBackgroundColor: formBackgroundColor,
+      formRowBackgroundColor: formRowBackgroundColor,
       listTileBackground: listTileBackground,
       elevatedButtonRadius: elevatedButtonRadius,
       elevatedButtonPadding: elevatedButtonPadding,
@@ -83,6 +85,7 @@ mixin _$AppTheme {
   Color? get cupertinoTabBarBackgroundColor =>
       throw _privateConstructorUsedError;
   Color get formBackgroundColor => throw _privateConstructorUsedError;
+  Color get formRowBackgroundColor => throw _privateConstructorUsedError;
   Color get listTileBackground => throw _privateConstructorUsedError;
   double get elevatedButtonRadius => throw _privateConstructorUsedError;
   double get elevatedButtonPadding => throw _privateConstructorUsedError;
@@ -114,6 +117,7 @@ abstract class $AppThemeCopyWith<$Res> {
       Color? tabBarBackgroundColor,
       Color? cupertinoTabBarBackgroundColor,
       Color formBackgroundColor,
+      Color formRowBackgroundColor,
       Color listTileBackground,
       double elevatedButtonRadius,
       double elevatedButtonPadding,
@@ -146,6 +150,7 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
     Object? tabBarBackgroundColor = freezed,
     Object? cupertinoTabBarBackgroundColor = freezed,
     Object? formBackgroundColor = freezed,
+    Object? formRowBackgroundColor = freezed,
     Object? listTileBackground = freezed,
     Object? elevatedButtonRadius = freezed,
     Object? elevatedButtonPadding = freezed,
@@ -205,6 +210,10 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
           ? _value.formBackgroundColor
           : formBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
+      formRowBackgroundColor: formRowBackgroundColor == freezed
+          ? _value.formRowBackgroundColor
+          : formRowBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
       listTileBackground: listTileBackground == freezed
           ? _value.listTileBackground
           : listTileBackground // ignore: cast_nullable_to_non_nullable
@@ -259,6 +268,7 @@ abstract class _$AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
       Color? tabBarBackgroundColor,
       Color? cupertinoTabBarBackgroundColor,
       Color formBackgroundColor,
+      Color formRowBackgroundColor,
       Color listTileBackground,
       double elevatedButtonRadius,
       double elevatedButtonPadding,
@@ -292,6 +302,7 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
     Object? tabBarBackgroundColor = freezed,
     Object? cupertinoTabBarBackgroundColor = freezed,
     Object? formBackgroundColor = freezed,
+    Object? formRowBackgroundColor = freezed,
     Object? listTileBackground = freezed,
     Object? elevatedButtonRadius = freezed,
     Object? elevatedButtonPadding = freezed,
@@ -351,6 +362,10 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
           ? _value.formBackgroundColor
           : formBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
+      formRowBackgroundColor: formRowBackgroundColor == freezed
+          ? _value.formRowBackgroundColor
+          : formRowBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
       listTileBackground: listTileBackground == freezed
           ? _value.listTileBackground
           : listTileBackground // ignore: cast_nullable_to_non_nullable
@@ -403,6 +418,7 @@ class _$_AppTheme implements _AppTheme {
       this.tabBarBackgroundColor,
       this.cupertinoTabBarBackgroundColor,
       required this.formBackgroundColor,
+      required this.formRowBackgroundColor,
       required this.listTileBackground,
       this.elevatedButtonRadius = 5.0,
       this.elevatedButtonPadding = 16.0,
@@ -437,6 +453,8 @@ class _$_AppTheme implements _AppTheme {
   @override
   final Color formBackgroundColor;
   @override
+  final Color formRowBackgroundColor;
+  @override
   final Color listTileBackground;
   @JsonKey(defaultValue: 5.0)
   @override
@@ -457,7 +475,7 @@ class _$_AppTheme implements _AppTheme {
 
   @override
   String toString() {
-    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, cupertinoNavigationBarBackgroundColor: $cupertinoNavigationBarBackgroundColor, tabBarBackgroundColor: $tabBarBackgroundColor, cupertinoTabBarBackgroundColor: $cupertinoTabBarBackgroundColor, formBackgroundColor: $formBackgroundColor, listTileBackground: $listTileBackground, elevatedButtonRadius: $elevatedButtonRadius, elevatedButtonPadding: $elevatedButtonPadding, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
+    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, cupertinoNavigationBarBackgroundColor: $cupertinoNavigationBarBackgroundColor, tabBarBackgroundColor: $tabBarBackgroundColor, cupertinoTabBarBackgroundColor: $cupertinoTabBarBackgroundColor, formBackgroundColor: $formBackgroundColor, formRowBackgroundColor: $formRowBackgroundColor, listTileBackground: $listTileBackground, elevatedButtonRadius: $elevatedButtonRadius, elevatedButtonPadding: $elevatedButtonPadding, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
   }
 
   @override
@@ -482,7 +500,8 @@ class _$_AppTheme implements _AppTheme {
                     navigationBarBackgroundColor) &&
             (identical(other.navigationBarBorderColor, navigationBarBorderColor) ||
                 other.navigationBarBorderColor == navigationBarBorderColor) &&
-            (identical(other.cupertinoNavigationBarBackgroundColor, cupertinoNavigationBarBackgroundColor) ||
+            (identical(other.cupertinoNavigationBarBackgroundColor,
+                    cupertinoNavigationBarBackgroundColor) ||
                 other.cupertinoNavigationBarBackgroundColor ==
                     cupertinoNavigationBarBackgroundColor) &&
             (identical(other.tabBarBackgroundColor, tabBarBackgroundColor) ||
@@ -492,6 +511,8 @@ class _$_AppTheme implements _AppTheme {
                     cupertinoTabBarBackgroundColor) &&
             (identical(other.formBackgroundColor, formBackgroundColor) ||
                 other.formBackgroundColor == formBackgroundColor) &&
+            (identical(other.formRowBackgroundColor, formRowBackgroundColor) ||
+                other.formRowBackgroundColor == formRowBackgroundColor) &&
             (identical(other.listTileBackground, listTileBackground) ||
                 other.listTileBackground == listTileBackground) &&
             (identical(other.elevatedButtonRadius, elevatedButtonRadius) ||
@@ -502,12 +523,9 @@ class _$_AppTheme implements _AppTheme {
                 other.selectedColor == selectedColor) &&
             (identical(other.borderColor, borderColor) ||
                 other.borderColor == borderColor) &&
-            (identical(other.textColor, textColor) ||
-                other.textColor == textColor) &&
-            (identical(other.dividerColor, dividerColor) ||
-                other.dividerColor == dividerColor) &&
-            (identical(other.shadowColor, shadowColor) ||
-                other.shadowColor == shadowColor));
+            (identical(other.textColor, textColor) || other.textColor == textColor) &&
+            (identical(other.dividerColor, dividerColor) || other.dividerColor == dividerColor) &&
+            (identical(other.shadowColor, shadowColor) || other.shadowColor == shadowColor));
   }
 
   @override
@@ -525,6 +543,7 @@ class _$_AppTheme implements _AppTheme {
         tabBarBackgroundColor,
         cupertinoTabBarBackgroundColor,
         formBackgroundColor,
+        formRowBackgroundColor,
         listTileBackground,
         elevatedButtonRadius,
         elevatedButtonPadding,
@@ -555,6 +574,7 @@ abstract class _AppTheme implements AppTheme {
       Color? tabBarBackgroundColor,
       Color? cupertinoTabBarBackgroundColor,
       required Color formBackgroundColor,
+      required Color formRowBackgroundColor,
       required Color listTileBackground,
       double elevatedButtonRadius,
       double elevatedButtonPadding,
@@ -588,6 +608,8 @@ abstract class _AppTheme implements AppTheme {
   Color? get cupertinoTabBarBackgroundColor;
   @override
   Color get formBackgroundColor;
+  @override
+  Color get formRowBackgroundColor;
   @override
   Color get listTileBackground;
   @override
