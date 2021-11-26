@@ -18,7 +18,30 @@ void showPlatformDatePicker(
     if (date != null) {
       onChanged(date);
     }
-  } else {}
+  } else {
+    final dateProvider = StateProvider<DateTime>((_) => initialDate);
+
+    showPlatformModalPopup(
+      context: context,
+      ref: ref,
+      height: 200,
+      onPressed: () {
+        onChanged(
+          ref.read(dateProvider),
+        );
+        Navigator.of(context, rootNavigator: true).pop();
+      },
+      child: CupertinoDatePicker(
+        mode: CupertinoDatePickerMode.time,
+        maximumDate: lastDate,
+        minimumDate: firstDate,
+        initialDateTime: initialDate,
+        onDateTimeChanged: (value) {
+          ref.read(dateProvider.state).state = value;
+        },
+      ),
+    );
+  }
 }
 
 void showPlatformTimePicker(
@@ -48,8 +71,7 @@ void showPlatformTimePicker(
       height: 200,
       onPressed: () {
         onChanged(
-          TimeOfDay.fromDateTime(ref.read(timeProvider.state).state)
-              .format(context),
+          TimeOfDay.fromDateTime(ref.read(timeProvider)).format(context),
         );
         Navigator.of(context, rootNavigator: true).pop();
       },
