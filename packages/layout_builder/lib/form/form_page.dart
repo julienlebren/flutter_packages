@@ -61,33 +61,44 @@ class FormPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return LayoutBuilder(builder: (
-      BuildContext context,
-      BoxConstraints viewportConstraints,
-    ) {
-      final formTheme = ref.watch(formThemeProvider);
-      return SingleChildScrollView(
-        physics: AlwaysScrollableScrollPhysics(),
-        child: ConstrainedBox(
-          constraints: BoxConstraints(
-            minHeight: viewportConstraints.maxHeight,
-          ),
-          child: Container(
-            color: formTheme.backgroundColor,
-            padding: EdgeInsets.symmetric(
-              horizontal: isCupertino() ? 18 : 0,
-              vertical: isCupertino() ? 18 : 0, // 14 si fond blanc
-            ),
-            child: Column(children: [
-              for (var child in children) ...[
-                child,
-                if (child != children.last) FormSectionDivider(),
-                //FormSectionDivider(),
-              ],
-            ]),
+    final formTheme = ref.watch(formThemeProvider);
+    final appTheme = ref.watch(appThemeProvider);
+    return ProviderScope(
+      overrides: [
+        appThemeProvider.overrideWithValue(
+          appTheme.copyWith(
+            listTileBackground: formTheme.rowBackgroundColor,
           ),
         ),
-      );
-    });
+      ],
+      child: LayoutBuilder(builder: (
+        BuildContext context,
+        BoxConstraints viewportConstraints,
+      ) {
+        final formTheme = ref.watch(formThemeProvider);
+        return SingleChildScrollView(
+          physics: AlwaysScrollableScrollPhysics(),
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: viewportConstraints.maxHeight,
+            ),
+            child: Container(
+              color: formTheme.backgroundColor,
+              padding: EdgeInsets.symmetric(
+                horizontal: isCupertino() ? 18 : 0,
+                vertical: isCupertino() ? 18 : 0, // 14 si fond blanc
+              ),
+              child: Column(children: [
+                for (var child in children) ...[
+                  child,
+                  if (child != children.last) FormSectionDivider(),
+                  //FormSectionDivider(),
+                ],
+              ]),
+            ),
+          ),
+        );
+      }),
+    );
   }
 }
