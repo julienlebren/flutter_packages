@@ -85,6 +85,7 @@ class PlatformPopupMenu<T>
     required this.icon,
     required this.backgroundColor,
     required this.color,
+    this.isDestructiveAction = false,
   });
 
   final String? title;
@@ -93,6 +94,7 @@ class PlatformPopupMenu<T>
   final IconData icon;
   final Color backgroundColor;
   final Color color;
+  final bool isDestructiveAction;
 
   @override
   PopupMenuButton createMaterialWidget(BuildContext context, WidgetRef ref) {
@@ -138,6 +140,7 @@ class PlatformPopupMenu<T>
                       style: _cupertinoActionSheetTextStyle,
                     ),
                     onPressed: () => onPressed(item.value),
+                    isDestructiveAction: isDestructiveAction,
                   ),
               ],
               cancelButton: CupertinoActionSheetAction(
