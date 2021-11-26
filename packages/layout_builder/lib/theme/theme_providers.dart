@@ -112,7 +112,7 @@ final formThemeProvider = Provider<FormTheme>((ref) {
   final brightness = ref.watch(brightnessProvider);
   if (brightness == Brightness.dark) {
     return FormTheme(
-      backgroundColor: Color(0xFF121212),
+      backgroundColor: Color(0xFF000000),
       rowBackgroundColor: Color(0xFF262626),
       rowDividerColor: Color(0xFF333333),
       sectionDividerColor: Color(0xFF333333),
