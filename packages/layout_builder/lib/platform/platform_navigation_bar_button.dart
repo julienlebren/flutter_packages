@@ -1,38 +1,5 @@
 part of platform;
 
-/*
-class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
-  PlatformNavigationBarButton({
-    required this.onPressed,
-    this.buttonText,
-    this.icon,
-  });
-
-  final VoidCallback? onPressed;
-  final String? buttonText;
-  final IconData? icon;
-
-  @override
-  Widget createMaterialWidget(BuildContext context, WidgetRef ref) {
-    return Padding(
-      padding: EdgeInsets.only(left: 15),
-      child: GestureDetector(
-        onTap: onPressed,
-        child: Icon(icon),
-      ),
-    );
-  }
-
-  @override
-  Widget createCupertinoWidget(BuildContext context, WidgetRef ref) {
-    return CupertinoButton(
-      padding: EdgeInsets.zero,
-      child: Icon(icon),
-      onPressed: onPressed,
-    );
-  }
-}*/
-
 class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
   PlatformNavigationBarButton({
     required this.onPressed,
@@ -65,13 +32,7 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
       transform: Matrix4.translationValues(10.0, 0.0, 0.0),
       child: CupertinoButton(
         padding: EdgeInsets.zero,
-        child: icon != null
-            ? Icon(icon, size: 28)
-            : Text(
-                buttonText != null
-                    ? buttonText!
-                    : MaterialLocalizations.of(context).continueButtonLabel,
-              ),
+        child: buttonText != null ? Text(buttonText!) : Icon(icon, size: 28),
         onPressed: onPressed,
       ),
     );
@@ -89,7 +50,7 @@ class PlatformNavigationBarSaveButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PlatformNavigationBarButton(
-      buttonText: "Save", //MaterialLocalizations.of(context).saveButtonLabel,
+      buttonText: MaterialLocalizations.of(context).saveButtonLabel,
       onPressed: onPressed,
     );
   }
