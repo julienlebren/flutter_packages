@@ -31,7 +31,7 @@ class FormSection extends ConsumerWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(isCupertino() ? 10.0 : 0.0),
           child: Container(
-            color: appTheme.listTileBackground,
+            color: appTheme.formRowBackgroundColor,
             child: child != null
                 ? Padding(
                     padding: EdgeInsets.only(
