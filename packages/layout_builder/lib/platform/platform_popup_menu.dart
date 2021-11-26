@@ -40,6 +40,7 @@ Future<void> showPlatformPopupMenu({
                   style: _cupertinoActionSheetTextStyle,
                 ),
                 onPressed: () => onPressed(item.value),
+                isDestructiveAction: item.isDestructiveAction,
               ),
           ],
           cancelButton: CupertinoActionSheetAction(
