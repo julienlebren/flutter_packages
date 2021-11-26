@@ -105,6 +105,7 @@ class UploadWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
+    final formTheme = ref.watch(formThemeProvider);
     final photoFile = ref.watch(photoFileProvider(storageRef));
     final isUploading = ref.watch(uploadingProvider(storageRef));
     final isUploadSuccess = ref.watch(uploadSuccessProvider(storageRef));
@@ -176,7 +177,7 @@ class UploadWidget extends ConsumerWidget {
                         height: 36,
                         decoration: BoxDecoration(
                           border: Border.all(
-                              color: appTheme.formBackgroundColor, width: 2),
+                              color: formTheme.backgroundColor, width: 2),
                           borderRadius: BorderRadius.circular(20.0),
                           color: isUploadSuccess && isUpdateSuccess
                               ? Colors.green
