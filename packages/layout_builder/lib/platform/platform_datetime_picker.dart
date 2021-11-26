@@ -32,7 +32,7 @@ void showPlatformDatePicker(
         Navigator.of(context, rootNavigator: true).pop();
       },
       child: CupertinoDatePicker(
-        mode: CupertinoDatePickerMode.time,
+        mode: CupertinoDatePickerMode.date,
         maximumDate: lastDate,
         minimumDate: firstDate,
         initialDateTime: initialDate,
