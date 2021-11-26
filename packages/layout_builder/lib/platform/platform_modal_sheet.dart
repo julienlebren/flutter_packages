@@ -161,6 +161,7 @@ void showPlatformModalPopup({
   VoidCallback? onPressed,
   required Widget child,
 }) {
+  final appTheme = ref.watch(appThemeProvider);
   final formTheme = ref.watch(formThemeProvider);
   showCupertinoModalPopup(
     context: context,
@@ -179,8 +180,13 @@ void showPlatformModalPopup({
                   if (title != null) ...[
                     Container(
                       padding: EdgeInsets.all(15),
-                      child: Text(title,
-                          style: TextStyle(fontWeight: FontWeight.bold)),
+                      child: Text(
+                        title,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: appTheme.textColor,
+                        ),
+                      ),
                     ),
                   ],
                   Spacer(),

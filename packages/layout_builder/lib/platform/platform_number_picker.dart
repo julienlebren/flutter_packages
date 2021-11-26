@@ -43,6 +43,7 @@ showPlatformNumberPicker(
     );
   } else {
     var data = [for (var i = minValue; i <= maxValue; i++) i];
+    final appTheme = ref.watch(appThemeProvider);
 
     showPlatformModalPopup(
       context: context,
@@ -54,7 +55,7 @@ showPlatformNumberPicker(
         Navigator.of(context, rootNavigator: true).pop();
       },
       child: CupertinoPicker(
-        backgroundColor: Colors.white,
+        backgroundColor: appTheme.scaffoldBackgroundColor,
         itemExtent: 30,
         useMagnifier: true,
         scrollController: FixedExtentScrollController(
