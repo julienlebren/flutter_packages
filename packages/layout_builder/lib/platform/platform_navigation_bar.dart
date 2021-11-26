@@ -28,7 +28,11 @@ class PlatformNavigationBar
     if (middle != null) {
       return middle!;
     } else if (title != null) {
-      return Text(title!);
+      return Text(
+        title!,
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
+      );
     }
   }
 
