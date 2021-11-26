@@ -50,7 +50,10 @@ class PlatformNavigationBarSaveButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PlatformNavigationBarButton(
-      buttonText: MaterialLocalizations.of(context).saveButtonLabel,
+      buttonText: MaterialLocalizations.of(context)
+          .saveButtonLabel
+          .toLowerCase()
+          .capitalize(),
       onPressed: onPressed,
     );
   }
