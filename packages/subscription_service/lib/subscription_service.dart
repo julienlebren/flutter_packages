@@ -59,17 +59,19 @@ class SubscriptionService {
     _processInfo(purchaserInfo);
   }
 
+  Future<void> openOffers() async {
+    await Purchases.presentCodeRedemptionSheet();
+  }
+
   Future<void> _processInfo(PurchaserInfo info) async {
     final entitlementInfo = info.entitlements.all[entitlementId];
     if (entitlementInfo == null) return;
-    print("entitlementInfo: $entitlementInfo");
 
     final isSubscribed = entitlementInfo.isActive;
     DateTime? expirationDate = entitlementInfo.expirationDate != null
         ? DateTime.parse(entitlementInfo.expirationDate!)
         : null;
 
-    print("expirationDate: $expirationDate");
     processHandler(isSubscribed, expirationDate);
   }
 }
