@@ -21,7 +21,7 @@ class FormSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final appTheme = ref.watch(appThemeProvider);
+    final formTheme = ref.watch(formThemeProvider);
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
@@ -31,7 +31,7 @@ class FormSection extends ConsumerWidget {
         ClipRRect(
           borderRadius: BorderRadius.circular(isCupertino() ? 10.0 : 0.0),
           child: Container(
-            color: appTheme.formRowBackgroundColor,
+            color: formTheme.rowBackgroundColor,
             child: child != null
                 ? Padding(
                     padding: EdgeInsets.only(
@@ -77,9 +77,10 @@ class FormSectionTitle extends PlatformWidgetBase<Container, Container> {
   @override
   Container createMaterialWidget(BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
+    final formTheme = ref.watch(formThemeProvider);
     return Container(
       width: double.infinity,
-      color: appTheme.formBackgroundColor,
+      color: formTheme.backgroundColor,
       padding: EdgeInsets.only(
         left: 15,
         bottom: 0,
