@@ -58,9 +58,9 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
   Widget createCupertinoWidget(BuildContext context, WidgetRef ref) {
     return Container(
       transform: Matrix4.translationValues(
-        position == NavigationBarButtonPosition.left
+        (position == NavigationBarButtonPosition.left || buttonText != null)
             ? 10.0
-            : (buttonText != null ? 0.0 : -10.0),
+            : 0.0,
         0.0,
         0.0,
       ),
