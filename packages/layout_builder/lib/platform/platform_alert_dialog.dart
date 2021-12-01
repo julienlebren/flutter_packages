@@ -115,7 +115,7 @@ Future<bool?> showErrorDialog(
           buttonText: MaterialLocalizations.of(context).okButtonLabel,
           onPressed: () {
             if (isMaterial()) {
-              Navigator.of(context).pop(false);
+              Navigator.of(context, rootNavigator: true).pop(false);
             }
           },
         )
