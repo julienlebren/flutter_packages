@@ -98,6 +98,26 @@ class PlatformDialogAction
   }
 }
 
+Future<bool?> showErrorDialog(
+  BuildContext context,
+  WidgetRef ref, {
+  required String title,
+  String? content,
+}) =>
+    showAlertDialog(
+      context,
+      ref,
+      title: title,
+      content: content,
+      displayCancelButton: false,
+      actions: [
+        PlatformDialogAction(
+          buttonText: MaterialLocalizations.of(context).okButtonLabel,
+          onPressed: () => Navigator.of(context).pop(false),
+        )
+      ],
+    );
+  
 /*
 Future<bool?> showFirestoreErrorDialog(
   BuildContext context,
