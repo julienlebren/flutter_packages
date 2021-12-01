@@ -49,7 +49,7 @@ class FormSection extends ConsumerWidget {
                       ],
                       for (var child in children!) ...[
                         child,
-                        if (child != children!.last) // && !isTextField(child))
+                        if (child != children!.last && !isTextField(child))
                           FormRowDivider(),
                       ],
                       //if (isMaterial()) SizedBox(height: 10),
@@ -64,7 +64,7 @@ class FormSection extends ConsumerWidget {
   }
 
   bool isTextField(Widget widget) =>
-      widget is FormRow && widget.child is PlatformTextField;
+      isMaterial() && widget is FormRow && widget.child is PlatformTextField;
 }
 
 class FormSectionTitle extends PlatformWidgetBase<Container, Container> {
