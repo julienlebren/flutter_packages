@@ -141,7 +141,7 @@ class PlatformPopupMenu<T>
                       style: _cupertinoActionSheetTextStyle,
                     ),
                     onPressed: () {
-                      Navigator.of(context, rootNavigator: true).pop();
+                      Navigator.pop(context);
                       onPressed(item.value);
                     },
                     isDestructiveAction: item.isDestructiveAction,
