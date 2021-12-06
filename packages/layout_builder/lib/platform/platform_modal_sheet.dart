@@ -144,7 +144,7 @@ class PlatformModalSheetAction
         ),
       ),
       onPressed: () {
-        Navigator.of(context, rootNavigator: true).pop();
+        //Navigator.of(context, rootNavigator: true).pop();
         onPressed.call();
       },
       isDefaultAction: isDefaultAction,
