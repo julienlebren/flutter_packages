@@ -141,6 +141,7 @@ class PlatformPopupMenu<T>
                       style: _cupertinoActionSheetTextStyle,
                     ),
                     onPressed: () {
+                      print("test here");
                       Navigator.pop(context);
                       onPressed(item.value);
                     },
