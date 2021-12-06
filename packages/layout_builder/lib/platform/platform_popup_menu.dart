@@ -39,7 +39,10 @@ Future<void> showPlatformPopupMenu({
                   item.title,
                   style: _cupertinoActionSheetTextStyle,
                 ),
-                onPressed: () => onPressed(item.value),
+                onPressed: () {
+                  Navigator.pop(context);
+                  onPressed(item.value);
+                },
                 isDestructiveAction: item.isDestructiveAction,
               ),
           ],
@@ -141,7 +144,6 @@ class PlatformPopupMenu<T>
                       style: _cupertinoActionSheetTextStyle,
                     ),
                     onPressed: () {
-                      print("test here");
                       Navigator.pop(context);
                       onPressed(item.value);
                     },
