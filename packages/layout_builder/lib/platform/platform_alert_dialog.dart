@@ -78,6 +78,7 @@ class PlatformDialogAction
         textAlign: TextAlign.right,
       ),
       onPressed: () {
+        Navigator.of(context).pop(false);
         onPressed?.call();
       },
     );
