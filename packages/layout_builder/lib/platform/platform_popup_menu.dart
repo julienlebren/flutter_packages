@@ -40,7 +40,7 @@ Future<void> showPlatformPopupMenu({
                   style: _cupertinoActionSheetTextStyle,
                 ),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.of(context, rootNavigator: true).pop();
                   onPressed(item.value);
                 },
                 isDestructiveAction: item.isDestructiveAction,
@@ -144,7 +144,7 @@ class PlatformPopupMenu<T>
                       style: _cupertinoActionSheetTextStyle,
                     ),
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.of(context, rootNavigator: true).pop();
                       onPressed(item.value);
                     },
                     isDestructiveAction: item.isDestructiveAction,
