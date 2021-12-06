@@ -19,5 +19,5 @@ extension StringX on String {
 
   DateTime get hourToDate => DateFormat('Hm').parse(this);
 
-  String get onlyDigits => this.replaceAll(new RegExp(r'[^0-9]'), '');
+  String get onlyDigits => this.replaceAll("\\D+", "");
 }
