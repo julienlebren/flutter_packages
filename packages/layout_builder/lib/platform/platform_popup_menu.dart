@@ -140,7 +140,10 @@ class PlatformPopupMenu<T>
                       item.title,
                       style: _cupertinoActionSheetTextStyle,
                     ),
-                    onPressed: () => onPressed(item.value),
+                    onPressed: () {
+                      Navigator.of(context, rootNavigator: true).pop();
+                      onPressed(item.value);
+                    },
                     isDestructiveAction: item.isDestructiveAction,
                   ),
               ],
