@@ -37,6 +37,7 @@ class PlatformScaffold extends PlatformWidgetBase<AnnotatedRegion, Widget> {
       navigationBar: appBar?.createCupertinoWidget(context, ref),
       child: SafeArea(
         child: body,
+        bottom: !isModal,
       ),
     );
   }
