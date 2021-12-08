@@ -28,6 +28,8 @@ class PlatformScaffold extends PlatformWidgetBase<AnnotatedRegion, Widget> {
 
   @override
   Widget createCupertinoWidget(BuildContext context, WidgetRef ref) {
+    final safePadding = isModal ? MediaQuery.of(context).padding.bottom : 0.0;
+
     /*final appTheme = ref.watch(appThemeProvider);
     final backgroundColor = body is FormWithOverlay || body is FormPage
         ? appTheme.formBackgroundColor
@@ -36,7 +38,10 @@ class PlatformScaffold extends PlatformWidgetBase<AnnotatedRegion, Widget> {
       //backgroundColor: backgroundColor,
       navigationBar: appBar?.createCupertinoWidget(context, ref),
       child: SafeArea(
-        child: body,
+        child: Padding(
+          padding: EdgeInsets.only(bottom: safePadding),
+          child: body,
+        ),
         bottom: !isModal,
       ),
     );
