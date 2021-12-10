@@ -139,21 +139,10 @@ class UploadWidget extends ConsumerWidget {
                 child: SizedBox(
                   height: height,
                   width: width,
-                  child: photoFile != null ? Image.file(photoFile) : child,
-                ),
-              ),
-              Container(
-                height: height,
-                width: width,
-                child: AnimatedOpacity(
-                  duration: Duration(milliseconds: 200),
-                  opacity: isUploading ? 0.5 : 0,
-                  child: ClipRRect(
-                    borderRadius:
-                        BorderRadius.circular(isRounded ? width / 2 : 0.0),
-                    child: Container(
-                      color: Colors.white,
-                    ),
+                  child: AnimatedOpacity(
+                    duration: Duration(milliseconds: 200),
+                    opacity: isUploading ? 0.5 : 0,
+                    child: photoFile != null ? Image.file(photoFile) : child,
                   ),
                 ),
               ),
