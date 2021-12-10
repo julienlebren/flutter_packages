@@ -16,6 +16,7 @@ showPlatformNumberPicker(
   if (isMaterial()) {
     showDialog(
       context: context,
+      useRootNavigator: true,
       builder: (context) {
         return AlertDialog(
           title: Text(title),
@@ -25,8 +26,7 @@ showPlatformNumberPicker(
               buttonText: MaterialLocalizations.of(context)
                   .cancelButtonLabel
                   .toUpperCase(),
-              onPressed: () =>
-                  Navigator.of(context, rootNavigator: true).pop(false),
+              onPressed: () => Navigator.of(context, rootNavigator: true).pop(),
             ),
             PlatformDialogAction(
               buttonText: MaterialLocalizations.of(context)
