@@ -146,8 +146,11 @@ class UploadWidget extends ConsumerWidget {
                 duration: Duration(milliseconds: 200),
                 opacity: isUploading ? 0.5 : 0,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(width / 2),
+                  borderRadius:
+                      BorderRadius.circular(isRounded ? width / 2 : width / 2),
                   child: Container(
+                    height: height,
+                    width: width,
                     color: Colors.white,
                   ),
                 ),
