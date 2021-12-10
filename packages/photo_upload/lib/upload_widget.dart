@@ -141,7 +141,7 @@ class UploadWidget extends ConsumerWidget {
                   width: width,
                   child: AnimatedOpacity(
                     duration: Duration(milliseconds: 200),
-                    opacity: isUploading ? 0.5 : 0,
+                    opacity: isUploading ? 0.5 : 1,
                     child: photoFile != null ? Image.file(photoFile) : child,
                   ),
                 ),
