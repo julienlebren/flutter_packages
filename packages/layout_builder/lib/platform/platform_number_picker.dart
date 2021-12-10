@@ -25,7 +25,8 @@ showPlatformNumberPicker(
               buttonText: MaterialLocalizations.of(context)
                   .cancelButtonLabel
                   .toUpperCase(),
-              onPressed: () => Navigator.of(context).pop(false),
+              onPressed: () =>
+                  Navigator.of(context, rootNavigator: true).pop(false),
             ),
             PlatformDialogAction(
               buttonText: MaterialLocalizations.of(context)
