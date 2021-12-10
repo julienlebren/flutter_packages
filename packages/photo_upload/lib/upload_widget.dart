@@ -84,7 +84,7 @@ class UploadWidget extends ConsumerWidget {
   Future<void> _cropImage(WidgetRef ref, File imageFile) async {
     File? croppedFile = await ImageCropper.cropImage(
       sourcePath: imageFile.path,
-      aspectRatio: CropAspectRatio(ratioX: 1, ratioY: 1),
+      aspectRatio: isRounded ? CropAspectRatio(ratioX: 1, ratioY: 1) : null,
       cropStyle: isRounded ? CropStyle.circle : CropStyle.rectangle,
       androidUiSettings: AndroidUiSettings(
         toolbarTitle: l10n.cropPicture,
