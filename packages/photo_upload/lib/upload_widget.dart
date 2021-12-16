@@ -14,6 +14,7 @@ class UploadWidget extends ConsumerWidget {
     required this.onStart,
     required this.onSuccess,
     required this.child,
+    this.maxWidth,
     this.l10n = const UploadLocalizations(),
   });
 
@@ -28,6 +29,7 @@ class UploadWidget extends ConsumerWidget {
   final VoidCallback onStart;
   final Function(String url) onSuccess;
   final Widget child;
+  final double? maxWidth;
   final UploadLocalizations l10n;
 
   UploadController _controller(WidgetRef ref) {
@@ -72,9 +74,15 @@ class UploadWidget extends ConsumerWidget {
     _getImage(ref, ImageSource.gallery);
   }
 
-  Future _getImage(WidgetRef ref, ImageSource source) async {
+  Future _getImage(
+    WidgetRef ref,
+    ImageSource source,
+  ) async {
     final picker = ImagePicker();
-    final pickedFile = await picker.getImage(source: source);
+    final pickedFile = await picker.pickImage(
+      source: source,
+      maxWidth: maxWidth,
+    );
 
     if (pickedFile != null) {
       _cropImage(ref, File(pickedFile.path));

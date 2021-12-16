@@ -14,7 +14,6 @@ showPlatformNumberPicker(
   ref.read(valueProvider.state).state = selectedValue;
 
   if (isMaterial()) {
-    print("test 2");
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
