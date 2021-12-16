@@ -14,31 +14,29 @@ showPlatformNumberPicker(
   ref.read(valueProvider.state).state = selectedValue;
 
   if (isMaterial()) {
+    print("test");
     showDialog(
       context: context,
-      builder: (context) {
-        return AlertDialog(
-          title: Text(title),
-          content: _MaterialNumberPicker(initialValue: selectedValue),
-          actions: <Widget>[
-            PlatformDialogAction(
-              buttonText: MaterialLocalizations.of(context)
-                  .cancelButtonLabel
-                  .toUpperCase(),
-              onPressed: () => Navigator.of(context).pop(false),
-            ),
-            PlatformDialogAction(
-              buttonText: MaterialLocalizations.of(context)
-                  .saveButtonLabel
-                  .toUpperCase(),
-              onPressed: () {
-                onChanged(ref.read(valueProvider.state).state);
-              },
-              isDefaultAction: true,
-            ),
-          ],
-        );
-      },
+      builder: (context) => AlertDialog(
+        title: Text(title),
+        content: _MaterialNumberPicker(initialValue: selectedValue),
+        actions: <Widget>[
+          PlatformDialogAction(
+            buttonText: MaterialLocalizations.of(context)
+                .cancelButtonLabel
+                .toUpperCase(),
+            onPressed: () => Navigator.of(context).pop(false),
+          ),
+          PlatformDialogAction(
+            buttonText:
+                MaterialLocalizations.of(context).saveButtonLabel.toUpperCase(),
+            onPressed: () {
+              onChanged(ref.read(valueProvider));
+            },
+            isDefaultAction: true,
+          ),
+        ],
+      ),
     );
   } else {
     var data = [for (var i = minValue; i <= maxValue; i++) i];
