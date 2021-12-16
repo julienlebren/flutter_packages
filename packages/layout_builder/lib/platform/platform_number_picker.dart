@@ -14,7 +14,7 @@ showPlatformNumberPicker(
   ref.read(valueProvider.state).state = selectedValue;
 
   if (isMaterial()) {
-    print("test");
+    print("test 2");
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -25,7 +25,7 @@ showPlatformNumberPicker(
             buttonText: MaterialLocalizations.of(context)
                 .cancelButtonLabel
                 .toUpperCase(),
-            onPressed: () => Navigator.of(context).pop(false),
+            //onPressed: () => Navigator.of(context).pop(false),
           ),
           PlatformDialogAction(
             buttonText:
