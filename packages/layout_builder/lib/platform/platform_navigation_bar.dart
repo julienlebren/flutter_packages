@@ -102,10 +102,18 @@ class NavigationBarButtons extends StatelessWidget {
   }
 }
 
-const Border cupertinoNavigationBarBorder = Border(
-  bottom: BorderSide(
-    color: Color(0x4D000000),
-    width: 0.0, // One physical pixel.
-    style: BorderStyle.solid,
-  ),
-);
+class CupertinoNavigationBarBorder extends ConsumerWidget {
+  const CupertinoNavigationBarBorder({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final navigationBarBorderColor = ref.watch(
+      appThemeProvider.select((appTheme) => appTheme.navigationBarBorderColor),
+    );
+
+    return Container(
+      color: navigationBarBorderColor,
+      height: 0.5,
+    );
+  }
+}
