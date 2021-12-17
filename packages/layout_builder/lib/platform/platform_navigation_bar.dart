@@ -101,3 +101,11 @@ class NavigationBarButtons extends StatelessWidget {
     );
   }
 }
+
+const Border cupertinoNavigationBarBorder = Border(
+  bottom: BorderSide(
+    color: Color(0x4D000000),
+    width: 0.0, // One physical pixel.
+    style: BorderStyle.solid,
+  ),
+);
