@@ -3,13 +3,15 @@ part of platform;
 class PlatformSocialButton
     extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
   PlatformSocialButton({
-    required this.assetName,
+    this.assetName,
+    this.icon,
     required this.title,
     this.onPressed,
     required this.color,
     required this.textColor,
   }) : super();
-  final String assetName;
+  final String? assetName;
+  final Widget? icon;
   final String title;
   final VoidCallback? onPressed;
   final Color color;
@@ -58,7 +60,8 @@ class PlatformSocialButton
   Widget get socialButtonContents {
     return Row(
       children: <Widget>[
-        Image.asset(assetName),
+        if (assetName != null) Image.asset(assetName!),
+        if (icon != null) icon!,
         Spacer(),
         Text(
           title,
