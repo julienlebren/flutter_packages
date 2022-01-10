@@ -1,6 +1,6 @@
 name: firebase_auth_service
 description: Wrapper package for FirebaseAuth
-version: 0.3.7
+version: 0.4.0
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -17,6 +17,7 @@ dependencies:
   flutter_riverpod: ^1.0.0
   freezed_annotation: ^0.15.0
   google_sign_in: ^5.1.1
+  the_apple_sign_in: ^1.1.1
 
 dev_dependencies:
   flutter_test:

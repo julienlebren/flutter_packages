@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:the_apple_sign_in/the_apple_sign_in.dart';
 
 /// A provider which returns the auth changes in Firebase
 /// We use a [StreamProvider] here to handle the status of the stream,
@@ -30,6 +31,49 @@ class FirebaseAuthService {
   Future<User?> signInAnonymously() async {
     final userCredential = await _firebaseAuth.signInAnonymously();
     return userCredential.user;
+  }
+
+  Future<User?> signInWithApple() async {
+    final scopes = [Scope.email, Scope.fullName];
+
+    final result = await TheAppleSignIn.performRequests(
+      [AppleIdRequest(requestedScopes: scopes)],
+    );
+
+    switch (result.status) {
+      case AuthorizationStatus.authorized:
+        final appleIdCredential = result.credential!;
+        final oAuthProvider = OAuthProvider('apple.com');
+        final credential = oAuthProvider.credential(
+          idToken: String.fromCharCodes(appleIdCredential.identityToken!),
+          accessToken:
+              String.fromCharCodes(appleIdCredential.authorizationCode!),
+        );
+        final userCredential =
+            await _firebaseAuth.signInWithCredential(credential);
+        final firebaseUser = userCredential.user!;
+        if (scopes.contains(Scope.fullName)) {
+          final fullName = appleIdCredential.fullName;
+          if (fullName != null &&
+              fullName.givenName != null &&
+              fullName.familyName != null) {
+            final displayName = '${fullName.givenName} ${fullName.familyName}';
+            await firebaseUser.updateDisplayName(displayName);
+          }
+        }
+        return firebaseUser;
+      case AuthorizationStatus.error:
+        throw FirebaseAuthException(
+          code: 'ERROR_AUTHORIZATION_DENIED',
+        );
+
+      case AuthorizationStatus.cancelled:
+        throw FirebaseAuthException(
+          code: 'ERROR_ABORTED_BY_USER',
+        );
+      default:
+        throw UnimplementedError();
+    }
   }
 
   Future<User?> signInWithGoogle() async {
@@ -77,8 +121,8 @@ class FirebaseAuthService {
   Future<void> signOut() async {
     final googleSignIn = GoogleSignIn();
     await googleSignIn.signOut();
-    /*final facebookLogin = FacebookLogin();
-    await facebookLogin.logOut();*/
+    final facebookLogin = FacebookLogin();
+    await facebookLogin.logOut();
     await _firebaseAuth.signOut();
   }
 }
