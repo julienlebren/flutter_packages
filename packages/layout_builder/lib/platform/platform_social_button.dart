@@ -60,8 +60,18 @@ class PlatformSocialButton
   Widget get socialButtonContents {
     return Row(
       children: <Widget>[
-        if (assetName != null) Image.asset(assetName!),
-        if (icon != null) icon!,
+        if (assetName != null)
+          Image.asset(
+            assetName!,
+            width: 30,
+            height: 30,
+          ),
+        if (icon != null)
+          SizedBox(
+            width: 30,
+            height: 30,
+            child: Center(child: icon!),
+          ),
         Spacer(),
         Text(
           title,
