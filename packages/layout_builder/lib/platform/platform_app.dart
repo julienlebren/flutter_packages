@@ -4,7 +4,7 @@ class PlatformApp extends PlatformWidgetBase<MaterialApp, CupertinoApp> {
   PlatformApp({
     this.initialRoute,
     this.onGenerateRoute,
-    required this.localizationsDelegates,
+    this.localizationsDelegates,
     required this.supportedLocales,
     this.navigatorKey,
     this.builder,
@@ -15,7 +15,7 @@ class PlatformApp extends PlatformWidgetBase<MaterialApp, CupertinoApp> {
 
   final String? initialRoute;
   final RouteFactory? onGenerateRoute;
-  final Iterable<LocalizationsDelegate<dynamic>> localizationsDelegates;
+  final Iterable<LocalizationsDelegate<dynamic>>? localizationsDelegates;
   final Iterable<Locale> supportedLocales;
   final GlobalKey<NavigatorState>? navigatorKey;
   final Widget Function(BuildContext context, Widget? child)? builder;
