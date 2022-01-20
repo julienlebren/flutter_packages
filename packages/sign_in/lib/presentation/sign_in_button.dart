@@ -60,6 +60,7 @@ class SignInButton extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
             assetName!,
             width: 30,
             height: 30,
+            package: 'sign_in',
           ),
         if (icon != null)
           SizedBox(
