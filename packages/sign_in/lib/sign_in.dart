@@ -18,7 +18,7 @@ part 'presentation/sign_in_widget.dart';
 part 'sign_in.freezed.dart';
 
 final signInControllerProvider =
-    StateNotifierProvider<SignInController, SignInState>((ref) {
+    StateNotifierProvider.autoDispose<SignInController, SignInState>((ref) {
   final service = ref.watch(authServiceProvider);
   return SignInController(service);
 });
