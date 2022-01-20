@@ -59,7 +59,7 @@ class SignInButtons extends ConsumerWidget {
         (useFacebook ? buttonHeight : 0.0) +
         (useAnonymous ? buttonHeight : 0.0);
 
-    final defaultLogoSize = theme.buttonFontSize * 1.6 * (25 / 31);
+    final iconSize = theme.buttonFontSize * 1.6 * (25 / 31);
 
     return SizedBox(
       height: boxHeight,
@@ -71,7 +71,7 @@ class SignInButtons extends ConsumerWidget {
                 if (displayApple) ...[
                   socialButton(
                     icon: SizedBox(
-                      width: defaultLogoSize,
+                      width: iconSize,
                       height: theme.buttonFontSize * 1.6,
                       child: CustomPaint(
                         painter: AppleLogoPainter(
@@ -89,8 +89,8 @@ class SignInButtons extends ConsumerWidget {
                 if (useGoogle) ...[
                   socialButton(
                     icon: SizedBox(
-                      width: defaultLogoSize,
-                      height: defaultLogoSize,
+                      width: iconSize,
+                      height: iconSize,
                       child: CustomPaint(
                         painter: GoogleLogoPainter(),
                       ),
@@ -105,6 +105,7 @@ class SignInButtons extends ConsumerWidget {
                 if (useFacebook) ...[
                   socialButton(
                     assetName: "assets/images/facebook-logo.png",
+                    iconSize: iconSize,
                     title: l10n.signInWithFacebook,
                     onPressed: () {
                       _handleEvent(ref, const SignInEvent.signInWithFacebook());
@@ -134,6 +135,7 @@ class SignInButtons extends ConsumerWidget {
   Widget socialButton({
     String? assetName,
     Widget? icon,
+    double? iconSize = 0.0,
     required String title,
     required VoidCallback onPressed,
   }) {
@@ -144,6 +146,7 @@ class SignInButtons extends ConsumerWidget {
         child: SignInButton(
           assetName: assetName,
           icon: icon,
+          iconSize: iconSize,
           title: title,
           color: theme.buttonBackgroundColor,
           textColor: theme.buttonTextColor,

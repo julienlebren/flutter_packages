@@ -5,6 +5,7 @@ class SignInButton extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
     Key? key,
     this.assetName,
     this.icon,
+    required this.iconSize,
     required this.title,
     this.onPressed,
     required this.color,
@@ -16,6 +17,7 @@ class SignInButton extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
 
   final String? assetName;
   final Widget? icon;
+  final double? iconSize;
   final String title;
   final VoidCallback? onPressed;
   final Color color;
@@ -58,14 +60,14 @@ class SignInButton extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
         if (assetName != null)
           Image.asset(
             assetName!,
-            width: 30,
-            height: 30,
+            width: iconSize,
+            height: iconSize,
             package: 'sign_in',
           ),
         if (icon != null)
           SizedBox(
-            width: 30,
-            height: 30,
+            width: iconSize,
+            height: iconSize,
             child: Center(child: icon!),
           ),
         const Spacer(),
