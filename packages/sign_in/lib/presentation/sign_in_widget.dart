@@ -69,8 +69,8 @@ class SignInButtons extends ConsumerWidget {
                 if (displayApple) ...[
                   socialButton(
                     icon: SizedBox(
-                      width: 30 * (25 / 31),
-                      height: 30,
+                      width: theme.buttonFontSize * 1.6 * (25 / 31),
+                      height: theme.buttonFontSize * 1.6,
                       child: CustomPaint(
                         painter: AppleLogoPainter(
                           color: theme.buttonTextColor,
@@ -87,8 +87,8 @@ class SignInButtons extends ConsumerWidget {
                 if (useGoogle) ...[
                   socialButton(
                     icon: SizedBox(
-                      width: 30,
-                      height: 30,
+                      width: theme.buttonFontSize * 1.6 * (25 / 31),
+                      height: theme.buttonFontSize * 1.6 * (25 / 31),
                       child: CustomPaint(
                         painter: GoogleLogoPainter(),
                       ),
