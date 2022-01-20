@@ -13,9 +13,8 @@ class SignInController extends StateNotifier<SignInState> {
         signInWithFacebook: _service.signInWithFacebook,
         signInWithGoogle: _service.signInWithGoogle,
         signInAnonymously: _service.signInAnonymously,
-        signOut: _service.signOut,
       );
-      state = const SignInState.initial();
+      state = const SignInState.success();
     } on FirebaseAuthException catch (e) {
       if (e.code == "ERROR_AUTHORIZATION_DENIED") {
         state = const SignInState.initial();
@@ -24,6 +23,15 @@ class SignInController extends StateNotifier<SignInState> {
       } else {
         state = const SignInState.initial();
       }
+    } on Exception catch (e) {
+      state = SignInState.error(e.toString());
+    }
+  }
+
+  Future<void> signOut() async {
+    try {
+      _service.signOut();
+      state = const SignInState.initial();
     } on Exception catch (e) {
       state = SignInState.error(e.toString());
     }

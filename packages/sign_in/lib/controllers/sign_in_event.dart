@@ -6,5 +6,4 @@ class SignInEvent with _$SignInEvent {
   const factory SignInEvent.signInWithGoogle() = _SignInWithGoogle;
   const factory SignInEvent.signInWithApple() = _SignInWithApple;
   const factory SignInEvent.signInAnonymously() = _SignInAnonymously;
-  const factory SignInEvent.signOut() = _SignOut;
 }

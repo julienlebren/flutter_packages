@@ -4,5 +4,6 @@ part of '../sign_in.dart';
 abstract class SignInState with _$SignInState {
   const factory SignInState.initial() = _Initial;
   const factory SignInState.loading() = _Loading;
+  const factory SignInState.success() = _Success;
   const factory SignInState.error(String errorText) = _Error;
 }

@@ -257,7 +257,7 @@ class _$SignInThemeTearOff {
       required Color buttonBackgroundColor,
       required Color buttonTextColor,
       double buttonFontSize = 18.0,
-      double spaceBetweenButtons = 16}) {
+      double spaceBetweenButtons = 15.0}) {
     return _SignInTheme(
       maxWidth: maxWidth,
       buttonRadius: buttonRadius,
@@ -434,7 +434,7 @@ class _$_SignInTheme implements _SignInTheme {
       required this.buttonBackgroundColor,
       required this.buttonTextColor,
       this.buttonFontSize = 18.0,
-      this.spaceBetweenButtons = 16});
+      this.spaceBetweenButtons = 15.0});
 
   @JsonKey(defaultValue: 400)
   @override
@@ -452,7 +452,7 @@ class _$_SignInTheme implements _SignInTheme {
   @JsonKey(defaultValue: 18.0)
   @override
   final double buttonFontSize;
-  @JsonKey(defaultValue: 16)
+  @JsonKey(defaultValue: 15.0)
   @override
   final double spaceBetweenButtons;
 
@@ -541,6 +541,10 @@ class _$SignInStateTearOff {
     return const _Loading();
   }
 
+  _Success success() {
+    return const _Success();
+  }
+
   _Error error(String errorText) {
     return _Error(
       errorText,
@@ -557,6 +561,7 @@ mixin _$SignInState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() success,
     required TResult Function(String errorText) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -564,6 +569,7 @@ mixin _$SignInState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? success,
     TResult Function(String errorText)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -571,6 +577,7 @@ mixin _$SignInState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? success,
     TResult Function(String errorText)? error,
     required TResult orElse(),
   }) =>
@@ -579,6 +586,7 @@ mixin _$SignInState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -586,6 +594,7 @@ mixin _$SignInState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -593,6 +602,7 @@ mixin _$SignInState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
@@ -655,6 +665,7 @@ class _$_Initial implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() success,
     required TResult Function(String errorText) error,
   }) {
     return initial();
@@ -665,6 +676,7 @@ class _$_Initial implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? success,
     TResult Function(String errorText)? error,
   }) {
     return initial?.call();
@@ -675,6 +687,7 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? success,
     TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
@@ -689,6 +702,7 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
   }) {
     return initial(this);
@@ -699,6 +713,7 @@ class _$_Initial implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
   }) {
     return initial?.call(this);
@@ -709,6 +724,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -763,6 +779,7 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() success,
     required TResult Function(String errorText) error,
   }) {
     return loading();
@@ -773,6 +790,7 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? success,
     TResult Function(String errorText)? error,
   }) {
     return loading?.call();
@@ -783,6 +801,7 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? success,
     TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
@@ -797,6 +816,7 @@ class _$_Loading implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
   }) {
     return loading(this);
@@ -807,6 +827,7 @@ class _$_Loading implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
   }) {
     return loading?.call(this);
@@ -817,6 +838,7 @@ class _$_Loading implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -829,6 +851,120 @@ class _$_Loading implements _Loading {
 
 abstract class _Loading implements SignInState {
   const factory _Loading() = _$_Loading;
+}
+
+/// @nodoc
+abstract class _$SuccessCopyWith<$Res> {
+  factory _$SuccessCopyWith(_Success value, $Res Function(_Success) then) =
+      __$SuccessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SuccessCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
+    implements _$SuccessCopyWith<$Res> {
+  __$SuccessCopyWithImpl(_Success _value, $Res Function(_Success) _then)
+      : super(_value, (v) => _then(v as _Success));
+
+  @override
+  _Success get _value => super._value as _Success;
+}
+
+/// @nodoc
+
+class _$_Success implements _Success {
+  const _$_Success();
+
+  @override
+  String toString() {
+    return 'SignInState.success()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Success);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorText) error,
+  }) {
+    return success();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+  }) {
+    return success?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Error value) error,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_Error value)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Success implements SignInState {
+  const factory _Success() = _$_Success;
 }
 
 /// @nodoc
@@ -895,6 +1031,7 @@ class _$_Error implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
+    required TResult Function() success,
     required TResult Function(String errorText) error,
   }) {
     return error(errorText);
@@ -905,6 +1042,7 @@ class _$_Error implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? success,
     TResult Function(String errorText)? error,
   }) {
     return error?.call(errorText);
@@ -915,6 +1053,7 @@ class _$_Error implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
+    TResult Function()? success,
     TResult Function(String errorText)? error,
     required TResult orElse(),
   }) {
@@ -929,6 +1068,7 @@ class _$_Error implements _Error {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
   }) {
     return error(this);
@@ -939,6 +1079,7 @@ class _$_Error implements _Error {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
   }) {
     return error?.call(this);
@@ -949,6 +1090,7 @@ class _$_Error implements _Error {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
@@ -986,10 +1128,6 @@ class _$SignInEventTearOff {
   _SignInAnonymously signInAnonymously() {
     return const _SignInAnonymously();
   }
-
-  _SignOut signOut() {
-    return const _SignOut();
-  }
 }
 
 /// @nodoc
@@ -1003,7 +1141,6 @@ mixin _$SignInEvent {
     required TResult Function() signInWithGoogle,
     required TResult Function() signInWithApple,
     required TResult Function() signInAnonymously,
-    required TResult Function() signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1012,7 +1149,6 @@ mixin _$SignInEvent {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function()? signInAnonymously,
-    TResult Function()? signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1021,7 +1157,6 @@ mixin _$SignInEvent {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function()? signInAnonymously,
-    TResult Function()? signOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1031,7 +1166,6 @@ mixin _$SignInEvent {
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithApple value) signInWithApple,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
-    required TResult Function(_SignOut value) signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1040,7 +1174,6 @@ mixin _$SignInEvent {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
-    TResult Function(_SignOut value)? signOut,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1049,7 +1182,6 @@ mixin _$SignInEvent {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
-    TResult Function(_SignOut value)? signOut,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1116,7 +1248,6 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
     required TResult Function() signInWithGoogle,
     required TResult Function() signInWithApple,
     required TResult Function() signInAnonymously,
-    required TResult Function() signOut,
   }) {
     return signInWithFacebook();
   }
@@ -1128,7 +1259,6 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function()? signInAnonymously,
-    TResult Function()? signOut,
   }) {
     return signInWithFacebook?.call();
   }
@@ -1140,7 +1270,6 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function()? signInAnonymously,
-    TResult Function()? signOut,
     required TResult orElse(),
   }) {
     if (signInWithFacebook != null) {
@@ -1156,7 +1285,6 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithApple value) signInWithApple,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
-    required TResult Function(_SignOut value) signOut,
   }) {
     return signInWithFacebook(this);
   }
@@ -1168,7 +1296,6 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
-    TResult Function(_SignOut value)? signOut,
   }) {
     return signInWithFacebook?.call(this);
   }
@@ -1180,7 +1307,6 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
-    TResult Function(_SignOut value)? signOut,
     required TResult orElse(),
   }) {
     if (signInWithFacebook != null) {
@@ -1239,7 +1365,6 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     required TResult Function() signInWithGoogle,
     required TResult Function() signInWithApple,
     required TResult Function() signInAnonymously,
-    required TResult Function() signOut,
   }) {
     return signInWithGoogle();
   }
@@ -1251,7 +1376,6 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function()? signInAnonymously,
-    TResult Function()? signOut,
   }) {
     return signInWithGoogle?.call();
   }
@@ -1263,7 +1387,6 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function()? signInAnonymously,
-    TResult Function()? signOut,
     required TResult orElse(),
   }) {
     if (signInWithGoogle != null) {
@@ -1279,7 +1402,6 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithApple value) signInWithApple,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
-    required TResult Function(_SignOut value) signOut,
   }) {
     return signInWithGoogle(this);
   }
@@ -1291,7 +1413,6 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
-    TResult Function(_SignOut value)? signOut,
   }) {
     return signInWithGoogle?.call(this);
   }
@@ -1303,7 +1424,6 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
-    TResult Function(_SignOut value)? signOut,
     required TResult orElse(),
   }) {
     if (signInWithGoogle != null) {
@@ -1362,7 +1482,6 @@ class _$_SignInWithApple implements _SignInWithApple {
     required TResult Function() signInWithGoogle,
     required TResult Function() signInWithApple,
     required TResult Function() signInAnonymously,
-    required TResult Function() signOut,
   }) {
     return signInWithApple();
   }
@@ -1374,7 +1493,6 @@ class _$_SignInWithApple implements _SignInWithApple {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function()? signInAnonymously,
-    TResult Function()? signOut,
   }) {
     return signInWithApple?.call();
   }
@@ -1386,7 +1504,6 @@ class _$_SignInWithApple implements _SignInWithApple {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function()? signInAnonymously,
-    TResult Function()? signOut,
     required TResult orElse(),
   }) {
     if (signInWithApple != null) {
@@ -1402,7 +1519,6 @@ class _$_SignInWithApple implements _SignInWithApple {
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithApple value) signInWithApple,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
-    required TResult Function(_SignOut value) signOut,
   }) {
     return signInWithApple(this);
   }
@@ -1414,7 +1530,6 @@ class _$_SignInWithApple implements _SignInWithApple {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
-    TResult Function(_SignOut value)? signOut,
   }) {
     return signInWithApple?.call(this);
   }
@@ -1426,7 +1541,6 @@ class _$_SignInWithApple implements _SignInWithApple {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
-    TResult Function(_SignOut value)? signOut,
     required TResult orElse(),
   }) {
     if (signInWithApple != null) {
@@ -1485,7 +1599,6 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     required TResult Function() signInWithGoogle,
     required TResult Function() signInWithApple,
     required TResult Function() signInAnonymously,
-    required TResult Function() signOut,
   }) {
     return signInAnonymously();
   }
@@ -1497,7 +1610,6 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function()? signInAnonymously,
-    TResult Function()? signOut,
   }) {
     return signInAnonymously?.call();
   }
@@ -1509,7 +1621,6 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function()? signInAnonymously,
-    TResult Function()? signOut,
     required TResult orElse(),
   }) {
     if (signInAnonymously != null) {
@@ -1525,7 +1636,6 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithApple value) signInWithApple,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
-    required TResult Function(_SignOut value) signOut,
   }) {
     return signInAnonymously(this);
   }
@@ -1537,7 +1647,6 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
-    TResult Function(_SignOut value)? signOut,
   }) {
     return signInAnonymously?.call(this);
   }
@@ -1549,7 +1658,6 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
-    TResult Function(_SignOut value)? signOut,
     required TResult orElse(),
   }) {
     if (signInAnonymously != null) {
@@ -1561,124 +1669,4 @@ class _$_SignInAnonymously implements _SignInAnonymously {
 
 abstract class _SignInAnonymously implements SignInEvent {
   const factory _SignInAnonymously() = _$_SignInAnonymously;
-}
-
-/// @nodoc
-abstract class _$SignOutCopyWith<$Res> {
-  factory _$SignOutCopyWith(_SignOut value, $Res Function(_SignOut) then) =
-      __$SignOutCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SignOutCopyWithImpl<$Res> extends _$SignInEventCopyWithImpl<$Res>
-    implements _$SignOutCopyWith<$Res> {
-  __$SignOutCopyWithImpl(_SignOut _value, $Res Function(_SignOut) _then)
-      : super(_value, (v) => _then(v as _SignOut));
-
-  @override
-  _SignOut get _value => super._value as _SignOut;
-}
-
-/// @nodoc
-
-class _$_SignOut implements _SignOut {
-  const _$_SignOut();
-
-  @override
-  String toString() {
-    return 'SignInEvent.signOut()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignOut);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() signInWithFacebook,
-    required TResult Function() signInWithGoogle,
-    required TResult Function() signInWithApple,
-    required TResult Function() signInAnonymously,
-    required TResult Function() signOut,
-  }) {
-    return signOut();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInAnonymously,
-    TResult Function()? signOut,
-  }) {
-    return signOut?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInAnonymously,
-    TResult Function()? signOut,
-    required TResult orElse(),
-  }) {
-    if (signOut != null) {
-      return signOut();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
-    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
-    required TResult Function(_SignInWithApple value) signInWithApple,
-    required TResult Function(_SignInAnonymously value) signInAnonymously,
-    required TResult Function(_SignOut value) signOut,
-  }) {
-    return signOut(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-    TResult Function(_SignOut value)? signOut,
-  }) {
-    return signOut?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-    TResult Function(_SignOut value)? signOut,
-    required TResult orElse(),
-  }) {
-    if (signOut != null) {
-      return signOut(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignOut implements SignInEvent {
-  const factory _SignOut() = _$_SignOut;
 }
