@@ -15,6 +15,7 @@ class SignInController extends StateNotifier<SignInState> {
         signInAnonymously: _service.signInAnonymously,
         signOut: _service.signOut,
       );
+      state = const SignInState.initial();
     } on FirebaseAuthException catch (e) {
       if (e.code == "ERROR_AUTHORIZATION_DENIED") {
         state = const SignInState.initial();
