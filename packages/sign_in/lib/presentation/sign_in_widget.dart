@@ -59,7 +59,8 @@ class SignInButtons extends ConsumerWidget {
         (useFacebook ? buttonHeight : 0.0) +
         (useAnonymous ? buttonHeight : 0.0);
 
-    final iconSize = theme.buttonFontSize * 1.6 * (25 / 31);
+    final iconSize = theme.buttonFontSize * 1.6;
+    final iconTidySize = iconSize * (25 / 31);
 
     return SizedBox(
       height: boxHeight,
@@ -71,8 +72,8 @@ class SignInButtons extends ConsumerWidget {
                 if (displayApple) ...[
                   socialButton(
                     icon: SizedBox(
-                      width: iconSize,
-                      height: theme.buttonFontSize * 1.6,
+                      width: iconTidySize,
+                      height: iconSize,
                       child: CustomPaint(
                         painter: AppleLogoPainter(
                           color: theme.buttonTextColor,
@@ -89,8 +90,8 @@ class SignInButtons extends ConsumerWidget {
                 if (useGoogle) ...[
                   socialButton(
                     icon: SizedBox(
-                      width: iconSize,
-                      height: iconSize,
+                      width: iconTidySize,
+                      height: iconTidySize,
                       child: CustomPaint(
                         painter: GoogleLogoPainter(),
                       ),
