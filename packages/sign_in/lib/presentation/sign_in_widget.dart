@@ -59,8 +59,7 @@ class SignInButtons extends ConsumerWidget {
         (useFacebook ? buttonHeight : 0.0) +
         (useAnonymous ? buttonHeight : 0.0);
 
-    return Container(
-      color: Colors.red,
+    return SizedBox(
       height: boxHeight,
       child: isLoading
           ? const Loader(delayBeforeDisplay: 0)
