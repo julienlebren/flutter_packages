@@ -47,7 +47,7 @@ class SignInButtons extends ConsumerWidget {
       );
     });
 
-    final buttonHeight = theme.buttonFontSize * 1.5 +
+    final buttonHeight = theme.buttonFontSize * 1.6 +
         (theme.buttonPadding * 2) +
         theme.spaceBetweenButtons;
     final displayApple =
@@ -78,7 +78,7 @@ class SignInButtons extends ConsumerWidget {
                         ),
                       ),
                     ),
-                    title: boxHeight.toString(),
+                    title: l10n.signInWithApple,
                     onPressed: () {
                       _handleEvent(ref, const SignInEvent.signInWithApple());
                     },
