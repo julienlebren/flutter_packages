@@ -42,6 +42,6 @@ class SignInTheme with _$SignInTheme {
     required Color buttonBackgroundColor,
     required Color buttonTextColor,
     @Default(18.0) double buttonFontSize,
-    @Default(16) double spaceBetweenButtons,
+    @Default(15.0) double spaceBetweenButtons,
   }) = _SignInTheme;
 }
