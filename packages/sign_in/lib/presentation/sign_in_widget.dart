@@ -30,6 +30,7 @@ class SignInButtons extends ConsumerWidget {
     final state = ref.watch(signInControllerProvider);
     final isLoading = state.maybeWhen(
       loading: () => true,
+      success: () => true,
       orElse: () => false,
     );
 
