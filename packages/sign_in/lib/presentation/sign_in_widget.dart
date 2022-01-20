@@ -50,7 +50,6 @@ class SignInButtons extends ConsumerWidget {
     final buttonHeight = theme.buttonFontSize +
         theme.buttonPadding * 2 +
         theme.spaceBetweenButtons;
-
     final displayApple =
         ((useApple && (useAppleOnlyOnCupertino && isCupertino())) ||
             (useApple && !useAppleOnlyOnCupertino));
@@ -78,7 +77,7 @@ class SignInButtons extends ConsumerWidget {
                         ),
                       ),
                     ),
-                    title: l10n.signInWithApple,
+                    title: buttonHeight.toString(),
                     onPressed: () {
                       _handleEvent(ref, const SignInEvent.signInWithApple());
                     },
