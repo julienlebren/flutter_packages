@@ -80,6 +80,7 @@ class SignInButtons extends ConsumerWidget {
                         ),
                       ),
                     ),
+                    iconSize: iconSize,
                     title: l10n.signInWithApple,
                     onPressed: () {
                       _handleEvent(ref, const SignInEvent.signInWithApple());
@@ -96,6 +97,7 @@ class SignInButtons extends ConsumerWidget {
                         painter: GoogleLogoPainter(),
                       ),
                     ),
+                    iconSize: iconSize,
                     title: l10n.signInWithGoogle,
                     onPressed: () {
                       _handleEvent(ref, const SignInEvent.signInWithGoogle());
@@ -136,7 +138,7 @@ class SignInButtons extends ConsumerWidget {
   Widget socialButton({
     String? assetName,
     Widget? icon,
-    double? iconSize = 0.0,
+    required double iconSize,
     required String title,
     required VoidCallback onPressed,
   }) {

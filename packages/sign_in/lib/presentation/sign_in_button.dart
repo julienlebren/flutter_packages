@@ -65,8 +65,7 @@ class SignInButton extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
             package: 'sign_in',
           ),
         if (icon != null)
-          Container(
-            color: Colors.red,
+          SizedBox(
             width: iconSize,
             height: iconSize,
             child: Center(child: icon!),
