@@ -47,7 +47,7 @@ class SignInButtons extends ConsumerWidget {
       );
     });
 
-    final buttonHeight = theme.buttonFontSize +
+    final buttonHeight = theme.buttonFontSize * 1.5 +
         (theme.buttonPadding * 2) +
         theme.spaceBetweenButtons;
     final displayApple =
