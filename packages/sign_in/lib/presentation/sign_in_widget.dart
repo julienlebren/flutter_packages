@@ -47,9 +47,11 @@ class SignInButtons extends ConsumerWidget {
       );
     });
 
-    final buttonHeight = theme.buttonFontSize * 1.6 +
-        (theme.buttonPadding * 2) +
-        theme.spaceBetweenButtons;
+    final iconSize = theme.buttonFontSize * 1.6;
+    final iconTidySize = iconSize * (25 / 31);
+
+    final buttonHeight =
+        iconSize + (theme.buttonPadding * 2) + theme.spaceBetweenButtons;
     final displayApple =
         ((useApple && (useAppleOnlyOnCupertino && isCupertino())) ||
             (useApple && !useAppleOnlyOnCupertino));
@@ -58,9 +60,6 @@ class SignInButtons extends ConsumerWidget {
         (useGoogle ? buttonHeight : 0.0) +
         (useFacebook ? buttonHeight : 0.0) +
         (useAnonymous ? buttonHeight : 0.0);
-
-    final iconSize = theme.buttonFontSize * 1.6;
-    final iconTidySize = iconSize * (25 / 31);
 
     return SizedBox(
       height: boxHeight,
