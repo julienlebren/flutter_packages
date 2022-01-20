@@ -86,7 +86,13 @@ class SignInButtons extends ConsumerWidget {
                 ],
                 if (useGoogle) ...[
                   socialButton(
-                    assetName: "assets/images/google-logo.png",
+                    icon: SizedBox(
+                      width: 30,
+                      height: 30,
+                      child: CustomPaint(
+                        painter: GoogleLogoPainter(),
+                      ),
+                    ),
                     title: l10n.signInWithGoogle,
                     onPressed: () {
                       _handleEvent(ref, const SignInEvent.signInWithGoogle());

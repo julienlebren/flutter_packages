@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layout_builder/layout_builder.dart';
+import 'package:sign_in/presentation/google_logo.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 part 'controllers/sign_in_state.dart';
