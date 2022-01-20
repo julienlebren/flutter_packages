@@ -104,7 +104,7 @@ class SignInButtons extends ConsumerWidget {
                 ],
                 if (useFacebook) ...[
                   socialButton(
-                    assetName: "../../assets/images/facebook-logo.png",
+                    assetName: "assets/images/facebook-logo.png",
                     title: l10n.signInWithFacebook,
                     onPressed: () {
                       _handleEvent(ref, const SignInEvent.signInWithFacebook());
