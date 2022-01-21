@@ -5,7 +5,7 @@ class TabItem with _$TabItem {
   const factory TabItem({
     required String title,
     required Widget icon,
-    required Widget selectedIcon,
+    Widget? selectedIcon,
     required Widget router,
   }) = _TabItem;
 }

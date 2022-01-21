@@ -20,7 +20,7 @@ class _$TabItemTearOff {
   _TabItem call(
       {required String title,
       required Widget icon,
-      required Widget selectedIcon,
+      Widget? selectedIcon,
       required Widget router}) {
     return _TabItem(
       title: title,
@@ -38,7 +38,7 @@ const $TabItem = _$TabItemTearOff();
 mixin _$TabItem {
   String get title => throw _privateConstructorUsedError;
   Widget get icon => throw _privateConstructorUsedError;
-  Widget get selectedIcon => throw _privateConstructorUsedError;
+  Widget? get selectedIcon => throw _privateConstructorUsedError;
   Widget get router => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -49,7 +49,7 @@ mixin _$TabItem {
 abstract class $TabItemCopyWith<$Res> {
   factory $TabItemCopyWith(TabItem value, $Res Function(TabItem) then) =
       _$TabItemCopyWithImpl<$Res>;
-  $Res call({String title, Widget icon, Widget selectedIcon, Widget router});
+  $Res call({String title, Widget icon, Widget? selectedIcon, Widget router});
 }
 
 /// @nodoc
@@ -79,7 +79,7 @@ class _$TabItemCopyWithImpl<$Res> implements $TabItemCopyWith<$Res> {
       selectedIcon: selectedIcon == freezed
           ? _value.selectedIcon
           : selectedIcon // ignore: cast_nullable_to_non_nullable
-              as Widget,
+              as Widget?,
       router: router == freezed
           ? _value.router
           : router // ignore: cast_nullable_to_non_nullable
@@ -93,7 +93,7 @@ abstract class _$TabItemCopyWith<$Res> implements $TabItemCopyWith<$Res> {
   factory _$TabItemCopyWith(_TabItem value, $Res Function(_TabItem) then) =
       __$TabItemCopyWithImpl<$Res>;
   @override
-  $Res call({String title, Widget icon, Widget selectedIcon, Widget router});
+  $Res call({String title, Widget icon, Widget? selectedIcon, Widget router});
 }
 
 /// @nodoc
@@ -124,7 +124,7 @@ class __$TabItemCopyWithImpl<$Res> extends _$TabItemCopyWithImpl<$Res>
       selectedIcon: selectedIcon == freezed
           ? _value.selectedIcon
           : selectedIcon // ignore: cast_nullable_to_non_nullable
-              as Widget,
+              as Widget?,
       router: router == freezed
           ? _value.router
           : router // ignore: cast_nullable_to_non_nullable
@@ -139,7 +139,7 @@ class _$_TabItem with DiagnosticableTreeMixin implements _TabItem {
   const _$_TabItem(
       {required this.title,
       required this.icon,
-      required this.selectedIcon,
+      this.selectedIcon,
       required this.router});
 
   @override
@@ -147,7 +147,7 @@ class _$_TabItem with DiagnosticableTreeMixin implements _TabItem {
   @override
   final Widget icon;
   @override
-  final Widget selectedIcon;
+  final Widget? selectedIcon;
   @override
   final Widget router;
 
@@ -193,7 +193,7 @@ abstract class _TabItem implements TabItem {
   const factory _TabItem(
       {required String title,
       required Widget icon,
-      required Widget selectedIcon,
+      Widget? selectedIcon,
       required Widget router}) = _$_TabItem;
 
   @override
@@ -201,7 +201,7 @@ abstract class _TabItem implements TabItem {
   @override
   Widget get icon;
   @override
-  Widget get selectedIcon;
+  Widget? get selectedIcon;
   @override
   Widget get router;
   @override
