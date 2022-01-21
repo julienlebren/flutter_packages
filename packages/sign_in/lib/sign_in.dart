@@ -13,6 +13,8 @@ import 'package:sign_in/presentation/google_logo.dart';
 part 'core/enums/sign_in_providers.dart';
 part 'core/models/sign_in_state.dart';
 part 'core/models/sign_in_event.dart';
+part 'core/models/sign_in_localizations.dart';
+part 'core/models/sign_in_theme.dart';
 part 'controllers/sign_in_controller.dart';
 part 'presentation/sign_in_button.dart';
 part 'presentation/sign_in_widget.dart';
@@ -23,27 +25,3 @@ final signInControllerProvider =
   final service = ref.watch(authServiceProvider);
   return SignInController(service);
 });
-
-@freezed
-class SignInLocalizations with _$SignInLocalizations {
-  const factory SignInLocalizations({
-    @Default("Continue without registration") String signInAnonymously,
-    @Default("Sign in with Google") String signInWithApple,
-    @Default("Sign in with Apple") String signInWithGoogle,
-    @Default("Sign in with Facebook") String signInWithFacebook,
-    @Default("Oops! Something went wrong...") String errorTitle,
-  }) = _SignInLocalizations;
-}
-
-@freezed
-class SignInTheme with _$SignInTheme {
-  const factory SignInTheme({
-    @Default(400) double maxWidth,
-    @Default(5.0) double buttonRadius,
-    @Default(16.0) double buttonPadding,
-    required Color buttonBackgroundColor,
-    required Color buttonTextColor,
-    @Default(18.0) double buttonFontSize,
-    @Default(15.0) double spaceBetweenButtons,
-  }) = _SignInTheme;
-}
