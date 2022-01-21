@@ -14,647 +14,143 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$SignInLocalizationsTearOff {
-  const _$SignInLocalizationsTearOff();
+class _$AuthStateTearOff {
+  const _$AuthStateTearOff();
 
-  _SignInLocalizations call(
-      {String signInAnonymously = "Continue without registration",
-      String signInWithApple = "Sign in with Google",
-      String signInWithGoogle = "Sign in with Apple",
-      String signInWithFacebook = "Sign in with Facebook",
-      String errorTitle = "Oops! Something went wrong..."}) {
-    return _SignInLocalizations(
-      signInAnonymously: signInAnonymously,
-      signInWithApple: signInWithApple,
-      signInWithGoogle: signInWithGoogle,
-      signInWithFacebook: signInWithFacebook,
-      errorTitle: errorTitle,
+  _InitializingAuth initializing() {
+    return const _InitializingAuth();
+  }
+
+  _NotAuthed notAuthed() {
+    return const _NotAuthed();
+  }
+
+  _WaitingUserCreation waitingUserCreation() {
+    return const _WaitingUserCreation();
+  }
+
+  _Authed authed() {
+    return const _Authed();
+  }
+
+  _AuthError error(String error) {
+    return _AuthError(
+      error,
     );
   }
 }
 
 /// @nodoc
-const $SignInLocalizations = _$SignInLocalizationsTearOff();
+const $AuthState = _$AuthStateTearOff();
 
 /// @nodoc
-mixin _$SignInLocalizations {
-  String get signInAnonymously => throw _privateConstructorUsedError;
-  String get signInWithApple => throw _privateConstructorUsedError;
-  String get signInWithGoogle => throw _privateConstructorUsedError;
-  String get signInWithFacebook => throw _privateConstructorUsedError;
-  String get errorTitle => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $SignInLocalizationsCopyWith<SignInLocalizations> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SignInLocalizationsCopyWith<$Res> {
-  factory $SignInLocalizationsCopyWith(
-          SignInLocalizations value, $Res Function(SignInLocalizations) then) =
-      _$SignInLocalizationsCopyWithImpl<$Res>;
-  $Res call(
-      {String signInAnonymously,
-      String signInWithApple,
-      String signInWithGoogle,
-      String signInWithFacebook,
-      String errorTitle});
-}
-
-/// @nodoc
-class _$SignInLocalizationsCopyWithImpl<$Res>
-    implements $SignInLocalizationsCopyWith<$Res> {
-  _$SignInLocalizationsCopyWithImpl(this._value, this._then);
-
-  final SignInLocalizations _value;
-  // ignore: unused_field
-  final $Res Function(SignInLocalizations) _then;
-
-  @override
-  $Res call({
-    Object? signInAnonymously = freezed,
-    Object? signInWithApple = freezed,
-    Object? signInWithGoogle = freezed,
-    Object? signInWithFacebook = freezed,
-    Object? errorTitle = freezed,
-  }) {
-    return _then(_value.copyWith(
-      signInAnonymously: signInAnonymously == freezed
-          ? _value.signInAnonymously
-          : signInAnonymously // ignore: cast_nullable_to_non_nullable
-              as String,
-      signInWithApple: signInWithApple == freezed
-          ? _value.signInWithApple
-          : signInWithApple // ignore: cast_nullable_to_non_nullable
-              as String,
-      signInWithGoogle: signInWithGoogle == freezed
-          ? _value.signInWithGoogle
-          : signInWithGoogle // ignore: cast_nullable_to_non_nullable
-              as String,
-      signInWithFacebook: signInWithFacebook == freezed
-          ? _value.signInWithFacebook
-          : signInWithFacebook // ignore: cast_nullable_to_non_nullable
-              as String,
-      errorTitle: errorTitle == freezed
-          ? _value.errorTitle
-          : errorTitle // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$SignInLocalizationsCopyWith<$Res>
-    implements $SignInLocalizationsCopyWith<$Res> {
-  factory _$SignInLocalizationsCopyWith(_SignInLocalizations value,
-          $Res Function(_SignInLocalizations) then) =
-      __$SignInLocalizationsCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {String signInAnonymously,
-      String signInWithApple,
-      String signInWithGoogle,
-      String signInWithFacebook,
-      String errorTitle});
-}
-
-/// @nodoc
-class __$SignInLocalizationsCopyWithImpl<$Res>
-    extends _$SignInLocalizationsCopyWithImpl<$Res>
-    implements _$SignInLocalizationsCopyWith<$Res> {
-  __$SignInLocalizationsCopyWithImpl(
-      _SignInLocalizations _value, $Res Function(_SignInLocalizations) _then)
-      : super(_value, (v) => _then(v as _SignInLocalizations));
-
-  @override
-  _SignInLocalizations get _value => super._value as _SignInLocalizations;
-
-  @override
-  $Res call({
-    Object? signInAnonymously = freezed,
-    Object? signInWithApple = freezed,
-    Object? signInWithGoogle = freezed,
-    Object? signInWithFacebook = freezed,
-    Object? errorTitle = freezed,
-  }) {
-    return _then(_SignInLocalizations(
-      signInAnonymously: signInAnonymously == freezed
-          ? _value.signInAnonymously
-          : signInAnonymously // ignore: cast_nullable_to_non_nullable
-              as String,
-      signInWithApple: signInWithApple == freezed
-          ? _value.signInWithApple
-          : signInWithApple // ignore: cast_nullable_to_non_nullable
-              as String,
-      signInWithGoogle: signInWithGoogle == freezed
-          ? _value.signInWithGoogle
-          : signInWithGoogle // ignore: cast_nullable_to_non_nullable
-              as String,
-      signInWithFacebook: signInWithFacebook == freezed
-          ? _value.signInWithFacebook
-          : signInWithFacebook // ignore: cast_nullable_to_non_nullable
-              as String,
-      errorTitle: errorTitle == freezed
-          ? _value.errorTitle
-          : errorTitle // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SignInLocalizations implements _SignInLocalizations {
-  const _$_SignInLocalizations(
-      {this.signInAnonymously = "Continue without registration",
-      this.signInWithApple = "Sign in with Google",
-      this.signInWithGoogle = "Sign in with Apple",
-      this.signInWithFacebook = "Sign in with Facebook",
-      this.errorTitle = "Oops! Something went wrong..."});
-
-  @JsonKey(defaultValue: "Continue without registration")
-  @override
-  final String signInAnonymously;
-  @JsonKey(defaultValue: "Sign in with Google")
-  @override
-  final String signInWithApple;
-  @JsonKey(defaultValue: "Sign in with Apple")
-  @override
-  final String signInWithGoogle;
-  @JsonKey(defaultValue: "Sign in with Facebook")
-  @override
-  final String signInWithFacebook;
-  @JsonKey(defaultValue: "Oops! Something went wrong...")
-  @override
-  final String errorTitle;
-
-  @override
-  String toString() {
-    return 'SignInLocalizations(signInAnonymously: $signInAnonymously, signInWithApple: $signInWithApple, signInWithGoogle: $signInWithGoogle, signInWithFacebook: $signInWithFacebook, errorTitle: $errorTitle)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _SignInLocalizations &&
-            (identical(other.signInAnonymously, signInAnonymously) ||
-                other.signInAnonymously == signInAnonymously) &&
-            (identical(other.signInWithApple, signInWithApple) ||
-                other.signInWithApple == signInWithApple) &&
-            (identical(other.signInWithGoogle, signInWithGoogle) ||
-                other.signInWithGoogle == signInWithGoogle) &&
-            (identical(other.signInWithFacebook, signInWithFacebook) ||
-                other.signInWithFacebook == signInWithFacebook) &&
-            (identical(other.errorTitle, errorTitle) ||
-                other.errorTitle == errorTitle));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, signInAnonymously,
-      signInWithApple, signInWithGoogle, signInWithFacebook, errorTitle);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SignInLocalizationsCopyWith<_SignInLocalizations> get copyWith =>
-      __$SignInLocalizationsCopyWithImpl<_SignInLocalizations>(
-          this, _$identity);
-}
-
-abstract class _SignInLocalizations implements SignInLocalizations {
-  const factory _SignInLocalizations(
-      {String signInAnonymously,
-      String signInWithApple,
-      String signInWithGoogle,
-      String signInWithFacebook,
-      String errorTitle}) = _$_SignInLocalizations;
-
-  @override
-  String get signInAnonymously;
-  @override
-  String get signInWithApple;
-  @override
-  String get signInWithGoogle;
-  @override
-  String get signInWithFacebook;
-  @override
-  String get errorTitle;
-  @override
-  @JsonKey(ignore: true)
-  _$SignInLocalizationsCopyWith<_SignInLocalizations> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-class _$SignInThemeTearOff {
-  const _$SignInThemeTearOff();
-
-  _SignInTheme call(
-      {double maxWidth = 400,
-      double buttonRadius = 5.0,
-      double buttonPadding = 16.0,
-      required Color buttonBackgroundColor,
-      required Color buttonTextColor,
-      double buttonFontSize = 18.0,
-      double spaceBetweenButtons = 15.0}) {
-    return _SignInTheme(
-      maxWidth: maxWidth,
-      buttonRadius: buttonRadius,
-      buttonPadding: buttonPadding,
-      buttonBackgroundColor: buttonBackgroundColor,
-      buttonTextColor: buttonTextColor,
-      buttonFontSize: buttonFontSize,
-      spaceBetweenButtons: spaceBetweenButtons,
-    );
-  }
-}
-
-/// @nodoc
-const $SignInTheme = _$SignInThemeTearOff();
-
-/// @nodoc
-mixin _$SignInTheme {
-  double get maxWidth => throw _privateConstructorUsedError;
-  double get buttonRadius => throw _privateConstructorUsedError;
-  double get buttonPadding => throw _privateConstructorUsedError;
-  Color get buttonBackgroundColor => throw _privateConstructorUsedError;
-  Color get buttonTextColor => throw _privateConstructorUsedError;
-  double get buttonFontSize => throw _privateConstructorUsedError;
-  double get spaceBetweenButtons => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $SignInThemeCopyWith<SignInTheme> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SignInThemeCopyWith<$Res> {
-  factory $SignInThemeCopyWith(
-          SignInTheme value, $Res Function(SignInTheme) then) =
-      _$SignInThemeCopyWithImpl<$Res>;
-  $Res call(
-      {double maxWidth,
-      double buttonRadius,
-      double buttonPadding,
-      Color buttonBackgroundColor,
-      Color buttonTextColor,
-      double buttonFontSize,
-      double spaceBetweenButtons});
-}
-
-/// @nodoc
-class _$SignInThemeCopyWithImpl<$Res> implements $SignInThemeCopyWith<$Res> {
-  _$SignInThemeCopyWithImpl(this._value, this._then);
-
-  final SignInTheme _value;
-  // ignore: unused_field
-  final $Res Function(SignInTheme) _then;
-
-  @override
-  $Res call({
-    Object? maxWidth = freezed,
-    Object? buttonRadius = freezed,
-    Object? buttonPadding = freezed,
-    Object? buttonBackgroundColor = freezed,
-    Object? buttonTextColor = freezed,
-    Object? buttonFontSize = freezed,
-    Object? spaceBetweenButtons = freezed,
-  }) {
-    return _then(_value.copyWith(
-      maxWidth: maxWidth == freezed
-          ? _value.maxWidth
-          : maxWidth // ignore: cast_nullable_to_non_nullable
-              as double,
-      buttonRadius: buttonRadius == freezed
-          ? _value.buttonRadius
-          : buttonRadius // ignore: cast_nullable_to_non_nullable
-              as double,
-      buttonPadding: buttonPadding == freezed
-          ? _value.buttonPadding
-          : buttonPadding // ignore: cast_nullable_to_non_nullable
-              as double,
-      buttonBackgroundColor: buttonBackgroundColor == freezed
-          ? _value.buttonBackgroundColor
-          : buttonBackgroundColor // ignore: cast_nullable_to_non_nullable
-              as Color,
-      buttonTextColor: buttonTextColor == freezed
-          ? _value.buttonTextColor
-          : buttonTextColor // ignore: cast_nullable_to_non_nullable
-              as Color,
-      buttonFontSize: buttonFontSize == freezed
-          ? _value.buttonFontSize
-          : buttonFontSize // ignore: cast_nullable_to_non_nullable
-              as double,
-      spaceBetweenButtons: spaceBetweenButtons == freezed
-          ? _value.spaceBetweenButtons
-          : spaceBetweenButtons // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$SignInThemeCopyWith<$Res>
-    implements $SignInThemeCopyWith<$Res> {
-  factory _$SignInThemeCopyWith(
-          _SignInTheme value, $Res Function(_SignInTheme) then) =
-      __$SignInThemeCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {double maxWidth,
-      double buttonRadius,
-      double buttonPadding,
-      Color buttonBackgroundColor,
-      Color buttonTextColor,
-      double buttonFontSize,
-      double spaceBetweenButtons});
-}
-
-/// @nodoc
-class __$SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
-    implements _$SignInThemeCopyWith<$Res> {
-  __$SignInThemeCopyWithImpl(
-      _SignInTheme _value, $Res Function(_SignInTheme) _then)
-      : super(_value, (v) => _then(v as _SignInTheme));
-
-  @override
-  _SignInTheme get _value => super._value as _SignInTheme;
-
-  @override
-  $Res call({
-    Object? maxWidth = freezed,
-    Object? buttonRadius = freezed,
-    Object? buttonPadding = freezed,
-    Object? buttonBackgroundColor = freezed,
-    Object? buttonTextColor = freezed,
-    Object? buttonFontSize = freezed,
-    Object? spaceBetweenButtons = freezed,
-  }) {
-    return _then(_SignInTheme(
-      maxWidth: maxWidth == freezed
-          ? _value.maxWidth
-          : maxWidth // ignore: cast_nullable_to_non_nullable
-              as double,
-      buttonRadius: buttonRadius == freezed
-          ? _value.buttonRadius
-          : buttonRadius // ignore: cast_nullable_to_non_nullable
-              as double,
-      buttonPadding: buttonPadding == freezed
-          ? _value.buttonPadding
-          : buttonPadding // ignore: cast_nullable_to_non_nullable
-              as double,
-      buttonBackgroundColor: buttonBackgroundColor == freezed
-          ? _value.buttonBackgroundColor
-          : buttonBackgroundColor // ignore: cast_nullable_to_non_nullable
-              as Color,
-      buttonTextColor: buttonTextColor == freezed
-          ? _value.buttonTextColor
-          : buttonTextColor // ignore: cast_nullable_to_non_nullable
-              as Color,
-      buttonFontSize: buttonFontSize == freezed
-          ? _value.buttonFontSize
-          : buttonFontSize // ignore: cast_nullable_to_non_nullable
-              as double,
-      spaceBetweenButtons: spaceBetweenButtons == freezed
-          ? _value.spaceBetweenButtons
-          : spaceBetweenButtons // ignore: cast_nullable_to_non_nullable
-              as double,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SignInTheme implements _SignInTheme {
-  const _$_SignInTheme(
-      {this.maxWidth = 400,
-      this.buttonRadius = 5.0,
-      this.buttonPadding = 16.0,
-      required this.buttonBackgroundColor,
-      required this.buttonTextColor,
-      this.buttonFontSize = 18.0,
-      this.spaceBetweenButtons = 15.0});
-
-  @JsonKey(defaultValue: 400)
-  @override
-  final double maxWidth;
-  @JsonKey(defaultValue: 5.0)
-  @override
-  final double buttonRadius;
-  @JsonKey(defaultValue: 16.0)
-  @override
-  final double buttonPadding;
-  @override
-  final Color buttonBackgroundColor;
-  @override
-  final Color buttonTextColor;
-  @JsonKey(defaultValue: 18.0)
-  @override
-  final double buttonFontSize;
-  @JsonKey(defaultValue: 15.0)
-  @override
-  final double spaceBetweenButtons;
-
-  @override
-  String toString() {
-    return 'SignInTheme(maxWidth: $maxWidth, buttonRadius: $buttonRadius, buttonPadding: $buttonPadding, buttonBackgroundColor: $buttonBackgroundColor, buttonTextColor: $buttonTextColor, buttonFontSize: $buttonFontSize, spaceBetweenButtons: $spaceBetweenButtons)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _SignInTheme &&
-            (identical(other.maxWidth, maxWidth) ||
-                other.maxWidth == maxWidth) &&
-            (identical(other.buttonRadius, buttonRadius) ||
-                other.buttonRadius == buttonRadius) &&
-            (identical(other.buttonPadding, buttonPadding) ||
-                other.buttonPadding == buttonPadding) &&
-            (identical(other.buttonBackgroundColor, buttonBackgroundColor) ||
-                other.buttonBackgroundColor == buttonBackgroundColor) &&
-            (identical(other.buttonTextColor, buttonTextColor) ||
-                other.buttonTextColor == buttonTextColor) &&
-            (identical(other.buttonFontSize, buttonFontSize) ||
-                other.buttonFontSize == buttonFontSize) &&
-            (identical(other.spaceBetweenButtons, spaceBetweenButtons) ||
-                other.spaceBetweenButtons == spaceBetweenButtons));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      maxWidth,
-      buttonRadius,
-      buttonPadding,
-      buttonBackgroundColor,
-      buttonTextColor,
-      buttonFontSize,
-      spaceBetweenButtons);
-
-  @JsonKey(ignore: true)
-  @override
-  _$SignInThemeCopyWith<_SignInTheme> get copyWith =>
-      __$SignInThemeCopyWithImpl<_SignInTheme>(this, _$identity);
-}
-
-abstract class _SignInTheme implements SignInTheme {
-  const factory _SignInTheme(
-      {double maxWidth,
-      double buttonRadius,
-      double buttonPadding,
-      required Color buttonBackgroundColor,
-      required Color buttonTextColor,
-      double buttonFontSize,
-      double spaceBetweenButtons}) = _$_SignInTheme;
-
-  @override
-  double get maxWidth;
-  @override
-  double get buttonRadius;
-  @override
-  double get buttonPadding;
-  @override
-  Color get buttonBackgroundColor;
-  @override
-  Color get buttonTextColor;
-  @override
-  double get buttonFontSize;
-  @override
-  double get spaceBetweenButtons;
-  @override
-  @JsonKey(ignore: true)
-  _$SignInThemeCopyWith<_SignInTheme> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-class _$SignInStateTearOff {
-  const _$SignInStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _Loading loading() {
-    return const _Loading();
-  }
-
-  _Success success() {
-    return const _Success();
-  }
-
-  _Error error(String errorText) {
-    return _Error(
-      errorText,
-    );
-  }
-}
-
-/// @nodoc
-const $SignInState = _$SignInStateTearOff();
-
-/// @nodoc
-mixin _$SignInState {
+mixin _$AuthState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String errorText) error,
+    required TResult Function() initializing,
+    required TResult Function() notAuthed,
+    required TResult Function() waitingUserCreation,
+    required TResult Function() authed,
+    required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? waitingUserCreation,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? waitingUserCreation,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Error value) error,
+    required TResult Function(_InitializingAuth value) initializing,
+    required TResult Function(_NotAuthed value) notAuthed,
+    required TResult Function(_WaitingUserCreation value) waitingUserCreation,
+    required TResult Function(_Authed value) authed,
+    required TResult Function(_AuthError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
+    TResult Function(_InitializingAuth value)? initializing,
+    TResult Function(_NotAuthed value)? notAuthed,
+    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_Authed value)? authed,
+    TResult Function(_AuthError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
+    TResult Function(_InitializingAuth value)? initializing,
+    TResult Function(_NotAuthed value)? notAuthed,
+    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_Authed value)? authed,
+    TResult Function(_AuthError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SignInStateCopyWith<$Res> {
-  factory $SignInStateCopyWith(
-          SignInState value, $Res Function(SignInState) then) =
-      _$SignInStateCopyWithImpl<$Res>;
+abstract class $AuthStateCopyWith<$Res> {
+  factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
+      _$AuthStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
-  _$SignInStateCopyWithImpl(this._value, this._then);
+class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
+  _$AuthStateCopyWithImpl(this._value, this._then);
 
-  final SignInState _value;
+  final AuthState _value;
   // ignore: unused_field
-  final $Res Function(SignInState) _then;
+  final $Res Function(AuthState) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$InitializingAuthCopyWith<$Res> {
+  factory _$InitializingAuthCopyWith(
+          _InitializingAuth value, $Res Function(_InitializingAuth) then) =
+      __$InitializingAuthCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$InitializingAuthCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res>
+    implements _$InitializingAuthCopyWith<$Res> {
+  __$InitializingAuthCopyWithImpl(
+      _InitializingAuth _value, $Res Function(_InitializingAuth) _then)
+      : super(_value, (v) => _then(v as _InitializingAuth));
 
   @override
-  _Initial get _value => super._value as _Initial;
+  _InitializingAuth get _value => super._value as _InitializingAuth;
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$_InitializingAuth implements _InitializingAuth {
+  const _$_InitializingAuth();
 
   @override
   String toString() {
-    return 'SignInState.initial()';
+    return 'AuthState.initializing()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _InitializingAuth);
   }
 
   @override
@@ -663,36 +159,39 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String errorText) error,
+    required TResult Function() initializing,
+    required TResult Function() notAuthed,
+    required TResult Function() waitingUserCreation,
+    required TResult Function() authed,
+    required TResult Function(String error) error,
   }) {
-    return initial();
+    return initializing();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? waitingUserCreation,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
   }) {
-    return initial?.call();
+    return initializing?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? waitingUserCreation,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
+    if (initializing != null) {
+      return initializing();
     }
     return orElse();
   }
@@ -700,75 +199,79 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Error value) error,
+    required TResult Function(_InitializingAuth value) initializing,
+    required TResult Function(_NotAuthed value) notAuthed,
+    required TResult Function(_WaitingUserCreation value) waitingUserCreation,
+    required TResult Function(_Authed value) authed,
+    required TResult Function(_AuthError value) error,
   }) {
-    return initial(this);
+    return initializing(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
+    TResult Function(_InitializingAuth value)? initializing,
+    TResult Function(_NotAuthed value)? notAuthed,
+    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_Authed value)? authed,
+    TResult Function(_AuthError value)? error,
   }) {
-    return initial?.call(this);
+    return initializing?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
+    TResult Function(_InitializingAuth value)? initializing,
+    TResult Function(_NotAuthed value)? notAuthed,
+    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_Authed value)? authed,
+    TResult Function(_AuthError value)? error,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (initializing != null) {
+      return initializing(this);
     }
     return orElse();
   }
 }
 
-abstract class _Initial implements SignInState {
-  const factory _Initial() = _$_Initial;
+abstract class _InitializingAuth implements AuthState {
+  const factory _InitializingAuth() = _$_InitializingAuth;
 }
 
 /// @nodoc
-abstract class _$LoadingCopyWith<$Res> {
-  factory _$LoadingCopyWith(_Loading value, $Res Function(_Loading) then) =
-      __$LoadingCopyWithImpl<$Res>;
+abstract class _$NotAuthedCopyWith<$Res> {
+  factory _$NotAuthedCopyWith(
+          _NotAuthed value, $Res Function(_NotAuthed) then) =
+      __$NotAuthedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
-    implements _$LoadingCopyWith<$Res> {
-  __$LoadingCopyWithImpl(_Loading _value, $Res Function(_Loading) _then)
-      : super(_value, (v) => _then(v as _Loading));
+class __$NotAuthedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$NotAuthedCopyWith<$Res> {
+  __$NotAuthedCopyWithImpl(_NotAuthed _value, $Res Function(_NotAuthed) _then)
+      : super(_value, (v) => _then(v as _NotAuthed));
 
   @override
-  _Loading get _value => super._value as _Loading;
+  _NotAuthed get _value => super._value as _NotAuthed;
 }
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$_NotAuthed implements _NotAuthed {
+  const _$_NotAuthed();
 
   @override
   String toString() {
-    return 'SignInState.loading()';
+    return 'AuthState.notAuthed()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Loading);
+        (other.runtimeType == runtimeType && other is _NotAuthed);
   }
 
   @override
@@ -777,36 +280,39 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String errorText) error,
+    required TResult Function() initializing,
+    required TResult Function() notAuthed,
+    required TResult Function() waitingUserCreation,
+    required TResult Function() authed,
+    required TResult Function(String error) error,
   }) {
-    return loading();
+    return notAuthed();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? waitingUserCreation,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
   }) {
-    return loading?.call();
+    return notAuthed?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? waitingUserCreation,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading();
+    if (notAuthed != null) {
+      return notAuthed();
     }
     return orElse();
   }
@@ -814,75 +320,81 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Error value) error,
+    required TResult Function(_InitializingAuth value) initializing,
+    required TResult Function(_NotAuthed value) notAuthed,
+    required TResult Function(_WaitingUserCreation value) waitingUserCreation,
+    required TResult Function(_Authed value) authed,
+    required TResult Function(_AuthError value) error,
   }) {
-    return loading(this);
+    return notAuthed(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
+    TResult Function(_InitializingAuth value)? initializing,
+    TResult Function(_NotAuthed value)? notAuthed,
+    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_Authed value)? authed,
+    TResult Function(_AuthError value)? error,
   }) {
-    return loading?.call(this);
+    return notAuthed?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
+    TResult Function(_InitializingAuth value)? initializing,
+    TResult Function(_NotAuthed value)? notAuthed,
+    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_Authed value)? authed,
+    TResult Function(_AuthError value)? error,
     required TResult orElse(),
   }) {
-    if (loading != null) {
-      return loading(this);
+    if (notAuthed != null) {
+      return notAuthed(this);
     }
     return orElse();
   }
 }
 
-abstract class _Loading implements SignInState {
-  const factory _Loading() = _$_Loading;
+abstract class _NotAuthed implements AuthState {
+  const factory _NotAuthed() = _$_NotAuthed;
 }
 
 /// @nodoc
-abstract class _$SuccessCopyWith<$Res> {
-  factory _$SuccessCopyWith(_Success value, $Res Function(_Success) then) =
-      __$SuccessCopyWithImpl<$Res>;
+abstract class _$WaitingUserCreationCopyWith<$Res> {
+  factory _$WaitingUserCreationCopyWith(_WaitingUserCreation value,
+          $Res Function(_WaitingUserCreation) then) =
+      __$WaitingUserCreationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SuccessCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
-    implements _$SuccessCopyWith<$Res> {
-  __$SuccessCopyWithImpl(_Success _value, $Res Function(_Success) _then)
-      : super(_value, (v) => _then(v as _Success));
+class __$WaitingUserCreationCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res>
+    implements _$WaitingUserCreationCopyWith<$Res> {
+  __$WaitingUserCreationCopyWithImpl(
+      _WaitingUserCreation _value, $Res Function(_WaitingUserCreation) _then)
+      : super(_value, (v) => _then(v as _WaitingUserCreation));
 
   @override
-  _Success get _value => super._value as _Success;
+  _WaitingUserCreation get _value => super._value as _WaitingUserCreation;
 }
 
 /// @nodoc
 
-class _$_Success implements _Success {
-  const _$_Success();
+class _$_WaitingUserCreation implements _WaitingUserCreation {
+  const _$_WaitingUserCreation();
 
   @override
   String toString() {
-    return 'SignInState.success()';
+    return 'AuthState.waitingUserCreation()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Success);
+        (other.runtimeType == runtimeType && other is _WaitingUserCreation);
   }
 
   @override
@@ -891,36 +403,39 @@ class _$_Success implements _Success {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String errorText) error,
+    required TResult Function() initializing,
+    required TResult Function() notAuthed,
+    required TResult Function() waitingUserCreation,
+    required TResult Function() authed,
+    required TResult Function(String error) error,
   }) {
-    return success();
+    return waitingUserCreation();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? waitingUserCreation,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
   }) {
-    return success?.call();
+    return waitingUserCreation?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? waitingUserCreation,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success();
+    if (waitingUserCreation != null) {
+      return waitingUserCreation();
     }
     return orElse();
   }
@@ -928,69 +443,193 @@ class _$_Success implements _Success {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Error value) error,
+    required TResult Function(_InitializingAuth value) initializing,
+    required TResult Function(_NotAuthed value) notAuthed,
+    required TResult Function(_WaitingUserCreation value) waitingUserCreation,
+    required TResult Function(_Authed value) authed,
+    required TResult Function(_AuthError value) error,
   }) {
-    return success(this);
+    return waitingUserCreation(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
+    TResult Function(_InitializingAuth value)? initializing,
+    TResult Function(_NotAuthed value)? notAuthed,
+    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_Authed value)? authed,
+    TResult Function(_AuthError value)? error,
   }) {
-    return success?.call(this);
+    return waitingUserCreation?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
+    TResult Function(_InitializingAuth value)? initializing,
+    TResult Function(_NotAuthed value)? notAuthed,
+    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_Authed value)? authed,
+    TResult Function(_AuthError value)? error,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (waitingUserCreation != null) {
+      return waitingUserCreation(this);
     }
     return orElse();
   }
 }
 
-abstract class _Success implements SignInState {
-  const factory _Success() = _$_Success;
+abstract class _WaitingUserCreation implements AuthState {
+  const factory _WaitingUserCreation() = _$_WaitingUserCreation;
 }
 
 /// @nodoc
-abstract class _$ErrorCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
-      __$ErrorCopyWithImpl<$Res>;
-  $Res call({String errorText});
+abstract class _$AuthedCopyWith<$Res> {
+  factory _$AuthedCopyWith(_Authed value, $Res Function(_Authed) then) =
+      __$AuthedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
+class __$AuthedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$AuthedCopyWith<$Res> {
+  __$AuthedCopyWithImpl(_Authed _value, $Res Function(_Authed) _then)
+      : super(_value, (v) => _then(v as _Authed));
 
   @override
-  _Error get _value => super._value as _Error;
+  _Authed get _value => super._value as _Authed;
+}
+
+/// @nodoc
+
+class _$_Authed implements _Authed {
+  const _$_Authed();
+
+  @override
+  String toString() {
+    return 'AuthState.authed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Authed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initializing,
+    required TResult Function() notAuthed,
+    required TResult Function() waitingUserCreation,
+    required TResult Function() authed,
+    required TResult Function(String error) error,
+  }) {
+    return authed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? waitingUserCreation,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
+  }) {
+    return authed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? waitingUserCreation,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (authed != null) {
+      return authed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitializingAuth value) initializing,
+    required TResult Function(_NotAuthed value) notAuthed,
+    required TResult Function(_WaitingUserCreation value) waitingUserCreation,
+    required TResult Function(_Authed value) authed,
+    required TResult Function(_AuthError value) error,
+  }) {
+    return authed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitializingAuth value)? initializing,
+    TResult Function(_NotAuthed value)? notAuthed,
+    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_Authed value)? authed,
+    TResult Function(_AuthError value)? error,
+  }) {
+    return authed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitializingAuth value)? initializing,
+    TResult Function(_NotAuthed value)? notAuthed,
+    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_Authed value)? authed,
+    TResult Function(_AuthError value)? error,
+    required TResult orElse(),
+  }) {
+    if (authed != null) {
+      return authed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Authed implements AuthState {
+  const factory _Authed() = _$_Authed;
+}
+
+/// @nodoc
+abstract class _$AuthErrorCopyWith<$Res> {
+  factory _$AuthErrorCopyWith(
+          _AuthError value, $Res Function(_AuthError) then) =
+      __$AuthErrorCopyWithImpl<$Res>;
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$AuthErrorCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$AuthErrorCopyWith<$Res> {
+  __$AuthErrorCopyWithImpl(_AuthError _value, $Res Function(_AuthError) _then)
+      : super(_value, (v) => _then(v as _AuthError));
+
+  @override
+  _AuthError get _value => super._value as _AuthError;
 
   @override
   $Res call({
-    Object? errorText = freezed,
+    Object? error = freezed,
   }) {
-    return _then(_Error(
-      errorText == freezed
-          ? _value.errorText
-          : errorText // ignore: cast_nullable_to_non_nullable
+    return _then(_AuthError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -998,67 +637,69 @@ class __$ErrorCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Error implements _Error {
-  const _$_Error(this.errorText);
+class _$_AuthError implements _AuthError {
+  const _$_AuthError(this.error);
 
   @override
-  final String errorText;
+  final String error;
 
   @override
   String toString() {
-    return 'SignInState.error(errorText: $errorText)';
+    return 'AuthState.error(error: $error)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Error &&
-            (identical(other.errorText, errorText) ||
-                other.errorText == errorText));
+            other is _AuthError &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, errorText);
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorCopyWith<_Error> get copyWith =>
-      __$ErrorCopyWithImpl<_Error>(this, _$identity);
+  _$AuthErrorCopyWith<_AuthError> get copyWith =>
+      __$AuthErrorCopyWithImpl<_AuthError>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String errorText) error,
+    required TResult Function() initializing,
+    required TResult Function() notAuthed,
+    required TResult Function() waitingUserCreation,
+    required TResult Function() authed,
+    required TResult Function(String error) error,
   }) {
-    return error(errorText);
+    return error(this.error);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? waitingUserCreation,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
   }) {
-    return error?.call(errorText);
+    return error?.call(this.error);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? waitingUserCreation,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error(errorText);
+      return error(this.error);
     }
     return orElse();
   }
@@ -1066,10 +707,11 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Error value) error,
+    required TResult Function(_InitializingAuth value) initializing,
+    required TResult Function(_NotAuthed value) notAuthed,
+    required TResult Function(_WaitingUserCreation value) waitingUserCreation,
+    required TResult Function(_Authed value) authed,
+    required TResult Function(_AuthError value) error,
   }) {
     return error(this);
   }
@@ -1077,10 +719,11 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
+    TResult Function(_InitializingAuth value)? initializing,
+    TResult Function(_NotAuthed value)? notAuthed,
+    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_Authed value)? authed,
+    TResult Function(_AuthError value)? error,
   }) {
     return error?.call(this);
   }
@@ -1088,10 +731,11 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
+    TResult Function(_InitializingAuth value)? initializing,
+    TResult Function(_NotAuthed value)? notAuthed,
+    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_Authed value)? authed,
+    TResult Function(_AuthError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1101,12 +745,13 @@ class _$_Error implements _Error {
   }
 }
 
-abstract class _Error implements SignInState {
-  const factory _Error(String errorText) = _$_Error;
+abstract class _AuthError implements AuthState {
+  const factory _AuthError(String error) = _$_AuthError;
 
-  String get errorText;
+  String get error;
   @JsonKey(ignore: true)
-  _$ErrorCopyWith<_Error> get copyWith => throw _privateConstructorUsedError;
+  _$AuthErrorCopyWith<_AuthError> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1669,4 +1314,1109 @@ class _$_SignInAnonymously implements _SignInAnonymously {
 
 abstract class _SignInAnonymously implements SignInEvent {
   const factory _SignInAnonymously() = _$_SignInAnonymously;
+}
+
+/// @nodoc
+class _$SignInLocalizationsTearOff {
+  const _$SignInLocalizationsTearOff();
+
+  _SignInLocalizations call(
+      {String signInAnonymously = "Continue without registration",
+      String signInWithApple = "Sign in with Google",
+      String signInWithGoogle = "Sign in with Apple",
+      String signInWithFacebook = "Sign in with Facebook",
+      String errorTitle = "Oops! Something went wrong..."}) {
+    return _SignInLocalizations(
+      signInAnonymously: signInAnonymously,
+      signInWithApple: signInWithApple,
+      signInWithGoogle: signInWithGoogle,
+      signInWithFacebook: signInWithFacebook,
+      errorTitle: errorTitle,
+    );
+  }
+}
+
+/// @nodoc
+const $SignInLocalizations = _$SignInLocalizationsTearOff();
+
+/// @nodoc
+mixin _$SignInLocalizations {
+  String get signInAnonymously => throw _privateConstructorUsedError;
+  String get signInWithApple => throw _privateConstructorUsedError;
+  String get signInWithGoogle => throw _privateConstructorUsedError;
+  String get signInWithFacebook => throw _privateConstructorUsedError;
+  String get errorTitle => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SignInLocalizationsCopyWith<SignInLocalizations> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignInLocalizationsCopyWith<$Res> {
+  factory $SignInLocalizationsCopyWith(
+          SignInLocalizations value, $Res Function(SignInLocalizations) then) =
+      _$SignInLocalizationsCopyWithImpl<$Res>;
+  $Res call(
+      {String signInAnonymously,
+      String signInWithApple,
+      String signInWithGoogle,
+      String signInWithFacebook,
+      String errorTitle});
+}
+
+/// @nodoc
+class _$SignInLocalizationsCopyWithImpl<$Res>
+    implements $SignInLocalizationsCopyWith<$Res> {
+  _$SignInLocalizationsCopyWithImpl(this._value, this._then);
+
+  final SignInLocalizations _value;
+  // ignore: unused_field
+  final $Res Function(SignInLocalizations) _then;
+
+  @override
+  $Res call({
+    Object? signInAnonymously = freezed,
+    Object? signInWithApple = freezed,
+    Object? signInWithGoogle = freezed,
+    Object? signInWithFacebook = freezed,
+    Object? errorTitle = freezed,
+  }) {
+    return _then(_value.copyWith(
+      signInAnonymously: signInAnonymously == freezed
+          ? _value.signInAnonymously
+          : signInAnonymously // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithApple: signInWithApple == freezed
+          ? _value.signInWithApple
+          : signInWithApple // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithGoogle: signInWithGoogle == freezed
+          ? _value.signInWithGoogle
+          : signInWithGoogle // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithFacebook: signInWithFacebook == freezed
+          ? _value.signInWithFacebook
+          : signInWithFacebook // ignore: cast_nullable_to_non_nullable
+              as String,
+      errorTitle: errorTitle == freezed
+          ? _value.errorTitle
+          : errorTitle // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SignInLocalizationsCopyWith<$Res>
+    implements $SignInLocalizationsCopyWith<$Res> {
+  factory _$SignInLocalizationsCopyWith(_SignInLocalizations value,
+          $Res Function(_SignInLocalizations) then) =
+      __$SignInLocalizationsCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String signInAnonymously,
+      String signInWithApple,
+      String signInWithGoogle,
+      String signInWithFacebook,
+      String errorTitle});
+}
+
+/// @nodoc
+class __$SignInLocalizationsCopyWithImpl<$Res>
+    extends _$SignInLocalizationsCopyWithImpl<$Res>
+    implements _$SignInLocalizationsCopyWith<$Res> {
+  __$SignInLocalizationsCopyWithImpl(
+      _SignInLocalizations _value, $Res Function(_SignInLocalizations) _then)
+      : super(_value, (v) => _then(v as _SignInLocalizations));
+
+  @override
+  _SignInLocalizations get _value => super._value as _SignInLocalizations;
+
+  @override
+  $Res call({
+    Object? signInAnonymously = freezed,
+    Object? signInWithApple = freezed,
+    Object? signInWithGoogle = freezed,
+    Object? signInWithFacebook = freezed,
+    Object? errorTitle = freezed,
+  }) {
+    return _then(_SignInLocalizations(
+      signInAnonymously: signInAnonymously == freezed
+          ? _value.signInAnonymously
+          : signInAnonymously // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithApple: signInWithApple == freezed
+          ? _value.signInWithApple
+          : signInWithApple // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithGoogle: signInWithGoogle == freezed
+          ? _value.signInWithGoogle
+          : signInWithGoogle // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithFacebook: signInWithFacebook == freezed
+          ? _value.signInWithFacebook
+          : signInWithFacebook // ignore: cast_nullable_to_non_nullable
+              as String,
+      errorTitle: errorTitle == freezed
+          ? _value.errorTitle
+          : errorTitle // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SignInLocalizations implements _SignInLocalizations {
+  const _$_SignInLocalizations(
+      {this.signInAnonymously = "Continue without registration",
+      this.signInWithApple = "Sign in with Google",
+      this.signInWithGoogle = "Sign in with Apple",
+      this.signInWithFacebook = "Sign in with Facebook",
+      this.errorTitle = "Oops! Something went wrong..."});
+
+  @JsonKey(defaultValue: "Continue without registration")
+  @override
+  final String signInAnonymously;
+  @JsonKey(defaultValue: "Sign in with Google")
+  @override
+  final String signInWithApple;
+  @JsonKey(defaultValue: "Sign in with Apple")
+  @override
+  final String signInWithGoogle;
+  @JsonKey(defaultValue: "Sign in with Facebook")
+  @override
+  final String signInWithFacebook;
+  @JsonKey(defaultValue: "Oops! Something went wrong...")
+  @override
+  final String errorTitle;
+
+  @override
+  String toString() {
+    return 'SignInLocalizations(signInAnonymously: $signInAnonymously, signInWithApple: $signInWithApple, signInWithGoogle: $signInWithGoogle, signInWithFacebook: $signInWithFacebook, errorTitle: $errorTitle)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SignInLocalizations &&
+            (identical(other.signInAnonymously, signInAnonymously) ||
+                other.signInAnonymously == signInAnonymously) &&
+            (identical(other.signInWithApple, signInWithApple) ||
+                other.signInWithApple == signInWithApple) &&
+            (identical(other.signInWithGoogle, signInWithGoogle) ||
+                other.signInWithGoogle == signInWithGoogle) &&
+            (identical(other.signInWithFacebook, signInWithFacebook) ||
+                other.signInWithFacebook == signInWithFacebook) &&
+            (identical(other.errorTitle, errorTitle) ||
+                other.errorTitle == errorTitle));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, signInAnonymously,
+      signInWithApple, signInWithGoogle, signInWithFacebook, errorTitle);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SignInLocalizationsCopyWith<_SignInLocalizations> get copyWith =>
+      __$SignInLocalizationsCopyWithImpl<_SignInLocalizations>(
+          this, _$identity);
+}
+
+abstract class _SignInLocalizations implements SignInLocalizations {
+  const factory _SignInLocalizations(
+      {String signInAnonymously,
+      String signInWithApple,
+      String signInWithGoogle,
+      String signInWithFacebook,
+      String errorTitle}) = _$_SignInLocalizations;
+
+  @override
+  String get signInAnonymously;
+  @override
+  String get signInWithApple;
+  @override
+  String get signInWithGoogle;
+  @override
+  String get signInWithFacebook;
+  @override
+  String get errorTitle;
+  @override
+  @JsonKey(ignore: true)
+  _$SignInLocalizationsCopyWith<_SignInLocalizations> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$SignInStateTearOff {
+  const _$SignInStateTearOff();
+
+  _SignInInitial initial() {
+    return const _SignInInitial();
+  }
+
+  _SignInLoading loading() {
+    return const _SignInLoading();
+  }
+
+  _SignInSuccess success() {
+    return const _SignInSuccess();
+  }
+
+  _SignInError error(String errorText) {
+    return _SignInError(
+      errorText,
+    );
+  }
+}
+
+/// @nodoc
+const $SignInState = _$SignInStateTearOff();
+
+/// @nodoc
+mixin _$SignInState {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorText) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInInitial value) initial,
+    required TResult Function(_SignInLoading value) loading,
+    required TResult Function(_SignInSuccess value) success,
+    required TResult Function(_SignInError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignInStateCopyWith<$Res> {
+  factory $SignInStateCopyWith(
+          SignInState value, $Res Function(SignInState) then) =
+      _$SignInStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
+  _$SignInStateCopyWithImpl(this._value, this._then);
+
+  final SignInState _value;
+  // ignore: unused_field
+  final $Res Function(SignInState) _then;
+}
+
+/// @nodoc
+abstract class _$SignInInitialCopyWith<$Res> {
+  factory _$SignInInitialCopyWith(
+          _SignInInitial value, $Res Function(_SignInInitial) then) =
+      __$SignInInitialCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SignInInitialCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
+    implements _$SignInInitialCopyWith<$Res> {
+  __$SignInInitialCopyWithImpl(
+      _SignInInitial _value, $Res Function(_SignInInitial) _then)
+      : super(_value, (v) => _then(v as _SignInInitial));
+
+  @override
+  _SignInInitial get _value => super._value as _SignInInitial;
+}
+
+/// @nodoc
+
+class _$_SignInInitial implements _SignInInitial {
+  const _$_SignInInitial();
+
+  @override
+  String toString() {
+    return 'SignInState.initial()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignInInitial);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorText) error,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInInitial value) initial,
+    required TResult Function(_SignInLoading value) loading,
+    required TResult Function(_SignInSuccess value) success,
+    required TResult Function(_SignInError value) error,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInInitial implements SignInState {
+  const factory _SignInInitial() = _$_SignInInitial;
+}
+
+/// @nodoc
+abstract class _$SignInLoadingCopyWith<$Res> {
+  factory _$SignInLoadingCopyWith(
+          _SignInLoading value, $Res Function(_SignInLoading) then) =
+      __$SignInLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SignInLoadingCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
+    implements _$SignInLoadingCopyWith<$Res> {
+  __$SignInLoadingCopyWithImpl(
+      _SignInLoading _value, $Res Function(_SignInLoading) _then)
+      : super(_value, (v) => _then(v as _SignInLoading));
+
+  @override
+  _SignInLoading get _value => super._value as _SignInLoading;
+}
+
+/// @nodoc
+
+class _$_SignInLoading implements _SignInLoading {
+  const _$_SignInLoading();
+
+  @override
+  String toString() {
+    return 'SignInState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignInLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorText) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInInitial value) initial,
+    required TResult Function(_SignInLoading value) loading,
+    required TResult Function(_SignInSuccess value) success,
+    required TResult Function(_SignInError value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInLoading implements SignInState {
+  const factory _SignInLoading() = _$_SignInLoading;
+}
+
+/// @nodoc
+abstract class _$SignInSuccessCopyWith<$Res> {
+  factory _$SignInSuccessCopyWith(
+          _SignInSuccess value, $Res Function(_SignInSuccess) then) =
+      __$SignInSuccessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SignInSuccessCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
+    implements _$SignInSuccessCopyWith<$Res> {
+  __$SignInSuccessCopyWithImpl(
+      _SignInSuccess _value, $Res Function(_SignInSuccess) _then)
+      : super(_value, (v) => _then(v as _SignInSuccess));
+
+  @override
+  _SignInSuccess get _value => super._value as _SignInSuccess;
+}
+
+/// @nodoc
+
+class _$_SignInSuccess implements _SignInSuccess {
+  const _$_SignInSuccess();
+
+  @override
+  String toString() {
+    return 'SignInState.success()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignInSuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorText) error,
+  }) {
+    return success();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+  }) {
+    return success?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInInitial value) initial,
+    required TResult Function(_SignInLoading value) loading,
+    required TResult Function(_SignInSuccess value) success,
+    required TResult Function(_SignInError value) error,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInSuccess implements SignInState {
+  const factory _SignInSuccess() = _$_SignInSuccess;
+}
+
+/// @nodoc
+abstract class _$SignInErrorCopyWith<$Res> {
+  factory _$SignInErrorCopyWith(
+          _SignInError value, $Res Function(_SignInError) then) =
+      __$SignInErrorCopyWithImpl<$Res>;
+  $Res call({String errorText});
+}
+
+/// @nodoc
+class __$SignInErrorCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
+    implements _$SignInErrorCopyWith<$Res> {
+  __$SignInErrorCopyWithImpl(
+      _SignInError _value, $Res Function(_SignInError) _then)
+      : super(_value, (v) => _then(v as _SignInError));
+
+  @override
+  _SignInError get _value => super._value as _SignInError;
+
+  @override
+  $Res call({
+    Object? errorText = freezed,
+  }) {
+    return _then(_SignInError(
+      errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SignInError implements _SignInError {
+  const _$_SignInError(this.errorText);
+
+  @override
+  final String errorText;
+
+  @override
+  String toString() {
+    return 'SignInState.error(errorText: $errorText)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SignInError &&
+            (identical(other.errorText, errorText) ||
+                other.errorText == errorText));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, errorText);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SignInErrorCopyWith<_SignInError> get copyWith =>
+      __$SignInErrorCopyWithImpl<_SignInError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorText) error,
+  }) {
+    return error(errorText);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+  }) {
+    return error?.call(errorText);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(errorText);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInInitial value) initial,
+    required TResult Function(_SignInLoading value) loading,
+    required TResult Function(_SignInSuccess value) success,
+    required TResult Function(_SignInError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInError implements SignInState {
+  const factory _SignInError(String errorText) = _$_SignInError;
+
+  String get errorText;
+  @JsonKey(ignore: true)
+  _$SignInErrorCopyWith<_SignInError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$SignInThemeTearOff {
+  const _$SignInThemeTearOff();
+
+  _SignInTheme call(
+      {double maxWidth = 400,
+      double buttonRadius = 8.0,
+      double buttonPadding = 16.0,
+      required Color buttonBackgroundColor,
+      required Color buttonTextColor,
+      double buttonFontSize = 18.0,
+      double spaceBetweenButtons = 15.0}) {
+    return _SignInTheme(
+      maxWidth: maxWidth,
+      buttonRadius: buttonRadius,
+      buttonPadding: buttonPadding,
+      buttonBackgroundColor: buttonBackgroundColor,
+      buttonTextColor: buttonTextColor,
+      buttonFontSize: buttonFontSize,
+      spaceBetweenButtons: spaceBetweenButtons,
+    );
+  }
+}
+
+/// @nodoc
+const $SignInTheme = _$SignInThemeTearOff();
+
+/// @nodoc
+mixin _$SignInTheme {
+  double get maxWidth => throw _privateConstructorUsedError;
+  double get buttonRadius => throw _privateConstructorUsedError;
+  double get buttonPadding => throw _privateConstructorUsedError;
+  Color get buttonBackgroundColor => throw _privateConstructorUsedError;
+  Color get buttonTextColor => throw _privateConstructorUsedError;
+  double get buttonFontSize => throw _privateConstructorUsedError;
+  double get spaceBetweenButtons => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SignInThemeCopyWith<SignInTheme> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignInThemeCopyWith<$Res> {
+  factory $SignInThemeCopyWith(
+          SignInTheme value, $Res Function(SignInTheme) then) =
+      _$SignInThemeCopyWithImpl<$Res>;
+  $Res call(
+      {double maxWidth,
+      double buttonRadius,
+      double buttonPadding,
+      Color buttonBackgroundColor,
+      Color buttonTextColor,
+      double buttonFontSize,
+      double spaceBetweenButtons});
+}
+
+/// @nodoc
+class _$SignInThemeCopyWithImpl<$Res> implements $SignInThemeCopyWith<$Res> {
+  _$SignInThemeCopyWithImpl(this._value, this._then);
+
+  final SignInTheme _value;
+  // ignore: unused_field
+  final $Res Function(SignInTheme) _then;
+
+  @override
+  $Res call({
+    Object? maxWidth = freezed,
+    Object? buttonRadius = freezed,
+    Object? buttonPadding = freezed,
+    Object? buttonBackgroundColor = freezed,
+    Object? buttonTextColor = freezed,
+    Object? buttonFontSize = freezed,
+    Object? spaceBetweenButtons = freezed,
+  }) {
+    return _then(_value.copyWith(
+      maxWidth: maxWidth == freezed
+          ? _value.maxWidth
+          : maxWidth // ignore: cast_nullable_to_non_nullable
+              as double,
+      buttonRadius: buttonRadius == freezed
+          ? _value.buttonRadius
+          : buttonRadius // ignore: cast_nullable_to_non_nullable
+              as double,
+      buttonPadding: buttonPadding == freezed
+          ? _value.buttonPadding
+          : buttonPadding // ignore: cast_nullable_to_non_nullable
+              as double,
+      buttonBackgroundColor: buttonBackgroundColor == freezed
+          ? _value.buttonBackgroundColor
+          : buttonBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      buttonTextColor: buttonTextColor == freezed
+          ? _value.buttonTextColor
+          : buttonTextColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      buttonFontSize: buttonFontSize == freezed
+          ? _value.buttonFontSize
+          : buttonFontSize // ignore: cast_nullable_to_non_nullable
+              as double,
+      spaceBetweenButtons: spaceBetweenButtons == freezed
+          ? _value.spaceBetweenButtons
+          : spaceBetweenButtons // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SignInThemeCopyWith<$Res>
+    implements $SignInThemeCopyWith<$Res> {
+  factory _$SignInThemeCopyWith(
+          _SignInTheme value, $Res Function(_SignInTheme) then) =
+      __$SignInThemeCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {double maxWidth,
+      double buttonRadius,
+      double buttonPadding,
+      Color buttonBackgroundColor,
+      Color buttonTextColor,
+      double buttonFontSize,
+      double spaceBetweenButtons});
+}
+
+/// @nodoc
+class __$SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
+    implements _$SignInThemeCopyWith<$Res> {
+  __$SignInThemeCopyWithImpl(
+      _SignInTheme _value, $Res Function(_SignInTheme) _then)
+      : super(_value, (v) => _then(v as _SignInTheme));
+
+  @override
+  _SignInTheme get _value => super._value as _SignInTheme;
+
+  @override
+  $Res call({
+    Object? maxWidth = freezed,
+    Object? buttonRadius = freezed,
+    Object? buttonPadding = freezed,
+    Object? buttonBackgroundColor = freezed,
+    Object? buttonTextColor = freezed,
+    Object? buttonFontSize = freezed,
+    Object? spaceBetweenButtons = freezed,
+  }) {
+    return _then(_SignInTheme(
+      maxWidth: maxWidth == freezed
+          ? _value.maxWidth
+          : maxWidth // ignore: cast_nullable_to_non_nullable
+              as double,
+      buttonRadius: buttonRadius == freezed
+          ? _value.buttonRadius
+          : buttonRadius // ignore: cast_nullable_to_non_nullable
+              as double,
+      buttonPadding: buttonPadding == freezed
+          ? _value.buttonPadding
+          : buttonPadding // ignore: cast_nullable_to_non_nullable
+              as double,
+      buttonBackgroundColor: buttonBackgroundColor == freezed
+          ? _value.buttonBackgroundColor
+          : buttonBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      buttonTextColor: buttonTextColor == freezed
+          ? _value.buttonTextColor
+          : buttonTextColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      buttonFontSize: buttonFontSize == freezed
+          ? _value.buttonFontSize
+          : buttonFontSize // ignore: cast_nullable_to_non_nullable
+              as double,
+      spaceBetweenButtons: spaceBetweenButtons == freezed
+          ? _value.spaceBetweenButtons
+          : spaceBetweenButtons // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SignInTheme implements _SignInTheme {
+  const _$_SignInTheme(
+      {this.maxWidth = 400,
+      this.buttonRadius = 8.0,
+      this.buttonPadding = 16.0,
+      required this.buttonBackgroundColor,
+      required this.buttonTextColor,
+      this.buttonFontSize = 18.0,
+      this.spaceBetweenButtons = 15.0});
+
+  @JsonKey(defaultValue: 400)
+  @override
+  final double maxWidth;
+  @JsonKey(defaultValue: 8.0)
+  @override
+  final double buttonRadius;
+  @JsonKey(defaultValue: 16.0)
+  @override
+  final double buttonPadding;
+  @override
+  final Color buttonBackgroundColor;
+  @override
+  final Color buttonTextColor;
+  @JsonKey(defaultValue: 18.0)
+  @override
+  final double buttonFontSize;
+  @JsonKey(defaultValue: 15.0)
+  @override
+  final double spaceBetweenButtons;
+
+  @override
+  String toString() {
+    return 'SignInTheme(maxWidth: $maxWidth, buttonRadius: $buttonRadius, buttonPadding: $buttonPadding, buttonBackgroundColor: $buttonBackgroundColor, buttonTextColor: $buttonTextColor, buttonFontSize: $buttonFontSize, spaceBetweenButtons: $spaceBetweenButtons)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SignInTheme &&
+            (identical(other.maxWidth, maxWidth) ||
+                other.maxWidth == maxWidth) &&
+            (identical(other.buttonRadius, buttonRadius) ||
+                other.buttonRadius == buttonRadius) &&
+            (identical(other.buttonPadding, buttonPadding) ||
+                other.buttonPadding == buttonPadding) &&
+            (identical(other.buttonBackgroundColor, buttonBackgroundColor) ||
+                other.buttonBackgroundColor == buttonBackgroundColor) &&
+            (identical(other.buttonTextColor, buttonTextColor) ||
+                other.buttonTextColor == buttonTextColor) &&
+            (identical(other.buttonFontSize, buttonFontSize) ||
+                other.buttonFontSize == buttonFontSize) &&
+            (identical(other.spaceBetweenButtons, spaceBetweenButtons) ||
+                other.spaceBetweenButtons == spaceBetweenButtons));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      maxWidth,
+      buttonRadius,
+      buttonPadding,
+      buttonBackgroundColor,
+      buttonTextColor,
+      buttonFontSize,
+      spaceBetweenButtons);
+
+  @JsonKey(ignore: true)
+  @override
+  _$SignInThemeCopyWith<_SignInTheme> get copyWith =>
+      __$SignInThemeCopyWithImpl<_SignInTheme>(this, _$identity);
+}
+
+abstract class _SignInTheme implements SignInTheme {
+  const factory _SignInTheme(
+      {double maxWidth,
+      double buttonRadius,
+      double buttonPadding,
+      required Color buttonBackgroundColor,
+      required Color buttonTextColor,
+      double buttonFontSize,
+      double spaceBetweenButtons}) = _$_SignInTheme;
+
+  @override
+  double get maxWidth;
+  @override
+  double get buttonRadius;
+  @override
+  double get buttonPadding;
+  @override
+  Color get buttonBackgroundColor;
+  @override
+  Color get buttonTextColor;
+  @override
+  double get buttonFontSize;
+  @override
+  double get spaceBetweenButtons;
+  @override
+  @JsonKey(ignore: true)
+  _$SignInThemeCopyWith<_SignInTheme> get copyWith =>
+      throw _privateConstructorUsedError;
 }

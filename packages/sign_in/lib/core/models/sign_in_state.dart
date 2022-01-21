@@ -2,8 +2,8 @@ part of '../../sign_in.dart';
 
 @freezed
 abstract class SignInState with _$SignInState {
-  const factory SignInState.initial() = _Initial;
-  const factory SignInState.loading() = _Loading;
-  const factory SignInState.success() = _Success;
-  const factory SignInState.error(String errorText) = _Error;
+  const factory SignInState.initial() = _SignInInitial;
+  const factory SignInState.loading() = _SignInLoading;
+  const factory SignInState.success() = _SignInSuccess;
+  const factory SignInState.error(String errorText) = _SignInError;
 }
