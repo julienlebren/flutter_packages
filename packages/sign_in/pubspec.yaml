@@ -19,7 +19,7 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/layout_builder
-    version: ^0.17.0
+    version: ^0.18.0
   freezed_annotation: ^0.15.0
   flutter_riverpod: ^1.0.0
 

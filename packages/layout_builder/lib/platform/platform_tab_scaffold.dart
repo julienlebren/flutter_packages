@@ -4,8 +4,8 @@ part of platform;
 class TabItem with _$TabItem {
   const factory TabItem({
     required String title,
-    required IconData icon,
-    required IconData selectedIcon,
+    required Widget icon,
+    required Widget selectedIcon,
     required Widget router,
   }) = _TabItem;
 }
@@ -65,7 +65,7 @@ class PlatformTabScaffold
     return BottomNavigationBarItem(
       icon: Padding(
         padding: EdgeInsets.symmetric(vertical: 3),
-        child: Icon(item.icon),
+        child: item.icon,
       ),
       label: item.title,
     );

@@ -19,8 +19,8 @@ class _$TabItemTearOff {
 
   _TabItem call(
       {required String title,
-      required IconData icon,
-      required IconData selectedIcon,
+      required Widget icon,
+      required Widget selectedIcon,
       required Widget router}) {
     return _TabItem(
       title: title,
@@ -37,8 +37,8 @@ const $TabItem = _$TabItemTearOff();
 /// @nodoc
 mixin _$TabItem {
   String get title => throw _privateConstructorUsedError;
-  IconData get icon => throw _privateConstructorUsedError;
-  IconData get selectedIcon => throw _privateConstructorUsedError;
+  Widget get icon => throw _privateConstructorUsedError;
+  Widget get selectedIcon => throw _privateConstructorUsedError;
   Widget get router => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -49,8 +49,7 @@ mixin _$TabItem {
 abstract class $TabItemCopyWith<$Res> {
   factory $TabItemCopyWith(TabItem value, $Res Function(TabItem) then) =
       _$TabItemCopyWithImpl<$Res>;
-  $Res call(
-      {String title, IconData icon, IconData selectedIcon, Widget router});
+  $Res call({String title, Widget icon, Widget selectedIcon, Widget router});
 }
 
 /// @nodoc
@@ -76,11 +75,11 @@ class _$TabItemCopyWithImpl<$Res> implements $TabItemCopyWith<$Res> {
       icon: icon == freezed
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
-              as IconData,
+              as Widget,
       selectedIcon: selectedIcon == freezed
           ? _value.selectedIcon
           : selectedIcon // ignore: cast_nullable_to_non_nullable
-              as IconData,
+              as Widget,
       router: router == freezed
           ? _value.router
           : router // ignore: cast_nullable_to_non_nullable
@@ -94,8 +93,7 @@ abstract class _$TabItemCopyWith<$Res> implements $TabItemCopyWith<$Res> {
   factory _$TabItemCopyWith(_TabItem value, $Res Function(_TabItem) then) =
       __$TabItemCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {String title, IconData icon, IconData selectedIcon, Widget router});
+  $Res call({String title, Widget icon, Widget selectedIcon, Widget router});
 }
 
 /// @nodoc
@@ -122,11 +120,11 @@ class __$TabItemCopyWithImpl<$Res> extends _$TabItemCopyWithImpl<$Res>
       icon: icon == freezed
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
-              as IconData,
+              as Widget,
       selectedIcon: selectedIcon == freezed
           ? _value.selectedIcon
           : selectedIcon // ignore: cast_nullable_to_non_nullable
-              as IconData,
+              as Widget,
       router: router == freezed
           ? _value.router
           : router // ignore: cast_nullable_to_non_nullable
@@ -147,9 +145,9 @@ class _$_TabItem with DiagnosticableTreeMixin implements _TabItem {
   @override
   final String title;
   @override
-  final IconData icon;
+  final Widget icon;
   @override
-  final IconData selectedIcon;
+  final Widget selectedIcon;
   @override
   final Widget router;
 
@@ -194,16 +192,16 @@ class _$_TabItem with DiagnosticableTreeMixin implements _TabItem {
 abstract class _TabItem implements TabItem {
   const factory _TabItem(
       {required String title,
-      required IconData icon,
-      required IconData selectedIcon,
+      required Widget icon,
+      required Widget selectedIcon,
       required Widget router}) = _$_TabItem;
 
   @override
   String get title;
   @override
-  IconData get icon;
+  Widget get icon;
   @override
-  IconData get selectedIcon;
+  Widget get selectedIcon;
   @override
   Widget get router;
   @override
