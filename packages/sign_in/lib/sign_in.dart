@@ -10,8 +10,9 @@ import 'package:layout_builder/layout_builder.dart';
 import 'package:sign_in/presentation/apple_logo.dart';
 import 'package:sign_in/presentation/google_logo.dart';
 
-part 'controllers/sign_in_state.dart';
-part 'controllers/sign_in_event.dart';
+part 'core/enums/sign_in_providers.dart';
+part 'core/models/sign_in_state.dart';
+part 'core/models/sign_in_event.dart';
 part 'controllers/sign_in_controller.dart';
 part 'presentation/sign_in_button.dart';
 part 'presentation/sign_in_widget.dart';

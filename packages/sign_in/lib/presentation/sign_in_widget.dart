@@ -5,11 +5,8 @@ class SignInButtons extends ConsumerWidget {
     Key? key,
     this.l10n = const SignInLocalizations(),
     required this.theme,
-    this.useApple = true,
     this.useAppleOnlyOnCupertino = true,
-    this.useGoogle = true,
-    this.useFacebook = true,
-    this.useAnonymous = true,
+    this.providers = const [],
   }) : super(key: key);
 
   void _handleEvent(WidgetRef ref, SignInEvent event) {
@@ -19,11 +16,8 @@ class SignInButtons extends ConsumerWidget {
 
   final SignInLocalizations l10n;
   final SignInTheme theme;
-  final bool useApple;
   final bool useAppleOnlyOnCupertino;
-  final bool useGoogle;
-  final bool useFacebook;
-  final bool useAnonymous;
+  final List<SignInProvider> providers;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -54,13 +48,12 @@ class SignInButtons extends ConsumerWidget {
     final buttonHeight =
         iconSize + (theme.buttonPadding * 2) + theme.spaceBetweenButtons;
     final displayApple =
-        ((useApple && (useAppleOnlyOnCupertino && isCupertino())) ||
-            (useApple && !useAppleOnlyOnCupertino));
+        (useAppleOnlyOnCupertino && isCupertino()) || !useAppleOnlyOnCupertino;
 
-    final boxHeight = (displayApple ? buttonHeight : 0.0) +
-        (useGoogle ? buttonHeight : 0.0) +
-        (useFacebook ? buttonHeight : 0.0) +
-        (useAnonymous ? buttonHeight : 0.0);
+    double boxHeight = buttonHeight * providers.length;
+    if (providers.contains(SignInProvider.apple) && !displayApple) {
+      boxHeight -= buttonHeight;
+    }
 
     return SizedBox(
       height: boxHeight,
@@ -69,65 +62,61 @@ class SignInButtons extends ConsumerWidget {
           : Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                if (displayApple) ...[
-                  socialButton(
-                    icon: SizedBox(
-                      width: iconTidySize,
-                      height: iconSize,
-                      child: CustomPaint(
-                        painter: AppleLogoPainter(
-                          color: theme.buttonTextColor,
+                for (var provider in providers) ...[
+                  if (provider == SignInProvider.anonymous)
+                    SizedBox(
+                      width: double.infinity,
+                      child: PlatformTextButton(
+                        title: l10n.signInAnonymously,
+                        onPressed: () {
+                          _handleEvent(
+                              ref, const SignInEvent.signInAnonymously());
+                        },
+                        color: theme.buttonTextColor,
+                      ),
+                    ),
+                  if (provider == SignInProvider.google)
+                    socialButton(
+                      icon: SizedBox(
+                        width: iconTidySize,
+                        height: iconTidySize,
+                        child: CustomPaint(
+                          painter: GoogleLogoPainter(),
                         ),
                       ),
+                      iconSize: iconSize,
+                      title: l10n.signInWithGoogle,
+                      onPressed: () {
+                        _handleEvent(ref, const SignInEvent.signInWithGoogle());
+                      },
                     ),
-                    iconSize: iconSize,
-                    title: l10n.signInWithApple,
-                    onPressed: () {
-                      _handleEvent(ref, const SignInEvent.signInWithApple());
-                    },
-                  ),
-                  SizedBox(height: theme.spaceBetweenButtons),
-                ],
-                if (useGoogle) ...[
-                  socialButton(
-                    icon: SizedBox(
-                      width: iconTidySize,
-                      height: iconTidySize,
-                      child: CustomPaint(
-                        painter: GoogleLogoPainter(),
+                  if (provider == SignInProvider.apple && displayApple)
+                    socialButton(
+                      icon: SizedBox(
+                        width: iconTidySize,
+                        height: iconSize,
+                        child: CustomPaint(
+                          painter: AppleLogoPainter(
+                            color: theme.buttonTextColor,
+                          ),
+                        ),
                       ),
+                      iconSize: iconSize,
+                      title: l10n.signInWithApple,
+                      onPressed: () {
+                        _handleEvent(ref, const SignInEvent.signInWithApple());
+                      },
                     ),
-                    iconSize: iconSize,
-                    title: l10n.signInWithGoogle,
-                    onPressed: () {
-                      _handleEvent(ref, const SignInEvent.signInWithGoogle());
-                    },
-                  ),
-                  SizedBox(height: theme.spaceBetweenButtons),
-                ],
-                if (useFacebook) ...[
-                  socialButton(
-                    assetName: "assets/images/facebook-logo.png",
-                    iconSize: iconSize,
-                    title: l10n.signInWithFacebook,
-                    onPressed: () {
-                      _handleEvent(ref, const SignInEvent.signInWithFacebook());
-                    },
-                  ),
-                  SizedBox(height: theme.spaceBetweenButtons),
-                ],
-                if (useAnonymous) ...[
-                  SizedBox(
-                    width: double.infinity,
-                    child: PlatformTextButton(
-                      title: l10n.signInAnonymously,
+                  if (provider == SignInProvider.facebook)
+                    socialButton(
+                      assetName: "assets/images/facebook-logo.png",
+                      iconSize: iconSize,
+                      title: l10n.signInWithFacebook,
                       onPressed: () {
                         _handleEvent(
-                            ref, const SignInEvent.signInAnonymously());
+                            ref, const SignInEvent.signInWithFacebook());
                       },
-                      color: theme.buttonTextColor,
                     ),
-                  ),
                   SizedBox(height: theme.spaceBetweenButtons),
                 ],
               ],
