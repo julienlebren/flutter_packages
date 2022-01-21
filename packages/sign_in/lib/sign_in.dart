@@ -19,11 +19,49 @@ part 'core/models/sign_in_state.dart';
 part 'core/models/sign_in_theme.dart';
 part 'presentation/sign_in_button.dart';
 part 'presentation/sign_in_widget.dart';
-part 'providers/auth.dart';
 part 'sign_in.freezed.dart';
 
 final signInControllerProvider =
     StateNotifierProvider<SignInController, SignInState>((ref) {
   final service = ref.watch(authServiceProvider);
   return SignInController(service);
+});
+
+final authStateProvider =
+    StateProvider.family<AuthState, StreamProvider>((ref, userStreamProvider) {
+  final authStateChanges = ref.watch(authStateChangesProvider);
+
+  return authStateChanges.when(
+    loading: () {
+      return const AuthState.initializing();
+    },
+    error: (error, _) => AuthState.error(error.toString()),
+    data: (user) {
+      if (user == null) {
+        return const AuthState.notAuthed();
+      } else {
+        final user = ref.watch(userStreamProvider);
+        return user.when(
+          loading: () {
+            final isSigninIn = ref.watch(signInControllerProvider.select(
+              (state) => (state == const SignInState.success()),
+            ));
+            if (isSigninIn) {
+              return const AuthState.notAuthed();
+            } else {
+              return const AuthState.initializing();
+            }
+          },
+          error: (error, _) => AuthState.error(error.toString()),
+          data: (user) {
+            if (user == null) {
+              return const AuthState.waitingUserCreation();
+            } else {
+              return const AuthState.authed();
+            }
+          },
+        );
+      }
+    },
+  );
 });
