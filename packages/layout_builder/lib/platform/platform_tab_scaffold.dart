@@ -83,7 +83,7 @@ class PlatformTabScaffold
         onTap: (index) => onTap(index, ref),
         backgroundColor: appTheme.cupertinoTabBarBackgroundColor,
         inactiveColor: Colors.grey,
-        iconSize: 30,
+        iconSize: 40,
         items: tabs.map((item) => _tabItem(item)).toList(),
         border: Border(
           top: BorderSide(color: appTheme.navigationBarBorderColor),
