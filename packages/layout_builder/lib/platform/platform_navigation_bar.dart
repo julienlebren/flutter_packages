@@ -62,11 +62,16 @@ class PlatformNavigationBar
     WidgetRef ref, {
     bool isCupertinoModal = false,
   }) {
+    final navigationBarBackgroundColor = ref.watch(
+      appThemeProvider
+          .select((appTheme) => appTheme.cupertinoNavigationBarBackgroundColor),
+    );
     final navigationBarBorderColor = ref.watch(
       appThemeProvider.select((appTheme) => appTheme.navigationBarBorderColor),
     );
     return CupertinoNavigationBar(
       transitionBetweenRoutes: transitionBetweenRoutes,
+      backgroundColor: navigationBarBackgroundColor,
       padding: isCupertinoModal
           ? EdgeInsetsDirectional.only(start: 16, top: 0, end: 16, bottom: 10)
           : null,
