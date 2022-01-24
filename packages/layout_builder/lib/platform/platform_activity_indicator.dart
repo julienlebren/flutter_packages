@@ -18,7 +18,7 @@ class PlatformActivityIndicator extends PlatformWidgetBase<
 }
 
 class DelayedPlatformActivityIndicator extends StatelessWidget {
-  DelayedPlatformActivityIndicator({
+  const DelayedPlatformActivityIndicator({
     this.delayBeforeDisplay = 2,
   });
 
