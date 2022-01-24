@@ -16,3 +16,27 @@ class PlatformActivityIndicator extends PlatformWidgetBase<
     return CupertinoActivityIndicator();
   }
 }
+
+class DelayedPlatformActivityIndicator extends StatelessWidget {
+  DelayedPlatformActivityIndicator({
+    this.delayBeforeDisplay = 2,
+  });
+
+  final int delayBeforeDisplay;
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: Future.delayed(Duration(seconds: delayBeforeDisplay), () {}),
+      builder: (_, snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          return Center(
+            child: PlatformActivityIndicator(),
+          );
+        } else {
+          return SizedBox.shrink();
+        }
+      },
+    );
+  }
+}
