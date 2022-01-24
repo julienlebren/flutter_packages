@@ -9,6 +9,7 @@ class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
     this.value,
     this.trailing,
     this.onTap,
+    this.isOverflowed = true,
   }) : super();
 
   final Widget? child;
@@ -18,6 +19,7 @@ class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
   final String? caption;
   final String? value;
   final VoidCallback? onTap;
+  final bool isOverflowed;
 
   @override
   Material createMaterialWidget(BuildContext context, WidgetRef ref) {
@@ -154,6 +156,7 @@ class ListTileContents extends ConsumerWidget {
     this.value,
     this.trailing,
     this.onTap,
+    this.isOverflowed = false,
   }) : super();
 
   final Widget? child;
@@ -163,6 +166,7 @@ class ListTileContents extends ConsumerWidget {
   final String? caption;
   final String? value;
   final VoidCallback? onTap;
+  final bool isOverflowed;
 
   CrossAxisAlignment get alignment {
     if (leading == null && label == null && trailing == null) {
@@ -199,15 +203,16 @@ class ListTileContents extends ConsumerWidget {
                       crossAxisAlignment: alignment,
                       children: [
                         Padding(
-                          padding: EdgeInsets.only(top: 3),
+                          padding: EdgeInsets.only(top: 3, right: 5),
                           child: Text(
                             label!,
                             style: TextStyle(
                               color: appTheme.textColor,
                               fontSize: isCupertino() ? 17 : 16,
                             ),
-                            maxLines: 1,
-                            overflow: TextOverflow.ellipsis,
+                            maxLines: isOverflowed ? 1 : null,
+                            overflow:
+                                isOverflowed ? TextOverflow.ellipsis : null,
                           ),
                         ),
                         if (caption != null)
