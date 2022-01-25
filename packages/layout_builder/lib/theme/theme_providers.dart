@@ -109,7 +109,7 @@ final listViewThemeProvider = Provider<ListViewTheme>((ref) {
     labelColor: appTheme.textColor,
     captionColor: Colors.grey.shade600,
   );
-});
+}, dependencies: [appThemeProvider]);
 
 /// Theme with specific parameters for Form hat can be overridden
 /// at any part of the app with inside a ProviderScope for specific needs
