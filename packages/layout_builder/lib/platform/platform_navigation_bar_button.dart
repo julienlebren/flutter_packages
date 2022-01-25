@@ -36,8 +36,19 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
 
   final VoidCallback? onPressed;
   final String? buttonText;
-  final IconData? icon;
+  final dynamic icon;
   final NavigationBarButtonPosition position;
+
+  Widget get iconBuilder {
+    if (icon != null) {
+      if (icon is IconData) {
+        return Icon(icon, size: 28);
+      } else if (icon is AssetImage) {
+        return ImageIcon(icon);
+      }
+    }
+    return SizedBox.shrink();
+  }
 
   @override
   Widget createMaterialWidget(BuildContext context, WidgetRef ref) {
@@ -47,7 +58,7 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
       return Container(
         transform: Matrix4.translationValues(15.0, 0.0, 0.0),
         child: IconButton(
-          icon: Icon(icon, size: 28),
+          icon: iconBuilder,
           onPressed: onPressed,
         ),
       );
@@ -66,7 +77,7 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
       ),
       child: CupertinoButton(
         padding: EdgeInsets.zero,
-        child: buttonText != null ? Text(buttonText!) : Icon(icon, size: 28),
+        child: buttonText != null ? Text(buttonText!) : iconBuilder,
         onPressed: onPressed,
       ),
     );
