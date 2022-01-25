@@ -179,6 +179,8 @@ class ListTileContents extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
+    final listTheme = ref.watch(listViewThemeProvider);
+
     return ConstrainedBox(
       constraints: BoxConstraints(
         minHeight: 48.0,
@@ -207,8 +209,8 @@ class ListTileContents extends ConsumerWidget {
                           child: Text(
                             label!,
                             style: TextStyle(
-                              color: appTheme.textColor,
-                              fontSize: isCupertino() ? 17 : 16,
+                              color: listTheme.labelColor,
+                              fontSize: listTheme.labelFontSize,
                             ),
                             maxLines: isOverflowed ? 1 : null,
                             overflow:
@@ -221,7 +223,9 @@ class ListTileContents extends ConsumerWidget {
                             child: Text(
                               caption!,
                               style: TextStyle(
-                                  color: Colors.grey.shade600, fontSize: 13),
+                                color: listTheme.captionColor,
+                                fontSize: listTheme.captionFontSize,
+                              ),
                               textAlign: TextAlign.left,
                             ),
                           ),

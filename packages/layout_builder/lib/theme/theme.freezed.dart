@@ -590,9 +590,18 @@ abstract class _AppTheme implements AppTheme {
 class _$ListViewThemeTearOff {
   const _$ListViewThemeTearOff();
 
-  _ListViewTheme call({double separatorPadding = 15}) {
+  _ListViewTheme call(
+      {double separatorPadding = 15,
+      required Color labelColor,
+      double labelFontSize = 17,
+      required Color captionColor,
+      double captionFontSize = 13}) {
     return _ListViewTheme(
       separatorPadding: separatorPadding,
+      labelColor: labelColor,
+      labelFontSize: labelFontSize,
+      captionColor: captionColor,
+      captionFontSize: captionFontSize,
     );
   }
 }
@@ -603,6 +612,10 @@ const $ListViewTheme = _$ListViewThemeTearOff();
 /// @nodoc
 mixin _$ListViewTheme {
   double get separatorPadding => throw _privateConstructorUsedError;
+  Color get labelColor => throw _privateConstructorUsedError;
+  double get labelFontSize => throw _privateConstructorUsedError;
+  Color get captionColor => throw _privateConstructorUsedError;
+  double get captionFontSize => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ListViewThemeCopyWith<ListViewTheme> get copyWith =>
@@ -614,7 +627,12 @@ abstract class $ListViewThemeCopyWith<$Res> {
   factory $ListViewThemeCopyWith(
           ListViewTheme value, $Res Function(ListViewTheme) then) =
       _$ListViewThemeCopyWithImpl<$Res>;
-  $Res call({double separatorPadding});
+  $Res call(
+      {double separatorPadding,
+      Color labelColor,
+      double labelFontSize,
+      Color captionColor,
+      double captionFontSize});
 }
 
 /// @nodoc
@@ -629,11 +647,31 @@ class _$ListViewThemeCopyWithImpl<$Res>
   @override
   $Res call({
     Object? separatorPadding = freezed,
+    Object? labelColor = freezed,
+    Object? labelFontSize = freezed,
+    Object? captionColor = freezed,
+    Object? captionFontSize = freezed,
   }) {
     return _then(_value.copyWith(
       separatorPadding: separatorPadding == freezed
           ? _value.separatorPadding
           : separatorPadding // ignore: cast_nullable_to_non_nullable
+              as double,
+      labelColor: labelColor == freezed
+          ? _value.labelColor
+          : labelColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      labelFontSize: labelFontSize == freezed
+          ? _value.labelFontSize
+          : labelFontSize // ignore: cast_nullable_to_non_nullable
+              as double,
+      captionColor: captionColor == freezed
+          ? _value.captionColor
+          : captionColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      captionFontSize: captionFontSize == freezed
+          ? _value.captionFontSize
+          : captionFontSize // ignore: cast_nullable_to_non_nullable
               as double,
     ));
   }
@@ -646,7 +684,12 @@ abstract class _$ListViewThemeCopyWith<$Res>
           _ListViewTheme value, $Res Function(_ListViewTheme) then) =
       __$ListViewThemeCopyWithImpl<$Res>;
   @override
-  $Res call({double separatorPadding});
+  $Res call(
+      {double separatorPadding,
+      Color labelColor,
+      double labelFontSize,
+      Color captionColor,
+      double captionFontSize});
 }
 
 /// @nodoc
@@ -663,11 +706,31 @@ class __$ListViewThemeCopyWithImpl<$Res>
   @override
   $Res call({
     Object? separatorPadding = freezed,
+    Object? labelColor = freezed,
+    Object? labelFontSize = freezed,
+    Object? captionColor = freezed,
+    Object? captionFontSize = freezed,
   }) {
     return _then(_ListViewTheme(
       separatorPadding: separatorPadding == freezed
           ? _value.separatorPadding
           : separatorPadding // ignore: cast_nullable_to_non_nullable
+              as double,
+      labelColor: labelColor == freezed
+          ? _value.labelColor
+          : labelColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      labelFontSize: labelFontSize == freezed
+          ? _value.labelFontSize
+          : labelFontSize // ignore: cast_nullable_to_non_nullable
+              as double,
+      captionColor: captionColor == freezed
+          ? _value.captionColor
+          : captionColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      captionFontSize: captionFontSize == freezed
+          ? _value.captionFontSize
+          : captionFontSize // ignore: cast_nullable_to_non_nullable
               as double,
     ));
   }
@@ -676,15 +739,30 @@ class __$ListViewThemeCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ListViewTheme implements _ListViewTheme {
-  const _$_ListViewTheme({this.separatorPadding = 15});
+  const _$_ListViewTheme(
+      {this.separatorPadding = 15,
+      required this.labelColor,
+      this.labelFontSize = 17,
+      required this.captionColor,
+      this.captionFontSize = 13});
 
   @JsonKey(defaultValue: 15)
   @override
   final double separatorPadding;
+  @override
+  final Color labelColor;
+  @JsonKey(defaultValue: 17)
+  @override
+  final double labelFontSize;
+  @override
+  final Color captionColor;
+  @JsonKey(defaultValue: 13)
+  @override
+  final double captionFontSize;
 
   @override
   String toString() {
-    return 'ListViewTheme(separatorPadding: $separatorPadding)';
+    return 'ListViewTheme(separatorPadding: $separatorPadding, labelColor: $labelColor, labelFontSize: $labelFontSize, captionColor: $captionColor, captionFontSize: $captionFontSize)';
   }
 
   @override
@@ -693,11 +771,20 @@ class _$_ListViewTheme implements _ListViewTheme {
         (other.runtimeType == runtimeType &&
             other is _ListViewTheme &&
             (identical(other.separatorPadding, separatorPadding) ||
-                other.separatorPadding == separatorPadding));
+                other.separatorPadding == separatorPadding) &&
+            (identical(other.labelColor, labelColor) ||
+                other.labelColor == labelColor) &&
+            (identical(other.labelFontSize, labelFontSize) ||
+                other.labelFontSize == labelFontSize) &&
+            (identical(other.captionColor, captionColor) ||
+                other.captionColor == captionColor) &&
+            (identical(other.captionFontSize, captionFontSize) ||
+                other.captionFontSize == captionFontSize));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, separatorPadding);
+  int get hashCode => Object.hash(runtimeType, separatorPadding, labelColor,
+      labelFontSize, captionColor, captionFontSize);
 
   @JsonKey(ignore: true)
   @override
@@ -706,10 +793,23 @@ class _$_ListViewTheme implements _ListViewTheme {
 }
 
 abstract class _ListViewTheme implements ListViewTheme {
-  const factory _ListViewTheme({double separatorPadding}) = _$_ListViewTheme;
+  const factory _ListViewTheme(
+      {double separatorPadding,
+      required Color labelColor,
+      double labelFontSize,
+      required Color captionColor,
+      double captionFontSize}) = _$_ListViewTheme;
 
   @override
   double get separatorPadding;
+  @override
+  Color get labelColor;
+  @override
+  double get labelFontSize;
+  @override
+  Color get captionColor;
+  @override
+  double get captionFontSize;
   @override
   @JsonKey(ignore: true)
   _$ListViewThemeCopyWith<_ListViewTheme> get copyWith =>

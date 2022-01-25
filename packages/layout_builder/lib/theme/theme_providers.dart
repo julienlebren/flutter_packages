@@ -103,7 +103,13 @@ final cupertinoThemeProvider = Provider<CupertinoThemeData>((ref) {
 /// Theme with specific parameters for List that can be overridden
 /// at any part of the app with inside a ProviderScope for specific needs
 /// (such as have a greater padding in a view).
-final listViewThemeProvider = Provider<ListViewTheme>((_) => ListViewTheme());
+final listViewThemeProvider = Provider<ListViewTheme>((ref) {
+  final appTheme = ref.watch(appThemeProvider);
+  return ListViewTheme(
+    labelColor: appTheme.textColor,
+    captionColor: Colors.grey.shade600,
+  );
+});
 
 /// Theme with specific parameters for Form hat can be overridden
 /// at any part of the app with inside a ProviderScope for specific needs
