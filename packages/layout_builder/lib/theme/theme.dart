@@ -45,6 +45,8 @@ class ListViewTheme with _$ListViewTheme {
     @Default(17) double labelFontSize,
     required Color captionColor,
     @Default(13) double captionFontSize,
+    @Default(1) int? labelMaxLines,
+    @Default(1) int? captionMaxLines,
   }) = _ListViewTheme;
 }
 

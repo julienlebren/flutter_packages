@@ -595,13 +595,17 @@ class _$ListViewThemeTearOff {
       required Color labelColor,
       double labelFontSize = 17,
       required Color captionColor,
-      double captionFontSize = 13}) {
+      double captionFontSize = 13,
+      int? labelMaxLines = 1,
+      int? captionMaxLines = 1}) {
     return _ListViewTheme(
       separatorPadding: separatorPadding,
       labelColor: labelColor,
       labelFontSize: labelFontSize,
       captionColor: captionColor,
       captionFontSize: captionFontSize,
+      labelMaxLines: labelMaxLines,
+      captionMaxLines: captionMaxLines,
     );
   }
 }
@@ -616,6 +620,8 @@ mixin _$ListViewTheme {
   double get labelFontSize => throw _privateConstructorUsedError;
   Color get captionColor => throw _privateConstructorUsedError;
   double get captionFontSize => throw _privateConstructorUsedError;
+  int? get labelMaxLines => throw _privateConstructorUsedError;
+  int? get captionMaxLines => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ListViewThemeCopyWith<ListViewTheme> get copyWith =>
@@ -632,7 +638,9 @@ abstract class $ListViewThemeCopyWith<$Res> {
       Color labelColor,
       double labelFontSize,
       Color captionColor,
-      double captionFontSize});
+      double captionFontSize,
+      int? labelMaxLines,
+      int? captionMaxLines});
 }
 
 /// @nodoc
@@ -651,6 +659,8 @@ class _$ListViewThemeCopyWithImpl<$Res>
     Object? labelFontSize = freezed,
     Object? captionColor = freezed,
     Object? captionFontSize = freezed,
+    Object? labelMaxLines = freezed,
+    Object? captionMaxLines = freezed,
   }) {
     return _then(_value.copyWith(
       separatorPadding: separatorPadding == freezed
@@ -673,6 +683,14 @@ class _$ListViewThemeCopyWithImpl<$Res>
           ? _value.captionFontSize
           : captionFontSize // ignore: cast_nullable_to_non_nullable
               as double,
+      labelMaxLines: labelMaxLines == freezed
+          ? _value.labelMaxLines
+          : labelMaxLines // ignore: cast_nullable_to_non_nullable
+              as int?,
+      captionMaxLines: captionMaxLines == freezed
+          ? _value.captionMaxLines
+          : captionMaxLines // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -689,7 +707,9 @@ abstract class _$ListViewThemeCopyWith<$Res>
       Color labelColor,
       double labelFontSize,
       Color captionColor,
-      double captionFontSize});
+      double captionFontSize,
+      int? labelMaxLines,
+      int? captionMaxLines});
 }
 
 /// @nodoc
@@ -710,6 +730,8 @@ class __$ListViewThemeCopyWithImpl<$Res>
     Object? labelFontSize = freezed,
     Object? captionColor = freezed,
     Object? captionFontSize = freezed,
+    Object? labelMaxLines = freezed,
+    Object? captionMaxLines = freezed,
   }) {
     return _then(_ListViewTheme(
       separatorPadding: separatorPadding == freezed
@@ -732,6 +754,14 @@ class __$ListViewThemeCopyWithImpl<$Res>
           ? _value.captionFontSize
           : captionFontSize // ignore: cast_nullable_to_non_nullable
               as double,
+      labelMaxLines: labelMaxLines == freezed
+          ? _value.labelMaxLines
+          : labelMaxLines // ignore: cast_nullable_to_non_nullable
+              as int?,
+      captionMaxLines: captionMaxLines == freezed
+          ? _value.captionMaxLines
+          : captionMaxLines // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
   }
 }
@@ -744,7 +774,9 @@ class _$_ListViewTheme implements _ListViewTheme {
       required this.labelColor,
       this.labelFontSize = 17,
       required this.captionColor,
-      this.captionFontSize = 13});
+      this.captionFontSize = 13,
+      this.labelMaxLines = 1,
+      this.captionMaxLines = 1});
 
   @JsonKey(defaultValue: 15)
   @override
@@ -759,10 +791,16 @@ class _$_ListViewTheme implements _ListViewTheme {
   @JsonKey(defaultValue: 13)
   @override
   final double captionFontSize;
+  @JsonKey(defaultValue: 1)
+  @override
+  final int? labelMaxLines;
+  @JsonKey(defaultValue: 1)
+  @override
+  final int? captionMaxLines;
 
   @override
   String toString() {
-    return 'ListViewTheme(separatorPadding: $separatorPadding, labelColor: $labelColor, labelFontSize: $labelFontSize, captionColor: $captionColor, captionFontSize: $captionFontSize)';
+    return 'ListViewTheme(separatorPadding: $separatorPadding, labelColor: $labelColor, labelFontSize: $labelFontSize, captionColor: $captionColor, captionFontSize: $captionFontSize, labelMaxLines: $labelMaxLines, captionMaxLines: $captionMaxLines)';
   }
 
   @override
@@ -779,12 +817,23 @@ class _$_ListViewTheme implements _ListViewTheme {
             (identical(other.captionColor, captionColor) ||
                 other.captionColor == captionColor) &&
             (identical(other.captionFontSize, captionFontSize) ||
-                other.captionFontSize == captionFontSize));
+                other.captionFontSize == captionFontSize) &&
+            (identical(other.labelMaxLines, labelMaxLines) ||
+                other.labelMaxLines == labelMaxLines) &&
+            (identical(other.captionMaxLines, captionMaxLines) ||
+                other.captionMaxLines == captionMaxLines));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, separatorPadding, labelColor,
-      labelFontSize, captionColor, captionFontSize);
+  int get hashCode => Object.hash(
+      runtimeType,
+      separatorPadding,
+      labelColor,
+      labelFontSize,
+      captionColor,
+      captionFontSize,
+      labelMaxLines,
+      captionMaxLines);
 
   @JsonKey(ignore: true)
   @override
@@ -798,7 +847,9 @@ abstract class _ListViewTheme implements ListViewTheme {
       required Color labelColor,
       double labelFontSize,
       required Color captionColor,
-      double captionFontSize}) = _$_ListViewTheme;
+      double captionFontSize,
+      int? labelMaxLines,
+      int? captionMaxLines}) = _$_ListViewTheme;
 
   @override
   double get separatorPadding;
@@ -810,6 +861,10 @@ abstract class _ListViewTheme implements ListViewTheme {
   Color get captionColor;
   @override
   double get captionFontSize;
+  @override
+  int? get labelMaxLines;
+  @override
+  int? get captionMaxLines;
   @override
   @JsonKey(ignore: true)
   _$ListViewThemeCopyWith<_ListViewTheme> get copyWith =>

@@ -9,8 +9,6 @@ class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
     this.value,
     this.trailing,
     this.onTap,
-    this.labelMaxLines = 1,
-    this.captionMaxLines,
   }) : super();
 
   final Widget? child;
@@ -20,8 +18,6 @@ class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
   final String? caption;
   final String? value;
   final VoidCallback? onTap;
-  final int? labelMaxLines;
-  final int? captionMaxLines;
 
   @override
   Material createMaterialWidget(BuildContext context, WidgetRef ref) {
@@ -40,8 +36,6 @@ class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
           caption: caption,
           value: value,
           trailing: trailing,
-          labelMaxLines: labelMaxLines,
-          captionMaxLines: captionMaxLines,
           onTap: onTap,
         ),
       ),
@@ -58,8 +52,6 @@ class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
         caption: caption,
         value: value,
         trailing: trailing,
-        labelMaxLines: labelMaxLines,
-        captionMaxLines: captionMaxLines,
         onTap: onTap,
       ),
       onTap: onTap,
@@ -162,8 +154,6 @@ class ListTileContents extends ConsumerWidget {
     this.value,
     this.trailing,
     this.onTap,
-    this.labelMaxLines,
-    this.captionMaxLines,
   }) : super();
 
   final Widget? child;
@@ -173,8 +163,6 @@ class ListTileContents extends ConsumerWidget {
   final String? caption;
   final String? value;
   final VoidCallback? onTap;
-  final int? labelMaxLines;
-  final int? captionMaxLines;
 
   CrossAxisAlignment get alignment {
     if (leading == null && label == null && trailing == null) {
@@ -220,8 +208,8 @@ class ListTileContents extends ConsumerWidget {
                               color: listTheme.labelColor,
                               fontSize: listTheme.labelFontSize,
                             ),
-                            maxLines: labelMaxLines,
-                            overflow: labelMaxLines != null
+                            maxLines: listTheme.labelMaxLines,
+                            overflow: listTheme.labelMaxLines != null
                                 ? TextOverflow.ellipsis
                                 : null,
                           ),
@@ -236,8 +224,8 @@ class ListTileContents extends ConsumerWidget {
                                 fontSize: listTheme.captionFontSize,
                               ),
                               textAlign: TextAlign.left,
-                              maxLines: captionMaxLines,
-                              overflow: captionMaxLines != null
+                              maxLines: listTheme.captionMaxLines,
+                              overflow: listTheme.captionMaxLines != null
                                   ? TextOverflow.ellipsis
                                   : null,
                             ),
