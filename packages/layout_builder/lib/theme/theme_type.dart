@@ -39,7 +39,8 @@ extension ThemeBrightness on ThemeType {
 }
 
 extension ThemeDescription on ThemeType {
-  String description(ThemeLocalizations l10n) {
+  String description(WidgetRef ref) {
+    final l10n = ref.watch(themeLocalizationProvider);
     switch (this) {
       case ThemeType.dark:
         return l10n.dark;

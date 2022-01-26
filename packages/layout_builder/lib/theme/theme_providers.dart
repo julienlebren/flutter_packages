@@ -132,3 +132,8 @@ final formThemeProvider = Provider<FormTheme>((ref) {
     );
   }
 });
+
+/// Provider for localize some words about the theme
+final themeLocalizationProvider = Provider<ThemeLocalizations>(
+  (_) => ThemeLocalizations(),
+);
