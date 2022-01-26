@@ -1,30 +1,18 @@
-library subscription_service;
+part of '../purchases.dart';
 
-import 'package:purchases_flutter/purchases_flutter.dart';
-
-class SubscriptionService {
-  SubscriptionService({
-    required this.purchasesApiKey,
-    required this.entitlementId,
-    required this.userId,
-    required this.processHandler,
+class PurchasesService {
+  PurchasesService({
+    required this.settings,
   });
 
-  final String purchasesApiKey;
-  final String entitlementId;
-  final String userId;
-
-  final Function(
-    bool isSubscribed,
-    DateTime? expirationDate,
-  ) processHandler;
+  final PurchasesSettings settings;
 
   Package? subscription;
 
   Future<void> setup() async {
     await Purchases.setup(
-      purchasesApiKey,
-      appUserId: userId,
+      settings.purchasesApiKey,
+      appUserId: settings.userId,
       observerMode: false,
     );
   }
@@ -32,12 +20,10 @@ class SubscriptionService {
   Future<void> fetchOfferings() async {
     if (subscription != null) return;
     Offerings offerings = await Purchases.getOfferings();
-    print("offerings: $offerings");
     final offering = offerings.current;
     if (offering != null) {
       if (offering.annual != null) {
         subscription = offering.annual!;
-        print("subscription: $subscription");
       }
     }
   }
@@ -64,7 +50,7 @@ class SubscriptionService {
   }
 
   Future<void> _processInfo(PurchaserInfo info) async {
-    final entitlementInfo = info.entitlements.all[entitlementId];
+    final entitlementInfo = info.entitlements.all[settings.entitlementId];
     if (entitlementInfo == null) return;
 
     final isSubscribed = entitlementInfo.isActive;
@@ -72,6 +58,6 @@ class SubscriptionService {
         ? DateTime.parse(entitlementInfo.expirationDate!)
         : null;
 
-    processHandler(isSubscribed, expirationDate);
+    settings.processHandler(isSubscribed, expirationDate);
   }
 }
