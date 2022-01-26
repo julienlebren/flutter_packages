@@ -20,3 +20,10 @@ final purchasesServiceProvider = Provider<PurchasesService>((ref) {
   final settings = ref.watch(purchasesSettingsProvider);
   return PurchasesService(settings: settings);
 });
+
+final purchasesControllerProvider =
+    StateNotifierProvider.autoDispose<PurchasesController, PurchasesState>(
+        (ref) {
+  final service = ref.watch(purchasesServiceProvider);
+  return PurchasesController(service);
+});
