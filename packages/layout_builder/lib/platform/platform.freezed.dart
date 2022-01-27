@@ -21,7 +21,7 @@ class _$TabItemTearOff {
       {required String title,
       required Widget icon,
       Widget? selectedIcon,
-      required Widget router}) {
+      required PlatformTabNavigator router}) {
     return _TabItem(
       title: title,
       icon: icon,
@@ -39,7 +39,7 @@ mixin _$TabItem {
   String get title => throw _privateConstructorUsedError;
   Widget get icon => throw _privateConstructorUsedError;
   Widget? get selectedIcon => throw _privateConstructorUsedError;
-  Widget get router => throw _privateConstructorUsedError;
+  PlatformTabNavigator get router => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TabItemCopyWith<TabItem> get copyWith => throw _privateConstructorUsedError;
@@ -49,7 +49,11 @@ mixin _$TabItem {
 abstract class $TabItemCopyWith<$Res> {
   factory $TabItemCopyWith(TabItem value, $Res Function(TabItem) then) =
       _$TabItemCopyWithImpl<$Res>;
-  $Res call({String title, Widget icon, Widget? selectedIcon, Widget router});
+  $Res call(
+      {String title,
+      Widget icon,
+      Widget? selectedIcon,
+      PlatformTabNavigator router});
 }
 
 /// @nodoc
@@ -83,7 +87,7 @@ class _$TabItemCopyWithImpl<$Res> implements $TabItemCopyWith<$Res> {
       router: router == freezed
           ? _value.router
           : router // ignore: cast_nullable_to_non_nullable
-              as Widget,
+              as PlatformTabNavigator,
     ));
   }
 }
@@ -93,7 +97,11 @@ abstract class _$TabItemCopyWith<$Res> implements $TabItemCopyWith<$Res> {
   factory _$TabItemCopyWith(_TabItem value, $Res Function(_TabItem) then) =
       __$TabItemCopyWithImpl<$Res>;
   @override
-  $Res call({String title, Widget icon, Widget? selectedIcon, Widget router});
+  $Res call(
+      {String title,
+      Widget icon,
+      Widget? selectedIcon,
+      PlatformTabNavigator router});
 }
 
 /// @nodoc
@@ -128,7 +136,7 @@ class __$TabItemCopyWithImpl<$Res> extends _$TabItemCopyWithImpl<$Res>
       router: router == freezed
           ? _value.router
           : router // ignore: cast_nullable_to_non_nullable
-              as Widget,
+              as PlatformTabNavigator,
     ));
   }
 }
@@ -149,7 +157,7 @@ class _$_TabItem with DiagnosticableTreeMixin implements _TabItem {
   @override
   final Widget? selectedIcon;
   @override
-  final Widget router;
+  final PlatformTabNavigator router;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -194,7 +202,7 @@ abstract class _TabItem implements TabItem {
       {required String title,
       required Widget icon,
       Widget? selectedIcon,
-      required Widget router}) = _$_TabItem;
+      required PlatformTabNavigator router}) = _$_TabItem;
 
   @override
   String get title;
@@ -203,7 +211,7 @@ abstract class _TabItem implements TabItem {
   @override
   Widget? get selectedIcon;
   @override
-  Widget get router;
+  PlatformTabNavigator get router;
   @override
   @JsonKey(ignore: true)
   _$TabItemCopyWith<_TabItem> get copyWith =>

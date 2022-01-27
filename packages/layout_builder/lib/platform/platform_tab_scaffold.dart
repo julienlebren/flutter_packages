@@ -6,7 +6,7 @@ class TabItem with _$TabItem {
     required String title,
     required Widget icon,
     Widget? selectedIcon,
-    required Widget router,
+    required PlatformTabNavigator router,
   }) = _TabItem;
 }
 
@@ -19,7 +19,12 @@ class PlatformTabScaffold
   const PlatformTabScaffold() : super();
 
   ValueChanged<int>? onTap(int index, WidgetRef ref) {
-    ref.read(currentTabIndexProvider.state).state = index;
+    if (ref.read(currentTabIndexProvider) == index) {
+      final tabs = ref.watch(tabsProvider);
+      tabs[index].router.navigatorKey.currentState?.pop();
+    } else {
+      ref.read(currentTabIndexProvider.state).state = index;
+    }
   }
 
   @override
