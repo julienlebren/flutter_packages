@@ -13,7 +13,8 @@ part 'purchases.freezed.dart';
 
 final purchasesSettingsProvider = Provider<PurchasesSettings>(
   (_) => throw UnimplementedError(
-      "You need to override purchasesSettingsProvider before calling subscriptionServiceProvider!"),
+    "You need to override purchasesSettingsProvider before calling purchasesServiceProvider!",
+  ),
 );
 
 final purchasesServiceProvider = Provider<PurchasesService>(
@@ -29,4 +30,4 @@ final purchasesControllerProvider =
         (ref) {
   final service = ref.watch(purchasesServiceProvider);
   return PurchasesController(service);
-}, dependencies: [purchasesServiceProvider]);
+}, dependencies: [purchasesServiceProvider, purchasesSettingsProvider]);
