@@ -16,10 +16,13 @@ final purchasesSettingsProvider = Provider<PurchasesSettings>(
       "You need to override purchasesSettingsProvider before calling subscriptionServiceProvider!"),
 );
 
-final purchasesServiceProvider = Provider<PurchasesService>((ref) {
-  final settings = ref.watch(purchasesSettingsProvider);
-  return PurchasesService(settings: settings);
-});
+final purchasesServiceProvider = Provider<PurchasesService>(
+  (ref) {
+    final settings = ref.watch(purchasesSettingsProvider);
+    return PurchasesService(settings: settings);
+  },
+  dependencies: [purchasesSettingsProvider],
+);
 
 final purchasesControllerProvider =
     StateNotifierProvider.autoDispose<PurchasesController, PurchasesState>(
