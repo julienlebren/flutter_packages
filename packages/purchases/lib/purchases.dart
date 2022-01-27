@@ -29,4 +29,4 @@ final purchasesControllerProvider =
         (ref) {
   final service = ref.watch(purchasesServiceProvider);
   return PurchasesController(service);
-});
+}, dependencies: [purchasesServiceProvider]);
