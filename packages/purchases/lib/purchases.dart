@@ -11,6 +11,9 @@ part 'core/models/purchases_state.dart';
 part 'services/purchases_service.dart';
 part 'purchases.freezed.dart';
 
+const googlePlayURL = "https://play.google.com/store/account/subscriptions";
+const appStoreURL = "https://apps.apple.com/account/subscriptions";
+
 final purchasesSettingsProvider = Provider<PurchasesSettings>(
   (_) => throw UnimplementedError(
     "You need to override purchasesSettingsProvider before calling purchasesServiceProvider!",
