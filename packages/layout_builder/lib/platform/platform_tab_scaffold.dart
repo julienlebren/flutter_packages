@@ -21,11 +21,7 @@ class PlatformTabScaffold
   ValueChanged<int>? onTap(int index, WidgetRef ref) {
     if (ref.read(currentTabIndexProvider) == index) {
       final tabs = ref.watch(tabsProvider);
-      tabs[index]
-          .router
-          .navigatorKey
-          .currentState
-          ?.popUntil((route) => route.isFirst); //.currentState?.pop();
+      tabs[index].router.navigatorKey.currentState?.pop();
     } else {
       ref.read(currentTabIndexProvider.state).state = index;
     }
