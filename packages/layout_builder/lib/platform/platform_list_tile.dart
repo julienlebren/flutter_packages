@@ -208,7 +208,7 @@ class ListTileContents extends ConsumerWidget {
                             style: TextStyle(
                               color: listTheme.labelColor,
                               fontSize: listTheme.labelFontSize,
-                              letterSpacing: 1,
+                              letterSpacing: 0,
                             ),
                             maxLines: listTheme.labelMaxLines,
                             overflow: listTheme.labelMaxLines != null
@@ -224,6 +224,7 @@ class ListTileContents extends ConsumerWidget {
                               style: TextStyle(
                                 color: listTheme.captionColor,
                                 fontSize: listTheme.captionFontSize,
+                                letterSpacing: 0,
                               ),
                               textAlign: TextAlign.left,
                               maxLines: listTheme.captionMaxLines,
