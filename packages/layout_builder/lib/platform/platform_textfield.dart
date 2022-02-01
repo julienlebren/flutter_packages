@@ -32,7 +32,7 @@ class PlatformTextField
   final ValueChanged<String>? onSubmitted;
   final bool enabled;
   final BoxDecoration? decoration;
-  final int maxLines;
+  final int? maxLines;
 
   @override
   TextField createMaterialWidget(BuildContext context, WidgetRef ref) {
