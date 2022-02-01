@@ -9,6 +9,7 @@ class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
     this.value,
     this.trailing,
     this.onTap,
+    Key? key,
   }) : super();
 
   final Widget? child;
