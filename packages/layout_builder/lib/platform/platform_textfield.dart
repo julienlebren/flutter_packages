@@ -16,6 +16,7 @@ class PlatformTextField
     this.onSubmitted,
     this.enabled = true,
     this.decoration,
+    this.maxLines = 1,
   });
 
   final TextEditingController? controller;
@@ -31,6 +32,7 @@ class PlatformTextField
   final ValueChanged<String>? onSubmitted;
   final bool enabled;
   final BoxDecoration? decoration;
+  final int maxLines;
 
   @override
   TextField createMaterialWidget(BuildContext context, WidgetRef ref) {
@@ -53,6 +55,7 @@ class PlatformTextField
       inputFormatters: inputFormatters,
       onChanged: onChanged,
       onSubmitted: onSubmitted,
+      maxLines: maxLines,
     );
   }
 
@@ -76,6 +79,7 @@ class PlatformTextField
       inputFormatters: inputFormatters,
       onChanged: onChanged,
       onSubmitted: onSubmitted,
+      maxLines: maxLines,
     );
   }
 }
