@@ -208,6 +208,7 @@ class ListTileContents extends ConsumerWidget {
                             style: TextStyle(
                               color: listTheme.labelColor,
                               fontSize: listTheme.labelFontSize,
+                              letterSpacing: 1,
                             ),
                             maxLines: listTheme.labelMaxLines,
                             overflow: listTheme.labelMaxLines != null
