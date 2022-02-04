@@ -12,7 +12,7 @@ dependencies:
   flutter:
     sdk: flutter
   purchases_flutter: ^3.9.3
-  freezed_annotation: ^0.15.0
+  freezed_annotation: ^1.1.0
   flutter_riverpod: ^1.0.0
 
 dev_dependencies:
