@@ -46,7 +46,7 @@ class SignInButtons extends ConsumerWidget {
     final iconTidySize = iconSize * (25 / 31);
 
     final buttonHeight =
-        iconSize + (theme.buttonPadding * 2) + theme.spaceBetweenButtons;
+        iconSize + (theme.buttonPadding * 2) + theme.spaceBetweenButtons + 1;
     final displayApple =
         (useAppleOnlyOnCupertino && isCupertino()) || !useAppleOnlyOnCupertino;
 

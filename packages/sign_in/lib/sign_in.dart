@@ -43,7 +43,6 @@ final authStateProvider =
         final user = ref.watch(userStreamProvider);
         return user.when(
           loading: () {
-            
             final isSigninIn = ref.watch(signInControllerProvider.select(
               (state) => (state == const SignInState.success()),
             ));
