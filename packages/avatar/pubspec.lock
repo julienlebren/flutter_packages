@@ -138,7 +138,7 @@ packages:
       name: freezed_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.15.0"
+    version: "1.1.0"
   http:
     dependency: transitive
     description:
@@ -179,10 +179,10 @@ packages:
     description:
       path: "packages/layout_builder"
       ref: HEAD
-      resolved-ref: a61c91c36b61b2cfbbc1ddf973247df26643e492
+      resolved-ref: "7fc6a7c75c1e2df8bad4ae9d317b554a16d4c57e"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.19.0"
+    version: "1.0.0"
   matcher:
     dependency: transitive
     description:
