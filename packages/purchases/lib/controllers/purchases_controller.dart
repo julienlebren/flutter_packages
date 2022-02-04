@@ -35,6 +35,18 @@ class PurchasesController extends StateNotifier<PurchasesState> {
     try {
       await _service.purchase();
       state = state.copyWith(isSuccess: true);
+    } on PlatformException catch (e) {
+      if (PurchasesErrorHelper.getErrorCode(e) ==
+          PurchasesErrorCode.purchaseCancelledError) {
+        state = state.copyWith(
+          isLoading: false,
+        );
+      } else {
+        state = state.copyWith(
+          isLoading: false,
+          errorText: e.toString(),
+        );
+      }
     } catch (e) {
       state = state.copyWith(
         isLoading: false,
