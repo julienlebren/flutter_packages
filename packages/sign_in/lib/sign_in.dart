@@ -34,6 +34,7 @@ final needUserInfoProvider = Provider<bool?>((_) => null);
 
 final authStateProvider = Provider<AuthState>((ref) {
   final authStateChanges = ref.watch(authStateChangesProvider);
+  print("authStateChanges: $authStateChanges");
 
   return authStateChanges.when(
     loading: () => const AuthState.initializing(),
