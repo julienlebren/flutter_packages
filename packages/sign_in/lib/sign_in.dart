@@ -85,10 +85,68 @@ class AuthSettings {
   bool needUserInformation() => false;
 }
 
-final userProvider = Provider((ref) {
-  final authState = ref.watch(authStateProvider);
-  return authState.maybeWhen(
-    authed: (user) => user,
-    orElse: () => null,
-  );
-}, dependencies: [authStateProvider]);
+final userProvider = Provider(
+  (ref) {
+    final authState = ref.watch(authStateProvider);
+    print("[2] authState: $authState");
+    return authState.maybeWhen(
+      authed: (user) => user,
+      orElse: () => null,
+    );
+  },
+  dependencies: [authStateProvider],
+);
+
+/*
+final userStreamProvider = StreamProvider((_) => const Stream.empty());
+
+final needUserInfoProvider = Provider<bool>((_) => false);
+
+final authStateProvider = Provider<AuthState>(
+  (ref) {
+    final authStateChanges = ref.watch(authStateChangesProvider);
+
+    return authStateChanges.when(
+      loading: () => const AuthState.initializing(),
+      error: (error, _) => AuthState.error(error.toString()),
+      data: (user) {
+        if (user == null) {
+          return const AuthState.notAuthed();
+        } else {
+          final user = ref.watch(userStreamProvider);
+          return user.when(
+            loading: () {
+              final isSigninIn = ref.watch(signInControllerProvider.select(
+                (state) => (state == const SignInState.success()),
+              ));
+              if (isSigninIn) {
+                return const AuthState.notAuthed();
+              } else {
+                return const AuthState.initializing();
+              }
+            },
+            error: (error, _) => AuthState.error(error.toString()),
+            data: (user) {
+              if (user == null) {
+                return const AuthState.waitingUserCreation();
+              } else {
+                final needUserInfo = ref.watch(needUserInfoProvider);
+                if (needUserInfo == true) {
+                  return const AuthState.needUserInformation();
+                } else {
+                  return AuthState.authed(user);
+                }
+              }
+            },
+          );
+        }
+      },
+    );
+  },
+  dependencies: [
+    authStateChangesProvider,
+    userStreamProvider,
+    signInControllerProvider,
+    needUserInfoProvider,
+  ],
+);*/
