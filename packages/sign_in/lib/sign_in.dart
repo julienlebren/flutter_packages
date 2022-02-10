@@ -32,17 +32,6 @@ final userStreamProvider = StreamProvider((_) => const Stream.empty());
 
 final needUserInfoProvider = Provider<bool>((_) => false);
 
-final userProvider = Provider(
-  (ref) {
-    final userAsyncValue = ref.watch(userStreamProvider);
-    return userAsyncValue.maybeWhen(
-      data: (user) => user,
-      orElse: () => null,
-    );
-  },
-  dependencies: [userStreamProvider],
-);
-
 final authStateProvider = Provider<AuthState>(
   (ref) {
     final authStateChanges = ref.watch(authStateChangesProvider);
@@ -75,7 +64,7 @@ final authStateProvider = Provider<AuthState>(
                 if (needUserInfo == true) {
                   return const AuthState.needUserInformation();
                 } else {
-                  return const AuthState.authed();
+                  return AuthState.authed(user);
                 }
               }
             },
@@ -91,3 +80,15 @@ final authStateProvider = Provider<AuthState>(
     needUserInfoProvider,
   ],
 );
+
+class AuthSettings {
+  bool needUserInformation() => false;
+}
+
+final userProvider = Provider((ref) {
+  final authState = ref.watch(authStateProvider);
+  return authState.maybeWhen(
+    authed: (user) => user,
+    orElse: () => null,
+  );
+});

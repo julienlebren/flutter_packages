@@ -34,8 +34,10 @@ class _$AuthStateTearOff {
     return const _NeedUserInformation();
   }
 
-  _Authed authed() {
-    return const _Authed();
+  _Authed authed(dynamic user) {
+    return _Authed(
+      user,
+    );
   }
 
   _AuthError error(String error) {
@@ -56,7 +58,7 @@ mixin _$AuthState {
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
     required TResult Function() needUserInformation,
-    required TResult Function() authed,
+    required TResult Function(dynamic user) authed,
     required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -66,7 +68,7 @@ mixin _$AuthState {
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
     TResult Function()? needUserInformation,
-    TResult Function()? authed,
+    TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -76,7 +78,7 @@ mixin _$AuthState {
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
     TResult Function()? needUserInformation,
-    TResult Function()? authed,
+    TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
@@ -174,7 +176,7 @@ class _$_InitializingAuth implements _InitializingAuth {
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
     required TResult Function() needUserInformation,
-    required TResult Function() authed,
+    required TResult Function(dynamic user) authed,
     required TResult Function(String error) error,
   }) {
     return initializing();
@@ -187,7 +189,7 @@ class _$_InitializingAuth implements _InitializingAuth {
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
     TResult Function()? needUserInformation,
-    TResult Function()? authed,
+    TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
   }) {
     return initializing?.call();
@@ -200,7 +202,7 @@ class _$_InitializingAuth implements _InitializingAuth {
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
     TResult Function()? needUserInformation,
-    TResult Function()? authed,
+    TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -301,7 +303,7 @@ class _$_NotAuthed implements _NotAuthed {
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
     required TResult Function() needUserInformation,
-    required TResult Function() authed,
+    required TResult Function(dynamic user) authed,
     required TResult Function(String error) error,
   }) {
     return notAuthed();
@@ -314,7 +316,7 @@ class _$_NotAuthed implements _NotAuthed {
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
     TResult Function()? needUserInformation,
-    TResult Function()? authed,
+    TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
   }) {
     return notAuthed?.call();
@@ -327,7 +329,7 @@ class _$_NotAuthed implements _NotAuthed {
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
     TResult Function()? needUserInformation,
-    TResult Function()? authed,
+    TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -430,7 +432,7 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
     required TResult Function() needUserInformation,
-    required TResult Function() authed,
+    required TResult Function(dynamic user) authed,
     required TResult Function(String error) error,
   }) {
     return waitingUserCreation();
@@ -443,7 +445,7 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
     TResult Function()? needUserInformation,
-    TResult Function()? authed,
+    TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
   }) {
     return waitingUserCreation?.call();
@@ -456,7 +458,7 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
     TResult Function()? needUserInformation,
-    TResult Function()? authed,
+    TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -559,7 +561,7 @@ class _$_NeedUserInformation implements _NeedUserInformation {
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
     required TResult Function() needUserInformation,
-    required TResult Function() authed,
+    required TResult Function(dynamic user) authed,
     required TResult Function(String error) error,
   }) {
     return needUserInformation();
@@ -572,7 +574,7 @@ class _$_NeedUserInformation implements _NeedUserInformation {
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
     TResult Function()? needUserInformation,
-    TResult Function()? authed,
+    TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
   }) {
     return needUserInformation?.call();
@@ -585,7 +587,7 @@ class _$_NeedUserInformation implements _NeedUserInformation {
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
     TResult Function()? needUserInformation,
-    TResult Function()? authed,
+    TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
@@ -647,6 +649,7 @@ abstract class _NeedUserInformation implements AuthState {
 abstract class _$AuthedCopyWith<$Res> {
   factory _$AuthedCopyWith(_Authed value, $Res Function(_Authed) then) =
       __$AuthedCopyWithImpl<$Res>;
+  $Res call({dynamic user});
 }
 
 /// @nodoc
@@ -657,26 +660,49 @@ class __$AuthedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 
   @override
   _Authed get _value => super._value as _Authed;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(_Authed(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Authed implements _Authed {
-  const _$_Authed();
+  const _$_Authed(this.user);
+
+  @override
+  final dynamic user;
 
   @override
   String toString() {
-    return 'AuthState.authed()';
+    return 'AuthState.authed(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Authed);
+        (other.runtimeType == runtimeType &&
+            other is _Authed &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
+
+  @JsonKey(ignore: true)
+  @override
+  _$AuthedCopyWith<_Authed> get copyWith =>
+      __$AuthedCopyWithImpl<_Authed>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -685,10 +711,10 @@ class _$_Authed implements _Authed {
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
     required TResult Function() needUserInformation,
-    required TResult Function() authed,
+    required TResult Function(dynamic user) authed,
     required TResult Function(String error) error,
   }) {
-    return authed();
+    return authed(user);
   }
 
   @override
@@ -698,10 +724,10 @@ class _$_Authed implements _Authed {
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
     TResult Function()? needUserInformation,
-    TResult Function()? authed,
+    TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
   }) {
-    return authed?.call();
+    return authed?.call(user);
   }
 
   @override
@@ -711,12 +737,12 @@ class _$_Authed implements _Authed {
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
     TResult Function()? needUserInformation,
-    TResult Function()? authed,
+    TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (authed != null) {
-      return authed();
+      return authed(user);
     }
     return orElse();
   }
@@ -766,7 +792,11 @@ class _$_Authed implements _Authed {
 }
 
 abstract class _Authed implements AuthState {
-  const factory _Authed() = _$_Authed;
+  const factory _Authed(dynamic user) = _$_Authed;
+
+  dynamic get user;
+  @JsonKey(ignore: true)
+  _$AuthedCopyWith<_Authed> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -836,7 +866,7 @@ class _$_AuthError implements _AuthError {
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
     required TResult Function() needUserInformation,
-    required TResult Function() authed,
+    required TResult Function(dynamic user) authed,
     required TResult Function(String error) error,
   }) {
     return error(this.error);
@@ -849,7 +879,7 @@ class _$_AuthError implements _AuthError {
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
     TResult Function()? needUserInformation,
-    TResult Function()? authed,
+    TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
   }) {
     return error?.call(this.error);
@@ -862,7 +892,7 @@ class _$_AuthError implements _AuthError {
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
     TResult Function()? needUserInformation,
-    TResult Function()? authed,
+    TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
