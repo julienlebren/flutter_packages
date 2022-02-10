@@ -42,6 +42,7 @@ final authStateProvider = Provider<AuthState>((ref) {
       if (user == null) {
         return const AuthState.notAuthed();
       } else {
+        print("userStreamProvider: $userStreamProvider");
         final user = ref.watch(userStreamProvider);
         print("user: $user");
         return user.when(
