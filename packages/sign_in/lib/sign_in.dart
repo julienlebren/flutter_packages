@@ -76,4 +76,4 @@ final authStateProvider = Provider<AuthState>((ref) {
       }
     },
   );
-}, dependencies: [userStreamProvider]);
+}, dependencies: [userStreamProvider, authStateChangesProvider]);
