@@ -32,48 +32,53 @@ final userStreamProvider = StreamProvider((_) => const Stream.empty());
 
 final needUserInfoProvider = Provider<bool?>((_) => null);
 
-final authStateProvider = Provider<AuthState>((ref) {
-  final authStateChanges = ref.watch(authStateChangesProvider);
-  print("authStateChanges: $authStateChanges");
+final authStateProvider = Provider<AuthState>(
+  (ref) {
+    final authStateChanges = ref.watch(authStateChangesProvider);
 
-  return authStateChanges.when(
-    loading: () => const AuthState.initializing(),
-    error: (error, _) => AuthState.error(error.toString()),
-    data: (user) {
-      if (user == null) {
-        return const AuthState.notAuthed();
-      } else {
-        print("userStreamProvider: $userStreamProvider");
-        final user = ref.watch(userStreamProvider);
-        print("user: $user");
-        return user.when(
-          loading: () {
-            final isSigninIn = ref.watch(signInControllerProvider.select(
-              (state) => (state == const SignInState.success()),
-            ));
-            if (isSigninIn) {
-              return const AuthState.notAuthed();
-            } else {
-              return const AuthState.initializing();
-            }
-          },
-          error: (error, _) => AuthState.error(error.toString()),
-          data: (user) {
-            if (user == null) {
-              return const AuthState.waitingUserCreation();
-            } else {
-              final needUserInfo = ref.watch(needUserInfoProvider);
-              if (needUserInfo == null) {
+    return authStateChanges.when(
+      loading: () => const AuthState.initializing(),
+      error: (error, _) => AuthState.error(error.toString()),
+      data: (user) {
+        if (user == null) {
+          return const AuthState.notAuthed();
+        } else {
+          final user = ref.watch(userStreamProvider);
+          print("user: $user");
+          return user.when(
+            loading: () {
+              final isSigninIn = ref.watch(signInControllerProvider.select(
+                (state) => (state == const SignInState.success()),
+              ));
+              if (isSigninIn) {
                 return const AuthState.notAuthed();
-              } else if (needUserInfo == true) {
-                return const AuthState.needUserInformation();
               } else {
-                return const AuthState.authed();
+                return const AuthState.initializing();
               }
-            }
-          },
-        );
-      }
-    },
-  );
-}, dependencies: [userStreamProvider, authStateChangesProvider]);
+            },
+            error: (error, _) => AuthState.error(error.toString()),
+            data: (user) {
+              if (user == null) {
+                return const AuthState.waitingUserCreation();
+              } else {
+                final needUserInfo = ref.watch(needUserInfoProvider);
+                if (needUserInfo == null) {
+                  return const AuthState.notAuthed();
+                } else if (needUserInfo == true) {
+                  return const AuthState.needUserInformation();
+                } else {
+                  return const AuthState.authed();
+                }
+              }
+            },
+          );
+        }
+      },
+    );
+  },
+  dependencies: [
+    authStateChangesProvider,
+    userStreamProvider,
+    signInControllerProvider,
+  ],
+);
