@@ -1,7 +1,9 @@
 part of '../../sign_in.dart';
 
-abstract class BaseUserRepository<T> {
-  BaseUserRepository();
+class UserRepository<T> {
+  UserRepository(this.userId);
+
+  final String userId;
 
   Stream<T?> streamUser() {
     return const Stream.empty();
