@@ -11,7 +11,6 @@ import 'package:sign_in/presentation/painters/apple_logo.dart';
 import 'package:sign_in/presentation/painters/google_logo.dart';
 
 part 'controllers/sign_in_controller.dart';
-part 'core/abstract/user_repository.dart';
 part 'core/enums/sign_in_providers.dart';
 part 'core/models/auth_state.dart';
 part 'core/models/sign_in_event.dart';
@@ -28,14 +27,10 @@ final signInControllerProvider =
   return SignInController(service);
 });
 
-//final userStreamProvider = StreamProvider((_) => const Stream.empty());
-
-//final needUserInfoProvider = Provider<bool>((_) => false);
-
 class AuthSettings {
-  AuthSettings(this.userStreamProvider, this.needUserInfoProvider);
+  AuthSettings(this.userStreamProvider);
   StreamProvider userStreamProvider;
-  Provider needUserInfoProvider;
+  Provider? needUserInfoProvider;
 }
 
 final authStateProvider =
@@ -66,12 +61,13 @@ final authStateProvider =
             if (user == null) {
               return const AuthState.waitingUserCreation();
             } else {
-              final needUserInfo = ref.watch(settings.needUserInfoProvider);
-              if (needUserInfo == true) {
-                return const AuthState.needUserInformation();
-              } else {
-                return AuthState.authed(user);
+              if (settings.needUserInfoProvider != null) {
+                final needUserInfo = ref.watch(settings.needUserInfoProvider!);
+                if (needUserInfo == true) {
+                  return const AuthState.needUserInformation();
+                }
               }
+              return AuthState.authed(user);
             }
           },
         );
