@@ -62,6 +62,7 @@ final authStateProvider = Provider<AuthState>(
                 return const AuthState.waitingUserCreation();
               } else {
                 final needUserInfo = ref.watch(needUserInfoProvider);
+                print("needUserInfo: $needUserInfo");
                 if (needUserInfo == null) {
                   return const AuthState.notAuthed();
                 } else if (needUserInfo == true) {
