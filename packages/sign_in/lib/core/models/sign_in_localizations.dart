@@ -7,6 +7,7 @@ class SignInLocalizations with _$SignInLocalizations {
     @Default("Sign in with Google") String signInWithApple,
     @Default("Sign in with Apple") String signInWithGoogle,
     @Default("Sign in with Facebook") String signInWithFacebook,
+    @Default("Sign in with e-mail") String signInWithEmail,
     @Default("Oops! Something went wrong...") String errorTitle,
   }) = _SignInLocalizations;
 }

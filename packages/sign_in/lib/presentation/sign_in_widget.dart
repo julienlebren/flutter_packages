@@ -117,6 +117,16 @@ class SignInButtons extends ConsumerWidget {
                             ref, const SignInEvent.signInWithFacebook());
                       },
                     ),
+                  if (provider == SignInProvider.email)
+                    socialButton(
+                      assetName: "assets/images/facebook-logo.png",
+                      iconSize: iconSize,
+                      title: l10n.signInWithEmail,
+                      onPressed: () {
+                        _handleEvent(
+                            ref, const SignInEvent.signInWithFacebook());
+                      },
+                    ),
                   SizedBox(height: theme.spaceBetweenButtons),
                 ],
               ],

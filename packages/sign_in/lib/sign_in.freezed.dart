@@ -1526,12 +1526,14 @@ class _$SignInLocalizationsTearOff {
       String signInWithApple = "Sign in with Google",
       String signInWithGoogle = "Sign in with Apple",
       String signInWithFacebook = "Sign in with Facebook",
+      String signInWithEmail = "Sign in with e-mail",
       String errorTitle = "Oops! Something went wrong..."}) {
     return _SignInLocalizations(
       signInAnonymously: signInAnonymously,
       signInWithApple: signInWithApple,
       signInWithGoogle: signInWithGoogle,
       signInWithFacebook: signInWithFacebook,
+      signInWithEmail: signInWithEmail,
       errorTitle: errorTitle,
     );
   }
@@ -1546,6 +1548,7 @@ mixin _$SignInLocalizations {
   String get signInWithApple => throw _privateConstructorUsedError;
   String get signInWithGoogle => throw _privateConstructorUsedError;
   String get signInWithFacebook => throw _privateConstructorUsedError;
+  String get signInWithEmail => throw _privateConstructorUsedError;
   String get errorTitle => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -1563,6 +1566,7 @@ abstract class $SignInLocalizationsCopyWith<$Res> {
       String signInWithApple,
       String signInWithGoogle,
       String signInWithFacebook,
+      String signInWithEmail,
       String errorTitle});
 }
 
@@ -1581,6 +1585,7 @@ class _$SignInLocalizationsCopyWithImpl<$Res>
     Object? signInWithApple = freezed,
     Object? signInWithGoogle = freezed,
     Object? signInWithFacebook = freezed,
+    Object? signInWithEmail = freezed,
     Object? errorTitle = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1599,6 +1604,10 @@ class _$SignInLocalizationsCopyWithImpl<$Res>
       signInWithFacebook: signInWithFacebook == freezed
           ? _value.signInWithFacebook
           : signInWithFacebook // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithEmail: signInWithEmail == freezed
+          ? _value.signInWithEmail
+          : signInWithEmail // ignore: cast_nullable_to_non_nullable
               as String,
       errorTitle: errorTitle == freezed
           ? _value.errorTitle
@@ -1620,6 +1629,7 @@ abstract class _$SignInLocalizationsCopyWith<$Res>
       String signInWithApple,
       String signInWithGoogle,
       String signInWithFacebook,
+      String signInWithEmail,
       String errorTitle});
 }
 
@@ -1640,6 +1650,7 @@ class __$SignInLocalizationsCopyWithImpl<$Res>
     Object? signInWithApple = freezed,
     Object? signInWithGoogle = freezed,
     Object? signInWithFacebook = freezed,
+    Object? signInWithEmail = freezed,
     Object? errorTitle = freezed,
   }) {
     return _then(_SignInLocalizations(
@@ -1659,6 +1670,10 @@ class __$SignInLocalizationsCopyWithImpl<$Res>
           ? _value.signInWithFacebook
           : signInWithFacebook // ignore: cast_nullable_to_non_nullable
               as String,
+      signInWithEmail: signInWithEmail == freezed
+          ? _value.signInWithEmail
+          : signInWithEmail // ignore: cast_nullable_to_non_nullable
+              as String,
       errorTitle: errorTitle == freezed
           ? _value.errorTitle
           : errorTitle // ignore: cast_nullable_to_non_nullable
@@ -1675,6 +1690,7 @@ class _$_SignInLocalizations implements _SignInLocalizations {
       this.signInWithApple = "Sign in with Google",
       this.signInWithGoogle = "Sign in with Apple",
       this.signInWithFacebook = "Sign in with Facebook",
+      this.signInWithEmail = "Sign in with e-mail",
       this.errorTitle = "Oops! Something went wrong..."});
 
   @JsonKey()
@@ -1691,11 +1707,14 @@ class _$_SignInLocalizations implements _SignInLocalizations {
   final String signInWithFacebook;
   @JsonKey()
   @override
+  final String signInWithEmail;
+  @JsonKey()
+  @override
   final String errorTitle;
 
   @override
   String toString() {
-    return 'SignInLocalizations(signInAnonymously: $signInAnonymously, signInWithApple: $signInWithApple, signInWithGoogle: $signInWithGoogle, signInWithFacebook: $signInWithFacebook, errorTitle: $errorTitle)';
+    return 'SignInLocalizations(signInAnonymously: $signInAnonymously, signInWithApple: $signInWithApple, signInWithGoogle: $signInWithGoogle, signInWithFacebook: $signInWithFacebook, signInWithEmail: $signInWithEmail, errorTitle: $errorTitle)';
   }
 
   @override
@@ -1712,6 +1731,8 @@ class _$_SignInLocalizations implements _SignInLocalizations {
             const DeepCollectionEquality()
                 .equals(other.signInWithFacebook, signInWithFacebook) &&
             const DeepCollectionEquality()
+                .equals(other.signInWithEmail, signInWithEmail) &&
+            const DeepCollectionEquality()
                 .equals(other.errorTitle, errorTitle));
   }
 
@@ -1722,6 +1743,7 @@ class _$_SignInLocalizations implements _SignInLocalizations {
       const DeepCollectionEquality().hash(signInWithApple),
       const DeepCollectionEquality().hash(signInWithGoogle),
       const DeepCollectionEquality().hash(signInWithFacebook),
+      const DeepCollectionEquality().hash(signInWithEmail),
       const DeepCollectionEquality().hash(errorTitle));
 
   @JsonKey(ignore: true)
@@ -1737,6 +1759,7 @@ abstract class _SignInLocalizations implements SignInLocalizations {
       String signInWithApple,
       String signInWithGoogle,
       String signInWithFacebook,
+      String signInWithEmail,
       String errorTitle}) = _$_SignInLocalizations;
 
   @override
@@ -1747,6 +1770,8 @@ abstract class _SignInLocalizations implements SignInLocalizations {
   String get signInWithGoogle;
   @override
   String get signInWithFacebook;
+  @override
+  String get signInWithEmail;
   @override
   String get errorTitle;
   @override
