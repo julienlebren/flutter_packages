@@ -32,7 +32,7 @@ final userStreamProvider = StreamProvider((_) => const Stream.empty());
 
 final needUserInfoProvider = Provider<bool?>((_) => null);
 
-final authStateProvider = StateProvider<AuthState>((ref) {
+final authStateProvider = Provider<AuthState>((ref) {
   final authStateChanges = ref.watch(authStateChangesProvider);
 
   return authStateChanges.when(
