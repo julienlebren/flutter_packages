@@ -91,4 +91,4 @@ final userProvider = Provider((ref) {
     authed: (user) => user,
     orElse: () => null,
   );
-});
+}, dependencies: [authStateProvider]);
