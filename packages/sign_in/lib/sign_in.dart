@@ -28,7 +28,7 @@ final signInControllerProvider =
 });
 
 class AuthSettings {
-  AuthSettings(this.userStreamProvider);
+  AuthSettings(this.userStreamProvider, [this.needUserInfoProvider]);
   StreamProvider userStreamProvider;
   Provider? needUserInfoProvider;
 }
