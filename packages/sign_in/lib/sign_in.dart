@@ -11,6 +11,7 @@ import 'package:sign_in/presentation/painters/apple_logo.dart';
 import 'package:sign_in/presentation/painters/google_logo.dart';
 
 part 'controllers/sign_in_controller.dart';
+part 'core/abstract/user_repository.dart';
 part 'core/enums/sign_in_providers.dart';
 part 'core/models/auth_state.dart';
 part 'core/models/sign_in_event.dart';
