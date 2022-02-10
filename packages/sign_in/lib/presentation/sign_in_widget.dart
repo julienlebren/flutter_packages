@@ -119,7 +119,11 @@ class SignInButtons extends ConsumerWidget {
                     ),
                   if (provider == SignInProvider.email)
                     socialButton(
-                      icon: const Icon(Icons.email_outlined),
+                      icon: Icon(
+                        Icons.email_outlined,
+                        color: theme.buttonTextColor,
+                        size: iconSize,
+                      ),
                       iconSize: iconSize,
                       title: l10n.signInWithEmail,
                       onPressed: () {
