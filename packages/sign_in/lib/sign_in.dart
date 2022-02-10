@@ -30,7 +30,7 @@ final signInControllerProvider =
 
 final userStreamProvider = StreamProvider((_) => const Stream.empty());
 
-final needUserInfoProvider = Provider<bool?>((_) => null);
+final needUserInfoProvider = Provider<bool>((_) => false);
 
 final authStateProvider = Provider<AuthState>(
   (ref) {
@@ -62,10 +62,7 @@ final authStateProvider = Provider<AuthState>(
                 return const AuthState.waitingUserCreation();
               } else {
                 final needUserInfo = ref.watch(needUserInfoProvider);
-                print("needUserInfo: $needUserInfo");
-                if (needUserInfo == null) {
-                  return const AuthState.notAuthed();
-                } else if (needUserInfo == true) {
+                if (needUserInfo == true) {
                   return const AuthState.needUserInformation();
                 } else {
                   return const AuthState.authed();
