@@ -32,8 +32,14 @@ final signInControllerProvider =
 
 //final needUserInfoProvider = Provider<bool>((_) => false);
 
+class AuthSettings {
+  AuthSettings(this.userStreamProvider, this.needUserInfoProvider);
+  StreamProvider userStreamProvider;
+  Provider needUserInfoProvider;
+}
+
 final authStateProvider =
-    Provider.autoDispose.family<AuthState, AuthSettings>((ref, settings) {
+    Provider.family<AuthState, AuthSettings>((ref, settings) {
   final authStateChanges = ref.watch(authStateChangesProvider);
 
   return authStateChanges.when(
@@ -73,12 +79,6 @@ final authStateProvider =
     },
   );
 });
-
-class AuthSettings {
-  AuthSettings(this.userStreamProvider, this.needUserInfoProvider);
-  StreamProvider userStreamProvider;
-  Provider needUserInfoProvider;
-}
 
 
 /*
