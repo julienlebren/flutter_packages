@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of sign_in;
@@ -29,6 +30,10 @@ class _$AuthStateTearOff {
     return const _WaitingUserCreation();
   }
 
+  _NeedUserInformation needUserInformation() {
+    return const _NeedUserInformation();
+  }
+
   _Authed authed() {
     return const _Authed();
   }
@@ -50,6 +55,7 @@ mixin _$AuthState {
     required TResult Function() initializing,
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
+    required TResult Function() needUserInformation,
     required TResult Function() authed,
     required TResult Function(String error) error,
   }) =>
@@ -59,6 +65,7 @@ mixin _$AuthState {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
+    TResult Function()? needUserInformation,
     TResult Function()? authed,
     TResult Function(String error)? error,
   }) =>
@@ -68,6 +75,7 @@ mixin _$AuthState {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
+    TResult Function()? needUserInformation,
     TResult Function()? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -78,6 +86,7 @@ mixin _$AuthState {
     required TResult Function(_InitializingAuth value) initializing,
     required TResult Function(_NotAuthed value) notAuthed,
     required TResult Function(_WaitingUserCreation value) waitingUserCreation,
+    required TResult Function(_NeedUserInformation value) needUserInformation,
     required TResult Function(_Authed value) authed,
     required TResult Function(_AuthError value) error,
   }) =>
@@ -87,6 +96,7 @@ mixin _$AuthState {
     TResult Function(_InitializingAuth value)? initializing,
     TResult Function(_NotAuthed value)? notAuthed,
     TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_NeedUserInformation value)? needUserInformation,
     TResult Function(_Authed value)? authed,
     TResult Function(_AuthError value)? error,
   }) =>
@@ -96,6 +106,7 @@ mixin _$AuthState {
     TResult Function(_InitializingAuth value)? initializing,
     TResult Function(_NotAuthed value)? notAuthed,
     TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_NeedUserInformation value)? needUserInformation,
     TResult Function(_Authed value)? authed,
     TResult Function(_AuthError value)? error,
     required TResult orElse(),
@@ -162,6 +173,7 @@ class _$_InitializingAuth implements _InitializingAuth {
     required TResult Function() initializing,
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
+    required TResult Function() needUserInformation,
     required TResult Function() authed,
     required TResult Function(String error) error,
   }) {
@@ -174,6 +186,7 @@ class _$_InitializingAuth implements _InitializingAuth {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
+    TResult Function()? needUserInformation,
     TResult Function()? authed,
     TResult Function(String error)? error,
   }) {
@@ -186,6 +199,7 @@ class _$_InitializingAuth implements _InitializingAuth {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
+    TResult Function()? needUserInformation,
     TResult Function()? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -202,6 +216,7 @@ class _$_InitializingAuth implements _InitializingAuth {
     required TResult Function(_InitializingAuth value) initializing,
     required TResult Function(_NotAuthed value) notAuthed,
     required TResult Function(_WaitingUserCreation value) waitingUserCreation,
+    required TResult Function(_NeedUserInformation value) needUserInformation,
     required TResult Function(_Authed value) authed,
     required TResult Function(_AuthError value) error,
   }) {
@@ -214,6 +229,7 @@ class _$_InitializingAuth implements _InitializingAuth {
     TResult Function(_InitializingAuth value)? initializing,
     TResult Function(_NotAuthed value)? notAuthed,
     TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_NeedUserInformation value)? needUserInformation,
     TResult Function(_Authed value)? authed,
     TResult Function(_AuthError value)? error,
   }) {
@@ -226,6 +242,7 @@ class _$_InitializingAuth implements _InitializingAuth {
     TResult Function(_InitializingAuth value)? initializing,
     TResult Function(_NotAuthed value)? notAuthed,
     TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_NeedUserInformation value)? needUserInformation,
     TResult Function(_Authed value)? authed,
     TResult Function(_AuthError value)? error,
     required TResult orElse(),
@@ -283,6 +300,7 @@ class _$_NotAuthed implements _NotAuthed {
     required TResult Function() initializing,
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
+    required TResult Function() needUserInformation,
     required TResult Function() authed,
     required TResult Function(String error) error,
   }) {
@@ -295,6 +313,7 @@ class _$_NotAuthed implements _NotAuthed {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
+    TResult Function()? needUserInformation,
     TResult Function()? authed,
     TResult Function(String error)? error,
   }) {
@@ -307,6 +326,7 @@ class _$_NotAuthed implements _NotAuthed {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
+    TResult Function()? needUserInformation,
     TResult Function()? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -323,6 +343,7 @@ class _$_NotAuthed implements _NotAuthed {
     required TResult Function(_InitializingAuth value) initializing,
     required TResult Function(_NotAuthed value) notAuthed,
     required TResult Function(_WaitingUserCreation value) waitingUserCreation,
+    required TResult Function(_NeedUserInformation value) needUserInformation,
     required TResult Function(_Authed value) authed,
     required TResult Function(_AuthError value) error,
   }) {
@@ -335,6 +356,7 @@ class _$_NotAuthed implements _NotAuthed {
     TResult Function(_InitializingAuth value)? initializing,
     TResult Function(_NotAuthed value)? notAuthed,
     TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_NeedUserInformation value)? needUserInformation,
     TResult Function(_Authed value)? authed,
     TResult Function(_AuthError value)? error,
   }) {
@@ -347,6 +369,7 @@ class _$_NotAuthed implements _NotAuthed {
     TResult Function(_InitializingAuth value)? initializing,
     TResult Function(_NotAuthed value)? notAuthed,
     TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_NeedUserInformation value)? needUserInformation,
     TResult Function(_Authed value)? authed,
     TResult Function(_AuthError value)? error,
     required TResult orElse(),
@@ -406,6 +429,7 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
     required TResult Function() initializing,
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
+    required TResult Function() needUserInformation,
     required TResult Function() authed,
     required TResult Function(String error) error,
   }) {
@@ -418,6 +442,7 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
+    TResult Function()? needUserInformation,
     TResult Function()? authed,
     TResult Function(String error)? error,
   }) {
@@ -430,6 +455,7 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
+    TResult Function()? needUserInformation,
     TResult Function()? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -446,6 +472,7 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
     required TResult Function(_InitializingAuth value) initializing,
     required TResult Function(_NotAuthed value) notAuthed,
     required TResult Function(_WaitingUserCreation value) waitingUserCreation,
+    required TResult Function(_NeedUserInformation value) needUserInformation,
     required TResult Function(_Authed value) authed,
     required TResult Function(_AuthError value) error,
   }) {
@@ -458,6 +485,7 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
     TResult Function(_InitializingAuth value)? initializing,
     TResult Function(_NotAuthed value)? notAuthed,
     TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_NeedUserInformation value)? needUserInformation,
     TResult Function(_Authed value)? authed,
     TResult Function(_AuthError value)? error,
   }) {
@@ -470,6 +498,7 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
     TResult Function(_InitializingAuth value)? initializing,
     TResult Function(_NotAuthed value)? notAuthed,
     TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_NeedUserInformation value)? needUserInformation,
     TResult Function(_Authed value)? authed,
     TResult Function(_AuthError value)? error,
     required TResult orElse(),
@@ -483,6 +512,135 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
 
 abstract class _WaitingUserCreation implements AuthState {
   const factory _WaitingUserCreation() = _$_WaitingUserCreation;
+}
+
+/// @nodoc
+abstract class _$NeedUserInformationCopyWith<$Res> {
+  factory _$NeedUserInformationCopyWith(_NeedUserInformation value,
+          $Res Function(_NeedUserInformation) then) =
+      __$NeedUserInformationCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$NeedUserInformationCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res>
+    implements _$NeedUserInformationCopyWith<$Res> {
+  __$NeedUserInformationCopyWithImpl(
+      _NeedUserInformation _value, $Res Function(_NeedUserInformation) _then)
+      : super(_value, (v) => _then(v as _NeedUserInformation));
+
+  @override
+  _NeedUserInformation get _value => super._value as _NeedUserInformation;
+}
+
+/// @nodoc
+
+class _$_NeedUserInformation implements _NeedUserInformation {
+  const _$_NeedUserInformation();
+
+  @override
+  String toString() {
+    return 'AuthState.needUserInformation()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _NeedUserInformation);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initializing,
+    required TResult Function() notAuthed,
+    required TResult Function() waitingUserCreation,
+    required TResult Function() needUserInformation,
+    required TResult Function() authed,
+    required TResult Function(String error) error,
+  }) {
+    return needUserInformation();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? waitingUserCreation,
+    TResult Function()? needUserInformation,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
+  }) {
+    return needUserInformation?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? waitingUserCreation,
+    TResult Function()? needUserInformation,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (needUserInformation != null) {
+      return needUserInformation();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitializingAuth value) initializing,
+    required TResult Function(_NotAuthed value) notAuthed,
+    required TResult Function(_WaitingUserCreation value) waitingUserCreation,
+    required TResult Function(_NeedUserInformation value) needUserInformation,
+    required TResult Function(_Authed value) authed,
+    required TResult Function(_AuthError value) error,
+  }) {
+    return needUserInformation(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_InitializingAuth value)? initializing,
+    TResult Function(_NotAuthed value)? notAuthed,
+    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_NeedUserInformation value)? needUserInformation,
+    TResult Function(_Authed value)? authed,
+    TResult Function(_AuthError value)? error,
+  }) {
+    return needUserInformation?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitializingAuth value)? initializing,
+    TResult Function(_NotAuthed value)? notAuthed,
+    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_NeedUserInformation value)? needUserInformation,
+    TResult Function(_Authed value)? authed,
+    TResult Function(_AuthError value)? error,
+    required TResult orElse(),
+  }) {
+    if (needUserInformation != null) {
+      return needUserInformation(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NeedUserInformation implements AuthState {
+  const factory _NeedUserInformation() = _$_NeedUserInformation;
 }
 
 /// @nodoc
@@ -526,6 +684,7 @@ class _$_Authed implements _Authed {
     required TResult Function() initializing,
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
+    required TResult Function() needUserInformation,
     required TResult Function() authed,
     required TResult Function(String error) error,
   }) {
@@ -538,6 +697,7 @@ class _$_Authed implements _Authed {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
+    TResult Function()? needUserInformation,
     TResult Function()? authed,
     TResult Function(String error)? error,
   }) {
@@ -550,6 +710,7 @@ class _$_Authed implements _Authed {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
+    TResult Function()? needUserInformation,
     TResult Function()? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -566,6 +727,7 @@ class _$_Authed implements _Authed {
     required TResult Function(_InitializingAuth value) initializing,
     required TResult Function(_NotAuthed value) notAuthed,
     required TResult Function(_WaitingUserCreation value) waitingUserCreation,
+    required TResult Function(_NeedUserInformation value) needUserInformation,
     required TResult Function(_Authed value) authed,
     required TResult Function(_AuthError value) error,
   }) {
@@ -578,6 +740,7 @@ class _$_Authed implements _Authed {
     TResult Function(_InitializingAuth value)? initializing,
     TResult Function(_NotAuthed value)? notAuthed,
     TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_NeedUserInformation value)? needUserInformation,
     TResult Function(_Authed value)? authed,
     TResult Function(_AuthError value)? error,
   }) {
@@ -590,6 +753,7 @@ class _$_Authed implements _Authed {
     TResult Function(_InitializingAuth value)? initializing,
     TResult Function(_NotAuthed value)? notAuthed,
     TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_NeedUserInformation value)? needUserInformation,
     TResult Function(_Authed value)? authed,
     TResult Function(_AuthError value)? error,
     required TResult orElse(),
@@ -653,11 +817,12 @@ class _$_AuthError implements _AuthError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _AuthError &&
-            (identical(other.error, error) || other.error == error));
+            const DeepCollectionEquality().equals(other.error, error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, error);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
 
   @JsonKey(ignore: true)
   @override
@@ -670,6 +835,7 @@ class _$_AuthError implements _AuthError {
     required TResult Function() initializing,
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
+    required TResult Function() needUserInformation,
     required TResult Function() authed,
     required TResult Function(String error) error,
   }) {
@@ -682,6 +848,7 @@ class _$_AuthError implements _AuthError {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
+    TResult Function()? needUserInformation,
     TResult Function()? authed,
     TResult Function(String error)? error,
   }) {
@@ -694,6 +861,7 @@ class _$_AuthError implements _AuthError {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
+    TResult Function()? needUserInformation,
     TResult Function()? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -710,6 +878,7 @@ class _$_AuthError implements _AuthError {
     required TResult Function(_InitializingAuth value) initializing,
     required TResult Function(_NotAuthed value) notAuthed,
     required TResult Function(_WaitingUserCreation value) waitingUserCreation,
+    required TResult Function(_NeedUserInformation value) needUserInformation,
     required TResult Function(_Authed value) authed,
     required TResult Function(_AuthError value) error,
   }) {
@@ -722,6 +891,7 @@ class _$_AuthError implements _AuthError {
     TResult Function(_InitializingAuth value)? initializing,
     TResult Function(_NotAuthed value)? notAuthed,
     TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_NeedUserInformation value)? needUserInformation,
     TResult Function(_Authed value)? authed,
     TResult Function(_AuthError value)? error,
   }) {
@@ -734,6 +904,7 @@ class _$_AuthError implements _AuthError {
     TResult Function(_InitializingAuth value)? initializing,
     TResult Function(_NotAuthed value)? notAuthed,
     TResult Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult Function(_NeedUserInformation value)? needUserInformation,
     TResult Function(_Authed value)? authed,
     TResult Function(_AuthError value)? error,
     required TResult orElse(),
@@ -1476,19 +1647,19 @@ class _$_SignInLocalizations implements _SignInLocalizations {
       this.signInWithFacebook = "Sign in with Facebook",
       this.errorTitle = "Oops! Something went wrong..."});
 
-  @JsonKey(defaultValue: "Continue without registration")
+  @JsonKey()
   @override
   final String signInAnonymously;
-  @JsonKey(defaultValue: "Sign in with Google")
+  @JsonKey()
   @override
   final String signInWithApple;
-  @JsonKey(defaultValue: "Sign in with Apple")
+  @JsonKey()
   @override
   final String signInWithGoogle;
-  @JsonKey(defaultValue: "Sign in with Facebook")
+  @JsonKey()
   @override
   final String signInWithFacebook;
-  @JsonKey(defaultValue: "Oops! Something went wrong...")
+  @JsonKey()
   @override
   final String errorTitle;
 
@@ -1502,21 +1673,26 @@ class _$_SignInLocalizations implements _SignInLocalizations {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SignInLocalizations &&
-            (identical(other.signInAnonymously, signInAnonymously) ||
-                other.signInAnonymously == signInAnonymously) &&
-            (identical(other.signInWithApple, signInWithApple) ||
-                other.signInWithApple == signInWithApple) &&
-            (identical(other.signInWithGoogle, signInWithGoogle) ||
-                other.signInWithGoogle == signInWithGoogle) &&
-            (identical(other.signInWithFacebook, signInWithFacebook) ||
-                other.signInWithFacebook == signInWithFacebook) &&
-            (identical(other.errorTitle, errorTitle) ||
-                other.errorTitle == errorTitle));
+            const DeepCollectionEquality()
+                .equals(other.signInAnonymously, signInAnonymously) &&
+            const DeepCollectionEquality()
+                .equals(other.signInWithApple, signInWithApple) &&
+            const DeepCollectionEquality()
+                .equals(other.signInWithGoogle, signInWithGoogle) &&
+            const DeepCollectionEquality()
+                .equals(other.signInWithFacebook, signInWithFacebook) &&
+            const DeepCollectionEquality()
+                .equals(other.errorTitle, errorTitle));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, signInAnonymously,
-      signInWithApple, signInWithGoogle, signInWithFacebook, errorTitle);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(signInAnonymously),
+      const DeepCollectionEquality().hash(signInWithApple),
+      const DeepCollectionEquality().hash(signInWithGoogle),
+      const DeepCollectionEquality().hash(signInWithFacebook),
+      const DeepCollectionEquality().hash(errorTitle));
 
   @JsonKey(ignore: true)
   @override
@@ -2042,12 +2218,12 @@ class _$_SignInError implements _SignInError {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SignInError &&
-            (identical(other.errorText, errorText) ||
-                other.errorText == errorText));
+            const DeepCollectionEquality().equals(other.errorText, errorText));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, errorText);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(errorText));
 
   @JsonKey(ignore: true)
   @override
@@ -2328,23 +2504,23 @@ class _$_SignInTheme implements _SignInTheme {
       this.buttonFontSize = 18.0,
       this.spaceBetweenButtons = 15.0});
 
-  @JsonKey(defaultValue: 400)
+  @JsonKey()
   @override
   final double maxWidth;
-  @JsonKey(defaultValue: 8.0)
+  @JsonKey()
   @override
   final double buttonRadius;
-  @JsonKey(defaultValue: 16.0)
+  @JsonKey()
   @override
   final double buttonPadding;
   @override
   final Color buttonBackgroundColor;
   @override
   final Color buttonTextColor;
-  @JsonKey(defaultValue: 18.0)
+  @JsonKey()
   @override
   final double buttonFontSize;
-  @JsonKey(defaultValue: 15.0)
+  @JsonKey()
   @override
   final double spaceBetweenButtons;
 
@@ -2358,32 +2534,31 @@ class _$_SignInTheme implements _SignInTheme {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SignInTheme &&
-            (identical(other.maxWidth, maxWidth) ||
-                other.maxWidth == maxWidth) &&
-            (identical(other.buttonRadius, buttonRadius) ||
-                other.buttonRadius == buttonRadius) &&
-            (identical(other.buttonPadding, buttonPadding) ||
-                other.buttonPadding == buttonPadding) &&
-            (identical(other.buttonBackgroundColor, buttonBackgroundColor) ||
-                other.buttonBackgroundColor == buttonBackgroundColor) &&
-            (identical(other.buttonTextColor, buttonTextColor) ||
-                other.buttonTextColor == buttonTextColor) &&
-            (identical(other.buttonFontSize, buttonFontSize) ||
-                other.buttonFontSize == buttonFontSize) &&
-            (identical(other.spaceBetweenButtons, spaceBetweenButtons) ||
-                other.spaceBetweenButtons == spaceBetweenButtons));
+            const DeepCollectionEquality().equals(other.maxWidth, maxWidth) &&
+            const DeepCollectionEquality()
+                .equals(other.buttonRadius, buttonRadius) &&
+            const DeepCollectionEquality()
+                .equals(other.buttonPadding, buttonPadding) &&
+            const DeepCollectionEquality()
+                .equals(other.buttonBackgroundColor, buttonBackgroundColor) &&
+            const DeepCollectionEquality()
+                .equals(other.buttonTextColor, buttonTextColor) &&
+            const DeepCollectionEquality()
+                .equals(other.buttonFontSize, buttonFontSize) &&
+            const DeepCollectionEquality()
+                .equals(other.spaceBetweenButtons, spaceBetweenButtons));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      maxWidth,
-      buttonRadius,
-      buttonPadding,
-      buttonBackgroundColor,
-      buttonTextColor,
-      buttonFontSize,
-      spaceBetweenButtons);
+      const DeepCollectionEquality().hash(maxWidth),
+      const DeepCollectionEquality().hash(buttonRadius),
+      const DeepCollectionEquality().hash(buttonPadding),
+      const DeepCollectionEquality().hash(buttonBackgroundColor),
+      const DeepCollectionEquality().hash(buttonTextColor),
+      const DeepCollectionEquality().hash(buttonFontSize),
+      const DeepCollectionEquality().hash(spaceBetweenButtons));
 
   @JsonKey(ignore: true)
   @override

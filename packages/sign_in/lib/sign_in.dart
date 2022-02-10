@@ -27,20 +27,22 @@ final signInControllerProvider =
   return SignInController(service);
 });
 
-final authStateProvider =
-    StateProvider.family<AuthState, StreamProvider>((ref, userStreamProvider) {
+final userStreamProvider = StreamProvider((_) => const Stream.empty());
+
+final needUserInfoProvider = Provider<bool?>((_) => null);
+
+final authStateProvider = StateProvider<AuthState>((ref) {
   final authStateChanges = ref.watch(authStateChangesProvider);
 
   return authStateChanges.when(
-    loading: () {
-      return const AuthState.initializing();
-    },
+    loading: () => const AuthState.initializing(),
     error: (error, _) => AuthState.error(error.toString()),
     data: (user) {
       if (user == null) {
         return const AuthState.notAuthed();
       } else {
         final user = ref.watch(userStreamProvider);
+        print("user: $user");
         return user.when(
           loading: () {
             final isSigninIn = ref.watch(signInControllerProvider.select(
@@ -57,7 +59,14 @@ final authStateProvider =
             if (user == null) {
               return const AuthState.waitingUserCreation();
             } else {
-              return const AuthState.authed();
+              final needUserInfo = ref.watch(needUserInfoProvider);
+              if (needUserInfo == null) {
+                return const AuthState.notAuthed();
+              } else if (needUserInfo == true) {
+                return const AuthState.needUserInformation();
+              } else {
+                return const AuthState.authed();
+              }
             }
           },
         );

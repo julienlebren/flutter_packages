@@ -136,7 +136,7 @@ class PlatformNavigationBarCloseButton
       child: Text(
         buttonText ??
             MaterialLocalizations.of(context)
-                .cancelButtonLabel
+                .closeButtonLabel
                 .toLowerCase()
                 .capitalize(),
       ),
