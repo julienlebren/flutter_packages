@@ -80,5 +80,6 @@ final authStateProvider = Provider<AuthState>(
     authStateChangesProvider,
     userStreamProvider,
     signInControllerProvider,
+    needUserInfoProvider,
   ],
 );
