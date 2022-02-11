@@ -18,15 +18,14 @@ part 'core/models/sign_in_event.dart';
 part 'core/models/sign_in_localizations.dart';
 part 'core/models/sign_in_state.dart';
 part 'core/models/sign_in_theme.dart';
-part 'core/models/user.dart';
 part 'presentation/common_widgets/sign_in_button.dart';
 part 'presentation/sign_in_landing_page.dart';
 part 'presentation/sign_in_navigator.dart';
 part 'presentation/sign_in_email_page.dart';
 part 'presentation/sign_in_email_password_page.dart';
 part 'presentation/sign_in_button.dart';
+//part 'presentation/sign_in_widget.dart';
 part 'sign_in.freezed.dart';
-part 'sign_in.g.dart';
 
 final signInControllerProvider =
     StateNotifierProvider<SignInController, SignInState>((ref) {
@@ -34,7 +33,14 @@ final signInControllerProvider =
   return SignInController(service);
 });
 
-final authStateProvider = Provider<AuthState>((ref) {
+class AuthSettings {
+  AuthSettings(this.userStreamProvider, [this.needUserInfoProvider]);
+  StreamProvider userStreamProvider;
+  Provider? needUserInfoProvider;
+}
+
+final authStateProvider =
+    Provider.family<AuthState, AuthSettings>((ref, settings) {
   final authStateChanges = ref.watch(authStateChangesProvider);
 
   return authStateChanges.when(
@@ -44,7 +50,7 @@ final authStateProvider = Provider<AuthState>((ref) {
       if (user == null) {
         return const AuthState.notAuthed();
       } else {
-        final user = ref.watch(userStreamProvider);
+        final user = ref.watch(settings.userStreamProvider);
         return user.when(
           loading: () {
             final isSigninIn = ref.watch(signInControllerProvider.select(
@@ -61,11 +67,13 @@ final authStateProvider = Provider<AuthState>((ref) {
             if (user == null) {
               return const AuthState.waitingUserCreation();
             } else {
-              if (user.isComplete) {
-                return AuthState.authed(user);
-              } else {
-                return const AuthState.needUserInformation();
+              if (settings.needUserInfoProvider != null) {
+                final needUserInfo = ref.watch(settings.needUserInfoProvider!);
+                if (needUserInfo == true) {
+                  return const AuthState.needUserInformation();
+                }
               }
+              return AuthState.authed(user);
             }
           },
         );
@@ -96,6 +104,7 @@ final signInThemeProvider = Provider<SignInTheme>((ref) {
   );
 });
 
+/*
 final _userRef =
     FirebaseFirestore.instance.collection("users").withConverter<User>(
           fromFirestore: (snapshot, _) {
@@ -115,3 +124,57 @@ final userStreamProvider = StreamProvider<User?>((ref) {
     orElse: () => const Stream.empty(),
   );
 });
+*/
+/*
+final userStreamProvider = StreamProvider((_) => const Stream.empty());
+
+final needUserInfoProvider = Provider<bool>((_) => false);
+
+final authStateProvider = Provider<AuthState>(
+  (ref) {
+    final authStateChanges = ref.watch(authStateChangesProvider);
+
+    return authStateChanges.when(
+      loading: () => const AuthState.initializing(),
+      error: (error, _) => AuthState.error(error.toString()),
+      data: (user) {
+        if (user == null) {
+          return const AuthState.notAuthed();
+        } else {
+          final user = ref.watch(userStreamProvider);
+          return user.when(
+            loading: () {
+              final isSigninIn = ref.watch(signInControllerProvider.select(
+                (state) => (state == const SignInState.success()),
+              ));
+              if (isSigninIn) {
+                return const AuthState.notAuthed();
+              } else {
+                return const AuthState.initializing();
+              }
+            },
+            error: (error, _) => AuthState.error(error.toString()),
+            data: (user) {
+              if (user == null) {
+                return const AuthState.waitingUserCreation();
+              } else {
+                final needUserInfo = ref.watch(needUserInfoProvider);
+                if (needUserInfo == true) {
+                  return const AuthState.needUserInformation();
+                } else {
+                  return AuthState.authed(user);
+                }
+              }
+            },
+          );
+        }
+      },
+    );
+  },
+  dependencies: [
+    authStateChangesProvider,
+    userStreamProvider,
+    signInControllerProvider,
+    needUserInfoProvider,
+  ],
+);*/
