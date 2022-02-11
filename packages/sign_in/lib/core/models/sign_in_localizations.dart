@@ -10,13 +10,15 @@ class SignInLocalizations with _$SignInLocalizations {
     @Default("Sign in with e-mail") String signInWithEmail,
     @Default("Oops! Something went wrong...") String errorTitle,
     @Default("Sign-in with an email") String signInWithEmailTitle,
-    @Default("Submit your email address to receive a sign-in link.")
+    @Default("We will send you an email with a link to log in to the app.")
         String signInWithEmailCaption,
     @Default("Check your email, we have sent a sign-in link.")
         String signInWithEmailSuccess,
     @Default("You did not receive it? Try again or try another identification method.")
         String signInWithEmailRetry,
-    @Default("Adresse e-mail") String signInWithEmailPlaceholder,
+    @Default("Email address") String signInWithEmailPlaceholder,
+    @Default("Password") String signInWithEmailPasswordPlaceholder,
+    @Default("Forgot your password?") String signInWithEmailForgotPassword,
     @Default("Continue") String continueButton,
   }) = _SignInLocalizations;
 }

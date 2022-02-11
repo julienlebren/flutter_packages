@@ -67,6 +67,16 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
                 onChanged: (String value) {},
               ),
             ),
+            FormRow(
+              child: PlatformTextField(
+                controller: TextEditingController(),
+                keyboardType: TextInputType.visiblePassword,
+                placeholder: l10n.signInWithEmailPasswordPlaceholder,
+                autocorrect: false,
+                focusNode: focusNode,
+                onChanged: (String value) {},
+              ),
+            ),
           ],
           caption: l10n.signInWithEmailCaption,
         ),
