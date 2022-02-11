@@ -1,7 +1,7 @@
 part of '../../sign_in.dart';
 
 @freezed
-abstract class SignInState with _$SignInState {
+class SignInState with _$SignInState {
   const factory SignInState.initial() = _SignInInitial;
   const factory SignInState.loading() = _SignInLoading;
   const factory SignInState.success() = _SignInSuccess;
