@@ -1,26 +1,58 @@
-/*part of '../sign_in.dart';
+part of '../sign_in.dart';
+
+final signInLandingProvider = Provider<Widget>((_) => const SizedBox.shrink());
+
+class SignInLandingPage extends ConsumerWidget {
+  const SignInLandingPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = ref.watch(signInThemeProvider);
+    final child = ref.read(signInLandingProvider);
+
+    return PlatformScaffold(
+      body: DecoratedBox(
+        decoration: BoxDecoration(
+          image: theme.landingBackgroundImage != null
+              ? DecorationImage(
+                  image: AssetImage(theme.landingBackgroundImage!),
+                  fit: BoxFit.cover,
+                )
+              : null,
+        ),
+        child: SafeArea(
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 40.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                const Spacer(),
+                child,
+                const Spacer(),
+                const SignInButtons(),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
 
 class SignInButtons extends ConsumerWidget {
-  const SignInButtons({
-    Key? key,
-    this.l10n = const SignInLocalizations(),
-    required this.theme,
-    this.useAppleOnlyOnCupertino = true,
-    this.providers = const [],
-  }) : super(key: key);
+  const SignInButtons({Key? key}) : super(key: key);
 
   void _handleEvent(WidgetRef ref, SignInEvent event) {
     final controller = ref.read(signInControllerProvider.notifier);
     controller.handleEvent(event);
   }
 
-  final SignInLocalizations l10n;
-  final SignInTheme theme;
-  final bool useAppleOnlyOnCupertino;
-  final List<SignInSupplier> providers;
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(signInLocalizationsProvider);
+    final theme = ref.watch(signInThemeProvider);
+    final suppliers = ref.read(signInSuppliersProvider);
     final state = ref.watch(signInControllerProvider);
     final isLoading = state.maybeWhen(
       loading: () => true,
@@ -47,11 +79,9 @@ class SignInButtons extends ConsumerWidget {
 
     final buttonHeight =
         iconSize + (theme.buttonPadding * 2) + theme.spaceBetweenButtons + 1;
-    final displayApple =
-        (useAppleOnlyOnCupertino && isCupertino()) || !useAppleOnlyOnCupertino;
 
-    double boxHeight = buttonHeight * providers.length;
-    if (providers.contains(SignInProvider.apple) && !displayApple) {
+    double boxHeight = buttonHeight * suppliers.length;
+    if (suppliers.contains(SignInSupplier.apple) && !isCupertino()) {
       boxHeight -= buttonHeight;
     }
 
@@ -62,8 +92,8 @@ class SignInButtons extends ConsumerWidget {
           : Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                for (var provider in providers) ...[
-                  if (provider == SignInProvider.anonymous)
+                for (var provider in suppliers) ...[
+                  if (provider == SignInSupplier.anonymous)
                     SizedBox(
                       width: double.infinity,
                       child: PlatformTextButton(
@@ -75,8 +105,8 @@ class SignInButtons extends ConsumerWidget {
                         color: theme.buttonTextColor,
                       ),
                     ),
-                  if (provider == SignInProvider.google)
-                    socialButton(
+                  if (provider == SignInSupplier.google)
+                    SignInSupplierButton(
                       icon: SizedBox(
                         width: iconTidySize,
                         height: iconTidySize,
@@ -90,8 +120,8 @@ class SignInButtons extends ConsumerWidget {
                         _handleEvent(ref, const SignInEvent.signInWithGoogle());
                       },
                     ),
-                  if (provider == SignInProvider.apple && displayApple)
-                    socialButton(
+                  if (provider == SignInSupplier.apple && isCupertino())
+                    SignInSupplierButton(
                       icon: SizedBox(
                         width: iconTidySize,
                         height: iconSize,
@@ -107,8 +137,8 @@ class SignInButtons extends ConsumerWidget {
                         _handleEvent(ref, const SignInEvent.signInWithApple());
                       },
                     ),
-                  if (provider == SignInProvider.facebook)
-                    socialButton(
+                  if (provider == SignInSupplier.facebook)
+                    SignInSupplierButton(
                       assetName: "assets/images/facebook-logo.png",
                       iconSize: iconSize,
                       title: l10n.signInWithFacebook,
@@ -117,8 +147,8 @@ class SignInButtons extends ConsumerWidget {
                             ref, const SignInEvent.signInWithFacebook());
                       },
                     ),
-                  if (provider == SignInProvider.email)
-                    socialButton(
+                  if (provider == SignInSupplier.email)
+                    SignInSupplierButton(
                       icon: Icon(
                         Icons.email_outlined,
                         color: theme.buttonTextColor,
@@ -137,14 +167,28 @@ class SignInButtons extends ConsumerWidget {
             ),
     );
   }
+}
 
-  Widget socialButton({
-    String? assetName,
-    Widget? icon,
-    required double iconSize,
-    required String title,
-    required VoidCallback onPressed,
-  }) {
+class SignInSupplierButton extends ConsumerWidget {
+  const SignInSupplierButton({
+    Key? key,
+    this.assetName,
+    this.icon,
+    required this.iconSize,
+    required this.title,
+    required this.onPressed,
+  }) : super(key: key);
+
+  final String? assetName;
+  final Widget? icon;
+  final double iconSize;
+  final String title;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = ref.watch(signInThemeProvider);
+
     return Container(
       constraints: BoxConstraints(maxWidth: theme.maxWidth),
       child: SizedBox(
@@ -165,4 +209,3 @@ class SignInButtons extends ConsumerWidget {
     );
   }
 }
-*/
