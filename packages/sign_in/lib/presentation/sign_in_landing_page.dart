@@ -157,7 +157,7 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithEmail,
                       onPressed: () {
-                        Navigator.of(context, rootNavigator: true)
+                        Navigator.of(context)
                             .pushNamed(SignInRoutes.signInEmailPage);
                       },
                     ),

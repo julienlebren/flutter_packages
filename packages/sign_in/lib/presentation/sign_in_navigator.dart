@@ -27,6 +27,7 @@ class SignInRouter extends StatelessWidget {
             case SignInRoutes.signInEmailPage:
               return platformPageRoute(
                 builder: (_) => const SignInEmailPage(),
+                fullscreenDialog: true,
               );
             case SignInRoutes.signInEmailPasswordPage:
               return platformPageRoute(

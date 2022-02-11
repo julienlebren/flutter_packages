@@ -95,8 +95,10 @@ final signInSuppliersProvider = Provider<List<SignInSupplier>>(
 
 final signInThemeProvider = Provider<SignInTheme>((ref) {
   final appTheme = ref.watch(appThemeProvider);
+  final formTheme = ref.watch(formThemeProvider);
+
   return SignInTheme(
-    buttonBackgroundColor: const Color(0xFFF2F2F2),
+    buttonBackgroundColor: formTheme.rowBackgroundColor,
     buttonTextColor: appTheme.textColor,
   );
 });
