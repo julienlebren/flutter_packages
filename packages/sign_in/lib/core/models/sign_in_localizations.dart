@@ -19,6 +19,8 @@ class SignInLocalizations with _$SignInLocalizations {
     @Default("Email address") String signInWithEmailPlaceholder,
     @Default("Password") String signInWithEmailPasswordPlaceholder,
     @Default("Forgot your password?") String signInWithEmailForgotPassword,
+    @Default("Not yet registered? Create an account.")
+        String signInWithEmailCreateAccount,
     @Default("Continue") String continueButton,
   }) = _SignInLocalizations;
 }

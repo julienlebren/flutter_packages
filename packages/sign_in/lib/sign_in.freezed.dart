@@ -1538,6 +1538,8 @@ class _$SignInLocalizationsTearOff {
       String signInWithEmailPlaceholder = "Email address",
       String signInWithEmailPasswordPlaceholder = "Password",
       String signInWithEmailForgotPassword = "Forgot your password?",
+      String signInWithEmailCreateAccount =
+          "Not yet registered? Create an account.",
       String continueButton = "Continue"}) {
     return _SignInLocalizations(
       signInAnonymously: signInAnonymously,
@@ -1553,6 +1555,7 @@ class _$SignInLocalizationsTearOff {
       signInWithEmailPlaceholder: signInWithEmailPlaceholder,
       signInWithEmailPasswordPlaceholder: signInWithEmailPasswordPlaceholder,
       signInWithEmailForgotPassword: signInWithEmailForgotPassword,
+      signInWithEmailCreateAccount: signInWithEmailCreateAccount,
       continueButton: continueButton,
     );
   }
@@ -1578,6 +1581,7 @@ mixin _$SignInLocalizations {
       throw _privateConstructorUsedError;
   String get signInWithEmailForgotPassword =>
       throw _privateConstructorUsedError;
+  String get signInWithEmailCreateAccount => throw _privateConstructorUsedError;
   String get continueButton => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -1604,6 +1608,7 @@ abstract class $SignInLocalizationsCopyWith<$Res> {
       String signInWithEmailPlaceholder,
       String signInWithEmailPasswordPlaceholder,
       String signInWithEmailForgotPassword,
+      String signInWithEmailCreateAccount,
       String continueButton});
 }
 
@@ -1631,6 +1636,7 @@ class _$SignInLocalizationsCopyWithImpl<$Res>
     Object? signInWithEmailPlaceholder = freezed,
     Object? signInWithEmailPasswordPlaceholder = freezed,
     Object? signInWithEmailForgotPassword = freezed,
+    Object? signInWithEmailCreateAccount = freezed,
     Object? continueButton = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1687,6 +1693,10 @@ class _$SignInLocalizationsCopyWithImpl<$Res>
           ? _value.signInWithEmailForgotPassword
           : signInWithEmailForgotPassword // ignore: cast_nullable_to_non_nullable
               as String,
+      signInWithEmailCreateAccount: signInWithEmailCreateAccount == freezed
+          ? _value.signInWithEmailCreateAccount
+          : signInWithEmailCreateAccount // ignore: cast_nullable_to_non_nullable
+              as String,
       continueButton: continueButton == freezed
           ? _value.continueButton
           : continueButton // ignore: cast_nullable_to_non_nullable
@@ -1716,6 +1726,7 @@ abstract class _$SignInLocalizationsCopyWith<$Res>
       String signInWithEmailPlaceholder,
       String signInWithEmailPasswordPlaceholder,
       String signInWithEmailForgotPassword,
+      String signInWithEmailCreateAccount,
       String continueButton});
 }
 
@@ -1745,6 +1756,7 @@ class __$SignInLocalizationsCopyWithImpl<$Res>
     Object? signInWithEmailPlaceholder = freezed,
     Object? signInWithEmailPasswordPlaceholder = freezed,
     Object? signInWithEmailForgotPassword = freezed,
+    Object? signInWithEmailCreateAccount = freezed,
     Object? continueButton = freezed,
   }) {
     return _then(_SignInLocalizations(
@@ -1801,6 +1813,10 @@ class __$SignInLocalizationsCopyWithImpl<$Res>
           ? _value.signInWithEmailForgotPassword
           : signInWithEmailForgotPassword // ignore: cast_nullable_to_non_nullable
               as String,
+      signInWithEmailCreateAccount: signInWithEmailCreateAccount == freezed
+          ? _value.signInWithEmailCreateAccount
+          : signInWithEmailCreateAccount // ignore: cast_nullable_to_non_nullable
+              as String,
       continueButton: continueButton == freezed
           ? _value.continueButton
           : continueButton // ignore: cast_nullable_to_non_nullable
@@ -1829,6 +1845,8 @@ class _$_SignInLocalizations implements _SignInLocalizations {
       this.signInWithEmailPlaceholder = "Email address",
       this.signInWithEmailPasswordPlaceholder = "Password",
       this.signInWithEmailForgotPassword = "Forgot your password?",
+      this.signInWithEmailCreateAccount =
+          "Not yet registered? Create an account.",
       this.continueButton = "Continue"});
 
   @JsonKey()
@@ -1872,11 +1890,14 @@ class _$_SignInLocalizations implements _SignInLocalizations {
   final String signInWithEmailForgotPassword;
   @JsonKey()
   @override
+  final String signInWithEmailCreateAccount;
+  @JsonKey()
+  @override
   final String continueButton;
 
   @override
   String toString() {
-    return 'SignInLocalizations(signInAnonymously: $signInAnonymously, signInWithApple: $signInWithApple, signInWithGoogle: $signInWithGoogle, signInWithFacebook: $signInWithFacebook, signInWithEmail: $signInWithEmail, errorTitle: $errorTitle, signInWithEmailTitle: $signInWithEmailTitle, signInWithEmailCaption: $signInWithEmailCaption, signInWithEmailSuccess: $signInWithEmailSuccess, signInWithEmailRetry: $signInWithEmailRetry, signInWithEmailPlaceholder: $signInWithEmailPlaceholder, signInWithEmailPasswordPlaceholder: $signInWithEmailPasswordPlaceholder, signInWithEmailForgotPassword: $signInWithEmailForgotPassword, continueButton: $continueButton)';
+    return 'SignInLocalizations(signInAnonymously: $signInAnonymously, signInWithApple: $signInWithApple, signInWithGoogle: $signInWithGoogle, signInWithFacebook: $signInWithFacebook, signInWithEmail: $signInWithEmail, errorTitle: $errorTitle, signInWithEmailTitle: $signInWithEmailTitle, signInWithEmailCaption: $signInWithEmailCaption, signInWithEmailSuccess: $signInWithEmailSuccess, signInWithEmailRetry: $signInWithEmailRetry, signInWithEmailPlaceholder: $signInWithEmailPlaceholder, signInWithEmailPasswordPlaceholder: $signInWithEmailPasswordPlaceholder, signInWithEmailForgotPassword: $signInWithEmailForgotPassword, signInWithEmailCreateAccount: $signInWithEmailCreateAccount, continueButton: $continueButton)';
   }
 
   @override
@@ -1912,6 +1933,9 @@ class _$_SignInLocalizations implements _SignInLocalizations {
             const DeepCollectionEquality().equals(
                 other.signInWithEmailForgotPassword,
                 signInWithEmailForgotPassword) &&
+            const DeepCollectionEquality().equals(
+                other.signInWithEmailCreateAccount,
+                signInWithEmailCreateAccount) &&
             const DeepCollectionEquality()
                 .equals(other.continueButton, continueButton));
   }
@@ -1932,6 +1956,7 @@ class _$_SignInLocalizations implements _SignInLocalizations {
       const DeepCollectionEquality().hash(signInWithEmailPlaceholder),
       const DeepCollectionEquality().hash(signInWithEmailPasswordPlaceholder),
       const DeepCollectionEquality().hash(signInWithEmailForgotPassword),
+      const DeepCollectionEquality().hash(signInWithEmailCreateAccount),
       const DeepCollectionEquality().hash(continueButton));
 
   @JsonKey(ignore: true)
@@ -1956,6 +1981,7 @@ abstract class _SignInLocalizations implements SignInLocalizations {
       String signInWithEmailPlaceholder,
       String signInWithEmailPasswordPlaceholder,
       String signInWithEmailForgotPassword,
+      String signInWithEmailCreateAccount,
       String continueButton}) = _$_SignInLocalizations;
 
   @override
@@ -1984,6 +2010,8 @@ abstract class _SignInLocalizations implements SignInLocalizations {
   String get signInWithEmailPasswordPlaceholder;
   @override
   String get signInWithEmailForgotPassword;
+  @override
+  String get signInWithEmailCreateAccount;
   @override
   String get continueButton;
   @override
