@@ -56,16 +56,16 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
             FormRow(
               child: PlatformTextField(
                 controller: TextEditingController(),
-                textInputAction: TextInputAction.next,
+                keyboardType: TextInputType.emailAddress,
                 placeholder: "Adresse e-mail",
                 autocorrect: false,
-                textCapitalization: TextCapitalization.words,
+                focusNode: focusNode,
                 onChanged: (String value) {},
               ),
             ),
           ],
         ),
-        const SignInEmailPageSubmitButton(canSubmit: false, isSaving: false),
+        const SignInEmailPageSubmitButton(canSubmit: true, isSaving: false),
       ],
     );
   }

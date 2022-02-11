@@ -60,3 +60,24 @@ class PlatformElevatedButton
     );
   }
 }
+
+class PlatformFullSizedElevatedButton extends StatelessWidget {
+  PlatformFullSizedElevatedButton({
+    required this.title,
+    this.onPressed,
+  });
+
+  final String title;
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      child: PlatformElevatedButton(
+        title: title,
+        onPressed: onPressed,
+      ),
+    );
+  }
+}
