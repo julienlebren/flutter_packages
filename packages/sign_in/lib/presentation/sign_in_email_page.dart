@@ -56,7 +56,6 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
     return FormPage(
       children: [
         FormSection(
-          title: l10n.signInWithEmailCaption,
           children: [
             FormRow(
               child: PlatformTextField(

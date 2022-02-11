@@ -1,5 +1,7 @@
 part of '../sign_in.dart';
 
+final signInNavigatorKey = GlobalKey<NavigatorState>();
+
 class SignInRoutes {
   static const signInLandingPage = '/sign-in';
   static const signInEmailPage = '/sign-in/email';
@@ -16,6 +18,7 @@ class SignInRouter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Navigator(
+      key: signInNavigatorKey,
       initialRoute: SignInRoutes.signInLandingPage,
       onGenerateRoute: (RouteSettings settings) {
         if (settings.name != null) {
