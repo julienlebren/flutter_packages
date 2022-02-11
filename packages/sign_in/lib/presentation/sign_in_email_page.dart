@@ -14,12 +14,14 @@ class SignInEmailPageBuilder extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(signInLocalizationsProvider);
+
     return PlatformScaffold(
       appBar: PlatformNavigationBar(
         leading: PlatformNavigationBarCloseButton(
           onPressed: () => Navigator.pop(context),
         ),
-        title: "Connexion ou inscription",
+        title: l10n.signInWithEmailTitle,
       ),
       body: const FormWithOverlay(
         isSaving: false,
@@ -49,15 +51,18 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = ref.watch(signInLocalizationsProvider);
+
     return FormPage(
       children: [
         FormSection(
+          title: l10n.signInWithEmailCaption,
           children: [
             FormRow(
               child: PlatformTextField(
                 controller: TextEditingController(),
                 keyboardType: TextInputType.emailAddress,
-                placeholder: "Adresse e-mail",
+                placeholder: l10n.signInWithEmailPlaceholder,
                 autocorrect: false,
                 focusNode: focusNode,
                 onChanged: (String value) {},
@@ -85,8 +90,10 @@ class SignInEmailPageSubmitButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(signInLocalizationsProvider);
+
     return PlatformFullSizedElevatedButton(
-      title: "Continuer",
+      title: l10n.continueButton,
       onPressed: canSubmit ? () => _verifyEmail(ref) : null,
     );
   }

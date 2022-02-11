@@ -1527,7 +1527,16 @@ class _$SignInLocalizationsTearOff {
       String signInWithGoogle = "Sign in with Apple",
       String signInWithFacebook = "Sign in with Facebook",
       String signInWithEmail = "Sign in with e-mail",
-      String errorTitle = "Oops! Something went wrong..."}) {
+      String errorTitle = "Oops! Something went wrong...",
+      String signInWithEmailTitle = "Sign-in with an email",
+      String signInWithEmailCaption =
+          "Submit your email address to receive a sign-in link.",
+      String signInWithEmailSuccess =
+          "Check your email, we have sent a sign-in link.",
+      String signInWithEmailRetry =
+          "You did not receive it? Try again or try another identification method.",
+      String signInWithEmailPlaceholder = "Adresse e-mail",
+      String continueButton = "Continue"}) {
     return _SignInLocalizations(
       signInAnonymously: signInAnonymously,
       signInWithApple: signInWithApple,
@@ -1535,6 +1544,12 @@ class _$SignInLocalizationsTearOff {
       signInWithFacebook: signInWithFacebook,
       signInWithEmail: signInWithEmail,
       errorTitle: errorTitle,
+      signInWithEmailTitle: signInWithEmailTitle,
+      signInWithEmailCaption: signInWithEmailCaption,
+      signInWithEmailSuccess: signInWithEmailSuccess,
+      signInWithEmailRetry: signInWithEmailRetry,
+      signInWithEmailPlaceholder: signInWithEmailPlaceholder,
+      continueButton: continueButton,
     );
   }
 }
@@ -1550,6 +1565,12 @@ mixin _$SignInLocalizations {
   String get signInWithFacebook => throw _privateConstructorUsedError;
   String get signInWithEmail => throw _privateConstructorUsedError;
   String get errorTitle => throw _privateConstructorUsedError;
+  String get signInWithEmailTitle => throw _privateConstructorUsedError;
+  String get signInWithEmailCaption => throw _privateConstructorUsedError;
+  String get signInWithEmailSuccess => throw _privateConstructorUsedError;
+  String get signInWithEmailRetry => throw _privateConstructorUsedError;
+  String get signInWithEmailPlaceholder => throw _privateConstructorUsedError;
+  String get continueButton => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignInLocalizationsCopyWith<SignInLocalizations> get copyWith =>
@@ -1567,7 +1588,13 @@ abstract class $SignInLocalizationsCopyWith<$Res> {
       String signInWithGoogle,
       String signInWithFacebook,
       String signInWithEmail,
-      String errorTitle});
+      String errorTitle,
+      String signInWithEmailTitle,
+      String signInWithEmailCaption,
+      String signInWithEmailSuccess,
+      String signInWithEmailRetry,
+      String signInWithEmailPlaceholder,
+      String continueButton});
 }
 
 /// @nodoc
@@ -1587,6 +1614,12 @@ class _$SignInLocalizationsCopyWithImpl<$Res>
     Object? signInWithFacebook = freezed,
     Object? signInWithEmail = freezed,
     Object? errorTitle = freezed,
+    Object? signInWithEmailTitle = freezed,
+    Object? signInWithEmailCaption = freezed,
+    Object? signInWithEmailSuccess = freezed,
+    Object? signInWithEmailRetry = freezed,
+    Object? signInWithEmailPlaceholder = freezed,
+    Object? continueButton = freezed,
   }) {
     return _then(_value.copyWith(
       signInAnonymously: signInAnonymously == freezed
@@ -1613,6 +1646,30 @@ class _$SignInLocalizationsCopyWithImpl<$Res>
           ? _value.errorTitle
           : errorTitle // ignore: cast_nullable_to_non_nullable
               as String,
+      signInWithEmailTitle: signInWithEmailTitle == freezed
+          ? _value.signInWithEmailTitle
+          : signInWithEmailTitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithEmailCaption: signInWithEmailCaption == freezed
+          ? _value.signInWithEmailCaption
+          : signInWithEmailCaption // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithEmailSuccess: signInWithEmailSuccess == freezed
+          ? _value.signInWithEmailSuccess
+          : signInWithEmailSuccess // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithEmailRetry: signInWithEmailRetry == freezed
+          ? _value.signInWithEmailRetry
+          : signInWithEmailRetry // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithEmailPlaceholder: signInWithEmailPlaceholder == freezed
+          ? _value.signInWithEmailPlaceholder
+          : signInWithEmailPlaceholder // ignore: cast_nullable_to_non_nullable
+              as String,
+      continueButton: continueButton == freezed
+          ? _value.continueButton
+          : continueButton // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -1630,7 +1687,13 @@ abstract class _$SignInLocalizationsCopyWith<$Res>
       String signInWithGoogle,
       String signInWithFacebook,
       String signInWithEmail,
-      String errorTitle});
+      String errorTitle,
+      String signInWithEmailTitle,
+      String signInWithEmailCaption,
+      String signInWithEmailSuccess,
+      String signInWithEmailRetry,
+      String signInWithEmailPlaceholder,
+      String continueButton});
 }
 
 /// @nodoc
@@ -1652,6 +1715,12 @@ class __$SignInLocalizationsCopyWithImpl<$Res>
     Object? signInWithFacebook = freezed,
     Object? signInWithEmail = freezed,
     Object? errorTitle = freezed,
+    Object? signInWithEmailTitle = freezed,
+    Object? signInWithEmailCaption = freezed,
+    Object? signInWithEmailSuccess = freezed,
+    Object? signInWithEmailRetry = freezed,
+    Object? signInWithEmailPlaceholder = freezed,
+    Object? continueButton = freezed,
   }) {
     return _then(_SignInLocalizations(
       signInAnonymously: signInAnonymously == freezed
@@ -1678,6 +1747,30 @@ class __$SignInLocalizationsCopyWithImpl<$Res>
           ? _value.errorTitle
           : errorTitle // ignore: cast_nullable_to_non_nullable
               as String,
+      signInWithEmailTitle: signInWithEmailTitle == freezed
+          ? _value.signInWithEmailTitle
+          : signInWithEmailTitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithEmailCaption: signInWithEmailCaption == freezed
+          ? _value.signInWithEmailCaption
+          : signInWithEmailCaption // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithEmailSuccess: signInWithEmailSuccess == freezed
+          ? _value.signInWithEmailSuccess
+          : signInWithEmailSuccess // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithEmailRetry: signInWithEmailRetry == freezed
+          ? _value.signInWithEmailRetry
+          : signInWithEmailRetry // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInWithEmailPlaceholder: signInWithEmailPlaceholder == freezed
+          ? _value.signInWithEmailPlaceholder
+          : signInWithEmailPlaceholder // ignore: cast_nullable_to_non_nullable
+              as String,
+      continueButton: continueButton == freezed
+          ? _value.continueButton
+          : continueButton // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -1691,7 +1784,16 @@ class _$_SignInLocalizations implements _SignInLocalizations {
       this.signInWithGoogle = "Sign in with Apple",
       this.signInWithFacebook = "Sign in with Facebook",
       this.signInWithEmail = "Sign in with e-mail",
-      this.errorTitle = "Oops! Something went wrong..."});
+      this.errorTitle = "Oops! Something went wrong...",
+      this.signInWithEmailTitle = "Sign-in with an email",
+      this.signInWithEmailCaption =
+          "Submit your email address to receive a sign-in link.",
+      this.signInWithEmailSuccess =
+          "Check your email, we have sent a sign-in link.",
+      this.signInWithEmailRetry =
+          "You did not receive it? Try again or try another identification method.",
+      this.signInWithEmailPlaceholder = "Adresse e-mail",
+      this.continueButton = "Continue"});
 
   @JsonKey()
   @override
@@ -1711,10 +1813,28 @@ class _$_SignInLocalizations implements _SignInLocalizations {
   @JsonKey()
   @override
   final String errorTitle;
+  @JsonKey()
+  @override
+  final String signInWithEmailTitle;
+  @JsonKey()
+  @override
+  final String signInWithEmailCaption;
+  @JsonKey()
+  @override
+  final String signInWithEmailSuccess;
+  @JsonKey()
+  @override
+  final String signInWithEmailRetry;
+  @JsonKey()
+  @override
+  final String signInWithEmailPlaceholder;
+  @JsonKey()
+  @override
+  final String continueButton;
 
   @override
   String toString() {
-    return 'SignInLocalizations(signInAnonymously: $signInAnonymously, signInWithApple: $signInWithApple, signInWithGoogle: $signInWithGoogle, signInWithFacebook: $signInWithFacebook, signInWithEmail: $signInWithEmail, errorTitle: $errorTitle)';
+    return 'SignInLocalizations(signInAnonymously: $signInAnonymously, signInWithApple: $signInWithApple, signInWithGoogle: $signInWithGoogle, signInWithFacebook: $signInWithFacebook, signInWithEmail: $signInWithEmail, errorTitle: $errorTitle, signInWithEmailTitle: $signInWithEmailTitle, signInWithEmailCaption: $signInWithEmailCaption, signInWithEmailSuccess: $signInWithEmailSuccess, signInWithEmailRetry: $signInWithEmailRetry, signInWithEmailPlaceholder: $signInWithEmailPlaceholder, continueButton: $continueButton)';
   }
 
   @override
@@ -1733,7 +1853,19 @@ class _$_SignInLocalizations implements _SignInLocalizations {
             const DeepCollectionEquality()
                 .equals(other.signInWithEmail, signInWithEmail) &&
             const DeepCollectionEquality()
-                .equals(other.errorTitle, errorTitle));
+                .equals(other.errorTitle, errorTitle) &&
+            const DeepCollectionEquality()
+                .equals(other.signInWithEmailTitle, signInWithEmailTitle) &&
+            const DeepCollectionEquality()
+                .equals(other.signInWithEmailCaption, signInWithEmailCaption) &&
+            const DeepCollectionEquality()
+                .equals(other.signInWithEmailSuccess, signInWithEmailSuccess) &&
+            const DeepCollectionEquality()
+                .equals(other.signInWithEmailRetry, signInWithEmailRetry) &&
+            const DeepCollectionEquality().equals(
+                other.signInWithEmailPlaceholder, signInWithEmailPlaceholder) &&
+            const DeepCollectionEquality()
+                .equals(other.continueButton, continueButton));
   }
 
   @override
@@ -1744,7 +1876,13 @@ class _$_SignInLocalizations implements _SignInLocalizations {
       const DeepCollectionEquality().hash(signInWithGoogle),
       const DeepCollectionEquality().hash(signInWithFacebook),
       const DeepCollectionEquality().hash(signInWithEmail),
-      const DeepCollectionEquality().hash(errorTitle));
+      const DeepCollectionEquality().hash(errorTitle),
+      const DeepCollectionEquality().hash(signInWithEmailTitle),
+      const DeepCollectionEquality().hash(signInWithEmailCaption),
+      const DeepCollectionEquality().hash(signInWithEmailSuccess),
+      const DeepCollectionEquality().hash(signInWithEmailRetry),
+      const DeepCollectionEquality().hash(signInWithEmailPlaceholder),
+      const DeepCollectionEquality().hash(continueButton));
 
   @JsonKey(ignore: true)
   @override
@@ -1760,7 +1898,13 @@ abstract class _SignInLocalizations implements SignInLocalizations {
       String signInWithGoogle,
       String signInWithFacebook,
       String signInWithEmail,
-      String errorTitle}) = _$_SignInLocalizations;
+      String errorTitle,
+      String signInWithEmailTitle,
+      String signInWithEmailCaption,
+      String signInWithEmailSuccess,
+      String signInWithEmailRetry,
+      String signInWithEmailPlaceholder,
+      String continueButton}) = _$_SignInLocalizations;
 
   @override
   String get signInAnonymously;
@@ -1774,6 +1918,18 @@ abstract class _SignInLocalizations implements SignInLocalizations {
   String get signInWithEmail;
   @override
   String get errorTitle;
+  @override
+  String get signInWithEmailTitle;
+  @override
+  String get signInWithEmailCaption;
+  @override
+  String get signInWithEmailSuccess;
+  @override
+  String get signInWithEmailRetry;
+  @override
+  String get signInWithEmailPlaceholder;
+  @override
+  String get continueButton;
   @override
   @JsonKey(ignore: true)
   _$SignInLocalizationsCopyWith<_SignInLocalizations> get copyWith =>
