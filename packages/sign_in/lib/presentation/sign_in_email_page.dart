@@ -21,7 +21,6 @@ class SignInEmailPageBuilder extends ConsumerWidget {
         leading: PlatformNavigationBarCloseButton(
           onPressed: () => Navigator.pop(context),
         ),
-        title: l10n.signInWithEmailTitle,
       ),
       body: const FormWithOverlay(
         isSaving: false,
@@ -55,6 +54,9 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
 
     return FormPage(
       children: [
+        SignInHeader(
+          title: l10n.signInWithEmailTitle,
+        ),
         FormSection(
           children: [
             FormRow(
@@ -67,18 +69,7 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
                 onChanged: (String value) {},
               ),
             ),
-            FormRow(
-              child: PlatformTextField(
-                controller: TextEditingController(),
-                keyboardType: TextInputType.visiblePassword,
-                placeholder: l10n.signInWithEmailPasswordPlaceholder,
-                autocorrect: false,
-                focusNode: focusNode,
-                onChanged: (String value) {},
-              ),
-            ),
           ],
-          caption: l10n.signInWithEmailCaption,
         ),
         const SignInEmailPageSubmitButton(canSubmit: true, isSaving: false),
       ],
@@ -105,6 +96,54 @@ class SignInEmailPageSubmitButton extends ConsumerWidget {
     return PlatformFullSizedElevatedButton(
       title: l10n.continueButton,
       onPressed: canSubmit ? () => _verifyEmail(ref) : null,
+    );
+  }
+}
+
+/// The header of a page of the sign-in journey.
+/// Only used on iOS, on Android the title is displayed
+/// in the [AppBar] and the subtitle in the [SignInFooter].
+class SignInHeader extends StatelessWidget {
+  const SignInHeader({
+    Key? key,
+    required this.title,
+    this.subtitle,
+  }) : super(key: key);
+
+  final String title;
+  final String? subtitle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.w600,
+            letterSpacing: -1,
+          ),
+          textAlign: TextAlign.center,
+        ),
+        if (subtitle != null)
+          Padding(
+            padding: const EdgeInsets.only(top: 15),
+            child: SizedBox(
+              width: double.infinity,
+              child: Text(
+                subtitle!,
+                style: const TextStyle(
+                  fontSize: 18,
+                  letterSpacing: -0.5,
+                  color: Colors.grey,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+        const SizedBox(height: 40),
+      ],
     );
   }
 }
