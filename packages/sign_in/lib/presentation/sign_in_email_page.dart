@@ -21,6 +21,7 @@ class SignInEmailPageBuilder extends ConsumerWidget {
         leading: PlatformNavigationBarCloseButton(
           onPressed: () => Navigator.pop(context),
         ),
+        title: l10n.signInWithEmailTitle,
       ),
       body: const FormWithOverlay(
         isSaving: false,
@@ -54,9 +55,6 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
 
     return FormPage(
       children: [
-        SignInHeader(
-          title: l10n.signInWithEmailTitle,
-        ),
         FormSection(
           children: [
             FormRow(
