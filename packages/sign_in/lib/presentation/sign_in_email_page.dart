@@ -88,7 +88,9 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
         const SignInEmailPageSubmitButton(canSubmit: true, isSaving: false),
         PlatformTextButton(
           title: l10n.signInWithEmailCreateAccount,
-          onPressed: () {},
+          onPressed: () {
+            print("lol");
+          },
         ),
       ],
     );
