@@ -85,7 +85,7 @@ class SignInEmailPageSubmitButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return PlatformElevatedButton(
+    return PlatformFullSizedElevatedButton(
       title: "Continuer",
       onPressed: canSubmit ? () => _verifyEmail(ref) : null,
     );
