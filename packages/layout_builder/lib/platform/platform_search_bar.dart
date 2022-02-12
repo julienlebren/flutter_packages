@@ -1,6 +1,6 @@
 part of platform;
 
-class PlatformSearchBar extends PlatformWidgetBase<TextField, Padding> {
+class PlatformSearchBar extends PlatformWidgetBase<TextField, Container> {
   PlatformSearchBar({
     required this.controller,
     this.focusNode,
@@ -33,8 +33,9 @@ class PlatformSearchBar extends PlatformWidgetBase<TextField, Padding> {
   }
 
   @override
-  Padding createCupertinoWidget(BuildContext context, WidgetRef ref) {
-    return Padding(
+  Container createCupertinoWidget(BuildContext context, WidgetRef ref) {
+    return Container(
+      color: CupertinoTheme.of(context).barBackgroundColor,
       padding: EdgeInsets.only(
         left: 15,
         right: 15,
