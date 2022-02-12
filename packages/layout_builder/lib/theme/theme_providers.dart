@@ -94,9 +94,10 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
 final cupertinoThemeProvider = Provider<CupertinoThemeData>((ref) {
   final appTheme = ref.watch(appThemeProvider);
   return CupertinoThemeData(
+    brightness: appTheme.brightness,
     primaryColor: appTheme.primaryColor,
     scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
-    barBackgroundColor: Colors.red,
+    //barBackgroundColor: appTheme.navigationBarBackgroundColor,
   );
 }, dependencies: [appThemeProvider]);
 
