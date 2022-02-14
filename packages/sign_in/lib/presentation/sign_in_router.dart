@@ -5,6 +5,7 @@ final signInNavigatorKey = GlobalKey<NavigatorState>();
 class SignInRoutes {
   static const signInLandingPage = '/sign-in';
   static const signInEmailPage = '/sign-in/email';
+  static const signInEmailLinkPage = '/sign-in/email/link';
   static const signInEmailPasswordPage = '/sign-in/email/password';
   static const signInPhonePage = '/sign-in/phone';
   static const signInVerificationPage = '/sign-in/phone/verification';
@@ -53,6 +54,11 @@ class SignInRouter extends StatelessWidget {
               case SignInRoutes.signInEmailPage:
                 return platformPageRoute(
                   builder: (_) => const SignInEmailPage(),
+                  fullscreenDialog: true,
+                );
+              case SignInRoutes.signInEmailLinkPage:
+                return platformPageRoute(
+                  builder: (_) => const SignInEmailLinkPage(),
                   fullscreenDialog: true,
                 );
               case SignInRoutes.signInEmailPasswordPage:

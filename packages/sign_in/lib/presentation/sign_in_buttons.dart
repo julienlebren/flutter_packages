@@ -112,7 +112,8 @@ class SignInButtons extends ConsumerWidget {
                             ref, const SignInEvent.signInWithFacebook());
                       },
                     ),
-                  if (provider == SignInSupplier.email)
+                  if (provider == SignInSupplier.email ||
+                      provider == SignInSupplier.emailLink)
                     SignInSupplierButton(
                       icon: Icon(
                         Icons.email_outlined,
@@ -122,8 +123,13 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithEmail,
                       onPressed: () {
-                        Navigator.of(context)
-                            .pushNamed(SignInRoutes.signInEmailPage);
+                        final navigator =
+                            SignInNavigatorKeys.main.currentState!;
+                        if (provider == SignInSupplier.emailLink) {
+                          navigator.pushNamed(SignInRoutes.signInEmailLinkPage);
+                        } else {
+                          navigator.pushNamed(SignInRoutes.signInEmailPage);
+                        }
                       },
                     ),
                   SizedBox(height: theme.spaceBetweenButtons),
