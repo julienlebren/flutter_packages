@@ -14,7 +14,6 @@ class SignInButtons extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final theme = ref.watch(signInThemeProvider);
-    final suppliers = ref.read(signInSuppliersProvider);
     final state = ref.watch(signInControllerProvider);
     final isLoading = state.maybeWhen(
       loading: () => true,

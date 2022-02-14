@@ -85,14 +85,6 @@ final signInLocalizationsProvider = Provider<SignInLocalizations>(
   (_) => const SignInLocalizations(),
 );
 
-final signInSuppliersProvider = Provider<List<SignInSupplier>>(
-  (_) => [
-    SignInSupplier.apple,
-    SignInSupplier.google,
-    SignInSupplier.anonymous,
-  ],
-);
-
 final signInThemeProvider = Provider<SignInTheme>((ref) {
   final appTheme = ref.watch(appThemeProvider);
   final formTheme = ref.watch(formThemeProvider);
