@@ -124,7 +124,10 @@ class FirebaseAuthService {
   }) async {
     await _firebaseAuth.sendSignInLinkToEmail(
       email: email,
-      actionCodeSettings: ActionCodeSettings(url: url),
+      actionCodeSettings: ActionCodeSettings(
+        url: url,
+        handleCodeInApp: true,
+      ),
     );
   }
 
