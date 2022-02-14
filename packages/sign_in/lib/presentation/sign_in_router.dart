@@ -55,11 +55,13 @@ class SignInRouterX extends SignInRouter {
     switch (route) {
       case signInLandingPage:
         return platformPageRoute(
-          builder: (_) => Text("Landing"),
+          builder: (_) =>
+              PlatformScaffold(body: Center(child: Text("Landing"))),
         );
       case signInProfile:
         return platformPageRoute(
-          builder: (_) => Text("profile"),
+          builder: (_) =>
+              PlatformScaffold(body: Center(child: Text("profile"))),
         );
     }
   }
