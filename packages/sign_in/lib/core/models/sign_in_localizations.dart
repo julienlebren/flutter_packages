@@ -10,7 +10,7 @@ class SignInLocalizations with _$SignInLocalizations {
     @Default("Sign in with e-mail") String signInWithEmail,
     @Default("Oops! Something went wrong...") String errorTitle,
     @Default("Sign-in with an email") String signInWithEmailTitle,
-    @Default("We will send you an email with a link to log in to the app.")
+    @Default("No password required, we just send you an email with a link to log in to the app.")
         String signInWithEmailCaption,
     @Default("Check your email, we have sent a sign-in link.")
         String signInWithEmailSuccess,

@@ -1530,7 +1530,7 @@ class _$SignInLocalizationsTearOff {
       String errorTitle = "Oops! Something went wrong...",
       String signInWithEmailTitle = "Sign-in with an email",
       String signInWithEmailCaption =
-          "We will send you an email with a link to log in to the app.",
+          "No password required, we just send you an email with a link to log in to the app.",
       String signInWithEmailSuccess =
           "Check your email, we have sent a sign-in link.",
       String signInWithEmailRetry =
@@ -1837,7 +1837,7 @@ class _$_SignInLocalizations implements _SignInLocalizations {
       this.errorTitle = "Oops! Something went wrong...",
       this.signInWithEmailTitle = "Sign-in with an email",
       this.signInWithEmailCaption =
-          "We will send you an email with a link to log in to the app.",
+          "No password required, we just send you an email with a link to log in to the app.",
       this.signInWithEmailSuccess =
           "Check your email, we have sent a sign-in link.",
       this.signInWithEmailRetry =

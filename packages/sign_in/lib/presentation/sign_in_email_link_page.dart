@@ -68,31 +68,10 @@ class _SignInEmailLinkPageFormState
                 onChanged: (String value) {},
               ),
             ),
-            FormRow(
-              child: PlatformTextField(
-                controller: TextEditingController(),
-                keyboardType: TextInputType.emailAddress,
-                placeholder: l10n.signInWithEmailPasswordPlaceholder,
-                autocorrect: false,
-                focusNode: focusNode,
-                onChanged: (String value) {},
-              ),
-            ),
           ],
-        ),
-        PlatformTextButton(
-          title: l10n.signInWithEmailForgotPassword,
-          fontSize: 14,
-          textAlign: TextAlign.left,
-          onPressed: () {},
+          caption: l10n.signInWithEmailCaption,
         ),
         const SignInEmailPageSubmitButton(canSubmit: true, isSaving: false),
-        PlatformTextButton(
-          title: l10n.signInWithEmailCreateAccount,
-          onPressed: () {
-            print("lol");
-          },
-        ),
       ],
     );
   }
