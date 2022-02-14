@@ -16,7 +16,7 @@ class SignInRouter {
 
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     if (settings.name != null) {
-      print("Route is ${settings.name}");
+      print("[SignInRouter] Route is ${settings.name}");
       switch (settings.name) {
         case signInEmailPage:
           return platformPageRoute(
@@ -49,11 +49,12 @@ class SignInRouter {
 }
 
 class SignInRouterX extends SignInRouter {
-  static const signInLandingPage = '/sign-in/';
+  static const signInLandingPage = '/sign-in';
   static const signInProfile = '/sign-in/profile';
 
   @override
   handleAdditionnalRoutes(String route) {
+    print("[SignInRouterX] Route is $route");
     switch (route) {
       case signInLandingPage:
         return platformPageRoute(
