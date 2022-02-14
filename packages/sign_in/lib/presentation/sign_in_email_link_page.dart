@@ -25,7 +25,7 @@ class SignInEmailLinkPageBuilder extends ConsumerWidget {
       ),
       body: const FormWithOverlay(
         isSaving: false,
-        child: SignInEmailPageForm(),
+        child: SignInEmailLinkPageForm(),
       ),
     );
   }
