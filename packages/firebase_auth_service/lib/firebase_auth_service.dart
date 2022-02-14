@@ -118,6 +118,27 @@ class FirebaseAuthService {
     }
   }
 
+  Future<void> sendSignInLinkToEmail({
+    required String email,
+    required String url,
+  }) async {
+    await _firebaseAuth.sendSignInLinkToEmail(
+      email: email,
+      actionCodeSettings: ActionCodeSettings(url: url),
+    );
+  }
+
+  Future<User?> signInWithEmailLink({
+    required String email,
+    required String emailLink,
+  }) async {
+    final userCredential = await _firebaseAuth.signInWithEmailLink(
+      email: email,
+      emailLink: emailLink,
+    );
+    return userCredential.user;
+  }
+
   Future<void> signOut() async {
     final googleSignIn = GoogleSignIn();
     await googleSignIn.signOut();
