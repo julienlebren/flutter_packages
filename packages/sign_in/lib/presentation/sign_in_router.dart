@@ -6,7 +6,6 @@ class SignInRouter {
   static final main = GlobalKey<NavigatorState>();
   static final modal = GlobalKey<NavigatorState>();
 
-  static const signInLandingPage = '/sign-in';
   static const signInEmailPage = '/sign-in/email';
   static const signInEmailLinkPage = '/sign-in/email/link';
   static const signInEmailPasswordPage = '/sign-in/email/password';
@@ -97,7 +96,7 @@ class SignInNavigator extends StatelessWidget {
       ],
       child: Navigator(
         key: SignInRouter.main,
-        initialRoute: SignInRouter.signInLandingPage,
+        initialRoute: SignInRouterX.signInLandingPage,
         onGenerateRoute: SignInRouterX().onGenerateRoute,
       ),
     );
