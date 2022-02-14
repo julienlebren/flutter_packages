@@ -17,6 +17,7 @@ class SignInRouter {
 
   Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     if (settings.name != null) {
+      print("Route is ${settings.name}");
       switch (settings.name) {
         case signInEmailPage:
           return platformPageRoute(
@@ -37,8 +38,10 @@ class SignInRouter {
 
       return platformPageRoute(
         builder: (_) => Center(
-          child: Text(
-              "This app called a page named ${settings.name} but the SignInRouter has not been configured to handle this page."),
+          child: PlatformScaffold(
+              body: Center(
+                  child: Text(
+                      "This app called a page named ${settings.name} but the SignInRouter has not been configured to handle this page."))),
         ),
       );
     }
