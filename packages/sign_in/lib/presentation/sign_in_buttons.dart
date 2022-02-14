@@ -126,6 +126,7 @@ class SignInButtons extends ConsumerWidget {
                             .pushNamed(SignInRoutes.signInEmailPage);
                       },
                     ),
+                  SizedBox(height: theme.spaceBetweenButtons),
                 ],
               ],
             ),
