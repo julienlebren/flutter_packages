@@ -41,7 +41,7 @@ class SignInEmailLinkController extends StateNotifier<SignInEmailLinkState> {
       emailChanged: (email) {
         state = state.copyWith(
           email: email,
-          canSubmit: state.email.isValidEmail(),
+          canSubmit: email.isValidEmail(),
         );
       },
       sendLink: () => _sendLink,
