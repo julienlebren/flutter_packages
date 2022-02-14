@@ -58,7 +58,6 @@ class SignInButtons extends ConsumerWidget {
                     SizedBox(
                       width: double.infinity,
                       child: PlatformTextButton(
-                        padding: 0,
                         title: l10n.signInAnonymously,
                         onPressed: () {
                           _handleEvent(
@@ -123,7 +122,7 @@ class SignInButtons extends ConsumerWidget {
                             .pushNamed(SignInRoutes.signInEmailPage);
                       },
                     ),
-                  SizedBox(height: theme.spaceBetweenButtons),
+                  SizedBox(height: theme.spaceBetweenButtons * 3),
                 ],
               ],
             ),
