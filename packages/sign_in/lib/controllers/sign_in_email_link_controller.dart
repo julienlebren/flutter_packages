@@ -13,7 +13,8 @@ final signInEmailLinkControllerProvider =
 
 @freezed
 class SignInEmailLinkEvent with _$SignInEmailLinkEvent {
-  const factory SignInEmailLinkEvent.emailChanged(String email) = _EmailChanged;
+  const factory SignInEmailLinkEvent.emailChanged(String email) =
+      _LinkEmailChanged;
   const factory SignInEmailLinkEvent.sendLink() = _SendLink;
 }
 
@@ -36,7 +37,6 @@ class SignInEmailLinkController extends StateNotifier<SignInEmailLinkState> {
   final String _url;
 
   void handleEvent(SignInEmailLinkEvent event) {
-    print("là $event");
     event.when(
       emailChanged: (email) {
         state = state.copyWith(

@@ -12,6 +12,7 @@ import 'package:sign_in/presentation/painters/apple_logo.dart';
 import 'package:sign_in/presentation/painters/google_logo.dart';
 
 part 'controllers/sign_in_controller.dart';
+part 'controllers/sign_in_email_controller.dart';
 part 'controllers/sign_in_email_link_controller.dart';
 part 'core/enums/sign_in_suppliers.dart';
 part 'core/models/auth_state.dart';

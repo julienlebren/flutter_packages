@@ -2,22 +2,71 @@ part of '../sign_in.dart';
 
 final signInNavigatorKey = GlobalKey<NavigatorState>();
 
-class SignInRoutes {
+class SignInRouter {
+  static final main = GlobalKey<NavigatorState>();
+  static final modal = GlobalKey<NavigatorState>();
+
   static const signInLandingPage = '/sign-in';
   static const signInEmailPage = '/sign-in/email';
   static const signInEmailLinkPage = '/sign-in/email/link';
   static const signInEmailPasswordPage = '/sign-in/email/password';
   static const signInPhonePage = '/sign-in/phone';
   static const signInVerificationPage = '/sign-in/phone/verification';
+
+  handleAdditionnalRoutes(String route) {}
+
+  Route<dynamic>? onGenerateRoute(RouteSettings settings) {
+    if (settings.name != null) {
+      switch (settings.name) {
+        case signInEmailPage:
+          return platformPageRoute(
+            builder: (_) => const SignInEmailPage(),
+            fullscreenDialog: true,
+          );
+        case signInEmailLinkPage:
+          return platformPageRoute(
+            builder: (_) => const SignInEmailLinkPage(),
+            fullscreenDialog: true,
+          );
+        case signInEmailPasswordPage:
+          return platformPageRoute(
+            builder: (_) => const SignInEmailPasswordPage(),
+          );
+      }
+      handleAdditionnalRoutes(settings.name!);
+
+      return platformPageRoute(
+        builder: (_) => Center(
+          child: Text(
+              "This app called a page named ${settings.name} but the SignInRouter has not been configured to handle this page."),
+        ),
+      );
+    }
+    return null;
+  }
 }
 
-class SignInNavigatorKeys {
-  static final main = GlobalKey<NavigatorState>();
-  static final modal = GlobalKey<NavigatorState>();
+class SignInRouterX extends SignInRouter {
+  static const signInLandingPage = '/sign-in/';
+  static const signInProfile = '/sign-in/profile';
+
+  @override
+  handleAdditionnalRoutes(String route) {
+    switch (route) {
+      case signInLandingPage:
+        return platformPageRoute(
+          builder: (_) => Text("Landing"),
+        );
+      case signInProfile:
+        return platformPageRoute(
+          builder: (_) => Text("profile"),
+        );
+    }
+  }
 }
 
-class SignInRouter extends StatelessWidget {
-  const SignInRouter({
+class SignInNavigator extends StatelessWidget {
+  const SignInNavigator({
     Key? key,
     this.theme,
     this.localizations,
@@ -42,42 +91,9 @@ class SignInRouter extends StatelessWidget {
           signInLocalizationsProvider.overrideWithValue(localizations!),
       ],
       child: Navigator(
-        key: SignInNavigatorKeys.main,
-        initialRoute: SignInRoutes.signInLandingPage,
-        onGenerateRoute: (RouteSettings settings) {
-          if (settings.name != null) {
-            switch (settings.name) {
-              case SignInRoutes.signInLandingPage:
-                return platformPageRoute(
-                  builder: (_) => landingPage,
-                );
-              case SignInRoutes.signInEmailPage:
-                return platformPageRoute(
-                  builder: (_) => const SignInEmailPage(),
-                  fullscreenDialog: true,
-                );
-              case SignInRoutes.signInEmailLinkPage:
-                return platformPageRoute(
-                  builder: (_) => const SignInEmailLinkPage(),
-                  fullscreenDialog: true,
-                );
-              case SignInRoutes.signInEmailPasswordPage:
-                return platformPageRoute(
-                  builder: (_) => const SignInEmailPasswordPage(),
-                );
-            }
-            if (handleAdditionnalRoutes != null) {
-              handleAdditionnalRoutes!(settings.name!);
-            }
-            return platformPageRoute(
-              builder: (_) => Center(
-                child: Text(
-                    "This app called a page named ${settings.name} but the SignInRouter has not been configured to handle this page."),
-              ),
-            );
-          }
-          return null;
-        },
+        key: SignInRouter.main,
+        initialRoute: SignInRouter.signInLandingPage,
+        onGenerateRoute: SignInRouterX().onGenerateRoute,
       ),
     );
   }

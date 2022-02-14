@@ -1,20 +1,28 @@
 part of '../sign_in.dart';
 
-class SignInEmailPage extends StatelessWidget {
+class SignInEmailPage extends ConsumerWidget {
   const SignInEmailPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const SignInEmailPageBuilder();
-  }
-}
-
-class SignInEmailPageBuilder extends ConsumerWidget {
-  const SignInEmailPageBuilder({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
+    final isLoading = ref.watch(
+      signInEmailControllerProvider.select((state) => state.isLoading),
+    );
+
+    ref.listen<SignInEmailState>(signInEmailControllerProvider, (_, state) {
+      if (state.isSuccess) {
+        final navigator = SignInRouter.main.currentState!;
+        navigator.pop();
+      } else if (state.errorText != null) {
+        showErrorDialog(
+          context,
+          ref,
+          title: l10n.errorTitle,
+          content: state.errorText,
+        );
+      }
+    });
 
     return PlatformScaffold(
       appBar: PlatformNavigationBar(
@@ -22,23 +30,24 @@ class SignInEmailPageBuilder extends ConsumerWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: l10n.signInWithEmailTitle,
+        trailing: isLoading ? const FormLoader() : null,
       ),
-      body: const FormWithOverlay(
-        isSaving: false,
-        child: SignInEmailPageForm(),
+      body: FormWithOverlay(
+        isSaving: isLoading,
+        child: const _SignInEmailPageForm(),
       ),
     );
   }
 }
 
-class SignInEmailPageForm extends ConsumerStatefulWidget {
-  const SignInEmailPageForm({Key? key}) : super(key: key);
+class _SignInEmailPageForm extends ConsumerStatefulWidget {
+  const _SignInEmailPageForm({Key? key}) : super(key: key);
 
   @override
   createState() => _SignInEmailPageFormState();
 }
 
-class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
+class _SignInEmailPageFormState extends ConsumerState<_SignInEmailPageForm> {
   final focusNode = FocusNode();
 
   @override
@@ -64,104 +73,39 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
                 placeholder: l10n.signInWithEmailPlaceholder,
                 autocorrect: false,
                 focusNode: focusNode,
-                onChanged: (String value) {},
-              ),
-            ),
-            FormRow(
-              child: PlatformTextField(
-                controller: TextEditingController(),
-                keyboardType: TextInputType.emailAddress,
-                placeholder: l10n.signInWithEmailPasswordPlaceholder,
-                autocorrect: false,
-                focusNode: focusNode,
-                onChanged: (String value) {},
+                onChanged: (String value) {
+                  final controller =
+                      ref.read(signInEmailControllerProvider.notifier);
+                  controller.handleEvent(SignInEmailEvent.emailChanged(value));
+                },
               ),
             ),
           ],
+          caption: l10n.signInWithEmailCaption,
         ),
-        PlatformTextButton(
-          title: l10n.signInWithEmailForgotPassword,
-          fontSize: 14,
-          textAlign: TextAlign.left,
-          onPressed: () {},
-        ),
-        const SignInEmailPageSubmitButton(canSubmit: true, isSaving: false),
-        PlatformTextButton(
-          title: l10n.signInWithEmailCreateAccount,
-          onPressed: () {},
-        ),
+        const _SignInEmailSubmitButton(),
       ],
     );
   }
 }
 
-class SignInEmailPageSubmitButton extends ConsumerWidget {
-  const SignInEmailPageSubmitButton({
-    Key? key,
-    required this.canSubmit,
-    required this.isSaving,
-  }) : super(key: key);
-
-  _verifyEmail(WidgetRef ref) {}
-
-  final bool isSaving;
-  final bool canSubmit;
+class _SignInEmailSubmitButton extends ConsumerWidget {
+  const _SignInEmailSubmitButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
+    final canSubmit = ref.watch(
+      signInEmailControllerProvider.select((state) => state.canSubmit),
+    );
 
     return PlatformFullSizedElevatedButton(
       title: l10n.continueButton,
-      onPressed: canSubmit ? () => _verifyEmail(ref) : null,
-    );
-  }
-}
-
-/// The header of a page of the sign-in journey.
-/// Only used on iOS, on Android the title is displayed
-/// in the [AppBar] and the subtitle in the [SignInFooter].
-class SignInHeader extends StatelessWidget {
-  const SignInHeader({
-    Key? key,
-    required this.title,
-    this.subtitle,
-  }) : super(key: key);
-
-  final String title;
-  final String? subtitle;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          title,
-          style: const TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.w600,
-            letterSpacing: -1,
-          ),
-          textAlign: TextAlign.center,
-        ),
-        if (subtitle != null)
-          Padding(
-            padding: const EdgeInsets.only(top: 15),
-            child: SizedBox(
-              width: double.infinity,
-              child: Text(
-                subtitle!,
-                style: const TextStyle(
-                  fontSize: 18,
-                  letterSpacing: -0.5,
-                  color: Colors.grey,
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ),
-        const SizedBox(height: 40),
-      ],
+      onPressed: canSubmit
+          ? () {
+              ref.read(signInEmailControllerProvider.notifier);
+            }
+          : null,
     );
   }
 }

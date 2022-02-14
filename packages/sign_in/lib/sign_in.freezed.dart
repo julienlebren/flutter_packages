@@ -15,11 +15,460 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$SignInEmailLinkEventTearOff {
-  const _$SignInEmailLinkEventTearOff();
+class _$SignInEmailEventTearOff {
+  const _$SignInEmailEventTearOff();
 
   _EmailChanged emailChanged(String email) {
     return _EmailChanged(
+      email,
+    );
+  }
+}
+
+/// @nodoc
+const $SignInEmailEvent = _$SignInEmailEventTearOff();
+
+/// @nodoc
+mixin _$SignInEmailEvent {
+  String get email => throw _privateConstructorUsedError;
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EmailChanged value) emailChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_EmailChanged value)? emailChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EmailChanged value)? emailChanged,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SignInEmailEventCopyWith<SignInEmailEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignInEmailEventCopyWith<$Res> {
+  factory $SignInEmailEventCopyWith(
+          SignInEmailEvent value, $Res Function(SignInEmailEvent) then) =
+      _$SignInEmailEventCopyWithImpl<$Res>;
+  $Res call({String email});
+}
+
+/// @nodoc
+class _$SignInEmailEventCopyWithImpl<$Res>
+    implements $SignInEmailEventCopyWith<$Res> {
+  _$SignInEmailEventCopyWithImpl(this._value, this._then);
+
+  final SignInEmailEvent _value;
+  // ignore: unused_field
+  final $Res Function(SignInEmailEvent) _then;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+  }) {
+    return _then(_value.copyWith(
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$EmailChangedCopyWith<$Res>
+    implements $SignInEmailEventCopyWith<$Res> {
+  factory _$EmailChangedCopyWith(
+          _EmailChanged value, $Res Function(_EmailChanged) then) =
+      __$EmailChangedCopyWithImpl<$Res>;
+  @override
+  $Res call({String email});
+}
+
+/// @nodoc
+class __$EmailChangedCopyWithImpl<$Res>
+    extends _$SignInEmailEventCopyWithImpl<$Res>
+    implements _$EmailChangedCopyWith<$Res> {
+  __$EmailChangedCopyWithImpl(
+      _EmailChanged _value, $Res Function(_EmailChanged) _then)
+      : super(_value, (v) => _then(v as _EmailChanged));
+
+  @override
+  _EmailChanged get _value => super._value as _EmailChanged;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+  }) {
+    return _then(_EmailChanged(
+      email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_EmailChanged implements _EmailChanged {
+  const _$_EmailChanged(this.email);
+
+  @override
+  final String email;
+
+  @override
+  String toString() {
+    return 'SignInEmailEvent.emailChanged(email: $email)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _EmailChanged &&
+            const DeepCollectionEquality().equals(other.email, email));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
+
+  @JsonKey(ignore: true)
+  @override
+  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
+      __$EmailChangedCopyWithImpl<_EmailChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChanged,
+  }) {
+    return emailChanged(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+  }) {
+    return emailChanged?.call(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    required TResult orElse(),
+  }) {
+    if (emailChanged != null) {
+      return emailChanged(email);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_EmailChanged value) emailChanged,
+  }) {
+    return emailChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_EmailChanged value)? emailChanged,
+  }) {
+    return emailChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_EmailChanged value)? emailChanged,
+    required TResult orElse(),
+  }) {
+    if (emailChanged != null) {
+      return emailChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _EmailChanged implements SignInEmailEvent {
+  const factory _EmailChanged(String email) = _$_EmailChanged;
+
+  @override
+  String get email;
+  @override
+  @JsonKey(ignore: true)
+  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$SignInEmailStateTearOff {
+  const _$SignInEmailStateTearOff();
+
+  _SignInEmailState call(
+      {String email = "",
+      bool canSubmit = false,
+      bool isLoading = false,
+      bool isSuccess = false,
+      String? errorText}) {
+    return _SignInEmailState(
+      email: email,
+      canSubmit: canSubmit,
+      isLoading: isLoading,
+      isSuccess: isSuccess,
+      errorText: errorText,
+    );
+  }
+}
+
+/// @nodoc
+const $SignInEmailState = _$SignInEmailStateTearOff();
+
+/// @nodoc
+mixin _$SignInEmailState {
+  String get email => throw _privateConstructorUsedError;
+  bool get canSubmit => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isSuccess => throw _privateConstructorUsedError;
+  String? get errorText => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SignInEmailStateCopyWith<SignInEmailState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignInEmailStateCopyWith<$Res> {
+  factory $SignInEmailStateCopyWith(
+          SignInEmailState value, $Res Function(SignInEmailState) then) =
+      _$SignInEmailStateCopyWithImpl<$Res>;
+  $Res call(
+      {String email,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText});
+}
+
+/// @nodoc
+class _$SignInEmailStateCopyWithImpl<$Res>
+    implements $SignInEmailStateCopyWith<$Res> {
+  _$SignInEmailStateCopyWithImpl(this._value, this._then);
+
+  final SignInEmailState _value;
+  // ignore: unused_field
+  final $Res Function(SignInEmailState) _then;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+    Object? canSubmit = freezed,
+    Object? isLoading = freezed,
+    Object? isSuccess = freezed,
+    Object? errorText = freezed,
+  }) {
+    return _then(_value.copyWith(
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      canSubmit: canSubmit == freezed
+          ? _value.canSubmit
+          : canSubmit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuccess: isSuccess == freezed
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorText: errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SignInEmailStateCopyWith<$Res>
+    implements $SignInEmailStateCopyWith<$Res> {
+  factory _$SignInEmailStateCopyWith(
+          _SignInEmailState value, $Res Function(_SignInEmailState) then) =
+      __$SignInEmailStateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String email,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText});
+}
+
+/// @nodoc
+class __$SignInEmailStateCopyWithImpl<$Res>
+    extends _$SignInEmailStateCopyWithImpl<$Res>
+    implements _$SignInEmailStateCopyWith<$Res> {
+  __$SignInEmailStateCopyWithImpl(
+      _SignInEmailState _value, $Res Function(_SignInEmailState) _then)
+      : super(_value, (v) => _then(v as _SignInEmailState));
+
+  @override
+  _SignInEmailState get _value => super._value as _SignInEmailState;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+    Object? canSubmit = freezed,
+    Object? isLoading = freezed,
+    Object? isSuccess = freezed,
+    Object? errorText = freezed,
+  }) {
+    return _then(_SignInEmailState(
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      canSubmit: canSubmit == freezed
+          ? _value.canSubmit
+          : canSubmit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuccess: isSuccess == freezed
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorText: errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SignInEmailState implements _SignInEmailState {
+  const _$_SignInEmailState(
+      {this.email = "",
+      this.canSubmit = false,
+      this.isLoading = false,
+      this.isSuccess = false,
+      this.errorText});
+
+  @JsonKey()
+  @override
+  final String email;
+  @JsonKey()
+  @override
+  final bool canSubmit;
+  @JsonKey()
+  @override
+  final bool isLoading;
+  @JsonKey()
+  @override
+  final bool isSuccess;
+  @override
+  final String? errorText;
+
+  @override
+  String toString() {
+    return 'SignInEmailState(email: $email, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SignInEmailState &&
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
+            const DeepCollectionEquality().equals(other.errorText, errorText));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(email),
+      const DeepCollectionEquality().hash(canSubmit),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(isSuccess),
+      const DeepCollectionEquality().hash(errorText));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SignInEmailStateCopyWith<_SignInEmailState> get copyWith =>
+      __$SignInEmailStateCopyWithImpl<_SignInEmailState>(this, _$identity);
+}
+
+abstract class _SignInEmailState implements SignInEmailState {
+  const factory _SignInEmailState(
+      {String email,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText}) = _$_SignInEmailState;
+
+  @override
+  String get email;
+  @override
+  bool get canSubmit;
+  @override
+  bool get isLoading;
+  @override
+  bool get isSuccess;
+  @override
+  String? get errorText;
+  @override
+  @JsonKey(ignore: true)
+  _$SignInEmailStateCopyWith<_SignInEmailState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$SignInEmailLinkEventTearOff {
+  const _$SignInEmailLinkEventTearOff();
+
+  _LinkEmailChanged emailChanged(String email) {
+    return _LinkEmailChanged(
       email,
     );
   }
@@ -55,19 +504,19 @@ mixin _$SignInEmailLinkEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_LinkEmailChanged value) emailChanged,
     required TResult Function(_SendLink value) sendLink,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_LinkEmailChanged value)? emailChanged,
     TResult Function(_SendLink value)? sendLink,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_LinkEmailChanged value)? emailChanged,
     TResult Function(_SendLink value)? sendLink,
     required TResult orElse(),
   }) =>
@@ -92,29 +541,29 @@ class _$SignInEmailLinkEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$EmailChangedCopyWith<$Res> {
-  factory _$EmailChangedCopyWith(
-          _EmailChanged value, $Res Function(_EmailChanged) then) =
-      __$EmailChangedCopyWithImpl<$Res>;
+abstract class _$LinkEmailChangedCopyWith<$Res> {
+  factory _$LinkEmailChangedCopyWith(
+          _LinkEmailChanged value, $Res Function(_LinkEmailChanged) then) =
+      __$LinkEmailChangedCopyWithImpl<$Res>;
   $Res call({String email});
 }
 
 /// @nodoc
-class __$EmailChangedCopyWithImpl<$Res>
+class __$LinkEmailChangedCopyWithImpl<$Res>
     extends _$SignInEmailLinkEventCopyWithImpl<$Res>
-    implements _$EmailChangedCopyWith<$Res> {
-  __$EmailChangedCopyWithImpl(
-      _EmailChanged _value, $Res Function(_EmailChanged) _then)
-      : super(_value, (v) => _then(v as _EmailChanged));
+    implements _$LinkEmailChangedCopyWith<$Res> {
+  __$LinkEmailChangedCopyWithImpl(
+      _LinkEmailChanged _value, $Res Function(_LinkEmailChanged) _then)
+      : super(_value, (v) => _then(v as _LinkEmailChanged));
 
   @override
-  _EmailChanged get _value => super._value as _EmailChanged;
+  _LinkEmailChanged get _value => super._value as _LinkEmailChanged;
 
   @override
   $Res call({
     Object? email = freezed,
   }) {
-    return _then(_EmailChanged(
+    return _then(_LinkEmailChanged(
       email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -125,8 +574,8 @@ class __$EmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmailChanged implements _EmailChanged {
-  const _$_EmailChanged(this.email);
+class _$_LinkEmailChanged implements _LinkEmailChanged {
+  const _$_LinkEmailChanged(this.email);
 
   @override
   final String email;
@@ -140,7 +589,7 @@ class _$_EmailChanged implements _EmailChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _EmailChanged &&
+            other is _LinkEmailChanged &&
             const DeepCollectionEquality().equals(other.email, email));
   }
 
@@ -150,8 +599,8 @@ class _$_EmailChanged implements _EmailChanged {
 
   @JsonKey(ignore: true)
   @override
-  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
-      __$EmailChangedCopyWithImpl<_EmailChanged>(this, _$identity);
+  _$LinkEmailChangedCopyWith<_LinkEmailChanged> get copyWith =>
+      __$LinkEmailChangedCopyWithImpl<_LinkEmailChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -187,7 +636,7 @@ class _$_EmailChanged implements _EmailChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_LinkEmailChanged value) emailChanged,
     required TResult Function(_SendLink value) sendLink,
   }) {
     return emailChanged(this);
@@ -196,7 +645,7 @@ class _$_EmailChanged implements _EmailChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_LinkEmailChanged value)? emailChanged,
     TResult Function(_SendLink value)? sendLink,
   }) {
     return emailChanged?.call(this);
@@ -205,7 +654,7 @@ class _$_EmailChanged implements _EmailChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_LinkEmailChanged value)? emailChanged,
     TResult Function(_SendLink value)? sendLink,
     required TResult orElse(),
   }) {
@@ -216,12 +665,12 @@ class _$_EmailChanged implements _EmailChanged {
   }
 }
 
-abstract class _EmailChanged implements SignInEmailLinkEvent {
-  const factory _EmailChanged(String email) = _$_EmailChanged;
+abstract class _LinkEmailChanged implements SignInEmailLinkEvent {
+  const factory _LinkEmailChanged(String email) = _$_LinkEmailChanged;
 
   String get email;
   @JsonKey(ignore: true)
-  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
+  _$LinkEmailChangedCopyWith<_LinkEmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -295,7 +744,7 @@ class _$_SendLink implements _SendLink {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_LinkEmailChanged value) emailChanged,
     required TResult Function(_SendLink value) sendLink,
   }) {
     return sendLink(this);
@@ -304,7 +753,7 @@ class _$_SendLink implements _SendLink {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_LinkEmailChanged value)? emailChanged,
     TResult Function(_SendLink value)? sendLink,
   }) {
     return sendLink?.call(this);
@@ -313,7 +762,7 @@ class _$_SendLink implements _SendLink {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_LinkEmailChanged value)? emailChanged,
     TResult Function(_SendLink value)? sendLink,
     required TResult orElse(),
   }) {

@@ -123,12 +123,11 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithEmail,
                       onPressed: () {
-                        final navigator =
-                            SignInNavigatorKeys.main.currentState!;
+                        final navigator = SignInRouter.main.currentState!;
                         if (supplier == SignInSupplier.emailLink) {
-                          navigator.pushNamed(SignInRoutes.signInEmailLinkPage);
+                          navigator.pushNamed(SignInRouter.signInEmailLinkPage);
                         } else {
-                          navigator.pushNamed(SignInRoutes.signInEmailPage);
+                          navigator.pushNamed(SignInRouter.signInEmailPage);
                         }
                       },
                     ),
