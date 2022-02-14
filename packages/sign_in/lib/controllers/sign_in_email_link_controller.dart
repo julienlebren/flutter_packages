@@ -44,7 +44,9 @@ class SignInEmailLinkController extends StateNotifier<SignInEmailLinkState> {
           canSubmit: email.isValidEmail(),
         );
       },
-      sendLink: () => _sendLink(),
+      sendLink: () {
+        _sendLink();
+      },
     );
   }
 
