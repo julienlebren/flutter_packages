@@ -57,8 +57,8 @@ class SignInButtons extends ConsumerWidget {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                for (var provider in suppliers) ...[
-                  if (provider == SignInSupplier.anonymous)
+                for (var supplier in suppliers) ...[
+                  if (supplier == SignInSupplier.anonymous)
                     SizedBox(
                       width: double.infinity,
                       child: PlatformTextButton(
@@ -70,7 +70,7 @@ class SignInButtons extends ConsumerWidget {
                         color: theme.buttonTextColor,
                       ),
                     ),
-                  if (provider == SignInSupplier.google)
+                  if (supplier == SignInSupplier.google)
                     SignInSupplierButton(
                       icon: SizedBox(
                         width: iconTidySize,
@@ -85,7 +85,7 @@ class SignInButtons extends ConsumerWidget {
                         _handleEvent(ref, const SignInEvent.signInWithGoogle());
                       },
                     ),
-                  if (provider == SignInSupplier.apple && isCupertino())
+                  if (supplier == SignInSupplier.apple && isCupertino())
                     SignInSupplierButton(
                       icon: SizedBox(
                         width: iconTidySize,
@@ -102,7 +102,7 @@ class SignInButtons extends ConsumerWidget {
                         _handleEvent(ref, const SignInEvent.signInWithApple());
                       },
                     ),
-                  if (provider == SignInSupplier.facebook)
+                  if (supplier == SignInSupplier.facebook)
                     SignInSupplierButton(
                       assetName: "assets/images/facebook-logo.png",
                       iconSize: iconSize,
@@ -112,8 +112,8 @@ class SignInButtons extends ConsumerWidget {
                             ref, const SignInEvent.signInWithFacebook());
                       },
                     ),
-                  if (provider == SignInSupplier.email ||
-                      provider == SignInSupplier.emailLink)
+                  if (supplier == SignInSupplier.email ||
+                      supplier == SignInSupplier.emailLink)
                     SignInSupplierButton(
                       icon: Icon(
                         Icons.email_outlined,
@@ -123,9 +123,10 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithEmail,
                       onPressed: () {
+                        print("supplier: $supplier");
                         final navigator =
                             SignInNavigatorKeys.main.currentState!;
-                        if (provider == SignInSupplier.emailLink) {
+                        if (supplier == SignInSupplier.emailLink) {
                           navigator.pushNamed(SignInRoutes.signInEmailLinkPage);
                         } else {
                           navigator.pushNamed(SignInRoutes.signInEmailPage);
