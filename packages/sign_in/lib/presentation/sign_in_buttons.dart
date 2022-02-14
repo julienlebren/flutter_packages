@@ -45,6 +45,9 @@ class SignInButtons extends ConsumerWidget {
     if (suppliers.contains(SignInSupplier.apple) && !isCupertino()) {
       boxHeight -= buttonHeight;
     }
+    if (suppliers.last != SignInSupplier.anonymous) {
+      boxHeight += 8;
+    }
 
     return SizedBox(
       height: boxHeight,
@@ -52,6 +55,7 @@ class SignInButtons extends ConsumerWidget {
           ? const Loader(delayBeforeDisplay: 0)
           : Column(
               mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 for (var provider in suppliers) ...[
                   if (provider == SignInSupplier.anonymous)
@@ -122,7 +126,6 @@ class SignInButtons extends ConsumerWidget {
                             .pushNamed(SignInRoutes.signInEmailPage);
                       },
                     ),
-                  SizedBox(height: theme.spaceBetweenButtons * 3),
                 ],
               ],
             ),
