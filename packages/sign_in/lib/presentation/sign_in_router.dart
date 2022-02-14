@@ -15,24 +15,27 @@ class SignInNavigatorKeys {
   static final modal = GlobalKey<NavigatorState>();
 }
 
-class SignInRouter extends ConsumerWidget {
+class SignInRouter extends StatelessWidget {
   const SignInRouter({
     Key? key,
     this.theme,
     this.localizations,
+    required this.authSettings,
     required this.landingPage,
     this.handleAdditionnalRoutes,
   }) : super(key: key);
 
   final SignInTheme? theme;
   final SignInLocalizations? localizations;
+  final AuthSettings authSettings;
   final Widget landingPage;
   final Function(String route)? handleAdditionnalRoutes;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return ProviderScope(
       overrides: [
+        authSettingsProvider.overrideWithValue(authSettings),
         if (theme != null) signInThemeProvider.overrideWithValue(theme!),
         if (localizations != null)
           signInLocalizationsProvider.overrideWithValue(localizations!),
@@ -63,7 +66,7 @@ class SignInRouter extends ConsumerWidget {
             return platformPageRoute(
               builder: (_) => Center(
                 child: Text(
-                    "This app called a page named ${settings.name} but the SignInRouter has not been configure dto handle this page."),
+                    "This app called a page named ${settings.name} but the SignInRouter has not been configured to handle this page."),
               ),
             );
           }

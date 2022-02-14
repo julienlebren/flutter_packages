@@ -38,6 +38,11 @@ class AuthSettings {
   Provider? needUserInfoProvider;
 }
 
+final authSettingsProvider = Provider<AuthSettings>((_) {
+  throw UnimplementedError(
+      "You forgot to override AuthSettings() before calling authSettingsProvider!");
+});
+
 final authStateProvider =
     Provider.family<AuthState, AuthSettings>((ref, settings) {
   final authStateChanges = ref.watch(authStateChangesProvider);
