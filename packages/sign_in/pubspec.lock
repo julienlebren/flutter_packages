@@ -205,14 +205,14 @@ packages:
     source: hosted
     version: "2.2.1"
   extensions:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "packages/extensions"
       ref: HEAD
-      resolved-ref: e3e8905f6aeb8d02dc0df94c4f0ea5f09979a659
+      resolved-ref: ff93f56d2da270f37e3121388ee0b934ecc66d42
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.1.5"
+    version: "0.1.6"
   fake_async:
     dependency: transitive
     description:

@@ -1,5 +1,10 @@
 part of '../sign_in.dart';
 
+void _handleEvent(WidgetRef ref, SignInEmailLinkEvent event) {
+  final controller = ref.read(signInEmailLinkControllerProvider.notifier);
+  controller.handleEvent(event);
+}
+
 class SignInEmailLinkPage extends StatelessWidget {
   const SignInEmailLinkPage({Key? key}) : super(key: key);
 
@@ -15,11 +20,8 @@ class SignInEmailLinkPageBuilder extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
-    final state = ref.watch(signInControllerProvider);
-    final isLoading = state.maybeWhen(
-      loading: () => true,
-      success: () => true,
-      orElse: () => false,
+    final isLoading = ref.watch(
+      signInEmailLinkControllerProvider.select((state) => state.isLoading),
     );
 
     return PlatformScaffold(
@@ -30,23 +32,23 @@ class SignInEmailLinkPageBuilder extends ConsumerWidget {
         title: l10n.signInWithEmailTitle,
         trailing: isLoading ? const FormLoader() : null,
       ),
-      body: const FormWithOverlay(
-        isSaving: false,
-        child: SignInEmailLinkPageForm(),
+      body: FormWithOverlay(
+        isSaving: isLoading,
+        child: const _SignInEmailLinkPageForm(),
       ),
     );
   }
 }
 
-class SignInEmailLinkPageForm extends ConsumerStatefulWidget {
-  const SignInEmailLinkPageForm({Key? key}) : super(key: key);
+class _SignInEmailLinkPageForm extends ConsumerStatefulWidget {
+  const _SignInEmailLinkPageForm({Key? key}) : super(key: key);
 
   @override
   createState() => _SignInEmailLinkPageFormState();
 }
 
 class _SignInEmailLinkPageFormState
-    extends ConsumerState<SignInEmailLinkPageForm> {
+    extends ConsumerState<_SignInEmailLinkPageForm> {
   final focusNode = FocusNode();
 
   @override
@@ -60,12 +62,7 @@ class _SignInEmailLinkPageFormState
   @override
   Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
-    final state = ref.watch(signInControllerProvider);
-    final isLoading = state.maybeWhen(
-      loading: () => true,
-      success: () => true,
-      orElse: () => false,
-    );
+
     return FormPage(
       children: [
         FormSection(
@@ -77,43 +74,35 @@ class _SignInEmailLinkPageFormState
                 placeholder: l10n.signInWithEmailPlaceholder,
                 autocorrect: false,
                 focusNode: focusNode,
-                onChanged: (String value) {},
+                onChanged: (String value) {
+                  _handleEvent(ref, SignInEmailLinkEvent.emailChanged(value));
+                },
               ),
             ),
           ],
           caption: l10n.signInWithEmailCaption,
         ),
-        PlatformFullSizedElevatedButton(
-          title: l10n.continueButton,
-          onPressed: canSubmit ? () {} : null,
-        ),
+        const _SignInEmailLinkSubmitButton(),
       ],
     );
   }
 }
 
-class SignInEmailPageSubmitButton extends ConsumerWidget {
-  const SignInEmailPageSubmitButton({
-    Key? key,
-    required this.canSubmit,
-    required this.isSaving,
-  }) : super(key: key);
-
-  _sendEmailLink(WidgetRef ref) {
-    final controller = ref.read(signInControllerProvider.notifier);
-    controller.handleEvent(event);
-  }
-
-  final bool isSaving;
-  final bool canSubmit;
+class _SignInEmailLinkSubmitButton extends ConsumerWidget {
+  const _SignInEmailLinkSubmitButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
+    final canSubmit = ref.watch(
+      signInEmailLinkControllerProvider.select((state) => state.canSubmit),
+    );
 
     return PlatformFullSizedElevatedButton(
       title: l10n.continueButton,
-      onPressed: canSubmit ? () => _verifyEmail(ref) : null,
+      onPressed: canSubmit
+          ? () => _handleEvent(ref, const SignInEmailLinkEvent.sendLink())
+          : null,
     );
   }
 }

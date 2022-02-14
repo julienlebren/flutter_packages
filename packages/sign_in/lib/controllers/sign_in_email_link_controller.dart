@@ -1,47 +1,68 @@
 part of '../sign_in.dart';
 
 final signInEmailLinkControllerProvider =
-    StateNotifierProvider<SignInEmailLinkController, SignInState>((ref) {
+    StateNotifierProvider<SignInEmailLinkController, SignInEmailLinkState>(
+        (ref) {
   final authSettings = ref.watch(authSettingsProvider);
   final service = ref.watch(authServiceProvider);
   return SignInEmailLinkController(service, authSettings.emailLinkUrl!);
 });
 
 @freezed
-class SignInEmailLinkEvent with _$SignInEvent {
+class SignInEmailLinkEvent with _$SignInEmailLinkEvent {
   const factory SignInEmailLinkEvent.emailChanged(String email) = _EmailChanged;
   const factory SignInEmailLinkEvent.sendLink() = _SendLink;
 }
 
-class SignInEmailLinkController extends StateNotifier<SignInState> {
+@freezed
+class SignInEmailLinkState with _$SignInEmailLinkState {
+  const factory SignInEmailLinkState({
+    @Default("") String email,
+    @Default(false) bool canSubmit,
+    @Default(false) bool isLoading,
+    @Default(false) bool isSuccess,
+    String? errorText,
+  }) = _SignInEmailLinkState;
+}
+
+class SignInEmailLinkController extends StateNotifier<SignInEmailLinkState> {
   SignInEmailLinkController(this._service, this._url)
-      : super(const SignInState.initial());
+      : super(const SignInEmailLinkState());
 
   final FirebaseAuthService _service;
   final String _url;
   late String _email;
 
-  Future<void> handleEvent(SignInEmailLinkEvent event) async {
-    state = const SignInState.loading();
+  void handleEvent(SignInEmailLinkEvent event) {
+    event.when(
+      emailChanged: (email) {
+        state = state.copyWith(
+          email: email,
+          canSubmit: state.email.isValidEmail(),
+        );
+      },
+      sendLink: () => _sendLink,
+    );
+  }
+
+  Future<void> _sendLink() async {
+    if (!state.canSubmit) return;
+    state = state.copyWith(isLoading: true);
+
     try {
-      await event.maybeWhen(
-        signInWithEmailLink: () => _service.sendSignInLinkToEmail(
-          email: _email,
-          url: _url,
-        ),
-        orElse: () => null,
+      await _service.sendSignInLinkToEmail(
+        email: state.email,
+        url: _url,
       );
-      state = const SignInState.success();
-    } on FirebaseAuthException catch (e) {
-      if (e.code == "ERROR_AUTHORIZATION_DENIED") {
-        state = const SignInState.initial();
-      } else if (e.code != "ERROR_ABORTED_BY_USER") {
-        state = SignInState.error(e.toString());
-      } else {
-        state = const SignInState.initial();
-      }
-    } on Exception catch (e) {
-      state = SignInState.error(e.toString());
+
+      state = state.copyWith(
+        isSuccess: true,
+      );
+    } catch (e) {
+      state = state.copyWith(
+        isLoading: false,
+        errorText: e.toString(),
+      );
     }
   }
 }
