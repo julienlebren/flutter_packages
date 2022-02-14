@@ -15,27 +15,31 @@ class SignInLandingPage extends ConsumerWidget {
     final theme = ref.watch(signInThemeProvider);
 
     return PlatformScaffold(
-      body: DecoratedBox(
-        decoration: BoxDecoration(
-          image: theme.landingBackgroundImage != null
-              ? DecorationImage(
-                  image: AssetImage(theme.landingBackgroundImage!),
-                  fit: BoxFit.cover,
-                )
-              : null,
-        ),
-        child: SafeArea(
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 40.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                const Spacer(),
-                logo,
-                const Spacer(),
-                buttons,
-              ],
+      body: SafeArea(
+        top: false,
+        bottom: false,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            image: theme.landingBackgroundImage != null
+                ? DecorationImage(
+                    image: AssetImage(theme.landingBackgroundImage!),
+                    fit: BoxFit.cover,
+                  )
+                : null,
+          ),
+          child: SafeArea(
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 40.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  const Spacer(),
+                  logo,
+                  const Spacer(),
+                  buttons,
+                ],
+              ),
             ),
           ),
         ),

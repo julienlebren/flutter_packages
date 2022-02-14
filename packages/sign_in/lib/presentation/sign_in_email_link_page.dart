@@ -17,9 +17,9 @@ class SignInEmailLinkPage extends ConsumerWidget {
 
     ref.listen<SignInEmailLinkState>(signInEmailLinkControllerProvider,
         (_, state) {
-      print("state is $state");
       if (state.isSuccess) {
-        print("success!");
+        final navigator = SignInNavigatorKeys.main.currentState!;
+        navigator.pop();
       } else if (state.errorText != null) {
         showErrorDialog(
           context,
