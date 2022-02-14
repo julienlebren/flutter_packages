@@ -23,10 +23,6 @@ class SignInRouter extends StatelessWidget {
       onGenerateRoute: (RouteSettings settings) {
         if (settings.name != null) {
           switch (settings.name) {
-            case SignInRoutes.signInLandingPage:
-              return platformPageRoute(
-                builder: (_) => const SignInLandingPage(),
-              );
             case SignInRoutes.signInEmailPage:
               return platformPageRoute(
                 builder: (_) => const SignInEmailPage(),

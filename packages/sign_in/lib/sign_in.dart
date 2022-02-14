@@ -1,6 +1,5 @@
 library sign_in;
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth_service/firebase_auth_service.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,7 +17,7 @@ part 'core/models/sign_in_event.dart';
 part 'core/models/sign_in_localizations.dart';
 part 'core/models/sign_in_state.dart';
 part 'core/models/sign_in_theme.dart';
-part 'presentation/common_widgets/sign_in_button.dart';
+part 'presentation/sign_in_buttons.dart';
 part 'presentation/sign_in_landing_page.dart';
 part 'presentation/sign_in_navigator.dart';
 part 'presentation/sign_in_email_page.dart';
