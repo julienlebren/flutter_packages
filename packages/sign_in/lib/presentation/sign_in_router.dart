@@ -14,7 +14,7 @@ class SignInRouter {
 
   handleAdditionnalRoutes(String route) {}
 
-  Route<dynamic>? onGenerateRoute(RouteSettings settings) {
+  static Route<dynamic>? _onGenerateRoute(RouteSettings settings) {
     if (settings.name != null) {
       print("[SignInRouter] Route is ${settings.name}");
       switch (settings.name) {
@@ -33,7 +33,6 @@ class SignInRouter {
             builder: (_) => const SignInEmailPasswordPage(),
           );
       }
-      handleAdditionnalRoutes(settings.name!);
 
       return platformPageRoute(
         builder: (_) => Center(
@@ -46,6 +45,9 @@ class SignInRouter {
     }
     return null;
   }
+
+  static Route<dynamic>? onGenerateRoute(RouteSettings settings) =>
+      _onGenerateRoute(settings);
 }
 
 class SignInRouterX extends SignInRouter {
@@ -53,9 +55,10 @@ class SignInRouterX extends SignInRouter {
   static const signInProfile = '/sign-in/profile';
 
   @override
-  handleAdditionnalRoutes(String route) {
-    print("[SignInRouterX] Route is $route");
-    switch (route) {
+  static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
+    SignInRouter._onGenerateRoute(settings);
+    print("[SignInRouterX] Route is ${settings.name}");
+    switch (settings.name) {
       case signInLandingPage:
         return platformPageRoute(
           builder: (_) =>
@@ -98,7 +101,7 @@ class SignInNavigator extends StatelessWidget {
       child: Navigator(
         key: SignInRouter.main,
         initialRoute: SignInRouterX.signInLandingPage,
-        onGenerateRoute: SignInRouterX().onGenerateRoute,
+        onGenerateRoute: SignInRouterX.onGenerateRoute,
       ),
     );
   }
