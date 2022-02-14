@@ -253,10 +253,10 @@ packages:
     description:
       path: "packages/firebase_auth_service"
       ref: HEAD
-      resolved-ref: ca1b3651d4422355c2aa3ad7e93d058f417bd0d8
+      resolved-ref: "424473c8d164d3f8f23e6e7dc90c72b1726e843a"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.4.1"
+    version: "0.5.0"
   firebase_auth_web:
     dependency: transitive
     description:

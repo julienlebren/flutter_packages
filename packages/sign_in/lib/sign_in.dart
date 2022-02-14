@@ -11,6 +11,7 @@ import 'package:sign_in/presentation/painters/apple_logo.dart';
 import 'package:sign_in/presentation/painters/google_logo.dart';
 
 part 'controllers/sign_in_controller.dart';
+part 'controllers/sign_in_email_link_controller.dart';
 part 'core/enums/sign_in_suppliers.dart';
 part 'core/models/auth_state.dart';
 part 'core/models/sign_in_event.dart';
@@ -27,16 +28,16 @@ part 'presentation/sign_in_button.dart';
 //part 'presentation/sign_in_widget.dart';
 part 'sign_in.freezed.dart';
 
-final signInControllerProvider =
-    StateNotifierProvider<SignInController, SignInState>((ref) {
-  final service = ref.watch(authServiceProvider);
-  return SignInController(service);
-});
-
 class AuthSettings {
-  AuthSettings(this.userStreamProvider, [this.needUserInfoProvider]);
+  AuthSettings(
+    this.userStreamProvider, {
+    this.needUserInfoProvider,
+    this.emailLinkUrl,
+  });
+
   StreamProvider userStreamProvider;
   Provider? needUserInfoProvider;
+  String? emailLinkUrl;
 }
 
 final authSettingsProvider = Provider<AuthSettings>((_) {

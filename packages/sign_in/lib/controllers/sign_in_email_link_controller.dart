@@ -1,24 +1,27 @@
 part of '../sign_in.dart';
 
-final signInControllerProvider =
-    StateNotifierProvider<SignInController, SignInState>((ref) {
+final signInEmailLinkControllerProvider =
+    StateNotifierProvider<SignInEmailLinkController, SignInState>((ref) {
+  final authSettings = ref.watch(authSettingsProvider);
   final service = ref.watch(authServiceProvider);
-  return SignInController(service);
+  return SignInEmailLinkController(service, authSettings.emailLinkUrl!);
 });
 
-class SignInController extends StateNotifier<SignInState> {
-  SignInController(this._service) : super(const SignInState.initial());
+class SignInEmailLinkController extends StateNotifier<SignInState> {
+  SignInEmailLinkController(this._service, this._url)
+      : super(const SignInState.initial());
 
   final FirebaseAuthService _service;
+  final String _url;
 
   Future<void> handleEvent(SignInEvent event) async {
     state = const SignInState.loading();
     try {
       await event.maybeWhen(
-        signInWithApple: _service.signInWithApple,
-        signInWithFacebook: _service.signInWithFacebook,
-        signInWithGoogle: _service.signInWithGoogle,
-        signInAnonymously: _service.signInAnonymously,
+        signInWithEmailLink: (email) => _service.sendSignInLinkToEmail(
+          email: email,
+          url: _url,
+        ),
         orElse: () => null,
       );
       state = const SignInState.success();
@@ -30,15 +33,6 @@ class SignInController extends StateNotifier<SignInState> {
       } else {
         state = const SignInState.initial();
       }
-    } on Exception catch (e) {
-      state = SignInState.error(e.toString());
-    }
-  }
-
-  Future<void> signOut() async {
-    try {
-      _service.signOut();
-      state = const SignInState.initial();
     } on Exception catch (e) {
       state = SignInState.error(e.toString());
     }
