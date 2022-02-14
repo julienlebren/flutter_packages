@@ -6,7 +6,7 @@ final signInEmailLinkControllerProvider =
   final authSettings = ref.watch(authSettingsProvider);
   final service = ref.watch(authServiceProvider);
   return SignInEmailLinkController(service, authSettings.emailLinkUrl!);
-});
+}, dependencies: [authSettingsProvider]);
 
 @freezed
 class SignInEmailLinkEvent with _$SignInEmailLinkEvent {
