@@ -2,6 +2,7 @@ part of '../sign_in.dart';
 
 void _handleEvent(WidgetRef ref, SignInEmailLinkEvent event) {
   final controller = ref.read(signInEmailLinkControllerProvider.notifier);
+  print("ici $event");
   controller.handleEvent(event);
 }
 

@@ -34,9 +34,9 @@ class SignInEmailLinkController extends StateNotifier<SignInEmailLinkState> {
 
   final FirebaseAuthService _service;
   final String _url;
-  late String _email;
 
   void handleEvent(SignInEmailLinkEvent event) {
+    print("là $event");
     event.when(
       emailChanged: (email) {
         state = state.copyWith(
