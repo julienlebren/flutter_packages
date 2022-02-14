@@ -7,19 +7,26 @@ final signInEmailLinkControllerProvider =
   return SignInEmailLinkController(service, authSettings.emailLinkUrl!);
 });
 
+@freezed
+class SignInEmailLinkEvent with _$SignInEvent {
+  const factory SignInEmailLinkEvent.emailChanged(String email) = _EmailChanged;
+  const factory SignInEmailLinkEvent.sendLink() = _SendLink;
+}
+
 class SignInEmailLinkController extends StateNotifier<SignInState> {
   SignInEmailLinkController(this._service, this._url)
       : super(const SignInState.initial());
 
   final FirebaseAuthService _service;
   final String _url;
+  late String _email;
 
-  Future<void> handleEvent(SignInEvent event) async {
+  Future<void> handleEvent(SignInEmailLinkEvent event) async {
     state = const SignInState.loading();
     try {
       await event.maybeWhen(
-        signInWithEmailLink: (email) => _service.sendSignInLinkToEmail(
-          email: email,
+        signInWithEmailLink: () => _service.sendSignInLinkToEmail(
+          email: _email,
           url: _url,
         ),
         orElse: () => null,

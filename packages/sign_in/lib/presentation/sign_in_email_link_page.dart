@@ -15,6 +15,12 @@ class SignInEmailLinkPageBuilder extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
+    final state = ref.watch(signInControllerProvider);
+    final isLoading = state.maybeWhen(
+      loading: () => true,
+      success: () => true,
+      orElse: () => false,
+    );
 
     return PlatformScaffold(
       appBar: PlatformNavigationBar(
@@ -22,6 +28,7 @@ class SignInEmailLinkPageBuilder extends ConsumerWidget {
           onPressed: () => Navigator.pop(context),
         ),
         title: l10n.signInWithEmailTitle,
+        trailing: isLoading ? const FormLoader() : null,
       ),
       body: const FormWithOverlay(
         isSaving: false,
@@ -53,7 +60,12 @@ class _SignInEmailLinkPageFormState
   @override
   Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
-
+    final state = ref.watch(signInControllerProvider);
+    final isLoading = state.maybeWhen(
+      loading: () => true,
+      success: () => true,
+      orElse: () => false,
+    );
     return FormPage(
       children: [
         FormSection(
@@ -71,8 +83,37 @@ class _SignInEmailLinkPageFormState
           ],
           caption: l10n.signInWithEmailCaption,
         ),
-        const SignInEmailPageSubmitButton(canSubmit: true, isSaving: false),
+        PlatformFullSizedElevatedButton(
+          title: l10n.continueButton,
+          onPressed: canSubmit ? () {} : null,
+        ),
       ],
+    );
+  }
+}
+
+class SignInEmailPageSubmitButton extends ConsumerWidget {
+  const SignInEmailPageSubmitButton({
+    Key? key,
+    required this.canSubmit,
+    required this.isSaving,
+  }) : super(key: key);
+
+  _sendEmailLink(WidgetRef ref) {
+    final controller = ref.read(signInControllerProvider.notifier);
+    controller.handleEvent(event);
+  }
+
+  final bool isSaving;
+  final bool canSubmit;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(signInLocalizationsProvider);
+
+    return PlatformFullSizedElevatedButton(
+      title: l10n.continueButton,
+      onPressed: canSubmit ? () => _verifyEmail(ref) : null,
     );
   }
 }

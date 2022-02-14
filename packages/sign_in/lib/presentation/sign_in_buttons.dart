@@ -123,7 +123,6 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithEmail,
                       onPressed: () {
-                        print("supplier: $supplier");
                         final navigator =
                             SignInNavigatorKeys.main.currentState!;
                         if (supplier == SignInSupplier.emailLink) {
