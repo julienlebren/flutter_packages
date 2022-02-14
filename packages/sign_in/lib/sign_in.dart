@@ -19,7 +19,7 @@ part 'core/models/sign_in_state.dart';
 part 'core/models/sign_in_theme.dart';
 part 'presentation/sign_in_buttons.dart';
 part 'presentation/sign_in_landing_page.dart';
-part 'presentation/sign_in_navigator.dart';
+part 'presentation/sign_in_router.dart';
 part 'presentation/sign_in_email_page.dart';
 part 'presentation/sign_in_email_password_page.dart';
 part 'presentation/sign_in_button.dart';

@@ -46,7 +46,7 @@ class SignInButtons extends ConsumerWidget {
       boxHeight -= buttonHeight;
     }
     if (suppliers.last != SignInSupplier.anonymous) {
-      boxHeight += 8;
+      boxHeight += 16;
     }
 
     return SizedBox(
