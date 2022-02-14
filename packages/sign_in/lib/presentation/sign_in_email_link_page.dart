@@ -5,17 +5,8 @@ void _handleEvent(WidgetRef ref, SignInEmailLinkEvent event) {
   controller.handleEvent(event);
 }
 
-class SignInEmailLinkPage extends StatelessWidget {
+class SignInEmailLinkPage extends ConsumerWidget {
   const SignInEmailLinkPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const SignInEmailLinkPageBuilder();
-  }
-}
-
-class SignInEmailLinkPageBuilder extends ConsumerWidget {
-  const SignInEmailLinkPageBuilder({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -23,6 +14,20 @@ class SignInEmailLinkPageBuilder extends ConsumerWidget {
     final isLoading = ref.watch(
       signInEmailLinkControllerProvider.select((state) => state.isLoading),
     );
+
+    ref.listen<SignInEmailLinkState>(signInEmailLinkControllerProvider,
+        (_, state) {
+      if (state.isSuccess) {
+        print("success!");
+      } else if (state.errorText != null) {
+        showErrorDialog(
+          context,
+          ref,
+          title: l10n.errorTitle,
+          content: state.errorText,
+        );
+      }
+    });
 
     return PlatformScaffold(
       appBar: PlatformNavigationBar(
