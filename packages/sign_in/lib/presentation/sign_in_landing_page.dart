@@ -15,6 +15,7 @@ class SignInLandingPageBuilder extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final appTheme = ref.watch(appThemeProvider);
     final theme = ref.watch(signInThemeProvider);
     final authSettings = ref.watch(authSettingsProvider);
     final needUserInfo = (authSettings.needUserInfoProvider != null
@@ -26,6 +27,7 @@ class SignInLandingPageBuilder extends ConsumerWidget {
       bottom: false,
       child: DecoratedBox(
         decoration: BoxDecoration(
+          color: appTheme.scaffoldBackgroundColor,
           image: theme.landingBackgroundImage != null
               ? DecorationImage(
                   image: AssetImage(theme.landingBackgroundImage!),
