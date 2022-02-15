@@ -15,8 +15,11 @@ class SignInButtons extends ConsumerWidget {
     );
     event.maybeWhen(
       signInWithEmailLink: (_) {
-        final navigator = SignInMainRouter.navigatorKey.currentState!;
-        navigator.pushNamed(SignInRoutes.signInLinkPage);
+        final navigator = SignInRouter.main.currentState!;
+        navigator.pushNamed(
+          SignInRoutes.signInRouterPage,
+          arguments: SignInRoutes.signInLinkPage,
+        );
       },
       orElse: () {
         final controller = ref.read(signInControllerProvider.notifier);
@@ -62,6 +65,8 @@ class SignInButtons extends ConsumerWidget {
     }
     if (suppliers.last != SignInSupplier.anonymous) {
       boxHeight += 16;
+    } else {
+      boxHeight += 8;
     }
 
     return SizedBox(
