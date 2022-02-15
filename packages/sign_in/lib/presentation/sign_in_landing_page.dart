@@ -23,6 +23,7 @@ class SignInLandingPageBuilder extends ConsumerWidget {
 
     return DecoratedBox(
       decoration: BoxDecoration(
+        color: Colors.orangeAccent,
         image: theme.landingBackgroundImage != null
             ? DecorationImage(
                 image: AssetImage(theme.landingBackgroundImage!),
