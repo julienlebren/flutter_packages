@@ -33,7 +33,10 @@ class SignInEmailLinkPage extends ConsumerWidget {
     return PlatformScaffold(
       appBar: PlatformNavigationBar(
         leading: PlatformNavigationBarCloseButton(
-          onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            final navigator = SignInRouter.main.currentState!;
+            navigator.pop();
+          },
         ),
         title: l10n.signInWithEmailTitle,
         trailing: isLoading ? const FormLoader() : null,
