@@ -5,9 +5,24 @@ class SignInButtons extends ConsumerWidget {
 
   final List<SignInSupplier> suppliers;
 
-  void _handleEvent(WidgetRef ref, SignInEvent event) {
-    final controller = ref.read(signInControllerProvider.notifier);
-    controller.handleEvent(event);
+  void _handleSignIn(WidgetRef ref, SignInEvent event) {
+    ref.read(signInSupplierProvider.state).state = event.when(
+      signInWithFacebook: () => SignInSupplier.facebook,
+      signInWithGoogle: () => SignInSupplier.google,
+      signInWithApple: () => SignInSupplier.apple,
+      signInWithEmailLink: (_) => SignInSupplier.emailLink,
+      signInAnonymously: () => SignInSupplier.anonymous,
+    );
+    event.maybeWhen(
+      signInWithEmailLink: (_) {
+        final navigator = SignInRouter.main.currentState!;
+        navigator.pushNamed(SignInRouter.signInLinkPage);
+      },
+      orElse: () {
+        final controller = ref.read(signInControllerProvider.notifier);
+        controller.handleEvent(event);
+      },
+    );
   }
 
   @override
@@ -64,7 +79,7 @@ class SignInButtons extends ConsumerWidget {
                       child: PlatformTextButton(
                         title: l10n.signInAnonymously,
                         onPressed: () {
-                          _handleEvent(
+                          _handleSignIn(
                               ref, const SignInEvent.signInAnonymously());
                         },
                         color: theme.buttonTextColor,
@@ -82,7 +97,8 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithGoogle,
                       onPressed: () {
-                        _handleEvent(ref, const SignInEvent.signInWithGoogle());
+                        _handleSignIn(
+                            ref, const SignInEvent.signInWithGoogle());
                       },
                     ),
                   if (supplier == SignInSupplier.apple && isCupertino())
@@ -99,7 +115,7 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithApple,
                       onPressed: () {
-                        _handleEvent(ref, const SignInEvent.signInWithApple());
+                        _handleSignIn(ref, const SignInEvent.signInWithApple());
                       },
                     ),
                   if (supplier == SignInSupplier.facebook)
@@ -108,7 +124,7 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithFacebook,
                       onPressed: () {
-                        _handleEvent(
+                        _handleSignIn(
                             ref, const SignInEvent.signInWithFacebook());
                       },
                     ),
@@ -123,12 +139,8 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithEmail,
                       onPressed: () {
-                        final navigator = SignInRouter.main.currentState!;
-                        if (supplier == SignInSupplier.emailLink) {
-                          navigator.pushNamed(SignInRouter.signInEmailLinkPage);
-                        } else {
-                          navigator.pushNamed(SignInRouter.signInEmailPage);
-                        }
+                        _handleSignIn(
+                            ref, const SignInEvent.signInWithEmailLink(""));
                       },
                     ),
                   SizedBox(height: theme.spaceBetweenButtons),
@@ -176,6 +188,21 @@ class SignInSupplierButton extends ConsumerWidget {
           onPressed: onPressed,
         ),
       ),
+    );
+  }
+}
+
+class SignInCompleteButton extends StatelessWidget {
+  const SignInCompleteButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: const [
+        Text("Your profile is incomplete."),
+      ],
     );
   }
 }

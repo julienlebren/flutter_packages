@@ -5,7 +5,7 @@ final signInEmailLinkControllerProvider =
         (ref) {
   final authSettings = ref.watch(authSettingsProvider);
   final service = ref.watch(authServiceProvider);
-  return SignInEmailLinkController(service, authSettings.emailLinkUrl!);
+  return SignInEmailLinkController(service, "authSettings.emailLinkUrl!");
 }, dependencies: [
   authSettingsProvider,
   authServiceProvider,

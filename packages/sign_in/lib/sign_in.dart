@@ -26,6 +26,7 @@ part 'presentation/sign_in_router.dart';
 part 'presentation/sign_in_email_link_page.dart';
 part 'presentation/sign_in_email_page.dart';
 part 'presentation/sign_in_email_password_page.dart';
+part 'presentation/sign_in_phone_page.dart';
 part 'presentation/sign_in_button.dart';
 //part 'presentation/sign_in_widget.dart';
 part 'sign_in.freezed.dart';
@@ -34,12 +35,10 @@ class AuthSettings {
   AuthSettings(
     this.userStreamProvider, {
     this.needUserInfoProvider,
-    this.emailLinkUrl,
   });
 
   StreamProvider userStreamProvider;
   Provider? needUserInfoProvider;
-  String? emailLinkUrl;
 }
 
 final authSettingsProvider = Provider<AuthSettings>((_) {

@@ -1,7 +1,10 @@
 part of '../sign_in.dart';
 
-class SignInLandingPage extends ConsumerWidget {
-  const SignInLandingPage({
+final signInSupplierProvider =
+    StateProvider<SignInSupplier>((_) => SignInSupplier.anonymous);
+
+class SignInLandingPageBuilder extends ConsumerWidget {
+  const SignInLandingPageBuilder({
     Key? key,
     required this.logo,
     required this.buttons,
@@ -13,6 +16,10 @@ class SignInLandingPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(signInThemeProvider);
+    final authSettings = ref.watch(authSettingsProvider);
+    final needUserInfo = (authSettings.needUserInfoProvider != null
+        ? ref.read(authSettings.needUserInfoProvider!)
+        : false);
 
     return PlatformScaffold(
       body: DecoratedBox(
@@ -35,7 +42,7 @@ class SignInLandingPage extends ConsumerWidget {
                 const Spacer(),
                 logo,
                 const Spacer(),
-                buttons,
+                if (needUserInfo) const SignInCompleteButton() else buttons,
               ],
             ),
           ),
