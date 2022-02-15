@@ -15,8 +15,8 @@ class SignInButtons extends ConsumerWidget {
     );
     event.maybeWhen(
       signInWithEmailLink: (_) {
-        final navigator = SignInRouter.main.currentState!;
-        navigator.pushNamed(SignInRouter.signInLinkPage);
+        final navigator = SignInModalRouter.navigatorKey.currentState!;
+        navigator.pushNamed(SignInRoutes.signInLinkPage);
       },
       orElse: () {
         final controller = ref.read(signInControllerProvider.notifier);

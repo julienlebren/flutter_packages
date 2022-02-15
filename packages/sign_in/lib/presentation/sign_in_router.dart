@@ -1,44 +1,44 @@
 part of '../sign_in.dart';
 
-class SignInSettings {
-  SignInSettings({
-    this.needUserInfoPage,
-    this.emailLinkUrl,
-  });
-
-  String? needUserInfoPage;
-  String? emailLinkUrl;
-}
-
-class SignInRouter {
-  static final main = GlobalKey<NavigatorState>();
-  static final signIn = GlobalKey<NavigatorState>();
-
+class SignInRoutes {
   static const signInEmailPage = 'sign-in/email';
+  static const signInEmailPasswordPage = 'sign-in/email/password';
+  static const signInEmailRecoverPage = 'sign-in/email/recover';
+  static const signInEmailRegisterPage = 'sign-in/email/register';
   static const signInLinkPage = 'sign-in/link';
   static const signInPhonePage = 'sign-in/phone';
+  static const signInVerificationPage = 'sign-in/phone/verification';
+}
 
-  /*static Route<dynamic>? onGenerateModalRoute(RouteSettings settings) {
+class SignInMainRouter {
+  static final navigatorKey = GlobalKey<NavigatorState>();
+
+  static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     return platformPageRoute(
       builder: (_) => SignInNavigator(
+        navigatorKey: SignInModalRouter.navigatorKey,
         initialRoute: settings.name!,
-        onGenerateRoute: onGenerateRoute,
+        onGenerateRoute: SignInModalRouter.onGenerateRoute,
       ),
       fullscreenDialog: true,
     );
-  }*/
+  }
+}
+
+class SignInModalRouter {
+  static final navigatorKey = GlobalKey<NavigatorState>();
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case signInEmailPage:
+      case SignInRoutes.signInEmailPage:
         return platformPageRoute(
           builder: (_) => const SignInEmailPage(),
         );
-      case signInLinkPage:
+      case SignInRoutes.signInLinkPage:
         return platformPageRoute(
           builder: (_) => const SignInEmailLinkPage(),
         );
-      case signInPhonePage:
+      case SignInRoutes.signInPhonePage:
         return platformPageRoute(
           builder: (_) => const SignInPhonePage(),
         );
@@ -75,13 +75,6 @@ class SignInNavigator extends StatelessWidget {
 class BaseSignInRouter {
   static final signIn = GlobalKey<NavigatorState>();
 
-  static const signInEmailPage = 'sign-in/email';
-  static const signInEmailLinkPage = 'sign-in/email/link';
-  static const signInEmailPasswordPage = 'sign-in/email/password';
-  static const signInEmailRecoverPage = 'sign-in/email/recover';
-  static const signInEmailRegisterPage = 'sign-in/email/register';
-  static const signInPhonePage = 'sign-in/phone';
-  static const signInVerificationPage = 'sign-in/phone/verification';
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     if (settings.name != null) {

@@ -12,8 +12,8 @@ class SignInEmailPage extends ConsumerWidget {
 
     ref.listen<SignInEmailState>(signInEmailControllerProvider, (_, state) {
       if (state.isSuccess) {
-        final navigator = SignInRouter.main.currentState!;
-        navigator.pop();
+        //final navigator = SignInRouter.main.currentState!;
+        //navigator.pop();
       } else if (state.errorText != null) {
         showErrorDialog(
           context,
