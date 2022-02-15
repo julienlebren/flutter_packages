@@ -40,6 +40,7 @@ class SignInRouter {
           builder: (_) => SignInModalNavigator(
             routeName: settings.arguments as String,
           ),
+          fullscreenDialog: true,
         );
       case SignInRoutes.signInEmailPage:
         return platformPageRoute(
