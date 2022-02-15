@@ -5,7 +5,7 @@ class SignInButtons extends ConsumerWidget {
 
   final List<SignInSupplier> suppliers;
 
-  void _handleSignIn(BuildContext context, WidgetRef ref, SignInEvent event) {
+  void _handleSignIn(WidgetRef ref, SignInEvent event) {
     ref.read(signInSupplierProvider.state).state = event.when(
       signInWithFacebook: () => SignInSupplier.facebook,
       signInWithGoogle: () => SignInSupplier.google,
@@ -15,7 +15,7 @@ class SignInButtons extends ConsumerWidget {
     );
     event.maybeWhen(
       signInWithEmailLink: (_) {
-        final navigator = Navigator.of(context, rootNavigator: true);
+        final navigator = SignInRouter.main.currentState!;
         navigator.pushNamed(SignInRouter.signInLinkPage);
       },
       orElse: () {
@@ -79,8 +79,8 @@ class SignInButtons extends ConsumerWidget {
                       child: PlatformTextButton(
                         title: l10n.signInAnonymously,
                         onPressed: () {
-                          _handleSignIn(context, ref,
-                              const SignInEvent.signInAnonymously());
+                          _handleSignIn(
+                              ref, const SignInEvent.signInAnonymously());
                         },
                         color: theme.buttonTextColor,
                       ),
@@ -98,7 +98,7 @@ class SignInButtons extends ConsumerWidget {
                       title: l10n.signInWithGoogle,
                       onPressed: () {
                         _handleSignIn(
-                            context, ref, const SignInEvent.signInWithGoogle());
+                            ref, const SignInEvent.signInWithGoogle());
                       },
                     ),
                   if (supplier == SignInSupplier.apple && isCupertino())
@@ -115,8 +115,7 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithApple,
                       onPressed: () {
-                        _handleSignIn(
-                            context, ref, const SignInEvent.signInWithApple());
+                        _handleSignIn(ref, const SignInEvent.signInWithApple());
                       },
                     ),
                   if (supplier == SignInSupplier.facebook)
@@ -125,8 +124,8 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithFacebook,
                       onPressed: () {
-                        _handleSignIn(context, ref,
-                            const SignInEvent.signInWithFacebook());
+                        _handleSignIn(
+                            ref, const SignInEvent.signInWithFacebook());
                       },
                     ),
                   if (supplier == SignInSupplier.email ||
@@ -140,8 +139,8 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithEmail,
                       onPressed: () {
-                        _handleSignIn(context, ref,
-                            const SignInEvent.signInWithEmailLink(""));
+                        _handleSignIn(
+                            ref, const SignInEvent.signInWithEmailLink(""));
                       },
                     ),
                   SizedBox(height: theme.spaceBetweenButtons),

@@ -28,8 +28,8 @@ class SignInRouter {
     );
   }
 
-  static Route<dynamic>? handleBaseRoute(String route) {
-    switch (route) {
+  static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
+    switch (settings.name) {
       case signInEmailPage:
         return platformPageRoute(
           builder: (_) => const SignInEmailPage(),
@@ -47,9 +47,6 @@ class SignInRouter {
       builder: (_) => const SignInUnknownPage(),
     );
   }
-
-  static Route<dynamic>? onGenerateRoute(RouteSettings settings) =>
-      handleBaseRoute(settings.name!);
 }
 
 class SignInNavigator extends StatelessWidget {
