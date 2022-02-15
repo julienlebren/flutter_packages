@@ -28,17 +28,15 @@ class SignInRouter {
     );
   }
 
-  static Route<dynamic>? handleBaseRoutes(String route) {
+  static Route<dynamic>? handleBaseRoute(String route) {
     switch (route) {
       case signInEmailPage:
         return platformPageRoute(
           builder: (_) => const SignInEmailPage(),
-          fullscreenDialog: true,
         );
       case signInLinkPage:
         return platformPageRoute(
           builder: (_) => const SignInEmailLinkPage(),
-          fullscreenDialog: true,
         );
       case signInPhonePage:
         return platformPageRoute(
@@ -51,7 +49,7 @@ class SignInRouter {
   }
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) =>
-      handleBaseRoutes(settings.name!);
+      handleBaseRoute(settings.name!);
 }
 
 class SignInNavigator extends StatelessWidget {
