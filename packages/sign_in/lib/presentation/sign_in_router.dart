@@ -18,7 +18,7 @@ class SignInRouter {
   static const signInLinkPage = 'sign-in/link';
   static const signInPhonePage = 'sign-in/phone';
 
-  static Route<dynamic>? onGenerateModalRoute(RouteSettings settings) {
+  /*static Route<dynamic>? onGenerateModalRoute(RouteSettings settings) {
     return platformPageRoute(
       builder: (_) => SignInNavigator(
         initialRoute: settings.name!,
@@ -26,7 +26,7 @@ class SignInRouter {
       ),
       fullscreenDialog: true,
     );
-  }
+  }*/
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -52,17 +52,19 @@ class SignInRouter {
 class SignInNavigator extends StatelessWidget {
   const SignInNavigator({
     Key? key,
+    required this.navigatorKey,
     required this.initialRoute,
     required this.onGenerateRoute,
   }) : super(key: key);
 
+  final GlobalKey<NavigatorState> navigatorKey;
   final String initialRoute;
   final Route<dynamic>? Function(RouteSettings settings) onGenerateRoute;
 
   @override
   Widget build(BuildContext context) {
     return Navigator(
-      key: key,
+      key: navigatorKey,
       initialRoute: initialRoute,
       onGenerateRoute: onGenerateRoute,
     );
