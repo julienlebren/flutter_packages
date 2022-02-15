@@ -15,8 +15,8 @@ class SignInMainRouter {
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     return platformPageRoute(
-      builder: (_) => SignInNavigator(
-        navigatorKey: SignInModalRouter.navigatorKey,
+      builder: (_) => Navigator(
+        key: SignInModalRouter.navigatorKey,
         initialRoute: settings.name!,
         onGenerateRoute: SignInModalRouter.onGenerateRoute,
       ),
@@ -49,6 +49,7 @@ class SignInModalRouter {
   }
 }
 
+/*
 class SignInNavigator extends StatelessWidget {
   const SignInNavigator({
     Key? key,
@@ -71,7 +72,6 @@ class SignInNavigator extends StatelessWidget {
   }
 }
 
-/*
 class BaseSignInRouter {
   static final signIn = GlobalKey<NavigatorState>();
 
