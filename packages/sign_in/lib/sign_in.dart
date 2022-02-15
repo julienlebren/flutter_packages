@@ -28,6 +28,7 @@ part 'presentation/sign_in_email_page.dart';
 part 'presentation/sign_in_email_password_page.dart';
 part 'presentation/sign_in_phone_page.dart';
 part 'presentation/sign_in_button.dart';
+part 'presentation/sign_in_unknown_page.dart';
 //part 'presentation/sign_in_widget.dart';
 part 'sign_in.freezed.dart';
 

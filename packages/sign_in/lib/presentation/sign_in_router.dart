@@ -28,28 +28,30 @@ class SignInRouter {
     );
   }
 
-  static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
-    if (settings.name != null) {
-      switch (settings.name!) {
-        case signInEmailPage:
-          return platformPageRoute(
-            builder: (_) => const SignInEmailPage(),
-            fullscreenDialog: true,
-          );
-        case signInLinkPage:
-          return platformPageRoute(
-            builder: (_) => const SignInEmailLinkPage(),
-            fullscreenDialog: true,
-          );
-        case signInPhonePage:
-          return platformPageRoute(
-            builder: (_) => const SignInPhonePage(),
-          );
-      }
+  static Route<dynamic>? handleBaseRoutes(String route) {
+    switch (route) {
+      case signInEmailPage:
+        return platformPageRoute(
+          builder: (_) => const SignInEmailPage(),
+          fullscreenDialog: true,
+        );
+      case signInLinkPage:
+        return platformPageRoute(
+          builder: (_) => const SignInEmailLinkPage(),
+          fullscreenDialog: true,
+        );
+      case signInPhonePage:
+        return platformPageRoute(
+          builder: (_) => const SignInPhonePage(),
+        );
     }
-    throw UnimplementedError(
-        "This app called a page named ${settings.name} but the SignInRouter has not been configured to handle this page.");
+    return platformPageRoute(
+      builder: (_) => const SignInUnknownPage(),
+    );
   }
+
+  static Route<dynamic>? onGenerateRoute(RouteSettings settings) =>
+      handleBaseRoutes(settings.name!);
 }
 
 class SignInNavigator extends StatelessWidget {
