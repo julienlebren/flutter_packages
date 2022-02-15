@@ -26,7 +26,6 @@ class SignInLandingPageBuilder extends ConsumerWidget {
       bottom: false,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: Colors.orangeAccent,
           image: theme.landingBackgroundImage != null
               ? DecorationImage(
                   image: AssetImage(theme.landingBackgroundImage!),
@@ -34,8 +33,9 @@ class SignInLandingPageBuilder extends ConsumerWidget {
                 )
               : null,
         ),
-        child: PlatformScaffold(
-          body: Container(
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
