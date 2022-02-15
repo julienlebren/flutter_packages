@@ -72,6 +72,7 @@ class SignInNavigator extends StatelessWidget {
   }
 }
 
+/*
 class BaseSignInRouter {
   static final signIn = GlobalKey<NavigatorState>();
 
@@ -106,6 +107,7 @@ class BaseSignInRouter {
         "This app called a page named ${settings.name} but the SignInRouter has not been configured to handle this page.");
   }
 }
+*/
 
 /* Dans l'app */
 
