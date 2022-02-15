@@ -21,29 +21,32 @@ class SignInLandingPageBuilder extends ConsumerWidget {
         ? ref.read(authSettings.needUserInfoProvider!)
         : false);
 
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        color: Colors.orangeAccent,
-        image: theme.landingBackgroundImage != null
-            ? DecorationImage(
-                image: AssetImage(theme.landingBackgroundImage!),
-                fit: BoxFit.cover,
-              )
-            : null,
-      ),
-      child: PlatformScaffold(
-        body: Container(
-          color: Colors.yellowAccent,
-          padding: const EdgeInsets.symmetric(horizontal: 40.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              const Spacer(),
-              logo,
-              const Spacer(),
-              if (needUserInfo) const SignInCompleteButton() else buttons,
-            ],
+    return SafeArea(
+      top: false,
+      bottom: false,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: Colors.orangeAccent,
+          image: theme.landingBackgroundImage != null
+              ? DecorationImage(
+                  image: AssetImage(theme.landingBackgroundImage!),
+                  fit: BoxFit.cover,
+                )
+              : null,
+        ),
+        child: PlatformScaffold(
+          body: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 40.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                const Spacer(),
+                logo,
+                const Spacer(),
+                if (needUserInfo) const SignInCompleteButton() else buttons,
+              ],
+            ),
           ),
         ),
       ),
