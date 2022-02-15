@@ -32,6 +32,7 @@ class SignInLandingPageBuilder extends ConsumerWidget {
               : null,
         ),
         child: SafeArea(
+          top: false,
           child: Container(
             color: Colors.yellowAccent,
             padding: const EdgeInsets.symmetric(horizontal: 40.0),
