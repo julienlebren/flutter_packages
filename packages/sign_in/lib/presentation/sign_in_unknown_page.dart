@@ -5,6 +5,10 @@ class SignInUnknownPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text("SignInUnknownPage");
+    return const PlatformScaffold(
+      body: Center(
+        child: Text("SignInUnknownPage"),
+      ),
+    );
   }
 }

@@ -91,8 +91,6 @@ class SignInNavigator extends ConsumerWidget {
 }
 
 /*
-
-
 class SignInRoutes {
   static const signInRouterPage = 'sign-in';
   static const signInEmailPage = 'sign-in/email';
