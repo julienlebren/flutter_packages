@@ -3798,8 +3798,7 @@ class _$SignInThemeTearOff {
   const _$SignInThemeTearOff();
 
   _SignInTheme call(
-      {String? landingBackgroundImage,
-      double maxWidth = 400,
+      {double maxWidth = 400,
       double buttonRadius = 8.0,
       double buttonPadding = 16.0,
       required Color buttonBackgroundColor,
@@ -3807,7 +3806,6 @@ class _$SignInThemeTearOff {
       double buttonFontSize = 18.0,
       double spaceBetweenButtons = 15.0}) {
     return _SignInTheme(
-      landingBackgroundImage: landingBackgroundImage,
       maxWidth: maxWidth,
       buttonRadius: buttonRadius,
       buttonPadding: buttonPadding,
@@ -3824,7 +3822,6 @@ const $SignInTheme = _$SignInThemeTearOff();
 
 /// @nodoc
 mixin _$SignInTheme {
-  String? get landingBackgroundImage => throw _privateConstructorUsedError;
   double get maxWidth => throw _privateConstructorUsedError;
   double get buttonRadius => throw _privateConstructorUsedError;
   double get buttonPadding => throw _privateConstructorUsedError;
@@ -3844,8 +3841,7 @@ abstract class $SignInThemeCopyWith<$Res> {
           SignInTheme value, $Res Function(SignInTheme) then) =
       _$SignInThemeCopyWithImpl<$Res>;
   $Res call(
-      {String? landingBackgroundImage,
-      double maxWidth,
+      {double maxWidth,
       double buttonRadius,
       double buttonPadding,
       Color buttonBackgroundColor,
@@ -3864,7 +3860,6 @@ class _$SignInThemeCopyWithImpl<$Res> implements $SignInThemeCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? landingBackgroundImage = freezed,
     Object? maxWidth = freezed,
     Object? buttonRadius = freezed,
     Object? buttonPadding = freezed,
@@ -3874,10 +3869,6 @@ class _$SignInThemeCopyWithImpl<$Res> implements $SignInThemeCopyWith<$Res> {
     Object? spaceBetweenButtons = freezed,
   }) {
     return _then(_value.copyWith(
-      landingBackgroundImage: landingBackgroundImage == freezed
-          ? _value.landingBackgroundImage
-          : landingBackgroundImage // ignore: cast_nullable_to_non_nullable
-              as String?,
       maxWidth: maxWidth == freezed
           ? _value.maxWidth
           : maxWidth // ignore: cast_nullable_to_non_nullable
@@ -3918,8 +3909,7 @@ abstract class _$SignInThemeCopyWith<$Res>
       __$SignInThemeCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? landingBackgroundImage,
-      double maxWidth,
+      {double maxWidth,
       double buttonRadius,
       double buttonPadding,
       Color buttonBackgroundColor,
@@ -3940,7 +3930,6 @@ class __$SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? landingBackgroundImage = freezed,
     Object? maxWidth = freezed,
     Object? buttonRadius = freezed,
     Object? buttonPadding = freezed,
@@ -3950,10 +3939,6 @@ class __$SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
     Object? spaceBetweenButtons = freezed,
   }) {
     return _then(_SignInTheme(
-      landingBackgroundImage: landingBackgroundImage == freezed
-          ? _value.landingBackgroundImage
-          : landingBackgroundImage // ignore: cast_nullable_to_non_nullable
-              as String?,
       maxWidth: maxWidth == freezed
           ? _value.maxWidth
           : maxWidth // ignore: cast_nullable_to_non_nullable
@@ -3990,8 +3975,7 @@ class __$SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
 
 class _$_SignInTheme implements _SignInTheme {
   const _$_SignInTheme(
-      {this.landingBackgroundImage,
-      this.maxWidth = 400,
+      {this.maxWidth = 400,
       this.buttonRadius = 8.0,
       this.buttonPadding = 16.0,
       required this.buttonBackgroundColor,
@@ -3999,8 +3983,6 @@ class _$_SignInTheme implements _SignInTheme {
       this.buttonFontSize = 18.0,
       this.spaceBetweenButtons = 15.0});
 
-  @override
-  final String? landingBackgroundImage;
   @JsonKey()
   @override
   final double maxWidth;
@@ -4023,7 +4005,7 @@ class _$_SignInTheme implements _SignInTheme {
 
   @override
   String toString() {
-    return 'SignInTheme(landingBackgroundImage: $landingBackgroundImage, maxWidth: $maxWidth, buttonRadius: $buttonRadius, buttonPadding: $buttonPadding, buttonBackgroundColor: $buttonBackgroundColor, buttonTextColor: $buttonTextColor, buttonFontSize: $buttonFontSize, spaceBetweenButtons: $spaceBetweenButtons)';
+    return 'SignInTheme(maxWidth: $maxWidth, buttonRadius: $buttonRadius, buttonPadding: $buttonPadding, buttonBackgroundColor: $buttonBackgroundColor, buttonTextColor: $buttonTextColor, buttonFontSize: $buttonFontSize, spaceBetweenButtons: $spaceBetweenButtons)';
   }
 
   @override
@@ -4031,8 +4013,6 @@ class _$_SignInTheme implements _SignInTheme {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SignInTheme &&
-            const DeepCollectionEquality()
-                .equals(other.landingBackgroundImage, landingBackgroundImage) &&
             const DeepCollectionEquality().equals(other.maxWidth, maxWidth) &&
             const DeepCollectionEquality()
                 .equals(other.buttonRadius, buttonRadius) &&
@@ -4051,7 +4031,6 @@ class _$_SignInTheme implements _SignInTheme {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(landingBackgroundImage),
       const DeepCollectionEquality().hash(maxWidth),
       const DeepCollectionEquality().hash(buttonRadius),
       const DeepCollectionEquality().hash(buttonPadding),
@@ -4068,8 +4047,7 @@ class _$_SignInTheme implements _SignInTheme {
 
 abstract class _SignInTheme implements SignInTheme {
   const factory _SignInTheme(
-      {String? landingBackgroundImage,
-      double maxWidth,
+      {double maxWidth,
       double buttonRadius,
       double buttonPadding,
       required Color buttonBackgroundColor,
@@ -4077,8 +4055,6 @@ abstract class _SignInTheme implements SignInTheme {
       double buttonFontSize,
       double spaceBetweenButtons}) = _$_SignInTheme;
 
-  @override
-  String? get landingBackgroundImage;
   @override
   double get maxWidth;
   @override

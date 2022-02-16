@@ -6,6 +6,7 @@ class SignInNavigatorKeys {
 }
 
 class SignInRoutes {
+  static const signInLandingPage = '/';
   static const signInRouterPage = 'sign-in';
   static const signInEmailPage = 'sign-in/email';
   static const signInEmailPasswordPage = 'sign-in/email/password';

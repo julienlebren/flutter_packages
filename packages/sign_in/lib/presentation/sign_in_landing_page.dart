@@ -8,19 +8,16 @@ class SignInLandingPageBuilder extends ConsumerWidget {
     Key? key,
     required this.logo,
     required this.buttons,
+    this.landingBackgroundImage,
   }) : super(key: key);
 
   final Widget logo;
   final Widget buttons;
+  final String? landingBackgroundImage;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
-    final theme = ref.watch(signInThemeProvider);
-    //final authSettings = ref.watch(authSettingsProvider);
-    /*final needUserInfo = (authSettings.needUserInfoProvider != null
-        ? ref.read(authSettings.needUserInfoProvider!)
-        : false);*/
 
     return SafeArea(
       top: false,
@@ -28,9 +25,9 @@ class SignInLandingPageBuilder extends ConsumerWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: appTheme.scaffoldBackgroundColor,
-          image: theme.landingBackgroundImage != null
+          image: landingBackgroundImage != null
               ? DecorationImage(
-                  image: AssetImage(theme.landingBackgroundImage!),
+                  image: AssetImage(landingBackgroundImage!),
                   fit: BoxFit.cover,
                 )
               : null,
