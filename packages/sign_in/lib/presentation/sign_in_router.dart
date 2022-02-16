@@ -5,6 +5,12 @@ class SignInNavigatorKeys {
   static final modal = GlobalKey<NavigatorState>();
 }
 
+final customSignInRoutesProvider =
+    Provider<Route<dynamic>? Function(RouteSettings settings)?>((_) => null);
+
+final signInLandingPageProvider =
+    Provider<Widget>((_) => const SizedBox.shrink());
+
 class SignInRoutes {
   static const signInLandingPage = '/';
   static const signInRouterPage = 'sign-in';
@@ -18,7 +24,7 @@ class SignInRoutes {
 }
 
 class SignInRouter {
-  static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
+  static Route<dynamic> onGenerateRoute(RouteSettings settings, WidgetRef ref) {
     switch (settings.name) {
       case SignInRoutes.signInRouterPage:
         return platformPageRoute(
@@ -41,25 +47,32 @@ class SignInRouter {
           builder: (_) => const SignInPhonePage(),
         );
       case SignInRoutes.signInLandingPage:
+        final landingPage = ref.read(signInLandingPageProvider);
         return platformPageRoute(
-          builder: (_) => const SignInLandingPage(),
+          builder: (_) => landingPage,
         );
     }
-    return null;
+    final customSignInRoutes = ref.read(customSignInRoutesProvider);
+    if (customSignInRoutes != null) {
+      customSignInRoutes(settings);
+    }
+    return platformPageRoute(
+      builder: (_) => const SignInUnknownPage(),
+    );
   }
 }
+
+final needUserInfoPageProvider = Provider<String?>((_) => null);
 
 class SignInNavigator extends ConsumerWidget {
   const SignInNavigator({
     Key? key,
     required this.navigatorKey,
     required this.routeName,
-    this.onGenerateCustomRoute,
   }) : super(key: key);
 
   final GlobalKey<NavigatorState> navigatorKey;
   final String routeName;
-  final Function(RouteSettings settings)? onGenerateCustomRoute;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -70,8 +83,11 @@ class SignInNavigator extends ConsumerWidget {
           navigator.pop();
         },
         needUserInformation: () {
-          //final navigator = navigatorKey.currentState!;
-          //navigator.pushNamed(authSettings.needUserInfoPage!);
+          final needUserInfoPage = ref.read(needUserInfoPageProvider);
+          if (needUserInfoPage != null) {
+            final navigator = navigatorKey.currentState!;
+            navigator.pushNamed(needUserInfoPage);
+          }
         },
         orElse: () => null,
       );
@@ -80,54 +96,45 @@ class SignInNavigator extends ConsumerWidget {
     return Navigator(
       key: navigatorKey,
       initialRoute: routeName,
-      onGenerateRoute: (settings) {
-        final baseRoute = SignInRouter.onGenerateRoute(settings);
-        if (baseRoute != null) return baseRoute;
-
-        if (onGenerateCustomRoute != null) {
-          final customRoute = onGenerateCustomRoute!(settings);
-          if (customRoute != null) return customRoute;
-        }
-
-        return platformPageRoute(
-          builder: (_) => const SignInUnknownPage(),
-        );
-      },
+      onGenerateRoute: (settings) =>
+          SignInRouter.onGenerateRoute(settings, ref),
     );
   }
 }
-
-final signInLandingPageProvider =
-    Provider<Widget?>((_) => const SizedBox.shrink());
 
 class SignInPageBuilder extends StatelessWidget {
   const SignInPageBuilder({
     Key? key,
     this.theme,
     this.localizations,
-    this.onGenerateCustomRoute,
+    this.customSignInRoutes,
     this.landingPage,
+    this.needUserInfoPage,
   }) : super(key: key);
 
   final SignInTheme? theme;
   final SignInLocalizations? localizations;
-  final Function(RouteSettings settings)? onGenerateCustomRoute;
+  final Route<dynamic>? Function(RouteSettings settings)? customSignInRoutes;
   final Widget? landingPage;
+  final String? needUserInfoPage;
 
   @override
   Widget build(BuildContext context) {
     return ProviderScope(
       overrides: [
-        if (landingPage != null)
-          signInLandingPageProvider.overrideWithValue(landingPage!),
         if (theme != null) signInThemeProvider.overrideWithValue(theme!),
         if (localizations != null)
           signInLocalizationsProvider.overrideWithValue(localizations!),
+        if (landingPage != null)
+          signInLandingPageProvider.overrideWithValue(landingPage!),
+        if (needUserInfoPage != null)
+          needUserInfoPageProvider.overrideWithValue(needUserInfoPage!),
+        if (customSignInRoutes != null)
+          customSignInRoutesProvider.overrideWithValue(customSignInRoutes!),
       ],
       child: SignInNavigator(
         navigatorKey: SignInNavigatorKeys.main,
         routeName: SignInRoutes.signInLandingPage,
-        onGenerateCustomRoute: onGenerateCustomRoute,
       ),
     );
   }
