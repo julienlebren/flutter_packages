@@ -93,7 +93,10 @@ final authStateProvider = Provider<AuthState>((ref) {
       }
     },
   );
-}, dependencies: [authSettingsProvider]);
+}, dependencies: [
+  authStateChangesProvider,
+  authSettingsProvider,
+]);
 
 /*
 final authStateProvider =
