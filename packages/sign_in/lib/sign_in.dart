@@ -40,6 +40,8 @@ class AuthSettings {
 
   StreamProvider userStreamProvider;
   Provider? needUserInfoProvider;
+  String? needUserInfoPage;
+  Function(RouteSettings settings)? onGenerateCustomRoute;
 }
 
 final authSettingsProvider = Provider<AuthSettings>((_) {

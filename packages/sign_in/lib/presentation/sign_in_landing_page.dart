@@ -37,17 +37,19 @@ class SignInLandingPageBuilder extends ConsumerWidget {
         ),
         child: Scaffold(
           backgroundColor: Colors.transparent,
-          body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                const Spacer(),
-                logo,
-                const Spacer(),
-                if (needUserInfo) const SignInCompleteButton() else buttons,
-              ],
+          body: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  const Spacer(),
+                  logo,
+                  const Spacer(),
+                  if (needUserInfo) const SignInCompleteButton() else buttons,
+                ],
+              ),
             ),
           ),
         ),

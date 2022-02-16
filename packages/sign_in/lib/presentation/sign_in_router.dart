@@ -16,17 +16,13 @@ class SignInRoutes {
   static const signInVerificationPage = 'sign-in/phone/verification';
 }
 
-final signInCustomRouteHandlerProvider =
-    Provider<Function(RouteSettings settings)?>(
-  (_) => null,
-);
-
 class SignInRouter {
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case SignInRoutes.signInRouterPage:
         return platformPageRoute(
           builder: (_) => SignInNavigator(
+            navigatorKey: SignInNavigatorKeys.modal,
             routeName: settings.arguments as String,
           ),
           fullscreenDialog: true,
@@ -51,24 +47,40 @@ class SignInRouter {
 class SignInNavigator extends ConsumerWidget {
   const SignInNavigator({
     Key? key,
+    required this.navigatorKey,
     required this.routeName,
   }) : super(key: key);
 
+  final GlobalKey<NavigatorState> navigatorKey;
   final String routeName;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final authSettings = ref.read(authSettingsProvider);
+
+    ref.listen<AuthState>(authStateProvider(authSettings), (_, authState) {
+      authState.maybeWhen(
+        authed: (_) {
+          final navigator = SignInNavigatorKeys.main.currentState!;
+          navigator.pop();
+        },
+        needUserInformation: () {
+          final navigator = navigatorKey.currentState!;
+          navigator.pushNamed(authSettings.needUserInfoPage!);
+        },
+        orElse: () => null,
+      );
+    });
+
     return Navigator(
-      key: SignInNavigatorKeys.modal,
+      key: navigatorKey,
       initialRoute: routeName,
       onGenerateRoute: (settings) {
         final baseRoute = SignInRouter.onGenerateRoute(settings);
         if (baseRoute != null) return baseRoute;
 
-        final signInCustomRouteHandler =
-            ref.read(signInCustomRouteHandlerProvider);
-        if (signInCustomRouteHandler != null) {
-          final customRoute = signInCustomRouteHandler(settings);
+        if (authSettings.onGenerateCustomRoute != null) {
+          final customRoute = authSettings.onGenerateCustomRoute!(settings);
           if (customRoute != null) return customRoute;
         }
 
