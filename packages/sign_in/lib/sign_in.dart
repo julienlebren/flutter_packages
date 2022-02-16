@@ -36,6 +36,8 @@ class AuthSettings {
   AuthSettings(
     this.userStreamProvider, {
     this.needUserInfoProvider,
+    this.needUserInfoPage,
+    this.onGenerateCustomRoute,
   });
 
   StreamProvider userStreamProvider;
