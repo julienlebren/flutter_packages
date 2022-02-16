@@ -97,23 +97,29 @@ class SignInNavigator extends ConsumerWidget {
   }
 }
 
-/*
+final signInLandingPageProvider =
+    Provider<Widget?>((_) => const SizedBox.shrink());
+
 class SignInPageBuilder extends StatelessWidget {
   const SignInPageBuilder({
-    
+    Key? key,
+    this.theme,
+    this.localizations,
+    this.onGenerateCustomRoute,
+    this.landingPage,
   }) : super(key: key);
 
   final SignInTheme? theme;
   final SignInLocalizations? localizations;
   final Function(RouteSettings settings)? onGenerateCustomRoute;
+  final Widget? landingPage;
 
   @override
   Widget build(BuildContext context) {
     return ProviderScope(
       overrides: [
-        if (landingPageSettings != null)
-          signInLandingPageSettingsProvider
-              .overrideWithValue(landingPageSettings!),
+        if (landingPage != null)
+          signInLandingPageProvider.overrideWithValue(landingPage!),
         if (theme != null) signInThemeProvider.overrideWithValue(theme!),
         if (localizations != null)
           signInLocalizationsProvider.overrideWithValue(localizations!),
@@ -126,7 +132,6 @@ class SignInPageBuilder extends StatelessWidget {
     );
   }
 }
-*/
 
 /*
 class SignInRoutes {
