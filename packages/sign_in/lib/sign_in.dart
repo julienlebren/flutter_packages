@@ -36,11 +36,13 @@ part 'sign_in.g.dart';
 class AuthSettings {
   AuthSettings(
     this.userStreamProvider, {
+    this.needUserInfoProvider,
     this.needUserInfoPage,
     this.onGenerateCustomRoute,
   });
 
   StreamProvider userStreamProvider;
+  Provider? needUserInfoProvider;
   String? needUserInfoPage;
   Function(RouteSettings settings)? onGenerateCustomRoute;
 }
@@ -62,7 +64,8 @@ final authStateProvider = Provider<AuthState>((ref) {
       if (user == null) {
         return const AuthState.notAuthed();
       } else {
-        final user = ref.watch(userStreamProvider);
+        final settings = ref.watch(authSettingsProvider);
+        final user = ref.watch(settings.userStreamProvider);
         return user.when(
           loading: () {
             final isSigninIn = ref.watch(signInControllerProvider.select(
@@ -79,21 +82,20 @@ final authStateProvider = Provider<AuthState>((ref) {
             if (user == null) {
               return const AuthState.waitingUserCreation();
             } else {
-              return AuthState.authed(user);
-              /*if (settings.needUserInfoProvider != null) {
+              if (settings.needUserInfoProvider != null) {
                 final needUserInfo = ref.watch(settings.needUserInfoProvider!);
                 if (needUserInfo == true) {
                   return const AuthState.needUserInformation();
                 }
               }
-              return AuthState.authed(user);*/
+              return AuthState.authed(user);
             }
           },
         );
       }
     },
   );
-}, dependencies: [userStreamProvider]);
+}, dependencies: [authSettingsProvider]);
 
 /*
 final authStateProvider =
