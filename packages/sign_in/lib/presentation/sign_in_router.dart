@@ -93,6 +93,67 @@ class SignInNavigator extends ConsumerWidget {
 }
 
 /*
+
+
+class SignInRoutes {
+  static const signInRouterPage = 'sign-in';
+  static const signInEmailPage = 'sign-in/email';
+  static const signInEmailPasswordPage = 'sign-in/email/password';
+  static const signInEmailRecoverPage = 'sign-in/email/recover';
+  static const signInEmailRegisterPage = 'sign-in/email/register';
+  static const signInLinkPage = 'sign-in/link';
+  static const signInPhonePage = 'sign-in/phone';
+  static const signInVerificationPage = 'sign-in/phone/verification';
+}
+class SignInNavigator extends ConsumerWidget {
+  const SignInNavigator({
+    Key? key,
+    required this.navigatorKey,
+    required this.routeName,
+  }) : super(key: key);
+
+  final GlobalKey<NavigatorState> navigatorKey;
+  final String routeName;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final authSettings = ref.read(authSettingsProvider);
+
+    ref.listen<AuthState>(authStateProvider(authSettings), (_, authState) {
+      authState.maybeWhen(
+        authed: (_) {
+          final navigator = SignInNavigatorKeys.main.currentState!;
+          navigator.pop();
+        },
+        needUserInformation: () {
+          final navigator = navigatorKey.currentState!;
+          navigator.pushNamed(authSettings.needUserInfoPage!);
+        },
+        orElse: () => null,
+      );
+    });
+
+    return Navigator(
+      key: navigatorKey,
+      initialRoute: routeName,
+      onGenerateRoute: (settings) {
+        final baseRoute = SignInRouter.onGenerateRoute(settings);
+        if (baseRoute != null) return baseRoute;
+
+        if (authSettings.onGenerateCustomRoute != null) {
+          final customRoute = authSettings.onGenerateCustomRoute!(settings);
+          if (customRoute != null) return customRoute;
+        }
+
+        return platformPageRoute(
+          builder: (_) => const SignInUnknownPage(),
+        );
+      },
+    );
+  }
+}*/
+
+/*
 class SignInNavigator extends StatelessWidget {
   const SignInNavigator({
     Key? key,

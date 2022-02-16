@@ -58,20 +58,15 @@ class SignInButtons extends ConsumerWidget {
 
     final buttonHeight =
         iconSize + (theme.buttonPadding * 2) + theme.spaceBetweenButtons + 1;
-    print("buttonHeight: $buttonHeight");
 
     double boxHeight = buttonHeight * suppliers.length;
     if (suppliers.contains(SignInSupplier.apple) && !isCupertino()) {
       boxHeight -= buttonHeight;
     }
 
-    print("boxHeight: $boxHeight");
     if (suppliers.last != SignInSupplier.anonymous) {
       boxHeight += 16;
-    } else {
-      boxHeight += 8;
     }
-    print("boxHeight: $boxHeight");
 
     return SizedBox(
       height: boxHeight,
