@@ -34,7 +34,7 @@ class SignInEmailLinkPage extends ConsumerWidget {
       appBar: PlatformNavigationBar(
         leading: PlatformNavigationBarCloseButton(
           onPressed: () {
-            final navigator = SignInRouter.main.currentState!;
+            final navigator = SignInNavigatorKeys.main.currentState!;
             navigator.pop();
           },
         ),

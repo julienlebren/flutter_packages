@@ -1,5 +1,10 @@
 part of '../sign_in.dart';
 
+class SignInNavigatorKeys {
+  static final main = GlobalKey<NavigatorState>();
+  static final modal = GlobalKey<NavigatorState>();
+}
+
 class SignInRoutes {
   static const signInRouterPage = 'sign-in';
   static const signInEmailPage = 'sign-in/email';
@@ -11,33 +16,17 @@ class SignInRoutes {
   static const signInVerificationPage = 'sign-in/phone/verification';
 }
 
-class SignInModalNavigator extends StatelessWidget {
-  const SignInModalNavigator({
-    Key? key,
-    required this.routeName,
-  }) : super(key: key);
-
-  final String routeName;
-
-  @override
-  Widget build(BuildContext context) {
-    return Navigator(
-      key: SignInRouter.modal,
-      initialRoute: routeName,
-      onGenerateRoute: SignInRouter.onGenerateRoute,
-    );
-  }
-}
+final signInCustomRouteHandlerProvider =
+    Provider<Function(RouteSettings settings)?>(
+  (_) => null,
+);
 
 class SignInRouter {
-  static final main = GlobalKey<NavigatorState>();
-  static final modal = GlobalKey<NavigatorState>();
-
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case SignInRoutes.signInRouterPage:
         return platformPageRoute(
-          builder: (_) => SignInModalNavigator(
+          builder: (_) => SignInNavigator(
             routeName: settings.arguments as String,
           ),
           fullscreenDialog: true,
@@ -55,8 +44,38 @@ class SignInRouter {
           builder: (_) => const SignInPhonePage(),
         );
     }
-    return platformPageRoute(
-      builder: (_) => const SignInUnknownPage(),
+    return null;
+  }
+}
+
+class SignInNavigator extends ConsumerWidget {
+  const SignInNavigator({
+    Key? key,
+    required this.routeName,
+  }) : super(key: key);
+
+  final String routeName;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Navigator(
+      key: SignInNavigatorKeys.modal,
+      initialRoute: routeName,
+      onGenerateRoute: (settings) {
+        final baseRoute = SignInRouter.onGenerateRoute(settings);
+        if (baseRoute != null) return baseRoute;
+
+        final signInCustomRouteHandler =
+            ref.read(signInCustomRouteHandlerProvider);
+        if (signInCustomRouteHandler != null) {
+          final customRoute = signInCustomRouteHandler(settings);
+          if (customRoute != null) return customRoute;
+        }
+
+        return platformPageRoute(
+          builder: (_) => const SignInUnknownPage(),
+        );
+      },
     );
   }
 }
