@@ -17,7 +17,7 @@ class SignInLandingPageBuilder extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
     final theme = ref.watch(signInThemeProvider);
-    final authSettings = ref.watch(authSettingsProvider);
+    //final authSettings = ref.watch(authSettingsProvider);
     /*final needUserInfo = (authSettings.needUserInfoProvider != null
         ? ref.read(authSettings.needUserInfoProvider!)
         : false);*/
