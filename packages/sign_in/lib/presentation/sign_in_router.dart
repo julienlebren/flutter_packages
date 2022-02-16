@@ -49,10 +49,12 @@ class SignInNavigator extends ConsumerWidget {
     Key? key,
     required this.navigatorKey,
     required this.routeName,
+    this.onGenerateCustomRoute,
   }) : super(key: key);
 
   final GlobalKey<NavigatorState> navigatorKey;
   final String routeName;
+  final Function(RouteSettings settings)? onGenerateCustomRoute;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -77,10 +79,10 @@ class SignInNavigator extends ConsumerWidget {
         final baseRoute = SignInRouter.onGenerateRoute(settings);
         if (baseRoute != null) return baseRoute;
 
-        /*if (authSettings.onGenerateCustomRoute != null) {
-          final customRoute = authSettings.onGenerateCustomRoute!(settings);
+        if (onGenerateCustomRoute != null) {
+          final customRoute = onGenerateCustomRoute!(settings);
           if (customRoute != null) return customRoute;
-        }*/
+        }
 
         return platformPageRoute(
           builder: (_) => const SignInUnknownPage(),
