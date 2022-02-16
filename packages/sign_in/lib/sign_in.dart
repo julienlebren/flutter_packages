@@ -52,6 +52,8 @@ final authSettingsProvider = Provider<AuthSettings>((_) {
       "You forgot to override AuthSettings() before calling authSettingsProvider!");
 });
 
+final userStreamProvider = StreamProvider((_) => const Stream.empty());
+
 final authStateProvider = Provider<AuthState>((ref) {
   final authStateChanges = ref.watch(authStateChangesProvider);
 
@@ -62,8 +64,7 @@ final authStateProvider = Provider<AuthState>((ref) {
       if (user == null) {
         return const AuthState.notAuthed();
       } else {
-        final settings = ref.watch(authSettingsProvider);
-        final user = ref.watch(settings.userStreamProvider);
+        final user = ref.watch(userStreamProvider);
         return user.when(
           loading: () {
             final isSigninIn = ref.watch(signInControllerProvider.select(
@@ -80,12 +81,12 @@ final authStateProvider = Provider<AuthState>((ref) {
             if (user == null) {
               return const AuthState.waitingUserCreation();
             } else {
-              if (settings.needUserInfoProvider != null) {
+              /*if (settings.needUserInfoProvider != null) {
                 final needUserInfo = ref.watch(settings.needUserInfoProvider!);
                 if (needUserInfo == true) {
                   return const AuthState.needUserInformation();
                 }
-              }
+              }*/
               return AuthState.authed(user);
             }
           },
@@ -95,7 +96,7 @@ final authStateProvider = Provider<AuthState>((ref) {
   );
 }, dependencies: [
   authStateChangesProvider,
-  authSettingsProvider,
+  userStreamProvider,
 ]);
 
 /*
