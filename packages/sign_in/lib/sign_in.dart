@@ -50,6 +50,52 @@ final authSettingsProvider = Provider<AuthSettings>((_) {
       "You forgot to override AuthSettings() before calling authSettingsProvider!");
 });
 
+final userStreamProvider = StreamProvider((_) => const Stream.empty());
+
+final authStateProvider = Provider<AuthState>((ref) {
+  final authStateChanges = ref.watch(authStateChangesProvider);
+
+  return authStateChanges.when(
+    loading: () => const AuthState.initializing(),
+    error: (error, _) => AuthState.error(error.toString()),
+    data: (user) {
+      if (user == null) {
+        return const AuthState.notAuthed();
+      } else {
+        final user = ref.watch(userStreamProvider);
+        return user.when(
+          loading: () {
+            final isSigninIn = ref.watch(signInControllerProvider.select(
+              (state) => (state == const SignInState.success()),
+            ));
+            if (isSigninIn) {
+              return const AuthState.notAuthed();
+            } else {
+              return const AuthState.initializing();
+            }
+          },
+          error: (error, _) => AuthState.error(error.toString()),
+          data: (user) {
+            if (user == null) {
+              return const AuthState.waitingUserCreation();
+            } else {
+              return AuthState.authed(user);
+              /*if (settings.needUserInfoProvider != null) {
+                final needUserInfo = ref.watch(settings.needUserInfoProvider!);
+                if (needUserInfo == true) {
+                  return const AuthState.needUserInformation();
+                }
+              }
+              return AuthState.authed(user);*/
+            }
+          },
+        );
+      }
+    },
+  );
+});
+
+/*
 final authStateProvider =
     Provider.family<AuthState, AuthSettings>((ref, settings) {
   final authStateChanges = ref.watch(authStateChangesProvider);
@@ -97,7 +143,7 @@ final authStateProvider =
       }
     },
   );
-});
+});*/
 
 final signInLocalizationsProvider = Provider<SignInLocalizations>(
   (_) => const SignInLocalizations(),

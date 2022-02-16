@@ -56,17 +56,15 @@ class SignInNavigator extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final authSettings = ref.read(authSettingsProvider);
-
-    ref.listen<AuthState>(authStateProvider(authSettings), (_, authState) {
+    ref.listen<AuthState>(authStateProvider, (_, authState) {
       authState.maybeWhen(
         authed: (_) {
           final navigator = SignInNavigatorKeys.main.currentState!;
           navigator.pop();
         },
         needUserInformation: () {
-          final navigator = navigatorKey.currentState!;
-          navigator.pushNamed(authSettings.needUserInfoPage!);
+          //final navigator = navigatorKey.currentState!;
+          //navigator.pushNamed(authSettings.needUserInfoPage!);
         },
         orElse: () => null,
       );
@@ -79,10 +77,10 @@ class SignInNavigator extends ConsumerWidget {
         final baseRoute = SignInRouter.onGenerateRoute(settings);
         if (baseRoute != null) return baseRoute;
 
-        if (authSettings.onGenerateCustomRoute != null) {
+        /*if (authSettings.onGenerateCustomRoute != null) {
           final customRoute = authSettings.onGenerateCustomRoute!(settings);
           if (customRoute != null) return customRoute;
-        }
+        }*/
 
         return platformPageRoute(
           builder: (_) => const SignInUnknownPage(),
