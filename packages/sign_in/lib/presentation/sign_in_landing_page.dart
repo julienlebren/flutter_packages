@@ -8,12 +8,12 @@ class SignInLandingPageBuilder extends ConsumerWidget {
     Key? key,
     required this.logo,
     required this.buttons,
-    this.landingBackgroundImage,
+    this.backgroundImage,
   }) : super(key: key);
 
   final Widget logo;
   final Widget buttons;
-  final String? landingBackgroundImage;
+  final String? backgroundImage;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -25,9 +25,9 @@ class SignInLandingPageBuilder extends ConsumerWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: appTheme.scaffoldBackgroundColor,
-          image: landingBackgroundImage != null
+          image: backgroundImage != null
               ? DecorationImage(
-                  image: AssetImage(landingBackgroundImage!),
+                  image: AssetImage(backgroundImage!),
                   fit: BoxFit.cover,
                 )
               : null,
