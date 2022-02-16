@@ -100,6 +100,14 @@ final authStateProvider = Provider<AuthState>((ref) {
   userStreamProvider,
 ]);
 
+final userProvider = Provider((ref) {
+  final authState = ref.watch(authStateProvider);
+  return authState.maybeWhen(
+    authed: (user) => user,
+    orElse: () => null,
+  );
+}, dependencies: [authStateProvider]);
+
 /*
 final authStateProvider =
     Provider.family<AuthState, AuthSettings>((ref, settings) {
