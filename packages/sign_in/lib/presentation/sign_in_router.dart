@@ -26,7 +26,7 @@ class SignInRoutes {
 }
 
 class SignInRouter {
-  static Route<dynamic> onSignInRoute(RouteSettings settings, WidgetRef ref) {
+  static Route<dynamic> onGenerateRoute(RouteSettings settings, WidgetRef ref) {
     switch (settings.name) {
       case SignInRoutes.signInRouterPage:
         return platformPageRoute(
@@ -96,7 +96,8 @@ class SignInNavigator extends ConsumerWidget {
     return Navigator(
       key: navigatorKey,
       initialRoute: routeName,
-      onGenerateRoute: (settings) => SignInRouter.onSignInRoute(settings, ref),
+      onGenerateRoute: (settings) =>
+          SignInRouter.onGenerateRoute(settings, ref),
     );
   }
 }
