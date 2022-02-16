@@ -1,23 +1,61 @@
 part of '../sign_in.dart';
 
-final signInSupplierProvider =
-    StateProvider<SignInSupplier>((_) => SignInSupplier.anonymous);
+final signInLandingPageSettingsProvider = Provider<SignInLandingPageSettings>(
+    (_) => const SignInLandingPageSettings());
 
-class SignInLandingPageBuilder extends ConsumerWidget {
-  const SignInLandingPageBuilder({
-    Key? key,
-    required this.logo,
-    required this.buttons,
+class SignInLandingPageSettings {
+  const SignInLandingPageSettings({
+    this.logo,
+    this.buttons,
     this.backgroundImage,
+  });
+
+  final Widget? logo;
+  final Widget? buttons;
+  final String? backgroundImage;
+}
+
+class SignInPageBuilder extends StatelessWidget {
+  const SignInPageBuilder({
+    Key? key,
+    this.landingPageSettings,
+    this.theme,
+    this.localizations,
+    this.onGenerateCustomRoute,
   }) : super(key: key);
 
-  final Widget logo;
-  final Widget buttons;
-  final String? backgroundImage;
+  final SignInLandingPageSettings? landingPageSettings;
+  final SignInTheme? theme;
+  final SignInLocalizations? localizations;
+  final Function(RouteSettings settings)? onGenerateCustomRoute;
+
+  @override
+  Widget build(BuildContext context) {
+    return ProviderScope(
+      overrides: [
+        if (landingPageSettings != null)
+          signInLandingPageSettingsProvider
+              .overrideWithValue(landingPageSettings!),
+        if (theme != null) signInThemeProvider.overrideWithValue(theme!),
+        if (localizations != null)
+          signInLocalizationsProvider.overrideWithValue(localizations!),
+      ],
+      child: SignInNavigator(
+        navigatorKey: SignInNavigatorKeys.main,
+        routeName: SignInRoutes.signInLandingPage,
+        onGenerateCustomRoute: onGenerateCustomRoute,
+      ),
+    );
+  }
+}
+
+class SignInLandingPage extends ConsumerWidget {
+  const SignInLandingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
+    final settings = ref.watch(signInLandingPageSettingsProvider);
 
     return SafeArea(
       top: false,
@@ -25,9 +63,9 @@ class SignInLandingPageBuilder extends ConsumerWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: appTheme.scaffoldBackgroundColor,
-          image: backgroundImage != null
+          image: settings.backgroundImage != null
               ? DecorationImage(
-                  image: AssetImage(backgroundImage!),
+                  image: AssetImage(settings.backgroundImage!),
                   fit: BoxFit.cover,
                 )
               : null,
@@ -42,10 +80,11 @@ class SignInLandingPageBuilder extends ConsumerWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   const Spacer(),
-                  logo,
-                  const Spacer(),
-                  buttons,
-                  //if (needUserInfo) const SignInCompleteButton() else buttons,
+                  if (settings.logo != null) ...[
+                    settings.logo!,
+                    const Spacer(),
+                  ],
+                  if (settings.buttons != null) settings.buttons!,
                 ],
               ),
             ),

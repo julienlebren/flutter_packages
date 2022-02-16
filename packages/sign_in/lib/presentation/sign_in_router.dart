@@ -40,6 +40,10 @@ class SignInRouter {
         return platformPageRoute(
           builder: (_) => const SignInPhonePage(),
         );
+      case SignInRoutes.signInLandingPage:
+        return platformPageRoute(
+          builder: (_) => const SignInLandingPage(),
+        );
     }
     return null;
   }

@@ -1,5 +1,8 @@
 part of '../sign_in.dart';
 
+final signInSupplierProvider =
+    StateProvider<SignInSupplier>((_) => SignInSupplier.anonymous);
+
 class SignInButtons extends ConsumerWidget {
   const SignInButtons(this.suppliers, {Key? key}) : super(key: key);
 
