@@ -18,9 +18,9 @@ class SignInLandingPageBuilder extends ConsumerWidget {
     final appTheme = ref.watch(appThemeProvider);
     final theme = ref.watch(signInThemeProvider);
     final authSettings = ref.watch(authSettingsProvider);
-    final needUserInfo = (authSettings.needUserInfoProvider != null
+    /*final needUserInfo = (authSettings.needUserInfoProvider != null
         ? ref.read(authSettings.needUserInfoProvider!)
-        : false);
+        : false);*/
 
     return SafeArea(
       top: false,
@@ -47,7 +47,8 @@ class SignInLandingPageBuilder extends ConsumerWidget {
                   const Spacer(),
                   logo,
                   const Spacer(),
-                  if (needUserInfo) const SignInCompleteButton() else buttons,
+                  buttons,
+                  //if (needUserInfo) const SignInCompleteButton() else buttons,
                 ],
               ),
             ),

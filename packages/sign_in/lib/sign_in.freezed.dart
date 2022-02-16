@@ -4098,3 +4098,147 @@ abstract class _SignInTheme implements SignInTheme {
   _$SignInThemeCopyWith<_SignInTheme> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+BaseUser _$BaseUserFromJson(Map<String, dynamic> json) {
+  return _BaseUser.fromJson(json);
+}
+
+/// @nodoc
+class _$BaseUserTearOff {
+  const _$BaseUserTearOff();
+
+  _BaseUser call({bool isComplete = true}) {
+    return _BaseUser(
+      isComplete: isComplete,
+    );
+  }
+
+  BaseUser fromJson(Map<String, Object?> json) {
+    return BaseUser.fromJson(json);
+  }
+}
+
+/// @nodoc
+const $BaseUser = _$BaseUserTearOff();
+
+/// @nodoc
+mixin _$BaseUser {
+  bool get isComplete => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $BaseUserCopyWith<BaseUser> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $BaseUserCopyWith<$Res> {
+  factory $BaseUserCopyWith(BaseUser value, $Res Function(BaseUser) then) =
+      _$BaseUserCopyWithImpl<$Res>;
+  $Res call({bool isComplete});
+}
+
+/// @nodoc
+class _$BaseUserCopyWithImpl<$Res> implements $BaseUserCopyWith<$Res> {
+  _$BaseUserCopyWithImpl(this._value, this._then);
+
+  final BaseUser _value;
+  // ignore: unused_field
+  final $Res Function(BaseUser) _then;
+
+  @override
+  $Res call({
+    Object? isComplete = freezed,
+  }) {
+    return _then(_value.copyWith(
+      isComplete: isComplete == freezed
+          ? _value.isComplete
+          : isComplete // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$BaseUserCopyWith<$Res> implements $BaseUserCopyWith<$Res> {
+  factory _$BaseUserCopyWith(_BaseUser value, $Res Function(_BaseUser) then) =
+      __$BaseUserCopyWithImpl<$Res>;
+  @override
+  $Res call({bool isComplete});
+}
+
+/// @nodoc
+class __$BaseUserCopyWithImpl<$Res> extends _$BaseUserCopyWithImpl<$Res>
+    implements _$BaseUserCopyWith<$Res> {
+  __$BaseUserCopyWithImpl(_BaseUser _value, $Res Function(_BaseUser) _then)
+      : super(_value, (v) => _then(v as _BaseUser));
+
+  @override
+  _BaseUser get _value => super._value as _BaseUser;
+
+  @override
+  $Res call({
+    Object? isComplete = freezed,
+  }) {
+    return _then(_BaseUser(
+      isComplete: isComplete == freezed
+          ? _value.isComplete
+          : isComplete // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_BaseUser implements _BaseUser {
+  const _$_BaseUser({this.isComplete = true});
+
+  factory _$_BaseUser.fromJson(Map<String, dynamic> json) =>
+      _$$_BaseUserFromJson(json);
+
+  @JsonKey()
+  @override
+  final bool isComplete;
+
+  @override
+  String toString() {
+    return 'BaseUser(isComplete: $isComplete)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _BaseUser &&
+            const DeepCollectionEquality()
+                .equals(other.isComplete, isComplete));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isComplete));
+
+  @JsonKey(ignore: true)
+  @override
+  _$BaseUserCopyWith<_BaseUser> get copyWith =>
+      __$BaseUserCopyWithImpl<_BaseUser>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_BaseUserToJson(this);
+  }
+}
+
+abstract class _BaseUser implements BaseUser {
+  const factory _BaseUser({bool isComplete}) = _$_BaseUser;
+
+  factory _BaseUser.fromJson(Map<String, dynamic> json) = _$_BaseUser.fromJson;
+
+  @override
+  bool get isComplete;
+  @override
+  @JsonKey(ignore: true)
+  _$BaseUserCopyWith<_BaseUser> get copyWith =>
+      throw _privateConstructorUsedError;
+}

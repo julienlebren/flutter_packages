@@ -20,6 +20,7 @@ part 'core/models/sign_in_event.dart';
 part 'core/models/sign_in_localizations.dart';
 part 'core/models/sign_in_state.dart';
 part 'core/models/sign_in_theme.dart';
+part 'core/models/user.dart';
 part 'presentation/sign_in_buttons.dart';
 part 'presentation/sign_in_landing_page.dart';
 part 'presentation/sign_in_router.dart';
@@ -29,19 +30,17 @@ part 'presentation/sign_in_email_password_page.dart';
 part 'presentation/sign_in_phone_page.dart';
 part 'presentation/sign_in_button.dart';
 part 'presentation/sign_in_unknown_page.dart';
-//part 'presentation/sign_in_widget.dart';
 part 'sign_in.freezed.dart';
+part 'sign_in.g.dart';
 
 class AuthSettings {
   AuthSettings(
     this.userStreamProvider, {
-    this.needUserInfoProvider,
     this.needUserInfoPage,
     this.onGenerateCustomRoute,
   });
 
   StreamProvider userStreamProvider;
-  Provider? needUserInfoProvider;
   String? needUserInfoPage;
   Function(RouteSettings settings)? onGenerateCustomRoute;
 }
@@ -79,13 +78,19 @@ final authStateProvider =
             if (user == null) {
               return const AuthState.waitingUserCreation();
             } else {
-              if (settings.needUserInfoProvider != null) {
+              final baseUser = user as BaseUser;
+              if (!baseUser.isComplete) {
+                return const AuthState.needUserInformation();
+              } else {
+                return AuthState.authed(user);
+              }
+              /*if (settings.needUserInfoProvider != null) {
                 final needUserInfo = ref.watch(settings.needUserInfoProvider!);
                 if (needUserInfo == true) {
                   return const AuthState.needUserInformation();
                 }
               }
-              return AuthState.authed(user);
+              return AuthState.authed(user);*/
             }
           },
         );
