@@ -98,6 +98,37 @@ class SignInNavigator extends ConsumerWidget {
 }
 
 /*
+class SignInPageBuilder extends StatelessWidget {
+  const SignInPageBuilder({
+    
+  }) : super(key: key);
+
+  final SignInTheme? theme;
+  final SignInLocalizations? localizations;
+  final Function(RouteSettings settings)? onGenerateCustomRoute;
+
+  @override
+  Widget build(BuildContext context) {
+    return ProviderScope(
+      overrides: [
+        if (landingPageSettings != null)
+          signInLandingPageSettingsProvider
+              .overrideWithValue(landingPageSettings!),
+        if (theme != null) signInThemeProvider.overrideWithValue(theme!),
+        if (localizations != null)
+          signInLocalizationsProvider.overrideWithValue(localizations!),
+      ],
+      child: SignInNavigator(
+        navigatorKey: SignInNavigatorKeys.main,
+        routeName: SignInRoutes.signInLandingPage,
+        onGenerateCustomRoute: onGenerateCustomRoute,
+      ),
+    );
+  }
+}
+*/
+
+/*
 class SignInRoutes {
   static const signInRouterPage = 'sign-in';
   static const signInEmailPage = 'sign-in/email';

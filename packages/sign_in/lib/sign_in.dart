@@ -20,7 +20,6 @@ part 'core/models/sign_in_event.dart';
 part 'core/models/sign_in_localizations.dart';
 part 'core/models/sign_in_state.dart';
 part 'core/models/sign_in_theme.dart';
-part 'core/models/user.dart';
 part 'presentation/sign_in_buttons.dart';
 part 'presentation/sign_in_landing_page.dart';
 part 'presentation/sign_in_router.dart';
@@ -31,7 +30,6 @@ part 'presentation/sign_in_phone_page.dart';
 part 'presentation/sign_in_button.dart';
 part 'presentation/sign_in_unknown_page.dart';
 part 'sign_in.freezed.dart';
-part 'sign_in.g.dart';
 
 class AuthSettings {
   AuthSettings(
