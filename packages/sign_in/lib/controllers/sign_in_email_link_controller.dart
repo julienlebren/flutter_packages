@@ -3,13 +3,9 @@ part of '../sign_in.dart';
 final signInEmailLinkControllerProvider =
     StateNotifierProvider<SignInEmailLinkController, SignInEmailLinkState>(
         (ref) {
-  final authSettings = ref.watch(authSettingsProvider);
   final service = ref.watch(authServiceProvider);
   return SignInEmailLinkController(service, "authSettings.emailLinkUrl!");
-}, dependencies: [
-  authSettingsProvider,
-  authServiceProvider,
-]);
+});
 
 @freezed
 class SignInEmailLinkEvent with _$SignInEmailLinkEvent {

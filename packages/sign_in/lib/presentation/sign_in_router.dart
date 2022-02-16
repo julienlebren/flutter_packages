@@ -1,15 +1,17 @@
 part of '../sign_in.dart';
 
-class SignInNavigatorKeys {
-  static final main = GlobalKey<NavigatorState>();
-  static final modal = GlobalKey<NavigatorState>();
-}
-
 final customSignInRoutesProvider =
     Provider<Route<dynamic>? Function(RouteSettings settings)?>((_) => null);
 
 final signInLandingPageProvider =
     Provider<Widget>((_) => const SizedBox.shrink());
+
+final needUserInfoPageProvider = Provider<String?>((_) => null);
+
+class SignInNavigatorKeys {
+  static final main = GlobalKey<NavigatorState>();
+  static final modal = GlobalKey<NavigatorState>();
+}
 
 class SignInRoutes {
   static const signInLandingPage = '/';
@@ -61,8 +63,6 @@ class SignInRouter {
     );
   }
 }
-
-final needUserInfoPageProvider = Provider<String?>((_) => null);
 
 class SignInNavigator extends ConsumerWidget {
   const SignInNavigator({
