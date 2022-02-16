@@ -140,6 +140,39 @@ class SignInPageBuilder extends StatelessWidget {
   }
 }
 
+class SignInPageBuilder2 extends StatelessWidget {
+  const SignInPageBuilder2({
+    Key? key,
+    required this.child,
+    this.theme,
+    this.localizations,
+    this.customSignInRoutes,
+    this.needUserInfoPage,
+  }) : super(key: key);
+
+  final SignInTheme? theme;
+  final SignInLocalizations? localizations;
+  final Route<dynamic>? Function(RouteSettings settings)? customSignInRoutes;
+  final String? needUserInfoPage;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return ProviderScope(
+      overrides: [
+        if (theme != null) signInThemeProvider.overrideWithValue(theme!),
+        if (localizations != null)
+          signInLocalizationsProvider.overrideWithValue(localizations!),
+        if (needUserInfoPage != null)
+          needUserInfoPageProvider.overrideWithValue(needUserInfoPage!),
+        if (customSignInRoutes != null)
+          customSignInRoutesProvider.overrideWithValue(customSignInRoutes!),
+      ],
+      child: child,
+    );
+  }
+}
+
 /*
 class SignInRoutes {
   static const signInRouterPage = 'sign-in';
