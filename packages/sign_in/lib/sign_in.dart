@@ -52,8 +52,6 @@ final authSettingsProvider = Provider<AuthSettings>((_) {
       "You forgot to override AuthSettings() before calling authSettingsProvider!");
 });
 
-final userStreamProvider = StreamProvider((_) => const Stream.empty());
-
 final authStateProvider = Provider<AuthState>((ref) {
   final authStateChanges = ref.watch(authStateChangesProvider);
 
