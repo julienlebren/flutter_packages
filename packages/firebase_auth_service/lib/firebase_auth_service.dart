@@ -48,6 +48,26 @@ class FirebaseAuthService {
     return phoneNumber;
   }
 
+  Future<void> verifyPhone(
+      String phoneNumber, Function(String verificationId) completion) async {
+    await _firebaseAuth.verifyPhoneNumber(
+      phoneNumber: phoneNumber,
+      verificationCompleted: (AuthCredential credential) async {
+        await _firebaseAuth.signInWithCredential(credential);
+      },
+      verificationFailed: (FirebaseException e) {
+        throw e;
+      },
+      codeSent: (String verificationId, int? resendToken) {
+        completion(verificationId);
+      },
+      codeAutoRetrievalTimeout: (String verificationId) {
+        completion(verificationId);
+      },
+      timeout: Duration(seconds: 60),
+    );
+  }
+
   Future<User?> signInAnonymously() async {
     final userCredential = await _firebaseAuth.signInAnonymously();
     return userCredential.user;
