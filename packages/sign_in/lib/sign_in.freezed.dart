@@ -1772,20 +1772,18 @@ abstract class _SignInPhoneState implements SignInPhoneState {
 class _$SignInPhoneVerificationEventTearOff {
   const _$SignInPhoneVerificationEventTearOff();
 
-  _CountryChanged countryChanged(CountryWithPhoneCode country) {
-    return _CountryChanged(
-      country,
-    );
+  _ResendCode resendCode() {
+    return const _ResendCode();
   }
 
-  _PhoneChanged phoneChanged(String input) {
-    return _PhoneChanged(
+  _CodeChanged codeChanged(String input) {
+    return _CodeChanged(
       input,
     );
   }
 
-  _VerifyPhone verifyPhone() {
-    return const _VerifyPhone();
+  _VerifyCode verifyCode() {
+    return const _VerifyCode();
   }
 }
 
@@ -1796,45 +1794,45 @@ const $SignInPhoneVerificationEvent = _$SignInPhoneVerificationEventTearOff();
 mixin _$SignInPhoneVerificationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CountryWithPhoneCode country) countryChanged,
-    required TResult Function(String input) phoneChanged,
-    required TResult Function() verifyPhone,
+    required TResult Function() resendCode,
+    required TResult Function(String input) codeChanged,
+    required TResult Function() verifyCode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
+    TResult Function()? resendCode,
+    TResult Function(String input)? codeChanged,
+    TResult Function()? verifyCode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
+    TResult Function()? resendCode,
+    TResult Function(String input)? codeChanged,
+    TResult Function()? verifyCode,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CountryChanged value) countryChanged,
-    required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_VerifyPhone value) verifyPhone,
+    required TResult Function(_ResendCode value) resendCode,
+    required TResult Function(_CodeChanged value) codeChanged,
+    required TResult Function(_VerifyCode value) verifyCode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
+    TResult Function(_ResendCode value)? resendCode,
+    TResult Function(_CodeChanged value)? codeChanged,
+    TResult Function(_VerifyCode value)? verifyCode,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
+    TResult Function(_ResendCode value)? resendCode,
+    TResult Function(_CodeChanged value)? codeChanged,
+    TResult Function(_VerifyCode value)? verifyCode,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1859,97 +1857,73 @@ class _$SignInPhoneVerificationEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CountryChangedCopyWith<$Res> {
-  factory _$CountryChangedCopyWith(
-          _CountryChanged value, $Res Function(_CountryChanged) then) =
-      __$CountryChangedCopyWithImpl<$Res>;
-  $Res call({CountryWithPhoneCode country});
+abstract class _$ResendCodeCopyWith<$Res> {
+  factory _$ResendCodeCopyWith(
+          _ResendCode value, $Res Function(_ResendCode) then) =
+      __$ResendCodeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CountryChangedCopyWithImpl<$Res>
+class __$ResendCodeCopyWithImpl<$Res>
     extends _$SignInPhoneVerificationEventCopyWithImpl<$Res>
-    implements _$CountryChangedCopyWith<$Res> {
-  __$CountryChangedCopyWithImpl(
-      _CountryChanged _value, $Res Function(_CountryChanged) _then)
-      : super(_value, (v) => _then(v as _CountryChanged));
+    implements _$ResendCodeCopyWith<$Res> {
+  __$ResendCodeCopyWithImpl(
+      _ResendCode _value, $Res Function(_ResendCode) _then)
+      : super(_value, (v) => _then(v as _ResendCode));
 
   @override
-  _CountryChanged get _value => super._value as _CountryChanged;
-
-  @override
-  $Res call({
-    Object? country = freezed,
-  }) {
-    return _then(_CountryChanged(
-      country == freezed
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as CountryWithPhoneCode,
-    ));
-  }
+  _ResendCode get _value => super._value as _ResendCode;
 }
 
 /// @nodoc
 
-class _$_CountryChanged implements _CountryChanged {
-  const _$_CountryChanged(this.country);
-
-  @override
-  final CountryWithPhoneCode country;
+class _$_ResendCode implements _ResendCode {
+  const _$_ResendCode();
 
   @override
   String toString() {
-    return 'SignInPhoneVerificationEvent.countryChanged(country: $country)';
+    return 'SignInPhoneVerificationEvent.resendCode()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _CountryChanged &&
-            const DeepCollectionEquality().equals(other.country, country));
+        (other.runtimeType == runtimeType && other is _ResendCode);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(country));
-
-  @JsonKey(ignore: true)
-  @override
-  _$CountryChangedCopyWith<_CountryChanged> get copyWith =>
-      __$CountryChangedCopyWithImpl<_CountryChanged>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CountryWithPhoneCode country) countryChanged,
-    required TResult Function(String input) phoneChanged,
-    required TResult Function() verifyPhone,
+    required TResult Function() resendCode,
+    required TResult Function(String input) codeChanged,
+    required TResult Function() verifyCode,
   }) {
-    return countryChanged(country);
+    return resendCode();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
+    TResult Function()? resendCode,
+    TResult Function(String input)? codeChanged,
+    TResult Function()? verifyCode,
   }) {
-    return countryChanged?.call(country);
+    return resendCode?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
+    TResult Function()? resendCode,
+    TResult Function(String input)? codeChanged,
+    TResult Function()? verifyCode,
     required TResult orElse(),
   }) {
-    if (countryChanged != null) {
-      return countryChanged(country);
+    if (resendCode != null) {
+      return resendCode();
     }
     return orElse();
   }
@@ -1957,72 +1931,66 @@ class _$_CountryChanged implements _CountryChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CountryChanged value) countryChanged,
-    required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_VerifyPhone value) verifyPhone,
+    required TResult Function(_ResendCode value) resendCode,
+    required TResult Function(_CodeChanged value) codeChanged,
+    required TResult Function(_VerifyCode value) verifyCode,
   }) {
-    return countryChanged(this);
+    return resendCode(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
+    TResult Function(_ResendCode value)? resendCode,
+    TResult Function(_CodeChanged value)? codeChanged,
+    TResult Function(_VerifyCode value)? verifyCode,
   }) {
-    return countryChanged?.call(this);
+    return resendCode?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
+    TResult Function(_ResendCode value)? resendCode,
+    TResult Function(_CodeChanged value)? codeChanged,
+    TResult Function(_VerifyCode value)? verifyCode,
     required TResult orElse(),
   }) {
-    if (countryChanged != null) {
-      return countryChanged(this);
+    if (resendCode != null) {
+      return resendCode(this);
     }
     return orElse();
   }
 }
 
-abstract class _CountryChanged implements SignInPhoneVerificationEvent {
-  const factory _CountryChanged(CountryWithPhoneCode country) =
-      _$_CountryChanged;
-
-  CountryWithPhoneCode get country;
-  @JsonKey(ignore: true)
-  _$CountryChangedCopyWith<_CountryChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _ResendCode implements SignInPhoneVerificationEvent {
+  const factory _ResendCode() = _$_ResendCode;
 }
 
 /// @nodoc
-abstract class _$PhoneChangedCopyWith<$Res> {
-  factory _$PhoneChangedCopyWith(
-          _PhoneChanged value, $Res Function(_PhoneChanged) then) =
-      __$PhoneChangedCopyWithImpl<$Res>;
+abstract class _$CodeChangedCopyWith<$Res> {
+  factory _$CodeChangedCopyWith(
+          _CodeChanged value, $Res Function(_CodeChanged) then) =
+      __$CodeChangedCopyWithImpl<$Res>;
   $Res call({String input});
 }
 
 /// @nodoc
-class __$PhoneChangedCopyWithImpl<$Res>
+class __$CodeChangedCopyWithImpl<$Res>
     extends _$SignInPhoneVerificationEventCopyWithImpl<$Res>
-    implements _$PhoneChangedCopyWith<$Res> {
-  __$PhoneChangedCopyWithImpl(
-      _PhoneChanged _value, $Res Function(_PhoneChanged) _then)
-      : super(_value, (v) => _then(v as _PhoneChanged));
+    implements _$CodeChangedCopyWith<$Res> {
+  __$CodeChangedCopyWithImpl(
+      _CodeChanged _value, $Res Function(_CodeChanged) _then)
+      : super(_value, (v) => _then(v as _CodeChanged));
 
   @override
-  _PhoneChanged get _value => super._value as _PhoneChanged;
+  _CodeChanged get _value => super._value as _CodeChanged;
 
   @override
   $Res call({
     Object? input = freezed,
   }) {
-    return _then(_PhoneChanged(
+    return _then(_CodeChanged(
       input == freezed
           ? _value.input
           : input // ignore: cast_nullable_to_non_nullable
@@ -2033,22 +2001,22 @@ class __$PhoneChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PhoneChanged implements _PhoneChanged {
-  const _$_PhoneChanged(this.input);
+class _$_CodeChanged implements _CodeChanged {
+  const _$_CodeChanged(this.input);
 
   @override
   final String input;
 
   @override
   String toString() {
-    return 'SignInPhoneVerificationEvent.phoneChanged(input: $input)';
+    return 'SignInPhoneVerificationEvent.codeChanged(input: $input)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PhoneChanged &&
+            other is _CodeChanged &&
             const DeepCollectionEquality().equals(other.input, input));
   }
 
@@ -2058,39 +2026,39 @@ class _$_PhoneChanged implements _PhoneChanged {
 
   @JsonKey(ignore: true)
   @override
-  _$PhoneChangedCopyWith<_PhoneChanged> get copyWith =>
-      __$PhoneChangedCopyWithImpl<_PhoneChanged>(this, _$identity);
+  _$CodeChangedCopyWith<_CodeChanged> get copyWith =>
+      __$CodeChangedCopyWithImpl<_CodeChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CountryWithPhoneCode country) countryChanged,
-    required TResult Function(String input) phoneChanged,
-    required TResult Function() verifyPhone,
+    required TResult Function() resendCode,
+    required TResult Function(String input) codeChanged,
+    required TResult Function() verifyCode,
   }) {
-    return phoneChanged(input);
+    return codeChanged(input);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
+    TResult Function()? resendCode,
+    TResult Function(String input)? codeChanged,
+    TResult Function()? verifyCode,
   }) {
-    return phoneChanged?.call(input);
+    return codeChanged?.call(input);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
+    TResult Function()? resendCode,
+    TResult Function(String input)? codeChanged,
+    TResult Function()? verifyCode,
     required TResult orElse(),
   }) {
-    if (phoneChanged != null) {
-      return phoneChanged(input);
+    if (codeChanged != null) {
+      return codeChanged(input);
     }
     return orElse();
   }
@@ -2098,80 +2066,80 @@ class _$_PhoneChanged implements _PhoneChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CountryChanged value) countryChanged,
-    required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_VerifyPhone value) verifyPhone,
+    required TResult Function(_ResendCode value) resendCode,
+    required TResult Function(_CodeChanged value) codeChanged,
+    required TResult Function(_VerifyCode value) verifyCode,
   }) {
-    return phoneChanged(this);
+    return codeChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
+    TResult Function(_ResendCode value)? resendCode,
+    TResult Function(_CodeChanged value)? codeChanged,
+    TResult Function(_VerifyCode value)? verifyCode,
   }) {
-    return phoneChanged?.call(this);
+    return codeChanged?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
+    TResult Function(_ResendCode value)? resendCode,
+    TResult Function(_CodeChanged value)? codeChanged,
+    TResult Function(_VerifyCode value)? verifyCode,
     required TResult orElse(),
   }) {
-    if (phoneChanged != null) {
-      return phoneChanged(this);
+    if (codeChanged != null) {
+      return codeChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class _PhoneChanged implements SignInPhoneVerificationEvent {
-  const factory _PhoneChanged(String input) = _$_PhoneChanged;
+abstract class _CodeChanged implements SignInPhoneVerificationEvent {
+  const factory _CodeChanged(String input) = _$_CodeChanged;
 
   String get input;
   @JsonKey(ignore: true)
-  _$PhoneChangedCopyWith<_PhoneChanged> get copyWith =>
+  _$CodeChangedCopyWith<_CodeChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$VerifyPhoneCopyWith<$Res> {
-  factory _$VerifyPhoneCopyWith(
-          _VerifyPhone value, $Res Function(_VerifyPhone) then) =
-      __$VerifyPhoneCopyWithImpl<$Res>;
+abstract class _$VerifyCodeCopyWith<$Res> {
+  factory _$VerifyCodeCopyWith(
+          _VerifyCode value, $Res Function(_VerifyCode) then) =
+      __$VerifyCodeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$VerifyPhoneCopyWithImpl<$Res>
+class __$VerifyCodeCopyWithImpl<$Res>
     extends _$SignInPhoneVerificationEventCopyWithImpl<$Res>
-    implements _$VerifyPhoneCopyWith<$Res> {
-  __$VerifyPhoneCopyWithImpl(
-      _VerifyPhone _value, $Res Function(_VerifyPhone) _then)
-      : super(_value, (v) => _then(v as _VerifyPhone));
+    implements _$VerifyCodeCopyWith<$Res> {
+  __$VerifyCodeCopyWithImpl(
+      _VerifyCode _value, $Res Function(_VerifyCode) _then)
+      : super(_value, (v) => _then(v as _VerifyCode));
 
   @override
-  _VerifyPhone get _value => super._value as _VerifyPhone;
+  _VerifyCode get _value => super._value as _VerifyCode;
 }
 
 /// @nodoc
 
-class _$_VerifyPhone implements _VerifyPhone {
-  const _$_VerifyPhone();
+class _$_VerifyCode implements _VerifyCode {
+  const _$_VerifyCode();
 
   @override
   String toString() {
-    return 'SignInPhoneVerificationEvent.verifyPhone()';
+    return 'SignInPhoneVerificationEvent.verifyCode()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _VerifyPhone);
+        (other.runtimeType == runtimeType && other is _VerifyCode);
   }
 
   @override
@@ -2180,33 +2148,33 @@ class _$_VerifyPhone implements _VerifyPhone {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(CountryWithPhoneCode country) countryChanged,
-    required TResult Function(String input) phoneChanged,
-    required TResult Function() verifyPhone,
+    required TResult Function() resendCode,
+    required TResult Function(String input) codeChanged,
+    required TResult Function() verifyCode,
   }) {
-    return verifyPhone();
+    return verifyCode();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
+    TResult Function()? resendCode,
+    TResult Function(String input)? codeChanged,
+    TResult Function()? verifyCode,
   }) {
-    return verifyPhone?.call();
+    return verifyCode?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
+    TResult Function()? resendCode,
+    TResult Function(String input)? codeChanged,
+    TResult Function()? verifyCode,
     required TResult orElse(),
   }) {
-    if (verifyPhone != null) {
-      return verifyPhone();
+    if (verifyCode != null) {
+      return verifyCode();
     }
     return orElse();
   }
@@ -2214,40 +2182,40 @@ class _$_VerifyPhone implements _VerifyPhone {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_CountryChanged value) countryChanged,
-    required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_VerifyPhone value) verifyPhone,
+    required TResult Function(_ResendCode value) resendCode,
+    required TResult Function(_CodeChanged value) codeChanged,
+    required TResult Function(_VerifyCode value) verifyCode,
   }) {
-    return verifyPhone(this);
+    return verifyCode(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
+    TResult Function(_ResendCode value)? resendCode,
+    TResult Function(_CodeChanged value)? codeChanged,
+    TResult Function(_VerifyCode value)? verifyCode,
   }) {
-    return verifyPhone?.call(this);
+    return verifyCode?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
+    TResult Function(_ResendCode value)? resendCode,
+    TResult Function(_CodeChanged value)? codeChanged,
+    TResult Function(_VerifyCode value)? verifyCode,
     required TResult orElse(),
   }) {
-    if (verifyPhone != null) {
-      return verifyPhone(this);
+    if (verifyCode != null) {
+      return verifyCode(this);
     }
     return orElse();
   }
 }
 
-abstract class _VerifyPhone implements SignInPhoneVerificationEvent {
-  const factory _VerifyPhone() = _$_VerifyPhone;
+abstract class _VerifyCode implements SignInPhoneVerificationEvent {
+  const factory _VerifyCode() = _$_VerifyCode;
 }
 
 /// @nodoc
@@ -2257,7 +2225,8 @@ class _$SignInPhoneVerificationStateTearOff {
   _SignInPhoneVerificationState call(
       {int countdown = delayBeforeUserCanRequestNewCode,
       required Map<String, dynamic> phoneNumber,
-      dynamic verificationCode = "",
+      required String verificationId,
+      String verificationCode = "",
       bool canSubmit = false,
       bool isLoading = false,
       bool isSuccess = false,
@@ -2265,6 +2234,7 @@ class _$SignInPhoneVerificationStateTearOff {
     return _SignInPhoneVerificationState(
       countdown: countdown,
       phoneNumber: phoneNumber,
+      verificationId: verificationId,
       verificationCode: verificationCode,
       canSubmit: canSubmit,
       isLoading: isLoading,
@@ -2281,7 +2251,8 @@ const $SignInPhoneVerificationState = _$SignInPhoneVerificationStateTearOff();
 mixin _$SignInPhoneVerificationState {
   int get countdown => throw _privateConstructorUsedError;
   Map<String, dynamic> get phoneNumber => throw _privateConstructorUsedError;
-  dynamic get verificationCode => throw _privateConstructorUsedError;
+  String get verificationId => throw _privateConstructorUsedError;
+  String get verificationCode => throw _privateConstructorUsedError;
   bool get canSubmit => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isSuccess => throw _privateConstructorUsedError;
@@ -2301,7 +2272,8 @@ abstract class $SignInPhoneVerificationStateCopyWith<$Res> {
   $Res call(
       {int countdown,
       Map<String, dynamic> phoneNumber,
-      dynamic verificationCode,
+      String verificationId,
+      String verificationCode,
       bool canSubmit,
       bool isLoading,
       bool isSuccess,
@@ -2321,6 +2293,7 @@ class _$SignInPhoneVerificationStateCopyWithImpl<$Res>
   $Res call({
     Object? countdown = freezed,
     Object? phoneNumber = freezed,
+    Object? verificationId = freezed,
     Object? verificationCode = freezed,
     Object? canSubmit = freezed,
     Object? isLoading = freezed,
@@ -2336,10 +2309,14 @@ class _$SignInPhoneVerificationStateCopyWithImpl<$Res>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      verificationId: verificationId == freezed
+          ? _value.verificationId
+          : verificationId // ignore: cast_nullable_to_non_nullable
+              as String,
       verificationCode: verificationCode == freezed
           ? _value.verificationCode
           : verificationCode // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String,
       canSubmit: canSubmit == freezed
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
@@ -2371,7 +2348,8 @@ abstract class _$SignInPhoneVerificationStateCopyWith<$Res>
   $Res call(
       {int countdown,
       Map<String, dynamic> phoneNumber,
-      dynamic verificationCode,
+      String verificationId,
+      String verificationCode,
       bool canSubmit,
       bool isLoading,
       bool isSuccess,
@@ -2395,6 +2373,7 @@ class __$SignInPhoneVerificationStateCopyWithImpl<$Res>
   $Res call({
     Object? countdown = freezed,
     Object? phoneNumber = freezed,
+    Object? verificationId = freezed,
     Object? verificationCode = freezed,
     Object? canSubmit = freezed,
     Object? isLoading = freezed,
@@ -2410,9 +2389,14 @@ class __$SignInPhoneVerificationStateCopyWithImpl<$Res>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      verificationId: verificationId == freezed
+          ? _value.verificationId
+          : verificationId // ignore: cast_nullable_to_non_nullable
+              as String,
       verificationCode: verificationCode == freezed
           ? _value.verificationCode
-          : verificationCode,
+          : verificationCode // ignore: cast_nullable_to_non_nullable
+              as String,
       canSubmit: canSubmit == freezed
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
@@ -2439,6 +2423,7 @@ class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
   const _$_SignInPhoneVerificationState(
       {this.countdown = delayBeforeUserCanRequestNewCode,
       required this.phoneNumber,
+      required this.verificationId,
       this.verificationCode = "",
       this.canSubmit = false,
       this.isLoading = false,
@@ -2450,9 +2435,11 @@ class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
   final int countdown;
   @override
   final Map<String, dynamic> phoneNumber;
+  @override
+  final String verificationId;
   @JsonKey()
   @override
-  final dynamic verificationCode;
+  final String verificationCode;
   @JsonKey()
   @override
   final bool canSubmit;
@@ -2467,7 +2454,7 @@ class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
 
   @override
   String toString() {
-    return 'SignInPhoneVerificationState(countdown: $countdown, phoneNumber: $phoneNumber, verificationCode: $verificationCode, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+    return 'SignInPhoneVerificationState(countdown: $countdown, phoneNumber: $phoneNumber, verificationId: $verificationId, verificationCode: $verificationCode, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
   }
 
   @override
@@ -2478,6 +2465,8 @@ class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
             const DeepCollectionEquality().equals(other.countdown, countdown) &&
             const DeepCollectionEquality()
                 .equals(other.phoneNumber, phoneNumber) &&
+            const DeepCollectionEquality()
+                .equals(other.verificationId, verificationId) &&
             const DeepCollectionEquality()
                 .equals(other.verificationCode, verificationCode) &&
             const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
@@ -2491,6 +2480,7 @@ class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
       runtimeType,
       const DeepCollectionEquality().hash(countdown),
       const DeepCollectionEquality().hash(phoneNumber),
+      const DeepCollectionEquality().hash(verificationId),
       const DeepCollectionEquality().hash(verificationCode),
       const DeepCollectionEquality().hash(canSubmit),
       const DeepCollectionEquality().hash(isLoading),
@@ -2509,7 +2499,8 @@ abstract class _SignInPhoneVerificationState
   const factory _SignInPhoneVerificationState(
       {int countdown,
       required Map<String, dynamic> phoneNumber,
-      dynamic verificationCode,
+      required String verificationId,
+      String verificationCode,
       bool canSubmit,
       bool isLoading,
       bool isSuccess,
@@ -2520,7 +2511,9 @@ abstract class _SignInPhoneVerificationState
   @override
   Map<String, dynamic> get phoneNumber;
   @override
-  dynamic get verificationCode;
+  String get verificationId;
+  @override
+  String get verificationCode;
   @override
   bool get canSubmit;
   @override

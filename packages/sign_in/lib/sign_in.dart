@@ -1,6 +1,6 @@
 library sign_in;
 
-import 'dart:ffi';
+import 'dart:async';
 
 import 'package:extensions/extensions.dart';
 import 'package:firebase_auth/firebase_auth.dart';

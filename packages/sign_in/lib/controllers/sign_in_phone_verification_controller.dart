@@ -2,11 +2,10 @@ part of '../sign_in.dart';
 
 @freezed
 class SignInPhoneVerificationEvent with _$SignInPhoneVerificationEvent {
-  const factory SignInPhoneVerificationEvent.countryChanged(
-      CountryWithPhoneCode country) = _CountryChanged;
-  const factory SignInPhoneVerificationEvent.phoneChanged(String input) =
-      _PhoneChanged;
-  const factory SignInPhoneVerificationEvent.verifyPhone() = _VerifyPhone;
+  const factory SignInPhoneVerificationEvent.resendCode() = _ResendCode;
+  const factory SignInPhoneVerificationEvent.codeChanged(String input) =
+      _CodeChanged;
+  const factory SignInPhoneVerificationEvent.verifyCode() = _VerifyCode;
 }
 
 @freezed
@@ -14,7 +13,8 @@ class SignInPhoneVerificationState with _$SignInPhoneVerificationState {
   const factory SignInPhoneVerificationState({
     @Default(delayBeforeUserCanRequestNewCode) int countdown,
     required Map<String, dynamic> phoneNumber,
-    @Default("") verificationCode,
+    required String verificationId,
+    @Default("") String verificationCode,
     @Default(false) bool canSubmit,
     @Default(false) bool isLoading,
     @Default(false) bool isSuccess,
@@ -31,8 +31,14 @@ class SignInPhoneVerificationState with _$SignInPhoneVerificationState {
 /// these functions are also used in the member section of the app.
 class SignInVerificationController
     extends StateNotifier<SignInPhoneVerificationState> {
-  SignInVerificationController(Map<String, dynamic> phoneNumber, this._service)
-      : super(SignInPhoneVerificationState(phoneNumber: phoneNumber)) {
+  SignInVerificationController(
+    Map<String, dynamic> phoneNumber,
+    String verificationId,
+    this._service,
+  ) : super(SignInPhoneVerificationState(
+          verificationId: verificationId,
+          phoneNumber: phoneNumber,
+        )) {
     _startTimer();
   }
 
@@ -63,40 +69,60 @@ class SignInVerificationController
     );
   }
 
-  void resendCode() {
-    state = SubmitState.saving();
+  void handleEvent(SignInPhoneVerificationEvent event) {
+    event.when(
+      codeChanged: (input) {
+        state = state.copyWith(
+          verificationCode: input,
+          canSubmit: input.length == 6,
+        );
+      },
+      resendCode: _resendCode,
+      verifyCode: _verifyCode,
+    );
+  }
+
+  Future<void> _resendCode() async {
+    state = state.copyWith(isLoading: true);
+
     try {
-      _authService.verifyPhone(() {
-        state = SubmitState.notValid();
-        _startTimer();
+      _service.verifyPhone(state.phoneNumber['e164'], (verificationId) {
+        state = state.copyWith(
+          isLoading: false,
+          verificationId: verificationId,
+        );
       });
     } on FirebaseAuthException catch (e) {
-      state = SubmitState.error(e.message!);
+      state = state.copyWith(
+        isLoading: false,
+        errorText: e.message!,
+      );
     }
   }
 
-  Future<void> verifyCode(String verificationCode) async {
+  Future<void> _verifyCode() async {
     if (!state.canSubmit) return;
     state = state.copyWith(isLoading: true);
 
     try {
-      await _authService.verifyCode(smsCode, () {
-        state = SubmitState.success();
+      _service.verifyCode(state.verificationId, state.verificationCode, () {
+        state = state.copyWith(
+          isLoading: false,
+          isSuccess: true,
+        );
       });
-    }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'invalid-verification-code') {
         state = state.copyWith(
           isLoading: false,
           errorText: "INVALID_CODE",
         );
-      }
-      else {
+      } else {
         state = state.copyWith(
           isLoading: false,
           errorText: e.message!,
         );
       }
-    } 
+    }
   }
 }
