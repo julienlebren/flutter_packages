@@ -1,6 +1,7 @@
 library firebase_auth_service;
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_libphonenumber/flutter_libphonenumber.dart';
 import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -27,6 +28,25 @@ class FirebaseAuthService {
   Stream<User?> authStateChanges() => _firebaseAuth.authStateChanges();
 
   User? get currentUser => _firebaseAuth.currentUser;
+
+  Future<Map<String, dynamic>> parsePhoneNumber(
+    CountryWithPhoneCode country,
+    String inputText,
+  ) async {
+    final formattedNumber =
+        '+${country.phoneCode}${inputText.replaceAll(RegExp(r'[^0-9]'), '')}';
+
+    final phoneNumber = await FlutterLibphonenumber().parse(
+      formattedNumber,
+      region: country.countryCode,
+    );
+
+    if (phoneNumber['type'] != 'mobile') {
+      FirebaseAuthException(code: 'ERROR_PHONE_NOT_MOBILE');
+    }
+
+    return phoneNumber;
+  }
 
   Future<User?> signInAnonymously() async {
     final userCredential = await _firebaseAuth.signInAnonymously();

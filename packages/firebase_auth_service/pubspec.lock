@@ -97,6 +97,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_libphonenumber:
+    dependency: "direct main"
+    description:
+      name: flutter_libphonenumber
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.2"
   flutter_login_facebook:
     dependency: "direct main"
     description:

@@ -1,7 +1,11 @@
 part of '../sign_in.dart';
 
-final customSignInRoutesProvider =
-    Provider<Route<dynamic>? Function(RouteSettings settings)?>((_) => null);
+// Override juste les listeners dans les formulaires ??
+
+final signInRouterProvider =
+    Provider<Route<dynamic> Function(RouteSettings settings)>(
+  (_) => SignInRouter.onGenerateRoute,
+);
 
 final signInLandingPageProvider =
     Provider<Widget>((_) => const SizedBox.shrink());
@@ -25,6 +29,147 @@ class SignInRoutes {
   static const signInVerificationPage = 'sign-in/phone/verification';
 }
 
+class SignInRouter {
+  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
+    switch (settings.name) {
+      case SignInRoutes.signInRouterPage:
+        return platformPageRoute(
+          builder: (_) => SignInNavigator(
+            navigatorKey: SignInNavigatorKeys.modal,
+            routeName: settings.arguments as String,
+          ),
+          fullscreenDialog: true,
+        );
+      case SignInRoutes.signInEmailPage:
+        return platformPageRoute(
+          builder: (_) => const SignInEmailPage(),
+        );
+      case SignInRoutes.signInLinkPage:
+        return platformPageRoute(
+          builder: (_) => const SignInEmailLinkPage(),
+        );
+      case SignInRoutes.signInPhonePage:
+        return platformPageRoute(
+          builder: (_) => const SignInPhonePage(),
+        );
+    }
+    return platformPageRoute(
+      builder: (_) => const SignInUnknownPage(),
+    );
+  }
+}
+
+class SignInNavigator extends ConsumerWidget {
+  const SignInNavigator({
+    Key? key,
+    required this.navigatorKey,
+    required this.routeName,
+  }) : super(key: key);
+
+  final GlobalKey<NavigatorState> navigatorKey;
+  final String routeName;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final signInRouter = ref.read(signInRouterProvider);
+
+    ref.listen<AuthState>(authStateProvider, (_, authState) {
+      authState.maybeWhen(
+        authed: (_) {
+          final navigator = SignInNavigatorKeys.main.currentState!;
+          navigator.pop();
+        },
+        needUserInformation: () {
+          final needUserInfoPage = ref.read(needUserInfoPageProvider);
+          if (needUserInfoPage != null) {
+            final navigator = navigatorKey.currentState!;
+            navigator.pushNamed(needUserInfoPage);
+          }
+        },
+        orElse: () => null,
+      );
+    });
+
+    return Navigator(
+      key: navigatorKey,
+      initialRoute: routeName,
+      onGenerateRoute: (settings) => signInRouter(settings),
+    );
+  }
+}
+
+class SignInPageBuilder extends StatelessWidget {
+  const SignInPageBuilder({
+    Key? key,
+    this.theme,
+    this.localizations,
+    this.signInRouter,
+    this.landingPage,
+    this.needUserInfoPage,
+  }) : super(key: key);
+
+  final SignInTheme? theme;
+  final SignInLocalizations? localizations;
+  final Route<dynamic> Function(RouteSettings settings)? signInRouter;
+  final Widget? landingPage;
+  final String? needUserInfoPage;
+
+  @override
+  Widget build(BuildContext context) {
+    return ProviderScope(
+      overrides: [
+        if (theme != null) signInThemeProvider.overrideWithValue(theme!),
+        if (localizations != null)
+          signInLocalizationsProvider.overrideWithValue(localizations!),
+        if (landingPage != null)
+          signInLandingPageProvider.overrideWithValue(landingPage!),
+        if (needUserInfoPage != null)
+          needUserInfoPageProvider.overrideWithValue(needUserInfoPage!),
+        if (signInRouter != null)
+          signInRouterProvider.overrideWithValue(signInRouter!),
+      ],
+      child: SignInNavigator(
+        navigatorKey: SignInNavigatorKeys.main,
+        routeName: SignInRoutes.signInLandingPage,
+      ),
+    );
+  }
+}
+
+class SignInPageBuilder2 extends StatelessWidget {
+  const SignInPageBuilder2({
+    Key? key,
+    required this.child,
+    this.theme,
+    this.localizations,
+    this.signInRouter,
+    this.needUserInfoPage,
+  }) : super(key: key);
+
+  final SignInTheme? theme;
+  final SignInLocalizations? localizations;
+  final Route<dynamic> Function(RouteSettings settings)? signInRouter;
+  final String? needUserInfoPage;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return ProviderScope(
+      overrides: [
+        if (theme != null) signInThemeProvider.overrideWithValue(theme!),
+        if (localizations != null)
+          signInLocalizationsProvider.overrideWithValue(localizations!),
+        if (needUserInfoPage != null)
+          needUserInfoPageProvider.overrideWithValue(needUserInfoPage!),
+        if (signInRouter != null)
+          signInRouterProvider.overrideWithValue(signInRouter!),
+      ],
+      child: child,
+    );
+  }
+}
+
+/*
 class SignInRouter {
   static Route<dynamic> onGenerateRoute(RouteSettings settings, WidgetRef ref) {
     switch (settings.name) {
@@ -63,116 +208,7 @@ class SignInRouter {
     );
   }
 }
-
-class SignInNavigator extends ConsumerWidget {
-  const SignInNavigator({
-    Key? key,
-    required this.navigatorKey,
-    required this.routeName,
-  }) : super(key: key);
-
-  final GlobalKey<NavigatorState> navigatorKey;
-  final String routeName;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen<AuthState>(authStateProvider, (_, authState) {
-      authState.maybeWhen(
-        authed: (_) {
-          final navigator = SignInNavigatorKeys.main.currentState!;
-          navigator.pop();
-        },
-        needUserInformation: () {
-          final needUserInfoPage = ref.read(needUserInfoPageProvider);
-          if (needUserInfoPage != null) {
-            final navigator = navigatorKey.currentState!;
-            navigator.pushNamed(needUserInfoPage);
-          }
-        },
-        orElse: () => null,
-      );
-    });
-
-    return Navigator(
-      key: navigatorKey,
-      initialRoute: routeName,
-      onGenerateRoute: (settings) =>
-          SignInRouter.onGenerateRoute(settings, ref),
-    );
-  }
-}
-
-class SignInPageBuilder extends StatelessWidget {
-  const SignInPageBuilder({
-    Key? key,
-    this.theme,
-    this.localizations,
-    this.customSignInRoutes,
-    this.landingPage,
-    this.needUserInfoPage,
-  }) : super(key: key);
-
-  final SignInTheme? theme;
-  final SignInLocalizations? localizations;
-  final Route<dynamic>? Function(RouteSettings settings)? customSignInRoutes;
-  final Widget? landingPage;
-  final String? needUserInfoPage;
-
-  @override
-  Widget build(BuildContext context) {
-    return ProviderScope(
-      overrides: [
-        if (theme != null) signInThemeProvider.overrideWithValue(theme!),
-        if (localizations != null)
-          signInLocalizationsProvider.overrideWithValue(localizations!),
-        if (landingPage != null)
-          signInLandingPageProvider.overrideWithValue(landingPage!),
-        if (needUserInfoPage != null)
-          needUserInfoPageProvider.overrideWithValue(needUserInfoPage!),
-        if (customSignInRoutes != null)
-          customSignInRoutesProvider.overrideWithValue(customSignInRoutes!),
-      ],
-      child: SignInNavigator(
-        navigatorKey: SignInNavigatorKeys.main,
-        routeName: SignInRoutes.signInLandingPage,
-      ),
-    );
-  }
-}
-
-class SignInPageBuilder2 extends StatelessWidget {
-  const SignInPageBuilder2({
-    Key? key,
-    required this.child,
-    this.theme,
-    this.localizations,
-    this.customSignInRoutes,
-    this.needUserInfoPage,
-  }) : super(key: key);
-
-  final SignInTheme? theme;
-  final SignInLocalizations? localizations;
-  final Route<dynamic>? Function(RouteSettings settings)? customSignInRoutes;
-  final String? needUserInfoPage;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return ProviderScope(
-      overrides: [
-        if (theme != null) signInThemeProvider.overrideWithValue(theme!),
-        if (localizations != null)
-          signInLocalizationsProvider.overrideWithValue(localizations!),
-        if (needUserInfoPage != null)
-          needUserInfoPageProvider.overrideWithValue(needUserInfoPage!),
-        if (customSignInRoutes != null)
-          customSignInRoutesProvider.overrideWithValue(customSignInRoutes!),
-      ],
-      child: child,
-    );
-  }
-}
-
+*/
 /*
 class SignInRoutes {
   static const signInRouterPage = 'sign-in';
