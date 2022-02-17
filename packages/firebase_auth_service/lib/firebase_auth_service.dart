@@ -49,7 +49,9 @@ class FirebaseAuthService {
   }
 
   Future<void> verifyPhone(
-      String phoneNumber, Function(String verificationId) completion) async {
+    String phoneNumber,
+    Function(String verificationId) completion,
+  ) async {
     await _firebaseAuth.verifyPhoneNumber(
       phoneNumber: phoneNumber,
       verificationCompleted: (AuthCredential credential) async {
@@ -66,6 +68,19 @@ class FirebaseAuthService {
       },
       timeout: Duration(seconds: 60),
     );
+  }
+
+  Future<void> verifyCode(
+    String verificationId,
+    String verificationCode,
+    Function() completion,
+  ) async {
+    final AuthCredential credential = PhoneAuthProvider.credential(
+      verificationId: verificationId,
+      smsCode: verificationCode,
+    );
+    await _firebaseAuth.signInWithCredential(credential);
+    completion();
   }
 
   Future<User?> signInAnonymously() async {

@@ -1010,6 +1010,1532 @@ abstract class _SignInEmailLinkState implements SignInEmailLinkState {
 }
 
 /// @nodoc
+class _$SignInPhoneEventTearOff {
+  const _$SignInPhoneEventTearOff();
+
+  _CountryChanged countryChanged(CountryWithPhoneCode country) {
+    return _CountryChanged(
+      country,
+    );
+  }
+
+  _PhoneChanged phoneChanged(String input) {
+    return _PhoneChanged(
+      input,
+    );
+  }
+
+  _VerifyPhone verifyPhone() {
+    return const _VerifyPhone();
+  }
+}
+
+/// @nodoc
+const $SignInPhoneEvent = _$SignInPhoneEventTearOff();
+
+/// @nodoc
+mixin _$SignInPhoneEvent {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CountryWithPhoneCode country) countryChanged,
+    required TResult Function(String input) phoneChanged,
+    required TResult Function() verifyPhone,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CountryChanged value) countryChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_VerifyPhone value) verifyPhone,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignInPhoneEventCopyWith<$Res> {
+  factory $SignInPhoneEventCopyWith(
+          SignInPhoneEvent value, $Res Function(SignInPhoneEvent) then) =
+      _$SignInPhoneEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignInPhoneEventCopyWithImpl<$Res>
+    implements $SignInPhoneEventCopyWith<$Res> {
+  _$SignInPhoneEventCopyWithImpl(this._value, this._then);
+
+  final SignInPhoneEvent _value;
+  // ignore: unused_field
+  final $Res Function(SignInPhoneEvent) _then;
+}
+
+/// @nodoc
+abstract class _$CountryChangedCopyWith<$Res> {
+  factory _$CountryChangedCopyWith(
+          _CountryChanged value, $Res Function(_CountryChanged) then) =
+      __$CountryChangedCopyWithImpl<$Res>;
+  $Res call({CountryWithPhoneCode country});
+}
+
+/// @nodoc
+class __$CountryChangedCopyWithImpl<$Res>
+    extends _$SignInPhoneEventCopyWithImpl<$Res>
+    implements _$CountryChangedCopyWith<$Res> {
+  __$CountryChangedCopyWithImpl(
+      _CountryChanged _value, $Res Function(_CountryChanged) _then)
+      : super(_value, (v) => _then(v as _CountryChanged));
+
+  @override
+  _CountryChanged get _value => super._value as _CountryChanged;
+
+  @override
+  $Res call({
+    Object? country = freezed,
+  }) {
+    return _then(_CountryChanged(
+      country == freezed
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as CountryWithPhoneCode,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CountryChanged implements _CountryChanged {
+  const _$_CountryChanged(this.country);
+
+  @override
+  final CountryWithPhoneCode country;
+
+  @override
+  String toString() {
+    return 'SignInPhoneEvent.countryChanged(country: $country)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _CountryChanged &&
+            const DeepCollectionEquality().equals(other.country, country));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(country));
+
+  @JsonKey(ignore: true)
+  @override
+  _$CountryChangedCopyWith<_CountryChanged> get copyWith =>
+      __$CountryChangedCopyWithImpl<_CountryChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CountryWithPhoneCode country) countryChanged,
+    required TResult Function(String input) phoneChanged,
+    required TResult Function() verifyPhone,
+  }) {
+    return countryChanged(country);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+  }) {
+    return countryChanged?.call(country);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+    required TResult orElse(),
+  }) {
+    if (countryChanged != null) {
+      return countryChanged(country);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CountryChanged value) countryChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_VerifyPhone value) verifyPhone,
+  }) {
+    return countryChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+  }) {
+    return countryChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+    required TResult orElse(),
+  }) {
+    if (countryChanged != null) {
+      return countryChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CountryChanged implements SignInPhoneEvent {
+  const factory _CountryChanged(CountryWithPhoneCode country) =
+      _$_CountryChanged;
+
+  CountryWithPhoneCode get country;
+  @JsonKey(ignore: true)
+  _$CountryChangedCopyWith<_CountryChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$PhoneChangedCopyWith<$Res> {
+  factory _$PhoneChangedCopyWith(
+          _PhoneChanged value, $Res Function(_PhoneChanged) then) =
+      __$PhoneChangedCopyWithImpl<$Res>;
+  $Res call({String input});
+}
+
+/// @nodoc
+class __$PhoneChangedCopyWithImpl<$Res>
+    extends _$SignInPhoneEventCopyWithImpl<$Res>
+    implements _$PhoneChangedCopyWith<$Res> {
+  __$PhoneChangedCopyWithImpl(
+      _PhoneChanged _value, $Res Function(_PhoneChanged) _then)
+      : super(_value, (v) => _then(v as _PhoneChanged));
+
+  @override
+  _PhoneChanged get _value => super._value as _PhoneChanged;
+
+  @override
+  $Res call({
+    Object? input = freezed,
+  }) {
+    return _then(_PhoneChanged(
+      input == freezed
+          ? _value.input
+          : input // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PhoneChanged implements _PhoneChanged {
+  const _$_PhoneChanged(this.input);
+
+  @override
+  final String input;
+
+  @override
+  String toString() {
+    return 'SignInPhoneEvent.phoneChanged(input: $input)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _PhoneChanged &&
+            const DeepCollectionEquality().equals(other.input, input));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(input));
+
+  @JsonKey(ignore: true)
+  @override
+  _$PhoneChangedCopyWith<_PhoneChanged> get copyWith =>
+      __$PhoneChangedCopyWithImpl<_PhoneChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CountryWithPhoneCode country) countryChanged,
+    required TResult Function(String input) phoneChanged,
+    required TResult Function() verifyPhone,
+  }) {
+    return phoneChanged(input);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+  }) {
+    return phoneChanged?.call(input);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+    required TResult orElse(),
+  }) {
+    if (phoneChanged != null) {
+      return phoneChanged(input);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CountryChanged value) countryChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_VerifyPhone value) verifyPhone,
+  }) {
+    return phoneChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+  }) {
+    return phoneChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+    required TResult orElse(),
+  }) {
+    if (phoneChanged != null) {
+      return phoneChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PhoneChanged implements SignInPhoneEvent {
+  const factory _PhoneChanged(String input) = _$_PhoneChanged;
+
+  String get input;
+  @JsonKey(ignore: true)
+  _$PhoneChangedCopyWith<_PhoneChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$VerifyPhoneCopyWith<$Res> {
+  factory _$VerifyPhoneCopyWith(
+          _VerifyPhone value, $Res Function(_VerifyPhone) then) =
+      __$VerifyPhoneCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$VerifyPhoneCopyWithImpl<$Res>
+    extends _$SignInPhoneEventCopyWithImpl<$Res>
+    implements _$VerifyPhoneCopyWith<$Res> {
+  __$VerifyPhoneCopyWithImpl(
+      _VerifyPhone _value, $Res Function(_VerifyPhone) _then)
+      : super(_value, (v) => _then(v as _VerifyPhone));
+
+  @override
+  _VerifyPhone get _value => super._value as _VerifyPhone;
+}
+
+/// @nodoc
+
+class _$_VerifyPhone implements _VerifyPhone {
+  const _$_VerifyPhone();
+
+  @override
+  String toString() {
+    return 'SignInPhoneEvent.verifyPhone()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _VerifyPhone);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CountryWithPhoneCode country) countryChanged,
+    required TResult Function(String input) phoneChanged,
+    required TResult Function() verifyPhone,
+  }) {
+    return verifyPhone();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+  }) {
+    return verifyPhone?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+    required TResult orElse(),
+  }) {
+    if (verifyPhone != null) {
+      return verifyPhone();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CountryChanged value) countryChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_VerifyPhone value) verifyPhone,
+  }) {
+    return verifyPhone(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+  }) {
+    return verifyPhone?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+    required TResult orElse(),
+  }) {
+    if (verifyPhone != null) {
+      return verifyPhone(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _VerifyPhone implements SignInPhoneEvent {
+  const factory _VerifyPhone() = _$_VerifyPhone;
+}
+
+/// @nodoc
+class _$SignInPhoneStateTearOff {
+  const _$SignInPhoneStateTearOff();
+
+  _SignInPhoneState call(
+      {required CountryWithPhoneCode country,
+      Map<String, dynamic>? phoneNumber,
+      String? verificationId,
+      bool canSubmit = false,
+      bool isLoading = false,
+      bool isSuccess = false,
+      String? errorText}) {
+    return _SignInPhoneState(
+      country: country,
+      phoneNumber: phoneNumber,
+      verificationId: verificationId,
+      canSubmit: canSubmit,
+      isLoading: isLoading,
+      isSuccess: isSuccess,
+      errorText: errorText,
+    );
+  }
+}
+
+/// @nodoc
+const $SignInPhoneState = _$SignInPhoneStateTearOff();
+
+/// @nodoc
+mixin _$SignInPhoneState {
+  CountryWithPhoneCode get country => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get phoneNumber => throw _privateConstructorUsedError;
+  String? get verificationId => throw _privateConstructorUsedError;
+  bool get canSubmit => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isSuccess => throw _privateConstructorUsedError;
+  String? get errorText => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SignInPhoneStateCopyWith<SignInPhoneState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignInPhoneStateCopyWith<$Res> {
+  factory $SignInPhoneStateCopyWith(
+          SignInPhoneState value, $Res Function(SignInPhoneState) then) =
+      _$SignInPhoneStateCopyWithImpl<$Res>;
+  $Res call(
+      {CountryWithPhoneCode country,
+      Map<String, dynamic>? phoneNumber,
+      String? verificationId,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText});
+}
+
+/// @nodoc
+class _$SignInPhoneStateCopyWithImpl<$Res>
+    implements $SignInPhoneStateCopyWith<$Res> {
+  _$SignInPhoneStateCopyWithImpl(this._value, this._then);
+
+  final SignInPhoneState _value;
+  // ignore: unused_field
+  final $Res Function(SignInPhoneState) _then;
+
+  @override
+  $Res call({
+    Object? country = freezed,
+    Object? phoneNumber = freezed,
+    Object? verificationId = freezed,
+    Object? canSubmit = freezed,
+    Object? isLoading = freezed,
+    Object? isSuccess = freezed,
+    Object? errorText = freezed,
+  }) {
+    return _then(_value.copyWith(
+      country: country == freezed
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as CountryWithPhoneCode,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      verificationId: verificationId == freezed
+          ? _value.verificationId
+          : verificationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      canSubmit: canSubmit == freezed
+          ? _value.canSubmit
+          : canSubmit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuccess: isSuccess == freezed
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorText: errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SignInPhoneStateCopyWith<$Res>
+    implements $SignInPhoneStateCopyWith<$Res> {
+  factory _$SignInPhoneStateCopyWith(
+          _SignInPhoneState value, $Res Function(_SignInPhoneState) then) =
+      __$SignInPhoneStateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {CountryWithPhoneCode country,
+      Map<String, dynamic>? phoneNumber,
+      String? verificationId,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText});
+}
+
+/// @nodoc
+class __$SignInPhoneStateCopyWithImpl<$Res>
+    extends _$SignInPhoneStateCopyWithImpl<$Res>
+    implements _$SignInPhoneStateCopyWith<$Res> {
+  __$SignInPhoneStateCopyWithImpl(
+      _SignInPhoneState _value, $Res Function(_SignInPhoneState) _then)
+      : super(_value, (v) => _then(v as _SignInPhoneState));
+
+  @override
+  _SignInPhoneState get _value => super._value as _SignInPhoneState;
+
+  @override
+  $Res call({
+    Object? country = freezed,
+    Object? phoneNumber = freezed,
+    Object? verificationId = freezed,
+    Object? canSubmit = freezed,
+    Object? isLoading = freezed,
+    Object? isSuccess = freezed,
+    Object? errorText = freezed,
+  }) {
+    return _then(_SignInPhoneState(
+      country: country == freezed
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as CountryWithPhoneCode,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>?,
+      verificationId: verificationId == freezed
+          ? _value.verificationId
+          : verificationId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      canSubmit: canSubmit == freezed
+          ? _value.canSubmit
+          : canSubmit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuccess: isSuccess == freezed
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorText: errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SignInPhoneState implements _SignInPhoneState {
+  const _$_SignInPhoneState(
+      {required this.country,
+      this.phoneNumber,
+      this.verificationId,
+      this.canSubmit = false,
+      this.isLoading = false,
+      this.isSuccess = false,
+      this.errorText});
+
+  @override
+  final CountryWithPhoneCode country;
+  @override
+  final Map<String, dynamic>? phoneNumber;
+  @override
+  final String? verificationId;
+  @JsonKey()
+  @override
+  final bool canSubmit;
+  @JsonKey()
+  @override
+  final bool isLoading;
+  @JsonKey()
+  @override
+  final bool isSuccess;
+  @override
+  final String? errorText;
+
+  @override
+  String toString() {
+    return 'SignInPhoneState(country: $country, phoneNumber: $phoneNumber, verificationId: $verificationId, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SignInPhoneState &&
+            const DeepCollectionEquality().equals(other.country, country) &&
+            const DeepCollectionEquality()
+                .equals(other.phoneNumber, phoneNumber) &&
+            const DeepCollectionEquality()
+                .equals(other.verificationId, verificationId) &&
+            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
+            const DeepCollectionEquality().equals(other.errorText, errorText));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(country),
+      const DeepCollectionEquality().hash(phoneNumber),
+      const DeepCollectionEquality().hash(verificationId),
+      const DeepCollectionEquality().hash(canSubmit),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(isSuccess),
+      const DeepCollectionEquality().hash(errorText));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SignInPhoneStateCopyWith<_SignInPhoneState> get copyWith =>
+      __$SignInPhoneStateCopyWithImpl<_SignInPhoneState>(this, _$identity);
+}
+
+abstract class _SignInPhoneState implements SignInPhoneState {
+  const factory _SignInPhoneState(
+      {required CountryWithPhoneCode country,
+      Map<String, dynamic>? phoneNumber,
+      String? verificationId,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText}) = _$_SignInPhoneState;
+
+  @override
+  CountryWithPhoneCode get country;
+  @override
+  Map<String, dynamic>? get phoneNumber;
+  @override
+  String? get verificationId;
+  @override
+  bool get canSubmit;
+  @override
+  bool get isLoading;
+  @override
+  bool get isSuccess;
+  @override
+  String? get errorText;
+  @override
+  @JsonKey(ignore: true)
+  _$SignInPhoneStateCopyWith<_SignInPhoneState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$SignInPhoneVerificationEventTearOff {
+  const _$SignInPhoneVerificationEventTearOff();
+
+  _CountryChanged countryChanged(CountryWithPhoneCode country) {
+    return _CountryChanged(
+      country,
+    );
+  }
+
+  _PhoneChanged phoneChanged(String input) {
+    return _PhoneChanged(
+      input,
+    );
+  }
+
+  _VerifyPhone verifyPhone() {
+    return const _VerifyPhone();
+  }
+}
+
+/// @nodoc
+const $SignInPhoneVerificationEvent = _$SignInPhoneVerificationEventTearOff();
+
+/// @nodoc
+mixin _$SignInPhoneVerificationEvent {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CountryWithPhoneCode country) countryChanged,
+    required TResult Function(String input) phoneChanged,
+    required TResult Function() verifyPhone,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CountryChanged value) countryChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_VerifyPhone value) verifyPhone,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignInPhoneVerificationEventCopyWith<$Res> {
+  factory $SignInPhoneVerificationEventCopyWith(
+          SignInPhoneVerificationEvent value,
+          $Res Function(SignInPhoneVerificationEvent) then) =
+      _$SignInPhoneVerificationEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignInPhoneVerificationEventCopyWithImpl<$Res>
+    implements $SignInPhoneVerificationEventCopyWith<$Res> {
+  _$SignInPhoneVerificationEventCopyWithImpl(this._value, this._then);
+
+  final SignInPhoneVerificationEvent _value;
+  // ignore: unused_field
+  final $Res Function(SignInPhoneVerificationEvent) _then;
+}
+
+/// @nodoc
+abstract class _$CountryChangedCopyWith<$Res> {
+  factory _$CountryChangedCopyWith(
+          _CountryChanged value, $Res Function(_CountryChanged) then) =
+      __$CountryChangedCopyWithImpl<$Res>;
+  $Res call({CountryWithPhoneCode country});
+}
+
+/// @nodoc
+class __$CountryChangedCopyWithImpl<$Res>
+    extends _$SignInPhoneVerificationEventCopyWithImpl<$Res>
+    implements _$CountryChangedCopyWith<$Res> {
+  __$CountryChangedCopyWithImpl(
+      _CountryChanged _value, $Res Function(_CountryChanged) _then)
+      : super(_value, (v) => _then(v as _CountryChanged));
+
+  @override
+  _CountryChanged get _value => super._value as _CountryChanged;
+
+  @override
+  $Res call({
+    Object? country = freezed,
+  }) {
+    return _then(_CountryChanged(
+      country == freezed
+          ? _value.country
+          : country // ignore: cast_nullable_to_non_nullable
+              as CountryWithPhoneCode,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CountryChanged implements _CountryChanged {
+  const _$_CountryChanged(this.country);
+
+  @override
+  final CountryWithPhoneCode country;
+
+  @override
+  String toString() {
+    return 'SignInPhoneVerificationEvent.countryChanged(country: $country)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _CountryChanged &&
+            const DeepCollectionEquality().equals(other.country, country));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(country));
+
+  @JsonKey(ignore: true)
+  @override
+  _$CountryChangedCopyWith<_CountryChanged> get copyWith =>
+      __$CountryChangedCopyWithImpl<_CountryChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CountryWithPhoneCode country) countryChanged,
+    required TResult Function(String input) phoneChanged,
+    required TResult Function() verifyPhone,
+  }) {
+    return countryChanged(country);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+  }) {
+    return countryChanged?.call(country);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+    required TResult orElse(),
+  }) {
+    if (countryChanged != null) {
+      return countryChanged(country);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CountryChanged value) countryChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_VerifyPhone value) verifyPhone,
+  }) {
+    return countryChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+  }) {
+    return countryChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+    required TResult orElse(),
+  }) {
+    if (countryChanged != null) {
+      return countryChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CountryChanged implements SignInPhoneVerificationEvent {
+  const factory _CountryChanged(CountryWithPhoneCode country) =
+      _$_CountryChanged;
+
+  CountryWithPhoneCode get country;
+  @JsonKey(ignore: true)
+  _$CountryChangedCopyWith<_CountryChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$PhoneChangedCopyWith<$Res> {
+  factory _$PhoneChangedCopyWith(
+          _PhoneChanged value, $Res Function(_PhoneChanged) then) =
+      __$PhoneChangedCopyWithImpl<$Res>;
+  $Res call({String input});
+}
+
+/// @nodoc
+class __$PhoneChangedCopyWithImpl<$Res>
+    extends _$SignInPhoneVerificationEventCopyWithImpl<$Res>
+    implements _$PhoneChangedCopyWith<$Res> {
+  __$PhoneChangedCopyWithImpl(
+      _PhoneChanged _value, $Res Function(_PhoneChanged) _then)
+      : super(_value, (v) => _then(v as _PhoneChanged));
+
+  @override
+  _PhoneChanged get _value => super._value as _PhoneChanged;
+
+  @override
+  $Res call({
+    Object? input = freezed,
+  }) {
+    return _then(_PhoneChanged(
+      input == freezed
+          ? _value.input
+          : input // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PhoneChanged implements _PhoneChanged {
+  const _$_PhoneChanged(this.input);
+
+  @override
+  final String input;
+
+  @override
+  String toString() {
+    return 'SignInPhoneVerificationEvent.phoneChanged(input: $input)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _PhoneChanged &&
+            const DeepCollectionEquality().equals(other.input, input));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(input));
+
+  @JsonKey(ignore: true)
+  @override
+  _$PhoneChangedCopyWith<_PhoneChanged> get copyWith =>
+      __$PhoneChangedCopyWithImpl<_PhoneChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CountryWithPhoneCode country) countryChanged,
+    required TResult Function(String input) phoneChanged,
+    required TResult Function() verifyPhone,
+  }) {
+    return phoneChanged(input);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+  }) {
+    return phoneChanged?.call(input);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+    required TResult orElse(),
+  }) {
+    if (phoneChanged != null) {
+      return phoneChanged(input);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CountryChanged value) countryChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_VerifyPhone value) verifyPhone,
+  }) {
+    return phoneChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+  }) {
+    return phoneChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+    required TResult orElse(),
+  }) {
+    if (phoneChanged != null) {
+      return phoneChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PhoneChanged implements SignInPhoneVerificationEvent {
+  const factory _PhoneChanged(String input) = _$_PhoneChanged;
+
+  String get input;
+  @JsonKey(ignore: true)
+  _$PhoneChangedCopyWith<_PhoneChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$VerifyPhoneCopyWith<$Res> {
+  factory _$VerifyPhoneCopyWith(
+          _VerifyPhone value, $Res Function(_VerifyPhone) then) =
+      __$VerifyPhoneCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$VerifyPhoneCopyWithImpl<$Res>
+    extends _$SignInPhoneVerificationEventCopyWithImpl<$Res>
+    implements _$VerifyPhoneCopyWith<$Res> {
+  __$VerifyPhoneCopyWithImpl(
+      _VerifyPhone _value, $Res Function(_VerifyPhone) _then)
+      : super(_value, (v) => _then(v as _VerifyPhone));
+
+  @override
+  _VerifyPhone get _value => super._value as _VerifyPhone;
+}
+
+/// @nodoc
+
+class _$_VerifyPhone implements _VerifyPhone {
+  const _$_VerifyPhone();
+
+  @override
+  String toString() {
+    return 'SignInPhoneVerificationEvent.verifyPhone()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _VerifyPhone);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(CountryWithPhoneCode country) countryChanged,
+    required TResult Function(String input) phoneChanged,
+    required TResult Function() verifyPhone,
+  }) {
+    return verifyPhone();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+  }) {
+    return verifyPhone?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(CountryWithPhoneCode country)? countryChanged,
+    TResult Function(String input)? phoneChanged,
+    TResult Function()? verifyPhone,
+    required TResult orElse(),
+  }) {
+    if (verifyPhone != null) {
+      return verifyPhone();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CountryChanged value) countryChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_VerifyPhone value) verifyPhone,
+  }) {
+    return verifyPhone(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+  }) {
+    return verifyPhone?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CountryChanged value)? countryChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_VerifyPhone value)? verifyPhone,
+    required TResult orElse(),
+  }) {
+    if (verifyPhone != null) {
+      return verifyPhone(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _VerifyPhone implements SignInPhoneVerificationEvent {
+  const factory _VerifyPhone() = _$_VerifyPhone;
+}
+
+/// @nodoc
+class _$SignInPhoneVerificationStateTearOff {
+  const _$SignInPhoneVerificationStateTearOff();
+
+  _SignInPhoneVerificationState call(
+      {int countdown = delayBeforeUserCanRequestNewCode,
+      required Map<String, dynamic> phoneNumber,
+      dynamic verificationCode = "",
+      bool canSubmit = false,
+      bool isLoading = false,
+      bool isSuccess = false,
+      String? errorText}) {
+    return _SignInPhoneVerificationState(
+      countdown: countdown,
+      phoneNumber: phoneNumber,
+      verificationCode: verificationCode,
+      canSubmit: canSubmit,
+      isLoading: isLoading,
+      isSuccess: isSuccess,
+      errorText: errorText,
+    );
+  }
+}
+
+/// @nodoc
+const $SignInPhoneVerificationState = _$SignInPhoneVerificationStateTearOff();
+
+/// @nodoc
+mixin _$SignInPhoneVerificationState {
+  int get countdown => throw _privateConstructorUsedError;
+  Map<String, dynamic> get phoneNumber => throw _privateConstructorUsedError;
+  dynamic get verificationCode => throw _privateConstructorUsedError;
+  bool get canSubmit => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isSuccess => throw _privateConstructorUsedError;
+  String? get errorText => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SignInPhoneVerificationStateCopyWith<SignInPhoneVerificationState>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignInPhoneVerificationStateCopyWith<$Res> {
+  factory $SignInPhoneVerificationStateCopyWith(
+          SignInPhoneVerificationState value,
+          $Res Function(SignInPhoneVerificationState) then) =
+      _$SignInPhoneVerificationStateCopyWithImpl<$Res>;
+  $Res call(
+      {int countdown,
+      Map<String, dynamic> phoneNumber,
+      dynamic verificationCode,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText});
+}
+
+/// @nodoc
+class _$SignInPhoneVerificationStateCopyWithImpl<$Res>
+    implements $SignInPhoneVerificationStateCopyWith<$Res> {
+  _$SignInPhoneVerificationStateCopyWithImpl(this._value, this._then);
+
+  final SignInPhoneVerificationState _value;
+  // ignore: unused_field
+  final $Res Function(SignInPhoneVerificationState) _then;
+
+  @override
+  $Res call({
+    Object? countdown = freezed,
+    Object? phoneNumber = freezed,
+    Object? verificationCode = freezed,
+    Object? canSubmit = freezed,
+    Object? isLoading = freezed,
+    Object? isSuccess = freezed,
+    Object? errorText = freezed,
+  }) {
+    return _then(_value.copyWith(
+      countdown: countdown == freezed
+          ? _value.countdown
+          : countdown // ignore: cast_nullable_to_non_nullable
+              as int,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      verificationCode: verificationCode == freezed
+          ? _value.verificationCode
+          : verificationCode // ignore: cast_nullable_to_non_nullable
+              as dynamic,
+      canSubmit: canSubmit == freezed
+          ? _value.canSubmit
+          : canSubmit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuccess: isSuccess == freezed
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorText: errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SignInPhoneVerificationStateCopyWith<$Res>
+    implements $SignInPhoneVerificationStateCopyWith<$Res> {
+  factory _$SignInPhoneVerificationStateCopyWith(
+          _SignInPhoneVerificationState value,
+          $Res Function(_SignInPhoneVerificationState) then) =
+      __$SignInPhoneVerificationStateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {int countdown,
+      Map<String, dynamic> phoneNumber,
+      dynamic verificationCode,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText});
+}
+
+/// @nodoc
+class __$SignInPhoneVerificationStateCopyWithImpl<$Res>
+    extends _$SignInPhoneVerificationStateCopyWithImpl<$Res>
+    implements _$SignInPhoneVerificationStateCopyWith<$Res> {
+  __$SignInPhoneVerificationStateCopyWithImpl(
+      _SignInPhoneVerificationState _value,
+      $Res Function(_SignInPhoneVerificationState) _then)
+      : super(_value, (v) => _then(v as _SignInPhoneVerificationState));
+
+  @override
+  _SignInPhoneVerificationState get _value =>
+      super._value as _SignInPhoneVerificationState;
+
+  @override
+  $Res call({
+    Object? countdown = freezed,
+    Object? phoneNumber = freezed,
+    Object? verificationCode = freezed,
+    Object? canSubmit = freezed,
+    Object? isLoading = freezed,
+    Object? isSuccess = freezed,
+    Object? errorText = freezed,
+  }) {
+    return _then(_SignInPhoneVerificationState(
+      countdown: countdown == freezed
+          ? _value.countdown
+          : countdown // ignore: cast_nullable_to_non_nullable
+              as int,
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber // ignore: cast_nullable_to_non_nullable
+              as Map<String, dynamic>,
+      verificationCode: verificationCode == freezed
+          ? _value.verificationCode
+          : verificationCode,
+      canSubmit: canSubmit == freezed
+          ? _value.canSubmit
+          : canSubmit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuccess: isSuccess == freezed
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorText: errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
+  const _$_SignInPhoneVerificationState(
+      {this.countdown = delayBeforeUserCanRequestNewCode,
+      required this.phoneNumber,
+      this.verificationCode = "",
+      this.canSubmit = false,
+      this.isLoading = false,
+      this.isSuccess = false,
+      this.errorText});
+
+  @JsonKey()
+  @override
+  final int countdown;
+  @override
+  final Map<String, dynamic> phoneNumber;
+  @JsonKey()
+  @override
+  final dynamic verificationCode;
+  @JsonKey()
+  @override
+  final bool canSubmit;
+  @JsonKey()
+  @override
+  final bool isLoading;
+  @JsonKey()
+  @override
+  final bool isSuccess;
+  @override
+  final String? errorText;
+
+  @override
+  String toString() {
+    return 'SignInPhoneVerificationState(countdown: $countdown, phoneNumber: $phoneNumber, verificationCode: $verificationCode, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SignInPhoneVerificationState &&
+            const DeepCollectionEquality().equals(other.countdown, countdown) &&
+            const DeepCollectionEquality()
+                .equals(other.phoneNumber, phoneNumber) &&
+            const DeepCollectionEquality()
+                .equals(other.verificationCode, verificationCode) &&
+            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
+            const DeepCollectionEquality().equals(other.errorText, errorText));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(countdown),
+      const DeepCollectionEquality().hash(phoneNumber),
+      const DeepCollectionEquality().hash(verificationCode),
+      const DeepCollectionEquality().hash(canSubmit),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(isSuccess),
+      const DeepCollectionEquality().hash(errorText));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SignInPhoneVerificationStateCopyWith<_SignInPhoneVerificationState>
+      get copyWith => __$SignInPhoneVerificationStateCopyWithImpl<
+          _SignInPhoneVerificationState>(this, _$identity);
+}
+
+abstract class _SignInPhoneVerificationState
+    implements SignInPhoneVerificationState {
+  const factory _SignInPhoneVerificationState(
+      {int countdown,
+      required Map<String, dynamic> phoneNumber,
+      dynamic verificationCode,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText}) = _$_SignInPhoneVerificationState;
+
+  @override
+  int get countdown;
+  @override
+  Map<String, dynamic> get phoneNumber;
+  @override
+  dynamic get verificationCode;
+  @override
+  bool get canSubmit;
+  @override
+  bool get isLoading;
+  @override
+  bool get isSuccess;
+  @override
+  String? get errorText;
+  @override
+  @JsonKey(ignore: true)
+  _$SignInPhoneVerificationStateCopyWith<_SignInPhoneVerificationState>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$AuthStateTearOff {
   const _$AuthStateTearOff();
 

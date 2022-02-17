@@ -7,6 +7,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth_service/firebase_auth_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_libphonenumber/flutter_libphonenumber.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layout_builder/layout_builder.dart';
@@ -16,6 +18,8 @@ import 'package:sign_in/presentation/painters/google_logo.dart';
 part 'controllers/sign_in_controller.dart';
 part 'controllers/sign_in_email_controller.dart';
 part 'controllers/sign_in_email_link_controller.dart';
+part 'controllers/sign_in_phone_controller.dart';
+part 'controllers/sign_in_phone_verification_controller.dart';
 part 'core/enums/sign_in_suppliers.dart';
 part 'core/models/auth_state.dart';
 part 'core/models/sign_in_event.dart';
@@ -32,6 +36,8 @@ part 'presentation/sign_in_phone_page.dart';
 part 'presentation/sign_in_button.dart';
 part 'presentation/sign_in_unknown_page.dart';
 part 'sign_in.freezed.dart';
+
+const delayBeforeUserCanRequestNewCode = 60;
 
 class AuthSettings {
   AuthSettings(

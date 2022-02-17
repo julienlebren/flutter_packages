@@ -1,6 +1,14 @@
 part of '../sign_in.dart';
 
 @freezed
+class SignInPhoneEvent with _$SignInPhoneEvent {
+  const factory SignInPhoneEvent.countryChanged(CountryWithPhoneCode country) =
+      _CountryChanged;
+  const factory SignInPhoneEvent.phoneChanged(String input) = _PhoneChanged;
+  const factory SignInPhoneEvent.verifyPhone() = _VerifyPhone;
+}
+
+@freezed
 class SignInPhoneState with _$SignInPhoneState {
   const factory SignInPhoneState({
     required CountryWithPhoneCode country,
@@ -26,12 +34,22 @@ class SignInPhoneController extends StateNotifier<SignInPhoneState> {
 
   final FirebaseAuthService _service;
 
+  void handleEvent(SignInPhoneEvent event) {
+    event.when(
+      countryChanged: (country) {
+        state = state.copyWith(country: country);
+      },
+      phoneChanged: _parsePhoneNumber,
+      verifyPhone: _verifyPhone,
+    );
+  }
+
   Future<void> _parsePhoneNumber(
-    String inputText,
+    String input,
   ) async {
     try {
       final phoneNumber =
-          await _service.parsePhoneNumber(state.country, inputText);
+          await _service.parsePhoneNumber(state.country, input);
 
       state = state.copyWith(
         phoneNumber: phoneNumber,
@@ -52,9 +70,11 @@ class SignInPhoneController extends StateNotifier<SignInPhoneState> {
   }
 
   Future<void> _verifyPhone() async {
+    if (!state.canSubmit) return;
     state = state.copyWith(isLoading: true);
+
     try {
-      _service.verifyPhone((verificationId) {
+      _service.verifyPhone(state.phoneNumber!['e164'], (verificationId) {
         state = state.copyWith(
           isLoading: false,
           isSuccess: true,
