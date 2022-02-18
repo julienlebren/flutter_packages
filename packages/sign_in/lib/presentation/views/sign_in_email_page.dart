@@ -1,4 +1,4 @@
-part of '../sign_in.dart';
+part of '../../sign_in.dart';
 
 class SignInEmailPage extends ConsumerWidget {
   const SignInEmailPage({Key? key}) : super(key: key);

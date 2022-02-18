@@ -1,6 +1,7 @@
 library sign_in;
 
 import 'dart:async';
+import 'dart:ui' as ui;
 
 import 'package:extensions/extensions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -26,15 +27,17 @@ part 'core/models/sign_in_event.dart';
 part 'core/models/sign_in_localizations.dart';
 part 'core/models/sign_in_state.dart';
 part 'core/models/sign_in_theme.dart';
-part 'presentation/sign_in_buttons.dart';
-part 'presentation/sign_in_landing_page.dart';
-part 'presentation/sign_in_router.dart';
-part 'presentation/sign_in_email_link_page.dart';
-part 'presentation/sign_in_email_page.dart';
-part 'presentation/sign_in_email_password_page.dart';
-part 'presentation/sign_in_phone_page.dart';
-part 'presentation/sign_in_button.dart';
-part 'presentation/sign_in_unknown_page.dart';
+part 'presentation/widgets/sign_in_page_builder.dart';
+part 'presentation/widgets/sign_in_buttons.dart';
+part 'presentation/widgets/sign_in_button.dart';
+part 'presentation/router/sign_in_router.dart';
+part 'presentation/views/sign_in_countries_page.dart';
+part 'presentation/views/sign_in_email_link_page.dart';
+part 'presentation/views/sign_in_email_page.dart';
+part 'presentation/views/sign_in_email_password_page.dart';
+part 'presentation/views/sign_in_landing_page.dart';
+part 'presentation/views/sign_in_phone_page.dart';
+part 'presentation/views/sign_in_unknown_page.dart';
 part 'sign_in.freezed.dart';
 
 const delayBeforeUserCanRequestNewCode = 60;

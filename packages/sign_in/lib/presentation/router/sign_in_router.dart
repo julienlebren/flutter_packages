@@ -1,4 +1,4 @@
-part of '../sign_in.dart';
+part of '../../sign_in.dart';
 
 // Override juste les listeners dans les formulaires ??
 
@@ -26,7 +26,7 @@ class SignInRoutes {
   static const signInEmailRegisterPage = 'sign-in/email/register';
   static const signInLinkPage = 'sign-in/link';
   static const signInPhonePage = 'sign-in/phone';
-  static const signInVerificationPage = 'sign-in/phone/verification';
+  static const signInPhoneVerificationPage = 'sign-in/phone/verification';
 }
 
 class SignInRouter {
@@ -98,8 +98,8 @@ class SignInNavigator extends ConsumerWidget {
   }
 }
 
-class SignInPageBuilder extends StatelessWidget {
-  const SignInPageBuilder({
+class SignInLandingPageBuilder extends StatelessWidget {
+  const SignInLandingPageBuilder({
     Key? key,
     this.theme,
     this.localizations,

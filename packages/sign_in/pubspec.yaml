@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   extensions:
     git:
       url: https://github.com/julienlebren/flutter_packages
@@ -29,6 +31,7 @@ dependencies:
   freezed_annotation: ^1.1.0
   flutter_libphonenumber: ^1.2.2
   flutter_riverpod: ^1.0.0
+  intl: ^0.17.0
   pinput: ^1.2.2
 
 dev_dependencies:
@@ -40,5 +43,6 @@ dev_dependencies:
   json_serializable: ^6.1.4
   
 flutter:
+  generate: true
   assets:
     - assets/images/

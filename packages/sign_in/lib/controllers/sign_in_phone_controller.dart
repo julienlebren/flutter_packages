@@ -29,10 +29,14 @@ class SignInPhoneState with _$SignInPhoneState {
 /// The core of the functions are in the [AuthService] class because
 /// these functions are also used in the member section of the app.
 class SignInPhoneController extends StateNotifier<SignInPhoneState> {
-  SignInPhoneController(CountryWithPhoneCode country, this._service)
-      : super(SignInPhoneState(country: country));
+  SignInPhoneController(
+    CountryWithPhoneCode country,
+    this._service,
+    this._localizations,
+  ) : super(SignInPhoneState(country: country));
 
   final FirebaseAuthService _service;
+  final SignInLocalizations _localizations;
 
   void handleEvent(SignInPhoneEvent event) {
     event.when(
@@ -48,8 +52,7 @@ class SignInPhoneController extends StateNotifier<SignInPhoneState> {
     String input,
   ) async {
     try {
-      final phoneNumber =
-          await _service.parsePhoneNumber(state.country, input);
+      final phoneNumber = await _service.parsePhoneNumber(state.country, input);
 
       state = state.copyWith(
         phoneNumber: phoneNumber,

@@ -22,5 +22,24 @@ class SignInLocalizations with _$SignInLocalizations {
     @Default("Not yet registered? Create an account.")
         String signInWithEmailCreateAccount,
     @Default("Continue") String continueButton,
+    @Default("Phone Number") String signInPhoneTitle,
+    @Default("We will send an SMS to confirm your number, it won't cost you nothing.")
+        String signInPhoneSubtitle,
+    @Default("Example:") String signInPhonePlaceholder,
+    @Default("You may not need to enter the code as the app will attempt to detect it automatically.")
+        String signInPhoneAutoRetrieve,
+    @Default("Waiting for automatic code detection ...")
+        String signInPhoneLoadingDialog,
+    @Default("You must enter a mobile phone number.")
+        String signInPhoneErrorMobile,
+    @Default("Number verification") String signInVerificationTitle,
+    /*@Default("Enter the 6-digit code we sent to {number}")
+        Function(String number) signInVerificationSubtitle,
+    @Default("Did not receive the code?\nWait {seconds} seconds...")
+        Function(String seconds) signInVerificationNotReceived,*/
+    @Default("Wrong number") String signInVerificationWrongNumber,
+    @Default("Resend the code") String signInVerificationResend,
+    @Default("Invalid verification code!") String signInVerificationInvalid,
+    @Default("Country / Region") String signInCountriesTitle,
   }) = _SignInLocalizations;
 }

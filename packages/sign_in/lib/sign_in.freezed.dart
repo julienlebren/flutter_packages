@@ -4243,7 +4243,21 @@ class _$SignInLocalizationsTearOff {
       String signInWithEmailForgotPassword = "Forgot your password?",
       String signInWithEmailCreateAccount =
           "Not yet registered? Create an account.",
-      String continueButton = "Continue"}) {
+      String continueButton = "Continue",
+      String signInPhoneTitle = "Phone Number",
+      String signInPhoneSubtitle =
+          "We will send an SMS to confirm your number, it won't cost you nothing.",
+      String signInPhonePlaceholder = "Example:",
+      String signInPhoneAutoRetrieve =
+          "You may not need to enter the code as the app will attempt to detect it automatically.",
+      String signInPhoneLoadingDialog =
+          "Waiting for automatic code detection ...",
+      String signInPhoneErrorMobile = "You must enter a mobile phone number.",
+      String signInVerificationTitle = "Number verification",
+      String signInVerificationWrongNumber = "Wrong number",
+      String signInVerificationResend = "Resend the code",
+      String signInVerificationInvalid = "Invalid verification code!",
+      String signInCountriesTitle = "Country / Region"}) {
     return _SignInLocalizations(
       signInAnonymously: signInAnonymously,
       signInWithApple: signInWithApple,
@@ -4260,6 +4274,17 @@ class _$SignInLocalizationsTearOff {
       signInWithEmailForgotPassword: signInWithEmailForgotPassword,
       signInWithEmailCreateAccount: signInWithEmailCreateAccount,
       continueButton: continueButton,
+      signInPhoneTitle: signInPhoneTitle,
+      signInPhoneSubtitle: signInPhoneSubtitle,
+      signInPhonePlaceholder: signInPhonePlaceholder,
+      signInPhoneAutoRetrieve: signInPhoneAutoRetrieve,
+      signInPhoneLoadingDialog: signInPhoneLoadingDialog,
+      signInPhoneErrorMobile: signInPhoneErrorMobile,
+      signInVerificationTitle: signInVerificationTitle,
+      signInVerificationWrongNumber: signInVerificationWrongNumber,
+      signInVerificationResend: signInVerificationResend,
+      signInVerificationInvalid: signInVerificationInvalid,
+      signInCountriesTitle: signInCountriesTitle,
     );
   }
 }
@@ -4286,6 +4311,22 @@ mixin _$SignInLocalizations {
       throw _privateConstructorUsedError;
   String get signInWithEmailCreateAccount => throw _privateConstructorUsedError;
   String get continueButton => throw _privateConstructorUsedError;
+  String get signInPhoneTitle => throw _privateConstructorUsedError;
+  String get signInPhoneSubtitle => throw _privateConstructorUsedError;
+  String get signInPhonePlaceholder => throw _privateConstructorUsedError;
+  String get signInPhoneAutoRetrieve => throw _privateConstructorUsedError;
+  String get signInPhoneLoadingDialog => throw _privateConstructorUsedError;
+  String get signInPhoneErrorMobile => throw _privateConstructorUsedError;
+  String get signInVerificationTitle =>
+      throw _privateConstructorUsedError; /*@Default("Enter the 6-digit code we sent to {number}")
+        Function(String number) signInVerificationSubtitle,
+    @Default("Did not receive the code?\nWait {seconds} seconds...")
+        Function(String seconds) signInVerificationNotReceived,*/
+  String get signInVerificationWrongNumber =>
+      throw _privateConstructorUsedError;
+  String get signInVerificationResend => throw _privateConstructorUsedError;
+  String get signInVerificationInvalid => throw _privateConstructorUsedError;
+  String get signInCountriesTitle => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignInLocalizationsCopyWith<SignInLocalizations> get copyWith =>
@@ -4312,7 +4353,18 @@ abstract class $SignInLocalizationsCopyWith<$Res> {
       String signInWithEmailPasswordPlaceholder,
       String signInWithEmailForgotPassword,
       String signInWithEmailCreateAccount,
-      String continueButton});
+      String continueButton,
+      String signInPhoneTitle,
+      String signInPhoneSubtitle,
+      String signInPhonePlaceholder,
+      String signInPhoneAutoRetrieve,
+      String signInPhoneLoadingDialog,
+      String signInPhoneErrorMobile,
+      String signInVerificationTitle,
+      String signInVerificationWrongNumber,
+      String signInVerificationResend,
+      String signInVerificationInvalid,
+      String signInCountriesTitle});
 }
 
 /// @nodoc
@@ -4341,6 +4393,17 @@ class _$SignInLocalizationsCopyWithImpl<$Res>
     Object? signInWithEmailForgotPassword = freezed,
     Object? signInWithEmailCreateAccount = freezed,
     Object? continueButton = freezed,
+    Object? signInPhoneTitle = freezed,
+    Object? signInPhoneSubtitle = freezed,
+    Object? signInPhonePlaceholder = freezed,
+    Object? signInPhoneAutoRetrieve = freezed,
+    Object? signInPhoneLoadingDialog = freezed,
+    Object? signInPhoneErrorMobile = freezed,
+    Object? signInVerificationTitle = freezed,
+    Object? signInVerificationWrongNumber = freezed,
+    Object? signInVerificationResend = freezed,
+    Object? signInVerificationInvalid = freezed,
+    Object? signInCountriesTitle = freezed,
   }) {
     return _then(_value.copyWith(
       signInAnonymously: signInAnonymously == freezed
@@ -4404,6 +4467,50 @@ class _$SignInLocalizationsCopyWithImpl<$Res>
           ? _value.continueButton
           : continueButton // ignore: cast_nullable_to_non_nullable
               as String,
+      signInPhoneTitle: signInPhoneTitle == freezed
+          ? _value.signInPhoneTitle
+          : signInPhoneTitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInPhoneSubtitle: signInPhoneSubtitle == freezed
+          ? _value.signInPhoneSubtitle
+          : signInPhoneSubtitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInPhonePlaceholder: signInPhonePlaceholder == freezed
+          ? _value.signInPhonePlaceholder
+          : signInPhonePlaceholder // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInPhoneAutoRetrieve: signInPhoneAutoRetrieve == freezed
+          ? _value.signInPhoneAutoRetrieve
+          : signInPhoneAutoRetrieve // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInPhoneLoadingDialog: signInPhoneLoadingDialog == freezed
+          ? _value.signInPhoneLoadingDialog
+          : signInPhoneLoadingDialog // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInPhoneErrorMobile: signInPhoneErrorMobile == freezed
+          ? _value.signInPhoneErrorMobile
+          : signInPhoneErrorMobile // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInVerificationTitle: signInVerificationTitle == freezed
+          ? _value.signInVerificationTitle
+          : signInVerificationTitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInVerificationWrongNumber: signInVerificationWrongNumber == freezed
+          ? _value.signInVerificationWrongNumber
+          : signInVerificationWrongNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInVerificationResend: signInVerificationResend == freezed
+          ? _value.signInVerificationResend
+          : signInVerificationResend // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInVerificationInvalid: signInVerificationInvalid == freezed
+          ? _value.signInVerificationInvalid
+          : signInVerificationInvalid // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInCountriesTitle: signInCountriesTitle == freezed
+          ? _value.signInCountriesTitle
+          : signInCountriesTitle // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -4430,7 +4537,18 @@ abstract class _$SignInLocalizationsCopyWith<$Res>
       String signInWithEmailPasswordPlaceholder,
       String signInWithEmailForgotPassword,
       String signInWithEmailCreateAccount,
-      String continueButton});
+      String continueButton,
+      String signInPhoneTitle,
+      String signInPhoneSubtitle,
+      String signInPhonePlaceholder,
+      String signInPhoneAutoRetrieve,
+      String signInPhoneLoadingDialog,
+      String signInPhoneErrorMobile,
+      String signInVerificationTitle,
+      String signInVerificationWrongNumber,
+      String signInVerificationResend,
+      String signInVerificationInvalid,
+      String signInCountriesTitle});
 }
 
 /// @nodoc
@@ -4461,6 +4579,17 @@ class __$SignInLocalizationsCopyWithImpl<$Res>
     Object? signInWithEmailForgotPassword = freezed,
     Object? signInWithEmailCreateAccount = freezed,
     Object? continueButton = freezed,
+    Object? signInPhoneTitle = freezed,
+    Object? signInPhoneSubtitle = freezed,
+    Object? signInPhonePlaceholder = freezed,
+    Object? signInPhoneAutoRetrieve = freezed,
+    Object? signInPhoneLoadingDialog = freezed,
+    Object? signInPhoneErrorMobile = freezed,
+    Object? signInVerificationTitle = freezed,
+    Object? signInVerificationWrongNumber = freezed,
+    Object? signInVerificationResend = freezed,
+    Object? signInVerificationInvalid = freezed,
+    Object? signInCountriesTitle = freezed,
   }) {
     return _then(_SignInLocalizations(
       signInAnonymously: signInAnonymously == freezed
@@ -4524,6 +4653,50 @@ class __$SignInLocalizationsCopyWithImpl<$Res>
           ? _value.continueButton
           : continueButton // ignore: cast_nullable_to_non_nullable
               as String,
+      signInPhoneTitle: signInPhoneTitle == freezed
+          ? _value.signInPhoneTitle
+          : signInPhoneTitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInPhoneSubtitle: signInPhoneSubtitle == freezed
+          ? _value.signInPhoneSubtitle
+          : signInPhoneSubtitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInPhonePlaceholder: signInPhonePlaceholder == freezed
+          ? _value.signInPhonePlaceholder
+          : signInPhonePlaceholder // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInPhoneAutoRetrieve: signInPhoneAutoRetrieve == freezed
+          ? _value.signInPhoneAutoRetrieve
+          : signInPhoneAutoRetrieve // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInPhoneLoadingDialog: signInPhoneLoadingDialog == freezed
+          ? _value.signInPhoneLoadingDialog
+          : signInPhoneLoadingDialog // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInPhoneErrorMobile: signInPhoneErrorMobile == freezed
+          ? _value.signInPhoneErrorMobile
+          : signInPhoneErrorMobile // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInVerificationTitle: signInVerificationTitle == freezed
+          ? _value.signInVerificationTitle
+          : signInVerificationTitle // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInVerificationWrongNumber: signInVerificationWrongNumber == freezed
+          ? _value.signInVerificationWrongNumber
+          : signInVerificationWrongNumber // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInVerificationResend: signInVerificationResend == freezed
+          ? _value.signInVerificationResend
+          : signInVerificationResend // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInVerificationInvalid: signInVerificationInvalid == freezed
+          ? _value.signInVerificationInvalid
+          : signInVerificationInvalid // ignore: cast_nullable_to_non_nullable
+              as String,
+      signInCountriesTitle: signInCountriesTitle == freezed
+          ? _value.signInCountriesTitle
+          : signInCountriesTitle // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -4550,7 +4723,21 @@ class _$_SignInLocalizations implements _SignInLocalizations {
       this.signInWithEmailForgotPassword = "Forgot your password?",
       this.signInWithEmailCreateAccount =
           "Not yet registered? Create an account.",
-      this.continueButton = "Continue"});
+      this.continueButton = "Continue",
+      this.signInPhoneTitle = "Phone Number",
+      this.signInPhoneSubtitle =
+          "We will send an SMS to confirm your number, it won't cost you nothing.",
+      this.signInPhonePlaceholder = "Example:",
+      this.signInPhoneAutoRetrieve =
+          "You may not need to enter the code as the app will attempt to detect it automatically.",
+      this.signInPhoneLoadingDialog =
+          "Waiting for automatic code detection ...",
+      this.signInPhoneErrorMobile = "You must enter a mobile phone number.",
+      this.signInVerificationTitle = "Number verification",
+      this.signInVerificationWrongNumber = "Wrong number",
+      this.signInVerificationResend = "Resend the code",
+      this.signInVerificationInvalid = "Invalid verification code!",
+      this.signInCountriesTitle = "Country / Region"});
 
   @JsonKey()
   @override
@@ -4597,10 +4784,46 @@ class _$_SignInLocalizations implements _SignInLocalizations {
   @JsonKey()
   @override
   final String continueButton;
+  @JsonKey()
+  @override
+  final String signInPhoneTitle;
+  @JsonKey()
+  @override
+  final String signInPhoneSubtitle;
+  @JsonKey()
+  @override
+  final String signInPhonePlaceholder;
+  @JsonKey()
+  @override
+  final String signInPhoneAutoRetrieve;
+  @JsonKey()
+  @override
+  final String signInPhoneLoadingDialog;
+  @JsonKey()
+  @override
+  final String signInPhoneErrorMobile;
+  @JsonKey()
+  @override
+  final String signInVerificationTitle;
+  @JsonKey()
+  @override /*@Default("Enter the 6-digit code we sent to {number}")
+        Function(String number) signInVerificationSubtitle,
+    @Default("Did not receive the code?\nWait {seconds} seconds...")
+        Function(String seconds) signInVerificationNotReceived,*/
+  final String signInVerificationWrongNumber;
+  @JsonKey()
+  @override
+  final String signInVerificationResend;
+  @JsonKey()
+  @override
+  final String signInVerificationInvalid;
+  @JsonKey()
+  @override
+  final String signInCountriesTitle;
 
   @override
   String toString() {
-    return 'SignInLocalizations(signInAnonymously: $signInAnonymously, signInWithApple: $signInWithApple, signInWithGoogle: $signInWithGoogle, signInWithFacebook: $signInWithFacebook, signInWithEmail: $signInWithEmail, errorTitle: $errorTitle, signInWithEmailTitle: $signInWithEmailTitle, signInWithEmailCaption: $signInWithEmailCaption, signInWithEmailSuccess: $signInWithEmailSuccess, signInWithEmailRetry: $signInWithEmailRetry, signInWithEmailPlaceholder: $signInWithEmailPlaceholder, signInWithEmailPasswordPlaceholder: $signInWithEmailPasswordPlaceholder, signInWithEmailForgotPassword: $signInWithEmailForgotPassword, signInWithEmailCreateAccount: $signInWithEmailCreateAccount, continueButton: $continueButton)';
+    return 'SignInLocalizations(signInAnonymously: $signInAnonymously, signInWithApple: $signInWithApple, signInWithGoogle: $signInWithGoogle, signInWithFacebook: $signInWithFacebook, signInWithEmail: $signInWithEmail, errorTitle: $errorTitle, signInWithEmailTitle: $signInWithEmailTitle, signInWithEmailCaption: $signInWithEmailCaption, signInWithEmailSuccess: $signInWithEmailSuccess, signInWithEmailRetry: $signInWithEmailRetry, signInWithEmailPlaceholder: $signInWithEmailPlaceholder, signInWithEmailPasswordPlaceholder: $signInWithEmailPasswordPlaceholder, signInWithEmailForgotPassword: $signInWithEmailForgotPassword, signInWithEmailCreateAccount: $signInWithEmailCreateAccount, continueButton: $continueButton, signInPhoneTitle: $signInPhoneTitle, signInPhoneSubtitle: $signInPhoneSubtitle, signInPhonePlaceholder: $signInPhonePlaceholder, signInPhoneAutoRetrieve: $signInPhoneAutoRetrieve, signInPhoneLoadingDialog: $signInPhoneLoadingDialog, signInPhoneErrorMobile: $signInPhoneErrorMobile, signInVerificationTitle: $signInVerificationTitle, signInVerificationWrongNumber: $signInVerificationWrongNumber, signInVerificationResend: $signInVerificationResend, signInVerificationInvalid: $signInVerificationInvalid, signInCountriesTitle: $signInCountriesTitle)';
   }
 
   @override
@@ -4640,27 +4863,62 @@ class _$_SignInLocalizations implements _SignInLocalizations {
                 other.signInWithEmailCreateAccount,
                 signInWithEmailCreateAccount) &&
             const DeepCollectionEquality()
-                .equals(other.continueButton, continueButton));
+                .equals(other.continueButton, continueButton) &&
+            const DeepCollectionEquality()
+                .equals(other.signInPhoneTitle, signInPhoneTitle) &&
+            const DeepCollectionEquality()
+                .equals(other.signInPhoneSubtitle, signInPhoneSubtitle) &&
+            const DeepCollectionEquality()
+                .equals(other.signInPhonePlaceholder, signInPhonePlaceholder) &&
+            const DeepCollectionEquality().equals(
+                other.signInPhoneAutoRetrieve, signInPhoneAutoRetrieve) &&
+            const DeepCollectionEquality().equals(
+                other.signInPhoneLoadingDialog, signInPhoneLoadingDialog) &&
+            const DeepCollectionEquality()
+                .equals(other.signInPhoneErrorMobile, signInPhoneErrorMobile) &&
+            const DeepCollectionEquality().equals(
+                other.signInVerificationTitle, signInVerificationTitle) &&
+            const DeepCollectionEquality().equals(
+                other.signInVerificationWrongNumber,
+                signInVerificationWrongNumber) &&
+            const DeepCollectionEquality().equals(
+                other.signInVerificationResend, signInVerificationResend) &&
+            const DeepCollectionEquality().equals(
+                other.signInVerificationInvalid, signInVerificationInvalid) &&
+            const DeepCollectionEquality()
+                .equals(other.signInCountriesTitle, signInCountriesTitle));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(signInAnonymously),
-      const DeepCollectionEquality().hash(signInWithApple),
-      const DeepCollectionEquality().hash(signInWithGoogle),
-      const DeepCollectionEquality().hash(signInWithFacebook),
-      const DeepCollectionEquality().hash(signInWithEmail),
-      const DeepCollectionEquality().hash(errorTitle),
-      const DeepCollectionEquality().hash(signInWithEmailTitle),
-      const DeepCollectionEquality().hash(signInWithEmailCaption),
-      const DeepCollectionEquality().hash(signInWithEmailSuccess),
-      const DeepCollectionEquality().hash(signInWithEmailRetry),
-      const DeepCollectionEquality().hash(signInWithEmailPlaceholder),
-      const DeepCollectionEquality().hash(signInWithEmailPasswordPlaceholder),
-      const DeepCollectionEquality().hash(signInWithEmailForgotPassword),
-      const DeepCollectionEquality().hash(signInWithEmailCreateAccount),
-      const DeepCollectionEquality().hash(continueButton));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        const DeepCollectionEquality().hash(signInAnonymously),
+        const DeepCollectionEquality().hash(signInWithApple),
+        const DeepCollectionEquality().hash(signInWithGoogle),
+        const DeepCollectionEquality().hash(signInWithFacebook),
+        const DeepCollectionEquality().hash(signInWithEmail),
+        const DeepCollectionEquality().hash(errorTitle),
+        const DeepCollectionEquality().hash(signInWithEmailTitle),
+        const DeepCollectionEquality().hash(signInWithEmailCaption),
+        const DeepCollectionEquality().hash(signInWithEmailSuccess),
+        const DeepCollectionEquality().hash(signInWithEmailRetry),
+        const DeepCollectionEquality().hash(signInWithEmailPlaceholder),
+        const DeepCollectionEquality().hash(signInWithEmailPasswordPlaceholder),
+        const DeepCollectionEquality().hash(signInWithEmailForgotPassword),
+        const DeepCollectionEquality().hash(signInWithEmailCreateAccount),
+        const DeepCollectionEquality().hash(continueButton),
+        const DeepCollectionEquality().hash(signInPhoneTitle),
+        const DeepCollectionEquality().hash(signInPhoneSubtitle),
+        const DeepCollectionEquality().hash(signInPhonePlaceholder),
+        const DeepCollectionEquality().hash(signInPhoneAutoRetrieve),
+        const DeepCollectionEquality().hash(signInPhoneLoadingDialog),
+        const DeepCollectionEquality().hash(signInPhoneErrorMobile),
+        const DeepCollectionEquality().hash(signInVerificationTitle),
+        const DeepCollectionEquality().hash(signInVerificationWrongNumber),
+        const DeepCollectionEquality().hash(signInVerificationResend),
+        const DeepCollectionEquality().hash(signInVerificationInvalid),
+        const DeepCollectionEquality().hash(signInCountriesTitle)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -4685,7 +4943,18 @@ abstract class _SignInLocalizations implements SignInLocalizations {
       String signInWithEmailPasswordPlaceholder,
       String signInWithEmailForgotPassword,
       String signInWithEmailCreateAccount,
-      String continueButton}) = _$_SignInLocalizations;
+      String continueButton,
+      String signInPhoneTitle,
+      String signInPhoneSubtitle,
+      String signInPhonePlaceholder,
+      String signInPhoneAutoRetrieve,
+      String signInPhoneLoadingDialog,
+      String signInPhoneErrorMobile,
+      String signInVerificationTitle,
+      String signInVerificationWrongNumber,
+      String signInVerificationResend,
+      String signInVerificationInvalid,
+      String signInCountriesTitle}) = _$_SignInLocalizations;
 
   @override
   String get signInAnonymously;
@@ -4717,6 +4986,31 @@ abstract class _SignInLocalizations implements SignInLocalizations {
   String get signInWithEmailCreateAccount;
   @override
   String get continueButton;
+  @override
+  String get signInPhoneTitle;
+  @override
+  String get signInPhoneSubtitle;
+  @override
+  String get signInPhonePlaceholder;
+  @override
+  String get signInPhoneAutoRetrieve;
+  @override
+  String get signInPhoneLoadingDialog;
+  @override
+  String get signInPhoneErrorMobile;
+  @override
+  String get signInVerificationTitle;
+  @override /*@Default("Enter the 6-digit code we sent to {number}")
+        Function(String number) signInVerificationSubtitle,
+    @Default("Did not receive the code?\nWait {seconds} seconds...")
+        Function(String seconds) signInVerificationNotReceived,*/
+  String get signInVerificationWrongNumber;
+  @override
+  String get signInVerificationResend;
+  @override
+  String get signInVerificationInvalid;
+  @override
+  String get signInCountriesTitle;
   @override
   @JsonKey(ignore: true)
   _$SignInLocalizationsCopyWith<_SignInLocalizations> get copyWith =>
@@ -5320,8 +5614,8 @@ class _$SignInThemeTearOff {
       {double maxWidth = 400,
       double buttonRadius = 8.0,
       double buttonPadding = 16.0,
-      required Color buttonBackgroundColor,
-      required Color buttonTextColor,
+      required ui.Color buttonBackgroundColor,
+      required ui.Color buttonTextColor,
       double buttonFontSize = 18.0,
       double spaceBetweenButtons = 15.0}) {
     return _SignInTheme(
@@ -5344,8 +5638,8 @@ mixin _$SignInTheme {
   double get maxWidth => throw _privateConstructorUsedError;
   double get buttonRadius => throw _privateConstructorUsedError;
   double get buttonPadding => throw _privateConstructorUsedError;
-  Color get buttonBackgroundColor => throw _privateConstructorUsedError;
-  Color get buttonTextColor => throw _privateConstructorUsedError;
+  ui.Color get buttonBackgroundColor => throw _privateConstructorUsedError;
+  ui.Color get buttonTextColor => throw _privateConstructorUsedError;
   double get buttonFontSize => throw _privateConstructorUsedError;
   double get spaceBetweenButtons => throw _privateConstructorUsedError;
 
@@ -5363,8 +5657,8 @@ abstract class $SignInThemeCopyWith<$Res> {
       {double maxWidth,
       double buttonRadius,
       double buttonPadding,
-      Color buttonBackgroundColor,
-      Color buttonTextColor,
+      ui.Color buttonBackgroundColor,
+      ui.Color buttonTextColor,
       double buttonFontSize,
       double spaceBetweenButtons});
 }
@@ -5403,11 +5697,11 @@ class _$SignInThemeCopyWithImpl<$Res> implements $SignInThemeCopyWith<$Res> {
       buttonBackgroundColor: buttonBackgroundColor == freezed
           ? _value.buttonBackgroundColor
           : buttonBackgroundColor // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as ui.Color,
       buttonTextColor: buttonTextColor == freezed
           ? _value.buttonTextColor
           : buttonTextColor // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as ui.Color,
       buttonFontSize: buttonFontSize == freezed
           ? _value.buttonFontSize
           : buttonFontSize // ignore: cast_nullable_to_non_nullable
@@ -5431,8 +5725,8 @@ abstract class _$SignInThemeCopyWith<$Res>
       {double maxWidth,
       double buttonRadius,
       double buttonPadding,
-      Color buttonBackgroundColor,
-      Color buttonTextColor,
+      ui.Color buttonBackgroundColor,
+      ui.Color buttonTextColor,
       double buttonFontSize,
       double spaceBetweenButtons});
 }
@@ -5473,11 +5767,11 @@ class __$SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
       buttonBackgroundColor: buttonBackgroundColor == freezed
           ? _value.buttonBackgroundColor
           : buttonBackgroundColor // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as ui.Color,
       buttonTextColor: buttonTextColor == freezed
           ? _value.buttonTextColor
           : buttonTextColor // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as ui.Color,
       buttonFontSize: buttonFontSize == freezed
           ? _value.buttonFontSize
           : buttonFontSize // ignore: cast_nullable_to_non_nullable
@@ -5512,9 +5806,9 @@ class _$_SignInTheme implements _SignInTheme {
   @override
   final double buttonPadding;
   @override
-  final Color buttonBackgroundColor;
+  final ui.Color buttonBackgroundColor;
   @override
-  final Color buttonTextColor;
+  final ui.Color buttonTextColor;
   @JsonKey()
   @override
   final double buttonFontSize;
@@ -5569,8 +5863,8 @@ abstract class _SignInTheme implements SignInTheme {
       {double maxWidth,
       double buttonRadius,
       double buttonPadding,
-      required Color buttonBackgroundColor,
-      required Color buttonTextColor,
+      required ui.Color buttonBackgroundColor,
+      required ui.Color buttonTextColor,
       double buttonFontSize,
       double spaceBetweenButtons}) = _$_SignInTheme;
 
@@ -5581,9 +5875,9 @@ abstract class _SignInTheme implements SignInTheme {
   @override
   double get buttonPadding;
   @override
-  Color get buttonBackgroundColor;
+  ui.Color get buttonBackgroundColor;
   @override
-  Color get buttonTextColor;
+  ui.Color get buttonTextColor;
   @override
   double get buttonFontSize;
   @override

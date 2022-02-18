@@ -1,4 +1,4 @@
-part of '../sign_in.dart';
+part of '../../sign_in.dart';
 
 class SignInLandingPage extends ConsumerWidget {
   const SignInLandingPage({
