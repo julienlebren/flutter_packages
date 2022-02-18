@@ -159,7 +159,16 @@ final authStateProvider =
   );
 });*/
 
-final localeProvider = Provider<Locale>((_) => ui.window.locale);
+final localeProvider = Provider<Locale>((_) {
+  const availableLocales = [
+    Locale('en', 'US'),
+  ];
+  final locale = ui.window.locale;
+  if (availableLocales.contains(locale)) {
+    return locale;
+  }
+  return availableLocales.first;
+});
 
 final signInLocalizationsProvider = Provider<SignInLocalizations>((ref) {
   final locale = ref.watch(localeProvider);
