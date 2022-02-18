@@ -71,7 +71,7 @@ class CountriesPage extends ConsumerWidget {
       ],
       child: PlatformModalScaffold(
         appBar: PlatformNavigationBar(
-          title: l10n.signInCountriesTitle,
+          title: l10n.countriesTitle,
           leading: PlatformNavigationBarCloseButton(
             onPressed: () => Navigator.pop(context),
           ),

@@ -92,29 +92,173 @@ abstract class SignInLocalizations {
     Locale('en')
   ];
 
-  /// No description provided for @test.
+  /// No description provided for @continueButton.
   ///
   /// In en, this message translates to:
-  /// **'Test'**
-  String get test;
+  /// **'Continue'**
+  String get continueButton;
 
-  /// No description provided for @test2.
+  /// No description provided for @countriesTitle.
   ///
   /// In en, this message translates to:
-  /// **'Test'**
-  String get test2;
+  /// **'Country / Region'**
+  String get countriesTitle;
 
-  /// No description provided for @test3.
+  /// No description provided for @errorTitle.
   ///
   /// In en, this message translates to:
-  /// **'Test'**
-  String get test3;
+  /// **'Oops! Something went wrong...'**
+  String get errorTitle;
 
-  /// No description provided for @test4.
+  /// No description provided for @signInAnonymously.
   ///
   /// In en, this message translates to:
-  /// **'Test'**
-  String get test4;
+  /// **'Continue without registration'**
+  String get signInAnonymously;
+
+  /// No description provided for @signInWithApple.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Apple'**
+  String get signInWithApple;
+
+  /// No description provided for @signInWithEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with e-mail'**
+  String get signInWithEmail;
+
+  /// No description provided for @signInWithEmailCreateAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Not yet registered? Create an account.'**
+  String get signInWithEmailCreateAccount;
+
+  /// No description provided for @signInWithEmailLinkCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'No password required, we just send you an email with a link to log in to the app.'**
+  String get signInWithEmailLinkCaption;
+
+  /// No description provided for @signInWithEmailLinkSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Check your email, we have sent a sign-in link.'**
+  String get signInWithEmailLinkSuccess;
+
+  /// No description provided for @signInWithEmailPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Email address'**
+  String get signInWithEmailPlaceholder;
+
+  /// No description provided for @signInWithEmailPasswordPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get signInWithEmailPasswordPlaceholder;
+
+  /// No description provided for @signInWithEmailForgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot your password?'**
+  String get signInWithEmailForgotPassword;
+
+  /// No description provided for @signInWithEmailRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'You did not receive it? Try again or try another identification method.'**
+  String get signInWithEmailRetry;
+
+  /// No description provided for @signInWithEmailTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign-in with an email'**
+  String get signInWithEmailTitle;
+
+  /// No description provided for @signInWithFacebook.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Facebook'**
+  String get signInWithFacebook;
+
+  /// No description provided for @signInWithGoogle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with Google'**
+  String get signInWithGoogle;
+
+  /// No description provided for @signInPhoneTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Phone Number'**
+  String get signInPhoneTitle;
+
+  /// No description provided for @signInPhoneSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'We will send an SMS to confirm your number, it won\'t cost you nothing.'**
+  String get signInPhoneSubtitle;
+
+  /// No description provided for @signInPhonePlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'Example: {example}'**
+  String signInPhonePlaceholder(String example);
+
+  /// No description provided for @signInPhoneAutoRetrieve.
+  ///
+  /// In en, this message translates to:
+  /// **'You may not need to enter the code as the app will attempt to detect it automatically.'**
+  String get signInPhoneAutoRetrieve;
+
+  /// No description provided for @signInPhoneLoadingDialog.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for automatic code detection ...'**
+  String get signInPhoneLoadingDialog;
+
+  /// No description provided for @signInPhoneErrorMobile.
+  ///
+  /// In en, this message translates to:
+  /// **'You must enter a mobile phone number.'**
+  String get signInPhoneErrorMobile;
+
+  /// No description provided for @signInVerificationTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Number verification'**
+  String get signInVerificationTitle;
+
+  /// No description provided for @signInVerificationSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the 6-digit code we sent to {phoneNumber}'**
+  String signInVerificationSubtitle(String phoneNumber);
+
+  /// No description provided for @signInVerificationWrongNumber.
+  ///
+  /// In en, this message translates to:
+  /// **'Wrong number'**
+  String get signInVerificationWrongNumber;
+
+  /// No description provided for @signInVerificationNotReceived.
+  ///
+  /// In en, this message translates to:
+  /// **'Did not receive the code?\nWait {seconds} seconds...'**
+  String signInVerificationNotReceived(String seconds);
+
+  /// No description provided for @signInVerificationResend.
+  ///
+  /// In en, this message translates to:
+  /// **'Resend the code'**
+  String get signInVerificationResend;
+
+  /// No description provided for @signInVerificationInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid verification code!'**
+  String get signInVerificationInvalid;
 }
 
 class _SignInLocalizationsDelegate extends LocalizationsDelegate<SignInLocalizations> {

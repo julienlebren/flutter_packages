@@ -15,6 +15,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layout_builder/layout_builder.dart';
 import 'package:sign_in/presentation/painters/apple_logo.dart';
 import 'package:sign_in/presentation/painters/google_logo.dart';
+import 'package:sign_in/l10n/sign_in_localizations.dart';
 
 part 'controllers/sign_in_controller.dart';
 part 'controllers/sign_in_email_controller.dart';
@@ -24,7 +25,6 @@ part 'controllers/sign_in_phone_verification_controller.dart';
 part 'core/enums/sign_in_suppliers.dart';
 part 'core/models/auth_state.dart';
 part 'core/models/sign_in_event.dart';
-part 'core/models/sign_in_localizations.dart';
 part 'core/models/sign_in_state.dart';
 part 'core/models/sign_in_theme.dart';
 part 'presentation/widgets/sign_in_page_builder.dart';
@@ -159,9 +159,12 @@ final authStateProvider =
   );
 });*/
 
-final signInLocalizationsProvider = Provider<SignInLocalizations>(
-  (_) => const SignInLocalizations(),
-);
+final localeProvider = Provider<Locale>((_) => ui.window.locale);
+
+final signInLocalizationsProvider = Provider<SignInLocalizations>((ref) {
+  final locale = ref.watch(localeProvider);
+  return lookupSignInLocalizations(locale);
+});
 
 final signInThemeProvider = Provider<SignInTheme>((ref) {
   final appTheme = ref.watch(appThemeProvider);

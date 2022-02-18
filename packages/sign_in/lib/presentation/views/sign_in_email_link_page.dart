@@ -89,7 +89,7 @@ class _SignInEmailLinkPageFormState
               ),
             ),
           ],
-          caption: l10n.signInWithEmailCaption,
+          caption: l10n.signInWithEmailLinkCaption,
         ),
         const _SignInEmailLinkSubmitButton(),
       ],

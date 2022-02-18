@@ -1,6 +1,51 @@
 {
-    "test": "Test",
-    "test2": "Test",
-    "test3": "Test",
-    "test4": "Test"
+    "continueButton": "Continue",
+    "countriesTitle": "Country / Region",
+    "errorTitle": "Oops! Something went wrong...",
+    "signInAnonymously": "Continue without registration",
+    "signInWithApple": "Sign in with Apple",
+    "signInWithEmail": "Sign in with e-mail",
+    "signInWithEmailCreateAccount": "Not yet registered? Create an account.",
+    "signInWithEmailLinkCaption": "No password required, we just send you an email with a link to log in to the app.",
+    "signInWithEmailLinkSuccess": "Check your email, we have sent a sign-in link.",
+    "signInWithEmailPlaceholder": "Email address",
+    "signInWithEmailPasswordPlaceholder": "Password",
+    "signInWithEmailForgotPassword": "Forgot your password?",
+    "signInWithEmailRetry": "You did not receive it? Try again or try another identification method.",
+    "signInWithEmailTitle": "Sign-in with an email",
+    "signInWithFacebook": "Sign in with Facebook",
+    "signInWithGoogle": "Sign in with Google",
+    "signInPhoneTitle": "Phone Number",
+    "signInPhoneSubtitle": "We will send an SMS to confirm your number, it won't cost you nothing.",
+    "signInPhonePlaceholder": "Example: {example}",
+    "@signInPhonePlaceholder" : {
+      "placeholders": {
+        "example": { 
+          "type": "String"
+          }
+      }
+    },
+    "signInPhoneAutoRetrieve": "You may not need to enter the code as the app will attempt to detect it automatically.",
+    "signInPhoneLoadingDialog": "Waiting for automatic code detection ...",
+    "signInPhoneErrorMobile": "You must enter a mobile phone number.",
+    "signInVerificationTitle": "Number verification",
+    "signInVerificationSubtitle": "Enter the 6-digit code we sent to {phoneNumber}",
+    "@signInVerificationSubtitle" : {
+      "placeholders": {
+        "phoneNumber": { 
+          "type": "String"
+          }
+      }
+    },
+    "signInVerificationWrongNumber": "Wrong number",
+    "signInVerificationNotReceived": "Did not receive the code?\nWait {seconds} seconds...",
+    "@signInVerificationNotReceived" : {
+      "placeholders": {
+        "seconds": { 
+          "type": "String"
+          }
+      }
+    },
+    "signInVerificationResend": "Resend the code",
+    "signInVerificationInvalid": "Invalid verification code!"
 }
