@@ -162,6 +162,7 @@ final authStateProvider =
 final localeProvider = Provider<Locale>((_) {
   const availableLocales = [
     Locale('en', 'US'),
+    Locale('fr', 'FR'),
   ];
   final locale = ui.window.locale;
   if (availableLocales.contains(locale)) {
