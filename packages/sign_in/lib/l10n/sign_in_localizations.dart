@@ -7,6 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
 import 'sign_in_localizations_en.dart';
+import 'sign_in_localizations_fr.dart';
 
 /// Callers can lookup localized strings with an instance of SignInLocalizations returned
 /// by `SignInLocalizations.of(context)`.
@@ -89,7 +90,8 @@ abstract class SignInLocalizations {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
-    Locale('en')
+    Locale('en'),
+    Locale('fr')
   ];
 
   /// No description provided for @continueButton.
@@ -270,7 +272,7 @@ class _SignInLocalizationsDelegate extends LocalizationsDelegate<SignInLocalizat
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'fr'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_SignInLocalizationsDelegate old) => false;
@@ -282,6 +284,7 @@ SignInLocalizations lookupSignInLocalizations(Locale locale) {
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
     case 'en': return SignInLocalizationsEn();
+    case 'fr': return SignInLocalizationsFr();
   }
 
   throw FlutterError(
