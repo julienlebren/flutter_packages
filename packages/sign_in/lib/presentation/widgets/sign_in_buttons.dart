@@ -14,9 +14,11 @@ class SignInButtons extends ConsumerWidget {
       signInWithGoogle: () => SignInSupplier.google,
       signInWithApple: () => SignInSupplier.apple,
       signInWithEmailLink: (_) => SignInSupplier.emailLink,
+      signInWithPhone: () => SignInSupplier.phone,
       signInAnonymously: () => SignInSupplier.anonymous,
     );
     event.maybeWhen(
+      signInWithPhone: () {},
       signInWithEmailLink: (_) {
         /*Navigator.of(context, rootNavigator: true).pushNamed(
           SignInRoutes.signInRouterPage,
@@ -37,7 +39,7 @@ class SignInButtons extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.watch(signInLocalizationsProvider(context));
+    final l10n = ref.watch(signInLocalizationsProvider);
     final theme = ref.watch(signInThemeProvider);
     final state = ref.watch(signInControllerProvider);
     final isLoading = state.maybeWhen(
@@ -153,6 +155,20 @@ class SignInButtons extends ConsumerWidget {
                       onPressed: () {
                         _handleSignIn(context, ref,
                             const SignInEvent.signInWithEmailLink(""));
+                      },
+                    ),
+                  if (supplier == SignInSupplier.phone)
+                    SignInSupplierButton(
+                      icon: Icon(
+                        Icons.phone_android,
+                        color: theme.buttonTextColor,
+                        size: iconSize,
+                      ),
+                      iconSize: iconSize,
+                      title: l10n.signInWithPhone,
+                      onPressed: () {
+                        _handleSignIn(
+                            context, ref, const SignInEvent.signInWithPhone());
                       },
                     ),
                   SizedBox(height: theme.spaceBetweenButtons),

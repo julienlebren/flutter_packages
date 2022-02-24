@@ -190,6 +190,12 @@ abstract class SignInLocalizations {
   /// **'Sign in with Google'**
   String get signInWithGoogle;
 
+  /// No description provided for @signInWithPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with phone number'**
+  String get signInWithPhone;
+
   /// No description provided for @signInPhoneTitle.
   ///
   /// In en, this message translates to:

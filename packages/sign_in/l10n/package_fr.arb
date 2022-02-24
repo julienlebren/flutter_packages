@@ -15,6 +15,7 @@
     "signInWithEmailTitle": "Continuer avec un e-mail",
     "signInWithFacebook": "Continuer avec Facebook",
     "signInWithGoogle": "Continuer avec Google",
+    "signInWithPhone": "Continuer avec numéro de téléphone",
     "signInPhoneTitle": "Numéro de téléphone",
     "signInPhoneSubtitle": "Nous allons envoyer un SMS pour confirmer votre numéro, cela ne vous coûtera rien.",
     "signInPhonePlaceholder": "Exemple: {example}",

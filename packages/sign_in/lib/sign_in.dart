@@ -164,9 +164,8 @@ final authStateProvider =
   );
 });*/
 
-final signInLocalizationsProvider =
-    Provider.family<SignInLocalizations, BuildContext>((_, context) {
-  final locale = Localizations.localeOf(context);
+final signInLocalizationsProvider = Provider<SignInLocalizations>((ref) {
+  final locale = ref.watch(localeProvider);
   return lookupSignInLocalizations(locale);
 });
 

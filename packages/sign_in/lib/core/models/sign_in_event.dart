@@ -7,5 +7,6 @@ class SignInEvent with _$SignInEvent {
   const factory SignInEvent.signInWithApple() = _SignInWithApple;
   const factory SignInEvent.signInWithEmailLink(String email) =
       _SignInWithEmailLink;
+  const factory SignInEvent.signInWithPhone() = _SignInWithPhone;
   const factory SignInEvent.signInAnonymously() = _SignInAnonymously;
 }

@@ -3491,6 +3491,10 @@ class _$SignInEventTearOff {
     );
   }
 
+  _SignInWithPhone signInWithPhone() {
+    return const _SignInWithPhone();
+  }
+
   _SignInAnonymously signInAnonymously() {
     return const _SignInAnonymously();
   }
@@ -3507,6 +3511,7 @@ mixin _$SignInEvent {
     required TResult Function() signInWithGoogle,
     required TResult Function() signInWithApple,
     required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
     required TResult Function() signInAnonymously,
   }) =>
       throw _privateConstructorUsedError;
@@ -3516,6 +3521,7 @@ mixin _$SignInEvent {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
     TResult Function()? signInAnonymously,
   }) =>
       throw _privateConstructorUsedError;
@@ -3525,6 +3531,7 @@ mixin _$SignInEvent {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
     TResult Function()? signInAnonymously,
     required TResult orElse(),
   }) =>
@@ -3535,6 +3542,7 @@ mixin _$SignInEvent {
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithApple value) signInWithApple,
     required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
   }) =>
       throw _privateConstructorUsedError;
@@ -3544,6 +3552,7 @@ mixin _$SignInEvent {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
   }) =>
       throw _privateConstructorUsedError;
@@ -3553,6 +3562,7 @@ mixin _$SignInEvent {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
     required TResult orElse(),
   }) =>
@@ -3620,6 +3630,7 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
     required TResult Function() signInWithGoogle,
     required TResult Function() signInWithApple,
     required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
     required TResult Function() signInAnonymously,
   }) {
     return signInWithFacebook();
@@ -3632,6 +3643,7 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
     TResult Function()? signInAnonymously,
   }) {
     return signInWithFacebook?.call();
@@ -3644,6 +3656,7 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
     TResult Function()? signInAnonymously,
     required TResult orElse(),
   }) {
@@ -3660,6 +3673,7 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithApple value) signInWithApple,
     required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
   }) {
     return signInWithFacebook(this);
@@ -3672,6 +3686,7 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
   }) {
     return signInWithFacebook?.call(this);
@@ -3684,6 +3699,7 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
     required TResult orElse(),
   }) {
@@ -3743,6 +3759,7 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     required TResult Function() signInWithGoogle,
     required TResult Function() signInWithApple,
     required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
     required TResult Function() signInAnonymously,
   }) {
     return signInWithGoogle();
@@ -3755,6 +3772,7 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
     TResult Function()? signInAnonymously,
   }) {
     return signInWithGoogle?.call();
@@ -3767,6 +3785,7 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
     TResult Function()? signInAnonymously,
     required TResult orElse(),
   }) {
@@ -3783,6 +3802,7 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithApple value) signInWithApple,
     required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
   }) {
     return signInWithGoogle(this);
@@ -3795,6 +3815,7 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
   }) {
     return signInWithGoogle?.call(this);
@@ -3807,6 +3828,7 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
     required TResult orElse(),
   }) {
@@ -3866,6 +3888,7 @@ class _$_SignInWithApple implements _SignInWithApple {
     required TResult Function() signInWithGoogle,
     required TResult Function() signInWithApple,
     required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
     required TResult Function() signInAnonymously,
   }) {
     return signInWithApple();
@@ -3878,6 +3901,7 @@ class _$_SignInWithApple implements _SignInWithApple {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
     TResult Function()? signInAnonymously,
   }) {
     return signInWithApple?.call();
@@ -3890,6 +3914,7 @@ class _$_SignInWithApple implements _SignInWithApple {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
     TResult Function()? signInAnonymously,
     required TResult orElse(),
   }) {
@@ -3906,6 +3931,7 @@ class _$_SignInWithApple implements _SignInWithApple {
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithApple value) signInWithApple,
     required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
   }) {
     return signInWithApple(this);
@@ -3918,6 +3944,7 @@ class _$_SignInWithApple implements _SignInWithApple {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
   }) {
     return signInWithApple?.call(this);
@@ -3930,6 +3957,7 @@ class _$_SignInWithApple implements _SignInWithApple {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
     required TResult orElse(),
   }) {
@@ -4014,6 +4042,7 @@ class _$_SignInWithEmailLink implements _SignInWithEmailLink {
     required TResult Function() signInWithGoogle,
     required TResult Function() signInWithApple,
     required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
     required TResult Function() signInAnonymously,
   }) {
     return signInWithEmailLink(email);
@@ -4026,6 +4055,7 @@ class _$_SignInWithEmailLink implements _SignInWithEmailLink {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
     TResult Function()? signInAnonymously,
   }) {
     return signInWithEmailLink?.call(email);
@@ -4038,6 +4068,7 @@ class _$_SignInWithEmailLink implements _SignInWithEmailLink {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
     TResult Function()? signInAnonymously,
     required TResult orElse(),
   }) {
@@ -4054,6 +4085,7 @@ class _$_SignInWithEmailLink implements _SignInWithEmailLink {
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithApple value) signInWithApple,
     required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
   }) {
     return signInWithEmailLink(this);
@@ -4066,6 +4098,7 @@ class _$_SignInWithEmailLink implements _SignInWithEmailLink {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
   }) {
     return signInWithEmailLink?.call(this);
@@ -4078,6 +4111,7 @@ class _$_SignInWithEmailLink implements _SignInWithEmailLink {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
     required TResult orElse(),
   }) {
@@ -4095,6 +4129,135 @@ abstract class _SignInWithEmailLink implements SignInEvent {
   @JsonKey(ignore: true)
   _$SignInWithEmailLinkCopyWith<_SignInWithEmailLink> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SignInWithPhoneCopyWith<$Res> {
+  factory _$SignInWithPhoneCopyWith(
+          _SignInWithPhone value, $Res Function(_SignInWithPhone) then) =
+      __$SignInWithPhoneCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SignInWithPhoneCopyWithImpl<$Res>
+    extends _$SignInEventCopyWithImpl<$Res>
+    implements _$SignInWithPhoneCopyWith<$Res> {
+  __$SignInWithPhoneCopyWithImpl(
+      _SignInWithPhone _value, $Res Function(_SignInWithPhone) _then)
+      : super(_value, (v) => _then(v as _SignInWithPhone));
+
+  @override
+  _SignInWithPhone get _value => super._value as _SignInWithPhone;
+}
+
+/// @nodoc
+
+class _$_SignInWithPhone implements _SignInWithPhone {
+  const _$_SignInWithPhone();
+
+  @override
+  String toString() {
+    return 'SignInEvent.signInWithPhone()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignInWithPhone);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signInWithFacebook,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithApple,
+    required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
+    required TResult Function() signInAnonymously,
+  }) {
+    return signInWithPhone();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+  }) {
+    return signInWithPhone?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInWithPhone != null) {
+      return signInWithPhone();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
+    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SignInWithApple value) signInWithApple,
+    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
+    required TResult Function(_SignInAnonymously value) signInAnonymously,
+  }) {
+    return signInWithPhone(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+  }) {
+    return signInWithPhone?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInWithPhone != null) {
+      return signInWithPhone(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInWithPhone implements SignInEvent {
+  const factory _SignInWithPhone() = _$_SignInWithPhone;
 }
 
 /// @nodoc
@@ -4142,6 +4305,7 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     required TResult Function() signInWithGoogle,
     required TResult Function() signInWithApple,
     required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
     required TResult Function() signInAnonymously,
   }) {
     return signInAnonymously();
@@ -4154,6 +4318,7 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
     TResult Function()? signInAnonymously,
   }) {
     return signInAnonymously?.call();
@@ -4166,6 +4331,7 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     TResult Function()? signInWithGoogle,
     TResult Function()? signInWithApple,
     TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
     TResult Function()? signInAnonymously,
     required TResult orElse(),
   }) {
@@ -4182,6 +4348,7 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     required TResult Function(_SignInWithGoogle value) signInWithGoogle,
     required TResult Function(_SignInWithApple value) signInWithApple,
     required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
     required TResult Function(_SignInAnonymously value) signInAnonymously,
   }) {
     return signInAnonymously(this);
@@ -4194,6 +4361,7 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
   }) {
     return signInAnonymously?.call(this);
@@ -4206,6 +4374,7 @@ class _$_SignInAnonymously implements _SignInAnonymously {
     TResult Function(_SignInWithGoogle value)? signInWithGoogle,
     TResult Function(_SignInWithApple value)? signInWithApple,
     TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
     TResult Function(_SignInAnonymously value)? signInAnonymously,
     required TResult orElse(),
   }) {

@@ -1,7 +1,7 @@
 name: sign_in
 description: Sign In Flow Management for Flutter & Firebase
 publish_to: 'none' 
-version: 2.0.0-dev100
+version: 2.0.0-dev101
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -41,7 +41,7 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/localization
-    version: ^0.1.3
+    version: ^0.1.4
   cloud_firestore: ^3.1.0
   firebase_storage: ^10.1.0
   freezed_annotation: ^1.1.0

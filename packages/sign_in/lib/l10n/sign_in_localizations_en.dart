@@ -56,6 +56,9 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get signInWithGoogle => 'Sign in with Google';
 
   @override
+  String get signInWithPhone => 'Sign in with phone number';
+
+  @override
   String get signInPhoneTitle => 'Phone Number';
 
   @override
