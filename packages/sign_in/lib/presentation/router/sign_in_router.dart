@@ -106,38 +106,3 @@ class SignInNavigator extends ConsumerWidget {
     );
   }
 }
-
-/*
-class SignInLandingPage extends StatelessWidget {
-  const SignInLandingPage({
-    Key? key,
-    required this.child,
-    this.theme,
-    this.signInRouter,
-    this.needUserInfoPage,
-  }) : super(key: key);
-
-  final SignInTheme? theme;
-  final Route<dynamic> Function(RouteSettings settings)? signInRouter;
-  final String? needUserInfoPage;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return ProviderScope(
-      overrides: [
-        signInLandingPageProvider.overrideWithValue(child),
-        if (theme != null) signInThemeProvider.overrideWithValue(theme!),
-        if (needUserInfoPage != null)
-          needUserInfoPageProvider.overrideWithValue(needUserInfoPage!),
-        if (signInRouter != null)
-          signInRouterProvider.overrideWithValue(signInRouter!),
-      ],
-      child: SignInNavigator(
-        navigatorKey: SignInNavigatorKeys.main,
-        routeName: SignInRoutes.signInLandingPage,
-      ),
-    );
-  }
-}
-*/

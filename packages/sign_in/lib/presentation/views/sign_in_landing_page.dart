@@ -3,33 +3,21 @@ part of '../../sign_in.dart';
 class SignInLandingPage extends StatelessWidget {
   const SignInLandingPage({
     Key? key,
-    this.logo,
-    this.buttons,
-    this.backgroundImage,
+    required this.child,
     this.theme,
     this.signInRouter,
-    this.needUserInfoPage,
   }) : super(key: key);
 
   final SignInTheme? theme;
   final Route<dynamic> Function(RouteSettings settings)? signInRouter;
-  final String? needUserInfoPage;
-  final Widget? logo;
-  final Widget? buttons;
-  final String? backgroundImage;
+  final Widget child;
 
   @override
   Widget build(BuildContext context) {
     return ProviderScope(
       overrides: [
-        signInLandingPageProvider.overrideWithValue(SignInLandingPageContents(
-          logo: logo,
-          buttons: buttons,
-          backgroundImage: backgroundImage,
-        )),
+        signInLandingPageProvider.overrideWithValue(child),
         if (theme != null) signInThemeProvider.overrideWithValue(theme!),
-        if (needUserInfoPage != null)
-          needUserInfoPageProvider.overrideWithValue(needUserInfoPage!),
         if (signInRouter != null)
           signInRouterProvider.overrideWithValue(signInRouter!),
       ],
@@ -41,8 +29,8 @@ class SignInLandingPage extends StatelessWidget {
   }
 }
 
-class SignInLandingPageContents extends ConsumerWidget {
-  const SignInLandingPageContents({
+class SignInLandingPageBuilder extends ConsumerWidget {
+  const SignInLandingPageBuilder({
     Key? key,
     this.logo,
     this.buttons,
