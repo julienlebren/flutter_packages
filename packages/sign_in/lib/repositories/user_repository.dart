@@ -1,12 +1,9 @@
 part of '../sign_in.dart';
 
 class BaseUser {
-  BaseUser(this.id);
+  const BaseUser();
 
-  String id;
-
-  factory BaseUser.fromJson(Map<String, dynamic> json) =>
-      BaseUser(json['id'] as String);
+  factory BaseUser.fromJson(Map<String, dynamic> json) => const BaseUser();
 
   Map<String, dynamic> toJson() => {};
 }
@@ -42,6 +39,4 @@ class BaseUserRepository {
   Stream<BaseUser?> streamUser() {
     return _userRef.doc(userId).snapshots().map((snapshot) => snapshot.data());
   }
-
-  Future<void> set(BaseUser user) => _userRef.doc(user.id).set(user);
 }
