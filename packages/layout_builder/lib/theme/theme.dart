@@ -7,6 +7,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/services.dart';
 import 'package:layout_builder/platform/platform.dart';
 import 'package:layout_builder/theme/material_color.dart';
+import 'package:layout_builder/l10n/layout_localizations.dart';
 
 part 'theme_providers.dart';
 part 'theme_type.dart';

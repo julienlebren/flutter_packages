@@ -4,13 +4,6 @@ part of theme;
 /// Needs to be overridden in the [ProviderScope] of the app.
 final appThemeProvider = Provider<AppTheme>((_) => throw UnimplementedError());
 
-/// The provider of the [Brightness]
-/// Returns the brightness of the current device layout
-/// but can be overridden inside the app by watching a custom setting.
-final brightnessProvider = Provider<Brightness>(
-  (ref) => WidgetsBinding.instance!.window.platformBrightness,
-);
-
 /// This provider is used by [Scaafold] or other widgets that handle
 /// an [AnnotatedRegion] to specify the layout of status bars
 /// and navigation bar on Android devices.
@@ -116,8 +109,8 @@ final listViewThemeProvider = Provider<ListViewTheme>((ref) {
 /// at any part of the app with inside a ProviderScope for specific needs
 /// (such as a special backgroundColor in one form).
 final formThemeProvider = Provider<FormTheme>((ref) {
-  final brightness = ref.watch(brightnessProvider);
-  if (brightness == Brightness.dark) {
+  final appTheme = ref.watch(appThemeProvider);
+  if (appTheme.brightness == Brightness.dark) {
     return FormTheme(
       backgroundColor: Color(0xFF000000),
       rowBackgroundColor: Color(0xFF262626),
@@ -132,9 +125,10 @@ final formThemeProvider = Provider<FormTheme>((ref) {
       sectionDividerColor: Color(0xFFE6E6E6),
     );
   }
-}, dependencies: [brightnessProvider]);
+});
 
 /// Provider for localize some words about the theme
-final themeLocalizationProvider = Provider<ThemeLocalizations>(
-  (_) => ThemeLocalizations(),
-);
+final themeLocalizationsProvider = Provider<LayoutLocalizations>((ref) {
+  final locale = ref.watch(localeProvider);
+  return lookupLayoutLocalizations(locale);
+});
