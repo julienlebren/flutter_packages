@@ -16,6 +16,7 @@ import 'package:flutter_libphonenumber/flutter_libphonenumber.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:layout_builder/layout_builder.dart';
+import 'package:localization/localization.dart';
 import 'package:sign_in/presentation/painters/apple_logo.dart';
 import 'package:sign_in/presentation/painters/google_logo.dart';
 import 'package:sign_in/l10n/sign_in_localizations.dart';
@@ -163,22 +164,13 @@ final authStateProvider =
   );
 });*/
 
-final localeProvider = Provider<Locale>((_) {
-  const availableLocales = [
-    Locale('en', 'US'),
-    Locale('fr', 'FR'),
-  ];
-  final locale = ui.window.locale;
-  if (availableLocales.contains(locale)) {
-    return locale;
-  }
-  return availableLocales.first;
-});
-
-final signInLocalizationsProvider = Provider<SignInLocalizations>((ref) {
-  final locale = ref.watch(localeProvider);
-  return lookupSignInLocalizations(locale);
-});
+final signInLocalizationsProvider = Provider<SignInLocalizations>(
+  (ref) {
+    final locale = ref.watch(localeProvider);
+    return lookupSignInLocalizations(locale);
+  },
+  dependencies: [localeProvider],
+);
 
 final signInThemeProvider = Provider<SignInTheme>((ref) {
   final appTheme = ref.watch(appThemeProvider);
