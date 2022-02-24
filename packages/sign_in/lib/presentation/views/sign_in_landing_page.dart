@@ -3,20 +3,28 @@ part of '../../sign_in.dart';
 class SignInLandingPage extends StatelessWidget {
   const SignInLandingPage({
     Key? key,
-    required this.child,
+    this.logo,
+    this.buttons,
+    this.backgroundImage,
     this.theme,
     this.signInRouter,
   }) : super(key: key);
 
   final SignInTheme? theme;
   final Route<dynamic> Function(RouteSettings settings)? signInRouter;
-  final Widget child;
+  final Widget? logo;
+  final Widget? buttons;
+  final String? backgroundImage;
 
   @override
   Widget build(BuildContext context) {
     return ProviderScope(
       overrides: [
-        signInLandingPageProvider.overrideWithValue(child),
+        signInLandingPageProvider.overrideWithValue(SignInLandingPageBuilder(
+          backgroundImage: backgroundImage,
+          logo: logo,
+          buttons: buttons,
+        )),
         if (theme != null) signInThemeProvider.overrideWithValue(theme!),
         if (signInRouter != null)
           signInRouterProvider.overrideWithValue(signInRouter!),
