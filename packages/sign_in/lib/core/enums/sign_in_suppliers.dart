@@ -7,5 +7,5 @@ enum SignInSupplier {
   google,
   apple,
   facebook,
-  phone
+  phone,
 }
