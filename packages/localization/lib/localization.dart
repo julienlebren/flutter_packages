@@ -10,10 +10,7 @@ final localesProvider = Provider<List<Locale>>((ref) {
   ];
 });
 
-final localeProvider =
-    Provider<Locale>((ref) => ref.read(localeDeterminer(null)));
-
-final localeDeterminer = Provider.family<Locale, String?>(
+final localeProvider = Provider.family<Locale, String?>(
   (ref, languageCode) {
     final availableLocales = ref.read(localesProvider);
     final deviceLocale = window.locale;
