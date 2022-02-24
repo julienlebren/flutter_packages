@@ -10,10 +10,10 @@ final localesProvider = Provider<List<Locale>>((ref) {
   ];
 });
 
-final userLocaleProvider = Provider<Locale?>((_) => null);
+final userLanguageProvider = Provider<String?>((_) => null);
 
-final localeProvider = Provider.family<Locale, String?>(
-  (ref, languageCode) {
+final localeProvider = Provider<Locale>(
+  (ref) {
     final availableLocales = ref.read(localesProvider);
     final deviceLocale = window.locale;
 
@@ -21,8 +21,9 @@ final localeProvider = Provider.family<Locale, String?>(
       throw UnimplementedError();
     }
 
+    final userLanguage = ref.watch(userLanguageProvider);
     var _locales = availableLocales.where(
-      (locale) => locale.languageCode == languageCode,
+      (locale) => locale.languageCode == userLanguage,
     );
     if (_locales.isNotEmpty) {
       return _locales.first;
@@ -34,5 +35,5 @@ final localeProvider = Provider.family<Locale, String?>(
 
     return availableLocales.first;
   },
-  dependencies: [localesProvider, userLocaleProvider],
+  dependencies: [localesProvider, userLanguageProvider],
 );
