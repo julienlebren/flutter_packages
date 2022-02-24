@@ -111,14 +111,12 @@ class SignInLandingPageBuilder extends StatelessWidget {
   const SignInLandingPageBuilder({
     Key? key,
     this.theme,
-    this.localizations,
     this.signInRouter,
     this.landingPage,
     this.needUserInfoPage,
   }) : super(key: key);
 
   final SignInTheme? theme;
-  final SignInLocalizations? localizations;
   final Route<dynamic> Function(RouteSettings settings)? signInRouter;
   final Widget? landingPage;
   final String? needUserInfoPage;
@@ -128,8 +126,6 @@ class SignInLandingPageBuilder extends StatelessWidget {
     return ProviderScope(
       overrides: [
         if (theme != null) signInThemeProvider.overrideWithValue(theme!),
-        if (localizations != null)
-          signInLocalizationsProvider.overrideWithValue(localizations!),
         if (landingPage != null)
           signInLandingPageProvider.overrideWithValue(landingPage!),
         if (needUserInfoPage != null)
@@ -150,13 +146,11 @@ class SignInPageBuilder2 extends StatelessWidget {
     Key? key,
     required this.child,
     this.theme,
-    this.localizations,
     this.signInRouter,
     this.needUserInfoPage,
   }) : super(key: key);
 
   final SignInTheme? theme;
-  final SignInLocalizations? localizations;
   final Route<dynamic> Function(RouteSettings settings)? signInRouter;
   final String? needUserInfoPage;
   final Widget child;
@@ -166,8 +160,6 @@ class SignInPageBuilder2 extends StatelessWidget {
     return ProviderScope(
       overrides: [
         if (theme != null) signInThemeProvider.overrideWithValue(theme!),
-        if (localizations != null)
-          signInLocalizationsProvider.overrideWithValue(localizations!),
         if (needUserInfoPage != null)
           needUserInfoPageProvider.overrideWithValue(needUserInfoPage!),
         if (signInRouter != null)

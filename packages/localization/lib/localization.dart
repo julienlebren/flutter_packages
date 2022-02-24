@@ -10,6 +10,8 @@ final localesProvider = Provider<List<Locale>>((ref) {
   ];
 });
 
+final userLocaleProvider = Provider<Locale?>((_) => null);
+
 final localeProvider = Provider.family<Locale, String?>(
   (ref, languageCode) {
     final availableLocales = ref.read(localesProvider);
@@ -32,5 +34,5 @@ final localeProvider = Provider.family<Locale, String?>(
 
     return availableLocales.first;
   },
-  dependencies: [localesProvider],
+  dependencies: [localesProvider, userLocaleProvider],
 );

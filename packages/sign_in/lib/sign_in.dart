@@ -164,13 +164,11 @@ final authStateProvider =
   );
 });*/
 
-final signInLocalizationsProvider = Provider<SignInLocalizations>(
-  (ref) {
-    final locale = ref.watch(localeProvider);
-    return lookupSignInLocalizations(locale);
-  },
-  dependencies: [localeProvider],
-);
+final signInLocalizationsProvider =
+    Provider.family<SignInLocalizations, BuildContext>((_, context) {
+  final locale = Localizations.localeOf(context);
+  return lookupSignInLocalizations(locale);
+});
 
 final signInThemeProvider = Provider<SignInTheme>((ref) {
   final appTheme = ref.watch(appThemeProvider);

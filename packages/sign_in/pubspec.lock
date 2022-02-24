@@ -540,10 +540,10 @@ packages:
     description:
       path: "packages/localization"
       ref: HEAD
-      resolved-ref: f7c2c06f5b353114f909499412b357c7becb188d
+      resolved-ref: ceed7aa8f4356a660805a7199e72f82e3caad2a2
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.1.0"
+    version: "0.1.2"
   logging:
     dependency: transitive
     description:

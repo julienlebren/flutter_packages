@@ -41,7 +41,7 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/localization
-    version: ^0.1.0
+    version: ^0.1.2
   cloud_firestore: ^3.1.0
   firebase_storage: ^10.1.0
   freezed_annotation: ^1.1.0
