@@ -10,7 +10,8 @@ final localesProvider = Provider<List<Locale>>((ref) {
   ];
 });
 
-final localeProvider = Provider<Locale>((_) => throw UnimplementedError());
+final localeProvider =
+    Provider<Locale>((ref) => ref.read(localeDeterminer(null)));
 
 final localeDeterminer = Provider.family<Locale, String?>(
   (ref, languageCode) {
