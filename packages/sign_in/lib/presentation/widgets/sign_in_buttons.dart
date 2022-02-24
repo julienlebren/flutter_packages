@@ -18,10 +18,10 @@ class SignInButtons extends ConsumerWidget {
     );
     event.maybeWhen(
       signInWithEmailLink: (_) {
-        Navigator.of(context, rootNavigator: true).pushNamed(
+        /*Navigator.of(context, rootNavigator: true).pushNamed(
           SignInRoutes.signInRouterPage,
           arguments: SignInRoutes.signInLinkPage,
-        );
+        );*/
         /*final navigator = SignInNavigatorKeys.main.currentState!;
         navigator.pushNamed(
           SignInRoutes.signInRouterPage,

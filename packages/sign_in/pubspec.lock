@@ -285,6 +285,45 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.5.3"
+  firebase_storage:
+    dependency: "direct main"
+    description:
+      name: firebase_storage
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "10.2.5"
+  firebase_storage_platform_interface:
+    dependency: transitive
+    description:
+      name: firebase_storage_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.14"
+  firebase_storage_service:
+    dependency: "direct main"
+    description:
+      path: "packages/firebase_storage_service"
+      ref: HEAD
+      resolved-ref: f8a7bb2915b85ed890a09bdd8990b2bf3bf1290c
+      url: "https://github.com/julienlebren/flutter_packages"
+    source: git
+    version: "0.3.0"
+  firebase_storage_web:
+    dependency: transitive
+    description:
+      name: firebase_storage_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.2.6"
+  firestore_service:
+    dependency: "direct main"
+    description:
+      path: "packages/firestore_service"
+      ref: HEAD
+      resolved-ref: f8a7bb2915b85ed890a09bdd8990b2bf3bf1290c
+      url: "https://github.com/julienlebren/flutter_packages"
+    source: git
+    version: "0.1.8"
   fixnum:
     dependency: transitive
     description:

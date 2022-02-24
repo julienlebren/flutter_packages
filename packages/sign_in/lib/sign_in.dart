@@ -3,9 +3,12 @@ library sign_in;
 import 'dart:async';
 import 'dart:ui' as ui;
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:extensions/extensions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth_service/firebase_auth_service.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:firestore_service/firestore_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -38,6 +41,7 @@ part 'presentation/views/sign_in_email_password_page.dart';
 part 'presentation/views/sign_in_landing_page.dart';
 part 'presentation/views/sign_in_phone_page.dart';
 part 'presentation/views/sign_in_unknown_page.dart';
+part 'repositories/user_repository.dart';
 part 'sign_in.freezed.dart';
 
 const delayBeforeUserCanRequestNewCode = 60;

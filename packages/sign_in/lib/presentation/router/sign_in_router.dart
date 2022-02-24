@@ -19,7 +19,6 @@ class SignInNavigatorKeys {
 
 class SignInRoutes {
   static const signInLandingPage = '/';
-  static const signInRouterPage = 'sign-in';
   static const signInEmailPage = 'sign-in/email';
   static const signInEmailPasswordPage = 'sign-in/email/password';
   static const signInEmailRecoverPage = 'sign-in/email/recover';
@@ -30,16 +29,26 @@ class SignInRoutes {
 }
 
 class SignInRouter {
+  static Route<dynamic> onGeneratModalRoute(
+      RouteSettings settings, WidgetRef ref) {
+    if (settings.name! == SignInRoutes.signInLandingPage) {
+      final signInLandingPage = ref.read(signInLandingPageProvider);
+      return platformPageRoute(
+        builder: (_) => signInLandingPage,
+      );
+    } else {
+      return platformPageRoute(
+        builder: (_) => SignInNavigator(
+          navigatorKey: SignInNavigatorKeys.modal,
+          routeName: settings.name!,
+        ),
+        fullscreenDialog: true,
+      );
+    }
+  }
+
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case SignInRoutes.signInRouterPage:
-        return platformPageRoute(
-          builder: (_) => SignInNavigator(
-            navigatorKey: SignInNavigatorKeys.modal,
-            routeName: settings.arguments as String,
-          ),
-          fullscreenDialog: true,
-        );
       case SignInRoutes.signInEmailPage:
         return platformPageRoute(
           builder: (_) => const SignInEmailPage(),
