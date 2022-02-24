@@ -28,7 +28,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.8.1"
+    version: "2.8.2"
   boolean_selector:
     dependency: transitive
     description:
@@ -119,7 +119,7 @@ packages:
       name: characters
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.0"
+    version: "1.2.0"
   charcode:
     dependency: transitive
     description:
@@ -297,6 +297,11 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.1.2"
+  flutter_localizations:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -445,10 +450,19 @@ packages:
     description:
       path: "packages/layout_builder"
       ref: HEAD
-      resolved-ref: "2893e87dadfba9bfae54f0dedb4310d864d38654"
+      resolved-ref: fc2788459643d32f4ef5a4eaa88e54975827bfa8
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "1.0.0"
+    version: "2.0.0"
+  localization:
+    dependency: transitive
+    description:
+      path: "packages/localization"
+      ref: HEAD
+      resolved-ref: fc2788459643d32f4ef5a4eaa88e54975827bfa8
+      url: "https://github.com/julienlebren/flutter_packages"
+    source: git
+    version: "0.1.0"
   logging:
     dependency: transitive
     description:
@@ -462,7 +476,14 @@ packages:
       name: matcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.10"
+    version: "0.12.11"
+  material_color_utilities:
+    dependency: transitive
+    description:
+      name: material_color_utilities
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.3"
   meta:
     dependency: transitive
     description:
@@ -712,7 +733,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.2"
+    version: "0.4.8"
   timing:
     dependency: transitive
     description:
@@ -740,7 +761,7 @@ packages:
       name: vector_math
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.0"
+    version: "2.1.1"
   watcher:
     dependency: transitive
     description:
@@ -777,5 +798,5 @@ packages:
     source: hosted
     version: "3.1.0"
 sdks:
-  dart: ">=2.14.0 <3.0.0"
+  dart: ">=2.16.1 <3.0.0"
   flutter: ">=2.5.0"
