@@ -3,7 +3,7 @@ part of '../../sign_in.dart';
 // Override juste les listeners dans les formulaires ??
 
 final signInRouterProvider =
-    Provider<Route<dynamic> Function(RouteSettings settings)>(
+    Provider<Route<dynamic> Function(RouteSettings settings, WidgetRef ref)>(
   (_) => SignInRouter.onGenerateRoute,
 );
 
@@ -19,52 +19,58 @@ class SignInNavigatorKeys {
 
 class SignInRoutes {
   static const signInLandingPage = '/';
+  static const signInModalPage = 'sign-in';
   static const signInEmailPage = 'sign-in/email';
   static const signInEmailPasswordPage = 'sign-in/email/password';
   static const signInEmailRecoverPage = 'sign-in/email/recover';
   static const signInEmailRegisterPage = 'sign-in/email/register';
-  static const signInLinkPage = 'sign-in/link';
+  static const signInEmailLinkPage = 'sign-in/link';
   static const signInPhonePage = 'sign-in/phone';
   static const signInPhoneVerificationPage = 'sign-in/phone/verification';
+  static const signInUnkonwnPage = 'sign-in/unknown';
 }
 
 class SignInRouter {
-  static Route<dynamic> onGeneratModalRoute(
-      RouteSettings settings, WidgetRef ref) {
-    if (settings.name! == SignInRoutes.signInLandingPage) {
-      final signInLandingPage = ref.read(signInLandingPageProvider);
-      return platformPageRoute(
-        builder: (_) => signInLandingPage,
-      );
+  static Route<dynamic> onGenerateRoute(
+    RouteSettings settings,
+    WidgetRef ref,
+  ) {
+    final isRootNavigator =
+        settings.arguments != null ? (settings.arguments as bool) : false;
+    if (isRootNavigator) {
+      if (settings.name! == SignInRoutes.signInLandingPage) {
+        final signInLandingPage = ref.read(signInLandingPageProvider);
+        return platformPageRoute(
+          builder: (_) => signInLandingPage,
+        );
+      } else {
+        return platformPageRoute(
+          builder: (_) => SignInNavigator(
+            navigatorKey: SignInNavigatorKeys.modal,
+            routeName: settings.name!,
+          ),
+          fullscreenDialog: true,
+        );
+      }
     } else {
+      switch (settings.name) {
+        case SignInRoutes.signInEmailPage:
+          return platformPageRoute(
+            builder: (_) => const SignInEmailPage(),
+          );
+        case SignInRoutes.signInEmailLinkPage:
+          return platformPageRoute(
+            builder: (_) => const SignInEmailLinkPage(),
+          );
+        case SignInRoutes.signInPhonePage:
+          return platformPageRoute(
+            builder: (_) => const SignInPhonePage(),
+          );
+      }
       return platformPageRoute(
-        builder: (_) => SignInNavigator(
-          navigatorKey: SignInNavigatorKeys.modal,
-          routeName: settings.name!,
-        ),
-        fullscreenDialog: true,
+        builder: (_) => const SignInUnknownPage(),
       );
     }
-  }
-
-  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
-    switch (settings.name) {
-      case SignInRoutes.signInEmailPage:
-        return platformPageRoute(
-          builder: (_) => const SignInEmailPage(),
-        );
-      case SignInRoutes.signInLinkPage:
-        return platformPageRoute(
-          builder: (_) => const SignInEmailLinkPage(),
-        );
-      case SignInRoutes.signInPhonePage:
-        return platformPageRoute(
-          builder: (_) => const SignInPhonePage(),
-        );
-    }
-    return platformPageRoute(
-      builder: (_) => const SignInUnknownPage(),
-    );
   }
 }
 
@@ -102,7 +108,12 @@ class SignInNavigator extends ConsumerWidget {
     return Navigator(
       key: navigatorKey,
       initialRoute: routeName,
-      onGenerateRoute: (settings) => signInRouter(settings),
+      onGenerateRoute: (settings) => signInRouter(
+          RouteSettings(
+            name: settings.name!,
+            arguments: (navigatorKey == SignInNavigatorKeys.main),
+          ),
+          ref),
     );
   }
 }

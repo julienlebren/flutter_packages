@@ -11,7 +11,8 @@ class SignInLandingPage extends StatelessWidget {
   }) : super(key: key);
 
   final SignInTheme? theme;
-  final Route<dynamic> Function(RouteSettings settings)? signInRouter;
+  final Route<dynamic> Function(RouteSettings settings, WidgetRef ref)?
+      signInRouter;
   final Widget? logo;
   final Widget? buttons;
   final String? backgroundImage;
