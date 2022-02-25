@@ -42,7 +42,7 @@ class SignInRouter {
     if (isRootNavigator) {
       return platformPageRoute(
         builder: (_) => SignInNavigator(
-          navigatorKey: SignInNavigatorKeys.modal,
+          navigatorKey: signInNavigatorKey,
           routeName: settings.name!,
         ),
         fullscreenDialog: true,
