@@ -17,6 +17,8 @@ class SignInNavigatorKeys {
   static final modal = GlobalKey<NavigatorState>();
 }
 
+final signInNavigatorKey = GlobalKey<NavigatorState>();
+
 class SignInRoutes {
   static const signInLandingPage = '/';
   static const signInModalPage = 'sign-in';
@@ -106,12 +108,12 @@ class SignInNavigator extends ConsumerWidget {
     });
 
     return Navigator(
-      key: navigatorKey,
+      key: signInNavigatorKey,
       initialRoute: routeName,
       onGenerateRoute: (settings) => signInRouter(
           RouteSettings(
             name: settings.name!,
-            arguments: (navigatorKey == SignInNavigatorKeys.main),
+            arguments: (navigatorKey != signInNavigatorKey),
           ),
           ref),
     );

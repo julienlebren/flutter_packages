@@ -18,7 +18,11 @@ class SignInButtons extends ConsumerWidget {
       signInAnonymously: () => SignInSupplier.anonymous,
     );
     event.maybeWhen(
-      signInWithPhone: () {},
+      signInWithPhone: () {
+        Navigator.of(context, rootNavigator: true).pushNamed(
+          SignInRoutes.signInPhonePage,
+        );
+      },
       signInWithEmailLink: (_) {
         /*Navigator.of(context, rootNavigator: true).pushNamed(
           SignInRoutes.signInRouterPage,
