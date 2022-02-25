@@ -92,7 +92,7 @@ class SignInCloseButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return PlatformNavigationBarCloseButton(onPressed: () {
-      final navigator = SignInNavigatorKeys.modal.currentState!;
+      final navigator = signInNavigatorKey.currentState!;
       navigator.pop();
     });
   }

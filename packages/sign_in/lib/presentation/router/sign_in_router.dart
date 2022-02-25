@@ -12,11 +12,6 @@ final signInLandingPageProvider =
 
 final needUserInfoPageProvider = Provider<String?>((_) => null);
 
-class SignInNavigatorKeys {
-  static final main = GlobalKey<NavigatorState>();
-  static final modal = GlobalKey<NavigatorState>();
-}
-
 final signInNavigatorKey = GlobalKey<NavigatorState>();
 
 class SignInRoutes {
@@ -86,7 +81,7 @@ class SignInNavigator extends ConsumerWidget {
     ref.listen<AuthState>(authStateProvider, (_, authState) {
       authState.maybeWhen(
         authed: (_) {
-          final navigator = SignInNavigatorKeys.main.currentState!;
+          final navigator = signInNavigatorKey.currentState!;
           navigator.pop();
         },
         needUserInformation: () {
