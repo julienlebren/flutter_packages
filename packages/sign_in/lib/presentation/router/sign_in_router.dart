@@ -17,6 +17,7 @@ class SignInNavigatorKeys {
   static final modal = GlobalKey<NavigatorState>();
 }
 
+const signInRoutesPredicate = 'sign-in';
 final signInNavigatorKey = GlobalKey<NavigatorState>();
 
 class SignInRoutes {
