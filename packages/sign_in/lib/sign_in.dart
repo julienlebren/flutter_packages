@@ -50,25 +50,6 @@ part 'sign_in.freezed.dart';
 
 const delayBeforeUserCanRequestNewCode = 60;
 
-class AuthSettings {
-  AuthSettings(
-    this.userStreamProvider, {
-    this.needUserInfoProvider,
-    this.needUserInfoPage,
-    this.onGenerateCustomRoute,
-  });
-
-  StreamProvider userStreamProvider;
-  Provider? needUserInfoProvider;
-  String? needUserInfoPage;
-  Function(RouteSettings settings)? onGenerateCustomRoute;
-}
-
-final authSettingsProvider = Provider<AuthSettings>((_) {
-  throw UnimplementedError(
-      "You forgot to override AuthSettings() before calling authSettingsProvider!");
-});
-
 final userStreamProvider = StreamProvider((_) => const Stream.empty());
 
 final authStateProvider = Provider<AuthState>((ref) {

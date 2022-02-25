@@ -37,9 +37,8 @@ class SignInRouter {
     WidgetRef ref,
   ) {
     final isRootNavigator =
-        settings.arguments != null ? (settings.arguments as bool) : false;
-    print("isRootNavigator: $isRootNavigator");
-    print("Route: ${settings.name}");
+        settings.arguments != null ? (settings.arguments as bool) : true;
+
     if (isRootNavigator) {
       return platformPageRoute(
         builder: (_) => SignInNavigator(
