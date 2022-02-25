@@ -17,12 +17,10 @@ class SignInNavigatorKeys {
   static final modal = GlobalKey<NavigatorState>();
 }
 
-const signInRoutesPredicate = 'sign-in';
 final signInNavigatorKey = GlobalKey<NavigatorState>();
 
 class SignInRoutes {
-  static const signInLandingPage = '/';
-  static const signInModalPage = 'sign-in';
+  static const predicate = 'sign-in';
   static const signInEmailPage = 'sign-in/email';
   static const signInEmailPasswordPage = 'sign-in/email/password';
   static const signInEmailRecoverPage = 'sign-in/email/recover';
@@ -41,20 +39,13 @@ class SignInRouter {
     final isRootNavigator =
         settings.arguments != null ? (settings.arguments as bool) : false;
     if (isRootNavigator) {
-      if (settings.name! == SignInRoutes.signInLandingPage) {
-        final signInLandingPage = ref.read(signInLandingPageProvider);
-        return platformPageRoute(
-          builder: (_) => signInLandingPage,
-        );
-      } else {
-        return platformPageRoute(
-          builder: (_) => SignInNavigator(
-            navigatorKey: SignInNavigatorKeys.modal,
-            routeName: settings.name!,
-          ),
-          fullscreenDialog: true,
-        );
-      }
+      return platformPageRoute(
+        builder: (_) => SignInNavigator(
+          navigatorKey: SignInNavigatorKeys.modal,
+          routeName: settings.name!,
+        ),
+        fullscreenDialog: true,
+      );
     } else {
       switch (settings.name) {
         case SignInRoutes.signInEmailPage:
