@@ -59,7 +59,7 @@ class SignInRouter {
           );
         case SignInRoutes.signInPhonePage:
           return platformPageRoute(
-            builder: (_) => const SignInPhonePage(),
+            builder: (_) => SignInPhonePage(),
           );
       }
       return platformPageRoute(

@@ -30,7 +30,9 @@ void _handlePhoneEvent(WidgetRef ref, SignInPhoneEvent event) {
 /// we check the authState to detect if we need to close the sign-in flow
 /// or if the user needs to be redirected to the profile form.
 class SignInPhonePage extends ConsumerWidget {
-  const SignInPhonePage({Key? key}) : super(key: key);
+  SignInPhonePage({Key? key}) : super(key: key) {
+    FlutterLibphonenumber().init();
+  }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
