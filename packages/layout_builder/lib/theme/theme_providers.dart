@@ -125,7 +125,7 @@ final formThemeProvider = Provider<FormTheme>((ref) {
       sectionDividerColor: Color(0xFFE6E6E6),
     );
   }
-});
+}, dependencies: [appThemeProvider]);
 
 /// Provider for localize some words about the theme
 final themeLocalizationsProvider = Provider<LayoutLocalizations>(
