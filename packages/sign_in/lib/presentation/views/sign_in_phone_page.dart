@@ -13,7 +13,11 @@ final signInPhoneControllerProvider =
     final localizations = ref.watch(signInLocalizationsProvider);
     return SignInPhoneController(country, authService, localizations);
   },
-  dependencies: [signInLocalizationsProvider],
+  dependencies: [
+    selectedCountryProvider,
+    authServiceProvider,
+    signInLocalizationsProvider,
+  ],
 );
 
 /// Handles a `SignInPhoneEvent` in the [SignInPhoneController]
