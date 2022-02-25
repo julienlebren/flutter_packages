@@ -6,20 +6,22 @@ import 'dart:ui' as ui;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:extensions/extensions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth_service/firebase_auth_service.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:firestore_service/firestore_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_libphonenumber/flutter_libphonenumber.dart';
+import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:layout_builder/layout_builder.dart';
 import 'package:localization/localization.dart';
 import 'package:sign_in/presentation/painters/apple_logo.dart';
 import 'package:sign_in/presentation/painters/google_logo.dart';
 import 'package:sign_in/l10n/sign_in_localizations.dart';
+import 'package:the_apple_sign_in/the_apple_sign_in.dart';
 
 part 'controllers/sign_in_controller.dart';
 part 'controllers/sign_in_email_controller.dart';
@@ -43,6 +45,7 @@ part 'presentation/views/sign_in_landing_page.dart';
 part 'presentation/views/sign_in_phone_page.dart';
 part 'presentation/views/sign_in_unknown_page.dart';
 part 'repositories/user_repository.dart';
+part 'services/firebase_auth_service.dart';
 part 'sign_in.freezed.dart';
 
 const delayBeforeUserCanRequestNewCode = 60;
@@ -137,3 +140,13 @@ final signInThemeProvider = Provider<SignInTheme>(
     formThemeProvider,
   ],
 );
+
+/// A provider which returns the auth changes in Firebase
+/// We use a [StreamProvider] here to handle the status of the stream,
+/// it allows us to know when the stream is loading or when it has data.
+final authStateChangesProvider = StreamProvider<User?>(
+    (ref) => ref.watch(authServiceProvider).authStateChanges());
+
+/// A provider which returns an instance of [FirebaseAuthService]
+final authServiceProvider =
+    Provider<FirebaseAuthService>((ref) => FirebaseAuthService.instance);

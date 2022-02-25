@@ -235,7 +235,7 @@ packages:
     source: hosted
     version: "6.1.2"
   firebase_auth:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: firebase_auth
       url: "https://pub.dartlang.org"
@@ -247,16 +247,7 @@ packages:
       name: firebase_auth_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.1.10"
-  firebase_auth_service:
-    dependency: "direct main"
-    description:
-      path: "packages/firebase_auth_service"
-      ref: HEAD
-      resolved-ref: "0684ba14862d7102691cae9b6092ed20c37c19a2"
-      url: "https://github.com/julienlebren/flutter_packages"
-    source: git
-    version: "0.6.2"
+    version: "6.2.0"
   firebase_auth_web:
     dependency: transitive
     description:
@@ -370,12 +361,12 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_login_facebook:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: flutter_login_facebook
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.0"
+    version: "1.4.0+1"
   flutter_riverpod:
     dependency: "direct main"
     description:
@@ -422,26 +413,26 @@ packages:
     source: hosted
     version: "2.0.2"
   google_sign_in:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: google_sign_in
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.2.3"
+    version: "5.2.4"
   google_sign_in_platform_interface:
     dependency: transitive
     description:
       name: google_sign_in_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.2"
   google_sign_in_web:
     dependency: transitive
     description:
       name: google_sign_in_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.10.0+4"
+    version: "0.10.0+5"
   graphs:
     dependency: transitive
     description:
@@ -851,7 +842,7 @@ packages:
     source: hosted
     version: "0.4.8"
   the_apple_sign_in:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: the_apple_sign_in
       url: "https://pub.dartlang.org"
