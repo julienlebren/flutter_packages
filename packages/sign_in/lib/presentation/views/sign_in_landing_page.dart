@@ -1,53 +1,13 @@
 part of '../../sign_in.dart';
 
-class SignInLandingPage extends StatelessWidget {
+class SignInLandingPage extends ConsumerWidget {
   const SignInLandingPage({
     Key? key,
-    this.logo,
-    this.buttons,
-    this.backgroundImage,
-    this.theme,
-    this.signInRouter,
-  }) : super(key: key);
-
-  final SignInTheme? theme;
-  final Route<dynamic> Function(RouteSettings settings, WidgetRef ref)?
-      signInRouter;
-  final Widget? logo;
-  final Widget? buttons;
-  final String? backgroundImage;
-
-  @override
-  Widget build(BuildContext context) {
-    return ProviderScope(
-      overrides: [
-        signInLandingPageProvider.overrideWithValue(SignInLandingPageBuilder(
-          backgroundImage: backgroundImage,
-          logo: logo,
-          buttons: buttons,
-        )),
-        if (theme != null) signInThemeProvider.overrideWithValue(theme!),
-        if (signInRouter != null)
-          signInRouterProvider.overrideWithValue(signInRouter!),
-      ],
-      child: SignInNavigator(
-        navigatorKey: SignInNavigatorKeys.main,
-        routeName: SignInRoutes.signInLandingPage,
-      ),
-    );
-  }
-}
-
-class SignInLandingPageBuilder extends ConsumerWidget {
-  const SignInLandingPageBuilder({
-    Key? key,
-    this.logo,
-    this.buttons,
+    this.child,
     this.backgroundImage,
   }) : super(key: key);
 
-  final Widget? logo;
-  final Widget? buttons;
+  final Widget? child;
   final String? backgroundImage;
 
   @override
@@ -72,18 +32,7 @@ class SignInLandingPageBuilder extends ConsumerWidget {
           body: SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  const Spacer(),
-                  if (logo != null) ...[
-                    logo!,
-                    const Spacer(),
-                  ],
-                  if (buttons != null) buttons!,
-                ],
-              ),
+              child: child,
             ),
           ),
         ),
