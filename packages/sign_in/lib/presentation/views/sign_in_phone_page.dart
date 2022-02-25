@@ -7,12 +7,14 @@ part of '../../sign_in.dart';
 /// advanced business logic like submitting the phone number
 final signInPhoneControllerProvider =
     StateNotifierProvider.autoDispose<SignInPhoneController, SignInPhoneState>(
-        (ref) {
-  final country = ref.watch(selectedCountryProvider);
-  final authService = ref.watch(authServiceProvider);
-  final localizations = ref.watch(signInLocalizationsProvider);
-  return SignInPhoneController(country, authService, localizations);
-});
+  (ref) {
+    final country = ref.watch(selectedCountryProvider);
+    final authService = ref.watch(authServiceProvider);
+    final localizations = ref.watch(signInLocalizationsProvider);
+    return SignInPhoneController(country, authService, localizations);
+  },
+  dependencies: [signInLocalizationsProvider],
+);
 
 /// Handles a `SignInPhoneEvent` in the [SignInPhoneController]
 /// This function avoids too much code repetition in this file

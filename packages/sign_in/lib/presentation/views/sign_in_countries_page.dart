@@ -27,11 +27,9 @@ final selectedCountryProvider = Provider<CountryWithPhoneCode>((ref) {
   FirebaseAuth.instance.setLanguageCode(langCode);
 
   final countries = ref.watch(countriesProvider);
-  print("countries: $countries");
 
   Iterable<CountryWithPhoneCode> filteredCountries =
       countries.where((item) => item.countryCode == countryCode);
-  print("filteredCountries: $filteredCountries");
 
   if (filteredCountries.isEmpty) {
     filteredCountries = countries.where((item) => item.countryCode == 'US');
