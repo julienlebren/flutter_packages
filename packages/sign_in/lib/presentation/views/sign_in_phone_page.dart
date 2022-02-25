@@ -156,12 +156,18 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
         ),
         if (isCupertino()) const SignInDivider(),
         if (isMaterial()) const SignInPhoneAutoRetrieve(),
-        PlatformElevatedButton(
-          title: l10n.continueButton,
-          onPressed: () => state.canSubmit
-              ? _handlePhoneEvent(ref, const SignInPhoneEvent.verifyPhone())
-              : null,
-        )
+        Padding(
+          padding: const EdgeInsets.only(top: 8),
+          child: SizedBox(
+            width: double.infinity,
+            child: PlatformElevatedButton(
+              title: l10n.continueButton,
+              onPressed: () => state.canSubmit
+                  ? _handlePhoneEvent(ref, const SignInPhoneEvent.verifyPhone())
+                  : null,
+            ),
+          ),
+        ),
       ],
     );
   }
