@@ -4,7 +4,11 @@ final signInSupplierProvider =
     StateProvider<SignInSupplier>((_) => SignInSupplier.anonymous);
 
 class SignInButtons extends ConsumerWidget {
-  const SignInButtons(this.suppliers, {Key? key}) : super(key: key);
+  SignInButtons(this.suppliers, {Key? key}) : super(key: key) {
+    if (suppliers.contains(SignInSupplier.phone)) {
+      FlutterLibphonenumber().init();
+    }
+  }
 
   final List<SignInSupplier> suppliers;
 
