@@ -77,12 +77,6 @@ class SignInPhonePageBuilder extends ConsumerWidget {
       title: l10n.signInPhoneTitle,
       subtitle: l10n.signInPhoneSubtitle,
       leadingButton: const SignInCloseButton(),
-      submitButton: PlatformElevatedButton(
-        title: l10n.continueButton,
-        onPressed: () => state.canSubmit
-            ? _handlePhoneEvent(ref, const SignInPhoneEvent.verifyPhone())
-            : null,
-      ),
       child: const SignInPhoneForm(),
       errorText: state.errorText,
       isLoading: state.isLoading,
@@ -139,37 +133,36 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
 
   @override
   Widget build(BuildContext context) {
-    return /*ProviderListener<StateController<CountryWithPhoneCode>>(
-      provider: countryProvider,
-      onChange: (context, state) async {
-        controller.clear();
-      },
-      child:*/
-        Consumer(
-      builder: (_, watch, child) {
-        //final selectedCountry = ref.watch(countryProvider).state;
-        return Column(
-          children: [
-            FormTappableField(
-              value: "xxx", //selectedCountry.countryName!,
-              onPressed: () => _openCountries(context),
-            ),
-            const FormRowDivider(),
-            const SizedBox(height: 8),
-            PlatformTextField(
-              controller: controller,
-              focusNode: focusNode,
-              keyboardType: TextInputType.phone,
-              /*placeholder: l10n.signInPhonePlaceholder(
-                  selectedCountry.exampleNumberMobileNational!),
-              inputFormatters: [phoneNumberFormatter(selectedCountry)],*/
-            ),
-            if (isCupertino()) const FormRowDivider(),
-            if (isMaterial()) const SignInPhoneAutoRetrieve(),
-          ],
-        );
-      },
-      //),
+    final l10n = ref.read(signInLocalizationsProvider);
+    final state = ref.watch(signInPhoneControllerProvider);
+    final selectedCountry = ref.watch(selectedCountryProvider);
+
+    return Column(
+      children: [
+        FormTappableField(
+          value: selectedCountry.countryName!,
+          onPressed: () => _openCountries(context),
+        ),
+        const SignInDivider(),
+        const SizedBox(height: 8),
+        PlatformTextField(
+          controller: controller,
+          focusNode: focusNode,
+          keyboardType: TextInputType.phone,
+          placeholder: l10n.signInPhonePlaceholder(
+            selectedCountry.exampleNumberMobileNational,
+          ),
+          inputFormatters: [phoneNumberFormatter(selectedCountry)],
+        ),
+        if (isCupertino()) const SignInDivider(),
+        if (isMaterial()) const SignInPhoneAutoRetrieve(),
+        PlatformElevatedButton(
+          title: l10n.continueButton,
+          onPressed: () => state.canSubmit
+              ? _handlePhoneEvent(ref, const SignInPhoneEvent.verifyPhone())
+              : null,
+        )
+      ],
     );
   }
 }

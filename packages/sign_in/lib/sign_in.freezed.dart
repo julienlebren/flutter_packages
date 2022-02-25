@@ -4988,6 +4988,7 @@ class _$SignInThemeTearOff {
       double buttonPadding = 16.0,
       required ui.Color buttonBackgroundColor,
       required ui.Color buttonTextColor,
+      required ui.Color dividerColor,
       double buttonFontSize = 18.0,
       double spaceBetweenButtons = 15.0}) {
     return _SignInTheme(
@@ -4996,6 +4997,7 @@ class _$SignInThemeTearOff {
       buttonPadding: buttonPadding,
       buttonBackgroundColor: buttonBackgroundColor,
       buttonTextColor: buttonTextColor,
+      dividerColor: dividerColor,
       buttonFontSize: buttonFontSize,
       spaceBetweenButtons: spaceBetweenButtons,
     );
@@ -5012,6 +5014,7 @@ mixin _$SignInTheme {
   double get buttonPadding => throw _privateConstructorUsedError;
   ui.Color get buttonBackgroundColor => throw _privateConstructorUsedError;
   ui.Color get buttonTextColor => throw _privateConstructorUsedError;
+  ui.Color get dividerColor => throw _privateConstructorUsedError;
   double get buttonFontSize => throw _privateConstructorUsedError;
   double get spaceBetweenButtons => throw _privateConstructorUsedError;
 
@@ -5031,6 +5034,7 @@ abstract class $SignInThemeCopyWith<$Res> {
       double buttonPadding,
       ui.Color buttonBackgroundColor,
       ui.Color buttonTextColor,
+      ui.Color dividerColor,
       double buttonFontSize,
       double spaceBetweenButtons});
 }
@@ -5050,6 +5054,7 @@ class _$SignInThemeCopyWithImpl<$Res> implements $SignInThemeCopyWith<$Res> {
     Object? buttonPadding = freezed,
     Object? buttonBackgroundColor = freezed,
     Object? buttonTextColor = freezed,
+    Object? dividerColor = freezed,
     Object? buttonFontSize = freezed,
     Object? spaceBetweenButtons = freezed,
   }) {
@@ -5073,6 +5078,10 @@ class _$SignInThemeCopyWithImpl<$Res> implements $SignInThemeCopyWith<$Res> {
       buttonTextColor: buttonTextColor == freezed
           ? _value.buttonTextColor
           : buttonTextColor // ignore: cast_nullable_to_non_nullable
+              as ui.Color,
+      dividerColor: dividerColor == freezed
+          ? _value.dividerColor
+          : dividerColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
       buttonFontSize: buttonFontSize == freezed
           ? _value.buttonFontSize
@@ -5099,6 +5108,7 @@ abstract class _$SignInThemeCopyWith<$Res>
       double buttonPadding,
       ui.Color buttonBackgroundColor,
       ui.Color buttonTextColor,
+      ui.Color dividerColor,
       double buttonFontSize,
       double spaceBetweenButtons});
 }
@@ -5120,6 +5130,7 @@ class __$SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
     Object? buttonPadding = freezed,
     Object? buttonBackgroundColor = freezed,
     Object? buttonTextColor = freezed,
+    Object? dividerColor = freezed,
     Object? buttonFontSize = freezed,
     Object? spaceBetweenButtons = freezed,
   }) {
@@ -5144,6 +5155,10 @@ class __$SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
           ? _value.buttonTextColor
           : buttonTextColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
+      dividerColor: dividerColor == freezed
+          ? _value.dividerColor
+          : dividerColor // ignore: cast_nullable_to_non_nullable
+              as ui.Color,
       buttonFontSize: buttonFontSize == freezed
           ? _value.buttonFontSize
           : buttonFontSize // ignore: cast_nullable_to_non_nullable
@@ -5165,6 +5180,7 @@ class _$_SignInTheme implements _SignInTheme {
       this.buttonPadding = 16.0,
       required this.buttonBackgroundColor,
       required this.buttonTextColor,
+      required this.dividerColor,
       this.buttonFontSize = 18.0,
       this.spaceBetweenButtons = 15.0});
 
@@ -5181,6 +5197,8 @@ class _$_SignInTheme implements _SignInTheme {
   final ui.Color buttonBackgroundColor;
   @override
   final ui.Color buttonTextColor;
+  @override
+  final ui.Color dividerColor;
   @JsonKey()
   @override
   final double buttonFontSize;
@@ -5190,7 +5208,7 @@ class _$_SignInTheme implements _SignInTheme {
 
   @override
   String toString() {
-    return 'SignInTheme(maxWidth: $maxWidth, buttonRadius: $buttonRadius, buttonPadding: $buttonPadding, buttonBackgroundColor: $buttonBackgroundColor, buttonTextColor: $buttonTextColor, buttonFontSize: $buttonFontSize, spaceBetweenButtons: $spaceBetweenButtons)';
+    return 'SignInTheme(maxWidth: $maxWidth, buttonRadius: $buttonRadius, buttonPadding: $buttonPadding, buttonBackgroundColor: $buttonBackgroundColor, buttonTextColor: $buttonTextColor, dividerColor: $dividerColor, buttonFontSize: $buttonFontSize, spaceBetweenButtons: $spaceBetweenButtons)';
   }
 
   @override
@@ -5208,6 +5226,8 @@ class _$_SignInTheme implements _SignInTheme {
             const DeepCollectionEquality()
                 .equals(other.buttonTextColor, buttonTextColor) &&
             const DeepCollectionEquality()
+                .equals(other.dividerColor, dividerColor) &&
+            const DeepCollectionEquality()
                 .equals(other.buttonFontSize, buttonFontSize) &&
             const DeepCollectionEquality()
                 .equals(other.spaceBetweenButtons, spaceBetweenButtons));
@@ -5221,6 +5241,7 @@ class _$_SignInTheme implements _SignInTheme {
       const DeepCollectionEquality().hash(buttonPadding),
       const DeepCollectionEquality().hash(buttonBackgroundColor),
       const DeepCollectionEquality().hash(buttonTextColor),
+      const DeepCollectionEquality().hash(dividerColor),
       const DeepCollectionEquality().hash(buttonFontSize),
       const DeepCollectionEquality().hash(spaceBetweenButtons));
 
@@ -5237,6 +5258,7 @@ abstract class _SignInTheme implements SignInTheme {
       double buttonPadding,
       required ui.Color buttonBackgroundColor,
       required ui.Color buttonTextColor,
+      required ui.Color dividerColor,
       double buttonFontSize,
       double spaceBetweenButtons}) = _$_SignInTheme;
 
@@ -5250,6 +5272,8 @@ abstract class _SignInTheme implements SignInTheme {
   ui.Color get buttonBackgroundColor;
   @override
   ui.Color get buttonTextColor;
+  @override
+  ui.Color get dividerColor;
   @override
   double get buttonFontSize;
   @override

@@ -33,9 +33,6 @@ part 'core/models/auth_state.dart';
 part 'core/models/sign_in_event.dart';
 part 'core/models/sign_in_state.dart';
 part 'core/models/sign_in_theme.dart';
-part 'presentation/widgets/sign_in_page_builder.dart';
-part 'presentation/widgets/sign_in_buttons.dart';
-part 'presentation/widgets/sign_in_button.dart';
 part 'presentation/router/sign_in_router.dart';
 part 'presentation/views/sign_in_countries_page.dart';
 part 'presentation/views/sign_in_email_link_page.dart';
@@ -44,6 +41,10 @@ part 'presentation/views/sign_in_email_password_page.dart';
 part 'presentation/views/sign_in_landing_page.dart';
 part 'presentation/views/sign_in_phone_page.dart';
 part 'presentation/views/sign_in_unknown_page.dart';
+part 'presentation/widgets/sign_in_divider.dart';
+part 'presentation/widgets/sign_in_button.dart';
+part 'presentation/widgets/sign_in_buttons.dart';
+part 'presentation/widgets/sign_in_page_builder.dart';
 part 'repositories/user_repository.dart';
 part 'services/firebase_auth_service.dart';
 part 'sign_in.freezed.dart';
@@ -114,6 +115,7 @@ final signInThemeProvider = Provider<SignInTheme>(
     return SignInTheme(
       buttonBackgroundColor: formTheme.rowBackgroundColor,
       buttonTextColor: appTheme.textColor,
+      dividerColor: appTheme.dividerColor,
     );
   },
   dependencies: [

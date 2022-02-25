@@ -11,7 +11,6 @@ class SignInPageBuilder extends StatelessWidget {
     this.leadingButton,
     required this.child,
     this.isLoading = false,
-    this.submitButton,
     this.errorText,
   }) : super(key: key);
 
@@ -20,7 +19,6 @@ class SignInPageBuilder extends StatelessWidget {
   final Widget? leadingButton;
   final Widget child;
   final bool isLoading;
-  final Widget? submitButton;
   final String? errorText;
 
   @override
@@ -28,7 +26,7 @@ class SignInPageBuilder extends StatelessWidget {
     return SignInScaffold(
       appBar: PlatformNavigationBar(
         leading: leadingButton,
-        trailing: (isCupertino() ? _submitButton : null),
+        trailing: (isLoading ? const FormLoader() : null),
         hasBorder: false,
       ),
       child: Column(
@@ -50,8 +48,6 @@ class SignInPageBuilder extends StatelessWidget {
       ),
     );
   }
-
-  Widget? get _submitButton => (isLoading ? const FormLoader() : submitButton);
 }
 
 class SignInScaffold extends StatelessWidget {
