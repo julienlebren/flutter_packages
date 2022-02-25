@@ -122,12 +122,18 @@ final signInLocalizationsProvider = Provider<SignInLocalizations>(
   dependencies: [localeProvider],
 );
 
-final signInThemeProvider = Provider<SignInTheme>((ref) {
-  final appTheme = ref.watch(appThemeProvider);
-  final formTheme = ref.watch(formThemeProvider);
+final signInThemeProvider = Provider<SignInTheme>(
+  (ref) {
+    final appTheme = ref.watch(appThemeProvider);
+    final formTheme = ref.watch(formThemeProvider);
 
-  return SignInTheme(
-    buttonBackgroundColor: formTheme.rowBackgroundColor,
-    buttonTextColor: appTheme.textColor,
-  );
-});
+    return SignInTheme(
+      buttonBackgroundColor: formTheme.rowBackgroundColor,
+      buttonTextColor: appTheme.textColor,
+    );
+  },
+  dependencies: [
+    appThemeProvider,
+    formThemeProvider,
+  ],
+);
