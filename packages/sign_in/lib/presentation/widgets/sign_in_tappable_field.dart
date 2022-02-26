@@ -16,7 +16,7 @@ class SignInTappableField
   @override
   TextButton createMaterialWidget(BuildContext context, WidgetRef ref) {
     return TextButton(
-      child: _contents,
+      child: _contents(ref),
       onPressed: onPressed,
     );
   }
@@ -24,30 +24,41 @@ class SignInTappableField
   @override
   CupertinoButton createCupertinoWidget(BuildContext context, WidgetRef ref) {
     return CupertinoButton(
-      child: _contents,
+      padding: const EdgeInsets.all(0),
+      child: _contents(ref),
       onPressed: onPressed,
     );
   }
 
-  Widget get _contents => SizedBox(
-        height: 48.0,
-        child: Row(
-          children: [
+  Widget _contents(WidgetRef ref) {
+    final textColor = ref.watch(
+      appThemeProvider.select(
+        (appTheme) => appTheme.textColor,
+      ),
+    );
+    return SizedBox(
+      height: 48.0,
+      child: Row(
+        children: [
+          Text(
+            label,
+            style: TextStyle(color: textColor),
+          ),
+          const Spacer(),
+          if (value != null)
             Text(
-              label,
+              value!,
+              style: TextStyle(color: textColor),
+              textAlign: TextAlign.right,
             ),
-            if (value != null)
-              Text(
-                value!,
-                textAlign: TextAlign.right,
-              ),
-            if (isCupertino())
-              const Icon(
-                CupertinoIcons.chevron_right,
-                size: 22,
-                color: Colors.grey,
-              ),
-          ],
-        ),
-      );
+          if (isCupertino())
+            const Icon(
+              CupertinoIcons.chevron_right,
+              size: 22,
+              color: Colors.grey,
+            ),
+        ],
+      ),
+    );
+  }
 }
