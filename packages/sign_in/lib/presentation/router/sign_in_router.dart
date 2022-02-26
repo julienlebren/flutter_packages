@@ -36,7 +36,7 @@ class SignInRouter {
         settings.arguments != null ? (settings.arguments as bool) : true;
 
     if (isRootNavigator) {
-      return platformPageRoute(
+      return MaterialWithModalsPageRoute(
         builder: (_) => SignInNavigator(
           navigatorKey: signInNavigatorKey,
           routeName: settings.name!,
