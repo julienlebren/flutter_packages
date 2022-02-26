@@ -98,6 +98,7 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
         if (isCupertino()) const SignInDivider(),
         PlatformTextButton(
           title: l10n.signInWithEmailForgotPassword,
+          fontSize: 14,
           onPressed: () {},
         ),
         SignInSubmitButton(
