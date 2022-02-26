@@ -108,15 +108,16 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
   }
 
   void _openCountries(BuildContext context) {
-    /*if (isCupertino()) {
+    if (isCupertino()) {
       showCupertinoModalBottomSheet(
         context: context,
-        duration: Duration(milliseconds: 300),
-        builder: (context) => CountriesPage(),
+        duration: const Duration(milliseconds: 300),
+        builder: (context) => const CountriesPage(),
       );
     } else {
-      context.read(uiStateProvider).state = UIState.openCountries();
-    }*/
+      final navigator = signInNavigatorKey.currentState!;
+      navigator.pushNamed(SignInRoutes.signInCountriesPage);
+    }
   }
 
   LibPhonenumberTextFormatter phoneNumberFormatter(

@@ -23,6 +23,7 @@ class SignInRoutes {
   static const signInEmailLinkPage = 'sign-in/link';
   static const signInPhonePage = 'sign-in/phone';
   static const signInPhoneVerificationPage = 'sign-in/phone/verification';
+  static const signInCountriesPage = 'sign-in/countries';
   static const signInUnkonwnPage = 'sign-in/unknown';
 }
 
@@ -55,6 +56,10 @@ class SignInRouter {
         case SignInRoutes.signInPhonePage:
           return platformPageRoute(
             builder: (_) => const SignInPhonePage(),
+          );
+        case SignInRoutes.signInCountriesPage:
+          return platformPageRoute(
+            builder: (_) => const CountriesPage(),
           );
       }
       return platformPageRoute(
