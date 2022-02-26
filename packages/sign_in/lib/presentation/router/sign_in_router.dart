@@ -46,7 +46,7 @@ class SignInRouter {
     } else {
       switch (settings.name) {
         case SignInRoutes.signInEmailPage:
-          return MaterialWithModalsPageRoute(
+          return platformPageRoute(
             builder: (_) => const SignInEmailPage(),
           );
         case SignInRoutes.signInEmailLinkPage:
@@ -54,7 +54,7 @@ class SignInRouter {
             builder: (_) => const SignInEmailLinkPage(),
           );
         case SignInRoutes.signInPhonePage:
-          return platformPageRoute(
+          return MaterialWithModalsPageRoute(
             builder: (_) => const SignInPhonePage(),
           );
         case SignInRoutes.signInCountriesPage:
