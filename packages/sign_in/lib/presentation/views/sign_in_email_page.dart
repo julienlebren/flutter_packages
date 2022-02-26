@@ -5,16 +5,12 @@ class SignInEmailPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.watch(signInLocalizationsProvider);
-    final isLoading = ref.watch(
-      signInEmailControllerProvider.select((state) => state.isLoading),
-    );
-
     ref.listen<SignInEmailState>(signInEmailControllerProvider, (_, state) {
       if (state.isSuccess) {
         //final navigator = SignInRouter.main.currentState!;
         //navigator.pop();
       } else if (state.errorText != null) {
+        final l10n = ref.watch(signInLocalizationsProvider);
         showErrorDialog(
           context,
           ref,
@@ -24,30 +20,37 @@ class SignInEmailPage extends ConsumerWidget {
       }
     });
 
-    return PlatformScaffold(
-      appBar: PlatformNavigationBar(
-        leading: PlatformNavigationBarCloseButton(
-          onPressed: () => Navigator.pop(context),
-        ),
-        title: l10n.signInWithEmailTitle,
-        trailing: isLoading ? const FormLoader() : null,
-      ),
-      body: FormWithOverlay(
-        isSaving: isLoading,
-        child: const _SignInEmailPageForm(),
-      ),
+    return const SignInEmailPageBuilder();
+  }
+}
+
+class SignInEmailPageBuilder extends ConsumerWidget {
+  const SignInEmailPageBuilder({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.read(signInLocalizationsProvider);
+    final state = ref.watch(signInEmailControllerProvider);
+
+    return SignInPageBuilder(
+      title: l10n.signInWithEmailTitle,
+      subtitle: l10n.signInWithEmailSubtitle,
+      leadingButton: const SignInCloseButton(),
+      child: const SignInEmailPageForm(),
+      errorText: state.errorText,
+      isLoading: state.isLoading,
     );
   }
 }
 
-class _SignInEmailPageForm extends ConsumerStatefulWidget {
-  const _SignInEmailPageForm({Key? key}) : super(key: key);
+class SignInEmailPageForm extends ConsumerStatefulWidget {
+  const SignInEmailPageForm({Key? key}) : super(key: key);
 
   @override
   createState() => _SignInEmailPageFormState();
 }
 
-class _SignInEmailPageFormState extends ConsumerState<_SignInEmailPageForm> {
+class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
   final focusNode = FocusNode();
 
   @override
@@ -61,28 +64,42 @@ class _SignInEmailPageFormState extends ConsumerState<_SignInEmailPageForm> {
   @override
   Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
+    final canSubmit = ref.watch(
+      signInEmailLinkControllerProvider.select((state) => state.canSubmit),
+    );
 
-    return FormPage(
+    return Column(
       children: [
-        FormSection(
-          children: [
-            FormRow(
-              child: PlatformTextField(
-                controller: TextEditingController(),
-                keyboardType: TextInputType.emailAddress,
-                placeholder: l10n.signInWithEmailPlaceholder,
-                autocorrect: false,
-                focusNode: focusNode,
-                onChanged: (String value) {
-                  final controller =
-                      ref.read(signInEmailControllerProvider.notifier);
-                  controller.handleEvent(SignInEmailEvent.emailChanged(value));
-                },
-              ),
-            ),
-          ],
+        PlatformTextField(
+          controller: TextEditingController(),
+          keyboardType: TextInputType.emailAddress,
+          placeholder: l10n.signInWithEmailPlaceholder,
+          autocorrect: false,
+          focusNode: focusNode,
+          onChanged: (String value) {
+            final controller = ref.read(signInEmailControllerProvider.notifier);
+            controller.handleEvent(SignInEmailEvent.emailChanged(value));
+          },
         ),
-        const _SignInEmailSubmitButton(),
+        if (isCupertino()) const SignInDivider(),
+        PlatformTextField(
+          controller: TextEditingController(),
+          keyboardType: TextInputType.visiblePassword,
+          placeholder: "Password",
+          autocorrect: false,
+          onChanged: (String value) {
+            final controller = ref.read(signInEmailControllerProvider.notifier);
+            controller.handleEvent(SignInEmailEvent.emailChanged(value));
+          },
+        ),
+        if (isCupertino()) const SignInDivider(),
+        SignInSubmitButton(
+          title: l10n.continueButton,
+          onPressed: () => canSubmit
+              ? _handleEmailLinkEvent(
+                  ref, const SignInEmailLinkEvent.sendLink())
+              : null,
+        ),
       ],
     );
   }

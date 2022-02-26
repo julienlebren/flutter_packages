@@ -184,6 +184,12 @@ abstract class SignInLocalizations {
   /// **'Sign-in with an email'**
   String get signInWithEmailTitle;
 
+  /// No description provided for @signInWithEmailSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No password required, we just send you an email with a link to log in to the app.'**
+  String get signInWithEmailSubtitle;
+
   /// No description provided for @signInWithFacebook.
   ///
   /// In en, this message translates to:

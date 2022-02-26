@@ -161,8 +161,13 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithEmail,
                       onPressed: () {
-                        _handleSignIn(context, ref,
-                            const SignInEvent.signInWithEmailLink(""));
+                        _handleSignIn(
+                          context,
+                          ref,
+                          supplier == SignInSupplier.email
+                              ? const SignInEvent.signInWithEmail()
+                              : const SignInEvent.signInWithEmailLink(""),
+                        );
                       },
                     ),
                   if (supplier == SignInSupplier.phone)

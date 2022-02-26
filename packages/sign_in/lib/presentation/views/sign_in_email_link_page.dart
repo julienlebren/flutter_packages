@@ -71,7 +71,9 @@ class _SignInEmailLinkPageFormState
   @override
   Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
-    final state = ref.watch(signInEmailLinkControllerProvider);
+    final canSubmit = ref.watch(
+      signInEmailLinkControllerProvider.select((state) => state.canSubmit),
+    );
 
     return Column(
       children: [
@@ -89,7 +91,7 @@ class _SignInEmailLinkPageFormState
         if (isCupertino()) const SignInDivider(),
         SignInSubmitButton(
           title: l10n.continueButton,
-          onPressed: () => state.canSubmit
+          onPressed: () => canSubmit
               ? _handleEmailLinkEvent(
                   ref, const SignInEmailLinkEvent.sendLink())
               : null,
