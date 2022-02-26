@@ -84,9 +84,9 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
         const SizedBox(height: 10),
         PlatformTextField(
           controller: TextEditingController(),
-          keyboardType: TextInputType.visiblePassword,
-          placeholder: "Password",
+          placeholder: l10n.signInWithEmailPasswordPlaceholder,
           autocorrect: false,
+          obscureText: true,
           onChanged: (String value) {
             final controller = ref.read(signInEmailControllerProvider.notifier);
             controller.handleEvent(SignInEmailEvent.emailChanged(value));
@@ -103,6 +103,10 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
               ? _handleEmailLinkEvent(
                   ref, const SignInEmailLinkEvent.sendLink())
               : null,
+        ),
+        PlatformTextButton(
+          title: l10n.signInWithEmailCreateAccount,
+          onPressed: null,
         ),
       ],
     );

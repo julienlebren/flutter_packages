@@ -26,9 +26,6 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get signInWithEmail => 'Continuer avec un e-mail';
 
   @override
-  String get signInWithEmailCreateAccount => 'Pas encore inscrit ? Créez un compte.';
-
-  @override
   String get signInWithEmailLinkTitle => 'Sign in with e-mail';
 
   @override
@@ -38,16 +35,19 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get signInWithEmailLinkSuccess => 'Vérifiez vos e-mails, nous vous avons envoyé un lien pour vous identifier.';
 
   @override
-  String get signInWithEmailPlaceholder => 'Adresse e-mail';
+  String get signInWithEmailLinkRetry => 'You did not receive it? Try again or try another identification method.';
 
   @override
-  String get signInWithEmailPasswordPlaceholder => 'Mot de passe';
+  String get signInWithEmailCreateAccount => 'Pas encore inscrit ? Créez un compte.';
 
   @override
   String get signInWithEmailForgotPassword => 'Mot de passe oublié ?';
 
   @override
-  String get signInWithEmailRetry => 'Vous ne l\'avez aps reçu ? Réessayez ou essayez une autre méthode d\'identification.';
+  String get signInWithEmailPlaceholder => 'Adresse e-mail';
+
+  @override
+  String get signInWithEmailPasswordPlaceholder => 'Mot de passe';
 
   @override
   String get signInWithEmailTitle => 'Continuer avec un e-mail';

@@ -130,12 +130,6 @@ abstract class SignInLocalizations {
   /// **'Sign in with e-mail'**
   String get signInWithEmail;
 
-  /// No description provided for @signInWithEmailCreateAccount.
-  ///
-  /// In en, this message translates to:
-  /// **'Not yet registered? Create an account.'**
-  String get signInWithEmailCreateAccount;
-
   /// No description provided for @signInWithEmailLinkTitle.
   ///
   /// In en, this message translates to:
@@ -154,6 +148,24 @@ abstract class SignInLocalizations {
   /// **'Check your email, we have sent a sign-in link.'**
   String get signInWithEmailLinkSuccess;
 
+  /// No description provided for @signInWithEmailLinkRetry.
+  ///
+  /// In en, this message translates to:
+  /// **'You did not receive it? Try again or try another identification method.'**
+  String get signInWithEmailLinkRetry;
+
+  /// No description provided for @signInWithEmailCreateAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Not yet registered? Create an account.'**
+  String get signInWithEmailCreateAccount;
+
+  /// No description provided for @signInWithEmailForgotPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgot your password?'**
+  String get signInWithEmailForgotPassword;
+
   /// No description provided for @signInWithEmailPlaceholder.
   ///
   /// In en, this message translates to:
@@ -165,18 +177,6 @@ abstract class SignInLocalizations {
   /// In en, this message translates to:
   /// **'Password'**
   String get signInWithEmailPasswordPlaceholder;
-
-  /// No description provided for @signInWithEmailForgotPassword.
-  ///
-  /// In en, this message translates to:
-  /// **'Forgot your password?'**
-  String get signInWithEmailForgotPassword;
-
-  /// No description provided for @signInWithEmailRetry.
-  ///
-  /// In en, this message translates to:
-  /// **'You did not receive it? Try again or try another identification method.'**
-  String get signInWithEmailRetry;
 
   /// No description provided for @signInWithEmailTitle.
   ///
