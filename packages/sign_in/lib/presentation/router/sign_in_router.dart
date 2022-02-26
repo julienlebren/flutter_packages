@@ -36,7 +36,7 @@ class SignInRouter {
         settings.arguments != null ? (settings.arguments as bool) : true;
 
     if (isRootNavigator) {
-      return MaterialWithModalsPageRoute(
+      return platformPageRoute(
         builder: (_) => SignInNavigator(
           navigatorKey: signInNavigatorKey,
           routeName: settings.name!,
@@ -46,7 +46,7 @@ class SignInRouter {
     } else {
       switch (settings.name) {
         case SignInRoutes.signInEmailPage:
-          return platformPageRoute(
+          return MaterialWithModalsPageRoute(
             builder: (_) => const SignInEmailPage(),
           );
         case SignInRoutes.signInEmailLinkPage:
