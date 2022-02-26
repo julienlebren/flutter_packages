@@ -66,6 +66,9 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
     final canSubmit = ref.watch(
       signInEmailLinkControllerProvider.select((state) => state.canSubmit),
     );
+    final textColor = ref.watch(
+      appThemeProvider.select((appTheme) => appTheme.textColor),
+    );
 
     return Column(
       children: [
@@ -95,7 +98,7 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
         if (isCupertino()) const SignInDivider(),
         PlatformTextButton(
           title: l10n.signInWithEmailForgotPassword,
-          onPressed: null,
+          onPressed: () {},
         ),
         SignInSubmitButton(
           title: l10n.continueButton,
@@ -106,7 +109,8 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
         ),
         PlatformTextButton(
           title: l10n.signInWithEmailCreateAccount,
-          onPressed: null,
+          onPressed: () {},
+          color: textColor,
         ),
       ],
     );
