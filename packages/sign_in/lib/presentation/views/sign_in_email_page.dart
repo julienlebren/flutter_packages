@@ -66,9 +66,6 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
     final canSubmit = ref.watch(
       signInEmailLinkControllerProvider.select((state) => state.canSubmit),
     );
-    final textColor = ref.watch(
-      appThemeProvider.select((appTheme) => appTheme.textColor),
-    );
 
     return Column(
       children: [
@@ -111,7 +108,6 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
         PlatformTextButton(
           title: l10n.signInWithEmailCreateAccount,
           onPressed: () {},
-          color: textColor,
         ),
       ],
     );
