@@ -1,6 +1,6 @@
 part of '../../sign_in.dart';
 
-void _handleEvent(WidgetRef ref, SignInEmailLinkEvent event) {
+void _handleEmailLinkEvent(WidgetRef ref, SignInEmailLinkEvent event) {
   final controller = ref.read(signInEmailLinkControllerProvider.notifier);
   controller.handleEvent(event);
 }
@@ -10,17 +10,13 @@ class SignInEmailLinkPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.watch(signInLocalizationsProvider);
-    final isLoading = ref.watch(
-      signInEmailLinkControllerProvider.select((state) => state.isLoading),
-    );
-
     ref.listen<SignInEmailLinkState>(signInEmailLinkControllerProvider,
         (_, state) {
       if (state.isSuccess) {
         //final navigator = SignInRouter.main.currentState!;
         //navigator.pop();
       } else if (state.errorText != null) {
+        final l10n = ref.watch(signInLocalizationsProvider);
         showErrorDialog(
           context,
           ref,
@@ -30,34 +26,38 @@ class SignInEmailLinkPage extends ConsumerWidget {
       }
     });
 
-    return PlatformScaffold(
-      appBar: PlatformNavigationBar(
-        leading: PlatformNavigationBarCloseButton(
-          onPressed: () {
-            final navigator = signInNavigatorKey.currentState!;
-            navigator.pop();
-          },
-        ),
-        title: l10n.signInWithEmailTitle,
-        trailing: isLoading ? const FormLoader() : null,
-      ),
-      body: FormWithOverlay(
-        isSaving: isLoading,
-        child: const _SignInEmailLinkPageForm(),
-      ),
+    return const SignInEmailLinkPageBuilder();
+  }
+}
+
+class SignInEmailLinkPageBuilder extends ConsumerWidget {
+  const SignInEmailLinkPageBuilder({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.read(signInLocalizationsProvider);
+    final state = ref.watch(signInEmailLinkControllerProvider);
+
+    return SignInPageBuilder(
+      title: l10n.signInWithEmailLinkTitle,
+      subtitle: l10n.signInWithEmailLinkSubtitle,
+      leadingButton: const SignInCloseButton(),
+      child: const SignInEmailLinkPageForm(),
+      errorText: state.errorText,
+      isLoading: state.isLoading,
     );
   }
 }
 
-class _SignInEmailLinkPageForm extends ConsumerStatefulWidget {
-  const _SignInEmailLinkPageForm({Key? key}) : super(key: key);
+class SignInEmailLinkPageForm extends ConsumerStatefulWidget {
+  const SignInEmailLinkPageForm({Key? key}) : super(key: key);
 
   @override
   createState() => _SignInEmailLinkPageFormState();
 }
 
 class _SignInEmailLinkPageFormState
-    extends ConsumerState<_SignInEmailLinkPageForm> {
+    extends ConsumerState<SignInEmailLinkPageForm> {
   final focusNode = FocusNode();
 
   @override
@@ -71,47 +71,30 @@ class _SignInEmailLinkPageFormState
   @override
   Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
+    final state = ref.watch(signInEmailLinkControllerProvider);
 
-    return FormPage(
+    return Column(
       children: [
-        FormSection(
-          children: [
-            FormRow(
-              child: PlatformTextField(
-                controller: TextEditingController(),
-                keyboardType: TextInputType.emailAddress,
-                placeholder: l10n.signInWithEmailPlaceholder,
-                autocorrect: false,
-                focusNode: focusNode,
-                onChanged: (String value) {
-                  _handleEvent(ref, SignInEmailLinkEvent.emailChanged(value));
-                },
-              ),
-            ),
-          ],
-          caption: l10n.signInWithEmailLinkCaption,
+        PlatformTextField(
+          controller: TextEditingController(),
+          keyboardType: TextInputType.emailAddress,
+          placeholder: l10n.signInWithEmailPlaceholder,
+          autocorrect: false,
+          focusNode: focusNode,
+          onChanged: (String value) {
+            _handleEmailLinkEvent(
+                ref, SignInEmailLinkEvent.emailChanged(value));
+          },
         ),
-        const _SignInEmailLinkSubmitButton(),
+        if (isCupertino()) const SignInDivider(),
+        SignInSubmitButton(
+          title: l10n.continueButton,
+          onPressed: () => state.canSubmit
+              ? _handleEmailLinkEvent(
+                  ref, const SignInEmailLinkEvent.sendLink())
+              : null,
+        ),
       ],
-    );
-  }
-}
-
-class _SignInEmailLinkSubmitButton extends ConsumerWidget {
-  const _SignInEmailLinkSubmitButton({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.watch(signInLocalizationsProvider);
-    final canSubmit = ref.watch(
-      signInEmailLinkControllerProvider.select((state) => state.canSubmit),
-    );
-
-    return PlatformFullSizedElevatedButton(
-      title: l10n.continueButton,
-      onPressed: canSubmit
-          ? () => _handleEvent(ref, const SignInEmailLinkEvent.sendLink())
-          : null,
     );
   }
 }

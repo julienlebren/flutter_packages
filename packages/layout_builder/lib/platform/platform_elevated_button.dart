@@ -53,8 +53,8 @@ class PlatformElevatedButton
         title,
         style: TextStyle(
           fontSize: 20.0,
-          fontWeight: FontWeight.w500,
-          letterSpacing: -0.8,
+          fontWeight: FontWeight.w300,
+          letterSpacing: -0.5,
         ),
       ),
     );

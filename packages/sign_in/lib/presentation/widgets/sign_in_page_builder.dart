@@ -171,3 +171,25 @@ class SignInError extends ConsumerWidget {
     );
   }
 }
+
+class SignInSubmitButton extends StatelessWidget {
+  const SignInSubmitButton({
+    Key? key,
+    required this.title,
+    this.onPressed,
+  }) : super(key: key);
+
+  final String title;
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 24),
+      child: PlatformFullSizedElevatedButton(
+        title: title,
+        onPressed: onPressed,
+      ),
+    );
+  }
+}

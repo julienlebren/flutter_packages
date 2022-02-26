@@ -29,7 +29,10 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get signInWithEmailCreateAccount => 'Pas encore inscrit ? Créez un compte.';
 
   @override
-  String get signInWithEmailLinkCaption => 'Pas de mot de passe requis, nous vous envoyons simplement un lien pour vous identifier.';
+  String get signInWithEmailLinkTitle => 'Sign in with e-mail';
+
+  @override
+  String get signInWithEmailLinkSubtitle => 'No password required, we just send you an email with a link to log in to the app.';
 
   @override
   String get signInWithEmailLinkSuccess => 'Vérifiez vos e-mails, nous vous avons envoyé un lien pour vous identifier.';

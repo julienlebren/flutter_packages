@@ -81,7 +81,6 @@ class _SignInEmailPageFormState extends ConsumerState<_SignInEmailPageForm> {
               ),
             ),
           ],
-          caption: l10n.signInWithEmailLinkCaption,
         ),
         const _SignInEmailSubmitButton(),
       ],

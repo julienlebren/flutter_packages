@@ -17,6 +17,7 @@ class SignInButtons extends ConsumerWidget {
       signInWithFacebook: () => SignInSupplier.facebook,
       signInWithGoogle: () => SignInSupplier.google,
       signInWithApple: () => SignInSupplier.apple,
+      signInWithEmail: () => SignInSupplier.email,
       signInWithEmailLink: (_) => SignInSupplier.emailLink,
       signInWithPhone: () => SignInSupplier.phone,
       signInAnonymously: () => SignInSupplier.anonymous,
@@ -27,16 +28,15 @@ class SignInButtons extends ConsumerWidget {
           SignInRoutes.signInPhonePage,
         );
       },
+      signInWithEmail: () {
+        Navigator.of(context, rootNavigator: true).pushNamed(
+          SignInRoutes.signInEmailPage,
+        );
+      },
       signInWithEmailLink: (_) {
-        /*Navigator.of(context, rootNavigator: true).pushNamed(
-          SignInRoutes.signInRouterPage,
-          arguments: SignInRoutes.signInLinkPage,
-        );*/
-        /*final navigator = SignInNavigatorKeys.main.currentState!;
-        navigator.pushNamed(
-          SignInRoutes.signInRouterPage,
-          arguments: SignInRoutes.signInLinkPage,
-        );*/
+        Navigator.of(context, rootNavigator: true).pushNamed(
+          SignInRoutes.signInEmailLinkPage,
+        );
       },
       orElse: () {
         final controller = ref.read(signInControllerProvider.notifier);

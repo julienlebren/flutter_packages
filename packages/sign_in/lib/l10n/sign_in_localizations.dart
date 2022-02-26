@@ -136,11 +136,17 @@ abstract class SignInLocalizations {
   /// **'Not yet registered? Create an account.'**
   String get signInWithEmailCreateAccount;
 
-  /// No description provided for @signInWithEmailLinkCaption.
+  /// No description provided for @signInWithEmailLinkTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in with e-mail'**
+  String get signInWithEmailLinkTitle;
+
+  /// No description provided for @signInWithEmailLinkSubtitle.
   ///
   /// In en, this message translates to:
   /// **'No password required, we just send you an email with a link to log in to the app.'**
-  String get signInWithEmailLinkCaption;
+  String get signInWithEmailLinkSubtitle;
 
   /// No description provided for @signInWithEmailLinkSuccess.
   ///
