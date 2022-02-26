@@ -139,8 +139,8 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
 
     return Column(
       children: [
-        FormTappableField(
-          value: selectedCountry.countryName!,
+        SignInTappableField(
+          label: selectedCountry.countryName!,
           onPressed: () => _openCountries(context),
         ),
         const SignInDivider(),
@@ -157,7 +157,7 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
         if (isCupertino()) const SignInDivider(),
         if (isMaterial()) const SignInPhoneAutoRetrieve(),
         Padding(
-          padding: const EdgeInsets.only(top: 8),
+          padding: const EdgeInsets.only(top: 16),
           child: SizedBox(
             width: double.infinity,
             child: PlatformElevatedButton(

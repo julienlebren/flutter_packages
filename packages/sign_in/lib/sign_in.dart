@@ -45,6 +45,7 @@ part 'presentation/widgets/sign_in_divider.dart';
 part 'presentation/widgets/sign_in_button.dart';
 part 'presentation/widgets/sign_in_buttons.dart';
 part 'presentation/widgets/sign_in_page_builder.dart';
+part 'presentation/widgets/sign_in_tappable_field.dart';
 part 'repositories/user_repository.dart';
 part 'services/firebase_auth_service.dart';
 part 'sign_in.freezed.dart';
