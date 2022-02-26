@@ -34,7 +34,6 @@ class SignInEmailPageBuilder extends ConsumerWidget {
 
     return SignInPageBuilder(
       title: l10n.signInWithEmailTitle,
-      subtitle: l10n.signInWithEmailSubtitle,
       leadingButton: const SignInCloseButton(),
       child: const SignInEmailPageForm(),
       errorText: state.errorText,
@@ -82,6 +81,7 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
           },
         ),
         if (isCupertino()) const SignInDivider(),
+        const SizedBox(height: 10),
         PlatformTextField(
           controller: TextEditingController(),
           keyboardType: TextInputType.visiblePassword,
@@ -93,6 +93,10 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
           },
         ),
         if (isCupertino()) const SignInDivider(),
+        PlatformTextButton(
+          title: l10n.signInWithEmailForgotPassword,
+          onPressed: null,
+        ),
         SignInSubmitButton(
           title: l10n.continueButton,
           onPressed: () => canSubmit

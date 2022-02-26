@@ -14,6 +14,7 @@ class PlatformTextField
     this.inputFormatters,
     this.onChanged,
     this.onSubmitted,
+    this.obscureText = false,
     this.enabled = true,
     this.decoration,
     this.maxLines = 1,
@@ -30,6 +31,7 @@ class PlatformTextField
   final List<TextInputFormatter>? inputFormatters;
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onSubmitted;
+  final bool obscureText;
   final bool enabled;
   final BoxDecoration? decoration;
   final int? maxLines;
@@ -53,6 +55,7 @@ class PlatformTextField
         disabledBorder: InputBorder.none,*/
       ),
       inputFormatters: inputFormatters,
+      obscureText: obscureText,
       onChanged: onChanged,
       onSubmitted: onSubmitted,
       maxLines: maxLines,
@@ -79,6 +82,7 @@ class PlatformTextField
       inputFormatters: inputFormatters,
       onChanged: onChanged,
       onSubmitted: onSubmitted,
+      obscureText: obscureText,
       maxLines: maxLines,
     );
   }
