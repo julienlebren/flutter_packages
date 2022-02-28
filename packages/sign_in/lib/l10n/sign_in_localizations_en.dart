@@ -38,7 +38,7 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get signInWithEmailLinkRetry => 'You did not receive it? Try again or try another identification method.';
 
   @override
-  String get signInWithEmailCreateAccount => 'Not yet registered? Create an account.';
+  String get signInWithEmailCreateAccount => 'Not yet registered? Create an account here.';
 
   @override
   String get signInWithEmailForgotPassword => 'Forgot your password?';
@@ -50,10 +50,16 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get signInWithEmailPasswordPlaceholder => 'Password';
 
   @override
-  String get signInWithEmailTitle => 'Sign-in with an email';
+  String get signInWithEmailAlreadyAccount => 'Already have an account? Sign in here.';
+
+  @override
+  String get signInWithEmailTitle => 'Sign in with e-mail';
 
   @override
   String get signInWithEmailSubtitle => 'No password required, we just send you an email with a link to log in to the app.';
+
+  @override
+  String get signInWithEmailInvalidPasswordConfirmation => 'Passwords do not match';
 
   @override
   String get signInWithFacebook => 'Sign in with Facebook';

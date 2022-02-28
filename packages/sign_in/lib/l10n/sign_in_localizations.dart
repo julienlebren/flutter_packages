@@ -157,7 +157,7 @@ abstract class SignInLocalizations {
   /// No description provided for @signInWithEmailCreateAccount.
   ///
   /// In en, this message translates to:
-  /// **'Not yet registered? Create an account.'**
+  /// **'Not yet registered? Create an account here.'**
   String get signInWithEmailCreateAccount;
 
   /// No description provided for @signInWithEmailForgotPassword.
@@ -178,10 +178,16 @@ abstract class SignInLocalizations {
   /// **'Password'**
   String get signInWithEmailPasswordPlaceholder;
 
+  /// No description provided for @signInWithEmailAlreadyAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Already have an account? Sign in here.'**
+  String get signInWithEmailAlreadyAccount;
+
   /// No description provided for @signInWithEmailTitle.
   ///
   /// In en, this message translates to:
-  /// **'Sign-in with an email'**
+  /// **'Sign in with e-mail'**
   String get signInWithEmailTitle;
 
   /// No description provided for @signInWithEmailSubtitle.
@@ -189,6 +195,12 @@ abstract class SignInLocalizations {
   /// In en, this message translates to:
   /// **'No password required, we just send you an email with a link to log in to the app.'**
   String get signInWithEmailSubtitle;
+
+  /// No description provided for @signInWithEmailInvalidPasswordConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords do not match'**
+  String get signInWithEmailInvalidPasswordConfirmation;
 
   /// No description provided for @signInWithFacebook.
   ///

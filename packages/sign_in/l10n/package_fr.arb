@@ -12,7 +12,7 @@
     "signInWithEmailPasswordPlaceholder": "Mot de passe",
     "signInWithEmailForgotPassword": "Mot de passe oublié ?",
     "signInWithEmailRetry": "Vous ne l'avez aps reçu ? Réessayez ou essayez une autre méthode d'identification.",
-    "signInWithEmailTitle": "Continuer avec un e-mail",
+    "signInWithEmailTitle": "S'identifier avec un e-mail",
     "signInWithFacebook": "Continuer avec Facebook",
     "signInWithGoogle": "Continuer avec Google",
     "signInWithPhone": "Continuer avec un numéro",

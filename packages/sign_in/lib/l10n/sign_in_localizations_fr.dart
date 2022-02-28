@@ -50,10 +50,16 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get signInWithEmailPasswordPlaceholder => 'Mot de passe';
 
   @override
-  String get signInWithEmailTitle => 'Continuer avec un e-mail';
+  String get signInWithEmailAlreadyAccount => 'Already have an account? Sign in here.';
+
+  @override
+  String get signInWithEmailTitle => 'S\'identifier avec un e-mail';
 
   @override
   String get signInWithEmailSubtitle => 'No password required, we just send you an email with a link to log in to the app.';
+
+  @override
+  String get signInWithEmailInvalidPasswordConfirmation => 'Passwords do not match';
 
   @override
   String get signInWithFacebook => 'Continuer avec Facebook';

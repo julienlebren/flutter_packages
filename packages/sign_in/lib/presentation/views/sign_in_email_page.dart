@@ -107,30 +107,13 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
         ),
         PlatformTextButton(
           title: l10n.signInWithEmailCreateAccount,
-          onPressed: () {},
+          onPressed: () {
+            final navigator = signInNavigatorKey.currentState!;
+            navigator
+                .pushReplacementNamed(SignInRoutes.signInEmailRegisterPage);
+          },
         ),
       ],
-    );
-  }
-}
-
-class _SignInEmailSubmitButton extends ConsumerWidget {
-  const _SignInEmailSubmitButton({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.watch(signInLocalizationsProvider);
-    final canSubmit = ref.watch(
-      signInEmailControllerProvider.select((state) => state.canSubmit),
-    );
-
-    return PlatformFullSizedElevatedButton(
-      title: l10n.continueButton,
-      onPressed: canSubmit
-          ? () {
-              ref.read(signInEmailControllerProvider.notifier);
-            }
-          : null,
     );
   }
 }

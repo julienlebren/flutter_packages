@@ -179,6 +179,28 @@ class FirebaseAuthService {
     return userCredential.user;
   }
 
+  Future<User?> registerInWithEmail({
+    required String email,
+    required String password,
+  }) async {
+    final userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+    return userCredential.user;
+  }
+
+  Future<User?> signInWithEmail({
+    required String email,
+    required String password,
+  }) async {
+    final userCredential = await _firebaseAuth.signInWithEmailAndPassword(
+      email: email,
+      password: password,
+    );
+    return userCredential.user;
+  }
+
   Future<void> signOut() async {
     final googleSignIn = GoogleSignIn();
     await googleSignIn.signOut();
