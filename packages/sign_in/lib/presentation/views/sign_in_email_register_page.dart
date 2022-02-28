@@ -54,13 +54,16 @@ class SignInEmailRegisterPageForm extends ConsumerStatefulWidget {
 
 class _SignInEmailRegisterPageFormState
     extends ConsumerState<SignInEmailRegisterPageForm> {
-  final focusNode = FocusNode();
+  final emailTextController = TextEditingController();
+  final emailFocusNode = FocusNode();
+  final passwordTextController = TextEditingController();
+  final passwordFocusNode = FocusNode();
 
   @override
   void initState() {
     super.initState();
     Future.delayed(const Duration(milliseconds: 100), () {
-      focusNode.requestFocus();
+      emailFocusNode.requestFocus();
     });
   }
 
@@ -74,23 +77,28 @@ class _SignInEmailRegisterPageFormState
     return Column(
       children: [
         PlatformTextField(
-          controller: TextEditingController(),
+          controller: emailTextController,
           keyboardType: TextInputType.emailAddress,
+          textInputAction: TextInputAction.next,
           placeholder: l10n.signInWithEmailPlaceholder,
           autocorrect: false,
-          focusNode: focusNode,
+          focusNode: emailFocusNode,
           onChanged: (String value) {
             _handleEmailRegisterEvent(
                 ref, SignInEmailRegisterEvent.emailChanged(value));
+          },
+          onSubmitted: (_) {
+            passwordFocusNode.requestFocus();
           },
         ),
         if (isCupertino()) const SignInDivider(),
         const SizedBox(height: 10),
         PlatformTextField(
-          controller: TextEditingController(),
+          controller: passwordTextController,
           placeholder: l10n.signInWithEmailPasswordPlaceholder,
           autocorrect: false,
           obscureText: true,
+          focusNode: passwordFocusNode,
           onChanged: (String value) {
             _handleEmailRegisterEvent(
                 ref, SignInEmailRegisterEvent.passwordChanged(value));
