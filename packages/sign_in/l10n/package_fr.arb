@@ -13,6 +13,8 @@
     "signInWithEmailForgotPassword": "Mot de passe oublié ?",
     "signInWithEmailRetry": "Vous ne l'avez aps reçu ? Réessayez ou essayez une autre méthode d'identification.",
     "signInWithEmailTitle": "S'identifier avec un e-mail",
+    "signInWithEmailRegisterTitle": "S'inscrire avec un e-mail",
+    "signInWithEmailAlreadyAccount": "Déjà inscrit ? Indetifiez-vous ici.",
     "signInWithFacebook": "Continuer avec Facebook",
     "signInWithGoogle": "Continuer avec Google",
     "signInWithPhone": "Continuer avec un numéro",

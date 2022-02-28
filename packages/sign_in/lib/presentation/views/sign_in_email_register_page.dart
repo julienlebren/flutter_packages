@@ -38,7 +38,7 @@ class SignInEmailRegisterPageBuilder extends ConsumerWidget {
     final state = ref.watch(signInEmailControllerProvider);
 
     return SignInPageBuilder(
-      title: l10n.signInWithEmailTitle,
+      title: l10n.signInWithEmailRegisterTitle,
       leadingButton: const SignInCloseButton(),
       child: const SignInEmailRegisterPageForm(),
       errorText: state.errorText,

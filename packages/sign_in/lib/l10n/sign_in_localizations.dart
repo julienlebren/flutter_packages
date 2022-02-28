@@ -184,6 +184,12 @@ abstract class SignInLocalizations {
   /// **'Already have an account? Sign in here.'**
   String get signInWithEmailAlreadyAccount;
 
+  /// No description provided for @signInWithEmailRegisterTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign up with e-mail'**
+  String get signInWithEmailRegisterTitle;
+
   /// No description provided for @signInWithEmailTitle.
   ///
   /// In en, this message translates to:
