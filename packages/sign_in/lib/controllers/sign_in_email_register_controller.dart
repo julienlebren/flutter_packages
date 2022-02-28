@@ -46,11 +46,11 @@ class SignInEmailRegisterController
     event.when(
       emailChanged: (email) {
         state = state.copyWith(email: email);
-        _checkIfCanSubmit();
+        //_checkIfCanSubmit();
       },
       passwordChanged: (password) {
         state = state.copyWith(password: password);
-        _checkIfCanSubmit();
+        //_checkIfCanSubmit();
       },
       submit: () => _register,
     );
