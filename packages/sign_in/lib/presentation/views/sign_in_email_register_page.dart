@@ -184,11 +184,17 @@ class SignInPasswordRequirement extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Text(
-          isValid ? "✔️" : "✖️",
-          style: TextStyle(
-              color: isValid ? Colors.green : Colors.red, fontSize: 13),
-        ),
+        isValid
+            ? const Icon(
+                PlatformIcons.checkmarkFill,
+                size: 26,
+                color: Colors.green,
+              )
+            : const Icon(
+                CupertinoIcons.circle,
+                size: 26,
+                color: Colors.grey,
+              ),
         Text(
           label,
           style: const TextStyle(color: Colors.grey, fontSize: 13),

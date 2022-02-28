@@ -1,7 +1,7 @@
 part of platform;
 
 class PlatformIcons {
-  PlatformIcons._();
+  const PlatformIcons._();
 
   static IconData get back =>
       isMaterial() ? Icons.arrow_back : CupertinoIcons.chevron_back;
