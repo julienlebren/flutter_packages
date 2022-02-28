@@ -58,7 +58,7 @@ class SignInEmailRegisterController
         state = state.copyWith(password: password);
         _checkIfCanSubmit();
       },
-      submit: () => _register,
+      submit: _register,
     );
   }
 
