@@ -145,6 +145,7 @@ class SignInPasswordRequirements extends ConsumerWidget {
           children: [
             Text(l10n.passwordRequirements,
                 style: const TextStyle(fontSize: 13)),
+            const SizedBox(height: 5),
             SignInPasswordRequirement(
               label: l10n.passwordRequirementMinLength,
               isValid: state.passwordHasMinLength,
@@ -201,7 +202,8 @@ class SignInPasswordRequirement extends StatelessWidget {
         const SizedBox(width: 5),
         Text(
           label,
-          style: const TextStyle(color: Colors.grey, fontSize: 13),
+          style: TextStyle(
+              color: isValid ? Colors.green : Colors.grey, fontSize: 13),
         ),
       ],
     );
