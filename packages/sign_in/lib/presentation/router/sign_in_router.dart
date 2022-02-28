@@ -10,7 +10,7 @@ final signInRouterProvider =
 final signInLandingPageProvider =
     Provider<Widget>((_) => const SizedBox.shrink());
 
-final signInUserInfoPageProvider = Provider<String?>((_) => null);
+//final signInUserInfoPageProvider = Provider<String?>((_) => null);
 
 final signInNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -24,6 +24,7 @@ class SignInRoutes {
   static const signInPhonePage = 'sign-in/phone';
   static const signInPhoneVerificationPage = 'sign-in/phone/verification';
   static const signInCountriesPage = 'sign-in/countries';
+  static const signInUserInfoPage = 'sign-in/info';
   static const signInUnkonwnPage = 'sign-in/unknown';
 }
 
@@ -90,11 +91,13 @@ class SignInNavigator extends ConsumerWidget {
           navigator.pop();
         },
         needUserInformation: () {
-          final userInfoPage = ref.read(signInUserInfoPageProvider);
+          /*final userInfoPage = ref.read(signInUserInfoPageProvider);
           if (userInfoPage != null) {
             final navigator = navigatorKey.currentState!;
             navigator.pushNamed(userInfoPage);
-          }
+          }*/
+          final navigator = navigatorKey.currentState!;
+          navigator.pushNamed(SignInRoutes.signInUserInfoPage);
         },
         orElse: () => null,
       );
