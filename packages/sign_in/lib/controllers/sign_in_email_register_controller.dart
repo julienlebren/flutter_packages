@@ -57,11 +57,13 @@ class SignInEmailRegisterController
   }
 
   void _checkIfCanSubmit() {
-    bool canSubmit = (state.email.isValidEmail() && state.password.length >= 6)
-        ? true
-        : false;
+    bool canSubmit = true;
 
-    if (canSubmit != state.canSubmit) {
+    if (!state.email.isValidEmail() || state.password.length < 6) {
+      state = state.copyWith(
+        canSubmit: false,
+      );
+    } else if (canSubmit != state.canSubmit) {
       state = state.copyWith(
         errorText: null,
         canSubmit: canSubmit,
