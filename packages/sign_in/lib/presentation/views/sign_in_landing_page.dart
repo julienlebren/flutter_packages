@@ -52,7 +52,7 @@ class SignInLandingPageBuilder extends StatelessWidget {
   }) : super(key: key);
 
   final SignInTheme? theme;
-  final Route<dynamic> Function(RouteSettings settings, WidgetRef ref)? router;
+  final Route<dynamic>? Function(RouteSettings settings, WidgetRef ref)? router;
   final Widget child;
 
   @override
