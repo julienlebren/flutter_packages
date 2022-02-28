@@ -75,7 +75,6 @@ class _SignInEmailRegisterPageFormState
     );
 
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         PlatformTextField(
           controller: emailTextController,
@@ -136,34 +135,38 @@ class SignInPasswordRequirements extends ConsumerWidget {
     final l10n = ref.read(signInLocalizationsProvider);
     final state = ref.watch(signInEmailRegisterControllerProvider);
 
-    return Padding(
-      padding: const EdgeInsets.only(top: 15, bottom: 5),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(l10n.passwordRequirements, style: const TextStyle(fontSize: 13)),
-          SignInPasswordRequirement(
-            label: l10n.passwordRequirementMinLength,
-            isValid: state.passwordHasMinLength,
-          ),
-          SignInPasswordRequirement(
-            label: l10n.passwordRequirementUppercase,
-            isValid: state.passwordHasUppercase,
-          ),
-          SignInPasswordRequirement(
-            label: l10n.passwordRequirementLowercase,
-            isValid: state.passwordHasLowercase,
-          ),
-          SignInPasswordRequirement(
-            label: l10n.passwordRequirementDigits,
-            isValid: state.passwordHasDigits,
-          ),
-          SignInPasswordRequirement(
-            label: l10n.passwordRequirementSpecialChars,
-            isValid: state.passwordHasSpecialChars,
-          ),
-        ],
+    return SizedBox(
+      width: double.infinity,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 15, bottom: 5),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(l10n.passwordRequirements,
+                style: const TextStyle(fontSize: 13)),
+            SignInPasswordRequirement(
+              label: l10n.passwordRequirementMinLength,
+              isValid: state.passwordHasMinLength,
+            ),
+            SignInPasswordRequirement(
+              label: l10n.passwordRequirementUppercase,
+              isValid: state.passwordHasUppercase,
+            ),
+            SignInPasswordRequirement(
+              label: l10n.passwordRequirementLowercase,
+              isValid: state.passwordHasLowercase,
+            ),
+            SignInPasswordRequirement(
+              label: l10n.passwordRequirementDigits,
+              isValid: state.passwordHasDigits,
+            ),
+            SignInPasswordRequirement(
+              label: l10n.passwordRequirementSpecialChars,
+              isValid: state.passwordHasSpecialChars,
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -185,16 +188,17 @@ class SignInPasswordRequirement extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         isValid
-            ? const Icon(
+            ? Icon(
                 PlatformIcons.checkmarkFill,
-                size: 26,
+                size: 14,
                 color: Colors.green,
               )
             : const Icon(
                 CupertinoIcons.circle,
-                size: 26,
+                size: 14,
                 color: Colors.grey,
               ),
+        const SizedBox(width: 5),
         Text(
           label,
           style: const TextStyle(color: Colors.grey, fontSize: 13),
