@@ -10,7 +10,7 @@ final signInRouterProvider =
 final signInLandingPageProvider =
     Provider<Widget>((_) => const SizedBox.shrink());
 
-final needUserInfoPageProvider = Provider<String?>((_) => null);
+final signInUserInfoPageProvider = Provider<String?>((_) => null);
 
 final signInNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -90,10 +90,10 @@ class SignInNavigator extends ConsumerWidget {
           navigator.pop();
         },
         needUserInformation: () {
-          final needUserInfoPage = ref.read(needUserInfoPageProvider);
-          if (needUserInfoPage != null) {
+          final userInfoPage = ref.read(signInUserInfoPageProvider);
+          if (userInfoPage != null) {
             final navigator = navigatorKey.currentState!;
-            navigator.pushNamed(needUserInfoPage);
+            navigator.pushNamed(userInfoPage);
           }
         },
         orElse: () => null,

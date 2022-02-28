@@ -11,10 +11,7 @@ class SignInEmailRegisterPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ref.listen<SignInEmailState>(signInEmailControllerProvider, (_, state) {
-      if (state.isSuccess) {
-        //final navigator = SignInRouter.main.currentState!;
-        //navigator.pop();
-      } else if (state.errorText != null) {
+      if (state.errorText != null) {
         final l10n = ref.watch(signInLocalizationsProvider);
         showErrorDialog(
           context,
