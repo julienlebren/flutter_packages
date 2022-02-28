@@ -58,7 +58,7 @@ const delayBeforeUserCanRequestNewCode = 60;
 
 final userStreamProvider = StreamProvider((_) => const Stream.empty());
 
-final needUserInfoProvider = Provider<bool>((_) => false);
+final needUserInfoProvider = Provider<bool?>((_) => false);
 
 final authStateProvider = Provider<AuthState>((ref) {
   final authStateChanges = ref.watch(authStateChangesProvider);
@@ -90,8 +90,11 @@ final authStateProvider = Provider<AuthState>((ref) {
               final needUserInfo = ref.watch(needUserInfoProvider);
               if (needUserInfo == true) {
                 return const AuthState.needUserInformation();
+              } else if (needUserInfo == false) {
+                return AuthState.authed(user);
+              } else {
+                return const AuthState.notAuthed();
               }
-              return AuthState.authed(user);
             }
           },
         );

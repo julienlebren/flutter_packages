@@ -101,11 +101,6 @@ class SignInNavigator extends ConsumerWidget {
           Navigator.of(context, rootNavigator: true).pop();
         },
         needUserInformation: () {
-          /*final userInfoPage = ref.read(signInUserInfoPageProvider);
-          if (userInfoPage != null) {
-            final navigator = navigatorKey.currentState!;
-            navigator.pushNamed(userInfoPage);
-          }*/
           final navigator = navigatorKey.currentState!;
           navigator.pushNamed(SignInRoutes.signInUserInfoPage);
         },
