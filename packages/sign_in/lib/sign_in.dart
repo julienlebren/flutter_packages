@@ -58,6 +58,8 @@ const delayBeforeUserCanRequestNewCode = 60;
 
 final userStreamProvider = StreamProvider((_) => const Stream.empty());
 
+final needUserInfoProvider = Provider<bool>((_) => false);
+
 final authStateProvider = Provider<AuthState>((ref) {
   final authStateChanges = ref.watch(authStateChangesProvider);
 
@@ -85,12 +87,10 @@ final authStateProvider = Provider<AuthState>((ref) {
             if (user == null) {
               return const AuthState.waitingUserCreation();
             } else {
-              /*if (settings.needUserInfoProvider != null) {
-                final needUserInfo = ref.watch(settings.needUserInfoProvider!);
-                if (needUserInfo == true) {
-                  return const AuthState.needUserInformation();
-                }
-              }*/
+              final needUserInfo = ref.watch(needUserInfoProvider);
+              if (needUserInfo == true) {
+                return const AuthState.needUserInformation();
+              }
               return AuthState.authed(user);
             }
           },
@@ -102,6 +102,7 @@ final authStateProvider = Provider<AuthState>((ref) {
   authStateChangesProvider,
   signInControllerProvider,
   userStreamProvider,
+  needUserInfoProvider,
 ]);
 
 final signInLocalizationsProvider = Provider<SignInLocalizations>(
