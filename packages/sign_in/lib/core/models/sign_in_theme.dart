@@ -6,6 +6,8 @@ class SignInTheme with _$SignInTheme {
     @Default(400) double maxWidth,
     @Default(8.0) double buttonRadius,
     @Default(16.0) double buttonPadding,
+    String? backgroundImage,
+    required Color scaffoldBackgroundColor,
     required Color buttonBackgroundColor,
     required Color buttonTextColor,
     required Color dividerColor,

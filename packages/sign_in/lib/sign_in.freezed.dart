@@ -6033,6 +6033,8 @@ class _$SignInThemeTearOff {
       {double maxWidth = 400,
       double buttonRadius = 8.0,
       double buttonPadding = 16.0,
+      String? backgroundImage,
+      required ui.Color scaffoldBackgroundColor,
       required ui.Color buttonBackgroundColor,
       required ui.Color buttonTextColor,
       required ui.Color dividerColor,
@@ -6042,6 +6044,8 @@ class _$SignInThemeTearOff {
       maxWidth: maxWidth,
       buttonRadius: buttonRadius,
       buttonPadding: buttonPadding,
+      backgroundImage: backgroundImage,
+      scaffoldBackgroundColor: scaffoldBackgroundColor,
       buttonBackgroundColor: buttonBackgroundColor,
       buttonTextColor: buttonTextColor,
       dividerColor: dividerColor,
@@ -6059,6 +6063,8 @@ mixin _$SignInTheme {
   double get maxWidth => throw _privateConstructorUsedError;
   double get buttonRadius => throw _privateConstructorUsedError;
   double get buttonPadding => throw _privateConstructorUsedError;
+  String? get backgroundImage => throw _privateConstructorUsedError;
+  ui.Color get scaffoldBackgroundColor => throw _privateConstructorUsedError;
   ui.Color get buttonBackgroundColor => throw _privateConstructorUsedError;
   ui.Color get buttonTextColor => throw _privateConstructorUsedError;
   ui.Color get dividerColor => throw _privateConstructorUsedError;
@@ -6079,6 +6085,8 @@ abstract class $SignInThemeCopyWith<$Res> {
       {double maxWidth,
       double buttonRadius,
       double buttonPadding,
+      String? backgroundImage,
+      ui.Color scaffoldBackgroundColor,
       ui.Color buttonBackgroundColor,
       ui.Color buttonTextColor,
       ui.Color dividerColor,
@@ -6099,6 +6107,8 @@ class _$SignInThemeCopyWithImpl<$Res> implements $SignInThemeCopyWith<$Res> {
     Object? maxWidth = freezed,
     Object? buttonRadius = freezed,
     Object? buttonPadding = freezed,
+    Object? backgroundImage = freezed,
+    Object? scaffoldBackgroundColor = freezed,
     Object? buttonBackgroundColor = freezed,
     Object? buttonTextColor = freezed,
     Object? dividerColor = freezed,
@@ -6118,6 +6128,14 @@ class _$SignInThemeCopyWithImpl<$Res> implements $SignInThemeCopyWith<$Res> {
           ? _value.buttonPadding
           : buttonPadding // ignore: cast_nullable_to_non_nullable
               as double,
+      backgroundImage: backgroundImage == freezed
+          ? _value.backgroundImage
+          : backgroundImage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      scaffoldBackgroundColor: scaffoldBackgroundColor == freezed
+          ? _value.scaffoldBackgroundColor
+          : scaffoldBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as ui.Color,
       buttonBackgroundColor: buttonBackgroundColor == freezed
           ? _value.buttonBackgroundColor
           : buttonBackgroundColor // ignore: cast_nullable_to_non_nullable
@@ -6153,6 +6171,8 @@ abstract class _$SignInThemeCopyWith<$Res>
       {double maxWidth,
       double buttonRadius,
       double buttonPadding,
+      String? backgroundImage,
+      ui.Color scaffoldBackgroundColor,
       ui.Color buttonBackgroundColor,
       ui.Color buttonTextColor,
       ui.Color dividerColor,
@@ -6175,6 +6195,8 @@ class __$SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
     Object? maxWidth = freezed,
     Object? buttonRadius = freezed,
     Object? buttonPadding = freezed,
+    Object? backgroundImage = freezed,
+    Object? scaffoldBackgroundColor = freezed,
     Object? buttonBackgroundColor = freezed,
     Object? buttonTextColor = freezed,
     Object? dividerColor = freezed,
@@ -6194,6 +6216,14 @@ class __$SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
           ? _value.buttonPadding
           : buttonPadding // ignore: cast_nullable_to_non_nullable
               as double,
+      backgroundImage: backgroundImage == freezed
+          ? _value.backgroundImage
+          : backgroundImage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      scaffoldBackgroundColor: scaffoldBackgroundColor == freezed
+          ? _value.scaffoldBackgroundColor
+          : scaffoldBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as ui.Color,
       buttonBackgroundColor: buttonBackgroundColor == freezed
           ? _value.buttonBackgroundColor
           : buttonBackgroundColor // ignore: cast_nullable_to_non_nullable
@@ -6225,6 +6255,8 @@ class _$_SignInTheme implements _SignInTheme {
       {this.maxWidth = 400,
       this.buttonRadius = 8.0,
       this.buttonPadding = 16.0,
+      this.backgroundImage,
+      required this.scaffoldBackgroundColor,
       required this.buttonBackgroundColor,
       required this.buttonTextColor,
       required this.dividerColor,
@@ -6241,6 +6273,10 @@ class _$_SignInTheme implements _SignInTheme {
   @override
   final double buttonPadding;
   @override
+  final String? backgroundImage;
+  @override
+  final ui.Color scaffoldBackgroundColor;
+  @override
   final ui.Color buttonBackgroundColor;
   @override
   final ui.Color buttonTextColor;
@@ -6255,7 +6291,7 @@ class _$_SignInTheme implements _SignInTheme {
 
   @override
   String toString() {
-    return 'SignInTheme(maxWidth: $maxWidth, buttonRadius: $buttonRadius, buttonPadding: $buttonPadding, buttonBackgroundColor: $buttonBackgroundColor, buttonTextColor: $buttonTextColor, dividerColor: $dividerColor, buttonFontSize: $buttonFontSize, spaceBetweenButtons: $spaceBetweenButtons)';
+    return 'SignInTheme(maxWidth: $maxWidth, buttonRadius: $buttonRadius, buttonPadding: $buttonPadding, backgroundImage: $backgroundImage, scaffoldBackgroundColor: $scaffoldBackgroundColor, buttonBackgroundColor: $buttonBackgroundColor, buttonTextColor: $buttonTextColor, dividerColor: $dividerColor, buttonFontSize: $buttonFontSize, spaceBetweenButtons: $spaceBetweenButtons)';
   }
 
   @override
@@ -6268,6 +6304,10 @@ class _$_SignInTheme implements _SignInTheme {
                 .equals(other.buttonRadius, buttonRadius) &&
             const DeepCollectionEquality()
                 .equals(other.buttonPadding, buttonPadding) &&
+            const DeepCollectionEquality()
+                .equals(other.backgroundImage, backgroundImage) &&
+            const DeepCollectionEquality().equals(
+                other.scaffoldBackgroundColor, scaffoldBackgroundColor) &&
             const DeepCollectionEquality()
                 .equals(other.buttonBackgroundColor, buttonBackgroundColor) &&
             const DeepCollectionEquality()
@@ -6286,6 +6326,8 @@ class _$_SignInTheme implements _SignInTheme {
       const DeepCollectionEquality().hash(maxWidth),
       const DeepCollectionEquality().hash(buttonRadius),
       const DeepCollectionEquality().hash(buttonPadding),
+      const DeepCollectionEquality().hash(backgroundImage),
+      const DeepCollectionEquality().hash(scaffoldBackgroundColor),
       const DeepCollectionEquality().hash(buttonBackgroundColor),
       const DeepCollectionEquality().hash(buttonTextColor),
       const DeepCollectionEquality().hash(dividerColor),
@@ -6303,6 +6345,8 @@ abstract class _SignInTheme implements SignInTheme {
       {double maxWidth,
       double buttonRadius,
       double buttonPadding,
+      String? backgroundImage,
+      required ui.Color scaffoldBackgroundColor,
       required ui.Color buttonBackgroundColor,
       required ui.Color buttonTextColor,
       required ui.Color dividerColor,
@@ -6315,6 +6359,10 @@ abstract class _SignInTheme implements SignInTheme {
   double get buttonRadius;
   @override
   double get buttonPadding;
+  @override
+  String? get backgroundImage;
+  @override
+  ui.Color get scaffoldBackgroundColor;
   @override
   ui.Color get buttonBackgroundColor;
   @override

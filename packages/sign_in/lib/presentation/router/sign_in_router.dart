@@ -8,12 +8,16 @@ final signInRouterProvider =
 final signInLandingPageProvider =
     Provider<Widget>((_) => const SizedBox.shrink());
 
-//final signInUserInfoPageProvider = Provider<String?>((_) => null);
-
 final signInNavigatorKey = GlobalKey<NavigatorState>();
+
+class SignInNavigatorKeys {
+  static final main = GlobalKey<NavigatorState>();
+  static final modal = GlobalKey<NavigatorState>();
+}
 
 class SignInRoutes {
   static const predicate = 'sign-in';
+  static const signInLandingPage = '/';
   static const signInEmailPage = 'sign-in/email';
   static const signInEmailPasswordPage = 'sign-in/email/password';
   static const signInEmailRecoverPage = 'sign-in/email/recover';
@@ -23,7 +27,7 @@ class SignInRoutes {
   static const signInPhoneVerificationPage = 'sign-in/phone/verification';
   static const signInCountriesPage = 'sign-in/countries';
   static const signInUserInfoPage = 'sign-in/info';
-  static const signInUnkonwnPage = 'sign-in/unknown';
+  static const signInUnknownPage = 'sign-in/unknown';
 }
 
 class SignInRouter {

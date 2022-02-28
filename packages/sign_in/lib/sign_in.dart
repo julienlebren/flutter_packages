@@ -122,6 +122,7 @@ final signInThemeProvider = Provider<SignInTheme>(
     final formTheme = ref.watch(formThemeProvider);
 
     return SignInTheme(
+      scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
       buttonBackgroundColor: formTheme.rowBackgroundColor,
       buttonTextColor: appTheme.textColor,
       dividerColor: appTheme.dividerColor,
