@@ -48,6 +48,7 @@ class SignInEmailRegisterController
   final SignInLocalizations _localizations;
 
   void handleEvent(SignInEmailRegisterEvent event) {
+    print("event: $event");
     event.when(
       emailChanged: (email) {
         state = state.copyWith(email: email);
