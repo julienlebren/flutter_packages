@@ -1,6 +1,5 @@
 part of '../../sign_in.dart';
 
-/*
 class SignInLandingPage extends ConsumerWidget {
   const SignInLandingPage({
     Key? key,
@@ -41,9 +40,9 @@ class SignInLandingPage extends ConsumerWidget {
     );
   }
 }
-*/
 
-class SignInLandingPageBuilder extends StatelessWidget {
+
+/*class SignInLandingPageBuilder extends StatelessWidget {
   const SignInLandingPageBuilder({
     Key? key,
     this.theme,
@@ -69,10 +68,11 @@ class SignInLandingPageBuilder extends StatelessWidget {
       ),
     );
   }
-}
+}*/
 
-class SignInLandingPage extends ConsumerWidget {
-  const SignInLandingPage({Key? key}) : super(key: key);
+/*
+class SignInLandingPageBuilder extends ConsumerWidget {
+  const SignInLandingPageBuilder({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -105,3 +105,4 @@ class SignInLandingPage extends ConsumerWidget {
     );
   }
 }
+*/
