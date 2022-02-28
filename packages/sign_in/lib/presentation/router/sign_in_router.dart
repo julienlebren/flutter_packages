@@ -113,12 +113,13 @@ class SignInNavigator extends ConsumerWidget {
     });
 
     return Navigator(
-      key: signInNavigatorKey,
+      key: navigatorKey,
       initialRoute: routeName,
       onGenerateRoute: (settings) => signInRouter(
           RouteSettings(
             name: settings.name!,
-            arguments: (navigatorKey != signInNavigatorKey),
+            //arguments: (navigatorKey != signInNavigatorKey),
+            arguments: (navigatorKey == SignInNavigatorKeys.main),
           ),
           ref),
     );
