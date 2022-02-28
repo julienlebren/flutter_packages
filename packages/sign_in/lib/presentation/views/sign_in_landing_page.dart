@@ -1,28 +1,26 @@
 part of '../../sign_in.dart';
 
-class SignInLandingPage extends ConsumerWidget {
-  const SignInLandingPage({
+class SignInLandingPageBuilder extends ConsumerWidget {
+  const SignInLandingPageBuilder({
     Key? key,
     this.child,
-    this.backgroundImage,
   }) : super(key: key);
 
   final Widget? child;
-  final String? backgroundImage;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final appTheme = ref.watch(appThemeProvider);
+    final signInTheme = ref.watch(signInThemeProvider);
 
     return SafeArea(
       top: false,
       bottom: false,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          color: appTheme.scaffoldBackgroundColor,
-          image: backgroundImage != null
+          color: signInTheme.scaffoldBackgroundColor,
+          image: signInTheme.backgroundImage != null
               ? DecorationImage(
-                  image: AssetImage(backgroundImage!),
+                  image: AssetImage(signInTheme.backgroundImage!),
                   fit: BoxFit.cover,
                 )
               : null,
