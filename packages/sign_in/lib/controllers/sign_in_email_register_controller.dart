@@ -95,8 +95,10 @@ class SignInEmailRegisterController
   }
 
   Future<void> _register() async {
+    print("ok ici");
     if (!state.canSubmit) return;
     state = state.copyWith(isLoading: true);
+    print("ok là");
 
     try {
       await _service.registerInWithEmail(
