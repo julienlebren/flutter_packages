@@ -17,6 +17,24 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get errorTitle => 'Oops! Something went wrong...';
 
   @override
+  String get passwordRequirements => 'The password must meet the following conditions:';
+
+  @override
+  String get passwordRequirementMinLength => 'Aleast 6 characters';
+
+  @override
+  String get passwordRequirementUppercase => 'At least one capital letter';
+
+  @override
+  String get passwordRequirementLowercase => 'At least a lowercase';
+
+  @override
+  String get passwordRequirementDigits => 'At least one number';
+
+  @override
+  String get passwordRequirementSpecialChars => 'At least one special character';
+
+  @override
   String get signInAnonymously => 'Continue without registration';
 
   @override

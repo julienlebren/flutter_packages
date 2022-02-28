@@ -112,6 +112,42 @@ abstract class SignInLocalizations {
   /// **'Oops! Something went wrong...'**
   String get errorTitle;
 
+  /// No description provided for @passwordRequirements.
+  ///
+  /// In en, this message translates to:
+  /// **'The password must meet the following conditions:'**
+  String get passwordRequirements;
+
+  /// No description provided for @passwordRequirementMinLength.
+  ///
+  /// In en, this message translates to:
+  /// **'Aleast 6 characters'**
+  String get passwordRequirementMinLength;
+
+  /// No description provided for @passwordRequirementUppercase.
+  ///
+  /// In en, this message translates to:
+  /// **'At least one capital letter'**
+  String get passwordRequirementUppercase;
+
+  /// No description provided for @passwordRequirementLowercase.
+  ///
+  /// In en, this message translates to:
+  /// **'At least a lowercase'**
+  String get passwordRequirementLowercase;
+
+  /// No description provided for @passwordRequirementDigits.
+  ///
+  /// In en, this message translates to:
+  /// **'At least one number'**
+  String get passwordRequirementDigits;
+
+  /// No description provided for @passwordRequirementSpecialChars.
+  ///
+  /// In en, this message translates to:
+  /// **'At least one special character'**
+  String get passwordRequirementSpecialChars;
+
   /// No description provided for @signInAnonymously.
   ///
   /// In en, this message translates to:

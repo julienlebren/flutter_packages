@@ -25,6 +25,11 @@ class SignInEmailRegisterState with _$SignInEmailRegisterState {
   const factory SignInEmailRegisterState({
     @Default("") String email,
     @Default("") String password,
+    @Default(false) bool passwordHasMinLength,
+    @Default(false) bool passwordHasUppercase,
+    @Default(false) bool passwordHasLowercase,
+    @Default(false) bool passwordHasDigits,
+    @Default(false) bool passwordHasSpecialChars,
     @Default(false) bool canSubmit,
     @Default(false) bool isLoading,
     @Default(false) bool isSuccess,
@@ -56,34 +61,35 @@ class SignInEmailRegisterController
     );
   }
 
-  bool isPasswordCompliant(String password, [int minLength = 6]) {
-    if (password.isEmpty) {
-      return false;
-    }
+  bool get hasUppercase => state.password.contains(RegExp(r'[A-Z]'));
+  bool get hasDigits => state.password.contains(RegExp(r'[0-9]'));
+  bool get hasLowercase => state.password.contains(RegExp(r'[a-z]'));
+  bool get hasSpecialChars =>
+      state.password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
+  bool get hasMinLength => state.password.length > 6;
 
-    bool hasUppercase = password.contains(RegExp(r'[A-Z]'));
-    bool hasDigits = password.contains(RegExp(r'[0-9]'));
-    bool hasLowercase = password.contains(RegExp(r'[a-z]'));
-    bool hasSpecialCharacters =
-        password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
-    bool hasMinLength = password.length > minLength;
-
-    return hasDigits &
-        hasUppercase &
-        hasLowercase &
-        hasSpecialCharacters &
-        hasMinLength;
-  }
+  bool get isPasswordCompliant =>
+      hasDigits & hasUppercase & hasLowercase & hasSpecialChars & hasMinLength;
 
   void _checkIfCanSubmit() {
-    if (!state.email.isValidEmail() || state.password.length < 6) {
+    if (!state.email.isValidEmail() || !isPasswordCompliant) {
       state = state.copyWith(
         canSubmit: false,
+        passwordHasMinLength: hasMinLength,
+        passwordHasDigits: hasDigits,
+        passwordHasLowercase: hasLowercase,
+        passwordHasUppercase: hasUppercase,
+        passwordHasSpecialChars: hasSpecialChars,
       );
     } else if (state.canSubmit != true) {
       state = state.copyWith(
         errorText: null,
         canSubmit: true,
+        passwordHasMinLength: true,
+        passwordHasDigits: true,
+        passwordHasLowercase: true,
+        passwordHasUppercase: true,
+        passwordHasSpecialChars: true,
       );
     }
   }

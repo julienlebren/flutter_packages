@@ -106,27 +106,7 @@ class _SignInEmailRegisterPageFormState
           },
         ),
         if (isCupertino()) const SignInDivider(),
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text("Le mot de passe doit remplir les conditions suivantes :",
-                  style: TextStyle(color: Colors.grey, fontSize: 13)),
-              Text("✔️ 6 caractères minimum",
-                  style: TextStyle(color: Colors.grey, fontSize: 13)),
-              Text("✔️ Au moins une majuscule",
-                  style: TextStyle(color: Colors.grey, fontSize: 13)),
-              Text("✔️ Au moins une minuscule",
-                  style: TextStyle(color: Colors.grey, fontSize: 13)),
-              Text("✔️ Au moins un chiffre",
-                  style: TextStyle(color: Colors.grey, fontSize: 13)),
-              Text("✔️ Au moins un caractère spécial",
-                  style: TextStyle(color: Colors.grey, fontSize: 13)),
-            ],
-          ),
-        ),
+        const SignInPasswordRequirements(),
         SignInSubmitButton(
           title: l10n.continueButton,
           onPressed: canSubmit
@@ -142,6 +122,76 @@ class _SignInEmailRegisterPageFormState
             final navigator = signInNavigatorKey.currentState!;
             navigator.pushReplacementNamed(SignInRoutes.signInEmailPage);
           },
+        ),
+      ],
+    );
+  }
+}
+
+class SignInPasswordRequirements extends ConsumerWidget {
+  const SignInPasswordRequirements({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.read(signInLocalizationsProvider);
+    final state = ref.watch(signInEmailRegisterControllerProvider);
+
+    return Padding(
+      padding: const EdgeInsets.only(top: 15, bottom: 5),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(l10n.passwordRequirements, style: const TextStyle(fontSize: 13)),
+          SignInPasswordRequirement(
+            label: l10n.passwordRequirementMinLength,
+            isValid: state.passwordHasMinLength,
+          ),
+          SignInPasswordRequirement(
+            label: l10n.passwordRequirementUppercase,
+            isValid: state.passwordHasUppercase,
+          ),
+          SignInPasswordRequirement(
+            label: l10n.passwordRequirementLowercase,
+            isValid: state.passwordHasLowercase,
+          ),
+          SignInPasswordRequirement(
+            label: l10n.passwordRequirementDigits,
+            isValid: state.passwordHasDigits,
+          ),
+          SignInPasswordRequirement(
+            label: l10n.passwordRequirementSpecialChars,
+            isValid: state.passwordHasSpecialChars,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class SignInPasswordRequirement extends StatelessWidget {
+  const SignInPasswordRequirement({
+    Key? key,
+    required this.label,
+    this.isValid = false,
+  }) : super(key: key);
+
+  final bool isValid;
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Text(
+          isValid ? "✔️" : "✖️",
+          style: TextStyle(
+              color: isValid ? Colors.green : Colors.red, fontSize: 13),
+        ),
+        Text(
+          label,
+          style: const TextStyle(color: Colors.grey, fontSize: 13),
         ),
       ],
     );

@@ -17,6 +17,24 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get errorTitle => 'Aïe ! Il y a eu un problème...';
 
   @override
+  String get passwordRequirements => 'Le mot de passe doit remplir les conditions suivantes :';
+
+  @override
+  String get passwordRequirementMinLength => '6 caractères minimum';
+
+  @override
+  String get passwordRequirementUppercase => 'Au moins une majuscule';
+
+  @override
+  String get passwordRequirementLowercase => 'Au moins une minuscule';
+
+  @override
+  String get passwordRequirementDigits => 'Au moins un chiffre';
+
+  @override
+  String get passwordRequirementSpecialChars => 'Au moins un caractère spécial';
+
+  @override
   String get signInAnonymously => 'Continuer sans créer de compte';
 
   @override

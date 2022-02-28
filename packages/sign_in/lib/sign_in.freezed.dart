@@ -1500,6 +1500,11 @@ class _$SignInEmailRegisterStateTearOff {
   _SignInEmailRegisterState call(
       {String email = "",
       String password = "",
+      bool passwordHasMinLength = false,
+      bool passwordHasUppercase = false,
+      bool passwordHasLowercase = false,
+      bool passwordHasDigits = false,
+      bool passwordHasSpecialChars = false,
       bool canSubmit = false,
       bool isLoading = false,
       bool isSuccess = false,
@@ -1507,6 +1512,11 @@ class _$SignInEmailRegisterStateTearOff {
     return _SignInEmailRegisterState(
       email: email,
       password: password,
+      passwordHasMinLength: passwordHasMinLength,
+      passwordHasUppercase: passwordHasUppercase,
+      passwordHasLowercase: passwordHasLowercase,
+      passwordHasDigits: passwordHasDigits,
+      passwordHasSpecialChars: passwordHasSpecialChars,
       canSubmit: canSubmit,
       isLoading: isLoading,
       isSuccess: isSuccess,
@@ -1522,6 +1532,11 @@ const $SignInEmailRegisterState = _$SignInEmailRegisterStateTearOff();
 mixin _$SignInEmailRegisterState {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
+  bool get passwordHasMinLength => throw _privateConstructorUsedError;
+  bool get passwordHasUppercase => throw _privateConstructorUsedError;
+  bool get passwordHasLowercase => throw _privateConstructorUsedError;
+  bool get passwordHasDigits => throw _privateConstructorUsedError;
+  bool get passwordHasSpecialChars => throw _privateConstructorUsedError;
   bool get canSubmit => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isSuccess => throw _privateConstructorUsedError;
@@ -1540,6 +1555,11 @@ abstract class $SignInEmailRegisterStateCopyWith<$Res> {
   $Res call(
       {String email,
       String password,
+      bool passwordHasMinLength,
+      bool passwordHasUppercase,
+      bool passwordHasLowercase,
+      bool passwordHasDigits,
+      bool passwordHasSpecialChars,
       bool canSubmit,
       bool isLoading,
       bool isSuccess,
@@ -1559,6 +1579,11 @@ class _$SignInEmailRegisterStateCopyWithImpl<$Res>
   $Res call({
     Object? email = freezed,
     Object? password = freezed,
+    Object? passwordHasMinLength = freezed,
+    Object? passwordHasUppercase = freezed,
+    Object? passwordHasLowercase = freezed,
+    Object? passwordHasDigits = freezed,
+    Object? passwordHasSpecialChars = freezed,
     Object? canSubmit = freezed,
     Object? isLoading = freezed,
     Object? isSuccess = freezed,
@@ -1573,6 +1598,26 @@ class _$SignInEmailRegisterStateCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
+      passwordHasMinLength: passwordHasMinLength == freezed
+          ? _value.passwordHasMinLength
+          : passwordHasMinLength // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasUppercase: passwordHasUppercase == freezed
+          ? _value.passwordHasUppercase
+          : passwordHasUppercase // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasLowercase: passwordHasLowercase == freezed
+          ? _value.passwordHasLowercase
+          : passwordHasLowercase // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasDigits: passwordHasDigits == freezed
+          ? _value.passwordHasDigits
+          : passwordHasDigits // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasSpecialChars: passwordHasSpecialChars == freezed
+          ? _value.passwordHasSpecialChars
+          : passwordHasSpecialChars // ignore: cast_nullable_to_non_nullable
+              as bool,
       canSubmit: canSubmit == freezed
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
@@ -1603,6 +1648,11 @@ abstract class _$SignInEmailRegisterStateCopyWith<$Res>
   $Res call(
       {String email,
       String password,
+      bool passwordHasMinLength,
+      bool passwordHasUppercase,
+      bool passwordHasLowercase,
+      bool passwordHasDigits,
+      bool passwordHasSpecialChars,
       bool canSubmit,
       bool isLoading,
       bool isSuccess,
@@ -1625,6 +1675,11 @@ class __$SignInEmailRegisterStateCopyWithImpl<$Res>
   $Res call({
     Object? email = freezed,
     Object? password = freezed,
+    Object? passwordHasMinLength = freezed,
+    Object? passwordHasUppercase = freezed,
+    Object? passwordHasLowercase = freezed,
+    Object? passwordHasDigits = freezed,
+    Object? passwordHasSpecialChars = freezed,
     Object? canSubmit = freezed,
     Object? isLoading = freezed,
     Object? isSuccess = freezed,
@@ -1639,6 +1694,26 @@ class __$SignInEmailRegisterStateCopyWithImpl<$Res>
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
+      passwordHasMinLength: passwordHasMinLength == freezed
+          ? _value.passwordHasMinLength
+          : passwordHasMinLength // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasUppercase: passwordHasUppercase == freezed
+          ? _value.passwordHasUppercase
+          : passwordHasUppercase // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasLowercase: passwordHasLowercase == freezed
+          ? _value.passwordHasLowercase
+          : passwordHasLowercase // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasDigits: passwordHasDigits == freezed
+          ? _value.passwordHasDigits
+          : passwordHasDigits // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasSpecialChars: passwordHasSpecialChars == freezed
+          ? _value.passwordHasSpecialChars
+          : passwordHasSpecialChars // ignore: cast_nullable_to_non_nullable
+              as bool,
       canSubmit: canSubmit == freezed
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
@@ -1665,6 +1740,11 @@ class _$_SignInEmailRegisterState implements _SignInEmailRegisterState {
   const _$_SignInEmailRegisterState(
       {this.email = "",
       this.password = "",
+      this.passwordHasMinLength = false,
+      this.passwordHasUppercase = false,
+      this.passwordHasLowercase = false,
+      this.passwordHasDigits = false,
+      this.passwordHasSpecialChars = false,
       this.canSubmit = false,
       this.isLoading = false,
       this.isSuccess = false,
@@ -1676,6 +1756,21 @@ class _$_SignInEmailRegisterState implements _SignInEmailRegisterState {
   @JsonKey()
   @override
   final String password;
+  @JsonKey()
+  @override
+  final bool passwordHasMinLength;
+  @JsonKey()
+  @override
+  final bool passwordHasUppercase;
+  @JsonKey()
+  @override
+  final bool passwordHasLowercase;
+  @JsonKey()
+  @override
+  final bool passwordHasDigits;
+  @JsonKey()
+  @override
+  final bool passwordHasSpecialChars;
   @JsonKey()
   @override
   final bool canSubmit;
@@ -1690,7 +1785,7 @@ class _$_SignInEmailRegisterState implements _SignInEmailRegisterState {
 
   @override
   String toString() {
-    return 'SignInEmailRegisterState(email: $email, password: $password, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+    return 'SignInEmailRegisterState(email: $email, password: $password, passwordHasMinLength: $passwordHasMinLength, passwordHasUppercase: $passwordHasUppercase, passwordHasLowercase: $passwordHasLowercase, passwordHasDigits: $passwordHasDigits, passwordHasSpecialChars: $passwordHasSpecialChars, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
   }
 
   @override
@@ -1700,6 +1795,16 @@ class _$_SignInEmailRegisterState implements _SignInEmailRegisterState {
             other is _SignInEmailRegisterState &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.password, password) &&
+            const DeepCollectionEquality()
+                .equals(other.passwordHasMinLength, passwordHasMinLength) &&
+            const DeepCollectionEquality()
+                .equals(other.passwordHasUppercase, passwordHasUppercase) &&
+            const DeepCollectionEquality()
+                .equals(other.passwordHasLowercase, passwordHasLowercase) &&
+            const DeepCollectionEquality()
+                .equals(other.passwordHasDigits, passwordHasDigits) &&
+            const DeepCollectionEquality().equals(
+                other.passwordHasSpecialChars, passwordHasSpecialChars) &&
             const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
             const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
@@ -1711,6 +1816,11 @@ class _$_SignInEmailRegisterState implements _SignInEmailRegisterState {
       runtimeType,
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(password),
+      const DeepCollectionEquality().hash(passwordHasMinLength),
+      const DeepCollectionEquality().hash(passwordHasUppercase),
+      const DeepCollectionEquality().hash(passwordHasLowercase),
+      const DeepCollectionEquality().hash(passwordHasDigits),
+      const DeepCollectionEquality().hash(passwordHasSpecialChars),
       const DeepCollectionEquality().hash(canSubmit),
       const DeepCollectionEquality().hash(isLoading),
       const DeepCollectionEquality().hash(isSuccess),
@@ -1727,6 +1837,11 @@ abstract class _SignInEmailRegisterState implements SignInEmailRegisterState {
   const factory _SignInEmailRegisterState(
       {String email,
       String password,
+      bool passwordHasMinLength,
+      bool passwordHasUppercase,
+      bool passwordHasLowercase,
+      bool passwordHasDigits,
+      bool passwordHasSpecialChars,
       bool canSubmit,
       bool isLoading,
       bool isSuccess,
@@ -1736,6 +1851,16 @@ abstract class _SignInEmailRegisterState implements SignInEmailRegisterState {
   String get email;
   @override
   String get password;
+  @override
+  bool get passwordHasMinLength;
+  @override
+  bool get passwordHasUppercase;
+  @override
+  bool get passwordHasLowercase;
+  @override
+  bool get passwordHasDigits;
+  @override
+  bool get passwordHasSpecialChars;
   @override
   bool get canSubmit;
   @override
