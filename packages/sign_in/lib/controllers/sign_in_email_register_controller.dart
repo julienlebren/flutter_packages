@@ -8,6 +8,7 @@ final signInEmailRegisterControllerProvider = StateNotifierProvider.autoDispose<
   return SignInEmailRegisterController(service, localizations);
 }, dependencies: [
   authServiceProvider,
+  signInLocalizationsProvider,
 ]);
 
 @freezed
