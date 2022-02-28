@@ -48,7 +48,6 @@ class SignInEmailRegisterController
   final SignInLocalizations _localizations;
 
   void handleEvent(SignInEmailRegisterEvent event) {
-    print("event: $event");
     event.when(
       emailChanged: (email) {
         state = state.copyWith(email: email);
@@ -96,13 +95,11 @@ class SignInEmailRegisterController
   }
 
   Future<void> _register() async {
-    print("ok ici");
     if (!state.canSubmit) return;
     state = state.copyWith(isLoading: true);
-    print("ok là");
 
     try {
-      await _service.registerInWithEmail(
+      await _service.createUserWithEmailAndPassword(
         email: state.email,
         password: state.password,
       );

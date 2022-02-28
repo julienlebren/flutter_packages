@@ -179,7 +179,7 @@ class FirebaseAuthService {
     return userCredential.user;
   }
 
-  Future<User?> registerInWithEmail({
+  Future<User?> createUserWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
@@ -190,7 +190,7 @@ class FirebaseAuthService {
     return userCredential.user;
   }
 
-  Future<User?> signInWithEmail({
+  Future<User?> signInWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
@@ -199,6 +199,10 @@ class FirebaseAuthService {
       password: password,
     );
     return userCredential.user;
+  }
+
+  Future<void> sendPasswordResetEmail(String email) async {
+    await _firebaseAuth.sendPasswordResetEmail(email: email);
   }
 
   Future<void> signOut() async {
