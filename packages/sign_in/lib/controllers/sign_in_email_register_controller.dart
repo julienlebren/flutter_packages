@@ -45,19 +45,28 @@ class SignInEmailRegisterController
   void handleEvent(SignInEmailRegisterEvent event) {
     event.when(
       emailChanged: (email) {
-        state = state.copyWith(
-          email: email,
-          canSubmit: email.isValidEmail(),
-        );
+        state = state.copyWith(email: email);
+        _checkIfCanSubmit();
       },
       passwordChanged: (password) {
-        state = state.copyWith(
-          password: password,
-          canSubmit: (password.length >= 6),
-        );
+        state = state.copyWith(password: password);
+        _checkIfCanSubmit();
       },
       submit: () => _register,
     );
+  }
+
+  void _checkIfCanSubmit() {
+    bool canSubmit = (state.email.isValidEmail() && state.password.length >= 6)
+        ? true
+        : false;
+
+    if (canSubmit != state.canSubmit) {
+      state = state.copyWith(
+        errorText: null,
+        canSubmit: canSubmit,
+      );
+    }
   }
 
   Future<void> _register() async {
