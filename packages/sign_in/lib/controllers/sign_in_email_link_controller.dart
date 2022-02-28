@@ -1,8 +1,7 @@
 part of '../sign_in.dart';
 
-final signInEmailLinkControllerProvider =
-    StateNotifierProvider<SignInEmailLinkController, SignInEmailLinkState>(
-        (ref) {
+final signInEmailLinkControllerProvider = StateNotifierProvider.autoDispose<
+    SignInEmailLinkController, SignInEmailLinkState>((ref) {
   final service = ref.watch(authServiceProvider);
   return SignInEmailLinkController(service, "authSettings.emailLinkUrl!");
 });

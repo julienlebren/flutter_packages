@@ -50,7 +50,10 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get signInWithEmailPasswordPlaceholder => 'Mot de passe';
 
   @override
-  String get signInWithEmailAlreadyAccount => 'Déjà inscrit ? Indetifiez-vous ici.';
+  String get signInWithEmailAlreadyAccount => 'Déjà inscrit ? Identifiez-vous ici.';
+
+  @override
+  String get signInWithEmailRegisterButton => 'Créer un compte';
 
   @override
   String get signInWithEmailRegisterTitle => 'S\'inscrire avec un e-mail';

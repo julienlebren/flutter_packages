@@ -53,6 +53,9 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get signInWithEmailAlreadyAccount => 'Already have an account? Sign in here.';
 
   @override
+  String get signInWithEmailRegisterButton => 'Register';
+
+  @override
   String get signInWithEmailRegisterTitle => 'Sign up with e-mail';
 
   @override
