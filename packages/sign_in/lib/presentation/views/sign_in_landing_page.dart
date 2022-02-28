@@ -43,7 +43,6 @@ class SignInLandingPage extends ConsumerWidget {
 }
 */
 
-/*
 class SignInLandingPageBuilder extends StatelessWidget {
   const SignInLandingPageBuilder({
     Key? key,
@@ -70,10 +69,10 @@ class SignInLandingPageBuilder extends StatelessWidget {
       ),
     );
   }
-}*/
+}
 
-class SignInLandingPageBuilder extends ConsumerWidget {
-  const SignInLandingPageBuilder({Key? key}) : super(key: key);
+class SignInLandingPage extends ConsumerWidget {
+  const SignInLandingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
