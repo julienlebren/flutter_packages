@@ -11,7 +11,10 @@ class SignInEmailRegisterPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ref.listen<SignInEmailState>(signInEmailControllerProvider, (_, state) {
-      if (state.errorText != null) {
+      if (state.isSuccess) {
+        //final navigator = SignInRouter.main.currentState!;
+        //navigator.pop();
+      } else if (state.errorText != null) {
         final l10n = ref.watch(signInLocalizationsProvider);
         showErrorDialog(
           context,
@@ -37,7 +40,7 @@ class SignInEmailRegisterPageBuilder extends ConsumerWidget {
     return SignInPageBuilder(
       title: l10n.signInWithEmailTitle,
       leadingButton: const SignInCloseButton(),
-      child: const SignInEmailPageForm(),
+      child: const SignInEmailRegisterPageForm(),
       errorText: state.errorText,
       isLoading: state.isLoading,
     );

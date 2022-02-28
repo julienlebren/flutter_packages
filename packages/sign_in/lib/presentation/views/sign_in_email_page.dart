@@ -6,10 +6,7 @@ class SignInEmailPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ref.listen<SignInEmailState>(signInEmailControllerProvider, (_, state) {
-      if (state.isSuccess) {
-        //final navigator = SignInRouter.main.currentState!;
-        //navigator.pop();
-      } else if (state.errorText != null) {
+      if (state.errorText != null) {
         final l10n = ref.watch(signInLocalizationsProvider);
         showErrorDialog(
           context,
@@ -96,7 +93,11 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
         PlatformTextButton(
           title: l10n.signInWithEmailForgotPassword,
           fontSize: 14,
-          onPressed: () {},
+          onPressed: () {
+            final navigator = signInNavigatorKey.currentState!;
+            navigator
+                .pushReplacementNamed(SignInRoutes.signInEmailPasswordPage);
+          },
         ),
         SignInSubmitButton(
           title: l10n.continueButton,
