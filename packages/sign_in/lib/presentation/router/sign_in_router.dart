@@ -3,7 +3,7 @@ part of '../../sign_in.dart';
 // Override juste les listeners dans les formulaires ??
 
 final signInRouterProvider =
-    Provider<Route<dynamic> Function(RouteSettings settings, WidgetRef ref)>(
+    Provider<Route<dynamic>? Function(RouteSettings settings, WidgetRef ref)>(
   (_) => SignInRouter.onGenerateRoute,
 );
 
