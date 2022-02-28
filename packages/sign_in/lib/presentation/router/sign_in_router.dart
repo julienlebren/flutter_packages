@@ -17,7 +17,7 @@ class SignInNavigatorKeys {
 
 class SignInRoutes {
   static const predicate = 'sign-in';
-  static const signInLandingPage = '/';
+  static const signInLandingPage = 'sign-in';
   static const signInEmailPage = 'sign-in/email';
   static const signInEmailPasswordPage = 'sign-in/email/password';
   static const signInEmailRecoverPage = 'sign-in/email/recover';
