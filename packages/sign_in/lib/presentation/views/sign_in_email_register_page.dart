@@ -75,6 +75,7 @@ class _SignInEmailRegisterPageFormState
     );
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         PlatformTextField(
           controller: emailTextController,
@@ -105,23 +106,26 @@ class _SignInEmailRegisterPageFormState
           },
         ),
         if (isCupertino()) const SignInDivider(),
-        Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            Text("Le mot de passe doit remplir les conditions suivantes :",
-                style: TextStyle(color: Colors.grey, fontSize: 13)),
-            Text("✔️ 6 caractères minimum",
-                style: TextStyle(color: Colors.grey, fontSize: 13)),
-            Text("✔️ Au moins une majuscule",
-                style: TextStyle(color: Colors.grey, fontSize: 13)),
-            Text("✔️ Au moins une minuscule",
-                style: TextStyle(color: Colors.grey, fontSize: 13)),
-            Text("✔️ Au moins un chiffre",
-                style: TextStyle(color: Colors.grey, fontSize: 13)),
-            Text("✔️ Au moins un caractère spécial",
-                style: TextStyle(color: Colors.grey, fontSize: 13)),
-          ],
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text("Le mot de passe doit remplir les conditions suivantes :",
+                  style: TextStyle(color: Colors.grey, fontSize: 13)),
+              Text("✔️ 6 caractères minimum",
+                  style: TextStyle(color: Colors.grey, fontSize: 13)),
+              Text("✔️ Au moins une majuscule",
+                  style: TextStyle(color: Colors.grey, fontSize: 13)),
+              Text("✔️ Au moins une minuscule",
+                  style: TextStyle(color: Colors.grey, fontSize: 13)),
+              Text("✔️ Au moins un chiffre",
+                  style: TextStyle(color: Colors.grey, fontSize: 13)),
+              Text("✔️ Au moins un caractère spécial",
+                  style: TextStyle(color: Colors.grey, fontSize: 13)),
+            ],
+          ),
         ),
         SignInSubmitButton(
           title: l10n.continueButton,
