@@ -5,6 +5,7 @@ class SignInEmailPasswordPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text("SignInEmailPasswordPage"));
+    return const PlatformScaffold(
+        body: Center(child: Text("SignInEmailPasswordPage")));
   }
 }

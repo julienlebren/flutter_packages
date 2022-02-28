@@ -1,7 +1,5 @@
 part of '../../sign_in.dart';
 
-// Override juste les listeners dans les formulaires ??
-
 final signInRouterProvider =
     Provider<Route<dynamic>? Function(RouteSettings settings, WidgetRef ref)>(
   (_) => SignInRouter.onGenerateRoute,
@@ -54,13 +52,26 @@ class SignInRouter {
           return platformPageRoute(
             builder: (_) => const SignInEmailLinkPage(),
           );
+        case SignInRoutes.signInEmailRegisterPage:
+          return platformPageRoute(
+            builder: (_) => const SignInEmailRegisterPage(),
+          );
+        case SignInRoutes.signInEmailPasswordPage:
+          return platformPageRoute(
+            builder: (_) => const SignInEmailPasswordPage(),
+          );
         case SignInRoutes.signInPhonePage:
           return MaterialWithModalsPageRoute(
             builder: (_) => const SignInPhonePage(),
           );
+        case SignInRoutes.signInPhoneVerificationPage:
+          return platformPageRoute(
+            builder: (_) => const SignInPhoneVerificationPage(),
+          );
         case SignInRoutes.signInCountriesPage:
           return platformPageRoute(
             builder: (_) => const CountriesPage(),
+            fullscreenDialog: true,
           );
       }
       return platformPageRoute(
@@ -87,8 +98,7 @@ class SignInNavigator extends ConsumerWidget {
     ref.listen<AuthState>(authStateProvider, (_, authState) {
       authState.maybeWhen(
         authed: (_) {
-          final navigator = signInNavigatorKey.currentState!;
-          navigator.pop();
+          Navigator.of(context, rootNavigator: true).pop();
         },
         needUserInformation: () {
           /*final userInfoPage = ref.read(signInUserInfoPageProvider);
