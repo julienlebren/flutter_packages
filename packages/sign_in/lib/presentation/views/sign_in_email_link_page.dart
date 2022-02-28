@@ -91,8 +91,8 @@ class _SignInEmailLinkPageFormState
         if (isCupertino()) const SignInDivider(),
         SignInSubmitButton(
           title: l10n.continueButton,
-          onPressed: () => canSubmit
-              ? _handleEmailLinkEvent(
+          onPressed: canSubmit
+              ? () => _handleEmailLinkEvent(
                   ref, const SignInEmailLinkEvent.sendLink())
               : null,
         ),

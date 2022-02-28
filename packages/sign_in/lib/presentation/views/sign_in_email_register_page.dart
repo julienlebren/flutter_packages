@@ -99,9 +99,11 @@ class _SignInEmailRegisterPageFormState
         if (isCupertino()) const SignInDivider(),
         SignInSubmitButton(
           title: l10n.continueButton,
-          onPressed: () => canSubmit
-              ? _handleEmailRegisterEvent(
-                  ref, const SignInEmailRegisterEvent.submit())
+          onPressed: canSubmit
+              ? () {
+                  _handleEmailRegisterEvent(
+                      ref, const SignInEmailRegisterEvent.submit());
+                }
               : null,
         ),
         PlatformTextButton(

@@ -139,8 +139,10 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
         if (isMaterial()) const SignInPhoneAutoRetrieve(),
         SignInSubmitButton(
           title: l10n.continueButton,
-          onPressed: () => state.canSubmit
-              ? _handlePhoneEvent(ref, const SignInPhoneEvent.verifyPhone())
+          onPressed: state.canSubmit
+              ? () {
+                  _handlePhoneEvent(ref, const SignInPhoneEvent.verifyPhone());
+                }
               : null,
         ),
       ],

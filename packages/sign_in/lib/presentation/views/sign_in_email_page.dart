@@ -101,8 +101,8 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
         ),
         SignInSubmitButton(
           title: l10n.continueButton,
-          onPressed: () => canSubmit
-              ? _handleEmailLinkEvent(
+          onPressed: canSubmit
+              ? () => _handleEmailLinkEvent(
                   ref, const SignInEmailLinkEvent.sendLink())
               : null,
         ),
