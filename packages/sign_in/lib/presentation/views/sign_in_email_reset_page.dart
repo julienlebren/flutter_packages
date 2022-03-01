@@ -11,7 +11,8 @@ class SignInEmailResetPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ref.listen<SignInEmailState>(signInEmailControllerProvider, (_, state) {
-      if (state.errorText != null) {
+      if (state.isSuccess) {
+      } else if (state.errorText != null) {
         final l10n = ref.watch(signInLocalizationsProvider);
         showErrorDialog(
           context,
@@ -37,8 +38,7 @@ class SignInEmailResetPageBuilder extends ConsumerWidget {
     return SignInPageBuilder(
       title: l10n.emailRecoverTitle,
       subtitle: l10n.emailRecoverSubtitle,
-      leadingButton: const SignInCloseButton(),
-      child: const SignInEmailPageForm(),
+      child: const SignInEmailResetForm(),
       errorText: state.errorText,
       isLoading: state.isLoading,
     );
