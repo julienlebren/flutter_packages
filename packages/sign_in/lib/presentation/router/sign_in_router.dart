@@ -117,9 +117,17 @@ class SignInNavigator extends ConsumerWidget {
       );
     });
 
+    var initialRoute = routeName;
+    if (navigatorKey == SignInNavigatorKeys.main) {
+      final authState = ref.read(authStateProvider);
+      if (authState == const AuthState.needUserInformation()) {
+        initialRoute = SignInRoutes.signInUserInfoPage;
+      }
+    }
+
     return Navigator(
       key: navigatorKey,
-      initialRoute: routeName,
+      initialRoute: initialRoute,
       onGenerateRoute: (settings) => signInRouter(
           RouteSettings(
             name: settings.name!,
