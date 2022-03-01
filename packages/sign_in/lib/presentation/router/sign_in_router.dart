@@ -106,11 +106,17 @@ class SignInNavigator extends ConsumerWidget {
           }
         },
         needUserInformation: () {
+          final navigator = navigatorKey.currentState!;
+
           if (navigatorKey == SignInNavigatorKeys.modal) {
-            print("Modal navigator: pushing signInUserInfoPage");
-            final navigator = navigatorKey.currentState!;
-            navigator.pushNamed(SignInRoutes
-                .signInUserInfoPage); // Mettre pushReplacementNamed une fois en prod
+            navigator.pushReplacementNamed(SignInRoutes.signInUserInfoPage);
+          } else {
+            final signInSupplier = ref.read(signInSupplierProvider);
+            if (signInSupplier == SignInSupplier.apple ||
+                signInSupplier == SignInSupplier.google ||
+                signInSupplier == SignInSupplier.facebook) {
+              navigator.pushReplacementNamed(SignInRoutes.signInUserInfoPage);
+            }
           }
         },
         orElse: () => null,
