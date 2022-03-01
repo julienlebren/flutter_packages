@@ -9,6 +9,7 @@ class SignInPageBuilder extends StatelessWidget {
     required this.title,
     this.subtitle,
     this.leadingButton,
+    this.submitButton,
     required this.child,
     this.isLoading = false,
     this.errorText,
@@ -17,6 +18,7 @@ class SignInPageBuilder extends StatelessWidget {
   final String title;
   final String? subtitle;
   final Widget? leadingButton;
+  final Widget? submitButton;
   final Widget child;
   final bool isLoading;
   final String? errorText;
@@ -55,10 +57,12 @@ class SignInScaffold extends StatelessWidget {
     Key? key,
     this.appBar,
     required this.child,
+    this.submitButton,
   }) : super(key: key);
 
   final PlatformNavigationBar? appBar;
   final Widget child;
+  final Widget? submitButton;
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +79,7 @@ class SignInScaffold extends StatelessWidget {
             child: child,
           ),
         ),
+        floatingActionButton: submitButton,
       ),
     );
   }
