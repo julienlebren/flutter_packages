@@ -22,21 +22,18 @@ class SignInButtons extends ConsumerWidget {
       signInWithPhone: () => SignInSupplier.phone,
       signInAnonymously: () => SignInSupplier.anonymous,
     );
+
+    final navigator = SignInNavigatorKeys.main.currentState!;
+
     event.maybeWhen(
       signInWithPhone: () {
-        Navigator.of(context, rootNavigator: true).pushNamed(
-          SignInRoutes.signInPhonePage,
-        );
+        navigator.pushNamed(SignInRoutes.signInPhonePage);
       },
       signInWithEmail: () {
-        Navigator.of(context, rootNavigator: true).pushNamed(
-          SignInRoutes.signInEmailPage,
-        );
+        navigator.pushNamed(SignInRoutes.signInEmailPage);
       },
       signInWithEmailLink: (_) {
-        Navigator.of(context, rootNavigator: true).pushNamed(
-          SignInRoutes.signInEmailLinkPage,
-        );
+        navigator.pushNamed(SignInRoutes.signInEmailLinkPage);
       },
       orElse: () {
         final controller = ref.read(signInControllerProvider.notifier);

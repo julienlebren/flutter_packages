@@ -110,7 +110,8 @@ class SignInNavigator extends ConsumerWidget {
           if (navigatorKey == SignInNavigatorKeys.modal) {
             print("Modal navigator: pushing signInUserInfoPage");
             final navigator = navigatorKey.currentState!;
-            navigator.pushNamed(SignInRoutes.signInUserInfoPage);
+            navigator.pushNamed(SignInRoutes
+                .signInUserInfoPage); // Mettre pushReplacementNamed une fois en prod
           }
         },
         orElse: () => null,
