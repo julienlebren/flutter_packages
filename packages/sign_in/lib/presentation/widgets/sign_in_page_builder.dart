@@ -48,6 +48,7 @@ class SignInPageBuilder extends StatelessWidget {
           if (errorText != null) SignInError(errorText!),
         ],
       ),
+      submitButton: submitButton,
     );
   }
 }
