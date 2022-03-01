@@ -41,7 +41,7 @@ part 'presentation/views/sign_in_email_link_page.dart';
 part 'presentation/views/sign_in_email_page.dart';
 part 'presentation/views/sign_in_email_password_page.dart';
 part 'presentation/views/sign_in_email_register_page.dart';
-part 'presentation/views/sign_in_landing_page.dart';
+part 'presentation/widgets/sign_in_landing_page_builder.dart';
 part 'presentation/views/sign_in_phone_page.dart';
 part 'presentation/views/sign_in_phone_verification_page.dart';
 part 'presentation/views/sign_in_unknown_page.dart';
