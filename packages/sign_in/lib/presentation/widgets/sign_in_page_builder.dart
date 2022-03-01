@@ -70,14 +70,7 @@ class SignInScaffold extends StatelessWidget {
             horizontal: 25,
             vertical: 20,
           ),
-          child: LayoutBuilder(builder: (context, constraints) {
-            print("maxHeight: ${constraints.maxHeight}");
-            return SizedBox(
-              width: constraints.maxWidth,
-              height: constraints.maxHeight,
-              child: child,
-            );
-          }),
+          child: child,
         ),
       ),
     );
@@ -96,17 +89,23 @@ class SignInScrollView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: AlignmentDirectional.bottomCenter,
-      children: [
-        SingleChildScrollView(
-          child: Column(
-            children: children,
-          ),
+    return LayoutBuilder(builder: (context, constraints) {
+      return SizedBox(
+        width: constraints.maxWidth,
+        height: constraints.maxHeight,
+        child: Stack(
+          alignment: AlignmentDirectional.bottomCenter,
+          children: [
+            SingleChildScrollView(
+              child: Column(
+                children: children,
+              ),
+            ),
+            if (floatingButton != null) floatingButton!,
+          ],
         ),
-        if (floatingButton != null) floatingButton!,
-      ],
-    );
+      );
+    });
   }
 }
 
