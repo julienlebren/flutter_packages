@@ -42,11 +42,13 @@ class SignInTappableField
       height: 48.0,
       child: Row(
         children: [
-          Text(
-            label,
-            style: TextStyle(color: textColor),
-            overflow: TextOverflow.ellipsis,
-            maxLines: 1,
+          Expanded(
+            child: Text(
+              label,
+              style: TextStyle(color: textColor),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
+            ),
           ),
           const Spacer(),
           if (value != null)
