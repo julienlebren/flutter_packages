@@ -6,11 +6,13 @@ class SignInTappableField
     Key? key,
     required this.label,
     this.value,
+    this.trailing,
     this.onPressed,
   }) : super(key: key);
 
   final String label;
   final String? value;
+  final Widget? trailing;
   final VoidCallback? onPressed;
 
   @override
@@ -51,7 +53,9 @@ class SignInTappableField
               style: TextStyle(color: textColor),
               textAlign: TextAlign.right,
             ),
-          if (isCupertino())
+          if (trailing != null) ...[
+            trailing!,
+          ] else if (isCupertino())
             const Icon(
               CupertinoIcons.chevron_right,
               size: 22,
