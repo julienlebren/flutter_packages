@@ -63,7 +63,7 @@ class SignInScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () async => false,
+      onWillPop: () async => (appBar?.leading == null),
       child: PlatformScaffold(
         appBar: appBar,
         body: SizedBox.expand(
