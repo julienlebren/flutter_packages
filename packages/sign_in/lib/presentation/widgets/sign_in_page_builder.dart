@@ -82,14 +82,19 @@ class SignInScaffold extends StatelessWidget {
 
 /// The button for closing the sign-in journey.
 /// Displays a text on iOS and a xmark on Android.
-class SignInCloseButton extends StatelessWidget {
+class SignInCloseButton extends ConsumerWidget {
   const SignInCloseButton({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return PlatformNavigationBarCloseButton(onPressed: () {
-      Navigator.of(context, rootNavigator: true).pop();
-    });
+  Widget build(BuildContext context, WidgetRef ref) {
+    return PlatformNavigationBarCloseButton(
+      onPressed: () {
+        ref.read(signInSupplierProvider.state).state = null;
+
+        final navigator = SignInNavigatorKeys.main.currentState!;
+        navigator.pop();
+      },
+    );
   }
 }
 

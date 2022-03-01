@@ -1,7 +1,6 @@
 part of '../../sign_in.dart';
 
-final signInSupplierProvider =
-    StateProvider<SignInSupplier>((_) => SignInSupplier.anonymous);
+final signInSupplierProvider = StateProvider<SignInSupplier?>((_) => null);
 
 class SignInButtons extends ConsumerWidget {
   SignInButtons(this.suppliers, {Key? key}) : super(key: key) {
@@ -55,6 +54,9 @@ class SignInButtons extends ConsumerWidget {
 
     ref.listen<SignInState>(signInControllerProvider, (_, state) {
       state.maybeWhen(
+        initial: () {
+          ref.read(signInSupplierProvider.state).state = null;
+        },
         error: (errorText) {
           showErrorDialog(
             context,
