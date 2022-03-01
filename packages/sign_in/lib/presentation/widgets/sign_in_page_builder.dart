@@ -66,7 +66,7 @@ class SignInScaffold extends StatelessWidget {
       onWillPop: () async => (appBar?.leading == null),
       child: PlatformScaffold(
         appBar: appBar,
-        body: SizedBox.expand(
+        body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 25,
