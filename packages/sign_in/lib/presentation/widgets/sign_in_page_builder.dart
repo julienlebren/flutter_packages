@@ -65,26 +65,19 @@ class SignInScaffold extends StatelessWidget {
       onWillPop: () async => (appBar?.leading == null),
       child: PlatformScaffold(
         appBar: appBar,
-        body: LayoutBuilder(builder: (context, constraints) {
-          return SizedBox(
-            width: constraints.maxWidth,
-            height: constraints.maxHeight,
-            child: Stack(
-              alignment: AlignmentDirectional.bottomCenter,
-              children: [
-                SingleChildScrollView(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 25,
-                      vertical: 20,
-                    ),
-                    child: child,
-                  ),
-                ),
-              ],
-            ),
-          );
-        }),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 25,
+            vertical: 20,
+          ),
+          child: LayoutBuilder(builder: (context, constraints) {
+            return SizedBox(
+              width: constraints.maxWidth,
+              height: constraints.maxHeight,
+              child: child,
+            );
+          }),
+        ),
       ),
     );
   }
@@ -102,23 +95,17 @@ class SignInScrollView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      return SizedBox(
-        width: constraints.maxWidth,
-        height: constraints.maxHeight,
-        child: Stack(
-          alignment: AlignmentDirectional.bottomCenter,
-          children: [
-            SingleChildScrollView(
-              child: Column(
-                children: children,
-              ),
-            ),
-            if (floatingButton != null) floatingButton!,
-          ],
+    return Stack(
+      alignment: AlignmentDirectional.bottomCenter,
+      children: [
+        SingleChildScrollView(
+          child: Column(
+            children: children,
+          ),
         ),
-      );
-    });
+        if (floatingButton != null) floatingButton!,
+      ],
+    );
   }
 }
 
