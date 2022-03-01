@@ -96,11 +96,9 @@ class SignInNavigator extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final signInRouter = ref.read(signInRouterProvider);
-    print("Navigator: $navigatorKey");
-    print("Router: $signInRouter");
 
-    ref.listen<AuthState>(authStateProvider, (_, authState) {
-      print("authState: $authState");
+    ref.listen<AuthState>(authStateProvider, (previousAuthState, authState) {
+      print("previousAuthState: $previousAuthState / authState: $authState");
       authState.maybeWhen(
         authed: (_) {
           if (navigatorKey == SignInNavigatorKeys.main) {
@@ -110,6 +108,7 @@ class SignInNavigator extends ConsumerWidget {
         },
         needUserInformation: () {
           if (navigatorKey == SignInNavigatorKeys.modal) {
+            print("Modal navigator: pushing signInUserInfoPage");
             final navigator = navigatorKey.currentState!;
             navigator.pushNamed(SignInRoutes.signInUserInfoPage);
           }
