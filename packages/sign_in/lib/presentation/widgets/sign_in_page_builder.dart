@@ -70,7 +70,13 @@ class SignInScaffold extends StatelessWidget {
             horizontal: 25,
             vertical: 20,
           ),
-          child: child,
+          child: LayoutBuilder(builder: (context, constraints) {
+            return SizedBox(
+              width: constraints.maxWidth,
+              height: constraints.maxHeight,
+              child: child,
+            );
+          }),
         ),
       ),
     );
