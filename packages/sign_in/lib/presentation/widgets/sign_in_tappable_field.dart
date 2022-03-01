@@ -5,13 +5,11 @@ class SignInTappableField
   const SignInTappableField({
     Key? key,
     required this.label,
-    this.value,
     this.trailing,
     this.onPressed,
   }) : super(key: key);
 
   final String label;
-  final String? value;
   final Widget? trailing;
   final VoidCallback? onPressed;
 
@@ -41,6 +39,8 @@ class SignInTappableField
     return SizedBox(
       height: 48.0,
       child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Expanded(
             child: Text(
@@ -50,13 +50,6 @@ class SignInTappableField
               maxLines: 1,
             ),
           ),
-          const Spacer(),
-          if (value != null)
-            Text(
-              value!,
-              style: TextStyle(color: textColor),
-              textAlign: TextAlign.right,
-            ),
           if (trailing != null) ...[
             trailing!,
           ] else if (isCupertino())
