@@ -96,6 +96,8 @@ class SignInNavigator extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final signInRouter = ref.read(signInRouterProvider);
+    print("Navigator: $navigatorKey");
+    print("Router: $signInRouter");
 
     ref.listen<AuthState>(authStateProvider, (_, authState) {
       print("authState: $authState");
