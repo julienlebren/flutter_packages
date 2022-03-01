@@ -118,7 +118,7 @@ class SignInNavigator extends ConsumerWidget {
     });
 
     var initialRoute = routeName;
-    if (navigatorKey == SignInNavigatorKeys.main) {
+    if (navigatorKey == SignInNavigatorKeys.modal) {
       final authState = ref.read(authStateProvider);
       if (authState == const AuthState.needUserInformation()) {
         initialRoute = SignInRoutes.signInUserInfoPage;
