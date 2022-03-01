@@ -95,7 +95,7 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
           fontSize: 14,
           onPressed: () {
             final navigator = SignInNavigatorKeys.modal.currentState!;
-            navigator.pushReplacementNamed(SignInRoutes.signInEmailResetPage);
+            navigator.pushNamed(SignInRoutes.signInEmailResetPage);
           },
         ),
         SignInSubmitButton(
