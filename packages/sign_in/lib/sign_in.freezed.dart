@@ -1010,6 +1010,554 @@ abstract class _SignInEmailLinkState implements SignInEmailLinkState {
 }
 
 /// @nodoc
+class _$SignInEmailResetEventTearOff {
+  const _$SignInEmailResetEventTearOff();
+
+  _ResetEmailChanged emailChanged(String email) {
+    return _ResetEmailChanged(
+      email,
+    );
+  }
+
+  _ResetSubmit submit() {
+    return const _ResetSubmit();
+  }
+}
+
+/// @nodoc
+const $SignInEmailResetEvent = _$SignInEmailResetEventTearOff();
+
+/// @nodoc
+mixin _$SignInEmailResetEvent {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChanged,
+    required TResult Function() submit,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function()? submit,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function()? submit,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ResetEmailChanged value) emailChanged,
+    required TResult Function(_ResetSubmit value) submit,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ResetEmailChanged value)? emailChanged,
+    TResult Function(_ResetSubmit value)? submit,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ResetEmailChanged value)? emailChanged,
+    TResult Function(_ResetSubmit value)? submit,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignInEmailResetEventCopyWith<$Res> {
+  factory $SignInEmailResetEventCopyWith(SignInEmailResetEvent value,
+          $Res Function(SignInEmailResetEvent) then) =
+      _$SignInEmailResetEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignInEmailResetEventCopyWithImpl<$Res>
+    implements $SignInEmailResetEventCopyWith<$Res> {
+  _$SignInEmailResetEventCopyWithImpl(this._value, this._then);
+
+  final SignInEmailResetEvent _value;
+  // ignore: unused_field
+  final $Res Function(SignInEmailResetEvent) _then;
+}
+
+/// @nodoc
+abstract class _$ResetEmailChangedCopyWith<$Res> {
+  factory _$ResetEmailChangedCopyWith(
+          _ResetEmailChanged value, $Res Function(_ResetEmailChanged) then) =
+      __$ResetEmailChangedCopyWithImpl<$Res>;
+  $Res call({String email});
+}
+
+/// @nodoc
+class __$ResetEmailChangedCopyWithImpl<$Res>
+    extends _$SignInEmailResetEventCopyWithImpl<$Res>
+    implements _$ResetEmailChangedCopyWith<$Res> {
+  __$ResetEmailChangedCopyWithImpl(
+      _ResetEmailChanged _value, $Res Function(_ResetEmailChanged) _then)
+      : super(_value, (v) => _then(v as _ResetEmailChanged));
+
+  @override
+  _ResetEmailChanged get _value => super._value as _ResetEmailChanged;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+  }) {
+    return _then(_ResetEmailChanged(
+      email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ResetEmailChanged implements _ResetEmailChanged {
+  const _$_ResetEmailChanged(this.email);
+
+  @override
+  final String email;
+
+  @override
+  String toString() {
+    return 'SignInEmailResetEvent.emailChanged(email: $email)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ResetEmailChanged &&
+            const DeepCollectionEquality().equals(other.email, email));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
+
+  @JsonKey(ignore: true)
+  @override
+  _$ResetEmailChangedCopyWith<_ResetEmailChanged> get copyWith =>
+      __$ResetEmailChangedCopyWithImpl<_ResetEmailChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChanged,
+    required TResult Function() submit,
+  }) {
+    return emailChanged(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function()? submit,
+  }) {
+    return emailChanged?.call(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function()? submit,
+    required TResult orElse(),
+  }) {
+    if (emailChanged != null) {
+      return emailChanged(email);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ResetEmailChanged value) emailChanged,
+    required TResult Function(_ResetSubmit value) submit,
+  }) {
+    return emailChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ResetEmailChanged value)? emailChanged,
+    TResult Function(_ResetSubmit value)? submit,
+  }) {
+    return emailChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ResetEmailChanged value)? emailChanged,
+    TResult Function(_ResetSubmit value)? submit,
+    required TResult orElse(),
+  }) {
+    if (emailChanged != null) {
+      return emailChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ResetEmailChanged implements SignInEmailResetEvent {
+  const factory _ResetEmailChanged(String email) = _$_ResetEmailChanged;
+
+  String get email;
+  @JsonKey(ignore: true)
+  _$ResetEmailChangedCopyWith<_ResetEmailChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ResetSubmitCopyWith<$Res> {
+  factory _$ResetSubmitCopyWith(
+          _ResetSubmit value, $Res Function(_ResetSubmit) then) =
+      __$ResetSubmitCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ResetSubmitCopyWithImpl<$Res>
+    extends _$SignInEmailResetEventCopyWithImpl<$Res>
+    implements _$ResetSubmitCopyWith<$Res> {
+  __$ResetSubmitCopyWithImpl(
+      _ResetSubmit _value, $Res Function(_ResetSubmit) _then)
+      : super(_value, (v) => _then(v as _ResetSubmit));
+
+  @override
+  _ResetSubmit get _value => super._value as _ResetSubmit;
+}
+
+/// @nodoc
+
+class _$_ResetSubmit implements _ResetSubmit {
+  const _$_ResetSubmit();
+
+  @override
+  String toString() {
+    return 'SignInEmailResetEvent.submit()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ResetSubmit);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChanged,
+    required TResult Function() submit,
+  }) {
+    return submit();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function()? submit,
+  }) {
+    return submit?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function()? submit,
+    required TResult orElse(),
+  }) {
+    if (submit != null) {
+      return submit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ResetEmailChanged value) emailChanged,
+    required TResult Function(_ResetSubmit value) submit,
+  }) {
+    return submit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_ResetEmailChanged value)? emailChanged,
+    TResult Function(_ResetSubmit value)? submit,
+  }) {
+    return submit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ResetEmailChanged value)? emailChanged,
+    TResult Function(_ResetSubmit value)? submit,
+    required TResult orElse(),
+  }) {
+    if (submit != null) {
+      return submit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ResetSubmit implements SignInEmailResetEvent {
+  const factory _ResetSubmit() = _$_ResetSubmit;
+}
+
+/// @nodoc
+class _$SignInEmailResetStateTearOff {
+  const _$SignInEmailResetStateTearOff();
+
+  _SignInEmailResetState call(
+      {String email = "",
+      bool canSubmit = false,
+      bool isLoading = false,
+      bool isSuccess = false,
+      String? errorText}) {
+    return _SignInEmailResetState(
+      email: email,
+      canSubmit: canSubmit,
+      isLoading: isLoading,
+      isSuccess: isSuccess,
+      errorText: errorText,
+    );
+  }
+}
+
+/// @nodoc
+const $SignInEmailResetState = _$SignInEmailResetStateTearOff();
+
+/// @nodoc
+mixin _$SignInEmailResetState {
+  String get email => throw _privateConstructorUsedError;
+  bool get canSubmit => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isSuccess => throw _privateConstructorUsedError;
+  String? get errorText => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SignInEmailResetStateCopyWith<SignInEmailResetState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignInEmailResetStateCopyWith<$Res> {
+  factory $SignInEmailResetStateCopyWith(SignInEmailResetState value,
+          $Res Function(SignInEmailResetState) then) =
+      _$SignInEmailResetStateCopyWithImpl<$Res>;
+  $Res call(
+      {String email,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText});
+}
+
+/// @nodoc
+class _$SignInEmailResetStateCopyWithImpl<$Res>
+    implements $SignInEmailResetStateCopyWith<$Res> {
+  _$SignInEmailResetStateCopyWithImpl(this._value, this._then);
+
+  final SignInEmailResetState _value;
+  // ignore: unused_field
+  final $Res Function(SignInEmailResetState) _then;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+    Object? canSubmit = freezed,
+    Object? isLoading = freezed,
+    Object? isSuccess = freezed,
+    Object? errorText = freezed,
+  }) {
+    return _then(_value.copyWith(
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      canSubmit: canSubmit == freezed
+          ? _value.canSubmit
+          : canSubmit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuccess: isSuccess == freezed
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorText: errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SignInEmailResetStateCopyWith<$Res>
+    implements $SignInEmailResetStateCopyWith<$Res> {
+  factory _$SignInEmailResetStateCopyWith(_SignInEmailResetState value,
+          $Res Function(_SignInEmailResetState) then) =
+      __$SignInEmailResetStateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String email,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText});
+}
+
+/// @nodoc
+class __$SignInEmailResetStateCopyWithImpl<$Res>
+    extends _$SignInEmailResetStateCopyWithImpl<$Res>
+    implements _$SignInEmailResetStateCopyWith<$Res> {
+  __$SignInEmailResetStateCopyWithImpl(_SignInEmailResetState _value,
+      $Res Function(_SignInEmailResetState) _then)
+      : super(_value, (v) => _then(v as _SignInEmailResetState));
+
+  @override
+  _SignInEmailResetState get _value => super._value as _SignInEmailResetState;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+    Object? canSubmit = freezed,
+    Object? isLoading = freezed,
+    Object? isSuccess = freezed,
+    Object? errorText = freezed,
+  }) {
+    return _then(_SignInEmailResetState(
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      canSubmit: canSubmit == freezed
+          ? _value.canSubmit
+          : canSubmit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuccess: isSuccess == freezed
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorText: errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SignInEmailResetState implements _SignInEmailResetState {
+  const _$_SignInEmailResetState(
+      {this.email = "",
+      this.canSubmit = false,
+      this.isLoading = false,
+      this.isSuccess = false,
+      this.errorText});
+
+  @JsonKey()
+  @override
+  final String email;
+  @JsonKey()
+  @override
+  final bool canSubmit;
+  @JsonKey()
+  @override
+  final bool isLoading;
+  @JsonKey()
+  @override
+  final bool isSuccess;
+  @override
+  final String? errorText;
+
+  @override
+  String toString() {
+    return 'SignInEmailResetState(email: $email, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SignInEmailResetState &&
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
+            const DeepCollectionEquality().equals(other.errorText, errorText));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(email),
+      const DeepCollectionEquality().hash(canSubmit),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(isSuccess),
+      const DeepCollectionEquality().hash(errorText));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SignInEmailResetStateCopyWith<_SignInEmailResetState> get copyWith =>
+      __$SignInEmailResetStateCopyWithImpl<_SignInEmailResetState>(
+          this, _$identity);
+}
+
+abstract class _SignInEmailResetState implements SignInEmailResetState {
+  const factory _SignInEmailResetState(
+      {String email,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText}) = _$_SignInEmailResetState;
+
+  @override
+  String get email;
+  @override
+  bool get canSubmit;
+  @override
+  bool get isLoading;
+  @override
+  bool get isSuccess;
+  @override
+  String? get errorText;
+  @override
+  @JsonKey(ignore: true)
+  _$SignInEmailResetStateCopyWith<_SignInEmailResetState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$SignInEmailRegisterEventTearOff {
   const _$SignInEmailRegisterEventTearOff();
 

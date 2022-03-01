@@ -17,8 +17,7 @@ class SignInRoutes {
   static const predicate = 'sign-in';
   static const signInLandingPage = 'sign-in';
   static const signInEmailPage = 'sign-in/email';
-  static const signInEmailPasswordPage = 'sign-in/email/password';
-  static const signInEmailRecoverPage = 'sign-in/email/recover';
+  static const signInEmailResetPage = 'sign-in/email/reset';
   static const signInEmailRegisterPage = 'sign-in/email/register';
   static const signInEmailLinkPage = 'sign-in/link';
   static const signInPhonePage = 'sign-in/phone';
@@ -58,9 +57,9 @@ class SignInRouter {
           return platformPageRoute(
             builder: (_) => const SignInEmailRegisterPage(),
           );
-        case SignInRoutes.signInEmailPasswordPage:
+        case SignInRoutes.signInEmailResetPage:
           return platformPageRoute(
-            builder: (_) => const SignInEmailPasswordPage(),
+            builder: (_) => const SignInEmailResetPage(),
           );
         case SignInRoutes.signInPhonePage:
           return MaterialWithModalsPageRoute(

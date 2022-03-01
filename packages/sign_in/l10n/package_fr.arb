@@ -1,6 +1,9 @@
 {
     "continueButton": "Continuer",
     "countriesTitle": "Pays / Région",
+    "emailRecoverTitle": "Mot de passe oublié",
+    "emailRecoverSubtitle": "Saisissez votre e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+    "emailRecoverSubmitButton": "Rénitialiser le mot de passe",
     "errorTitle": "Aïe ! Il y a eu un problème...",
     "signInAnonymously": "Continuer sans créer de compte",
     "signInWithApple": "Continuer avec Apple",

@@ -14,6 +14,15 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get countriesTitle => 'Country / Region';
 
   @override
+  String get emailRecoverTitle => 'Forgot your password';
+
+  @override
+  String get emailRecoverSubtitle => 'Enter your email and we\'ll send you a link to reset your password.';
+
+  @override
+  String get emailRecoverSubmitButton => 'Reset your password';
+
+  @override
   String get errorTitle => 'Oops! Something went wrong...';
 
   @override
