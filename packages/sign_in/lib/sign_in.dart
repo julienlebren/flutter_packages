@@ -73,9 +73,7 @@ final authStateProvider = Provider<AuthState>((ref) {
         final user = ref.watch(userStreamProvider);
         return user.when(
           loading: () {
-            final isSigninIn = ref.watch(signInControllerProvider.select(
-              (state) => (state == const SignInState.success()),
-            ));
+            final isSigninIn = ref.watch(signInSupplierProvider) != null;
             if (isSigninIn) {
               return const AuthState.notAuthed();
             } else {
