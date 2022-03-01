@@ -9,7 +9,6 @@ class SignInPageBuilder extends StatelessWidget {
     required this.title,
     this.subtitle,
     this.leadingButton,
-    this.submitButton,
     required this.child,
     this.isLoading = false,
     this.errorText,
@@ -18,7 +17,6 @@ class SignInPageBuilder extends StatelessWidget {
   final String title;
   final String? subtitle;
   final Widget? leadingButton;
-  final Widget? submitButton;
   final Widget child;
   final bool isLoading;
   final String? errorText;
@@ -48,7 +46,6 @@ class SignInPageBuilder extends StatelessWidget {
           if (errorText != null) SignInError(errorText!),
         ],
       ),
-      submitButton: submitButton,
     );
   }
 }
@@ -58,31 +55,57 @@ class SignInScaffold extends StatelessWidget {
     Key? key,
     this.appBar,
     required this.child,
-    this.submitButton,
   }) : super(key: key);
 
   final PlatformNavigationBar? appBar;
   final Widget child;
-  final Widget? submitButton;
-
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async => (appBar?.leading == null),
       child: PlatformScaffold(
         appBar: appBar,
-        body: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 25,
-              vertical: 20,
-            ),
-            child: child,
+        body: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 25,
+            vertical: 20,
           ),
+          child: child,
         ),
-        floatingActionButton: submitButton,
       ),
     );
+  }
+}
+
+class SignInScrollView extends StatelessWidget {
+  const SignInScrollView({
+    Key? key,
+    required this.children,
+    this.floatingButton,
+  }) : super(key: key);
+
+  final List<Widget> children;
+  final Widget? floatingButton;
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(builder: (context, constraints) {
+      return SizedBox(
+        width: constraints.maxWidth,
+        height: constraints.maxHeight,
+        child: Stack(
+          alignment: AlignmentDirectional.bottomCenter,
+          children: [
+            SingleChildScrollView(
+              child: Column(
+                children: children,
+              ),
+            ),
+            if (floatingButton != null) floatingButton!,
+          ],
+        ),
+      );
+    });
   }
 }
 
