@@ -45,6 +45,7 @@ class SignInTappableField
           Text(
             label,
             style: TextStyle(color: textColor),
+            overflow: TextOverflow.ellipsis,
           ),
           const Spacer(),
           if (value != null)
