@@ -29,36 +29,23 @@ class SignInPageBuilder extends StatelessWidget {
         trailing: (isLoading ? const FormLoader() : null),
         hasBorder: false,
       ),
-      child: LayoutBuilder(builder: (context, constraints) {
-        return SizedBox(
-          width: constraints.maxWidth,
-          height: constraints.maxHeight,
-          child: Stack(
-            alignment: AlignmentDirectional.bottomCenter,
-            children: [
-              SingleChildScrollView(
-                child: Column(
-                  children: [
-                    SignInHeader(
-                      title: title,
-                      subtitle: subtitle,
-                    ),
-                    AnimatedOpacity(
-                      opacity: isLoading ? 0.5 : 1,
-                      duration: const Duration(milliseconds: 200),
-                      child: AbsorbPointer(
-                        absorbing: isLoading,
-                        child: child,
-                      ),
-                    ),
-                    if (errorText != null) SignInError(errorText!),
-                  ],
-                ),
-              ),
-            ],
+      child: Column(
+        children: [
+          SignInHeader(
+            title: title,
+            subtitle: subtitle,
           ),
-        );
-      }),
+          AnimatedOpacity(
+            opacity: isLoading ? 0.5 : 1,
+            duration: const Duration(milliseconds: 200),
+            child: AbsorbPointer(
+              absorbing: isLoading,
+              child: child,
+            ),
+          ),
+          if (errorText != null) SignInError(errorText!),
+        ],
+      ),
     );
   }
 }
@@ -78,13 +65,26 @@ class SignInScaffold extends StatelessWidget {
       onWillPop: () async => (appBar?.leading == null),
       child: PlatformScaffold(
         appBar: appBar,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 25,
-            vertical: 20,
-          ),
-          child: child,
-        ),
+        body: LayoutBuilder(builder: (context, constraints) {
+          return SizedBox(
+            width: constraints.maxWidth,
+            height: constraints.maxHeight,
+            child: Stack(
+              alignment: AlignmentDirectional.bottomCenter,
+              children: [
+                SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 25,
+                      vertical: 20,
+                    ),
+                    child: child,
+                  ),
+                ),
+              ],
+            ),
+          );
+        }),
       ),
     );
   }
