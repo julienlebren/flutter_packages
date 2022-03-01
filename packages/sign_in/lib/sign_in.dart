@@ -101,7 +101,7 @@ final authStateProvider = Provider<AuthState>((ref) {
   );
 }, dependencies: [
   authStateChangesProvider,
-  signInControllerProvider,
+  signInSupplierProvider,
   userStreamProvider,
   needUserInfoProvider,
 ]);
