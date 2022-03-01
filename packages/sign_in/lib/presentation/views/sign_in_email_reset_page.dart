@@ -53,6 +53,7 @@ class SignInEmailResetForm extends ConsumerStatefulWidget {
 }
 
 class _SignInEmailResetFormState extends ConsumerState<SignInEmailResetForm> {
+  final emailTextController = TextEditingController();
   final focusNode = FocusNode();
 
   @override
@@ -73,8 +74,9 @@ class _SignInEmailResetFormState extends ConsumerState<SignInEmailResetForm> {
     return Column(
       children: [
         PlatformTextField(
-          controller: TextEditingController(),
+          controller: emailTextController,
           keyboardType: TextInputType.emailAddress,
+          textInputAction: TextInputAction.next,
           placeholder: l10n.signInWithEmailPlaceholder,
           autocorrect: false,
           focusNode: focusNode,

@@ -58,6 +58,7 @@ class SignInEmailLinkPageForm extends ConsumerStatefulWidget {
 
 class _SignInEmailLinkPageFormState
     extends ConsumerState<SignInEmailLinkPageForm> {
+  final textController = TextEditingController();
   final focusNode = FocusNode();
 
   @override
@@ -78,7 +79,7 @@ class _SignInEmailLinkPageFormState
     return Column(
       children: [
         PlatformTextField(
-          controller: TextEditingController(),
+          controller: textController,
           keyboardType: TextInputType.emailAddress,
           placeholder: l10n.signInWithEmailPlaceholder,
           autocorrect: false,
