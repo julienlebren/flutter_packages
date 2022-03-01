@@ -10,11 +10,6 @@ final signInLandingPageProvider =
 
 final signInNavigatorKey = GlobalKey<NavigatorState>();
 
-class SignInNavigatorKeys {
-  static final main = GlobalKey<NavigatorState>();
-  static final modal = GlobalKey<NavigatorState>();
-}
-
 class SignInRoutes {
   static const predicate = 'sign-in';
   static const signInLandingPage = 'sign-in';
@@ -41,7 +36,6 @@ class SignInRouter {
     if (isRootNavigator) {
       return platformPageRoute(
         builder: (_) => SignInNavigator(
-          navigatorKey: signInNavigatorKey,
           routeName: settings.name!,
         ),
         fullscreenDialog: true,
@@ -88,11 +82,9 @@ class SignInRouter {
 class SignInNavigator extends ConsumerWidget {
   const SignInNavigator({
     Key? key,
-    required this.navigatorKey,
     required this.routeName,
   }) : super(key: key);
 
-  final GlobalKey<NavigatorState> navigatorKey;
   final String routeName;
 
   @override
@@ -105,7 +97,7 @@ class SignInNavigator extends ConsumerWidget {
           Navigator.of(context, rootNavigator: true).pop();
         },
         needUserInformation: () {
-          final navigator = navigatorKey.currentState!;
+          final navigator = signInNavigatorKey.currentState!;
           navigator.pushNamed(SignInRoutes.signInUserInfoPage);
         },
         orElse: () => null,
@@ -113,13 +105,12 @@ class SignInNavigator extends ConsumerWidget {
     });
 
     return Navigator(
-      key: navigatorKey,
+      key: signInNavigatorKey,
       initialRoute: routeName,
       onGenerateRoute: (settings) => signInRouter(
           RouteSettings(
             name: settings.name!,
-            //arguments: (navigatorKey != signInNavigatorKey),
-            arguments: (navigatorKey == SignInNavigatorKeys.main),
+            arguments: false,
           ),
           ref),
     );
