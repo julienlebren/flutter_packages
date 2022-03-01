@@ -48,7 +48,7 @@ class FirebaseAuthService {
       codeAutoRetrievalTimeout: (String verificationId) {
         completion(verificationId);
       },
-      timeout: Duration(seconds: 60),
+      timeout: const Duration(seconds: 60),
     );
   }
 
