@@ -118,7 +118,7 @@ class _SignInEmailRegisterPageFormState
         PlatformTextButton(
           title: l10n.signInWithEmailAlreadyAccount,
           onPressed: () {
-            final navigator = signInNavigatorKey.currentState!;
+            final navigator = SignInNavigatorKeys.modal.currentState!;
             navigator.pushReplacementNamed(SignInRoutes.signInEmailPage);
           },
         ),

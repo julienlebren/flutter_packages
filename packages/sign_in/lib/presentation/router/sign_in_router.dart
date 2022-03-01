@@ -8,8 +8,6 @@ final signInRouterProvider =
 final signInLandingPageProvider =
     Provider<Widget>((_) => const SizedBox.shrink());
 
-final signInNavigatorKey = GlobalKey<NavigatorState>();
-
 class SignInNavigatorKeys {
   static final main = GlobalKey<NavigatorState>();
   static final modal = GlobalKey<NavigatorState>();
@@ -41,7 +39,7 @@ class SignInRouter {
     if (isRootNavigator) {
       return platformPageRoute(
         builder: (_) => SignInNavigator(
-          navigatorKey: signInNavigatorKey,
+          navigatorKey: SignInNavigatorKeys.modal,
           routeName: settings.name!,
         ),
         fullscreenDialog: true,

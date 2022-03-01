@@ -95,7 +95,7 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
         builder: (context) => const CountriesPage(),
       );
     } else {
-      final navigator = signInNavigatorKey.currentState!;
+      final navigator = SignInNavigatorKeys.modal.currentState!;
       navigator.pushNamed(SignInRoutes.signInCountriesPage);
     }
   }
