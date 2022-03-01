@@ -100,13 +100,19 @@ class SignInNavigator extends ConsumerWidget {
     final signInRouter = ref.read(signInRouterProvider);
 
     ref.listen<AuthState>(authStateProvider, (_, authState) {
+      print("authState: $authState");
       authState.maybeWhen(
         authed: (_) {
-          Navigator.of(context, rootNavigator: true).pop();
+          if (navigatorKey == SignInNavigatorKeys.main) {
+            final navigator = SignInNavigatorKeys.main.currentState!;
+            navigator.pop();
+          }
         },
         needUserInformation: () {
-          final navigator = navigatorKey.currentState!;
-          navigator.pushNamed(SignInRoutes.signInUserInfoPage);
+          if (navigatorKey == SignInNavigatorKeys.modal) {
+            final navigator = navigatorKey.currentState!;
+            navigator.pushNamed(SignInRoutes.signInUserInfoPage);
+          }
         },
         orElse: () => null,
       );
@@ -118,7 +124,6 @@ class SignInNavigator extends ConsumerWidget {
       onGenerateRoute: (settings) => signInRouter(
           RouteSettings(
             name: settings.name!,
-            //arguments: (navigatorKey != signInNavigatorKey),
             arguments: (navigatorKey == SignInNavigatorKeys.main),
           ),
           ref),
