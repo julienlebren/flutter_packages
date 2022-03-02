@@ -97,7 +97,6 @@ class SignInNavigator extends ConsumerWidget {
     final signInRouter = ref.read(signInRouterProvider);
 
     ref.listen<AuthState>(authStateProvider, (previousAuthState, authState) {
-      print("previousAuthState: $previousAuthState / authState: $authState");
       authState.maybeWhen(
         authed: (_) {
           if (navigatorKey == SignInNavigatorKeys.main) {
