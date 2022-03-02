@@ -105,9 +105,10 @@ class SignInScaffold extends StatelessWidget {
       child: PlatformScaffold(
         appBar: appBar,
         body: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 25,
-            vertical: 20,
+          padding: const EdgeInsets.only(
+            left: 25,
+            right: 25,
+            bottom: 20,
           ),
           child: LayoutBuilder(
             builder: (context, constraints) {
@@ -185,14 +186,17 @@ class SignInHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text(
-          title,
-          style: const TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.w600,
-            letterSpacing: -1,
+        Padding(
+          padding: const EdgeInsets.only(top: 20),
+          child: Text(
+            title,
+            style: const TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w600,
+              letterSpacing: -1,
+            ),
+            textAlign: TextAlign.center,
           ),
-          textAlign: TextAlign.center,
         ),
         if (subtitle != null)
           Padding(
