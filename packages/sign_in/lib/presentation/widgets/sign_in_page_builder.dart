@@ -42,6 +42,7 @@ class SignInPageBuilder extends StatelessWidget {
                   subtitle: subtitle,
                 ),
                 child,
+                if (submitButton != null) submitButton!,
               ],
             ),
           ),
