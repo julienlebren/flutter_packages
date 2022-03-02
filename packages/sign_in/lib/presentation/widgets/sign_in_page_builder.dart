@@ -41,7 +41,11 @@ class SignInPageBuilder extends StatelessWidget {
                   title: title,
                   subtitle: subtitle,
                 ),
-                child,
+                AbsorbPointer(
+                  absorbing: isLoading,
+                  child: child,
+                ),
+                if (errorText != null) SignInError(errorText!),
                 if (submitButton != null)
                   Opacity(
                     opacity: 0,
@@ -51,14 +55,21 @@ class SignInPageBuilder extends StatelessWidget {
             ),
           ),
           if (submitButton != null)
-            LayoutBuilder(builder: (context, constraints) {
-              return Container(
-                alignment: Alignment.bottomCenter,
-                width: constraints.maxWidth,
-                height: constraints.maxHeight,
-                child: submitButton!,
-              );
-            }),
+            AnimatedOpacity(
+              opacity: isLoading ? 0.5 : 1,
+              duration: const Duration(milliseconds: 200),
+              child: AbsorbPointer(
+                absorbing: isLoading,
+                child: LayoutBuilder(builder: (context, constraints) {
+                  return Container(
+                    alignment: Alignment.bottomCenter,
+                    width: constraints.maxWidth,
+                    height: constraints.maxHeight,
+                    child: submitButton!,
+                  );
+                }),
+              ),
+            ),
         ],
       ),
     );
@@ -241,14 +252,6 @@ class SignInSubmitButton extends ConsumerWidget {
           ),
         ),
       ],
-    );
-
-    return Padding(
-      padding: const EdgeInsets.only(top: 24),
-      child: PlatformFullSizedElevatedButton(
-        title: title,
-        onPressed: onPressed,
-      ),
     );
   }
 }
