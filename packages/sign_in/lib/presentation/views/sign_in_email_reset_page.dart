@@ -10,7 +10,8 @@ class SignInEmailResetPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen<SignInEmailState>(signInEmailControllerProvider, (_, state) {
+    ref.listen<SignInEmailResetState>(signInEmailResetControllerProvider,
+        (_, state) {
       if (state.isSuccess) {
         final l10n = ref.watch(signInLocalizationsProvider);
         showAlertDialog(
