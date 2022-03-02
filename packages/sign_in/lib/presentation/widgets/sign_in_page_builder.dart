@@ -41,8 +41,8 @@ class SignInPageBuilder extends StatelessWidget {
                   title: title,
                   subtitle: subtitle,
                 ),
-                AbsorbPointer(
-                  absorbing: isLoading,
+                SignInAbsorberPointer(
+                  isLoading: isLoading,
                   child: child,
                 ),
                 if (errorText != null) SignInError(errorText!),
@@ -55,22 +55,41 @@ class SignInPageBuilder extends StatelessWidget {
             ),
           ),
           if (submitButton != null)
-            AnimatedOpacity(
-              opacity: isLoading ? 0.5 : 1,
-              duration: const Duration(milliseconds: 200),
-              child: AbsorbPointer(
-                absorbing: isLoading,
-                child: LayoutBuilder(builder: (context, constraints) {
-                  return Container(
-                    alignment: Alignment.bottomCenter,
-                    width: constraints.maxWidth,
-                    height: constraints.maxHeight,
-                    child: submitButton!,
-                  );
-                }),
-              ),
+            SignInAbsorberPointer(
+              isLoading: isLoading,
+              child: LayoutBuilder(builder: (context, constraints) {
+                return Container(
+                  alignment: Alignment.bottomCenter,
+                  width: constraints.maxWidth,
+                  height: constraints.maxHeight,
+                  child: submitButton!,
+                );
+              }),
             ),
         ],
+      ),
+    );
+  }
+}
+
+class SignInAbsorberPointer extends StatelessWidget {
+  const SignInAbsorberPointer({
+    Key? key,
+    required this.child,
+    this.isLoading = false,
+  }) : super(key: key);
+
+  final bool isLoading;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedOpacity(
+      opacity: isLoading ? 0.5 : 1,
+      duration: const Duration(milliseconds: 200),
+      child: AbsorbPointer(
+        absorbing: isLoading,
+        child: child,
       ),
     );
   }
