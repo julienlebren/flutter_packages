@@ -51,7 +51,7 @@ class SignInEmailResetPageBuilder extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.read(signInLocalizationsProvider);
-    final state = ref.watch(signInEmailControllerProvider);
+    final state = ref.watch(signInEmailResetControllerProvider);
 
     return SignInPageBuilder(
       title: l10n.emailResetTitle,
