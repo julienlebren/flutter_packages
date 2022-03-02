@@ -92,6 +92,7 @@ final authStateProvider = Provider<AuthState>((ref) {
               } else if (needUserInfo == false) {
                 return AuthState.authed(user);
               } else {
+                print("pan ici");
                 return const AuthState.notAuthed();
               }
             }
