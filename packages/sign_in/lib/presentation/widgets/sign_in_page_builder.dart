@@ -19,7 +19,7 @@ class SignInPageBuilder extends StatelessWidget {
   final String? subtitle;
   final Widget? leadingButton;
   final Widget child;
-  final SignInSubmitButton? submitButton;
+  final Widget? submitButton;
   final bool isLoading;
   final String? errorText;
 
@@ -34,6 +34,7 @@ class SignInPageBuilder extends StatelessWidget {
       child: Stack(
         children: [
           SingleChildScrollView(
+            //physics: const AlwaysScrollableScrollPhysics(),
             child: Column(
               children: [
                 SignInHeader(
