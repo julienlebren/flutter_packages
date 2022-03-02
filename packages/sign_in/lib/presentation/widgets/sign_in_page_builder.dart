@@ -62,31 +62,6 @@ class SignInPageBuilder extends StatelessWidget {
         ],
       ),
     );
-
-    return SignInScaffold(
-      appBar: PlatformNavigationBar(
-        leading: leadingButton,
-        trailing: (isLoading ? const FormLoader() : null),
-        hasBorder: false,
-      ),
-      child: Column(
-        children: [
-          SignInHeader(
-            title: title,
-            subtitle: subtitle,
-          ),
-          AnimatedOpacity(
-            opacity: isLoading ? 0.5 : 1,
-            duration: const Duration(milliseconds: 200),
-            child: AbsorbPointer(
-              absorbing: isLoading,
-              child: child,
-            ),
-          ),
-          if (errorText != null) SignInError(errorText!),
-        ],
-      ),
-    );
   }
 }
 
@@ -122,32 +97,6 @@ class SignInScaffold extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class SignInScrollView extends StatelessWidget {
-  const SignInScrollView({
-    Key? key,
-    required this.children,
-    this.floatingButton,
-  }) : super(key: key);
-
-  final List<Widget> children;
-  final Widget? floatingButton;
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      alignment: AlignmentDirectional.bottomCenter,
-      children: [
-        SingleChildScrollView(
-          child: Column(
-            children: children,
-          ),
-        ),
-        if (floatingButton != null) floatingButton!,
-      ],
     );
   }
 }
@@ -284,9 +233,12 @@ class SignInSubmitButton extends ConsumerWidget {
             ),
           ),
         ),
-        PlatformFullSizedElevatedButton(
-          title: title,
-          onPressed: onPressed,
+        Container(
+          color: backgroundColor,
+          child: PlatformFullSizedElevatedButton(
+            title: title,
+            onPressed: onPressed,
+          ),
         ),
       ],
     );
