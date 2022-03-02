@@ -1,9 +1,18 @@
 {
     "continueButton": "Continue",
     "countriesTitle": "Country / Region",
-    "emailRecoverTitle": "Forgot your password",
-    "emailRecoverSubtitle": "Enter your email and we'll send you a link to reset your password.",
-    "emailRecoverSubmitButton": "Reset your password",
+    "emailResetTitle": "Forgot your password",
+    "emailResetSubtitle": "Enter your email and we'll send you a link to reset your password.",
+    "emailResetSubmitButton": "Reset your password",
+    "emailResetSuccessTitle": "Please check your email",
+    "emailResetSuccessDescription": "We just sent a link at {email} to reset your password.",
+    "@emailResetSuccessDescription" : {
+      "placeholders": {
+        "email": { 
+          "type": "String"
+          }
+      }
+    },
     "errorTitle": "Oops! Something went wrong...",
     "passwordRequirements": "The password must meet the following conditions:",
     "passwordRequirementMinLength": "Aleast 6 characters",

@@ -12,6 +12,23 @@ class SignInEmailResetPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     ref.listen<SignInEmailState>(signInEmailControllerProvider, (_, state) {
       if (state.isSuccess) {
+        final l10n = ref.watch(signInLocalizationsProvider);
+        showAlertDialog(
+          context,
+          ref,
+          title: l10n.emailResetSuccessTitle,
+          content: l10n.emailResetSuccessDescription(state.email),
+          actions: [
+            PlatformDialogAction(
+              buttonText: MaterialLocalizations.of(context).okButtonLabel,
+              onPressed: () {
+                final navigator = SignInNavigatorKeys.modal.currentState!;
+                navigator.pop();
+              },
+            ),
+          ],
+          displayCancelButton: false,
+        );
       } else if (state.errorText != null) {
         final l10n = ref.watch(signInLocalizationsProvider);
         showErrorDialog(
@@ -36,8 +53,8 @@ class SignInEmailResetPageBuilder extends ConsumerWidget {
     final state = ref.watch(signInEmailControllerProvider);
 
     return SignInPageBuilder(
-      title: l10n.emailRecoverTitle,
-      subtitle: l10n.emailRecoverSubtitle,
+      title: l10n.emailResetTitle,
+      subtitle: l10n.emailResetSubtitle,
       child: const SignInEmailResetForm(),
       errorText: state.errorText,
       isLoading: state.isLoading,
@@ -87,7 +104,7 @@ class _SignInEmailResetFormState extends ConsumerState<SignInEmailResetForm> {
         ),
         if (isCupertino()) const SignInDivider(),
         SignInSubmitButton(
-          title: l10n.emailRecoverSubmitButton,
+          title: l10n.emailResetSubmitButton,
           onPressed: canSubmit
               ? () {
                   _handleEmailResetEvent(

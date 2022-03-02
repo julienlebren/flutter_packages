@@ -106,23 +106,35 @@ abstract class SignInLocalizations {
   /// **'Country / Region'**
   String get countriesTitle;
 
-  /// No description provided for @emailRecoverTitle.
+  /// No description provided for @emailResetTitle.
   ///
   /// In en, this message translates to:
   /// **'Forgot your password'**
-  String get emailRecoverTitle;
+  String get emailResetTitle;
 
-  /// No description provided for @emailRecoverSubtitle.
+  /// No description provided for @emailResetSubtitle.
   ///
   /// In en, this message translates to:
   /// **'Enter your email and we\'ll send you a link to reset your password.'**
-  String get emailRecoverSubtitle;
+  String get emailResetSubtitle;
 
-  /// No description provided for @emailRecoverSubmitButton.
+  /// No description provided for @emailResetSubmitButton.
   ///
   /// In en, this message translates to:
   /// **'Reset your password'**
-  String get emailRecoverSubmitButton;
+  String get emailResetSubmitButton;
+
+  /// No description provided for @emailResetSuccessTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Please check your email'**
+  String get emailResetSuccessTitle;
+
+  /// No description provided for @emailResetSuccessDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'We just sent a link at {email} to reset your password.'**
+  String emailResetSuccessDescription(String email);
 
   /// No description provided for @errorTitle.
   ///
