@@ -32,7 +32,6 @@ class SignInPageBuilder extends StatelessWidget {
         hasBorder: false,
       ),
       child: Stack(
-        alignment: AlignmentDirectional.bottomCenter,
         children: [
           SingleChildScrollView(
             child: Column(
@@ -42,7 +41,6 @@ class SignInPageBuilder extends StatelessWidget {
                   subtitle: subtitle,
                 ),
                 child,
-                const Spacer(),
                 if (submitButton != null)
                   Opacity(
                     opacity: 0,
@@ -51,7 +49,15 @@ class SignInPageBuilder extends StatelessWidget {
               ],
             ),
           ),
-          if (submitButton != null) submitButton!,
+          if (submitButton != null)
+            LayoutBuilder(builder: (context, constraints) {
+              return Container(
+                alignment: Alignment.bottomCenter,
+                width: constraints.maxWidth,
+                height: constraints.maxHeight,
+                child: submitButton!,
+              );
+            }),
         ],
       ),
     );
