@@ -38,9 +38,7 @@ class SignInEmailResetController extends StateNotifier<SignInEmailResetState> {
           canSubmit: email.isValidEmail(),
         );
       },
-      submit: () {
-        _submit();
-      },
+      submit: _submit,
     );
   }
 
