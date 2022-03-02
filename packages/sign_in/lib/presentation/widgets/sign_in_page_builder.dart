@@ -10,6 +10,7 @@ class SignInPageBuilder extends StatelessWidget {
     this.subtitle,
     this.leadingButton,
     required this.child,
+    this.submitButton,
     this.isLoading = false,
     this.errorText,
   }) : super(key: key);
@@ -18,11 +19,37 @@ class SignInPageBuilder extends StatelessWidget {
   final String? subtitle;
   final Widget? leadingButton;
   final Widget child;
+  final SignInSubmitButton? submitButton;
   final bool isLoading;
   final String? errorText;
 
   @override
   Widget build(BuildContext context) {
+    return SignInScaffold(
+      appBar: PlatformNavigationBar(
+        leading: leadingButton,
+        trailing: (isLoading ? const FormLoader() : null),
+        hasBorder: false,
+      ),
+      child: Stack(
+        alignment: AlignmentDirectional.bottomCenter,
+        children: [
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                SignInHeader(
+                  title: title,
+                  subtitle: subtitle,
+                ),
+                child,
+              ],
+            ),
+          ),
+          if (submitButton != null) submitButton!,
+        ],
+      ),
+    );
+
     return SignInScaffold(
       appBar: PlatformNavigationBar(
         leading: leadingButton,
@@ -75,10 +102,7 @@ class SignInScaffold extends StatelessWidget {
               return SizedBox(
                 width: constraints.maxWidth,
                 height: constraints.maxHeight,
-                child: AbsorbPointer(
-                  absorbing: false,
-                  child: child,
-                ),
+                child: child,
               );
             },
           ),
