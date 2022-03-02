@@ -42,7 +42,12 @@ class SignInPageBuilder extends StatelessWidget {
                   subtitle: subtitle,
                 ),
                 child,
-                if (submitButton != null) submitButton!,
+                const Spacer(),
+                if (submitButton != null)
+                  Opacity(
+                    opacity: 0,
+                    child: submitButton!,
+                  ),
               ],
             ),
           ),
