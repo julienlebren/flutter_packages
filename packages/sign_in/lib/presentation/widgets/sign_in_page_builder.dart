@@ -206,7 +206,7 @@ class SignInError extends ConsumerWidget {
   }
 }
 
-class SignInSubmitButton extends StatelessWidget {
+class SignInSubmitButton extends ConsumerWidget {
   const SignInSubmitButton({
     Key? key,
     required this.title,
@@ -217,7 +217,34 @@ class SignInSubmitButton extends StatelessWidget {
   final VoidCallback? onPressed;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final backgroundColor = ref.watch(
+      signInThemeProvider.select((theme) => theme.scaffoldBackgroundColor),
+    );
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          height: 24,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [
+                backgroundColor.withOpacity(0),
+                backgroundColor,
+              ],
+            ),
+          ),
+        ),
+        PlatformFullSizedElevatedButton(
+          title: title,
+          onPressed: onPressed,
+        ),
+      ],
+    );
+
     return Padding(
       padding: const EdgeInsets.only(top: 24),
       child: PlatformFullSizedElevatedButton(
