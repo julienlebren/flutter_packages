@@ -31,7 +31,7 @@ class PlatformTabNavigator
       onGenerateRoute: onGenerateRoute,
       navigatorObservers: observers,
       onUnknownRoute: (_) {
-        navigatorKey.currentState!.pushReplacementNamed(initialRoute);
+        navigatorKey.currentState!.pushNamed(initialRoute);
         return null;
       },
     );
