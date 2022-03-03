@@ -111,7 +111,7 @@ class SignInNavigator extends ConsumerWidget {
             if (signInSupplier == SignInSupplier.apple ||
                 signInSupplier == SignInSupplier.google ||
                 signInSupplier == SignInSupplier.facebook) {
-              navigator.pushNamed(SignInRoutes.signInUserInfoPage);
+              navigator.pushNamed(SignInRoutes.signInLandingPage);
             }
           }
         },
