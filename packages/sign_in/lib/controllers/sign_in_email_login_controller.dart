@@ -5,9 +5,7 @@ final signInEmailLoginControllerProvider = StateNotifierProvider.autoDispose<
   final service = ref.watch(authServiceProvider);
   final localizations = ref.watch(signInLocalizationsProvider);
   return SignInEmailLoginController(service, localizations);
-}, dependencies: [
-  authServiceProvider,
-]);
+});
 
 @freezed
 class SignInEmailLoginEvent with _$SignInEmailLoginEvent {
