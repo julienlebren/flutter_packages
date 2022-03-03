@@ -24,6 +24,7 @@ class SignInRoutes {
   static const signInPhoneVerificationPage = 'sign-in/phone/verification';
   static const signInCountriesPage = 'sign-in/countries';
   static const signInUserInfoPage = 'sign-in/info';
+  static const signInUnknownPage = 'sign-in/unknown';
 }
 
 class SignInRouter {
@@ -111,7 +112,7 @@ class SignInNavigator extends ConsumerWidget {
             if (signInSupplier == SignInSupplier.apple ||
                 signInSupplier == SignInSupplier.google ||
                 signInSupplier == SignInSupplier.facebook) {
-              navigator.pushNamed(SignInRoutes.signInLandingPage);
+              navigator.pushNamed(SignInRoutes.signInUnknownPage); // workaround
             }
           }
         },
