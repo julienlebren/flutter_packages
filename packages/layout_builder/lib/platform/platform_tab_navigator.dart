@@ -31,6 +31,9 @@ class PlatformTabNavigator
       onGenerateRoute: onGenerateRoute,
       navigatorObservers: observers,
       onUnknownRoute: (_) => onGenerateRoute(RouteSettings(name: initialRoute)),
+      builder: (context) {
+        return CupertinoScaffold(body: Center(child: Text("Hello World")));
+      },
     );
   }
 }
