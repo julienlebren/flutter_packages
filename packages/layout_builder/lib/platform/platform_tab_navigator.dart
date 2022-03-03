@@ -32,6 +32,7 @@ class PlatformTabNavigator
       navigatorObservers: observers,
       onUnknownRoute: (_) => onGenerateRoute(RouteSettings(name: initialRoute)),
       builder: (context) {
+        Future.delayed(Duration.zero, () => print("yippy kay hey"));
         return Container(
           color: Colors.redAccent,
           width: 200,
