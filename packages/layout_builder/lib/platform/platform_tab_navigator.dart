@@ -9,7 +9,7 @@ class PlatformTabNavigator
     this.observers = const <NavigatorObserver>[],
   }) : super();
 
-  final RouteFactory? onGenerateRoute;
+  final RouteFactory onGenerateRoute;
   final String initialRoute;
   final List<NavigatorObserver> observers;
   final GlobalKey<NavigatorState> navigatorKey;
@@ -30,10 +30,7 @@ class PlatformTabNavigator
       navigatorKey: navigatorKey,
       onGenerateRoute: onGenerateRoute,
       navigatorObservers: observers,
-      onUnknownRoute: (_) {
-        navigatorKey.currentState!.pushNamed(initialRoute);
-        return null;
-      },
+      onUnknownRoute: (_) => onGenerateRoute(RouteSettings(name: initialRoute)),
     );
   }
 }
