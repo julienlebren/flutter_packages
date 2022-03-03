@@ -103,6 +103,7 @@ class SignInEmailRegisterController
 
       state = state.copyWith(
         isSuccess: true,
+        errorText: null,
       );
     } on FirebaseAuthException catch (e) {
       state = state.copyWith(

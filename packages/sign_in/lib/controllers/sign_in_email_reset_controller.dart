@@ -53,6 +53,7 @@ class SignInEmailResetController extends StateNotifier<SignInEmailResetState> {
 
       state = state.copyWith(
         isSuccess: true,
+        errorText: null,
       );
     } on FirebaseAuthException catch (e) {
       state = state.copyWith(

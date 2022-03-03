@@ -101,6 +101,7 @@ class SignInPhoneController extends StateNotifier<SignInPhoneState> {
         state = state.copyWith(
           isLoading: false,
           isSuccess: true,
+          errorText: null,
           verificationId: verificationId,
         );
       });
