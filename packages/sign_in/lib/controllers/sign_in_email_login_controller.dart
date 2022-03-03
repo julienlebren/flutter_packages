@@ -50,7 +50,8 @@ class SignInEmailLoginController extends StateNotifier<SignInEmailLoginState> {
   }
 
   void _checkIfCanSubmit() {
-    final canSubmit = state.email.isValidEmail() && state.password.length >= 6;
+    final canSubmit =
+        (state.email.isValidEmail() && state.password.length >= 6);
 
     if (canSubmit != state.canSubmit) {
       state = state.copyWith(canSubmit: canSubmit);

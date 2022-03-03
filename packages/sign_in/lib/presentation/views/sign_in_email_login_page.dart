@@ -48,7 +48,7 @@ class _SignInEmailLoginFormState extends ConsumerState<SignInEmailLoginForm> {
   Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final canSubmit = ref.watch(
-      signInEmailLinkControllerProvider.select((state) => state.canSubmit),
+      signInEmailLoginControllerProvider.select((state) => state.canSubmit),
     );
 
     return Column(
