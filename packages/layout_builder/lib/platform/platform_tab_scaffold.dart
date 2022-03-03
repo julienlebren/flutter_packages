@@ -18,12 +18,13 @@ class PlatformTabScaffold
     extends PlatformWidgetBase<AnnotatedRegion, CupertinoTabScaffold> {
   const PlatformTabScaffold() : super();
 
-  ValueChanged<int>? onTap(int index, WidgetRef ref) {
+  ValueChanged<int>? onTap(int index, BuildContext context, WidgetRef ref) {
     if (ref.read(currentTabIndexProvider) == index) {
       final tabs = ref.watch(tabsProvider);
       final router = tabs[index].router;
       final navigator = router.navigatorKey.currentState!;
-      navigator.popUntil(ModalRoute.withName(router.initialRoute));
+      final currentRoute = ModalRoute.of(context)!.settings.name;
+      print("currentRoute: $currentRoute");
     } else {
       ref.read(currentTabIndexProvider.state).state = index;
     }
@@ -61,7 +62,7 @@ class PlatformTabScaffold
             currentIndex: currentTabIndex,
             type: BottomNavigationBarType.fixed,
             iconSize: 30,
-            onTap: (index) => onTap(index, ref),
+            onTap: (index) => onTap(index, context, ref),
             items: tabs.map((item) => _tabItem(item)).toList(),
           ),
         ),
@@ -88,7 +89,7 @@ class PlatformTabScaffold
     return CupertinoTabScaffold(
       tabBar: CupertinoTabBar(
         currentIndex: currentTabIndex,
-        onTap: (index) => onTap(index, ref),
+        onTap: (index) => onTap(index, context, ref),
         backgroundColor: appTheme.cupertinoTabBarBackgroundColor,
         inactiveColor: Colors.grey,
         iconSize: 30,
