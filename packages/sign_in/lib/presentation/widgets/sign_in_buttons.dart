@@ -35,8 +35,13 @@ class SignInButtons extends ConsumerWidget {
         navigator.pushNamed(SignInRoutes.signInEmailLinkPage);
       },
       orElse: () {
-        final controller = ref.read(signInControllerProvider.notifier);
-        controller.handleEvent(event);
+        final authState = ref.read(authStateProvider);
+        if (authState == const AuthState.needUserInformation()) {
+          navigator.pushNamed(SignInRoutes.signInUnknownPage);
+        } else {
+          final controller = ref.read(signInControllerProvider.notifier);
+          controller.handleEvent(event);
+        }
       },
     );
   }
