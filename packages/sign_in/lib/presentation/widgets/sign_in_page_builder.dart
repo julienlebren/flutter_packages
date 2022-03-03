@@ -28,7 +28,7 @@ class SignInPageBuilder extends StatelessWidget {
     return SignInScaffold(
       appBar: PlatformNavigationBar(
         leading: leadingButton,
-        trailing: (isLoading ? const FormLoader() : null),
+        trailing: (isLoading ? const FormLoader(delayBeforeDisplay: 0) : null),
         hasBorder: false,
       ),
       child: Stack(

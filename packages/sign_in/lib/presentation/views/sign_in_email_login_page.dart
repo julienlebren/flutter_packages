@@ -1,52 +1,36 @@
 part of '../../sign_in.dart';
 
-class SignInEmailPage extends ConsumerWidget {
-  const SignInEmailPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen<SignInEmailState>(signInEmailControllerProvider, (_, state) {
-      if (state.errorText != null) {
-        final l10n = ref.watch(signInLocalizationsProvider);
-        showErrorDialog(
-          context,
-          ref,
-          title: l10n.errorTitle,
-          content: state.errorText,
-        );
-      }
-    });
-
-    return const SignInEmailPageBuilder();
-  }
+void _handleEmailLoginEvent(WidgetRef ref, SignInEmailLoginEvent event) {
+  final controller = ref.read(signInEmailLoginControllerProvider.notifier);
+  controller.handleEvent(event);
 }
 
-class SignInEmailPageBuilder extends ConsumerWidget {
-  const SignInEmailPageBuilder({Key? key}) : super(key: key);
+class SignInEmailLoginPage extends ConsumerWidget {
+  const SignInEmailLoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.read(signInLocalizationsProvider);
-    final state = ref.watch(signInEmailControllerProvider);
+    final state = ref.watch(signInEmailLoginControllerProvider);
 
     return SignInPageBuilder(
       title: l10n.signInWithEmailTitle,
       leadingButton: const SignInCloseButton(),
-      child: const SignInEmailPageForm(),
+      child: const SignInEmailLoginForm(),
       errorText: state.errorText,
       isLoading: state.isLoading,
     );
   }
 }
 
-class SignInEmailPageForm extends ConsumerStatefulWidget {
-  const SignInEmailPageForm({Key? key}) : super(key: key);
+class SignInEmailLoginForm extends ConsumerStatefulWidget {
+  const SignInEmailLoginForm({Key? key}) : super(key: key);
 
   @override
-  createState() => _SignInEmailPageFormState();
+  createState() => _SignInEmailLoginFormState();
 }
 
-class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
+class _SignInEmailLoginFormState extends ConsumerState<SignInEmailLoginForm> {
   final emailTextController = TextEditingController();
   final emailFocusNode = FocusNode();
   final passwordTextController = TextEditingController();
@@ -77,8 +61,8 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
           autocorrect: false,
           focusNode: emailFocusNode,
           onChanged: (String value) {
-            final controller = ref.read(signInEmailControllerProvider.notifier);
-            controller.handleEvent(SignInEmailEvent.emailChanged(value));
+            _handleEmailLoginEvent(
+                ref, SignInEmailLoginEvent.emailChanged(value));
           },
           onSubmitted: (_) {
             passwordFocusNode.requestFocus();
@@ -93,8 +77,8 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
           autocorrect: false,
           obscureText: true,
           onChanged: (String value) {
-            final controller = ref.read(signInEmailControllerProvider.notifier);
-            controller.handleEvent(SignInEmailEvent.emailChanged(value));
+            _handleEmailLoginEvent(
+                ref, SignInEmailLoginEvent.passwordChanged(value));
           },
         ),
         if (isCupertino()) const SignInDivider(),
@@ -109,8 +93,10 @@ class _SignInEmailPageFormState extends ConsumerState<SignInEmailPageForm> {
         SignInSubmitButton(
           title: l10n.continueButton,
           onPressed: canSubmit
-              ? () => _handleEmailLinkEvent(
-                  ref, const SignInEmailLinkEvent.sendLink())
+              ? () {
+                  _handleEmailLoginEvent(
+                      ref, const SignInEmailLoginEvent.submit());
+                }
               : null,
         ),
         PlatformTextButton(

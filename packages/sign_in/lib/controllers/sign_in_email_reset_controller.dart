@@ -3,7 +3,8 @@ part of '../sign_in.dart';
 final signInEmailResetControllerProvider = StateNotifierProvider.autoDispose<
     SignInEmailResetController, SignInEmailResetState>((ref) {
   final service = ref.watch(authServiceProvider);
-  return SignInEmailResetController(service);
+  final localizations = ref.watch(signInLocalizationsProvider);
+  return SignInEmailResetController(service, localizations);
 });
 
 @freezed
@@ -25,10 +26,11 @@ class SignInEmailResetState with _$SignInEmailResetState {
 }
 
 class SignInEmailResetController extends StateNotifier<SignInEmailResetState> {
-  SignInEmailResetController(this._service)
+  SignInEmailResetController(this._service, this._localizations)
       : super(const SignInEmailResetState());
 
   final FirebaseAuthService _service;
+  final SignInLocalizations _localizations;
 
   void handleEvent(SignInEmailResetEvent event) {
     event.when(
@@ -51,6 +53,11 @@ class SignInEmailResetController extends StateNotifier<SignInEmailResetState> {
 
       state = state.copyWith(
         isSuccess: true,
+      );
+    } on FirebaseAuthException catch (e) {
+      state = state.copyWith(
+        isLoading: false,
+        errorText: e.description(_localizations),
       );
     } catch (e) {
       state = state.copyWith(

@@ -107,7 +107,7 @@ class SignInPhoneController extends StateNotifier<SignInPhoneState> {
     } on FirebaseAuthException catch (e) {
       state = state.copyWith(
         isLoading: false,
-        errorText: e.message!,
+        errorText: e.description(_localizations),
       );
     } catch (e) {
       state = state.copyWith(

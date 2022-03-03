@@ -10,31 +10,6 @@ class SignInEmailLinkPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen<SignInEmailLinkState>(signInEmailLinkControllerProvider,
-        (_, state) {
-      if (state.isSuccess) {
-        //final navigator = SignInRouter.main.currentState!;
-        //navigator.pop();
-      } else if (state.errorText != null) {
-        final l10n = ref.watch(signInLocalizationsProvider);
-        showErrorDialog(
-          context,
-          ref,
-          title: l10n.errorTitle,
-          content: state.errorText,
-        );
-      }
-    });
-
-    return const SignInEmailLinkPageBuilder();
-  }
-}
-
-class SignInEmailLinkPageBuilder extends ConsumerWidget {
-  const SignInEmailLinkPageBuilder({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.read(signInLocalizationsProvider);
     final state = ref.watch(signInEmailLinkControllerProvider);
 

@@ -41,5 +41,14 @@
     "signInVerificationNotReceived": "Vous n'avez pas reçu le code ?\nAttendez {seconds} secondes...",
     "signInVerificationWrongNumber": "Mauvais numéro",
     "signInVerificationResend": "Renvoyer le code",
-    "signInVerificationInvalid": "Code de vérification non valide !"
+    "errorExpiredActionCode": "Ce lien a expiré.",
+    "errorInvalidEmail": "Cette adresse e-mail n'est pas valide.",
+    "errorInvalidVerificationCode": "Code de vérification non valide !",
+    "errorUserDisabled": "Ce compte a été désactivé.",
+    "errorUserNotFound": "Nous n'avons trouvé aucun compte enregistré avec cette adresse e-mail.",
+    "errorWrongPassword": "Le mot de passe est incorrect.",
+    "errorEmailAlreadyInUse": "Un compte existe déjà avec cette adresse e-mail.",
+    "errorWeakPassword": "Le mot de passe n'est pas assez complexe.",
+    "errorOperationNotAllowed": "Cette opération n'est pas autorisée.",
+    "errorUnknown": "Une erreur inconnue est survenue."
 }

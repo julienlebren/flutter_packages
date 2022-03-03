@@ -3,7 +3,9 @@ part of '../sign_in.dart';
 final signInEmailLinkControllerProvider = StateNotifierProvider.autoDispose<
     SignInEmailLinkController, SignInEmailLinkState>((ref) {
   final service = ref.watch(authServiceProvider);
-  return SignInEmailLinkController(service, "authSettings.emailLinkUrl!");
+  final localizations = ref.watch(signInLocalizationsProvider);
+  return SignInEmailLinkController(
+      service, localizations, "authSettings.emailLinkUrl!");
 });
 
 @freezed
@@ -25,10 +27,11 @@ class SignInEmailLinkState with _$SignInEmailLinkState {
 }
 
 class SignInEmailLinkController extends StateNotifier<SignInEmailLinkState> {
-  SignInEmailLinkController(this._service, this._url)
+  SignInEmailLinkController(this._service, this._localizations, this._url)
       : super(const SignInEmailLinkState());
 
   final FirebaseAuthService _service;
+  final SignInLocalizations _localizations;
   final String _url;
 
   void handleEvent(SignInEmailLinkEvent event) {
@@ -57,6 +60,11 @@ class SignInEmailLinkController extends StateNotifier<SignInEmailLinkState> {
 
       state = state.copyWith(
         isSuccess: true,
+      );
+    } on FirebaseAuthException catch (e) {
+      state = state.copyWith(
+        isLoading: false,
+        errorText: e.description(_localizations),
       );
     } catch (e) {
       state = state.copyWith(

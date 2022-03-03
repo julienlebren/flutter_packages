@@ -10,6 +10,9 @@ class SignInEmailResetPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.read(signInLocalizationsProvider);
+    final state = ref.watch(signInEmailResetControllerProvider);
+
     ref.listen<SignInEmailResetState>(signInEmailResetControllerProvider,
         (_, state) {
       if (state.isSuccess) {
@@ -30,28 +33,8 @@ class SignInEmailResetPage extends ConsumerWidget {
           ],
           displayCancelButton: false,
         );
-      } else if (state.errorText != null) {
-        final l10n = ref.watch(signInLocalizationsProvider);
-        showErrorDialog(
-          context,
-          ref,
-          title: l10n.errorTitle,
-          content: state.errorText,
-        );
       }
     });
-
-    return const SignInEmailResetPageBuilder();
-  }
-}
-
-class SignInEmailResetPageBuilder extends ConsumerWidget {
-  const SignInEmailResetPageBuilder({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.read(signInLocalizationsProvider);
-    final state = ref.watch(signInEmailResetControllerProvider);
 
     return SignInPageBuilder(
       title: l10n.emailResetTitle,

@@ -364,11 +364,65 @@ abstract class SignInLocalizations {
   /// **'Resend the code'**
   String get signInVerificationResend;
 
-  /// No description provided for @signInVerificationInvalid.
+  /// No description provided for @errorExpiredActionCode.
+  ///
+  /// In en, this message translates to:
+  /// **'This link is no longer valid.'**
+  String get errorExpiredActionCode;
+
+  /// No description provided for @errorInvalidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'This email address is not valid.'**
+  String get errorInvalidEmail;
+
+  /// No description provided for @errorInvalidVerificationCode.
   ///
   /// In en, this message translates to:
   /// **'Invalid verification code!'**
-  String get signInVerificationInvalid;
+  String get errorInvalidVerificationCode;
+
+  /// No description provided for @errorUserDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'This account has been disabled.'**
+  String get errorUserDisabled;
+
+  /// No description provided for @errorUserNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'There is no account registered with this email address.'**
+  String get errorUserNotFound;
+
+  /// No description provided for @errorWrongPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Wrong password.'**
+  String get errorWrongPassword;
+
+  /// No description provided for @errorEmailAlreadyInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'An account is already registered with this email address.'**
+  String get errorEmailAlreadyInUse;
+
+  /// No description provided for @errorWeakPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'This password is not strong enough.'**
+  String get errorWeakPassword;
+
+  /// No description provided for @errorOperationNotAllowed.
+  ///
+  /// In en, this message translates to:
+  /// **'This operation is not allowed.'**
+  String get errorOperationNotAllowed;
+
+  /// No description provided for @errorUnknown.
+  ///
+  /// In en, this message translates to:
+  /// **'An unknown error has occurred.'**
+  String get errorUnknown;
 }
 
 class _SignInLocalizationsDelegate extends LocalizationsDelegate<SignInLocalizations> {

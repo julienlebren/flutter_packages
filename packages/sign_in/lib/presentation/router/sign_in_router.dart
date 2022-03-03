@@ -24,11 +24,10 @@ class SignInRoutes {
   static const signInPhoneVerificationPage = 'sign-in/phone/verification';
   static const signInCountriesPage = 'sign-in/countries';
   static const signInUserInfoPage = 'sign-in/info';
-  static const signInUnknownPage = 'sign-in/unknown';
 }
 
 class SignInRouter {
-  static Route<dynamic> onGenerateRoute(
+  static Route<dynamic>? onGenerateRoute(
     RouteSettings settings,
     WidgetRef ref,
   ) {
@@ -47,7 +46,7 @@ class SignInRouter {
       switch (settings.name) {
         case SignInRoutes.signInEmailPage:
           return platformPageRoute(
-            builder: (_) => const SignInEmailPage(),
+            builder: (_) => const SignInEmailLoginPage(),
           );
         case SignInRoutes.signInEmailLinkPage:
           return platformPageRoute(
@@ -75,10 +74,8 @@ class SignInRouter {
             fullscreenDialog: true,
           );
       }
-      return platformPageRoute(
-        builder: (_) => const SignInUnknownPage(),
-      );
     }
+    return null;
   }
 }
 

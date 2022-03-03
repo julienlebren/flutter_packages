@@ -107,6 +107,11 @@ class SignInEmailRegisterController
       state = state.copyWith(
         isSuccess: true,
       );
+    } on FirebaseAuthException catch (e) {
+      state = state.copyWith(
+        isLoading: false,
+        errorText: e.description(_localizations),
+      );
     } catch (e) {
       state = state.copyWith(
         isLoading: false,

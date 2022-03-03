@@ -35,6 +35,7 @@ class SignInVerificationController
     Map<String, dynamic> phoneNumber,
     String verificationId,
     this._service,
+    this._localizations,
   ) : super(SignInPhoneVerificationState(
           verificationId: verificationId,
           phoneNumber: phoneNumber,
@@ -43,6 +44,7 @@ class SignInVerificationController
   }
 
   final FirebaseAuthService _service;
+  final SignInLocalizations _localizations;
 
   String get formattedPhoneNumber =>
       state.phoneNumber['national'].replaceAll(" ", "\u00A0");
@@ -112,17 +114,15 @@ class SignInVerificationController
         );
       });
     } on FirebaseAuthException catch (e) {
-      if (e.code == 'invalid-verification-code') {
-        state = state.copyWith(
-          isLoading: false,
-          errorText: "INVALID_CODE",
-        );
-      } else {
-        state = state.copyWith(
-          isLoading: false,
-          errorText: e.message!,
-        );
-      }
+      state = state.copyWith(
+        isLoading: false,
+        errorText: e.description(_localizations),
+      );
+    } catch (e) {
+      state = state.copyWith(
+        isLoading: false,
+        errorText: e.toString(),
+      );
     }
   }
 }

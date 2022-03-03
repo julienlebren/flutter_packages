@@ -72,5 +72,14 @@
       }
     },
     "signInVerificationResend": "Resend the code",
-    "signInVerificationInvalid": "Invalid verification code!"
+    "errorExpiredActionCode": "This link is no longer valid.",
+    "errorInvalidEmail": "This email address is not valid.",
+    "errorInvalidVerificationCode": "Invalid verification code!",
+    "errorUserDisabled": "This account has been disabled.",
+    "errorUserNotFound": "There is no account registered with this email address.",
+    "errorWrongPassword": "Wrong password.",
+    "errorEmailAlreadyInUse": "An account is already registered with this email address.",
+    "errorWeakPassword": "This password is not strong enough.",
+    "errorOperationNotAllowed": "This operation is not allowed.",
+    "errorUnknown": "An unknown error has occurred."
 }

@@ -151,5 +151,32 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get signInVerificationResend => 'Renvoyer le code';
 
   @override
-  String get signInVerificationInvalid => 'Code de vérification non valide !';
+  String get errorExpiredActionCode => 'Ce lien a expiré.';
+
+  @override
+  String get errorInvalidEmail => 'Cette adresse e-mail n\'est pas valide.';
+
+  @override
+  String get errorInvalidVerificationCode => 'Code de vérification non valide !';
+
+  @override
+  String get errorUserDisabled => 'Ce compte a été désactivé.';
+
+  @override
+  String get errorUserNotFound => 'Nous n\'avons trouvé aucun compte enregistré avec cette adresse e-mail.';
+
+  @override
+  String get errorWrongPassword => 'Le mot de passe est incorrect.';
+
+  @override
+  String get errorEmailAlreadyInUse => 'Un compte existe déjà avec cette adresse e-mail.';
+
+  @override
+  String get errorWeakPassword => 'Le mot de passe n\'est pas assez complexe.';
+
+  @override
+  String get errorOperationNotAllowed => 'Cette opération n\'est pas autorisée.';
+
+  @override
+  String get errorUnknown => 'Une erreur inconnue est survenue.';
 }

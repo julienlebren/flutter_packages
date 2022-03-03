@@ -10,28 +10,6 @@ class SignInEmailRegisterPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen<SignInEmailRegisterState>(signInEmailRegisterControllerProvider,
-        (_, state) {
-      if (state.errorText != null) {
-        final l10n = ref.watch(signInLocalizationsProvider);
-        showErrorDialog(
-          context,
-          ref,
-          title: l10n.errorTitle,
-          content: state.errorText,
-        );
-      }
-    });
-
-    return const SignInEmailRegisterPageBuilder();
-  }
-}
-
-class SignInEmailRegisterPageBuilder extends ConsumerWidget {
-  const SignInEmailRegisterPageBuilder({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.read(signInLocalizationsProvider);
     final state = ref.watch(signInEmailRegisterControllerProvider);
 

@@ -151,5 +151,32 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get signInVerificationResend => 'Resend the code';
 
   @override
-  String get signInVerificationInvalid => 'Invalid verification code!';
+  String get errorExpiredActionCode => 'This link is no longer valid.';
+
+  @override
+  String get errorInvalidEmail => 'This email address is not valid.';
+
+  @override
+  String get errorInvalidVerificationCode => 'Invalid verification code!';
+
+  @override
+  String get errorUserDisabled => 'This account has been disabled.';
+
+  @override
+  String get errorUserNotFound => 'There is no account registered with this email address.';
+
+  @override
+  String get errorWrongPassword => 'Wrong password.';
+
+  @override
+  String get errorEmailAlreadyInUse => 'An account is already registered with this email address.';
+
+  @override
+  String get errorWeakPassword => 'This password is not strong enough.';
+
+  @override
+  String get errorOperationNotAllowed => 'This operation is not allowed.';
+
+  @override
+  String get errorUnknown => 'An unknown error has occurred.';
 }
