@@ -31,17 +31,6 @@ class PlatformTabNavigator
       onGenerateRoute: onGenerateRoute,
       navigatorObservers: observers,
       onUnknownRoute: (_) => onGenerateRoute(RouteSettings(name: initialRoute)),
-      builder: (context) {
-        Future.delayed(Duration.zero, () {
-          navigatorKey.currentState!.pushReplacementNamed(initialRoute);
-        });
-        return Container(
-          color: Colors.redAccent,
-          width: 200,
-          height: 200,
-          child: Text("Hello World"),
-        );
-      },
     );
   }
 }
