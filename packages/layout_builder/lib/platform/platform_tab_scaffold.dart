@@ -25,6 +25,7 @@ class PlatformTabScaffold
     } else {
       ref.read(currentTabIndexProvider.state).state = index;
     }
+    return null;
   }
 
   @override

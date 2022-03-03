@@ -37,6 +37,7 @@ class FormTappableField extends ConsumerWidget {
         ),
       );
     }
+    return null;
   }
 
   @override

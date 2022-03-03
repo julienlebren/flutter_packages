@@ -34,6 +34,7 @@ class PlatformNavigationBar
         overflow: TextOverflow.ellipsis,
       );
     }
+    return null;
   }
 
   @override
