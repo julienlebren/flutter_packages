@@ -32,7 +32,12 @@ class PlatformTabNavigator
       navigatorObservers: observers,
       onUnknownRoute: (_) => onGenerateRoute(RouteSettings(name: initialRoute)),
       builder: (context) {
-        return CupertinoScaffold(body: Center(child: Text("Hello World")));
+        return Container(
+          color: Colors.redAccent,
+          width: 200,
+          height: 200,
+          child: Text("Hello World"),
+        );
       },
     );
   }
