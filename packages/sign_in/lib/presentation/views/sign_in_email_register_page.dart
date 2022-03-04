@@ -10,16 +10,20 @@ class SignInEmailRegisterPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.read(signInLocalizationsProvider);
-    final state = ref.watch(signInEmailRegisterControllerProvider);
-    print("state: $state");
+    final l10n = ref.watch(signInLocalizationsProvider);
+    final errorText = ref.watch(signInEmailRegisterControllerProvider.select(
+      (state) => state.errorText,
+    ));
+    final isLoading = ref.watch(signInEmailRegisterControllerProvider.select(
+      (state) => state.isLoading,
+    ));
 
     return SignInPageBuilder(
       title: l10n.signInWithEmailRegisterTitle,
       leadingButton: const SignInCloseButton(),
       child: const SignInEmailRegisterPageForm(),
-      errorText: state.errorText,
-      isLoading: state.isLoading,
+      errorText: errorText,
+      isLoading: isLoading,
     );
   }
 }

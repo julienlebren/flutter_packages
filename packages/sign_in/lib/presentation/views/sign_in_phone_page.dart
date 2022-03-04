@@ -21,7 +21,12 @@ class SignInPhonePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.read(signInLocalizationsProvider);
-    final state = ref.watch(signInPhoneControllerProvider);
+    final errorText = ref.watch(signInPhoneControllerProvider.select(
+      (state) => state.errorText,
+    ));
+    final isLoading = ref.watch(signInPhoneControllerProvider.select(
+      (state) => state.isLoading,
+    ));
 
     ref.listen<SignInPhoneState>(signInPhoneControllerProvider, (_, state) {
       if (state.isSuccess) {
@@ -35,8 +40,8 @@ class SignInPhonePage extends ConsumerWidget {
       subtitle: l10n.signInPhoneSubtitle,
       leadingButton: const SignInCloseButton(),
       child: const SignInPhoneForm(),
-      errorText: state.errorText,
-      isLoading: state.isLoading,
+      errorText: errorText,
+      isLoading: isLoading,
     );
   }
 }

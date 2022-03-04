@@ -11,14 +11,19 @@ class SignInEmailLoginPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.read(signInLocalizationsProvider);
-    final state = ref.watch(signInEmailLoginControllerProvider);
+    final errorText = ref.watch(signInEmailLoginControllerProvider.select(
+      (state) => state.errorText,
+    ));
+    final isLoading = ref.watch(signInEmailLoginControllerProvider.select(
+      (state) => state.isLoading,
+    ));
 
     return SignInPageBuilder(
       title: l10n.signInWithEmailTitle,
       leadingButton: const SignInCloseButton(),
       child: const SignInEmailLoginForm(),
-      errorText: state.errorText,
-      isLoading: state.isLoading,
+      errorText: errorText,
+      isLoading: isLoading,
     );
   }
 }

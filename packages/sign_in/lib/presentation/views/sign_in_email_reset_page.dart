@@ -11,7 +11,12 @@ class SignInEmailResetPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.read(signInLocalizationsProvider);
-    final state = ref.watch(signInEmailResetControllerProvider);
+    final errorText = ref.watch(signInEmailResetControllerProvider.select(
+      (state) => state.errorText,
+    ));
+    final isLoading = ref.watch(signInEmailResetControllerProvider.select(
+      (state) => state.isLoading,
+    ));
 
     ref.listen<SignInEmailResetState>(signInEmailResetControllerProvider,
         (_, state) {
@@ -40,8 +45,8 @@ class SignInEmailResetPage extends ConsumerWidget {
       title: l10n.emailResetTitle,
       subtitle: l10n.emailResetSubtitle,
       child: const SignInEmailResetForm(),
-      errorText: state.errorText,
-      isLoading: state.isLoading,
+      errorText: errorText,
+      isLoading: isLoading,
     );
   }
 }

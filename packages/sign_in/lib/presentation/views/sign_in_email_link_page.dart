@@ -11,15 +11,20 @@ class SignInEmailLinkPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.read(signInLocalizationsProvider);
-    final state = ref.watch(signInEmailLinkControllerProvider);
+    final errorText = ref.watch(signInEmailLinkControllerProvider.select(
+      (state) => state.errorText,
+    ));
+    final isLoading = ref.watch(signInEmailLinkControllerProvider.select(
+      (state) => state.isLoading,
+    ));
 
     return SignInPageBuilder(
       title: l10n.signInWithEmailLinkTitle,
       subtitle: l10n.signInWithEmailLinkSubtitle,
       leadingButton: const SignInCloseButton(),
       child: const SignInEmailLinkPageForm(),
-      errorText: state.errorText,
-      isLoading: state.isLoading,
+      errorText: errorText,
+      isLoading: isLoading,
     );
   }
 }
