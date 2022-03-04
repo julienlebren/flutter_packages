@@ -105,6 +105,7 @@ class SignInPhoneVerificationController
   }
 
   void handleEvent(SignInPhoneVerificationEvent event) {
+    print("state is $state");
     event.when(
       codeChanged: (input) {
         state = state.copyWith(

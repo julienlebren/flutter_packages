@@ -103,7 +103,8 @@ class _SignInPinCodeFieldState extends ConsumerState<SignInPinCodeField> {
                 controller.text = '';
               }
             },
-            onSubmit: (_) {
+            onSubmit: (input) {
+              print("ici");
               _handlePhoneVerificationEvent(
                   ref, const SignInPhoneVerificationEvent.verifyCode());
             },
