@@ -93,13 +93,14 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
     focusNode.requestFocus();
   }
 
-  void _openCountries(BuildContext context) {
+  void _openCountries(BuildContext contex, CountryWithPhoneCode country) {
     if (isCupertino()) {
       showCupertinoModalBottomSheet(
         context: context,
         duration: const Duration(milliseconds: 300),
         builder: (context) => ProviderScope(
           overrides: [
+            selectedCountryProvider.overrideWithValue(country),
             countryHandler.overrideWithValue(_onCountryChanged),
           ],
           child: const CountriesPage(),
@@ -139,13 +140,12 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
   Widget build(BuildContext context) {
     final l10n = ref.read(signInLocalizationsProvider);
     final state = ref.watch(signInPhoneControllerProvider);
-    final selectedCountry = ref.watch(selectedCountryProvider);
 
     return Column(
       children: [
         SignInTappableField(
-          label: selectedCountry.countryName!,
-          onPressed: () => _openCountries(context),
+          label: state.country.countryName!,
+          onPressed: () => _openCountries(context, state.country),
         ),
         const SignInDivider(),
         const SizedBox(height: 8),
@@ -154,9 +154,9 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
           focusNode: focusNode,
           keyboardType: TextInputType.phone,
           placeholder: l10n.signInPhonePlaceholder(
-            selectedCountry.exampleNumberMobileNational,
+            state.country.exampleNumberMobileNational,
           ),
-          inputFormatters: [phoneNumberFormatter(selectedCountry)],
+          inputFormatters: [phoneNumberFormatter(state.country)],
         ),
         if (isCupertino()) const SignInDivider(),
         if (isMaterial()) const SignInPhoneAutoRetrieve(),
