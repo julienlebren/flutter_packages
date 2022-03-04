@@ -19,6 +19,7 @@ class SignInPhoneVerificationPage extends ConsumerWidget {
     final phoneNumber = ref
         .read(signInPhoneVerificationControllerProvider.notifier)
         .formattedPhoneNumber;
+    print("state is $state");
 
     return SignInPageBuilder(
       title: l10n.signInVerificationTitle,

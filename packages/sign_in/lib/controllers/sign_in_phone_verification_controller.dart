@@ -136,7 +136,6 @@ class SignInPhoneVerificationController
   }
 
   Future<void> _verifyCode() async {
-    print("state is $state");
     if (!state.canSubmit) return;
     state = state.copyWith(isLoading: true);
 
