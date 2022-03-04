@@ -107,7 +107,7 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
       phoneNumberFormat: PhoneNumberFormat.national,
       country: country,
       onFormatFinished: (input) async {
-        print("input is $input");
+        print("country: $country // input is $input");
         _handlePhoneEvent(ref, SignInPhoneEvent.phoneChanged(input));
       },
     );
@@ -134,7 +134,7 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
           placeholder: l10n.signInPhonePlaceholder(
             selectedCountry.exampleNumberMobileNational,
           ),
-          //inputFormatters: [phoneNumberFormatter(selectedCountry)],
+          inputFormatters: [phoneNumberFormatter(selectedCountry)],
         ),
         if (isCupertino()) const SignInDivider(),
         if (isMaterial()) const SignInPhoneAutoRetrieve(),
