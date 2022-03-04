@@ -15,19 +15,26 @@ class SignInPhoneVerificationPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.read(signInLocalizationsProvider);
-    final state = ref.watch(signInPhoneVerificationControllerProvider);
-    final phoneNumber = ref
-        .read(signInPhoneVerificationControllerProvider.notifier)
-        .formattedPhoneNumber;
-    print("state is $state");
+    final errorText =
+        ref.watch(signInPhoneVerificationControllerProvider.select(
+      (state) => state.errorText,
+    ));
+    final isLoading =
+        ref.watch(signInPhoneVerificationControllerProvider.select(
+      (state) => state.isLoading,
+    ));
+    final nationalPhoneNumber =
+        ref.watch(signInPhoneVerificationControllerProvider.select(
+      (state) => state.nationalPhoneNumber,
+    ));
 
     return SignInPageBuilder(
       title: l10n.signInVerificationTitle,
-      subtitle: l10n.signInVerificationSubtitle(phoneNumber),
+      subtitle: l10n.signInVerificationSubtitle(nationalPhoneNumber),
       leadingButton: const SignInCloseButton(),
       child: const SignInVerificationForm(),
-      errorText: state.errorText,
-      isLoading: state.isLoading,
+      errorText: errorText,
+      isLoading: isLoading,
     );
   }
 }

@@ -5628,6 +5628,7 @@ class _$SignInPhoneVerificationStateTearOff {
   _SignInPhoneVerificationState call(
       {int countdown = delayBeforeUserCanRequestNewCode,
       required Map<String, dynamic> phoneNumber,
+      required String nationalPhoneNumber,
       required String verificationId,
       String verificationCode = "",
       bool canSubmit = false,
@@ -5637,6 +5638,7 @@ class _$SignInPhoneVerificationStateTearOff {
     return _SignInPhoneVerificationState(
       countdown: countdown,
       phoneNumber: phoneNumber,
+      nationalPhoneNumber: nationalPhoneNumber,
       verificationId: verificationId,
       verificationCode: verificationCode,
       canSubmit: canSubmit,
@@ -5654,6 +5656,7 @@ const $SignInPhoneVerificationState = _$SignInPhoneVerificationStateTearOff();
 mixin _$SignInPhoneVerificationState {
   int get countdown => throw _privateConstructorUsedError;
   Map<String, dynamic> get phoneNumber => throw _privateConstructorUsedError;
+  String get nationalPhoneNumber => throw _privateConstructorUsedError;
   String get verificationId => throw _privateConstructorUsedError;
   String get verificationCode => throw _privateConstructorUsedError;
   bool get canSubmit => throw _privateConstructorUsedError;
@@ -5675,6 +5678,7 @@ abstract class $SignInPhoneVerificationStateCopyWith<$Res> {
   $Res call(
       {int countdown,
       Map<String, dynamic> phoneNumber,
+      String nationalPhoneNumber,
       String verificationId,
       String verificationCode,
       bool canSubmit,
@@ -5696,6 +5700,7 @@ class _$SignInPhoneVerificationStateCopyWithImpl<$Res>
   $Res call({
     Object? countdown = freezed,
     Object? phoneNumber = freezed,
+    Object? nationalPhoneNumber = freezed,
     Object? verificationId = freezed,
     Object? verificationCode = freezed,
     Object? canSubmit = freezed,
@@ -5712,6 +5717,10 @@ class _$SignInPhoneVerificationStateCopyWithImpl<$Res>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      nationalPhoneNumber: nationalPhoneNumber == freezed
+          ? _value.nationalPhoneNumber
+          : nationalPhoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
       verificationId: verificationId == freezed
           ? _value.verificationId
           : verificationId // ignore: cast_nullable_to_non_nullable
@@ -5751,6 +5760,7 @@ abstract class _$SignInPhoneVerificationStateCopyWith<$Res>
   $Res call(
       {int countdown,
       Map<String, dynamic> phoneNumber,
+      String nationalPhoneNumber,
       String verificationId,
       String verificationCode,
       bool canSubmit,
@@ -5776,6 +5786,7 @@ class __$SignInPhoneVerificationStateCopyWithImpl<$Res>
   $Res call({
     Object? countdown = freezed,
     Object? phoneNumber = freezed,
+    Object? nationalPhoneNumber = freezed,
     Object? verificationId = freezed,
     Object? verificationCode = freezed,
     Object? canSubmit = freezed,
@@ -5792,6 +5803,10 @@ class __$SignInPhoneVerificationStateCopyWithImpl<$Res>
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
+      nationalPhoneNumber: nationalPhoneNumber == freezed
+          ? _value.nationalPhoneNumber
+          : nationalPhoneNumber // ignore: cast_nullable_to_non_nullable
+              as String,
       verificationId: verificationId == freezed
           ? _value.verificationId
           : verificationId // ignore: cast_nullable_to_non_nullable
@@ -5826,6 +5841,7 @@ class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
   const _$_SignInPhoneVerificationState(
       {this.countdown = delayBeforeUserCanRequestNewCode,
       required this.phoneNumber,
+      required this.nationalPhoneNumber,
       required this.verificationId,
       this.verificationCode = "",
       this.canSubmit = false,
@@ -5838,6 +5854,8 @@ class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
   final int countdown;
   @override
   final Map<String, dynamic> phoneNumber;
+  @override
+  final String nationalPhoneNumber;
   @override
   final String verificationId;
   @JsonKey()
@@ -5857,7 +5875,7 @@ class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
 
   @override
   String toString() {
-    return 'SignInPhoneVerificationState(countdown: $countdown, phoneNumber: $phoneNumber, verificationId: $verificationId, verificationCode: $verificationCode, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+    return 'SignInPhoneVerificationState(countdown: $countdown, phoneNumber: $phoneNumber, nationalPhoneNumber: $nationalPhoneNumber, verificationId: $verificationId, verificationCode: $verificationCode, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
   }
 
   @override
@@ -5868,6 +5886,8 @@ class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
             const DeepCollectionEquality().equals(other.countdown, countdown) &&
             const DeepCollectionEquality()
                 .equals(other.phoneNumber, phoneNumber) &&
+            const DeepCollectionEquality()
+                .equals(other.nationalPhoneNumber, nationalPhoneNumber) &&
             const DeepCollectionEquality()
                 .equals(other.verificationId, verificationId) &&
             const DeepCollectionEquality()
@@ -5883,6 +5903,7 @@ class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
       runtimeType,
       const DeepCollectionEquality().hash(countdown),
       const DeepCollectionEquality().hash(phoneNumber),
+      const DeepCollectionEquality().hash(nationalPhoneNumber),
       const DeepCollectionEquality().hash(verificationId),
       const DeepCollectionEquality().hash(verificationCode),
       const DeepCollectionEquality().hash(canSubmit),
@@ -5902,6 +5923,7 @@ abstract class _SignInPhoneVerificationState
   const factory _SignInPhoneVerificationState(
       {int countdown,
       required Map<String, dynamic> phoneNumber,
+      required String nationalPhoneNumber,
       required String verificationId,
       String verificationCode,
       bool canSubmit,
@@ -5913,6 +5935,8 @@ abstract class _SignInPhoneVerificationState
   int get countdown;
   @override
   Map<String, dynamic> get phoneNumber;
+  @override
+  String get nationalPhoneNumber;
   @override
   String get verificationId;
   @override

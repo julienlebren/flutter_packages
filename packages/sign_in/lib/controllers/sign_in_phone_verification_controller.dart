@@ -46,6 +46,7 @@ class SignInPhoneVerificationState with _$SignInPhoneVerificationState {
   const factory SignInPhoneVerificationState({
     @Default(delayBeforeUserCanRequestNewCode) int countdown,
     required Map<String, dynamic> phoneNumber,
+    required String nationalPhoneNumber,
     required String verificationId,
     @Default("") String verificationCode,
     @Default(false) bool canSubmit,
@@ -72,15 +73,14 @@ class SignInPhoneVerificationController
   ) : super(SignInPhoneVerificationState(
           verificationId: verificationId,
           phoneNumber: phoneNumber,
+          nationalPhoneNumber:
+              phoneNumber['national'].replaceAll(" ", "\u00A0"),
         )) {
     _startTimer();
   }
 
   final FirebaseAuthService _service;
   final SignInLocalizations _localizations;
-
-  String get formattedPhoneNumber =>
-      state.phoneNumber['national'].replaceAll(" ", "\u00A0");
 
   Timer? _timer;
 
