@@ -12,6 +12,7 @@ class SignInEmailRegisterPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.read(signInLocalizationsProvider);
     final state = ref.watch(signInEmailRegisterControllerProvider);
+    print("state: $state");
 
     return SignInPageBuilder(
       title: l10n.signInWithEmailRegisterTitle,
