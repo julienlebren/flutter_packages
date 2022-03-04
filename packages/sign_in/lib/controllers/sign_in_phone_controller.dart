@@ -75,6 +75,7 @@ class SignInPhoneController extends StateNotifier<SignInPhoneState> {
       state = state.copyWith(
         phoneNumber: phoneNumber,
         canSubmit: true,
+        errorText: null,
       );
     } on FirebaseAuthException catch (e) {
       state = state.copyWith(
@@ -85,7 +86,10 @@ class SignInPhoneController extends StateNotifier<SignInPhoneState> {
       /// We change the state only if it was not the same to avoid useless
       /// rebuilds when typing the phone number inside the TextField
       if (state.canSubmit == true) {
-        state = state.copyWith(canSubmit: false);
+        state = state.copyWith(
+          errorText: null,
+          canSubmit: false,
+        );
       }
     } catch (e) {
       state = state.copyWith(
