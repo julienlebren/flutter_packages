@@ -1,5 +1,3 @@
-// ignore_for_file: implementation_imports
-
 library sign_in;
 
 import 'dart:async';
@@ -14,7 +12,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_libphonenumber/flutter_libphonenumber.dart';
-import 'package:flutter_libphonenumber/src/input_formatter/phone_mask.dart';
 import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -22,6 +19,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:layout_builder/layout_builder.dart';
 import 'package:localization/localization.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:pinput/pin_put/pin_put.dart';
 import 'package:sign_in/presentation/painters/apple_logo.dart';
 import 'package:sign_in/presentation/painters/google_logo.dart';
 import 'package:sign_in/l10n/sign_in_localizations.dart';
@@ -124,10 +122,13 @@ final signInThemeProvider = Provider<SignInTheme>(
     final formTheme = ref.watch(formThemeProvider);
 
     return SignInTheme(
+      primaryColor: appTheme.primaryColor,
       scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
+      textColor: appTheme.textColor,
       buttonBackgroundColor: formTheme.rowBackgroundColor,
       buttonTextColor: appTheme.textColor,
       dividerColor: appTheme.dividerColor,
+      borderColor: appTheme.borderColor,
     );
   },
   dependencies: [

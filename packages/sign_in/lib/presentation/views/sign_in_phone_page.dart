@@ -20,38 +20,15 @@ class SignInPhonePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.listen<SignInPhoneState>(signInPhoneControllerProvider, (_, state) {
-      if (state.isSuccess) {
-        final authState = ref.read(authStateProvider);
-        authState.maybeWhen(
-          needUserInformation: () {
-            //Navigator.of(context).pushNamed(AppRoutes.signInProfilePage);
-          },
-          authed: (_) {
-            //context.read(uiStateProvider).state = UIState.closeSignIn();
-          },
-          orElse: () {
-            Navigator.of(context)
-                .pushNamed(SignInRoutes.signInPhoneVerificationPage);
-          },
-        );
-      }
-    });
-
-    return const SignInPhonePageBuilder();
-  }
-}
-
-/// Constructor of the sign-in phone page
-/// Watches the state of the [SignInPhoneModel]
-/// and builds the page with a [SignInScaffold]
-class SignInPhonePageBuilder extends ConsumerWidget {
-  const SignInPhonePageBuilder({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.read(signInLocalizationsProvider);
     final state = ref.watch(signInPhoneControllerProvider);
+
+    ref.listen<SignInPhoneState>(signInPhoneControllerProvider, (_, state) {
+      if (state.isSuccess) {
+        final navigator = SignInNavigatorKeys.modal.currentState!;
+        navigator.pushNamed(SignInRoutes.signInPhoneVerificationPage);
+      }
+    });
 
     return SignInPageBuilder(
       title: l10n.signInPhoneTitle,
