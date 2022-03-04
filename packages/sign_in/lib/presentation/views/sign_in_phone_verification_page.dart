@@ -97,16 +97,15 @@ class _SignInPinCodeFieldState extends ConsumerState<SignInPinCodeField> {
             onChanged: (input) {
               _handlePhoneVerificationEvent(
                   ref, SignInPhoneVerificationEvent.codeChanged(input));
+              if (input.length == 6) {
+                _handlePhoneVerificationEvent(
+                    ref, const SignInPhoneVerificationEvent.verifyCode());
+              }
             },
             onTap: () {
               if (controller.text.length == 6) {
                 controller.text = '';
               }
-            },
-            onSubmit: (input) {
-              print("ici");
-              _handlePhoneVerificationEvent(
-                  ref, const SignInPhoneVerificationEvent.verifyCode());
             },
           ),
         ),
