@@ -11,7 +11,8 @@ class SignInButtons extends ConsumerWidget {
 
   final List<SignInSupplier> suppliers;
 
-  void _handleSignIn(BuildContext context, WidgetRef ref, SignInEvent event) {
+  void _handleSignIn(
+      BuildContext context, WidgetRef ref, SignInButtonsEvent event) {
     ref.read(signInSupplierProvider.state).state = event.when(
       signInWithFacebook: () => SignInSupplier.facebook,
       signInWithGoogle: () => SignInSupplier.google,
@@ -39,7 +40,7 @@ class SignInButtons extends ConsumerWidget {
         if (authState == const AuthState.needUserInformation()) {
           navigator.pushNamed(SignInRoutes.signInUnknownPage);
         } else {
-          final controller = ref.read(signInControllerProvider.notifier);
+          final controller = ref.read(signInButtonsControllerProvider.notifier);
           controller.handleEvent(event);
         }
       },
@@ -50,14 +51,14 @@ class SignInButtons extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final theme = ref.watch(signInThemeProvider);
-    final state = ref.watch(signInControllerProvider);
+    final state = ref.watch(signInButtonsControllerProvider);
     final isLoading = state.maybeWhen(
       loading: () => true,
       success: () => true,
       orElse: () => false,
     );
 
-    ref.listen<SignInState>(signInControllerProvider, (_, state) {
+    ref.listen<SignInButtonsState>(signInButtonsControllerProvider, (_, state) {
       state.maybeWhen(
         initial: () {
           ref.read(signInSupplierProvider.state).state = null;
@@ -105,7 +106,7 @@ class SignInButtons extends ConsumerWidget {
                         title: l10n.signInAnonymously,
                         onPressed: () {
                           _handleSignIn(context, ref,
-                              const SignInEvent.signInAnonymously());
+                              const SignInButtonsEvent.signInAnonymously());
                         },
                         color: theme.buttonTextColor,
                       ),
@@ -122,8 +123,8 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithGoogle,
                       onPressed: () {
-                        _handleSignIn(
-                            context, ref, const SignInEvent.signInWithGoogle());
+                        _handleSignIn(context, ref,
+                            const SignInButtonsEvent.signInWithGoogle());
                       },
                     ),
                   if (supplier == SignInSupplier.apple && isCupertino())
@@ -140,8 +141,8 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithApple,
                       onPressed: () {
-                        _handleSignIn(
-                            context, ref, const SignInEvent.signInWithApple());
+                        _handleSignIn(context, ref,
+                            const SignInButtonsEvent.signInWithApple());
                       },
                     ),
                   if (supplier == SignInSupplier.facebook)
@@ -151,7 +152,7 @@ class SignInButtons extends ConsumerWidget {
                       title: l10n.signInWithFacebook,
                       onPressed: () {
                         _handleSignIn(context, ref,
-                            const SignInEvent.signInWithFacebook());
+                            const SignInButtonsEvent.signInWithFacebook());
                       },
                     ),
                   if (supplier == SignInSupplier.email ||
@@ -169,8 +170,9 @@ class SignInButtons extends ConsumerWidget {
                           context,
                           ref,
                           supplier == SignInSupplier.email
-                              ? const SignInEvent.signInWithEmail()
-                              : const SignInEvent.signInWithEmailLink(""),
+                              ? const SignInButtonsEvent.signInWithEmail()
+                              : const SignInButtonsEvent.signInWithEmailLink(
+                                  ""),
                         );
                       },
                     ),
@@ -184,8 +186,8 @@ class SignInButtons extends ConsumerWidget {
                       iconSize: iconSize,
                       title: l10n.signInWithPhone,
                       onPressed: () {
-                        _handleSignIn(
-                            context, ref, const SignInEvent.signInWithPhone());
+                        _handleSignIn(context, ref,
+                            const SignInButtonsEvent.signInWithPhone());
                       },
                     ),
                   SizedBox(height: theme.spaceBetweenButtons),

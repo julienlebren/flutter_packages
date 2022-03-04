@@ -15,6 +15,1702 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
+class _$SignInButtonsEventTearOff {
+  const _$SignInButtonsEventTearOff();
+
+  _SignInWithFacebook signInWithFacebook() {
+    return const _SignInWithFacebook();
+  }
+
+  _SignInWithGoogle signInWithGoogle() {
+    return const _SignInWithGoogle();
+  }
+
+  _SignInWithApple signInWithApple() {
+    return const _SignInWithApple();
+  }
+
+  _SignInWithEmail signInWithEmail() {
+    return const _SignInWithEmail();
+  }
+
+  _SignInWithEmailLink signInWithEmailLink(String email) {
+    return _SignInWithEmailLink(
+      email,
+    );
+  }
+
+  _SignInWithPhone signInWithPhone() {
+    return const _SignInWithPhone();
+  }
+
+  _SignInAnonymously signInAnonymously() {
+    return const _SignInAnonymously();
+  }
+}
+
+/// @nodoc
+const $SignInButtonsEvent = _$SignInButtonsEventTearOff();
+
+/// @nodoc
+mixin _$SignInButtonsEvent {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signInWithFacebook,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithApple,
+    required TResult Function() signInWithEmail,
+    required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
+    required TResult Function() signInAnonymously,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
+    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SignInWithApple value) signInWithApple,
+    required TResult Function(_SignInWithEmail value) signInWithEmail,
+    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
+    required TResult Function(_SignInAnonymously value) signInAnonymously,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignInButtonsEventCopyWith<$Res> {
+  factory $SignInButtonsEventCopyWith(
+          SignInButtonsEvent value, $Res Function(SignInButtonsEvent) then) =
+      _$SignInButtonsEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignInButtonsEventCopyWithImpl<$Res>
+    implements $SignInButtonsEventCopyWith<$Res> {
+  _$SignInButtonsEventCopyWithImpl(this._value, this._then);
+
+  final SignInButtonsEvent _value;
+  // ignore: unused_field
+  final $Res Function(SignInButtonsEvent) _then;
+}
+
+/// @nodoc
+abstract class _$SignInWithFacebookCopyWith<$Res> {
+  factory _$SignInWithFacebookCopyWith(
+          _SignInWithFacebook value, $Res Function(_SignInWithFacebook) then) =
+      __$SignInWithFacebookCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SignInWithFacebookCopyWithImpl<$Res>
+    extends _$SignInButtonsEventCopyWithImpl<$Res>
+    implements _$SignInWithFacebookCopyWith<$Res> {
+  __$SignInWithFacebookCopyWithImpl(
+      _SignInWithFacebook _value, $Res Function(_SignInWithFacebook) _then)
+      : super(_value, (v) => _then(v as _SignInWithFacebook));
+
+  @override
+  _SignInWithFacebook get _value => super._value as _SignInWithFacebook;
+}
+
+/// @nodoc
+
+class _$_SignInWithFacebook implements _SignInWithFacebook {
+  const _$_SignInWithFacebook();
+
+  @override
+  String toString() {
+    return 'SignInButtonsEvent.signInWithFacebook()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignInWithFacebook);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signInWithFacebook,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithApple,
+    required TResult Function() signInWithEmail,
+    required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
+    required TResult Function() signInAnonymously,
+  }) {
+    return signInWithFacebook();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+  }) {
+    return signInWithFacebook?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInWithFacebook != null) {
+      return signInWithFacebook();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
+    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SignInWithApple value) signInWithApple,
+    required TResult Function(_SignInWithEmail value) signInWithEmail,
+    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
+    required TResult Function(_SignInAnonymously value) signInAnonymously,
+  }) {
+    return signInWithFacebook(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+  }) {
+    return signInWithFacebook?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInWithFacebook != null) {
+      return signInWithFacebook(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInWithFacebook implements SignInButtonsEvent {
+  const factory _SignInWithFacebook() = _$_SignInWithFacebook;
+}
+
+/// @nodoc
+abstract class _$SignInWithGoogleCopyWith<$Res> {
+  factory _$SignInWithGoogleCopyWith(
+          _SignInWithGoogle value, $Res Function(_SignInWithGoogle) then) =
+      __$SignInWithGoogleCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SignInWithGoogleCopyWithImpl<$Res>
+    extends _$SignInButtonsEventCopyWithImpl<$Res>
+    implements _$SignInWithGoogleCopyWith<$Res> {
+  __$SignInWithGoogleCopyWithImpl(
+      _SignInWithGoogle _value, $Res Function(_SignInWithGoogle) _then)
+      : super(_value, (v) => _then(v as _SignInWithGoogle));
+
+  @override
+  _SignInWithGoogle get _value => super._value as _SignInWithGoogle;
+}
+
+/// @nodoc
+
+class _$_SignInWithGoogle implements _SignInWithGoogle {
+  const _$_SignInWithGoogle();
+
+  @override
+  String toString() {
+    return 'SignInButtonsEvent.signInWithGoogle()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignInWithGoogle);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signInWithFacebook,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithApple,
+    required TResult Function() signInWithEmail,
+    required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
+    required TResult Function() signInAnonymously,
+  }) {
+    return signInWithGoogle();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+  }) {
+    return signInWithGoogle?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogle != null) {
+      return signInWithGoogle();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
+    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SignInWithApple value) signInWithApple,
+    required TResult Function(_SignInWithEmail value) signInWithEmail,
+    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
+    required TResult Function(_SignInAnonymously value) signInAnonymously,
+  }) {
+    return signInWithGoogle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+  }) {
+    return signInWithGoogle?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogle != null) {
+      return signInWithGoogle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInWithGoogle implements SignInButtonsEvent {
+  const factory _SignInWithGoogle() = _$_SignInWithGoogle;
+}
+
+/// @nodoc
+abstract class _$SignInWithAppleCopyWith<$Res> {
+  factory _$SignInWithAppleCopyWith(
+          _SignInWithApple value, $Res Function(_SignInWithApple) then) =
+      __$SignInWithAppleCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SignInWithAppleCopyWithImpl<$Res>
+    extends _$SignInButtonsEventCopyWithImpl<$Res>
+    implements _$SignInWithAppleCopyWith<$Res> {
+  __$SignInWithAppleCopyWithImpl(
+      _SignInWithApple _value, $Res Function(_SignInWithApple) _then)
+      : super(_value, (v) => _then(v as _SignInWithApple));
+
+  @override
+  _SignInWithApple get _value => super._value as _SignInWithApple;
+}
+
+/// @nodoc
+
+class _$_SignInWithApple implements _SignInWithApple {
+  const _$_SignInWithApple();
+
+  @override
+  String toString() {
+    return 'SignInButtonsEvent.signInWithApple()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignInWithApple);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signInWithFacebook,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithApple,
+    required TResult Function() signInWithEmail,
+    required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
+    required TResult Function() signInAnonymously,
+  }) {
+    return signInWithApple();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+  }) {
+    return signInWithApple?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInWithApple != null) {
+      return signInWithApple();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
+    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SignInWithApple value) signInWithApple,
+    required TResult Function(_SignInWithEmail value) signInWithEmail,
+    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
+    required TResult Function(_SignInAnonymously value) signInAnonymously,
+  }) {
+    return signInWithApple(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+  }) {
+    return signInWithApple?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInWithApple != null) {
+      return signInWithApple(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInWithApple implements SignInButtonsEvent {
+  const factory _SignInWithApple() = _$_SignInWithApple;
+}
+
+/// @nodoc
+abstract class _$SignInWithEmailCopyWith<$Res> {
+  factory _$SignInWithEmailCopyWith(
+          _SignInWithEmail value, $Res Function(_SignInWithEmail) then) =
+      __$SignInWithEmailCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SignInWithEmailCopyWithImpl<$Res>
+    extends _$SignInButtonsEventCopyWithImpl<$Res>
+    implements _$SignInWithEmailCopyWith<$Res> {
+  __$SignInWithEmailCopyWithImpl(
+      _SignInWithEmail _value, $Res Function(_SignInWithEmail) _then)
+      : super(_value, (v) => _then(v as _SignInWithEmail));
+
+  @override
+  _SignInWithEmail get _value => super._value as _SignInWithEmail;
+}
+
+/// @nodoc
+
+class _$_SignInWithEmail implements _SignInWithEmail {
+  const _$_SignInWithEmail();
+
+  @override
+  String toString() {
+    return 'SignInButtonsEvent.signInWithEmail()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignInWithEmail);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signInWithFacebook,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithApple,
+    required TResult Function() signInWithEmail,
+    required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
+    required TResult Function() signInAnonymously,
+  }) {
+    return signInWithEmail();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+  }) {
+    return signInWithEmail?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInWithEmail != null) {
+      return signInWithEmail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
+    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SignInWithApple value) signInWithApple,
+    required TResult Function(_SignInWithEmail value) signInWithEmail,
+    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
+    required TResult Function(_SignInAnonymously value) signInAnonymously,
+  }) {
+    return signInWithEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+  }) {
+    return signInWithEmail?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInWithEmail != null) {
+      return signInWithEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInWithEmail implements SignInButtonsEvent {
+  const factory _SignInWithEmail() = _$_SignInWithEmail;
+}
+
+/// @nodoc
+abstract class _$SignInWithEmailLinkCopyWith<$Res> {
+  factory _$SignInWithEmailLinkCopyWith(_SignInWithEmailLink value,
+          $Res Function(_SignInWithEmailLink) then) =
+      __$SignInWithEmailLinkCopyWithImpl<$Res>;
+  $Res call({String email});
+}
+
+/// @nodoc
+class __$SignInWithEmailLinkCopyWithImpl<$Res>
+    extends _$SignInButtonsEventCopyWithImpl<$Res>
+    implements _$SignInWithEmailLinkCopyWith<$Res> {
+  __$SignInWithEmailLinkCopyWithImpl(
+      _SignInWithEmailLink _value, $Res Function(_SignInWithEmailLink) _then)
+      : super(_value, (v) => _then(v as _SignInWithEmailLink));
+
+  @override
+  _SignInWithEmailLink get _value => super._value as _SignInWithEmailLink;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+  }) {
+    return _then(_SignInWithEmailLink(
+      email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SignInWithEmailLink implements _SignInWithEmailLink {
+  const _$_SignInWithEmailLink(this.email);
+
+  @override
+  final String email;
+
+  @override
+  String toString() {
+    return 'SignInButtonsEvent.signInWithEmailLink(email: $email)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SignInWithEmailLink &&
+            const DeepCollectionEquality().equals(other.email, email));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SignInWithEmailLinkCopyWith<_SignInWithEmailLink> get copyWith =>
+      __$SignInWithEmailLinkCopyWithImpl<_SignInWithEmailLink>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signInWithFacebook,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithApple,
+    required TResult Function() signInWithEmail,
+    required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
+    required TResult Function() signInAnonymously,
+  }) {
+    return signInWithEmailLink(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+  }) {
+    return signInWithEmailLink?.call(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInWithEmailLink != null) {
+      return signInWithEmailLink(email);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
+    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SignInWithApple value) signInWithApple,
+    required TResult Function(_SignInWithEmail value) signInWithEmail,
+    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
+    required TResult Function(_SignInAnonymously value) signInAnonymously,
+  }) {
+    return signInWithEmailLink(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+  }) {
+    return signInWithEmailLink?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInWithEmailLink != null) {
+      return signInWithEmailLink(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInWithEmailLink implements SignInButtonsEvent {
+  const factory _SignInWithEmailLink(String email) = _$_SignInWithEmailLink;
+
+  String get email;
+  @JsonKey(ignore: true)
+  _$SignInWithEmailLinkCopyWith<_SignInWithEmailLink> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SignInWithPhoneCopyWith<$Res> {
+  factory _$SignInWithPhoneCopyWith(
+          _SignInWithPhone value, $Res Function(_SignInWithPhone) then) =
+      __$SignInWithPhoneCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SignInWithPhoneCopyWithImpl<$Res>
+    extends _$SignInButtonsEventCopyWithImpl<$Res>
+    implements _$SignInWithPhoneCopyWith<$Res> {
+  __$SignInWithPhoneCopyWithImpl(
+      _SignInWithPhone _value, $Res Function(_SignInWithPhone) _then)
+      : super(_value, (v) => _then(v as _SignInWithPhone));
+
+  @override
+  _SignInWithPhone get _value => super._value as _SignInWithPhone;
+}
+
+/// @nodoc
+
+class _$_SignInWithPhone implements _SignInWithPhone {
+  const _$_SignInWithPhone();
+
+  @override
+  String toString() {
+    return 'SignInButtonsEvent.signInWithPhone()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignInWithPhone);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signInWithFacebook,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithApple,
+    required TResult Function() signInWithEmail,
+    required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
+    required TResult Function() signInAnonymously,
+  }) {
+    return signInWithPhone();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+  }) {
+    return signInWithPhone?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInWithPhone != null) {
+      return signInWithPhone();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
+    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SignInWithApple value) signInWithApple,
+    required TResult Function(_SignInWithEmail value) signInWithEmail,
+    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
+    required TResult Function(_SignInAnonymously value) signInAnonymously,
+  }) {
+    return signInWithPhone(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+  }) {
+    return signInWithPhone?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInWithPhone != null) {
+      return signInWithPhone(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInWithPhone implements SignInButtonsEvent {
+  const factory _SignInWithPhone() = _$_SignInWithPhone;
+}
+
+/// @nodoc
+abstract class _$SignInAnonymouslyCopyWith<$Res> {
+  factory _$SignInAnonymouslyCopyWith(
+          _SignInAnonymously value, $Res Function(_SignInAnonymously) then) =
+      __$SignInAnonymouslyCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SignInAnonymouslyCopyWithImpl<$Res>
+    extends _$SignInButtonsEventCopyWithImpl<$Res>
+    implements _$SignInAnonymouslyCopyWith<$Res> {
+  __$SignInAnonymouslyCopyWithImpl(
+      _SignInAnonymously _value, $Res Function(_SignInAnonymously) _then)
+      : super(_value, (v) => _then(v as _SignInAnonymously));
+
+  @override
+  _SignInAnonymously get _value => super._value as _SignInAnonymously;
+}
+
+/// @nodoc
+
+class _$_SignInAnonymously implements _SignInAnonymously {
+  const _$_SignInAnonymously();
+
+  @override
+  String toString() {
+    return 'SignInButtonsEvent.signInAnonymously()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignInAnonymously);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signInWithFacebook,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithApple,
+    required TResult Function() signInWithEmail,
+    required TResult Function(String email) signInWithEmailLink,
+    required TResult Function() signInWithPhone,
+    required TResult Function() signInAnonymously,
+  }) {
+    return signInAnonymously();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+  }) {
+    return signInAnonymously?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function()? signInWithEmail,
+    TResult Function(String email)? signInWithEmailLink,
+    TResult Function()? signInWithPhone,
+    TResult Function()? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInAnonymously != null) {
+      return signInAnonymously();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
+    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
+    required TResult Function(_SignInWithApple value) signInWithApple,
+    required TResult Function(_SignInWithEmail value) signInWithEmail,
+    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
+    required TResult Function(_SignInWithPhone value) signInWithPhone,
+    required TResult Function(_SignInAnonymously value) signInAnonymously,
+  }) {
+    return signInAnonymously(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+  }) {
+    return signInAnonymously?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult Function(_SignInWithApple value)? signInWithApple,
+    TResult Function(_SignInWithEmail value)? signInWithEmail,
+    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult Function(_SignInWithPhone value)? signInWithPhone,
+    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    required TResult orElse(),
+  }) {
+    if (signInAnonymously != null) {
+      return signInAnonymously(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInAnonymously implements SignInButtonsEvent {
+  const factory _SignInAnonymously() = _$_SignInAnonymously;
+}
+
+/// @nodoc
+class _$SignInButtonsStateTearOff {
+  const _$SignInButtonsStateTearOff();
+
+  _SignInInitial initial() {
+    return const _SignInInitial();
+  }
+
+  _SignInLoading loading() {
+    return const _SignInLoading();
+  }
+
+  _SignInSuccess success() {
+    return const _SignInSuccess();
+  }
+
+  _SignInError error(String errorText) {
+    return _SignInError(
+      errorText,
+    );
+  }
+}
+
+/// @nodoc
+const $SignInButtonsState = _$SignInButtonsStateTearOff();
+
+/// @nodoc
+mixin _$SignInButtonsState {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorText) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInInitial value) initial,
+    required TResult Function(_SignInLoading value) loading,
+    required TResult Function(_SignInSuccess value) success,
+    required TResult Function(_SignInError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SignInButtonsStateCopyWith<$Res> {
+  factory $SignInButtonsStateCopyWith(
+          SignInButtonsState value, $Res Function(SignInButtonsState) then) =
+      _$SignInButtonsStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignInButtonsStateCopyWithImpl<$Res>
+    implements $SignInButtonsStateCopyWith<$Res> {
+  _$SignInButtonsStateCopyWithImpl(this._value, this._then);
+
+  final SignInButtonsState _value;
+  // ignore: unused_field
+  final $Res Function(SignInButtonsState) _then;
+}
+
+/// @nodoc
+abstract class _$SignInInitialCopyWith<$Res> {
+  factory _$SignInInitialCopyWith(
+          _SignInInitial value, $Res Function(_SignInInitial) then) =
+      __$SignInInitialCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SignInInitialCopyWithImpl<$Res>
+    extends _$SignInButtonsStateCopyWithImpl<$Res>
+    implements _$SignInInitialCopyWith<$Res> {
+  __$SignInInitialCopyWithImpl(
+      _SignInInitial _value, $Res Function(_SignInInitial) _then)
+      : super(_value, (v) => _then(v as _SignInInitial));
+
+  @override
+  _SignInInitial get _value => super._value as _SignInInitial;
+}
+
+/// @nodoc
+
+class _$_SignInInitial implements _SignInInitial {
+  const _$_SignInInitial();
+
+  @override
+  String toString() {
+    return 'SignInButtonsState.initial()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignInInitial);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorText) error,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInInitial value) initial,
+    required TResult Function(_SignInLoading value) loading,
+    required TResult Function(_SignInSuccess value) success,
+    required TResult Function(_SignInError value) error,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInInitial implements SignInButtonsState {
+  const factory _SignInInitial() = _$_SignInInitial;
+}
+
+/// @nodoc
+abstract class _$SignInLoadingCopyWith<$Res> {
+  factory _$SignInLoadingCopyWith(
+          _SignInLoading value, $Res Function(_SignInLoading) then) =
+      __$SignInLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SignInLoadingCopyWithImpl<$Res>
+    extends _$SignInButtonsStateCopyWithImpl<$Res>
+    implements _$SignInLoadingCopyWith<$Res> {
+  __$SignInLoadingCopyWithImpl(
+      _SignInLoading _value, $Res Function(_SignInLoading) _then)
+      : super(_value, (v) => _then(v as _SignInLoading));
+
+  @override
+  _SignInLoading get _value => super._value as _SignInLoading;
+}
+
+/// @nodoc
+
+class _$_SignInLoading implements _SignInLoading {
+  const _$_SignInLoading();
+
+  @override
+  String toString() {
+    return 'SignInButtonsState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignInLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorText) error,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInInitial value) initial,
+    required TResult Function(_SignInLoading value) loading,
+    required TResult Function(_SignInSuccess value) success,
+    required TResult Function(_SignInError value) error,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInLoading implements SignInButtonsState {
+  const factory _SignInLoading() = _$_SignInLoading;
+}
+
+/// @nodoc
+abstract class _$SignInSuccessCopyWith<$Res> {
+  factory _$SignInSuccessCopyWith(
+          _SignInSuccess value, $Res Function(_SignInSuccess) then) =
+      __$SignInSuccessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SignInSuccessCopyWithImpl<$Res>
+    extends _$SignInButtonsStateCopyWithImpl<$Res>
+    implements _$SignInSuccessCopyWith<$Res> {
+  __$SignInSuccessCopyWithImpl(
+      _SignInSuccess _value, $Res Function(_SignInSuccess) _then)
+      : super(_value, (v) => _then(v as _SignInSuccess));
+
+  @override
+  _SignInSuccess get _value => super._value as _SignInSuccess;
+}
+
+/// @nodoc
+
+class _$_SignInSuccess implements _SignInSuccess {
+  const _$_SignInSuccess();
+
+  @override
+  String toString() {
+    return 'SignInButtonsState.success()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignInSuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorText) error,
+  }) {
+    return success();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+  }) {
+    return success?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInInitial value) initial,
+    required TResult Function(_SignInLoading value) loading,
+    required TResult Function(_SignInSuccess value) success,
+    required TResult Function(_SignInError value) error,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInSuccess implements SignInButtonsState {
+  const factory _SignInSuccess() = _$_SignInSuccess;
+}
+
+/// @nodoc
+abstract class _$SignInErrorCopyWith<$Res> {
+  factory _$SignInErrorCopyWith(
+          _SignInError value, $Res Function(_SignInError) then) =
+      __$SignInErrorCopyWithImpl<$Res>;
+  $Res call({String errorText});
+}
+
+/// @nodoc
+class __$SignInErrorCopyWithImpl<$Res>
+    extends _$SignInButtonsStateCopyWithImpl<$Res>
+    implements _$SignInErrorCopyWith<$Res> {
+  __$SignInErrorCopyWithImpl(
+      _SignInError _value, $Res Function(_SignInError) _then)
+      : super(_value, (v) => _then(v as _SignInError));
+
+  @override
+  _SignInError get _value => super._value as _SignInError;
+
+  @override
+  $Res call({
+    Object? errorText = freezed,
+  }) {
+    return _then(_SignInError(
+      errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SignInError implements _SignInError {
+  const _$_SignInError(this.errorText);
+
+  @override
+  final String errorText;
+
+  @override
+  String toString() {
+    return 'SignInButtonsState.error(errorText: $errorText)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SignInError &&
+            const DeepCollectionEquality().equals(other.errorText, errorText));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(errorText));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SignInErrorCopyWith<_SignInError> get copyWith =>
+      __$SignInErrorCopyWithImpl<_SignInError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errorText) error,
+  }) {
+    return error(errorText);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+  }) {
+    return error?.call(errorText);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errorText)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(errorText);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInInitial value) initial,
+    required TResult Function(_SignInLoading value) loading,
+    required TResult Function(_SignInSuccess value) success,
+    required TResult Function(_SignInError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInInitial value)? initial,
+    TResult Function(_SignInLoading value)? loading,
+    TResult Function(_SignInSuccess value)? success,
+    TResult Function(_SignInError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignInError implements SignInButtonsState {
+  const factory _SignInError(String errorText) = _$_SignInError;
+
+  String get errorText;
+  @JsonKey(ignore: true)
+  _$SignInErrorCopyWith<_SignInError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$SignInEmailLoginEventTearOff {
   const _$SignInEmailLoginEventTearOff();
 
@@ -5173,1696 +6869,6 @@ abstract class _AuthError implements AuthState {
   String get error;
   @JsonKey(ignore: true)
   _$AuthErrorCopyWith<_AuthError> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-class _$SignInEventTearOff {
-  const _$SignInEventTearOff();
-
-  _SignInWithFacebook signInWithFacebook() {
-    return const _SignInWithFacebook();
-  }
-
-  _SignInWithGoogle signInWithGoogle() {
-    return const _SignInWithGoogle();
-  }
-
-  _SignInWithApple signInWithApple() {
-    return const _SignInWithApple();
-  }
-
-  _SignInWithEmail signInWithEmail() {
-    return const _SignInWithEmail();
-  }
-
-  _SignInWithEmailLink signInWithEmailLink(String email) {
-    return _SignInWithEmailLink(
-      email,
-    );
-  }
-
-  _SignInWithPhone signInWithPhone() {
-    return const _SignInWithPhone();
-  }
-
-  _SignInAnonymously signInAnonymously() {
-    return const _SignInAnonymously();
-  }
-}
-
-/// @nodoc
-const $SignInEvent = _$SignInEventTearOff();
-
-/// @nodoc
-mixin _$SignInEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() signInWithFacebook,
-    required TResult Function() signInWithGoogle,
-    required TResult Function() signInWithApple,
-    required TResult Function() signInWithEmail,
-    required TResult Function(String email) signInWithEmailLink,
-    required TResult Function() signInWithPhone,
-    required TResult Function() signInAnonymously,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
-    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
-    required TResult Function(_SignInWithApple value) signInWithApple,
-    required TResult Function(_SignInWithEmail value) signInWithEmail,
-    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
-    required TResult Function(_SignInWithPhone value) signInWithPhone,
-    required TResult Function(_SignInAnonymously value) signInAnonymously,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SignInEventCopyWith<$Res> {
-  factory $SignInEventCopyWith(
-          SignInEvent value, $Res Function(SignInEvent) then) =
-      _$SignInEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$SignInEventCopyWithImpl<$Res> implements $SignInEventCopyWith<$Res> {
-  _$SignInEventCopyWithImpl(this._value, this._then);
-
-  final SignInEvent _value;
-  // ignore: unused_field
-  final $Res Function(SignInEvent) _then;
-}
-
-/// @nodoc
-abstract class _$SignInWithFacebookCopyWith<$Res> {
-  factory _$SignInWithFacebookCopyWith(
-          _SignInWithFacebook value, $Res Function(_SignInWithFacebook) then) =
-      __$SignInWithFacebookCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SignInWithFacebookCopyWithImpl<$Res>
-    extends _$SignInEventCopyWithImpl<$Res>
-    implements _$SignInWithFacebookCopyWith<$Res> {
-  __$SignInWithFacebookCopyWithImpl(
-      _SignInWithFacebook _value, $Res Function(_SignInWithFacebook) _then)
-      : super(_value, (v) => _then(v as _SignInWithFacebook));
-
-  @override
-  _SignInWithFacebook get _value => super._value as _SignInWithFacebook;
-}
-
-/// @nodoc
-
-class _$_SignInWithFacebook implements _SignInWithFacebook {
-  const _$_SignInWithFacebook();
-
-  @override
-  String toString() {
-    return 'SignInEvent.signInWithFacebook()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInWithFacebook);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() signInWithFacebook,
-    required TResult Function() signInWithGoogle,
-    required TResult Function() signInWithApple,
-    required TResult Function() signInWithEmail,
-    required TResult Function(String email) signInWithEmailLink,
-    required TResult Function() signInWithPhone,
-    required TResult Function() signInAnonymously,
-  }) {
-    return signInWithFacebook();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-  }) {
-    return signInWithFacebook?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-    required TResult orElse(),
-  }) {
-    if (signInWithFacebook != null) {
-      return signInWithFacebook();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
-    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
-    required TResult Function(_SignInWithApple value) signInWithApple,
-    required TResult Function(_SignInWithEmail value) signInWithEmail,
-    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
-    required TResult Function(_SignInWithPhone value) signInWithPhone,
-    required TResult Function(_SignInAnonymously value) signInAnonymously,
-  }) {
-    return signInWithFacebook(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-  }) {
-    return signInWithFacebook?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-    required TResult orElse(),
-  }) {
-    if (signInWithFacebook != null) {
-      return signInWithFacebook(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignInWithFacebook implements SignInEvent {
-  const factory _SignInWithFacebook() = _$_SignInWithFacebook;
-}
-
-/// @nodoc
-abstract class _$SignInWithGoogleCopyWith<$Res> {
-  factory _$SignInWithGoogleCopyWith(
-          _SignInWithGoogle value, $Res Function(_SignInWithGoogle) then) =
-      __$SignInWithGoogleCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SignInWithGoogleCopyWithImpl<$Res>
-    extends _$SignInEventCopyWithImpl<$Res>
-    implements _$SignInWithGoogleCopyWith<$Res> {
-  __$SignInWithGoogleCopyWithImpl(
-      _SignInWithGoogle _value, $Res Function(_SignInWithGoogle) _then)
-      : super(_value, (v) => _then(v as _SignInWithGoogle));
-
-  @override
-  _SignInWithGoogle get _value => super._value as _SignInWithGoogle;
-}
-
-/// @nodoc
-
-class _$_SignInWithGoogle implements _SignInWithGoogle {
-  const _$_SignInWithGoogle();
-
-  @override
-  String toString() {
-    return 'SignInEvent.signInWithGoogle()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInWithGoogle);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() signInWithFacebook,
-    required TResult Function() signInWithGoogle,
-    required TResult Function() signInWithApple,
-    required TResult Function() signInWithEmail,
-    required TResult Function(String email) signInWithEmailLink,
-    required TResult Function() signInWithPhone,
-    required TResult Function() signInAnonymously,
-  }) {
-    return signInWithGoogle();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-  }) {
-    return signInWithGoogle?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-    required TResult orElse(),
-  }) {
-    if (signInWithGoogle != null) {
-      return signInWithGoogle();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
-    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
-    required TResult Function(_SignInWithApple value) signInWithApple,
-    required TResult Function(_SignInWithEmail value) signInWithEmail,
-    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
-    required TResult Function(_SignInWithPhone value) signInWithPhone,
-    required TResult Function(_SignInAnonymously value) signInAnonymously,
-  }) {
-    return signInWithGoogle(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-  }) {
-    return signInWithGoogle?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-    required TResult orElse(),
-  }) {
-    if (signInWithGoogle != null) {
-      return signInWithGoogle(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignInWithGoogle implements SignInEvent {
-  const factory _SignInWithGoogle() = _$_SignInWithGoogle;
-}
-
-/// @nodoc
-abstract class _$SignInWithAppleCopyWith<$Res> {
-  factory _$SignInWithAppleCopyWith(
-          _SignInWithApple value, $Res Function(_SignInWithApple) then) =
-      __$SignInWithAppleCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SignInWithAppleCopyWithImpl<$Res>
-    extends _$SignInEventCopyWithImpl<$Res>
-    implements _$SignInWithAppleCopyWith<$Res> {
-  __$SignInWithAppleCopyWithImpl(
-      _SignInWithApple _value, $Res Function(_SignInWithApple) _then)
-      : super(_value, (v) => _then(v as _SignInWithApple));
-
-  @override
-  _SignInWithApple get _value => super._value as _SignInWithApple;
-}
-
-/// @nodoc
-
-class _$_SignInWithApple implements _SignInWithApple {
-  const _$_SignInWithApple();
-
-  @override
-  String toString() {
-    return 'SignInEvent.signInWithApple()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInWithApple);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() signInWithFacebook,
-    required TResult Function() signInWithGoogle,
-    required TResult Function() signInWithApple,
-    required TResult Function() signInWithEmail,
-    required TResult Function(String email) signInWithEmailLink,
-    required TResult Function() signInWithPhone,
-    required TResult Function() signInAnonymously,
-  }) {
-    return signInWithApple();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-  }) {
-    return signInWithApple?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-    required TResult orElse(),
-  }) {
-    if (signInWithApple != null) {
-      return signInWithApple();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
-    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
-    required TResult Function(_SignInWithApple value) signInWithApple,
-    required TResult Function(_SignInWithEmail value) signInWithEmail,
-    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
-    required TResult Function(_SignInWithPhone value) signInWithPhone,
-    required TResult Function(_SignInAnonymously value) signInAnonymously,
-  }) {
-    return signInWithApple(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-  }) {
-    return signInWithApple?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-    required TResult orElse(),
-  }) {
-    if (signInWithApple != null) {
-      return signInWithApple(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignInWithApple implements SignInEvent {
-  const factory _SignInWithApple() = _$_SignInWithApple;
-}
-
-/// @nodoc
-abstract class _$SignInWithEmailCopyWith<$Res> {
-  factory _$SignInWithEmailCopyWith(
-          _SignInWithEmail value, $Res Function(_SignInWithEmail) then) =
-      __$SignInWithEmailCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SignInWithEmailCopyWithImpl<$Res>
-    extends _$SignInEventCopyWithImpl<$Res>
-    implements _$SignInWithEmailCopyWith<$Res> {
-  __$SignInWithEmailCopyWithImpl(
-      _SignInWithEmail _value, $Res Function(_SignInWithEmail) _then)
-      : super(_value, (v) => _then(v as _SignInWithEmail));
-
-  @override
-  _SignInWithEmail get _value => super._value as _SignInWithEmail;
-}
-
-/// @nodoc
-
-class _$_SignInWithEmail implements _SignInWithEmail {
-  const _$_SignInWithEmail();
-
-  @override
-  String toString() {
-    return 'SignInEvent.signInWithEmail()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInWithEmail);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() signInWithFacebook,
-    required TResult Function() signInWithGoogle,
-    required TResult Function() signInWithApple,
-    required TResult Function() signInWithEmail,
-    required TResult Function(String email) signInWithEmailLink,
-    required TResult Function() signInWithPhone,
-    required TResult Function() signInAnonymously,
-  }) {
-    return signInWithEmail();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-  }) {
-    return signInWithEmail?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-    required TResult orElse(),
-  }) {
-    if (signInWithEmail != null) {
-      return signInWithEmail();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
-    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
-    required TResult Function(_SignInWithApple value) signInWithApple,
-    required TResult Function(_SignInWithEmail value) signInWithEmail,
-    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
-    required TResult Function(_SignInWithPhone value) signInWithPhone,
-    required TResult Function(_SignInAnonymously value) signInAnonymously,
-  }) {
-    return signInWithEmail(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-  }) {
-    return signInWithEmail?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-    required TResult orElse(),
-  }) {
-    if (signInWithEmail != null) {
-      return signInWithEmail(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignInWithEmail implements SignInEvent {
-  const factory _SignInWithEmail() = _$_SignInWithEmail;
-}
-
-/// @nodoc
-abstract class _$SignInWithEmailLinkCopyWith<$Res> {
-  factory _$SignInWithEmailLinkCopyWith(_SignInWithEmailLink value,
-          $Res Function(_SignInWithEmailLink) then) =
-      __$SignInWithEmailLinkCopyWithImpl<$Res>;
-  $Res call({String email});
-}
-
-/// @nodoc
-class __$SignInWithEmailLinkCopyWithImpl<$Res>
-    extends _$SignInEventCopyWithImpl<$Res>
-    implements _$SignInWithEmailLinkCopyWith<$Res> {
-  __$SignInWithEmailLinkCopyWithImpl(
-      _SignInWithEmailLink _value, $Res Function(_SignInWithEmailLink) _then)
-      : super(_value, (v) => _then(v as _SignInWithEmailLink));
-
-  @override
-  _SignInWithEmailLink get _value => super._value as _SignInWithEmailLink;
-
-  @override
-  $Res call({
-    Object? email = freezed,
-  }) {
-    return _then(_SignInWithEmailLink(
-      email == freezed
-          ? _value.email
-          : email // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SignInWithEmailLink implements _SignInWithEmailLink {
-  const _$_SignInWithEmailLink(this.email);
-
-  @override
-  final String email;
-
-  @override
-  String toString() {
-    return 'SignInEvent.signInWithEmailLink(email: $email)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _SignInWithEmailLink &&
-            const DeepCollectionEquality().equals(other.email, email));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
-
-  @JsonKey(ignore: true)
-  @override
-  _$SignInWithEmailLinkCopyWith<_SignInWithEmailLink> get copyWith =>
-      __$SignInWithEmailLinkCopyWithImpl<_SignInWithEmailLink>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() signInWithFacebook,
-    required TResult Function() signInWithGoogle,
-    required TResult Function() signInWithApple,
-    required TResult Function() signInWithEmail,
-    required TResult Function(String email) signInWithEmailLink,
-    required TResult Function() signInWithPhone,
-    required TResult Function() signInAnonymously,
-  }) {
-    return signInWithEmailLink(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-  }) {
-    return signInWithEmailLink?.call(email);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-    required TResult orElse(),
-  }) {
-    if (signInWithEmailLink != null) {
-      return signInWithEmailLink(email);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
-    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
-    required TResult Function(_SignInWithApple value) signInWithApple,
-    required TResult Function(_SignInWithEmail value) signInWithEmail,
-    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
-    required TResult Function(_SignInWithPhone value) signInWithPhone,
-    required TResult Function(_SignInAnonymously value) signInAnonymously,
-  }) {
-    return signInWithEmailLink(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-  }) {
-    return signInWithEmailLink?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-    required TResult orElse(),
-  }) {
-    if (signInWithEmailLink != null) {
-      return signInWithEmailLink(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignInWithEmailLink implements SignInEvent {
-  const factory _SignInWithEmailLink(String email) = _$_SignInWithEmailLink;
-
-  String get email;
-  @JsonKey(ignore: true)
-  _$SignInWithEmailLinkCopyWith<_SignInWithEmailLink> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$SignInWithPhoneCopyWith<$Res> {
-  factory _$SignInWithPhoneCopyWith(
-          _SignInWithPhone value, $Res Function(_SignInWithPhone) then) =
-      __$SignInWithPhoneCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SignInWithPhoneCopyWithImpl<$Res>
-    extends _$SignInEventCopyWithImpl<$Res>
-    implements _$SignInWithPhoneCopyWith<$Res> {
-  __$SignInWithPhoneCopyWithImpl(
-      _SignInWithPhone _value, $Res Function(_SignInWithPhone) _then)
-      : super(_value, (v) => _then(v as _SignInWithPhone));
-
-  @override
-  _SignInWithPhone get _value => super._value as _SignInWithPhone;
-}
-
-/// @nodoc
-
-class _$_SignInWithPhone implements _SignInWithPhone {
-  const _$_SignInWithPhone();
-
-  @override
-  String toString() {
-    return 'SignInEvent.signInWithPhone()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInWithPhone);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() signInWithFacebook,
-    required TResult Function() signInWithGoogle,
-    required TResult Function() signInWithApple,
-    required TResult Function() signInWithEmail,
-    required TResult Function(String email) signInWithEmailLink,
-    required TResult Function() signInWithPhone,
-    required TResult Function() signInAnonymously,
-  }) {
-    return signInWithPhone();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-  }) {
-    return signInWithPhone?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-    required TResult orElse(),
-  }) {
-    if (signInWithPhone != null) {
-      return signInWithPhone();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
-    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
-    required TResult Function(_SignInWithApple value) signInWithApple,
-    required TResult Function(_SignInWithEmail value) signInWithEmail,
-    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
-    required TResult Function(_SignInWithPhone value) signInWithPhone,
-    required TResult Function(_SignInAnonymously value) signInAnonymously,
-  }) {
-    return signInWithPhone(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-  }) {
-    return signInWithPhone?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-    required TResult orElse(),
-  }) {
-    if (signInWithPhone != null) {
-      return signInWithPhone(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignInWithPhone implements SignInEvent {
-  const factory _SignInWithPhone() = _$_SignInWithPhone;
-}
-
-/// @nodoc
-abstract class _$SignInAnonymouslyCopyWith<$Res> {
-  factory _$SignInAnonymouslyCopyWith(
-          _SignInAnonymously value, $Res Function(_SignInAnonymously) then) =
-      __$SignInAnonymouslyCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SignInAnonymouslyCopyWithImpl<$Res>
-    extends _$SignInEventCopyWithImpl<$Res>
-    implements _$SignInAnonymouslyCopyWith<$Res> {
-  __$SignInAnonymouslyCopyWithImpl(
-      _SignInAnonymously _value, $Res Function(_SignInAnonymously) _then)
-      : super(_value, (v) => _then(v as _SignInAnonymously));
-
-  @override
-  _SignInAnonymously get _value => super._value as _SignInAnonymously;
-}
-
-/// @nodoc
-
-class _$_SignInAnonymously implements _SignInAnonymously {
-  const _$_SignInAnonymously();
-
-  @override
-  String toString() {
-    return 'SignInEvent.signInAnonymously()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInAnonymously);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() signInWithFacebook,
-    required TResult Function() signInWithGoogle,
-    required TResult Function() signInWithApple,
-    required TResult Function() signInWithEmail,
-    required TResult Function(String email) signInWithEmailLink,
-    required TResult Function() signInWithPhone,
-    required TResult Function() signInAnonymously,
-  }) {
-    return signInAnonymously();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-  }) {
-    return signInAnonymously?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
-    required TResult orElse(),
-  }) {
-    if (signInAnonymously != null) {
-      return signInAnonymously();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignInWithFacebook value) signInWithFacebook,
-    required TResult Function(_SignInWithGoogle value) signInWithGoogle,
-    required TResult Function(_SignInWithApple value) signInWithApple,
-    required TResult Function(_SignInWithEmail value) signInWithEmail,
-    required TResult Function(_SignInWithEmailLink value) signInWithEmailLink,
-    required TResult Function(_SignInWithPhone value) signInWithPhone,
-    required TResult Function(_SignInAnonymously value) signInAnonymously,
-  }) {
-    return signInAnonymously(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-  }) {
-    return signInAnonymously?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
-    required TResult orElse(),
-  }) {
-    if (signInAnonymously != null) {
-      return signInAnonymously(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignInAnonymously implements SignInEvent {
-  const factory _SignInAnonymously() = _$_SignInAnonymously;
-}
-
-/// @nodoc
-class _$SignInStateTearOff {
-  const _$SignInStateTearOff();
-
-  _SignInInitial initial() {
-    return const _SignInInitial();
-  }
-
-  _SignInLoading loading() {
-    return const _SignInLoading();
-  }
-
-  _SignInSuccess success() {
-    return const _SignInSuccess();
-  }
-
-  _SignInError error(String errorText) {
-    return _SignInError(
-      errorText,
-    );
-  }
-}
-
-/// @nodoc
-const $SignInState = _$SignInStateTearOff();
-
-/// @nodoc
-mixin _$SignInState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String errorText) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignInInitial value) initial,
-    required TResult Function(_SignInLoading value) loading,
-    required TResult Function(_SignInSuccess value) success,
-    required TResult Function(_SignInError value) error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SignInStateCopyWith<$Res> {
-  factory $SignInStateCopyWith(
-          SignInState value, $Res Function(SignInState) then) =
-      _$SignInStateCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
-  _$SignInStateCopyWithImpl(this._value, this._then);
-
-  final SignInState _value;
-  // ignore: unused_field
-  final $Res Function(SignInState) _then;
-}
-
-/// @nodoc
-abstract class _$SignInInitialCopyWith<$Res> {
-  factory _$SignInInitialCopyWith(
-          _SignInInitial value, $Res Function(_SignInInitial) then) =
-      __$SignInInitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SignInInitialCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
-    implements _$SignInInitialCopyWith<$Res> {
-  __$SignInInitialCopyWithImpl(
-      _SignInInitial _value, $Res Function(_SignInInitial) _then)
-      : super(_value, (v) => _then(v as _SignInInitial));
-
-  @override
-  _SignInInitial get _value => super._value as _SignInInitial;
-}
-
-/// @nodoc
-
-class _$_SignInInitial implements _SignInInitial {
-  const _$_SignInInitial();
-
-  @override
-  String toString() {
-    return 'SignInState.initial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInInitial);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String errorText) error,
-  }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
-  }) {
-    return initial?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignInInitial value) initial,
-    required TResult Function(_SignInLoading value) loading,
-    required TResult Function(_SignInSuccess value) success,
-    required TResult Function(_SignInError value) error,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignInInitial implements SignInState {
-  const factory _SignInInitial() = _$_SignInInitial;
-}
-
-/// @nodoc
-abstract class _$SignInLoadingCopyWith<$Res> {
-  factory _$SignInLoadingCopyWith(
-          _SignInLoading value, $Res Function(_SignInLoading) then) =
-      __$SignInLoadingCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SignInLoadingCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
-    implements _$SignInLoadingCopyWith<$Res> {
-  __$SignInLoadingCopyWithImpl(
-      _SignInLoading _value, $Res Function(_SignInLoading) _then)
-      : super(_value, (v) => _then(v as _SignInLoading));
-
-  @override
-  _SignInLoading get _value => super._value as _SignInLoading;
-}
-
-/// @nodoc
-
-class _$_SignInLoading implements _SignInLoading {
-  const _$_SignInLoading();
-
-  @override
-  String toString() {
-    return 'SignInState.loading()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInLoading);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String errorText) error,
-  }) {
-    return loading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
-  }) {
-    return loading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignInInitial value) initial,
-    required TResult Function(_SignInLoading value) loading,
-    required TResult Function(_SignInSuccess value) success,
-    required TResult Function(_SignInError value) error,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignInLoading implements SignInState {
-  const factory _SignInLoading() = _$_SignInLoading;
-}
-
-/// @nodoc
-abstract class _$SignInSuccessCopyWith<$Res> {
-  factory _$SignInSuccessCopyWith(
-          _SignInSuccess value, $Res Function(_SignInSuccess) then) =
-      __$SignInSuccessCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SignInSuccessCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
-    implements _$SignInSuccessCopyWith<$Res> {
-  __$SignInSuccessCopyWithImpl(
-      _SignInSuccess _value, $Res Function(_SignInSuccess) _then)
-      : super(_value, (v) => _then(v as _SignInSuccess));
-
-  @override
-  _SignInSuccess get _value => super._value as _SignInSuccess;
-}
-
-/// @nodoc
-
-class _$_SignInSuccess implements _SignInSuccess {
-  const _$_SignInSuccess();
-
-  @override
-  String toString() {
-    return 'SignInState.success()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInSuccess);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String errorText) error,
-  }) {
-    return success();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
-  }) {
-    return success?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignInInitial value) initial,
-    required TResult Function(_SignInLoading value) loading,
-    required TResult Function(_SignInSuccess value) success,
-    required TResult Function(_SignInError value) error,
-  }) {
-    return success(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
-  }) {
-    return success?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
-    required TResult orElse(),
-  }) {
-    if (success != null) {
-      return success(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignInSuccess implements SignInState {
-  const factory _SignInSuccess() = _$_SignInSuccess;
-}
-
-/// @nodoc
-abstract class _$SignInErrorCopyWith<$Res> {
-  factory _$SignInErrorCopyWith(
-          _SignInError value, $Res Function(_SignInError) then) =
-      __$SignInErrorCopyWithImpl<$Res>;
-  $Res call({String errorText});
-}
-
-/// @nodoc
-class __$SignInErrorCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
-    implements _$SignInErrorCopyWith<$Res> {
-  __$SignInErrorCopyWithImpl(
-      _SignInError _value, $Res Function(_SignInError) _then)
-      : super(_value, (v) => _then(v as _SignInError));
-
-  @override
-  _SignInError get _value => super._value as _SignInError;
-
-  @override
-  $Res call({
-    Object? errorText = freezed,
-  }) {
-    return _then(_SignInError(
-      errorText == freezed
-          ? _value.errorText
-          : errorText // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SignInError implements _SignInError {
-  const _$_SignInError(this.errorText);
-
-  @override
-  final String errorText;
-
-  @override
-  String toString() {
-    return 'SignInState.error(errorText: $errorText)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _SignInError &&
-            const DeepCollectionEquality().equals(other.errorText, errorText));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(errorText));
-
-  @JsonKey(ignore: true)
-  @override
-  _$SignInErrorCopyWith<_SignInError> get copyWith =>
-      __$SignInErrorCopyWithImpl<_SignInError>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function(String errorText) error,
-  }) {
-    return error(errorText);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
-  }) {
-    return error?.call(errorText);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(errorText);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_SignInInitial value) initial,
-    required TResult Function(_SignInLoading value) loading,
-    required TResult Function(_SignInSuccess value) success,
-    required TResult Function(_SignInError value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SignInError implements SignInState {
-  const factory _SignInError(String errorText) = _$_SignInError;
-
-  String get errorText;
-  @JsonKey(ignore: true)
-  _$SignInErrorCopyWith<_SignInError> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

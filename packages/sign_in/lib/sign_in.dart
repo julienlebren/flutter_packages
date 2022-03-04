@@ -24,7 +24,7 @@ import 'package:sign_in/presentation/painters/google_logo.dart';
 import 'package:sign_in/l10n/sign_in_localizations.dart';
 import 'package:the_apple_sign_in/the_apple_sign_in.dart';
 
-part 'controllers/sign_in_controller.dart';
+part 'controllers/sign_in_buttons_controller.dart';
 part 'controllers/sign_in_email_login_controller.dart';
 part 'controllers/sign_in_email_link_controller.dart';
 part 'controllers/sign_in_email_reset_controller.dart';
@@ -33,8 +33,6 @@ part 'controllers/sign_in_phone_controller.dart';
 part 'controllers/sign_in_phone_verification_controller.dart';
 part 'core/enums/sign_in_suppliers.dart';
 part 'core/models/auth_state.dart';
-part 'core/models/sign_in_event.dart';
-part 'core/models/sign_in_state.dart';
 part 'core/models/sign_in_theme.dart';
 part 'presentation/router/sign_in_router.dart';
 part 'presentation/views/sign_in_countries_page.dart';

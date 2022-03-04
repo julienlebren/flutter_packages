@@ -107,6 +107,7 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
       phoneNumberFormat: PhoneNumberFormat.national,
       country: country,
       onFormatFinished: (input) async {
+        print("input is $input");
         _handlePhoneEvent(ref, SignInPhoneEvent.phoneChanged(input));
       },
     );
