@@ -8,7 +8,7 @@ extension Description on FirebaseAuthException {
       case "invalid-email":
         return l10n.errorInvalidEmail;
       case "invalid-verification-code":
-
+        return l10n.errorInvalidVerificationCode;
       case "user-disabled":
         return l10n.errorUserDisabled;
       case "user-not-found":
