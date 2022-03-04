@@ -143,19 +143,23 @@ class SignInVerificationResendButton extends ConsumerWidget {
           .select((state) => state.countdown),
     );
 
-    if (countdown > 0) {
-      return PlatformTextButton(
-        title: l10n.signInVerificationNotReceived(countdown.toString()),
-        onPressed: null,
-      );
+    if (countdown != null) {
+      if (countdown > 0) {
+        return PlatformTextButton(
+          title: l10n.signInVerificationNotReceived(countdown.toString()),
+          onPressed: null,
+        );
+      } else {
+        return PlatformTextButton(
+          title: l10n.signInVerificationResend,
+          onPressed: () {
+            _handlePhoneVerificationEvent(
+                ref, const SignInPhoneVerificationEvent.resendCode());
+          },
+        );
+      }
     } else {
-      return PlatformTextButton(
-        title: l10n.signInVerificationResend,
-        onPressed: () {
-          _handlePhoneVerificationEvent(
-              ref, const SignInPhoneVerificationEvent.resendCode());
-        },
-      );
+      return const SizedBox.shrink();
     }
   }
 }

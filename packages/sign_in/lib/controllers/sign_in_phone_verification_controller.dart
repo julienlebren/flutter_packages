@@ -44,7 +44,7 @@ class SignInPhoneVerificationEvent with _$SignInPhoneVerificationEvent {
 @freezed
 class SignInPhoneVerificationState with _$SignInPhoneVerificationState {
   const factory SignInPhoneVerificationState({
-    @Default(delayBeforeUserCanRequestNewCode) int countdown,
+    @Default(delayBeforeUserCanRequestNewCode) int? countdown,
     required Map<String, dynamic> phoneNumber,
     required String nationalPhoneNumber,
     required String verificationId,
@@ -98,7 +98,7 @@ class SignInPhoneVerificationController
         if (state.countdown == 0) {
           timer.cancel();
         } else {
-          state = state.copyWith(countdown: state.countdown - 1);
+          state = state.copyWith(countdown: state.countdown! - 1);
         }
       },
     );
@@ -130,6 +130,7 @@ class SignInPhoneVerificationController
           isLoading: false,
           verificationId: verificationId,
         );
+        _startTimer();
       });
     } on FirebaseAuthException catch (e) {
       state = state.copyWith(
@@ -141,7 +142,12 @@ class SignInPhoneVerificationController
 
   Future<void> _verifyCode() async {
     if (!state.canSubmit) return;
-    state = state.copyWith(isLoading: true);
+    _timer?.cancel();
+
+    state = state.copyWith(
+      isLoading: true,
+      countdown: null,
+    );
 
     try {
       await _service.verifyCode(
@@ -153,11 +159,13 @@ class SignInPhoneVerificationController
         isLoading: false,
         errorText: e.description(_localizations),
       );
+      _startTimer();
     } catch (e) {
       state = state.copyWith(
         isLoading: false,
         errorText: e.toString(),
       );
+      _startTimer();
     }
   }
 }

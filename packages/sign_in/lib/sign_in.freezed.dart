@@ -5626,7 +5626,7 @@ class _$SignInPhoneVerificationStateTearOff {
   const _$SignInPhoneVerificationStateTearOff();
 
   _SignInPhoneVerificationState call(
-      {int countdown = delayBeforeUserCanRequestNewCode,
+      {int? countdown = delayBeforeUserCanRequestNewCode,
       required Map<String, dynamic> phoneNumber,
       required String nationalPhoneNumber,
       required String verificationId,
@@ -5654,7 +5654,7 @@ const $SignInPhoneVerificationState = _$SignInPhoneVerificationStateTearOff();
 
 /// @nodoc
 mixin _$SignInPhoneVerificationState {
-  int get countdown => throw _privateConstructorUsedError;
+  int? get countdown => throw _privateConstructorUsedError;
   Map<String, dynamic> get phoneNumber => throw _privateConstructorUsedError;
   String get nationalPhoneNumber => throw _privateConstructorUsedError;
   String get verificationId => throw _privateConstructorUsedError;
@@ -5676,7 +5676,7 @@ abstract class $SignInPhoneVerificationStateCopyWith<$Res> {
           $Res Function(SignInPhoneVerificationState) then) =
       _$SignInPhoneVerificationStateCopyWithImpl<$Res>;
   $Res call(
-      {int countdown,
+      {int? countdown,
       Map<String, dynamic> phoneNumber,
       String nationalPhoneNumber,
       String verificationId,
@@ -5712,7 +5712,7 @@ class _$SignInPhoneVerificationStateCopyWithImpl<$Res>
       countdown: countdown == freezed
           ? _value.countdown
           : countdown // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       phoneNumber: phoneNumber == freezed
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
@@ -5758,7 +5758,7 @@ abstract class _$SignInPhoneVerificationStateCopyWith<$Res>
       __$SignInPhoneVerificationStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int countdown,
+      {int? countdown,
       Map<String, dynamic> phoneNumber,
       String nationalPhoneNumber,
       String verificationId,
@@ -5798,7 +5798,7 @@ class __$SignInPhoneVerificationStateCopyWithImpl<$Res>
       countdown: countdown == freezed
           ? _value.countdown
           : countdown // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       phoneNumber: phoneNumber == freezed
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
@@ -5851,7 +5851,7 @@ class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
 
   @JsonKey()
   @override
-  final int countdown;
+  final int? countdown;
   @override
   final Map<String, dynamic> phoneNumber;
   @override
@@ -5921,7 +5921,7 @@ class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
 abstract class _SignInPhoneVerificationState
     implements SignInPhoneVerificationState {
   const factory _SignInPhoneVerificationState(
-      {int countdown,
+      {int? countdown,
       required Map<String, dynamic> phoneNumber,
       required String nationalPhoneNumber,
       required String verificationId,
@@ -5932,7 +5932,7 @@ abstract class _SignInPhoneVerificationState
       String? errorText}) = _$_SignInPhoneVerificationState;
 
   @override
-  int get countdown;
+  int? get countdown;
   @override
   Map<String, dynamic> get phoneNumber;
   @override
