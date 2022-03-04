@@ -6,7 +6,10 @@ final signInEmailLinkControllerProvider = StateNotifierProvider.autoDispose<
   final localizations = ref.watch(signInLocalizationsProvider);
   return SignInEmailLinkController(
       service, localizations, "authSettings.emailLinkUrl!");
-});
+}, dependencies: [
+  authServiceProvider,
+  signInLocalizationsProvider,
+]);
 
 @freezed
 class SignInEmailLinkEvent with _$SignInEmailLinkEvent {

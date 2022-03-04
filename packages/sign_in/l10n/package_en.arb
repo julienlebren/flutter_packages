@@ -52,7 +52,6 @@
     },
     "signInPhoneAutoRetrieve": "You may not need to enter the code as the app will attempt to detect it automatically.",
     "signInPhoneLoadingDialog": "Waiting for automatic code detection ...",
-    "signInPhoneErrorMobile": "You must enter a mobile phone number.",
     "signInVerificationTitle": "Number verification",
     "signInVerificationSubtitle": "Enter the 6-digit code we sent to {phoneNumber}",
     "@signInVerificationSubtitle" : {
@@ -62,7 +61,6 @@
           }
       }
     },
-    "signInVerificationWrongNumber": "Wrong number",
     "signInVerificationNotReceived": "Did not receive the code?\nWait {seconds} seconds...",
     "@signInVerificationNotReceived" : {
       "placeholders": {
@@ -81,5 +79,6 @@
     "errorEmailAlreadyInUse": "An account is already registered with this email address.",
     "errorWeakPassword": "This password is not strong enough.",
     "errorOperationNotAllowed": "This operation is not allowed.",
+    "errorPhoneNotMobile": "You must enter a mobile phone number.",
     "errorUnknown": "An unknown error has occurred."
 }

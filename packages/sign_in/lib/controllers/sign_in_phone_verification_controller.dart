@@ -1,5 +1,33 @@
 part of '../sign_in.dart';
 
+final signInPhoneVerificationControllerProvider =
+    StateNotifierProvider.autoDispose<SignInPhoneVerificationController,
+        SignInPhoneVerificationState>((ref) {
+  final phoneNumber = ref.watch(signInPhoneControllerProvider.select(
+    (state) => state.phoneNumber,
+  ));
+  final verificationId = ref.watch(signInPhoneControllerProvider.select(
+    (state) => state.verificationId,
+  ));
+
+  if (phoneNumber == null || verificationId == null) {
+    throw UnimplementedError();
+  }
+
+  final authService = ref.watch(authServiceProvider);
+  final localizations = ref.watch(signInLocalizationsProvider);
+
+  return SignInPhoneVerificationController(
+    phoneNumber,
+    verificationId,
+    authService,
+    localizations,
+  );
+}, dependencies: [
+  authServiceProvider,
+  signInLocalizationsProvider,
+]);
+
 @freezed
 class SignInPhoneVerificationEvent with _$SignInPhoneVerificationEvent {
   const factory SignInPhoneVerificationEvent.resendCode() = _ResendCode;
@@ -29,9 +57,9 @@ class SignInPhoneVerificationState with _$SignInPhoneVerificationState {
 ///
 /// The core of the functions are in the [AuthService] class because
 /// these functions are also used in the member section of the app.
-class SignInVerificationController
+class SignInPhoneVerificationController
     extends StateNotifier<SignInPhoneVerificationState> {
-  SignInVerificationController(
+  SignInPhoneVerificationController(
     Map<String, dynamic> phoneNumber,
     String verificationId,
     this._service,

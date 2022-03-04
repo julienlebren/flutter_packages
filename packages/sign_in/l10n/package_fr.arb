@@ -50,5 +50,6 @@
     "errorEmailAlreadyInUse": "Un compte existe déjà avec cette adresse e-mail.",
     "errorWeakPassword": "Le mot de passe n'est pas assez complexe.",
     "errorOperationNotAllowed": "Cette opération n'est pas autorisée.",
+    "errorPhoneNotMobile": "Vous devez saisir un numéro de téléphone mobile.",
     "errorUnknown": "Une erreur inconnue est survenue."
 }

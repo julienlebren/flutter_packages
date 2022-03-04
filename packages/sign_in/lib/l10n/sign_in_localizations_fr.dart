@@ -129,18 +129,12 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get signInPhoneLoadingDialog => 'En attente de la détection automatique du code...';
 
   @override
-  String get signInPhoneErrorMobile => 'Vous devez saisir un numéro de téléphone mobile.';
-
-  @override
   String get signInVerificationTitle => 'Vérification du numéro';
 
   @override
   String signInVerificationSubtitle(String phoneNumber) {
     return 'Saisissez le code à 6 chiffres que nous avons envoyé au $phoneNumber';
   }
-
-  @override
-  String get signInVerificationWrongNumber => 'Mauvais numéro';
 
   @override
   String signInVerificationNotReceived(String seconds) {
@@ -176,6 +170,9 @@ class SignInLocalizationsFr extends SignInLocalizations {
 
   @override
   String get errorOperationNotAllowed => 'Cette opération n\'est pas autorisée.';
+
+  @override
+  String get errorPhoneNotMobile => 'Vous devez saisir un numéro de téléphone mobile.';
 
   @override
   String get errorUnknown => 'Une erreur inconnue est survenue.';

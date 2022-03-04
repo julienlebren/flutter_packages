@@ -24,7 +24,7 @@ class FirebaseAuthService {
     );
 
     if (phoneNumber['type'] != 'mobile') {
-      FirebaseAuthException(code: 'ERROR_PHONE_NOT_MOBILE');
+      FirebaseAuthException(code: 'phone-not-mobile');
     }
 
     return phoneNumber;

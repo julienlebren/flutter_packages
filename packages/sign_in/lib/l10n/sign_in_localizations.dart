@@ -328,12 +328,6 @@ abstract class SignInLocalizations {
   /// **'Waiting for automatic code detection ...'**
   String get signInPhoneLoadingDialog;
 
-  /// No description provided for @signInPhoneErrorMobile.
-  ///
-  /// In en, this message translates to:
-  /// **'You must enter a mobile phone number.'**
-  String get signInPhoneErrorMobile;
-
   /// No description provided for @signInVerificationTitle.
   ///
   /// In en, this message translates to:
@@ -345,12 +339,6 @@ abstract class SignInLocalizations {
   /// In en, this message translates to:
   /// **'Enter the 6-digit code we sent to {phoneNumber}'**
   String signInVerificationSubtitle(String phoneNumber);
-
-  /// No description provided for @signInVerificationWrongNumber.
-  ///
-  /// In en, this message translates to:
-  /// **'Wrong number'**
-  String get signInVerificationWrongNumber;
 
   /// No description provided for @signInVerificationNotReceived.
   ///
@@ -417,6 +405,12 @@ abstract class SignInLocalizations {
   /// In en, this message translates to:
   /// **'This operation is not allowed.'**
   String get errorOperationNotAllowed;
+
+  /// No description provided for @errorPhoneNotMobile.
+  ///
+  /// In en, this message translates to:
+  /// **'You must enter a mobile phone number.'**
+  String get errorPhoneNotMobile;
 
   /// No description provided for @errorUnknown.
   ///

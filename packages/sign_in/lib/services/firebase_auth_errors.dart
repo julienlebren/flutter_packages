@@ -21,6 +21,8 @@ extension Description on FirebaseAuthException {
         return l10n.errorWeakPassword;
       case "operation-not-allowed":
         return l10n.errorOperationNotAllowed;
+      case "phone-not-mobile":
+        return l10n.errorPhoneNotMobile;
       default:
         return l10n.errorUnknown;
     }
