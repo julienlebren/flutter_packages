@@ -61,7 +61,12 @@ class FirebaseAuthService {
       verificationId: verificationId,
       smsCode: verificationCode,
     );
-    await _firebaseAuth.signInWithCredential(credential);
+    try {
+      await _firebaseAuth.signInWithCredential(credential);
+    } catch (e) {
+      print("error: $e");
+      rethrow;
+    }
     completion();
   }
 
