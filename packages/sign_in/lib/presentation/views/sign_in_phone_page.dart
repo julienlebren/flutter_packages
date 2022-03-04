@@ -157,6 +157,9 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
             state.country.exampleNumberMobileNational,
           ),
           inputFormatters: [phoneNumberFormatter(state.country)],
+          onChanged: (text) {
+            print("text: $text");
+          },
         ),
         if (isCupertino()) const SignInDivider(),
         if (isMaterial()) const SignInPhoneAutoRetrieve(),
