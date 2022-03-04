@@ -158,14 +158,14 @@ class SignInPhoneVerificationController
       state = state.copyWith(
         isLoading: false,
         errorText: e.description(_localizations),
+        countdown: 0,
       );
-      _startTimer();
     } catch (e) {
       state = state.copyWith(
         isLoading: false,
         errorText: e.toString(),
+        countdown: 0,
       );
-      _startTimer();
     }
   }
 }
