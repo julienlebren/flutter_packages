@@ -119,22 +119,10 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
       phoneNumberFormat: PhoneNumberFormat.national,
       country: country,
       onFormatFinished: (input) async {
-        print("country: $country // input is $input");
         _handlePhoneEvent(ref, SignInPhoneEvent.phoneChanged(input));
       },
     );
   }
-
-/*
-  TextInputFormatter phoneNumberFormatter(CountryWithPhoneCode country) {
-    var m = country.getPhoneMask(
-      format: PhoneNumberFormat.national,
-      type: PhoneNumberType.mobile,
-      removeCountryCodeFromMask: true,
-    );
-    final _mask = PhoneMask(m);
-    final maskedValue = _mask.apply(newValue.text);
-  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -153,13 +141,12 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
           controller: controller,
           focusNode: focusNode,
           keyboardType: TextInputType.phone,
-          placeholder: l10n.signInPhonePlaceholder(
-            state.country.exampleNumberMobileNational,
-          ),
+          placeholder: state.country.exampleNumberMobileNational != null
+              ? l10n.signInPhonePlaceholder(
+                  state.country.exampleNumberMobileNational!,
+                )
+              : null,
           inputFormatters: [phoneNumberFormatter(state.country)],
-          onChanged: (text) {
-            print("text: $text");
-          },
         ),
         if (isCupertino()) const SignInDivider(),
         if (isMaterial()) const SignInPhoneAutoRetrieve(),
