@@ -86,11 +86,12 @@ class _SignInPinCodeFieldState extends ConsumerState<SignInPinCodeField> {
             selectedFieldDecoration: _pinPutBorder(signInTheme.primaryColor),
             followingFieldDecoration: _pinPutBorder(signInTheme.borderColor),
             autovalidateMode: AutovalidateMode.disabled,
+            onChanged: (input) {
+              _handlePhoneVerificationEvent(
+                  ref, SignInPhoneVerificationEvent.codeChanged(input));
+            },
             onTap: () {
-              final canSubmit = ref.watch(
-                  signInPhoneVerificationControllerProvider
-                      .select((state) => state.canSubmit));
-              if (canSubmit) {
+              if (controller.text.length == 6) {
                 controller.text = '';
               }
             },
