@@ -154,7 +154,7 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
           focusNode: focusNode,
           keyboardType: TextInputType.phone,
           placeholder: l10n.signInPhonePlaceholder(
-            state.country.exampleNumberMobileNational ?? "",
+            state.country.exampleNumberMobileNational,
           ),
           inputFormatters: [phoneNumberFormatter(state.country)],
           onChanged: (text) {
