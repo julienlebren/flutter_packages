@@ -87,12 +87,23 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
     });
   }
 
+  void _onCountryChanged(CountryWithPhoneCode country) {
+    _handlePhoneEvent(ref, SignInPhoneEvent.countryChanged(country));
+    controller.clear();
+    focusNode.requestFocus();
+  }
+
   void _openCountries(BuildContext context) {
     if (isCupertino()) {
       showCupertinoModalBottomSheet(
         context: context,
         duration: const Duration(milliseconds: 300),
-        builder: (context) => const CountriesPage(),
+        builder: (context) => ProviderScope(
+          overrides: [
+            countryHandler.overrideWithValue(_onCountryChanged),
+          ],
+          child: const CountriesPage(),
+        ),
       );
     } else {
       final navigator = SignInNavigatorKeys.modal.currentState!;
@@ -112,6 +123,17 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
       },
     );
   }
+
+/*
+  TextInputFormatter phoneNumberFormatter(CountryWithPhoneCode country) {
+    var m = country.getPhoneMask(
+      format: PhoneNumberFormat.national,
+      type: PhoneNumberType.mobile,
+      removeCountryCodeFromMask: true,
+    );
+    final _mask = PhoneMask(m);
+    final maskedValue = _mask.apply(newValue.text);
+  }*/
 
   @override
   Widget build(BuildContext context) {
