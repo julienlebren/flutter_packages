@@ -52,8 +52,6 @@ part 'services/firebase_auth_service.dart';
 part 'services/firebase_auth_errors.dart';
 part 'sign_in.freezed.dart';
 
-const delayBeforeUserCanRequestNewCode = 60;
-
 final userStreamProvider = StreamProvider((_) => const Stream.empty());
 
 final needUserInfoProvider = Provider<bool?>((_) => false);
