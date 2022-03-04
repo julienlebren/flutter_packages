@@ -105,7 +105,6 @@ class SignInPhoneVerificationController
   }
 
   void handleEvent(SignInPhoneVerificationEvent event) {
-    print("state is $state");
     event.when(
       codeChanged: (input) {
         state = state.copyWith(
@@ -116,6 +115,7 @@ class SignInPhoneVerificationController
       resendCode: _resendCode,
       verifyCode: _verifyCode,
     );
+    print("state is $state");
   }
 
   Future<void> _resendCode() async {
@@ -137,6 +137,7 @@ class SignInPhoneVerificationController
   }
 
   Future<void> _verifyCode() async {
+    print("_verifyCode: state is $state");
     if (!state.canSubmit) return;
     state = state.copyWith(isLoading: true);
 
