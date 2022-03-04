@@ -52,7 +52,7 @@ class FirebaseAuthService {
     );
   }
 
-  Future<void> verifyCode(
+  Future<User?> verifyCode(
     String verificationId,
     String verificationCode,
   ) async {
@@ -60,12 +60,8 @@ class FirebaseAuthService {
       verificationId: verificationId,
       smsCode: verificationCode,
     );
-    try {
-      await _firebaseAuth.signInWithCredential(credential);
-    } catch (e) {
-      print("[verifyCode] error: $e");
-      rethrow;
-    }
+    final userCredential = await _firebaseAuth.signInWithCredential(credential);
+    return userCredential.user;
   }
 
   Future<User?> signInAnonymously() async {
