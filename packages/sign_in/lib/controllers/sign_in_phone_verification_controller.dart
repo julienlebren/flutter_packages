@@ -115,7 +115,6 @@ class SignInPhoneVerificationController
       resendCode: _resendCode,
       verifyCode: _verifyCode,
     );
-    print("state is $state");
   }
 
   Future<void> _resendCode() async {
@@ -142,12 +141,7 @@ class SignInPhoneVerificationController
     state = state.copyWith(isLoading: true);
 
     try {
-      _service.verifyCode(state.verificationId, state.verificationCode, () {
-        state = state.copyWith(
-          isLoading: false,
-          isSuccess: true,
-        );
-      });
+      _service.verifyCode(state.verificationId, state.verificationCode);
     } on FirebaseAuthException catch (e) {
       state = state.copyWith(
         isLoading: false,
