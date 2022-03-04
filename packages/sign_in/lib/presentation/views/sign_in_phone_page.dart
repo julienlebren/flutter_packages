@@ -134,7 +134,7 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
           placeholder: l10n.signInPhonePlaceholder(
             selectedCountry.exampleNumberMobileNational,
           ),
-          inputFormatters: [phoneNumberFormatter(selectedCountry)],
+          //inputFormatters: [phoneNumberFormatter(selectedCountry)],
         ),
         if (isCupertino()) const SignInDivider(),
         if (isMaterial()) const SignInPhoneAutoRetrieve(),
