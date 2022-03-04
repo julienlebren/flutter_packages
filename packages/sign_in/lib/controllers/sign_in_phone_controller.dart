@@ -76,6 +76,11 @@ class SignInPhoneController extends StateNotifier<SignInPhoneState> {
         phoneNumber: phoneNumber,
         canSubmit: true,
       );
+    } on FirebaseAuthException catch (e) {
+      state = state.copyWith(
+        isLoading: false,
+        errorText: e.description(_localizations),
+      );
     } on PlatformException {
       /// We change the state only if it was not the same to avoid useless
       /// rebuilds when typing the phone number inside the TextField
