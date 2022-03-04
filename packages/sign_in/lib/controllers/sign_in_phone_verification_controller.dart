@@ -110,6 +110,7 @@ class SignInPhoneVerificationController
         state = state.copyWith(
           verificationCode: input,
           canSubmit: input.length == 6,
+          errorText: null,
         );
       },
       resendCode: _resendCode,
@@ -118,7 +119,10 @@ class SignInPhoneVerificationController
   }
 
   Future<void> _resendCode() async {
-    state = state.copyWith(isLoading: true);
+    state = state.copyWith(
+      isLoading: true,
+      errorText: null,
+    );
 
     try {
       await _service.verifyPhone(state.phoneNumber['e164'], (verificationId) {

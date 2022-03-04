@@ -15,10 +15,6 @@ class SignInPhoneVerificationPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.read(signInLocalizationsProvider);
-    final errorText =
-        ref.watch(signInPhoneVerificationControllerProvider.select(
-      (state) => state.errorText,
-    ));
     final isLoading =
         ref.watch(signInPhoneVerificationControllerProvider.select(
       (state) => state.isLoading,
@@ -28,12 +24,23 @@ class SignInPhoneVerificationPage extends ConsumerWidget {
       (state) => state.nationalPhoneNumber,
     ));
 
+    ref.listen<SignInPhoneVerificationState>(
+        signInPhoneVerificationControllerProvider, (_, state) {
+      if (state.errorText != null) {
+        showErrorDialog(
+          context,
+          ref,
+          title: l10n.errorTitle,
+          content: state.errorText,
+        );
+      }
+    });
+
     return SignInPageBuilder(
       title: l10n.signInVerificationTitle,
       subtitle: l10n.signInVerificationSubtitle(nationalPhoneNumber),
       leadingButton: const SignInCloseButton(),
       child: const SignInVerificationForm(),
-      errorText: errorText,
       isLoading: isLoading,
     );
   }
