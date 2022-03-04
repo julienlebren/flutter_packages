@@ -32,8 +32,8 @@ class SignInTappableField
 
   Widget _contents(WidgetRef ref) {
     final textColor = ref.watch(
-      appThemeProvider.select(
-        (appTheme) => appTheme.textColor,
+      signInThemeProvider.select(
+        (theme) => theme.textColor,
       ),
     );
     return SizedBox(

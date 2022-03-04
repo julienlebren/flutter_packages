@@ -30,6 +30,7 @@ final signInPhoneVerificationControllerProvider =
 }, dependencies: [
   authServiceProvider,
   signInLocalizationsProvider,
+  signInPhoneControllerProvider,
 ]);
 
 @freezed
