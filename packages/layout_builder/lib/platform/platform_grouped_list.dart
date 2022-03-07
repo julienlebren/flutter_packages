@@ -78,6 +78,41 @@ class GroupedListSection {
   }
 }
 
+class GroupedListSectionLoader extends GroupedListSection {
+  @override
+  List<Widget> render(BuildContext context) {
+    return [
+      SliverToBoxAdapter(
+        child: const Center(
+          child: Center(
+            child: PlatformActivityIndicator(),
+          ),
+        ),
+      )
+    ];
+  }
+}
+
+class GroupedListSectionError extends GroupedListSection {
+  GroupedListSectionError(this.errorText);
+
+  final String errorText;
+
+  @override
+  List<Widget> render(BuildContext context) {
+    return [
+      SliverToBoxAdapter(
+        child: Center(
+          child: Text(
+            errorText,
+            style: TextStyle(color: Colors.red),
+          ),
+        ),
+      )
+    ];
+  }
+}
+
 class GroupedListSectionTitle extends PlatformWidgetBase<Container, Container> {
   const GroupedListSectionTitle(this.title) : super();
 
