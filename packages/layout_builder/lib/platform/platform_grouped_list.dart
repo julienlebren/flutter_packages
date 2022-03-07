@@ -66,9 +66,7 @@ class GroupedListSection {
         ),
       ] else
         SliverToBoxAdapter(
-          child: GroupedListRow(
-            child: child!,
-          ),
+          child: child!,
         ),
       if (caption != null)
         SliverToBoxAdapter(
@@ -81,11 +79,9 @@ class GroupedListSection {
 class GroupedListSectionLoader extends GroupedListSection {
   GroupedListSectionLoader()
       : super(
-          child: SliverToBoxAdapter(
-            child: const Center(
-              child: Center(
-                child: PlatformActivityIndicator(),
-              ),
+          child: const Center(
+            child: Center(
+              child: PlatformActivityIndicator(),
             ),
           ),
         );
@@ -94,12 +90,10 @@ class GroupedListSectionLoader extends GroupedListSection {
 class GroupedListSectionError extends GroupedListSection {
   GroupedListSectionError(this.errorText)
       : super(
-          child: SliverToBoxAdapter(
-            child: Center(
-              child: Text(
-                errorText,
-                style: TextStyle(color: Colors.red),
-              ),
+          child: Center(
+            child: Text(
+              errorText,
+              style: TextStyle(color: Colors.red),
             ),
           ),
         );
