@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of theme;
@@ -29,6 +30,7 @@ class _$AppThemeTearOff {
       Color? cupertinoNavigationBarBackgroundColor,
       Color? tabBarBackgroundColor,
       Color? cupertinoTabBarBackgroundColor,
+      required Color groupedListBackgroundColor,
       required Color listTileBackground,
       double elevatedButtonRadius = 5.0,
       double elevatedButtonPadding = 16.0,
@@ -50,6 +52,7 @@ class _$AppThemeTearOff {
           cupertinoNavigationBarBackgroundColor,
       tabBarBackgroundColor: tabBarBackgroundColor,
       cupertinoTabBarBackgroundColor: cupertinoTabBarBackgroundColor,
+      groupedListBackgroundColor: groupedListBackgroundColor,
       listTileBackground: listTileBackground,
       elevatedButtonRadius: elevatedButtonRadius,
       elevatedButtonPadding: elevatedButtonPadding,
@@ -80,6 +83,7 @@ mixin _$AppTheme {
   Color? get tabBarBackgroundColor => throw _privateConstructorUsedError;
   Color? get cupertinoTabBarBackgroundColor =>
       throw _privateConstructorUsedError;
+  Color get groupedListBackgroundColor => throw _privateConstructorUsedError;
   Color get listTileBackground => throw _privateConstructorUsedError;
   double get elevatedButtonRadius => throw _privateConstructorUsedError;
   double get elevatedButtonPadding => throw _privateConstructorUsedError;
@@ -110,6 +114,7 @@ abstract class $AppThemeCopyWith<$Res> {
       Color? cupertinoNavigationBarBackgroundColor,
       Color? tabBarBackgroundColor,
       Color? cupertinoTabBarBackgroundColor,
+      Color groupedListBackgroundColor,
       Color listTileBackground,
       double elevatedButtonRadius,
       double elevatedButtonPadding,
@@ -141,6 +146,7 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
     Object? cupertinoNavigationBarBackgroundColor = freezed,
     Object? tabBarBackgroundColor = freezed,
     Object? cupertinoTabBarBackgroundColor = freezed,
+    Object? groupedListBackgroundColor = freezed,
     Object? listTileBackground = freezed,
     Object? elevatedButtonRadius = freezed,
     Object? elevatedButtonPadding = freezed,
@@ -196,6 +202,10 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
           ? _value.cupertinoTabBarBackgroundColor
           : cupertinoTabBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color?,
+      groupedListBackgroundColor: groupedListBackgroundColor == freezed
+          ? _value.groupedListBackgroundColor
+          : groupedListBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
       listTileBackground: listTileBackground == freezed
           ? _value.listTileBackground
           : listTileBackground // ignore: cast_nullable_to_non_nullable
@@ -249,6 +259,7 @@ abstract class _$AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
       Color? cupertinoNavigationBarBackgroundColor,
       Color? tabBarBackgroundColor,
       Color? cupertinoTabBarBackgroundColor,
+      Color groupedListBackgroundColor,
       Color listTileBackground,
       double elevatedButtonRadius,
       double elevatedButtonPadding,
@@ -281,6 +292,7 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
     Object? cupertinoNavigationBarBackgroundColor = freezed,
     Object? tabBarBackgroundColor = freezed,
     Object? cupertinoTabBarBackgroundColor = freezed,
+    Object? groupedListBackgroundColor = freezed,
     Object? listTileBackground = freezed,
     Object? elevatedButtonRadius = freezed,
     Object? elevatedButtonPadding = freezed,
@@ -336,6 +348,10 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
           ? _value.cupertinoTabBarBackgroundColor
           : cupertinoTabBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color?,
+      groupedListBackgroundColor: groupedListBackgroundColor == freezed
+          ? _value.groupedListBackgroundColor
+          : groupedListBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
       listTileBackground: listTileBackground == freezed
           ? _value.listTileBackground
           : listTileBackground // ignore: cast_nullable_to_non_nullable
@@ -387,6 +403,7 @@ class _$_AppTheme implements _AppTheme {
       this.cupertinoNavigationBarBackgroundColor,
       this.tabBarBackgroundColor,
       this.cupertinoTabBarBackgroundColor,
+      required this.groupedListBackgroundColor,
       required this.listTileBackground,
       this.elevatedButtonRadius = 5.0,
       this.elevatedButtonPadding = 16.0,
@@ -419,11 +436,13 @@ class _$_AppTheme implements _AppTheme {
   @override
   final Color? cupertinoTabBarBackgroundColor;
   @override
+  final Color groupedListBackgroundColor;
+  @override
   final Color listTileBackground;
-  @JsonKey(defaultValue: 5.0)
+  @JsonKey()
   @override
   final double elevatedButtonRadius;
-  @JsonKey(defaultValue: 16.0)
+  @JsonKey()
   @override
   final double elevatedButtonPadding;
   @override
@@ -439,7 +458,7 @@ class _$_AppTheme implements _AppTheme {
 
   @override
   String toString() {
-    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, cupertinoNavigationBarBackgroundColor: $cupertinoNavigationBarBackgroundColor, tabBarBackgroundColor: $tabBarBackgroundColor, cupertinoTabBarBackgroundColor: $cupertinoTabBarBackgroundColor, listTileBackground: $listTileBackground, elevatedButtonRadius: $elevatedButtonRadius, elevatedButtonPadding: $elevatedButtonPadding, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
+    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, cupertinoNavigationBarBackgroundColor: $cupertinoNavigationBarBackgroundColor, tabBarBackgroundColor: $tabBarBackgroundColor, cupertinoTabBarBackgroundColor: $cupertinoTabBarBackgroundColor, groupedListBackgroundColor: $groupedListBackgroundColor, listTileBackground: $listTileBackground, elevatedButtonRadius: $elevatedButtonRadius, elevatedButtonPadding: $elevatedButtonPadding, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
   }
 
   @override
@@ -447,71 +466,74 @@ class _$_AppTheme implements _AppTheme {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _AppTheme &&
-            (identical(other.brightness, brightness) ||
-                other.brightness == brightness) &&
-            (identical(other.primaryColor, primaryColor) ||
-                other.primaryColor == primaryColor) &&
-            (identical(other.secondaryColor, secondaryColor) ||
-                other.secondaryColor == secondaryColor) &&
-            (identical(other.scaffoldBackgroundColor, scaffoldBackgroundColor) ||
-                other.scaffoldBackgroundColor == scaffoldBackgroundColor) &&
-            (identical(other.statusBarColor, statusBarColor) ||
-                other.statusBarColor == statusBarColor) &&
-            (identical(other.materialSystemBarColor, materialSystemBarColor) ||
-                other.materialSystemBarColor == materialSystemBarColor) &&
-            (identical(other.navigationBarBackgroundColor, navigationBarBackgroundColor) ||
-                other.navigationBarBackgroundColor ==
-                    navigationBarBackgroundColor) &&
-            (identical(other.navigationBarBorderColor, navigationBarBorderColor) ||
-                other.navigationBarBorderColor == navigationBarBorderColor) &&
-            (identical(other.cupertinoNavigationBarBackgroundColor,
-                    cupertinoNavigationBarBackgroundColor) ||
-                other.cupertinoNavigationBarBackgroundColor ==
-                    cupertinoNavigationBarBackgroundColor) &&
-            (identical(other.tabBarBackgroundColor, tabBarBackgroundColor) ||
-                other.tabBarBackgroundColor == tabBarBackgroundColor) &&
-            (identical(other.cupertinoTabBarBackgroundColor, cupertinoTabBarBackgroundColor) ||
-                other.cupertinoTabBarBackgroundColor ==
-                    cupertinoTabBarBackgroundColor) &&
-            (identical(other.listTileBackground, listTileBackground) ||
-                other.listTileBackground == listTileBackground) &&
-            (identical(other.elevatedButtonRadius, elevatedButtonRadius) ||
-                other.elevatedButtonRadius == elevatedButtonRadius) &&
-            (identical(other.elevatedButtonPadding, elevatedButtonPadding) ||
-                other.elevatedButtonPadding == elevatedButtonPadding) &&
-            (identical(other.selectedColor, selectedColor) ||
-                other.selectedColor == selectedColor) &&
-            (identical(other.borderColor, borderColor) ||
-                other.borderColor == borderColor) &&
-            (identical(other.textColor, textColor) ||
-                other.textColor == textColor) &&
-            (identical(other.dividerColor, dividerColor) ||
-                other.dividerColor == dividerColor) &&
-            (identical(other.shadowColor, shadowColor) || other.shadowColor == shadowColor));
+            const DeepCollectionEquality()
+                .equals(other.brightness, brightness) &&
+            const DeepCollectionEquality()
+                .equals(other.primaryColor, primaryColor) &&
+            const DeepCollectionEquality()
+                .equals(other.secondaryColor, secondaryColor) &&
+            const DeepCollectionEquality().equals(
+                other.scaffoldBackgroundColor, scaffoldBackgroundColor) &&
+            const DeepCollectionEquality()
+                .equals(other.statusBarColor, statusBarColor) &&
+            const DeepCollectionEquality()
+                .equals(other.materialSystemBarColor, materialSystemBarColor) &&
+            const DeepCollectionEquality().equals(
+                other.navigationBarBackgroundColor,
+                navigationBarBackgroundColor) &&
+            const DeepCollectionEquality().equals(
+                other.navigationBarBorderColor, navigationBarBorderColor) &&
+            const DeepCollectionEquality().equals(
+                other.cupertinoNavigationBarBackgroundColor,
+                cupertinoNavigationBarBackgroundColor) &&
+            const DeepCollectionEquality()
+                .equals(other.tabBarBackgroundColor, tabBarBackgroundColor) &&
+            const DeepCollectionEquality().equals(
+                other.cupertinoTabBarBackgroundColor,
+                cupertinoTabBarBackgroundColor) &&
+            const DeepCollectionEquality().equals(
+                other.groupedListBackgroundColor, groupedListBackgroundColor) &&
+            const DeepCollectionEquality()
+                .equals(other.listTileBackground, listTileBackground) &&
+            const DeepCollectionEquality()
+                .equals(other.elevatedButtonRadius, elevatedButtonRadius) &&
+            const DeepCollectionEquality()
+                .equals(other.elevatedButtonPadding, elevatedButtonPadding) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedColor, selectedColor) &&
+            const DeepCollectionEquality()
+                .equals(other.borderColor, borderColor) &&
+            const DeepCollectionEquality().equals(other.textColor, textColor) &&
+            const DeepCollectionEquality()
+                .equals(other.dividerColor, dividerColor) &&
+            const DeepCollectionEquality()
+                .equals(other.shadowColor, shadowColor));
   }
 
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        brightness,
-        primaryColor,
-        secondaryColor,
-        scaffoldBackgroundColor,
-        statusBarColor,
-        materialSystemBarColor,
-        navigationBarBackgroundColor,
-        navigationBarBorderColor,
-        cupertinoNavigationBarBackgroundColor,
-        tabBarBackgroundColor,
-        cupertinoTabBarBackgroundColor,
-        listTileBackground,
-        elevatedButtonRadius,
-        elevatedButtonPadding,
-        selectedColor,
-        borderColor,
-        textColor,
-        dividerColor,
-        shadowColor
+        const DeepCollectionEquality().hash(brightness),
+        const DeepCollectionEquality().hash(primaryColor),
+        const DeepCollectionEquality().hash(secondaryColor),
+        const DeepCollectionEquality().hash(scaffoldBackgroundColor),
+        const DeepCollectionEquality().hash(statusBarColor),
+        const DeepCollectionEquality().hash(materialSystemBarColor),
+        const DeepCollectionEquality().hash(navigationBarBackgroundColor),
+        const DeepCollectionEquality().hash(navigationBarBorderColor),
+        const DeepCollectionEquality()
+            .hash(cupertinoNavigationBarBackgroundColor),
+        const DeepCollectionEquality().hash(tabBarBackgroundColor),
+        const DeepCollectionEquality().hash(cupertinoTabBarBackgroundColor),
+        const DeepCollectionEquality().hash(groupedListBackgroundColor),
+        const DeepCollectionEquality().hash(listTileBackground),
+        const DeepCollectionEquality().hash(elevatedButtonRadius),
+        const DeepCollectionEquality().hash(elevatedButtonPadding),
+        const DeepCollectionEquality().hash(selectedColor),
+        const DeepCollectionEquality().hash(borderColor),
+        const DeepCollectionEquality().hash(textColor),
+        const DeepCollectionEquality().hash(dividerColor),
+        const DeepCollectionEquality().hash(shadowColor)
       ]);
 
   @JsonKey(ignore: true)
@@ -533,6 +555,7 @@ abstract class _AppTheme implements AppTheme {
       Color? cupertinoNavigationBarBackgroundColor,
       Color? tabBarBackgroundColor,
       Color? cupertinoTabBarBackgroundColor,
+      required Color groupedListBackgroundColor,
       required Color listTileBackground,
       double elevatedButtonRadius,
       double elevatedButtonPadding,
@@ -564,6 +587,8 @@ abstract class _AppTheme implements AppTheme {
   Color? get tabBarBackgroundColor;
   @override
   Color? get cupertinoTabBarBackgroundColor;
+  @override
+  Color get groupedListBackgroundColor;
   @override
   Color get listTileBackground;
   @override
@@ -778,23 +803,23 @@ class _$_ListViewTheme implements _ListViewTheme {
       this.labelMaxLines = 1,
       this.captionMaxLines = 1});
 
-  @JsonKey(defaultValue: 15)
+  @JsonKey()
   @override
   final double separatorPadding;
   @override
   final Color labelColor;
-  @JsonKey(defaultValue: 17)
+  @JsonKey()
   @override
   final double labelFontSize;
   @override
   final Color captionColor;
-  @JsonKey(defaultValue: 13)
+  @JsonKey()
   @override
   final double captionFontSize;
-  @JsonKey(defaultValue: 1)
+  @JsonKey()
   @override
   final int? labelMaxLines;
-  @JsonKey(defaultValue: 1)
+  @JsonKey()
   @override
   final int? captionMaxLines;
 
@@ -808,32 +833,32 @@ class _$_ListViewTheme implements _ListViewTheme {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ListViewTheme &&
-            (identical(other.separatorPadding, separatorPadding) ||
-                other.separatorPadding == separatorPadding) &&
-            (identical(other.labelColor, labelColor) ||
-                other.labelColor == labelColor) &&
-            (identical(other.labelFontSize, labelFontSize) ||
-                other.labelFontSize == labelFontSize) &&
-            (identical(other.captionColor, captionColor) ||
-                other.captionColor == captionColor) &&
-            (identical(other.captionFontSize, captionFontSize) ||
-                other.captionFontSize == captionFontSize) &&
-            (identical(other.labelMaxLines, labelMaxLines) ||
-                other.labelMaxLines == labelMaxLines) &&
-            (identical(other.captionMaxLines, captionMaxLines) ||
-                other.captionMaxLines == captionMaxLines));
+            const DeepCollectionEquality()
+                .equals(other.separatorPadding, separatorPadding) &&
+            const DeepCollectionEquality()
+                .equals(other.labelColor, labelColor) &&
+            const DeepCollectionEquality()
+                .equals(other.labelFontSize, labelFontSize) &&
+            const DeepCollectionEquality()
+                .equals(other.captionColor, captionColor) &&
+            const DeepCollectionEquality()
+                .equals(other.captionFontSize, captionFontSize) &&
+            const DeepCollectionEquality()
+                .equals(other.labelMaxLines, labelMaxLines) &&
+            const DeepCollectionEquality()
+                .equals(other.captionMaxLines, captionMaxLines));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      separatorPadding,
-      labelColor,
-      labelFontSize,
-      captionColor,
-      captionFontSize,
-      labelMaxLines,
-      captionMaxLines);
+      const DeepCollectionEquality().hash(separatorPadding),
+      const DeepCollectionEquality().hash(labelColor),
+      const DeepCollectionEquality().hash(labelFontSize),
+      const DeepCollectionEquality().hash(captionColor),
+      const DeepCollectionEquality().hash(captionFontSize),
+      const DeepCollectionEquality().hash(labelMaxLines),
+      const DeepCollectionEquality().hash(captionMaxLines));
 
   @JsonKey(ignore: true)
   @override
@@ -1083,16 +1108,16 @@ class _$_FormTheme implements _FormTheme {
   final Color rowDividerColor;
   @override
   final Color sectionDividerColor;
-  @JsonKey(defaultValue: 15)
+  @JsonKey()
   @override
   final double rowDividerPadding;
-  @JsonKey(defaultValue: true)
+  @JsonKey()
   @override
   final bool displayRowDivider;
-  @JsonKey(defaultValue: 10)
+  @JsonKey()
   @override
   final double sectionDividerPadding;
-  @JsonKey(defaultValue: true)
+  @JsonKey()
   @override // 20 if gray background
   final bool displaySectionDivider;
 
@@ -1106,35 +1131,35 @@ class _$_FormTheme implements _FormTheme {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _FormTheme &&
-            (identical(other.backgroundColor, backgroundColor) ||
-                other.backgroundColor == backgroundColor) &&
-            (identical(other.rowBackgroundColor, rowBackgroundColor) ||
-                other.rowBackgroundColor == rowBackgroundColor) &&
-            (identical(other.rowDividerColor, rowDividerColor) ||
-                other.rowDividerColor == rowDividerColor) &&
-            (identical(other.sectionDividerColor, sectionDividerColor) ||
-                other.sectionDividerColor == sectionDividerColor) &&
-            (identical(other.rowDividerPadding, rowDividerPadding) ||
-                other.rowDividerPadding == rowDividerPadding) &&
-            (identical(other.displayRowDivider, displayRowDivider) ||
-                other.displayRowDivider == displayRowDivider) &&
-            (identical(other.sectionDividerPadding, sectionDividerPadding) ||
-                other.sectionDividerPadding == sectionDividerPadding) &&
-            (identical(other.displaySectionDivider, displaySectionDivider) ||
-                other.displaySectionDivider == displaySectionDivider));
+            const DeepCollectionEquality()
+                .equals(other.backgroundColor, backgroundColor) &&
+            const DeepCollectionEquality()
+                .equals(other.rowBackgroundColor, rowBackgroundColor) &&
+            const DeepCollectionEquality()
+                .equals(other.rowDividerColor, rowDividerColor) &&
+            const DeepCollectionEquality()
+                .equals(other.sectionDividerColor, sectionDividerColor) &&
+            const DeepCollectionEquality()
+                .equals(other.rowDividerPadding, rowDividerPadding) &&
+            const DeepCollectionEquality()
+                .equals(other.displayRowDivider, displayRowDivider) &&
+            const DeepCollectionEquality()
+                .equals(other.sectionDividerPadding, sectionDividerPadding) &&
+            const DeepCollectionEquality()
+                .equals(other.displaySectionDivider, displaySectionDivider));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      backgroundColor,
-      rowBackgroundColor,
-      rowDividerColor,
-      sectionDividerColor,
-      rowDividerPadding,
-      displayRowDivider,
-      sectionDividerPadding,
-      displaySectionDivider);
+      const DeepCollectionEquality().hash(backgroundColor),
+      const DeepCollectionEquality().hash(rowBackgroundColor),
+      const DeepCollectionEquality().hash(rowDividerColor),
+      const DeepCollectionEquality().hash(sectionDividerColor),
+      const DeepCollectionEquality().hash(rowDividerPadding),
+      const DeepCollectionEquality().hash(displayRowDivider),
+      const DeepCollectionEquality().hash(sectionDividerPadding),
+      const DeepCollectionEquality().hash(displaySectionDivider));
 
   @JsonKey(ignore: true)
   @override
@@ -1295,13 +1320,13 @@ class _$_ThemeLocalizations implements _ThemeLocalizations {
   const _$_ThemeLocalizations(
       {this.dark = "Dark", this.light = "Light", this.system = "System"});
 
-  @JsonKey(defaultValue: "Dark")
+  @JsonKey()
   @override
   final String dark;
-  @JsonKey(defaultValue: "Light")
+  @JsonKey()
   @override
   final String light;
-  @JsonKey(defaultValue: "System")
+  @JsonKey()
   @override
   final String system;
 
@@ -1315,13 +1340,17 @@ class _$_ThemeLocalizations implements _ThemeLocalizations {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ThemeLocalizations &&
-            (identical(other.dark, dark) || other.dark == dark) &&
-            (identical(other.light, light) || other.light == light) &&
-            (identical(other.system, system) || other.system == system));
+            const DeepCollectionEquality().equals(other.dark, dark) &&
+            const DeepCollectionEquality().equals(other.light, light) &&
+            const DeepCollectionEquality().equals(other.system, system));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, dark, light, system);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(dark),
+      const DeepCollectionEquality().hash(light),
+      const DeepCollectionEquality().hash(system));
 
   @JsonKey(ignore: true)
   @override

@@ -157,14 +157,14 @@ class SignInPhoneVerificationController
     } on FirebaseAuthException catch (e) {
       state = state.copyWith(
         isLoading: false,
-        errorText: e.description(_localizations),
         countdown: 0,
+        errorText: e.description(_localizations),
       );
     } catch (e) {
       state = state.copyWith(
         isLoading: false,
-        errorText: e.toString(),
         countdown: 0,
+        errorText: e.toString(),
       );
     }
   }

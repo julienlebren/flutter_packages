@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of platform;
@@ -180,16 +181,20 @@ class _$_TabItem with DiagnosticableTreeMixin implements _TabItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _TabItem &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.icon, icon) || other.icon == icon) &&
-            (identical(other.selectedIcon, selectedIcon) ||
-                other.selectedIcon == selectedIcon) &&
-            (identical(other.router, router) || other.router == router));
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.icon, icon) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedIcon, selectedIcon) &&
+            const DeepCollectionEquality().equals(other.router, router));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, title, icon, selectedIcon, router);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(icon),
+      const DeepCollectionEquality().hash(selectedIcon),
+      const DeepCollectionEquality().hash(router));
 
   @JsonKey(ignore: true)
   @override
