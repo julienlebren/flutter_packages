@@ -19,6 +19,7 @@ part 'platform_datetime_picker.dart';
 part 'platform_elevated_button.dart';
 part 'platform_icon_button.dart';
 part 'platform_icons.dart';
+part 'platform_grouped_list.dart';
 part 'platform_list_tile.dart';
 part 'platform_list_view.dart';
 part 'platform_modal_page.dart';
