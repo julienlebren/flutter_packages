@@ -79,38 +79,32 @@ class GroupedListSection {
 }
 
 class GroupedListSectionLoader extends GroupedListSection {
-  @override
-  List<Widget> render(BuildContext context) {
-    return [
-      SliverToBoxAdapter(
-        child: const Center(
-          child: Center(
-            child: PlatformActivityIndicator(),
+  GroupedListSectionLoader()
+      : super(
+          child: SliverToBoxAdapter(
+            child: const Center(
+              child: Center(
+                child: PlatformActivityIndicator(),
+              ),
+            ),
           ),
-        ),
-      )
-    ];
-  }
+        );
 }
 
 class GroupedListSectionError extends GroupedListSection {
-  GroupedListSectionError(this.errorText);
+  GroupedListSectionError(this.errorText)
+      : super(
+          child: SliverToBoxAdapter(
+            child: Center(
+              child: Text(
+                errorText,
+                style: TextStyle(color: Colors.red),
+              ),
+            ),
+          ),
+        );
 
   final String errorText;
-
-  @override
-  List<Widget> render(BuildContext context) {
-    return [
-      SliverToBoxAdapter(
-        child: Center(
-          child: Text(
-            errorText,
-            style: TextStyle(color: Colors.red),
-          ),
-        ),
-      )
-    ];
-  }
 }
 
 class GroupedListSectionTitle extends PlatformWidgetBase<Container, Container> {
