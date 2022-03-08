@@ -183,7 +183,7 @@ class ListTileContents extends ConsumerWidget {
         minHeight: 48.0,
       ),
       child: Container(
-        padding: EdgeInsets.only(top: 8, bottom: 8, left: 15, right: 8),
+        padding: EdgeInsets.only(left: 15, right: 8),
         child: child ??
             Row(
               mainAxisSize: MainAxisSize.max,
