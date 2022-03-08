@@ -53,18 +53,18 @@ part 'sign_in.freezed.dart';
 
 final needUserInfoProvider = Provider<bool?>((_) => false);*/
 
-class AuthArguments {
-  AuthArguments(this.userStreamProvider, [this.needUserInfoProvider]);
+class AuthSettings {
+  AuthSettings(this.userStreamProvider, [this.needUserInfoProvider]);
 
   final StreamProvider userStreamProvider;
   final Provider? needUserInfoProvider;
 }
 
 final authArgumentsProvider =
-    Provider<AuthArguments>((_) => throw UnimplementedError());
+    Provider<AuthSettings>((_) => throw UnimplementedError());
 
 final authStateProvider =
-    Provider.family<AuthState, AuthArguments>((ref, args) {
+    Provider.family<AuthState, AuthSettings>((ref, settings) {
   final authStateChanges = ref.watch(authStateChangesProvider);
 
   return authStateChanges.when(
@@ -74,7 +74,7 @@ final authStateProvider =
       if (user == null) {
         return const AuthState.notAuthed();
       } else {
-        final user = ref.watch(args.userStreamProvider);
+        final user = ref.watch(settings.userStreamProvider);
         return user.when(
           loading: () {
             final isSigninIn = ref.watch(signInSupplierProvider) != null;
@@ -89,8 +89,8 @@ final authStateProvider =
             if (user == null) {
               return const AuthState.waitingUserCreation();
             } else {
-              if (args.needUserInfoProvider != null) {
-                final needUserInfo = ref.watch(args.needUserInfoProvider!);
+              if (settings.needUserInfoProvider != null) {
+                final needUserInfo = ref.watch(settings.needUserInfoProvider!);
                 if (needUserInfo == true) {
                   return const AuthState.needUserInformation();
                 } else if (needUserInfo == false) {
