@@ -93,7 +93,7 @@ class SignInNavigator extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final signInRouter = ref.read(signInRouterProvider);
-    final authArguments = ref.read(authArgumentsProvider);
+    final authArguments = ref.read(authSettingsProvider);
 
     ref.listen<AuthState>(authStateProvider(authArguments), (_, authState) {
       authState.maybeWhen(

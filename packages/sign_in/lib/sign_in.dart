@@ -60,7 +60,7 @@ class AuthSettings {
   final Provider? needUserInfoProvider;
 }
 
-final authArgumentsProvider =
+final authSettingsProvider =
     Provider<AuthSettings>((_) => throw UnimplementedError());
 
 final authStateProvider =
