@@ -38,13 +38,16 @@ extension ThemeDescription on ThemeType {
         return l10n.system;
     }
   }
-}
 
-@freezed
-class ThemeLocalizations with _$ThemeLocalizations {
-  const factory ThemeLocalizations({
-    @Default("Dark") String dark,
-    @Default("Light") String light,
-    @Default("System") String system,
-  }) = _ThemeLocalizations;
+  String description2(BuildContext context) {
+    final l10n = LayoutLocalizations.of(context)!;
+    switch (this) {
+      case ThemeType.dark:
+        return l10n.dark;
+      case ThemeType.light:
+        return l10n.light;
+      default:
+        return l10n.system;
+    }
+  }
 }

@@ -16,8 +16,8 @@ extension LocaleName on Locale {
   }
 }
 
-class LocaleArguments {
-  LocaleArguments({
+class LocaleSettings {
+  LocaleSettings({
     this.availableLocales = const [
       Locale('en', 'US'),
       Locale('fr', 'FR'),
@@ -29,11 +29,11 @@ class LocaleArguments {
   final Locale? userLocale;
 }
 
-final localeArgumentsProvider =
-    Provider<LocaleArguments>((_) => throw UnimplementedError());
+final localeSettingssProvider =
+    Provider<LocaleSettings>((_) => throw UnimplementedError());
 
-final localeProvider = Provider.family<Locale, LocaleArguments>((ref, args) {
-  final availableLocales = args.availableLocales;
+final localeProvider = Provider.family<Locale, LocaleSettings>((ref, settings) {
+  final availableLocales = settings.availableLocales;
   final deviceLocale = window.locale;
 
   if (availableLocales.isEmpty) {
@@ -41,7 +41,7 @@ final localeProvider = Provider.family<Locale, LocaleArguments>((ref, args) {
   }
 
   var _locales = availableLocales.where(
-    (locale) => locale == args.userLocale,
+    (locale) => locale == settings.userLocale,
   );
   if (_locales.isNotEmpty) {
     return _locales.first;
