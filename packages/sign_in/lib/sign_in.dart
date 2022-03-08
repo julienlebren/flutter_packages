@@ -53,21 +53,21 @@ part 'sign_in.freezed.dart';
 
 final needUserInfoProvider = Provider<bool?>((_) => false);*/
 
-class AuthStateArguments {
-  AuthStateArguments(
+class AuthArguments {
+  AuthArguments(
     this.userStreamProvider,
     this.needUserInfoProvider,
   );
 
   final StreamProvider userStreamProvider;
-  final Provider needUserInfoProvider;
+  final Provider? needUserInfoProvider;
 }
 
-final authStateArgumentsProvider =
-    Provider<AuthStateArguments>((_) => throw UnimplementedError());
+final authArgumentsProvider =
+    Provider<AuthArguments>((_) => throw UnimplementedError());
 
 final authStateProvider =
-    Provider.family<AuthState, AuthStateArguments>((ref, args) {
+    Provider.family<AuthState, AuthArguments>((ref, args) {
   final authStateChanges = ref.watch(authStateChangesProvider);
 
   return authStateChanges.when(
@@ -92,11 +92,13 @@ final authStateProvider =
             if (user == null) {
               return const AuthState.waitingUserCreation();
             } else {
-              final needUserInfo = ref.watch(args.needUserInfoProvider);
-              if (needUserInfo == true) {
-                return const AuthState.needUserInformation();
-              } else if (needUserInfo == false) {
-                return AuthState.authed(user);
+              if (args.needUserInfoProvider != null) {
+                final needUserInfo = ref.watch(args.needUserInfoProvider!);
+                if (needUserInfo == true) {
+                  return const AuthState.needUserInformation();
+                } else {
+                  return AuthState.authed(user);
+                }
               } else {
                 final isSigninIn = ref.watch(signInSupplierProvider) != null;
                 if (isSigninIn) {
