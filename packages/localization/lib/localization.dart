@@ -2,6 +2,17 @@ library localization;
 
 import 'dart:ui';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:localization/locale_names.dart';
+
+extension LocaleName on Locale {
+  String get name {
+    return localeNames[languageCode] ?? "Unknown";
+  }
+
+  String get regionalName {
+    return localeNames["${languageCode}_$countryCode"] ?? "Unknown";
+  }
+}
 
 final localesProvider = Provider<List<Locale>>((ref) {
   return const [
