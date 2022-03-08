@@ -199,9 +199,9 @@ class ListTileContents extends ConsumerWidget {
                       child: leading!,
                     ),
                   if (label != null)
-                    Padding(
-                      padding: EdgeInsets.symmetric(vertical: 8),
-                      child: Expanded(
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 8),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
