@@ -116,11 +116,11 @@ final authStateProvider =
 
 final signInLocalizationsProvider = Provider<SignInLocalizations>(
   (ref) {
-    final args = ref.watch(localeArgumentsProvider);
+    final args = ref.watch(localeSettingsProvider);
     final locale = ref.watch(localeProvider(args));
     return lookupSignInLocalizations(locale);
   },
-  dependencies: [localeArgumentsProvider],
+  dependencies: [localeSettingsProvider],
 );
 
 final signInThemeProvider = Provider<SignInTheme>(
