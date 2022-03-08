@@ -93,8 +93,10 @@ class SignInNavigator extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final signInRouter = ref.read(signInRouterProvider);
+    final authStateArguments = ref.read(authStateArgumentsProvider);
 
-    ref.listen<AuthState>(authStateProvider, (previousAuthState, authState) {
+    ref.listen<AuthState>(authStateProvider(authStateArguments),
+        (_, authState) {
       authState.maybeWhen(
         authed: (_) {
           if (navigatorKey == SignInNavigatorKeys.main) {
@@ -122,7 +124,7 @@ class SignInNavigator extends ConsumerWidget {
 
     var initialRoute = routeName;
     if (navigatorKey == SignInNavigatorKeys.modal) {
-      final authState = ref.read(authStateProvider);
+      final authState = ref.read(authStateProvider(authStateArguments));
       if (authState == const AuthState.needUserInformation()) {
         initialRoute = SignInRoutes.signInUserInfoPage;
       }

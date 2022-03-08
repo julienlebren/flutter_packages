@@ -3,11 +3,8 @@ library sign_in;
 import 'dart:async';
 import 'dart:ui' as ui;
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:extensions/extensions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:firestore_service/firestore_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -48,16 +45,29 @@ part 'presentation/widgets/sign_in_button.dart';
 part 'presentation/widgets/sign_in_buttons.dart';
 part 'presentation/widgets/sign_in_page_builder.dart';
 part 'presentation/widgets/sign_in_tappable_field.dart';
-part 'repositories/user_repository.dart';
 part 'services/firebase_auth_service.dart';
 part 'services/firebase_auth_errors.dart';
 part 'sign_in.freezed.dart';
 
-final userStreamProvider = StreamProvider((_) => const Stream.empty());
+/*final userStreamProvider = StreamProvider((_) => const Stream.empty());
 
-final needUserInfoProvider = Provider<bool?>((_) => false);
+final needUserInfoProvider = Provider<bool?>((_) => false);*/
 
-final authStateProvider = Provider<AuthState>((ref) {
+class AuthStateArguments {
+  AuthStateArguments(
+    this.userStreamProvider,
+    this.needUserInfoProvider,
+  );
+
+  final StreamProvider userStreamProvider;
+  final Provider needUserInfoProvider;
+}
+
+final authStateArgumentsProvider =
+    Provider<AuthStateArguments>((_) => throw UnimplementedError());
+
+final authStateProvider =
+    Provider.family<AuthState, AuthStateArguments>((ref, args) {
   final authStateChanges = ref.watch(authStateChangesProvider);
 
   return authStateChanges.when(
@@ -67,7 +77,7 @@ final authStateProvider = Provider<AuthState>((ref) {
       if (user == null) {
         return const AuthState.notAuthed();
       } else {
-        final user = ref.watch(userStreamProvider);
+        final user = ref.watch(args.userStreamProvider);
         return user.when(
           loading: () {
             final isSigninIn = ref.watch(signInSupplierProvider) != null;
@@ -82,7 +92,7 @@ final authStateProvider = Provider<AuthState>((ref) {
             if (user == null) {
               return const AuthState.waitingUserCreation();
             } else {
-              final needUserInfo = ref.watch(needUserInfoProvider);
+              final needUserInfo = ref.watch(args.needUserInfoProvider);
               if (needUserInfo == true) {
                 return const AuthState.needUserInformation();
               } else if (needUserInfo == false) {
@@ -101,12 +111,7 @@ final authStateProvider = Provider<AuthState>((ref) {
       }
     },
   );
-}, dependencies: [
-  authStateChangesProvider,
-  signInSupplierProvider,
-  userStreamProvider,
-  needUserInfoProvider,
-]);
+});
 
 final signInLocalizationsProvider = Provider<SignInLocalizations>(
   (ref) {
