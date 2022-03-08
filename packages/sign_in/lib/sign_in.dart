@@ -54,10 +54,7 @@ part 'sign_in.freezed.dart';
 final needUserInfoProvider = Provider<bool?>((_) => false);*/
 
 class AuthArguments {
-  AuthArguments(
-    this.userStreamProvider,
-    this.needUserInfoProvider,
-  );
+  AuthArguments(this.userStreamProvider, [this.needUserInfoProvider]);
 
   final StreamProvider userStreamProvider;
   final Provider? needUserInfoProvider;
