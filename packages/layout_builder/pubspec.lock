@@ -188,10 +188,10 @@ packages:
     description:
       path: "packages/extensions"
       ref: HEAD
-      resolved-ref: "24477c1adbd4b4bc5fc7240c86dde952bb9272db"
+      resolved-ref: f813129081bec4e0deb49650f8895960562f53df
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.1.1"
+    version: "0.1.6"
   fake_async:
     dependency: transitive
     description:
@@ -352,10 +352,10 @@ packages:
     description:
       path: "packages/localization"
       ref: HEAD
-      resolved-ref: d62c74f53ff916d263251ed633310422fc3f1531
+      resolved-ref: f813129081bec4e0deb49650f8895960562f53df
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.1.4"
+    version: "1.0.0"
   logging:
     dependency: transitive
     description:
