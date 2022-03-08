@@ -75,12 +75,14 @@ final authStateProvider =
         return const AuthState.notAuthed();
       } else {
         final user = ref.watch(args.userStreamProvider);
+        print("user: $user");
         return user.when(
           loading: () {
             final isSigninIn = ref.watch(signInSupplierProvider) != null;
             if (isSigninIn) {
               return const AuthState.notAuthed();
             } else {
+              print("ici");
               return const AuthState.initializing();
             }
           },
@@ -101,6 +103,7 @@ final authStateProvider =
                 if (isSigninIn) {
                   return const AuthState.notAuthed();
                 } else {
+                  print("mà");
                   return const AuthState.initializing();
                 }
               }
