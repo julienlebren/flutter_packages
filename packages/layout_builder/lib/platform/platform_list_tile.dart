@@ -184,76 +184,80 @@ class ListTileContents extends ConsumerWidget {
       ),
       child: Container(
         padding: EdgeInsets.only(left: 15, right: 8),
-        child: child ??
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                if (leading != null)
-                  Padding(
-                    padding: EdgeInsets.only(top: 8, bottom: 8, right: 10),
-                    child: leading!,
-                  ),
-                if (label != null)
-                  Expanded(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: alignment,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(top: 3, right: 5),
-                          child: Text(
-                            label!,
-                            style: TextStyle(
-                              color: listTheme.labelColor,
-                              fontSize: listTheme.labelFontSize,
-                              letterSpacing: isCupertino() ? -0.5 : 0,
-                            ),
-                            maxLines: listTheme.labelMaxLines,
-                            overflow: listTheme.labelMaxLines != null
-                                ? TextOverflow.ellipsis
-                                : null,
-                          ),
-                        ),
-                        if (caption != null)
+        child: child != null
+            ? Padding(
+                padding: EdgeInsets.symmetric(vertical: 8),
+                child: child!,
+              )
+            : Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  if (leading != null)
+                    Padding(
+                      padding: EdgeInsets.only(top: 8, bottom: 8, right: 10),
+                      child: leading!,
+                    ),
+                  if (label != null)
+                    Expanded(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: alignment,
+                        children: [
                           Padding(
-                            padding: EdgeInsets.symmetric(vertical: 5),
+                            padding: EdgeInsets.only(top: 3, right: 5),
                             child: Text(
-                              caption!,
+                              label!,
                               style: TextStyle(
-                                color: listTheme.captionColor,
-                                fontSize: listTheme.captionFontSize,
+                                color: listTheme.labelColor,
+                                fontSize: listTheme.labelFontSize,
                                 letterSpacing: isCupertino() ? -0.5 : 0,
                               ),
-                              textAlign: TextAlign.left,
-                              maxLines: listTheme.captionMaxLines,
-                              overflow: listTheme.captionMaxLines != null
+                              maxLines: listTheme.labelMaxLines,
+                              overflow: listTheme.labelMaxLines != null
                                   ? TextOverflow.ellipsis
                                   : null,
                             ),
                           ),
-                      ],
-                    ),
-                  ),
-                if (value != null)
-                  Padding(
-                    padding: EdgeInsets.only(right: 7),
-                    child: Text(
-                      value!,
-                      style: TextStyle(
-                        fontSize: isCupertino() ? 17 : 16,
-                        letterSpacing: isCupertino() ? -0.5 : 0,
-                        color: isMaterial() && label != null
-                            ? appTheme.primaryColor
-                            : appTheme.textColor,
+                          if (caption != null)
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 5),
+                              child: Text(
+                                caption!,
+                                style: TextStyle(
+                                  color: listTheme.captionColor,
+                                  fontSize: listTheme.captionFontSize,
+                                  letterSpacing: isCupertino() ? -0.5 : 0,
+                                ),
+                                textAlign: TextAlign.left,
+                                maxLines: listTheme.captionMaxLines,
+                                overflow: listTheme.captionMaxLines != null
+                                    ? TextOverflow.ellipsis
+                                    : null,
+                              ),
+                            ),
+                        ],
                       ),
-                      textAlign: TextAlign.right,
                     ),
-                  ),
-                if (trailing != null) trailing!
-              ],
-            ),
+                  if (value != null)
+                    Padding(
+                      padding: EdgeInsets.only(right: 7),
+                      child: Text(
+                        value!,
+                        style: TextStyle(
+                          fontSize: isCupertino() ? 17 : 16,
+                          letterSpacing: isCupertino() ? -0.5 : 0,
+                          color: isMaterial() && label != null
+                              ? appTheme.primaryColor
+                              : appTheme.textColor,
+                        ),
+                        textAlign: TextAlign.right,
+                      ),
+                    ),
+                  if (trailing != null) trailing!
+                ],
+              ),
       ),
     );
   }
