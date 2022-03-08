@@ -1,7 +1,7 @@
 name: localization
 description: A new Flutter package project.
-version: 0.1.5
-homepage:
+publish_to: 'none' 
+version: 0.1.5+1
 
 environment:
   sdk: ">=2.16.1 <3.0.0"
@@ -10,6 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  extensions:
+    git:
+      url: https://github.com/julienlebren/flutter_packages
+      path: packages/extensions
+    version: ^0.1.6
   flutter_riverpod: ^1.0.0
 
 dev_dependencies:

@@ -1,16 +1,18 @@
 library localization;
 
 import 'dart:ui';
+import 'package:extensions/extensions.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:localization/locale_names.dart';
 
 extension LocaleName on Locale {
   String get name {
-    return localeNames[languageCode] ?? "Unknown";
+    return (localeNames[languageCode] ?? "Unknown").capitalize();
   }
 
   String get regionalName {
-    return localeNames["${languageCode}_$countryCode"] ?? "Unknown";
+    return (localeNames["${languageCode}_$countryCode"] ?? "Unknown")
+        .capitalize();
   }
 }
 
