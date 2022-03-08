@@ -16,37 +16,40 @@ extension LocaleName on Locale {
   }
 }
 
-final localesProvider = Provider<List<Locale>>((ref) {
-  return const [
-    Locale('en', 'US'),
-    Locale('fr', 'FR'),
-  ];
+class LocaleArguments {
+  LocaleArguments({
+    this.availableLocales = const [
+      Locale('en', 'US'),
+      Locale('fr', 'FR'),
+    ],
+    this.userLocale,
+  });
+
+  final List<Locale> availableLocales;
+  final Locale? userLocale;
+}
+
+final localeArgumentsProvider =
+    Provider<LocaleArguments>((_) => throw UnimplementedError());
+
+final localeProvider = Provider.family<Locale, LocaleArguments>((ref, args) {
+  final availableLocales = args.availableLocales;
+  final deviceLocale = window.locale;
+
+  if (availableLocales.isEmpty) {
+    throw UnimplementedError();
+  }
+
+  var _locales = availableLocales.where(
+    (locale) => locale == args.userLocale,
+  );
+  if (_locales.isNotEmpty) {
+    return _locales.first;
+  }
+
+  if (availableLocales.contains(deviceLocale)) {
+    return deviceLocale;
+  }
+
+  return availableLocales.first;
 });
-
-final userLanguageProvider = Provider<String?>((_) => null);
-
-final localeProvider = Provider<Locale>(
-  (ref) {
-    final availableLocales = ref.read(localesProvider);
-    final deviceLocale = window.locale;
-
-    if (availableLocales.isEmpty) {
-      throw UnimplementedError();
-    }
-
-    final userLanguage = ref.watch(userLanguageProvider);
-    var _locales = availableLocales.where(
-      (locale) => locale.languageCode == userLanguage,
-    );
-    if (_locales.isNotEmpty) {
-      return _locales.first;
-    }
-
-    if (availableLocales.contains(deviceLocale)) {
-      return deviceLocale;
-    }
-
-    return availableLocales.first;
-  },
-  dependencies: [localesProvider, userLanguageProvider],
-);
