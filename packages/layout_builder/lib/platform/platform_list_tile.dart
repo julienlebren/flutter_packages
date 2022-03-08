@@ -191,7 +191,7 @@ class ListTileContents extends ConsumerWidget {
               children: [
                 if (leading != null)
                   Padding(
-                    padding: EdgeInsets.only(right: 10),
+                    padding: EdgeInsets.only(top: 8, bottom: 8, right: 10),
                     child: leading!,
                   ),
                 if (label != null)
