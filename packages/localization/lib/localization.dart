@@ -29,7 +29,7 @@ class LocaleSettings {
   final Locale? userLocale;
 }
 
-final localeSettingssProvider =
+final localeSettingsProvider =
     Provider<LocaleSettings>((_) => throw UnimplementedError());
 
 final localeProvider = Provider.family<Locale, LocaleSettings>((ref, settings) {
