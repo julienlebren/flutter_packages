@@ -199,45 +199,48 @@ class ListTileContents extends ConsumerWidget {
                       child: leading!,
                     ),
                   if (label != null)
-                    Expanded(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: alignment,
-                        children: [
-                          Padding(
-                            padding: EdgeInsets.only(top: 3, right: 5),
-                            child: Text(
-                              label!,
-                              style: TextStyle(
-                                color: listTheme.labelColor,
-                                fontSize: listTheme.labelFontSize,
-                                letterSpacing: isCupertino() ? -0.5 : 0,
-                              ),
-                              maxLines: listTheme.labelMaxLines,
-                              overflow: listTheme.labelMaxLines != null
-                                  ? TextOverflow.ellipsis
-                                  : null,
-                            ),
-                          ),
-                          if (caption != null)
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                      child: Expanded(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: alignment,
+                          children: [
                             Padding(
-                              padding: EdgeInsets.symmetric(vertical: 5),
+                              padding: EdgeInsets.only(top: 3, right: 5),
                               child: Text(
-                                caption!,
+                                label!,
                                 style: TextStyle(
-                                  color: listTheme.captionColor,
-                                  fontSize: listTheme.captionFontSize,
+                                  color: listTheme.labelColor,
+                                  fontSize: listTheme.labelFontSize,
                                   letterSpacing: isCupertino() ? -0.5 : 0,
                                 ),
-                                textAlign: TextAlign.left,
-                                maxLines: listTheme.captionMaxLines,
-                                overflow: listTheme.captionMaxLines != null
+                                maxLines: listTheme.labelMaxLines,
+                                overflow: listTheme.labelMaxLines != null
                                     ? TextOverflow.ellipsis
                                     : null,
                               ),
                             ),
-                        ],
+                            if (caption != null)
+                              Padding(
+                                padding: EdgeInsets.symmetric(vertical: 5),
+                                child: Text(
+                                  caption!,
+                                  style: TextStyle(
+                                    color: listTheme.captionColor,
+                                    fontSize: listTheme.captionFontSize,
+                                    letterSpacing: isCupertino() ? -0.5 : 0,
+                                  ),
+                                  textAlign: TextAlign.left,
+                                  maxLines: listTheme.captionMaxLines,
+                                  overflow: listTheme.captionMaxLines != null
+                                      ? TextOverflow.ellipsis
+                                      : null,
+                                ),
+                              ),
+                          ],
+                        ),
                       ),
                     ),
                   if (value != null)
