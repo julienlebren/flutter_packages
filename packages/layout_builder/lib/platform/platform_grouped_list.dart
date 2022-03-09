@@ -3,10 +3,10 @@ part of platform;
 class GroupedListView extends ConsumerWidget {
   const GroupedListView({
     Key? key,
-    required this.sections,
+    required this.children,
   }) : super(key: key);
 
-  final List<GroupedListSection> sections;
+  final List<Widget> children;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,7 +18,10 @@ class GroupedListView extends ConsumerWidget {
       ),
       child: CustomScrollView(
         slivers: [
-          for (final section in sections) ...section.render(context),
+          SliverPadding(
+            padding: EdgeInsets.only(top: 10),
+          ),
+          ...children,
           SliverSafeArea(
             sliver: SliverPadding(padding: EdgeInsets.only(bottom: 18)),
           ),
@@ -28,8 +31,9 @@ class GroupedListView extends ConsumerWidget {
   }
 }
 
-class GroupedListSection {
+class GroupedListSection extends ConsumerWidget {
   const GroupedListSection({
+    Key? key,
     this.title,
     this.caption,
     this.child,
@@ -41,64 +45,38 @@ class GroupedListSection {
   final Widget? child;
   final List<Widget>? children;
 
-  List<Widget> render(BuildContext context) {
-    return [
-      SliverToBoxAdapter(
-        child: SizedBox(height: 18),
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        (context, index) {
+          if (index == 0) {
+            if (title != null) {
+              return GroupedListSectionTitle(title!);
+            } else {
+              return SizedBox.shrink();
+            }
+          } else if (index == (children!.length * 2) + 1) {
+            if (caption != null) {
+              return GroupedListSectionCaption(caption!);
+            } else {
+              return SizedBox.shrink();
+            }
+          } else {
+            if (!index.isOdd) {
+              return isCupertino() ? const ListDivider() : SizedBox.shrink();
+            }
+            return GroupedListRow(
+              isFirst: index == 0,
+              isLast: index == (children!.length * 2 - 2),
+              child: children![index ~/ 2],
+            );
+          }
+        },
+        childCount: (children!.length * 2) + 1,
       ),
-      if (title != null)
-        SliverToBoxAdapter(child: GroupedListSectionTitle(title!)),
-      if (children != null) ...[
-        SliverList(
-          delegate: SliverChildBuilderDelegate(
-            (context, index) {
-              if (index.isOdd) {
-                return isCupertino() ? const ListDivider() : SizedBox.shrink();
-              }
-              return GroupedListRow(
-                isFirst: index == 0,
-                isLast: index == (children!.length * 2 - 2),
-                child: children![index ~/ 2],
-              );
-            },
-            childCount: (children!.length * 2) - 1,
-          ),
-        ),
-      ] else
-        SliverToBoxAdapter(
-          child: child!,
-        ),
-      if (caption != null)
-        SliverToBoxAdapter(
-          child: GroupedListSectionCaption(caption!),
-        ),
-    ];
+    );
   }
-}
-
-class GroupedListSectionLoader extends GroupedListSection {
-  GroupedListSectionLoader()
-      : super(
-          child: const Center(
-            child: Center(
-              child: PlatformActivityIndicator(),
-            ),
-          ),
-        );
-}
-
-class GroupedListSectionError extends GroupedListSection {
-  GroupedListSectionError(this.errorText)
-      : super(
-          child: Center(
-            child: Text(
-              errorText,
-              style: TextStyle(color: Colors.red),
-            ),
-          ),
-        );
-
-  final String errorText;
 }
 
 class GroupedListSectionTitle extends PlatformWidgetBase<Container, Container> {
@@ -203,3 +181,30 @@ class GroupedListSectionCaption extends StatelessWidget {
     );
   }
 }
+
+/*
+class GroupedListSectionLoader extends GroupedListSection {
+  GroupedListSectionLoader()
+      : super(
+          child: const Center(
+            child: Center(
+              child: PlatformActivityIndicator(),
+            ),
+          ),
+        );
+}
+
+class GroupedListSectionError extends GroupedListSection {
+  GroupedListSectionError(this.errorText)
+      : super(
+          child: Center(
+            child: Text(
+              errorText,
+              style: TextStyle(color: Colors.red),
+            ),
+          ),
+        );
+
+  final String errorText;
+}
+*/
