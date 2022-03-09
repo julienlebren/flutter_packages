@@ -22,6 +22,9 @@ class GroupedListView extends ConsumerWidget {
             padding: EdgeInsets.only(top: 10),
           ),
           ...children,
+          SliverPadding(
+            padding: EdgeInsets.only(top: 10),
+          ),
           SliverSafeArea(
             sliver: SliverPadding(padding: EdgeInsets.only(bottom: 18)),
           ),
@@ -67,8 +70,8 @@ class GroupedListSection extends ConsumerWidget {
               return isCupertino() ? const ListDivider() : SizedBox.shrink();
             }
             return GroupedListRow(
-              isFirst: index == 0,
-              isLast: index == (children!.length * 2 - 2),
+              isFirst: index == 1,
+              isLast: index == (children!.length * 2),
               child: children![index ~/ 2],
             );
           }
