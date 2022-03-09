@@ -22,9 +22,6 @@ class GroupedListView extends ConsumerWidget {
             padding: EdgeInsets.only(top: 10),
           ),
           ...children,
-          SliverPadding(
-            padding: EdgeInsets.only(top: 10),
-          ),
           SliverSafeArea(
             sliver: SliverPadding(padding: EdgeInsets.only(bottom: 18)),
           ),
@@ -57,7 +54,7 @@ class GroupedListSection extends ConsumerWidget {
             if (title != null) {
               return GroupedListSectionTitle(title!);
             } else {
-              return SizedBox.shrink();
+              return SizedBox(height: 15);
             }
           } else if (index == (children!.length * 2) + 1) {
             if (caption != null) {
@@ -71,7 +68,7 @@ class GroupedListSection extends ConsumerWidget {
             }
             return GroupedListRow(
               isFirst: index == 1,
-              isLast: index == (children!.length * 2),
+              isLast: index == (children!.length * 2 + 1),
               child: children![index ~/ 2],
             );
           }
