@@ -22,7 +22,7 @@ extension LocaleName on Locale {
 /// I always develop my apps in english as native language and provide
 /// a french translation since I am french 🇫🇷🙈
 /// But it can be overridden in the main [ProviderScope] of the app if needed.
-final availableLocalesProvider = Provider(
+final supportedLocalesProvider = Provider(
   (_) => const [
     Locale('en'),
     Locale('fr'),
@@ -36,7 +36,7 @@ final userLocaleProvider = Provider<Locale?>((_) => null);
 /// The provider of the [Locale] which will be watched by the `localizationProvider`
 /// in the app and the packages which are using localization.
 final localeProvider = Provider((ref) {
-  final availableLocales = ref.watch(availableLocalesProvider);
+  final availableLocales = ref.watch(supportedLocalesProvider);
   final deviceLocale = window.locale;
 
   if (availableLocales.isEmpty) {
@@ -58,34 +58,6 @@ final localeProvider = Provider((ref) {
 
   return availableLocales.first;
 }, dependencies: [
-  availableLocalesProvider,
+  supportedLocalesProvider,
   userLocaleProvider,
 ]);
-
-/*
-Locale locale({
-  required List<Locale> supportedLocales,
-  Locale? userLocale,
-}) {
-  final deviceLocale = window.locale;
-
-  if (supportedLocales.isEmpty) {
-    throw UnimplementedError();
-  }
-
-  var _locales = supportedLocales.where(
-    (locale) => locale == userLocale,
-  );
-  if (_locales.isNotEmpty) {
-    return _locales.first;
-  }
-
-  if (supportedLocales.contains(deviceLocale)) {
-    return deviceLocale;
-  }
-
-  return supportedLocales.first;
-}
-
-final localeProvider = Provider((_) => throw UnimplementedError());
-*/
