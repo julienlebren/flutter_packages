@@ -112,7 +112,7 @@ class GroupedListSectionTitle extends PlatformWidgetBase<Container, Container> {
       padding: EdgeInsets.only(
         left: 15,
         bottom: 5,
-        top: 15,
+        top: 20,
       ),
       child: Text(
         title.toUpperCase(),
@@ -126,7 +126,7 @@ class GroupedListSectionTitle extends PlatformWidgetBase<Container, Container> {
   }
 }
 
-class GroupedListRow extends StatelessWidget {
+class GroupedListRow extends ConsumerWidget {
   const GroupedListRow({
     Key? key,
     this.isFirst = true,
@@ -139,7 +139,7 @@ class GroupedListRow extends StatelessWidget {
   final Widget child;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return ClipRRect(
       borderRadius: BorderRadius.only(
         topLeft: isFirst ? Radius.circular(10.0) : Radius.zero,
@@ -147,7 +147,25 @@ class GroupedListRow extends StatelessWidget {
         bottomLeft: isLast ? Radius.circular(10.0) : Radius.zero,
         bottomRight: isLast ? Radius.circular(10.0) : Radius.zero,
       ),
-      child: child,
+      child: (() {
+        if (child is PlatformListTile) {
+          return child;
+        } else {
+          final backgroundColor = ref.watch(
+            appThemeProvider.select((appTheme) => appTheme.listTileBackground),
+          );
+          return ConstrainedBox(
+            constraints: BoxConstraints(
+              minHeight: isCupertino() ? 48.0 : 53.0,
+            ),
+            child: Container(
+              color: backgroundColor,
+              padding: EdgeInsets.only(left: 15, right: isCupertino() ? 8 : 15),
+              child: Center(child: child),
+            ),
+          );
+        }
+      }()),
     );
   }
 }
