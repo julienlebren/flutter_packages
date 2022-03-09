@@ -18,9 +18,6 @@ class GroupedListView extends ConsumerWidget {
       ),
       child: CustomScrollView(
         slivers: [
-          SliverPadding(
-            padding: EdgeInsets.only(top: 10),
-          ),
           ...children,
           SliverSafeArea(
             sliver: SliverPadding(padding: EdgeInsets.only(bottom: 18)),
@@ -68,7 +65,7 @@ class GroupedListSection extends ConsumerWidget {
             }
             return GroupedListRow(
               isFirst: index == 1,
-              isLast: index == (children!.length * 2 + 1),
+              isLast: index == (children!.length * 2 - 1),
               child: children![index ~/ 2],
             );
           }
@@ -115,7 +112,7 @@ class GroupedListSectionTitle extends PlatformWidgetBase<Container, Container> {
       padding: EdgeInsets.only(
         left: 15,
         bottom: 5,
-        top: 5,
+        top: 15,
       ),
       child: Text(
         title.toUpperCase(),
