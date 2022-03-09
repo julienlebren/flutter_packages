@@ -1,6 +1,6 @@
 part of 'form.dart';
 
-class FormTappableField extends ConsumerWidget {
+class FormTappableField extends ConsumerWidget with FormElement {
   const FormTappableField({
     Key? key,
     this.leading,
