@@ -618,6 +618,7 @@ class _$ListViewThemeTearOff {
   _ListViewTheme call(
       {double separatorPadding = 15,
       required Color labelColor,
+      required Color valueColor,
       double labelFontSize = 17,
       required Color captionColor,
       double captionFontSize = 13,
@@ -626,6 +627,7 @@ class _$ListViewThemeTearOff {
     return _ListViewTheme(
       separatorPadding: separatorPadding,
       labelColor: labelColor,
+      valueColor: valueColor,
       labelFontSize: labelFontSize,
       captionColor: captionColor,
       captionFontSize: captionFontSize,
@@ -642,6 +644,7 @@ const $ListViewTheme = _$ListViewThemeTearOff();
 mixin _$ListViewTheme {
   double get separatorPadding => throw _privateConstructorUsedError;
   Color get labelColor => throw _privateConstructorUsedError;
+  Color get valueColor => throw _privateConstructorUsedError;
   double get labelFontSize => throw _privateConstructorUsedError;
   Color get captionColor => throw _privateConstructorUsedError;
   double get captionFontSize => throw _privateConstructorUsedError;
@@ -661,6 +664,7 @@ abstract class $ListViewThemeCopyWith<$Res> {
   $Res call(
       {double separatorPadding,
       Color labelColor,
+      Color valueColor,
       double labelFontSize,
       Color captionColor,
       double captionFontSize,
@@ -681,6 +685,7 @@ class _$ListViewThemeCopyWithImpl<$Res>
   $Res call({
     Object? separatorPadding = freezed,
     Object? labelColor = freezed,
+    Object? valueColor = freezed,
     Object? labelFontSize = freezed,
     Object? captionColor = freezed,
     Object? captionFontSize = freezed,
@@ -695,6 +700,10 @@ class _$ListViewThemeCopyWithImpl<$Res>
       labelColor: labelColor == freezed
           ? _value.labelColor
           : labelColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      valueColor: valueColor == freezed
+          ? _value.valueColor
+          : valueColor // ignore: cast_nullable_to_non_nullable
               as Color,
       labelFontSize: labelFontSize == freezed
           ? _value.labelFontSize
@@ -730,6 +739,7 @@ abstract class _$ListViewThemeCopyWith<$Res>
   $Res call(
       {double separatorPadding,
       Color labelColor,
+      Color valueColor,
       double labelFontSize,
       Color captionColor,
       double captionFontSize,
@@ -752,6 +762,7 @@ class __$ListViewThemeCopyWithImpl<$Res>
   $Res call({
     Object? separatorPadding = freezed,
     Object? labelColor = freezed,
+    Object? valueColor = freezed,
     Object? labelFontSize = freezed,
     Object? captionColor = freezed,
     Object? captionFontSize = freezed,
@@ -766,6 +777,10 @@ class __$ListViewThemeCopyWithImpl<$Res>
       labelColor: labelColor == freezed
           ? _value.labelColor
           : labelColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      valueColor: valueColor == freezed
+          ? _value.valueColor
+          : valueColor // ignore: cast_nullable_to_non_nullable
               as Color,
       labelFontSize: labelFontSize == freezed
           ? _value.labelFontSize
@@ -797,6 +812,7 @@ class _$_ListViewTheme implements _ListViewTheme {
   const _$_ListViewTheme(
       {this.separatorPadding = 15,
       required this.labelColor,
+      required this.valueColor,
       this.labelFontSize = 17,
       required this.captionColor,
       this.captionFontSize = 13,
@@ -808,6 +824,8 @@ class _$_ListViewTheme implements _ListViewTheme {
   final double separatorPadding;
   @override
   final Color labelColor;
+  @override
+  final Color valueColor;
   @JsonKey()
   @override
   final double labelFontSize;
@@ -825,7 +843,7 @@ class _$_ListViewTheme implements _ListViewTheme {
 
   @override
   String toString() {
-    return 'ListViewTheme(separatorPadding: $separatorPadding, labelColor: $labelColor, labelFontSize: $labelFontSize, captionColor: $captionColor, captionFontSize: $captionFontSize, labelMaxLines: $labelMaxLines, captionMaxLines: $captionMaxLines)';
+    return 'ListViewTheme(separatorPadding: $separatorPadding, labelColor: $labelColor, valueColor: $valueColor, labelFontSize: $labelFontSize, captionColor: $captionColor, captionFontSize: $captionFontSize, labelMaxLines: $labelMaxLines, captionMaxLines: $captionMaxLines)';
   }
 
   @override
@@ -837,6 +855,8 @@ class _$_ListViewTheme implements _ListViewTheme {
                 .equals(other.separatorPadding, separatorPadding) &&
             const DeepCollectionEquality()
                 .equals(other.labelColor, labelColor) &&
+            const DeepCollectionEquality()
+                .equals(other.valueColor, valueColor) &&
             const DeepCollectionEquality()
                 .equals(other.labelFontSize, labelFontSize) &&
             const DeepCollectionEquality()
@@ -854,6 +874,7 @@ class _$_ListViewTheme implements _ListViewTheme {
       runtimeType,
       const DeepCollectionEquality().hash(separatorPadding),
       const DeepCollectionEquality().hash(labelColor),
+      const DeepCollectionEquality().hash(valueColor),
       const DeepCollectionEquality().hash(labelFontSize),
       const DeepCollectionEquality().hash(captionColor),
       const DeepCollectionEquality().hash(captionFontSize),
@@ -870,6 +891,7 @@ abstract class _ListViewTheme implements ListViewTheme {
   const factory _ListViewTheme(
       {double separatorPadding,
       required Color labelColor,
+      required Color valueColor,
       double labelFontSize,
       required Color captionColor,
       double captionFontSize,
@@ -880,6 +902,8 @@ abstract class _ListViewTheme implements ListViewTheme {
   double get separatorPadding;
   @override
   Color get labelColor;
+  @override
+  Color get valueColor;
   @override
   double get labelFontSize;
   @override

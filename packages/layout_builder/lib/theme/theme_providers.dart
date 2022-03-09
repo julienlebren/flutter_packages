@@ -101,6 +101,7 @@ final listViewThemeProvider = Provider<ListViewTheme>((ref) {
   final appTheme = ref.watch(appThemeProvider);
   return ListViewTheme(
     labelColor: appTheme.textColor,
+    valueColor: Color(0xFF939393),
     captionColor: Colors.grey.shade600,
   );
 }, dependencies: [appThemeProvider]);

@@ -253,7 +253,7 @@ class ListTileContents extends ConsumerWidget {
                           letterSpacing: isCupertino() ? -0.5 : 0,
                           color: isMaterial() && label != null
                               ? appTheme.primaryColor
-                              : appTheme.textColor,
+                              : listTheme.valueColor,
                         ),
                         textAlign: TextAlign.right,
                       ),
