@@ -46,7 +46,8 @@ class ListDivider extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final listViewTheme = ref.watch(listViewThemeProvider);
     final appTheme = ref.watch(appThemeProvider);
-    return Padding(
+    return Container(
+      color: appTheme.listTileBackground,
       padding: EdgeInsets.only(left: listViewTheme.separatorPadding),
       child: Divider(
         color: appTheme.dividerColor,
