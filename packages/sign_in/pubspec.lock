@@ -501,10 +501,10 @@ packages:
     description:
       path: "packages/layout_builder"
       ref: HEAD
-      resolved-ref: ac92fd4439066cf306b7d1e1c76ef69adabf291f
+      resolved-ref: a00e100220dba2e3d73845287de90f6221c3b712
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "2.1.16"
+    version: "2.2.0"
   lints:
     dependency: transitive
     description:
@@ -524,10 +524,10 @@ packages:
     description:
       path: "packages/localization"
       ref: HEAD
-      resolved-ref: "628c22b6ad2fa1ef4196733ddc128af6d58e099e"
+      resolved-ref: a00e100220dba2e3d73845287de90f6221c3b712
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "1.0.2"
+    version: "1.1.0"
   logging:
     dependency: transitive
     description:
