@@ -130,9 +130,8 @@ final formThemeProvider = Provider<FormTheme>((ref) {
 /// Provider for localize some words about the theme
 final themeLocalizationsProvider = Provider<LayoutLocalizations>(
   (ref) {
-    final args = ref.watch(localeSettingsProvider);
-    final locale = ref.watch(localeProvider(args));
+    final locale = ref.watch(localeProvider);
     return lookupLayoutLocalizations(locale);
   },
-  dependencies: [localeSettingsProvider],
+  dependencies: [localeProvider],
 );
