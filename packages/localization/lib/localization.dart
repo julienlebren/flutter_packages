@@ -30,7 +30,7 @@ class LocaleSettings {
 }
 
 final localeSettingsProvider =
-    Provider<LocaleSettings>((_) => throw UnimplementedError());
+    Provider<LocaleSettings>((_) => LocaleSettings());
 
 final localeProvider = Provider.family<Locale, LocaleSettings>((ref, settings) {
   final availableLocales = settings.availableLocales;
