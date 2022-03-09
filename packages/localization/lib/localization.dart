@@ -31,7 +31,7 @@ final availableLocalesProvider = Provider(
 
 /// The locale provided by the user settings (not the device locale, which
 /// is provided by window.locale, but the locale defined in the user settings)
-final userLocaleProvider = Provider((_) => null);
+final userLocaleProvider = Provider<Locale?>((_) => null);
 
 /// The provider of the [Locale] which will be watched by the `localizationProvider`
 /// in the app and the packages which are using localization.
@@ -61,3 +61,31 @@ final localeProvider = Provider((ref) {
   availableLocalesProvider,
   userLocaleProvider,
 ]);
+
+/*
+Locale locale({
+  required List<Locale> supportedLocales,
+  Locale? userLocale,
+}) {
+  final deviceLocale = window.locale;
+
+  if (supportedLocales.isEmpty) {
+    throw UnimplementedError();
+  }
+
+  var _locales = supportedLocales.where(
+    (locale) => locale == userLocale,
+  );
+  if (_locales.isNotEmpty) {
+    return _locales.first;
+  }
+
+  if (supportedLocales.contains(deviceLocale)) {
+    return deviceLocale;
+  }
+
+  return supportedLocales.first;
+}
+
+final localeProvider = Provider((_) => throw UnimplementedError());
+*/
