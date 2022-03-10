@@ -48,15 +48,13 @@ final localeProvider = Provider((ref) {
   final userLocale = ref.watch(userLocaleProvider);
   print("userLocale: $userLocale");
 
-  var _locales = availableLocales.where(
-    (locale) => locale == userLocale,
-  );
-  if (_locales.isNotEmpty) {
+  if (userLocale != null &&
+      availableLocales.contains(Locale(userLocale.languageCode))) {
     print("userLocale found");
-    return _locales.first;
+    return userLocale;
   }
 
-  if (availableLocales.contains(deviceLocale)) {
+  if (availableLocales.contains(Locale(deviceLocale.languageCode))) {
     print("deviceLocale found");
     return deviceLocale;
   }
