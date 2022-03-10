@@ -35,7 +35,7 @@ final userLocaleProvider = Provider<Locale?>((_) => null);
 
 /// The provider of the [Locale] which will be watched by the `localizationProvider`
 /// in the app and the packages which are using localization.
-final localeProvider = Provider((ref) {
+final localeProvider = Provider<Locale>((ref) {
   final availableLocales = ref.watch(supportedLocalesProvider);
   final deviceLocale = window.locale;
   print("availableLocales: $availableLocales");
