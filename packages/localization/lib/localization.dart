@@ -38,21 +38,26 @@ final userLocaleProvider = Provider<Locale?>((_) => null);
 final localeProvider = Provider((ref) {
   final availableLocales = ref.watch(supportedLocalesProvider);
   final deviceLocale = window.locale;
+  print("availableLocales: $availableLocales");
+  print("deviceLocale: $deviceLocale");
 
   if (availableLocales.isEmpty) {
     throw UnimplementedError();
   }
 
   final userLocale = ref.watch(userLocaleProvider);
+  print("userLocale: $userLocale");
 
   var _locales = availableLocales.where(
     (locale) => locale == userLocale,
   );
   if (_locales.isNotEmpty) {
+    print("userLocale found");
     return _locales.first;
   }
 
   if (availableLocales.contains(deviceLocale)) {
+    print("deviceLocale found");
     return deviceLocale;
   }
 
