@@ -13,4 +13,7 @@ extension DateTimeX on DateTime {
   String toLocaleDateTime(BuildContext context) =>
       DateFormat.yMMMMEEEEd(Localizations.localeOf(context).toString())
           .format(this);
+
+  String toLocaleTime(BuildContext context) =>
+      DateFormat.Hms(Localizations.localeOf(context).toString()).format(this);
 }
