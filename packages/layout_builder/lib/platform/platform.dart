@@ -33,6 +33,7 @@ part 'platform_picker_checkbox.dart';
 part 'platform_popup_menu.dart';
 part 'platform_route.dart';
 part 'platform_scaffold.dart';
+part 'platform_scrollbar.dart';
 part 'platform_search_bar.dart';
 part 'platform_single_picker.dart';
 part 'platform_switch.dart';
