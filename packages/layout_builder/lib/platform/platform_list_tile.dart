@@ -16,7 +16,7 @@ class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
   final Widget? leading;
   final Widget? trailing;
   final String? label;
-  final String? caption;
+  final dynamic caption;
   final String? value;
   final VoidCallback? onTap;
 
