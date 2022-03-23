@@ -161,7 +161,7 @@ class ListTileContents extends ConsumerWidget {
   final Widget? leading;
   final Widget? trailing;
   final String? label;
-  final String? caption;
+  final dynamic caption;
   final String? value;
   final VoidCallback? onTap;
 
@@ -225,19 +225,26 @@ class ListTileContents extends ConsumerWidget {
                             if (caption != null)
                               Padding(
                                 padding: EdgeInsets.symmetric(vertical: 5),
-                                child: Text(
-                                  caption!,
-                                  style: TextStyle(
-                                    color: listTheme.captionColor,
-                                    fontSize: listTheme.captionFontSize,
-                                    letterSpacing: isCupertino() ? -0.5 : 0,
-                                  ),
-                                  textAlign: TextAlign.left,
-                                  maxLines: listTheme.captionMaxLines,
-                                  overflow: listTheme.captionMaxLines != null
-                                      ? TextOverflow.ellipsis
-                                      : null,
-                                ),
+                                child: (() {
+                                  if (caption is Widget) {
+                                    return caption;
+                                  } else if (caption is String) {
+                                    return Text(
+                                      caption!,
+                                      style: TextStyle(
+                                        color: listTheme.captionColor,
+                                        fontSize: listTheme.captionFontSize,
+                                        letterSpacing: isCupertino() ? -0.5 : 0,
+                                      ),
+                                      textAlign: TextAlign.left,
+                                      maxLines: listTheme.captionMaxLines,
+                                      overflow:
+                                          listTheme.captionMaxLines != null
+                                              ? TextOverflow.ellipsis
+                                              : null,
+                                    );
+                                  }
+                                })(),
                               ),
                           ],
                         ),
