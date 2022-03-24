@@ -4,6 +4,7 @@ class PlatformListView extends PlatformWidgetBase<ListView, ListView> {
   const PlatformListView({
     required this.itemCount,
     required this.itemBuilder,
+    this.controller,
     this.shrinkWrap = false,
     this.scrollPhysics = const AlwaysScrollableScrollPhysics(),
     this.isModal = false,
@@ -11,6 +12,7 @@ class PlatformListView extends PlatformWidgetBase<ListView, ListView> {
 
   final int itemCount;
   final IndexedWidgetBuilder itemBuilder;
+  final ScrollController? controller;
   final bool shrinkWrap;
   final ScrollPhysics scrollPhysics;
   final bool isModal;
@@ -20,6 +22,7 @@ class PlatformListView extends PlatformWidgetBase<ListView, ListView> {
     return ListView.builder(
       itemCount: itemCount,
       itemBuilder: itemBuilder,
+      controller: controller,
       shrinkWrap: shrinkWrap,
     );
   }
@@ -33,6 +36,7 @@ class PlatformListView extends PlatformWidgetBase<ListView, ListView> {
       padding: EdgeInsets.only(bottom: safePadding),
       itemCount: itemCount,
       itemBuilder: itemBuilder,
+      controller: controller,
       shrinkWrap: shrinkWrap,
       separatorBuilder: (_, __) => const ListDivider(),
     );
