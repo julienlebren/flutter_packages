@@ -32,6 +32,7 @@ class AppTheme with _$AppTheme {
     required Color listTileBackground,
     @Default(5.0) double elevatedButtonRadius,
     @Default(16.0) double elevatedButtonPadding,
+    @Default(24.0) double searchBarRadius,
     required Color selectedColor,
     required Color borderColor,
     required Color textColor,

@@ -34,6 +34,7 @@ class _$AppThemeTearOff {
       required Color listTileBackground,
       double elevatedButtonRadius = 5.0,
       double elevatedButtonPadding = 16.0,
+      double searchBarRadius = 24.0,
       required Color selectedColor,
       required Color borderColor,
       required Color textColor,
@@ -56,6 +57,7 @@ class _$AppThemeTearOff {
       listTileBackground: listTileBackground,
       elevatedButtonRadius: elevatedButtonRadius,
       elevatedButtonPadding: elevatedButtonPadding,
+      searchBarRadius: searchBarRadius,
       selectedColor: selectedColor,
       borderColor: borderColor,
       textColor: textColor,
@@ -87,6 +89,7 @@ mixin _$AppTheme {
   Color get listTileBackground => throw _privateConstructorUsedError;
   double get elevatedButtonRadius => throw _privateConstructorUsedError;
   double get elevatedButtonPadding => throw _privateConstructorUsedError;
+  double get searchBarRadius => throw _privateConstructorUsedError;
   Color get selectedColor => throw _privateConstructorUsedError;
   Color get borderColor => throw _privateConstructorUsedError;
   Color get textColor => throw _privateConstructorUsedError;
@@ -118,6 +121,7 @@ abstract class $AppThemeCopyWith<$Res> {
       Color listTileBackground,
       double elevatedButtonRadius,
       double elevatedButtonPadding,
+      double searchBarRadius,
       Color selectedColor,
       Color borderColor,
       Color textColor,
@@ -150,6 +154,7 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
     Object? listTileBackground = freezed,
     Object? elevatedButtonRadius = freezed,
     Object? elevatedButtonPadding = freezed,
+    Object? searchBarRadius = freezed,
     Object? selectedColor = freezed,
     Object? borderColor = freezed,
     Object? textColor = freezed,
@@ -218,6 +223,10 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
           ? _value.elevatedButtonPadding
           : elevatedButtonPadding // ignore: cast_nullable_to_non_nullable
               as double,
+      searchBarRadius: searchBarRadius == freezed
+          ? _value.searchBarRadius
+          : searchBarRadius // ignore: cast_nullable_to_non_nullable
+              as double,
       selectedColor: selectedColor == freezed
           ? _value.selectedColor
           : selectedColor // ignore: cast_nullable_to_non_nullable
@@ -263,6 +272,7 @@ abstract class _$AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
       Color listTileBackground,
       double elevatedButtonRadius,
       double elevatedButtonPadding,
+      double searchBarRadius,
       Color selectedColor,
       Color borderColor,
       Color textColor,
@@ -296,6 +306,7 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
     Object? listTileBackground = freezed,
     Object? elevatedButtonRadius = freezed,
     Object? elevatedButtonPadding = freezed,
+    Object? searchBarRadius = freezed,
     Object? selectedColor = freezed,
     Object? borderColor = freezed,
     Object? textColor = freezed,
@@ -364,6 +375,10 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
           ? _value.elevatedButtonPadding
           : elevatedButtonPadding // ignore: cast_nullable_to_non_nullable
               as double,
+      searchBarRadius: searchBarRadius == freezed
+          ? _value.searchBarRadius
+          : searchBarRadius // ignore: cast_nullable_to_non_nullable
+              as double,
       selectedColor: selectedColor == freezed
           ? _value.selectedColor
           : selectedColor // ignore: cast_nullable_to_non_nullable
@@ -407,6 +422,7 @@ class _$_AppTheme implements _AppTheme {
       required this.listTileBackground,
       this.elevatedButtonRadius = 5.0,
       this.elevatedButtonPadding = 16.0,
+      this.searchBarRadius = 24.0,
       required this.selectedColor,
       required this.borderColor,
       required this.textColor,
@@ -445,6 +461,9 @@ class _$_AppTheme implements _AppTheme {
   @JsonKey()
   @override
   final double elevatedButtonPadding;
+  @JsonKey()
+  @override
+  final double searchBarRadius;
   @override
   final Color selectedColor;
   @override
@@ -458,7 +477,7 @@ class _$_AppTheme implements _AppTheme {
 
   @override
   String toString() {
-    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, cupertinoNavigationBarBackgroundColor: $cupertinoNavigationBarBackgroundColor, tabBarBackgroundColor: $tabBarBackgroundColor, cupertinoTabBarBackgroundColor: $cupertinoTabBarBackgroundColor, groupedListBackgroundColor: $groupedListBackgroundColor, listTileBackground: $listTileBackground, elevatedButtonRadius: $elevatedButtonRadius, elevatedButtonPadding: $elevatedButtonPadding, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
+    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, cupertinoNavigationBarBackgroundColor: $cupertinoNavigationBarBackgroundColor, tabBarBackgroundColor: $tabBarBackgroundColor, cupertinoTabBarBackgroundColor: $cupertinoTabBarBackgroundColor, groupedListBackgroundColor: $groupedListBackgroundColor, listTileBackground: $listTileBackground, elevatedButtonRadius: $elevatedButtonRadius, elevatedButtonPadding: $elevatedButtonPadding, searchBarRadius: $searchBarRadius, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
   }
 
   @override
@@ -500,6 +519,8 @@ class _$_AppTheme implements _AppTheme {
             const DeepCollectionEquality()
                 .equals(other.elevatedButtonPadding, elevatedButtonPadding) &&
             const DeepCollectionEquality()
+                .equals(other.searchBarRadius, searchBarRadius) &&
+            const DeepCollectionEquality()
                 .equals(other.selectedColor, selectedColor) &&
             const DeepCollectionEquality()
                 .equals(other.borderColor, borderColor) &&
@@ -529,6 +550,7 @@ class _$_AppTheme implements _AppTheme {
         const DeepCollectionEquality().hash(listTileBackground),
         const DeepCollectionEquality().hash(elevatedButtonRadius),
         const DeepCollectionEquality().hash(elevatedButtonPadding),
+        const DeepCollectionEquality().hash(searchBarRadius),
         const DeepCollectionEquality().hash(selectedColor),
         const DeepCollectionEquality().hash(borderColor),
         const DeepCollectionEquality().hash(textColor),
@@ -559,6 +581,7 @@ abstract class _AppTheme implements AppTheme {
       required Color listTileBackground,
       double elevatedButtonRadius,
       double elevatedButtonPadding,
+      double searchBarRadius,
       required Color selectedColor,
       required Color borderColor,
       required Color textColor,
@@ -595,6 +618,8 @@ abstract class _AppTheme implements AppTheme {
   double get elevatedButtonRadius;
   @override
   double get elevatedButtonPadding;
+  @override
+  double get searchBarRadius;
   @override
   Color get selectedColor;
   @override

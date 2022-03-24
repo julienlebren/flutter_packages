@@ -34,6 +34,10 @@ class PlatformSearchBar extends PlatformWidgetBase<TextField, Container> {
 
   @override
   Container createCupertinoWidget(BuildContext context, WidgetRef ref) {
+    final searchBarRadius = ref.watch(appThemeProvider.select(
+      (theme) => theme.searchBarRadius,
+    ));
+
     return Container(
       color: CupertinoTheme.of(context).barBackgroundColor,
       padding: EdgeInsets.only(
@@ -42,7 +46,7 @@ class PlatformSearchBar extends PlatformWidgetBase<TextField, Container> {
         bottom: 10,
       ),
       child: CupertinoSearchTextField(
-        borderRadius: BorderRadius.circular(24.0),
+        borderRadius: BorderRadius.circular(searchBarRadius),
         controller: controller,
         focusNode: focusNode,
         placeholder: placeholder,
