@@ -20,7 +20,9 @@ class GroupedListView extends ConsumerWidget {
         slivers: [
           ...children,
           SliverSafeArea(
-            sliver: SliverPadding(padding: EdgeInsets.only(bottom: 18)),
+            sliver: SliverPadding(
+              padding: EdgeInsets.only(bottom: 18),
+            ),
           ),
         ],
       ),
