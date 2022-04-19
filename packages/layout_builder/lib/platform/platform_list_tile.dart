@@ -265,6 +265,7 @@ class ListTileContents extends ConsumerWidget {
                                   : listTheme.labelColor),
                         ),
                         textAlign: TextAlign.right,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   if (trailing != null) trailing!
