@@ -111,6 +111,18 @@ abstract class LayoutLocalizations {
   /// In en, this message translates to:
   /// **'System'**
   String get system;
+
+  /// No description provided for @errorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Oops! Something went wrong...'**
+  String get errorTitle;
+
+  /// No description provided for @errorDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'We are unable to handle your request at the moment.'**
+  String get errorDescription;
 }
 
 class _LayoutLocalizationsDelegate extends LocalizationsDelegate<LayoutLocalizations> {

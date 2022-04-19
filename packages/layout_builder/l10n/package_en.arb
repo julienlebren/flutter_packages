@@ -1,5 +1,7 @@
 {
     "dark": "Dark",
     "light": "Light",
-    "system": "System"
+    "system": "System",
+    "errorTitle": "Oops! Something went wrong...",
+    "errorDescription": "We are unable to handle your request at the moment."
 }

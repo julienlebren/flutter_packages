@@ -1,5 +1,7 @@
 {
     "dark": "Sombre",
     "light": "Clair",
-    "system": "Système"
+    "system": "Système",
+    "errorTitle": "Il y a eu un problème...",
+    "errorDescription": "Nous ne pouvons pas traiter votre requête pour le moment."
 }

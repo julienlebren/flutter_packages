@@ -15,4 +15,10 @@ class LayoutLocalizationsEn extends LayoutLocalizations {
 
   @override
   String get system => 'System';
+
+  @override
+  String get errorTitle => 'Oops! Something went wrong...';
+
+  @override
+  String get errorDescription => 'We are unable to handle your request at the moment.';
 }

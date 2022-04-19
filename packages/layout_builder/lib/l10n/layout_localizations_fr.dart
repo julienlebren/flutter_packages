@@ -15,4 +15,10 @@ class LayoutLocalizationsFr extends LayoutLocalizations {
 
   @override
   String get system => 'Système';
+
+  @override
+  String get errorTitle => 'Il y a eu un problème...';
+
+  @override
+  String get errorDescription => 'Nous ne pouvons pas traiter votre requête pour le moment.';
 }
