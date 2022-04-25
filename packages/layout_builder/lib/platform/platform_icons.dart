@@ -46,8 +46,7 @@ class PlatformIcons {
   static IconData get settingsTabSelected =>
       isMaterial() ? Icons.tune : CupertinoIcons.slider_horizontal_3;
 
-  static IconData get lock =>
-      isMaterial() ? Icons.lock : CupertinoIcons.lock_fill;
+  static IconData get lock => isMaterial() ? Icons.lock : CupertinoIcons.lock;
   static IconData get person => isMaterial()
       ? Icons.person_outline
       : CupertinoIcons.person_alt_circle_fill;
@@ -61,7 +60,7 @@ class PlatformIcons {
   static IconData get add => isMaterial() ? Icons.add : CupertinoIcons.plus;
 
   static IconData get account =>
-      isMaterial() ? Icons.person_outline_rounded : CupertinoIcons.person_fill;
+      isMaterial() ? Icons.person_outline_rounded : CupertinoIcons.person;
   static IconData get phone =>
       isMaterial() ? Icons.phone_outlined : CupertinoIcons.phone_fill;
   static IconData get subscription => isMaterial()
