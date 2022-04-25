@@ -69,7 +69,7 @@ class PlatformIcons {
   static IconData get privacy =>
       isMaterial() ? Icons.lock_outlined : CupertinoIcons.lock_fill;
   static IconData get notifications =>
-      isMaterial() ? Icons.notifications_outlined : CupertinoIcons.bell_fill;
+      isMaterial() ? Icons.notifications_outlined : CupertinoIcons.bell;
   static IconData get disturb =>
       isMaterial() ? Icons.bedtime_outlined : CupertinoIcons.moon_stars;
   static IconData get backArrow =>
