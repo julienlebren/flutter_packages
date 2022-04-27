@@ -52,14 +52,15 @@ class SubscriptionPageBuilder extends ConsumerWidget {
             : null,
       ),
       body: Container(
-          decoration: theme.backgroundImage != null
-              ? BoxDecoration(
-                  image: DecorationImage(
+          decoration: BoxDecoration(
+            color: theme.backgroundColor,
+            image: theme.backgroundImage != null
+                ? DecorationImage(
                     image: AssetImage(theme.backgroundImage!),
                     fit: BoxFit.cover,
-                  ),
-                )
-              : null,
+                  )
+                : null,
+          ),
           child: /*Column(
           mainAxisSize: MainAxisSize.max,
           children: [

@@ -8,10 +8,12 @@ class PurchasesTheme with _$PurchasesTheme {
     required Color primaryColor,
     required Color textColor,
     Color? appBarButtonColor,
-    required Color buttonBackgroundColor,
-    required Color buttonTextColor,
-    required Color termsButtonColor,
+    required Color textButtonColor,
     required Color cupertinoDisclaimerColor,
+    required Color featureBackgroundColor,
+    required Color featureIconColor,
+    required Color featureTitleColor,
+    required Color featureCaptionColor,
     @Default(15.0) double spaceBetweenButtons,
   }) = _PurchasesTheme;
 }

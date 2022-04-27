@@ -14,20 +14,21 @@ class PurchasesFeature extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final appTheme = ref.watch(appThemeProvider);
+    final theme = ref.watch(purchasesThemeProvider);
+
     return Padding(
       padding: const EdgeInsets.only(bottom: 8),
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-        decoration: const BoxDecoration(
-          color: Colors.black38,
-          borderRadius: BorderRadius.all(
+        decoration: BoxDecoration(
+          color: theme.featureBackgroundColor,
+          borderRadius: const BorderRadius.all(
             Radius.circular(10.0),
           ),
         ),
         child: Row(
           children: [
-            Icon(icon, size: 40, color: appTheme.primaryColor),
+            Icon(icon, size: 40, color: theme.featureIconColor),
             const SizedBox(width: 15),
             Expanded(
               child: Column(
@@ -35,19 +36,19 @@ class PurchasesFeature extends ConsumerWidget {
                 children: [
                   Text(
                     title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w700,
                       letterSpacing: -0.5,
-                      color: Colors.white,
+                      color: theme.featureTitleColor,
                     ),
                   ),
                   const SizedBox(height: 4),
                   Text(
                     subtitle,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 15,
-                      color: Colors.white70,
+                      color: theme.featureCaptionColor,
                       letterSpacing: -0.3,
                     ),
                     maxLines: 2,

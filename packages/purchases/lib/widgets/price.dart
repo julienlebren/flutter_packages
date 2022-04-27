@@ -7,6 +7,7 @@ class PurchasesPrice extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(purchasesLocalizationsProvider);
     final price = ref.watch(purchasesControllerProvider).price;
+    final theme = ref.watch(purchasesThemeProvider);
 
     return Container(
       height: 65,
@@ -17,11 +18,11 @@ class PurchasesPrice extends ConsumerWidget {
       child: price != null
           ? Text(
               l10n.yearPrice(price),
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w600,
                 letterSpacing: -1,
-                color: Colors.white,
+                color: theme.textColor,
               ),
               textAlign: TextAlign.center,
             )

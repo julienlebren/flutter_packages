@@ -68,10 +68,12 @@ final purchasesThemeProvider = Provider<PurchasesTheme>(
       primaryColor: appTheme.primaryColor,
       backgroundColor: appTheme.scaffoldBackgroundColor,
       textColor: appTheme.textColor,
-      buttonBackgroundColor: formTheme.rowBackgroundColor,
-      buttonTextColor: appTheme.textColor,
       cupertinoDisclaimerColor: Colors.grey,
-      termsButtonColor: appTheme.primaryColor,
+      textButtonColor: appTheme.primaryColor,
+      featureBackgroundColor: Colors.transparent,
+      featureTitleColor: appTheme.textColor,
+      featureCaptionColor: Colors.grey,
+      featureIconColor: appTheme.primaryColor,
     );
   },
   dependencies: [

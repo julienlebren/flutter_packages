@@ -16,6 +16,7 @@ class PurchasesTermsButtons extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(purchasesLocalizationsProvider);
     final settings = ref.watch(purchasesSettingsProvider);
+    final theme = ref.watch(purchasesThemeProvider);
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -24,11 +25,13 @@ class PurchasesTermsButtons extends ConsumerWidget {
           title: l10n.termsButton,
           onPressed: () => _openUrl(settings.termsUrl),
           fontSize: 12,
+          color: theme.textButtonColor,
         ),
         PlatformTextButton(
           title: l10n.privacyPolicyButton,
           onPressed: () => _openUrl(settings.privacyPolicyUrl),
           fontSize: 12,
+          color: theme.textButtonColor,
         ),
       ],
     );
@@ -51,10 +54,12 @@ class PurchasesRestoreButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(purchasesLocalizationsProvider);
+    final theme = ref.watch(purchasesThemeProvider);
 
     return PlatformTextButton(
       title: l10n.restoreButton,
       onPressed: isPurchasing ? null : () => _restorePurchases(ref),
+      color: theme.textButtonColor,
     );
   }
 }

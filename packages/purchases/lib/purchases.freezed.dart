@@ -1095,10 +1095,12 @@ class _$PurchasesThemeTearOff {
       required Color primaryColor,
       required Color textColor,
       Color? appBarButtonColor,
-      required Color buttonBackgroundColor,
-      required Color buttonTextColor,
-      required Color termsButtonColor,
+      required Color textButtonColor,
       required Color cupertinoDisclaimerColor,
+      required Color featureBackgroundColor,
+      required Color featureIconColor,
+      required Color featureTitleColor,
+      required Color featureCaptionColor,
       double spaceBetweenButtons = 15.0}) {
     return _PurchasesTheme(
       backgroundImage: backgroundImage,
@@ -1106,10 +1108,12 @@ class _$PurchasesThemeTearOff {
       primaryColor: primaryColor,
       textColor: textColor,
       appBarButtonColor: appBarButtonColor,
-      buttonBackgroundColor: buttonBackgroundColor,
-      buttonTextColor: buttonTextColor,
-      termsButtonColor: termsButtonColor,
+      textButtonColor: textButtonColor,
       cupertinoDisclaimerColor: cupertinoDisclaimerColor,
+      featureBackgroundColor: featureBackgroundColor,
+      featureIconColor: featureIconColor,
+      featureTitleColor: featureTitleColor,
+      featureCaptionColor: featureCaptionColor,
       spaceBetweenButtons: spaceBetweenButtons,
     );
   }
@@ -1125,10 +1129,12 @@ mixin _$PurchasesTheme {
   Color get primaryColor => throw _privateConstructorUsedError;
   Color get textColor => throw _privateConstructorUsedError;
   Color? get appBarButtonColor => throw _privateConstructorUsedError;
-  Color get buttonBackgroundColor => throw _privateConstructorUsedError;
-  Color get buttonTextColor => throw _privateConstructorUsedError;
-  Color get termsButtonColor => throw _privateConstructorUsedError;
+  Color get textButtonColor => throw _privateConstructorUsedError;
   Color get cupertinoDisclaimerColor => throw _privateConstructorUsedError;
+  Color get featureBackgroundColor => throw _privateConstructorUsedError;
+  Color get featureIconColor => throw _privateConstructorUsedError;
+  Color get featureTitleColor => throw _privateConstructorUsedError;
+  Color get featureCaptionColor => throw _privateConstructorUsedError;
   double get spaceBetweenButtons => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -1147,10 +1153,12 @@ abstract class $PurchasesThemeCopyWith<$Res> {
       Color primaryColor,
       Color textColor,
       Color? appBarButtonColor,
-      Color buttonBackgroundColor,
-      Color buttonTextColor,
-      Color termsButtonColor,
+      Color textButtonColor,
       Color cupertinoDisclaimerColor,
+      Color featureBackgroundColor,
+      Color featureIconColor,
+      Color featureTitleColor,
+      Color featureCaptionColor,
       double spaceBetweenButtons});
 }
 
@@ -1170,10 +1178,12 @@ class _$PurchasesThemeCopyWithImpl<$Res>
     Object? primaryColor = freezed,
     Object? textColor = freezed,
     Object? appBarButtonColor = freezed,
-    Object? buttonBackgroundColor = freezed,
-    Object? buttonTextColor = freezed,
-    Object? termsButtonColor = freezed,
+    Object? textButtonColor = freezed,
     Object? cupertinoDisclaimerColor = freezed,
+    Object? featureBackgroundColor = freezed,
+    Object? featureIconColor = freezed,
+    Object? featureTitleColor = freezed,
+    Object? featureCaptionColor = freezed,
     Object? spaceBetweenButtons = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1197,21 +1207,29 @@ class _$PurchasesThemeCopyWithImpl<$Res>
           ? _value.appBarButtonColor
           : appBarButtonColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      buttonBackgroundColor: buttonBackgroundColor == freezed
-          ? _value.buttonBackgroundColor
-          : buttonBackgroundColor // ignore: cast_nullable_to_non_nullable
-              as Color,
-      buttonTextColor: buttonTextColor == freezed
-          ? _value.buttonTextColor
-          : buttonTextColor // ignore: cast_nullable_to_non_nullable
-              as Color,
-      termsButtonColor: termsButtonColor == freezed
-          ? _value.termsButtonColor
-          : termsButtonColor // ignore: cast_nullable_to_non_nullable
+      textButtonColor: textButtonColor == freezed
+          ? _value.textButtonColor
+          : textButtonColor // ignore: cast_nullable_to_non_nullable
               as Color,
       cupertinoDisclaimerColor: cupertinoDisclaimerColor == freezed
           ? _value.cupertinoDisclaimerColor
           : cupertinoDisclaimerColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      featureBackgroundColor: featureBackgroundColor == freezed
+          ? _value.featureBackgroundColor
+          : featureBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      featureIconColor: featureIconColor == freezed
+          ? _value.featureIconColor
+          : featureIconColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      featureTitleColor: featureTitleColor == freezed
+          ? _value.featureTitleColor
+          : featureTitleColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      featureCaptionColor: featureCaptionColor == freezed
+          ? _value.featureCaptionColor
+          : featureCaptionColor // ignore: cast_nullable_to_non_nullable
               as Color,
       spaceBetweenButtons: spaceBetweenButtons == freezed
           ? _value.spaceBetweenButtons
@@ -1234,10 +1252,12 @@ abstract class _$PurchasesThemeCopyWith<$Res>
       Color primaryColor,
       Color textColor,
       Color? appBarButtonColor,
-      Color buttonBackgroundColor,
-      Color buttonTextColor,
-      Color termsButtonColor,
+      Color textButtonColor,
       Color cupertinoDisclaimerColor,
+      Color featureBackgroundColor,
+      Color featureIconColor,
+      Color featureTitleColor,
+      Color featureCaptionColor,
       double spaceBetweenButtons});
 }
 
@@ -1259,10 +1279,12 @@ class __$PurchasesThemeCopyWithImpl<$Res>
     Object? primaryColor = freezed,
     Object? textColor = freezed,
     Object? appBarButtonColor = freezed,
-    Object? buttonBackgroundColor = freezed,
-    Object? buttonTextColor = freezed,
-    Object? termsButtonColor = freezed,
+    Object? textButtonColor = freezed,
     Object? cupertinoDisclaimerColor = freezed,
+    Object? featureBackgroundColor = freezed,
+    Object? featureIconColor = freezed,
+    Object? featureTitleColor = freezed,
+    Object? featureCaptionColor = freezed,
     Object? spaceBetweenButtons = freezed,
   }) {
     return _then(_PurchasesTheme(
@@ -1286,21 +1308,29 @@ class __$PurchasesThemeCopyWithImpl<$Res>
           ? _value.appBarButtonColor
           : appBarButtonColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      buttonBackgroundColor: buttonBackgroundColor == freezed
-          ? _value.buttonBackgroundColor
-          : buttonBackgroundColor // ignore: cast_nullable_to_non_nullable
-              as Color,
-      buttonTextColor: buttonTextColor == freezed
-          ? _value.buttonTextColor
-          : buttonTextColor // ignore: cast_nullable_to_non_nullable
-              as Color,
-      termsButtonColor: termsButtonColor == freezed
-          ? _value.termsButtonColor
-          : termsButtonColor // ignore: cast_nullable_to_non_nullable
+      textButtonColor: textButtonColor == freezed
+          ? _value.textButtonColor
+          : textButtonColor // ignore: cast_nullable_to_non_nullable
               as Color,
       cupertinoDisclaimerColor: cupertinoDisclaimerColor == freezed
           ? _value.cupertinoDisclaimerColor
           : cupertinoDisclaimerColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      featureBackgroundColor: featureBackgroundColor == freezed
+          ? _value.featureBackgroundColor
+          : featureBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      featureIconColor: featureIconColor == freezed
+          ? _value.featureIconColor
+          : featureIconColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      featureTitleColor: featureTitleColor == freezed
+          ? _value.featureTitleColor
+          : featureTitleColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      featureCaptionColor: featureCaptionColor == freezed
+          ? _value.featureCaptionColor
+          : featureCaptionColor // ignore: cast_nullable_to_non_nullable
               as Color,
       spaceBetweenButtons: spaceBetweenButtons == freezed
           ? _value.spaceBetweenButtons
@@ -1319,10 +1349,12 @@ class _$_PurchasesTheme implements _PurchasesTheme {
       required this.primaryColor,
       required this.textColor,
       this.appBarButtonColor,
-      required this.buttonBackgroundColor,
-      required this.buttonTextColor,
-      required this.termsButtonColor,
+      required this.textButtonColor,
       required this.cupertinoDisclaimerColor,
+      required this.featureBackgroundColor,
+      required this.featureIconColor,
+      required this.featureTitleColor,
+      required this.featureCaptionColor,
       this.spaceBetweenButtons = 15.0});
 
   @override
@@ -1336,20 +1368,24 @@ class _$_PurchasesTheme implements _PurchasesTheme {
   @override
   final Color? appBarButtonColor;
   @override
-  final Color buttonBackgroundColor;
-  @override
-  final Color buttonTextColor;
-  @override
-  final Color termsButtonColor;
+  final Color textButtonColor;
   @override
   final Color cupertinoDisclaimerColor;
+  @override
+  final Color featureBackgroundColor;
+  @override
+  final Color featureIconColor;
+  @override
+  final Color featureTitleColor;
+  @override
+  final Color featureCaptionColor;
   @JsonKey()
   @override
   final double spaceBetweenButtons;
 
   @override
   String toString() {
-    return 'PurchasesTheme(backgroundImage: $backgroundImage, backgroundColor: $backgroundColor, primaryColor: $primaryColor, textColor: $textColor, appBarButtonColor: $appBarButtonColor, buttonBackgroundColor: $buttonBackgroundColor, buttonTextColor: $buttonTextColor, termsButtonColor: $termsButtonColor, cupertinoDisclaimerColor: $cupertinoDisclaimerColor, spaceBetweenButtons: $spaceBetweenButtons)';
+    return 'PurchasesTheme(backgroundImage: $backgroundImage, backgroundColor: $backgroundColor, primaryColor: $primaryColor, textColor: $textColor, appBarButtonColor: $appBarButtonColor, textButtonColor: $textButtonColor, cupertinoDisclaimerColor: $cupertinoDisclaimerColor, featureBackgroundColor: $featureBackgroundColor, featureIconColor: $featureIconColor, featureTitleColor: $featureTitleColor, featureCaptionColor: $featureCaptionColor, spaceBetweenButtons: $spaceBetweenButtons)';
   }
 
   @override
@@ -1367,13 +1403,17 @@ class _$_PurchasesTheme implements _PurchasesTheme {
             const DeepCollectionEquality()
                 .equals(other.appBarButtonColor, appBarButtonColor) &&
             const DeepCollectionEquality()
-                .equals(other.buttonBackgroundColor, buttonBackgroundColor) &&
-            const DeepCollectionEquality()
-                .equals(other.buttonTextColor, buttonTextColor) &&
-            const DeepCollectionEquality()
-                .equals(other.termsButtonColor, termsButtonColor) &&
+                .equals(other.textButtonColor, textButtonColor) &&
             const DeepCollectionEquality().equals(
                 other.cupertinoDisclaimerColor, cupertinoDisclaimerColor) &&
+            const DeepCollectionEquality()
+                .equals(other.featureBackgroundColor, featureBackgroundColor) &&
+            const DeepCollectionEquality()
+                .equals(other.featureIconColor, featureIconColor) &&
+            const DeepCollectionEquality()
+                .equals(other.featureTitleColor, featureTitleColor) &&
+            const DeepCollectionEquality()
+                .equals(other.featureCaptionColor, featureCaptionColor) &&
             const DeepCollectionEquality()
                 .equals(other.spaceBetweenButtons, spaceBetweenButtons));
   }
@@ -1386,10 +1426,12 @@ class _$_PurchasesTheme implements _PurchasesTheme {
       const DeepCollectionEquality().hash(primaryColor),
       const DeepCollectionEquality().hash(textColor),
       const DeepCollectionEquality().hash(appBarButtonColor),
-      const DeepCollectionEquality().hash(buttonBackgroundColor),
-      const DeepCollectionEquality().hash(buttonTextColor),
-      const DeepCollectionEquality().hash(termsButtonColor),
+      const DeepCollectionEquality().hash(textButtonColor),
       const DeepCollectionEquality().hash(cupertinoDisclaimerColor),
+      const DeepCollectionEquality().hash(featureBackgroundColor),
+      const DeepCollectionEquality().hash(featureIconColor),
+      const DeepCollectionEquality().hash(featureTitleColor),
+      const DeepCollectionEquality().hash(featureCaptionColor),
       const DeepCollectionEquality().hash(spaceBetweenButtons));
 
   @JsonKey(ignore: true)
@@ -1405,10 +1447,12 @@ abstract class _PurchasesTheme implements PurchasesTheme {
       required Color primaryColor,
       required Color textColor,
       Color? appBarButtonColor,
-      required Color buttonBackgroundColor,
-      required Color buttonTextColor,
-      required Color termsButtonColor,
+      required Color textButtonColor,
       required Color cupertinoDisclaimerColor,
+      required Color featureBackgroundColor,
+      required Color featureIconColor,
+      required Color featureTitleColor,
+      required Color featureCaptionColor,
       double spaceBetweenButtons}) = _$_PurchasesTheme;
 
   @override
@@ -1422,13 +1466,17 @@ abstract class _PurchasesTheme implements PurchasesTheme {
   @override
   Color? get appBarButtonColor;
   @override
-  Color get buttonBackgroundColor;
-  @override
-  Color get buttonTextColor;
-  @override
-  Color get termsButtonColor;
+  Color get textButtonColor;
   @override
   Color get cupertinoDisclaimerColor;
+  @override
+  Color get featureBackgroundColor;
+  @override
+  Color get featureIconColor;
+  @override
+  Color get featureTitleColor;
+  @override
+  Color get featureCaptionColor;
   @override
   double get spaceBetweenButtons;
   @override
