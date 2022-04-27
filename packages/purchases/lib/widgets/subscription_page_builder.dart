@@ -24,6 +24,7 @@ class SubscriptionPageBuilder extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(purchasesControllerProvider);
+    final appTheme = ref.watch(appThemeProvider);
     final theme = ref.watch(purchasesThemeProvider);
 
     ref.listen<PurchasesState>(purchasesControllerProvider, (_, state) {
@@ -41,35 +42,44 @@ class SubscriptionPageBuilder extends ConsumerWidget {
       }
     });
 
-    return SafeArea(
-      top: false,
-      bottom: false,
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: theme.backgroundColor,
-          image: theme.backgroundImage != null
-              ? DecorationImage(
-                  image: AssetImage(theme.backgroundImage!),
-                  fit: BoxFit.cover,
-                )
-              : null,
+    return ProviderScope(
+      overrides: [
+        appThemeProvider.overrideWithValue(
+          appTheme.copyWith(
+            scaffoldBackgroundColor: Colors.purpleAccent,
+          ),
         ),
-        child: PlatformModalScaffold(
-          appBar: PlatformNavigationBar(
-            title: title,
-            trailing: isCupertino() && canDiscount
-                ? PlatformNavigationBarButton(
-                    onPressed: () => _openOffers(ref),
-                    icon: Icons.redeem,
+      ],
+      child: SafeArea(
+        top: false,
+        bottom: false,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: theme.backgroundColor,
+            image: theme.backgroundImage != null
+                ? DecorationImage(
+                    image: AssetImage(theme.backgroundImage!),
+                    fit: BoxFit.cover,
                   )
                 : null,
           ),
-          body: SubscriptionPageContents(
-            header: header,
-            body: body,
-            footer: footer,
-            hasStoreIssue: state.isReady && state.price == null,
-            isPurchasing: state.isLoading,
+          child: PlatformModalScaffold(
+            appBar: PlatformNavigationBar(
+              title: title,
+              trailing: isCupertino() && canDiscount
+                  ? PlatformNavigationBarButton(
+                      onPressed: () => _openOffers(ref),
+                      icon: Icons.redeem,
+                    )
+                  : null,
+            ),
+            body: SubscriptionPageContents(
+              header: header,
+              body: body,
+              footer: footer,
+              hasStoreIssue: state.isReady && state.price == null,
+              isPurchasing: state.isLoading,
+            ),
           ),
         ),
       ),
