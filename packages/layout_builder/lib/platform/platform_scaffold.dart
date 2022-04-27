@@ -53,14 +53,17 @@ class PlatformModalScaffold extends PlatformScaffold {
 
   @override
   Widget createCupertinoWidget(BuildContext context, WidgetRef ref) {
-    /*final appTheme = ref.watch(appThemeProvider);
+    final appTheme = ref.watch(appThemeProvider);
+    final formTheme = ref.watch(formThemeProvider);
+
     final backgroundColor = body is FormWithOverlay || body is FormPage
-        ? appTheme.formBackgroundColor
-        : appTheme.scaffoldBackgroundColor;*/
+        ? formTheme.backgroundColor
+        : appTheme.scaffoldBackgroundColor;
+
     return Padding(
       padding: EdgeInsets.only(top: appBar != null ? 10 : 0),
       child: CupertinoPageScaffold(
-        //backgroundColor: backgroundColor,
+        backgroundColor: backgroundColor,
         navigationBar: appBar?.createCupertinoWidget(
           context,
           ref,
