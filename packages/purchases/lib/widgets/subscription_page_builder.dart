@@ -1,7 +1,7 @@
 part of '../purchases.dart';
 
-class SubscriptionPage extends ConsumerWidget {
-  const SubscriptionPage({
+class SubscriptionPageBuilder extends ConsumerWidget {
+  const SubscriptionPageBuilder({
     Key? key,
     this.title,
     required this.header,
