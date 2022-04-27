@@ -578,14 +578,14 @@ class _$PurchasesSettingsTearOff {
   const _$PurchasesSettingsTearOff();
 
   _PurchasesSettings call(
-      {required String publicGoogleKey,
-      required String publicIosKey,
+      {String? publicGoogleKey,
+      String? publicAppleKey,
       required String entitlementId,
       required String userId,
       required dynamic Function(bool, DateTime?) processHandler}) {
     return _PurchasesSettings(
       publicGoogleKey: publicGoogleKey,
-      publicIosKey: publicIosKey,
+      publicAppleKey: publicAppleKey,
       entitlementId: entitlementId,
       userId: userId,
       processHandler: processHandler,
@@ -598,8 +598,8 @@ const $PurchasesSettings = _$PurchasesSettingsTearOff();
 
 /// @nodoc
 mixin _$PurchasesSettings {
-  String get publicGoogleKey => throw _privateConstructorUsedError;
-  String get publicIosKey => throw _privateConstructorUsedError;
+  String? get publicGoogleKey => throw _privateConstructorUsedError;
+  String? get publicAppleKey => throw _privateConstructorUsedError;
   String get entitlementId => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
   dynamic Function(bool, DateTime?) get processHandler =>
@@ -616,8 +616,8 @@ abstract class $PurchasesSettingsCopyWith<$Res> {
           PurchasesSettings value, $Res Function(PurchasesSettings) then) =
       _$PurchasesSettingsCopyWithImpl<$Res>;
   $Res call(
-      {String publicGoogleKey,
-      String publicIosKey,
+      {String? publicGoogleKey,
+      String? publicAppleKey,
       String entitlementId,
       String userId,
       dynamic Function(bool, DateTime?) processHandler});
@@ -635,7 +635,7 @@ class _$PurchasesSettingsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? publicGoogleKey = freezed,
-    Object? publicIosKey = freezed,
+    Object? publicAppleKey = freezed,
     Object? entitlementId = freezed,
     Object? userId = freezed,
     Object? processHandler = freezed,
@@ -644,11 +644,11 @@ class _$PurchasesSettingsCopyWithImpl<$Res>
       publicGoogleKey: publicGoogleKey == freezed
           ? _value.publicGoogleKey
           : publicGoogleKey // ignore: cast_nullable_to_non_nullable
-              as String,
-      publicIosKey: publicIosKey == freezed
-          ? _value.publicIosKey
-          : publicIosKey // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      publicAppleKey: publicAppleKey == freezed
+          ? _value.publicAppleKey
+          : publicAppleKey // ignore: cast_nullable_to_non_nullable
+              as String?,
       entitlementId: entitlementId == freezed
           ? _value.entitlementId
           : entitlementId // ignore: cast_nullable_to_non_nullable
@@ -673,8 +673,8 @@ abstract class _$PurchasesSettingsCopyWith<$Res>
       __$PurchasesSettingsCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String publicGoogleKey,
-      String publicIosKey,
+      {String? publicGoogleKey,
+      String? publicAppleKey,
       String entitlementId,
       String userId,
       dynamic Function(bool, DateTime?) processHandler});
@@ -694,7 +694,7 @@ class __$PurchasesSettingsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? publicGoogleKey = freezed,
-    Object? publicIosKey = freezed,
+    Object? publicAppleKey = freezed,
     Object? entitlementId = freezed,
     Object? userId = freezed,
     Object? processHandler = freezed,
@@ -703,11 +703,11 @@ class __$PurchasesSettingsCopyWithImpl<$Res>
       publicGoogleKey: publicGoogleKey == freezed
           ? _value.publicGoogleKey
           : publicGoogleKey // ignore: cast_nullable_to_non_nullable
-              as String,
-      publicIosKey: publicIosKey == freezed
-          ? _value.publicIosKey
-          : publicIosKey // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      publicAppleKey: publicAppleKey == freezed
+          ? _value.publicAppleKey
+          : publicAppleKey // ignore: cast_nullable_to_non_nullable
+              as String?,
       entitlementId: entitlementId == freezed
           ? _value.entitlementId
           : entitlementId // ignore: cast_nullable_to_non_nullable
@@ -728,16 +728,18 @@ class __$PurchasesSettingsCopyWithImpl<$Res>
 
 class _$_PurchasesSettings implements _PurchasesSettings {
   _$_PurchasesSettings(
-      {required this.publicGoogleKey,
-      required this.publicIosKey,
+      {this.publicGoogleKey,
+      this.publicAppleKey,
       required this.entitlementId,
       required this.userId,
-      required this.processHandler});
+      required this.processHandler})
+      : assert(publicGoogleKey != null || publicAppleKey != null,
+            'At least one public key is required');
 
   @override
-  final String publicGoogleKey;
+  final String? publicGoogleKey;
   @override
-  final String publicIosKey;
+  final String? publicAppleKey;
   @override
   final String entitlementId;
   @override
@@ -747,7 +749,7 @@ class _$_PurchasesSettings implements _PurchasesSettings {
 
   @override
   String toString() {
-    return 'PurchasesSettings(publicGoogleKey: $publicGoogleKey, publicIosKey: $publicIosKey, entitlementId: $entitlementId, userId: $userId, processHandler: $processHandler)';
+    return 'PurchasesSettings(publicGoogleKey: $publicGoogleKey, publicAppleKey: $publicAppleKey, entitlementId: $entitlementId, userId: $userId, processHandler: $processHandler)';
   }
 
   @override
@@ -758,7 +760,7 @@ class _$_PurchasesSettings implements _PurchasesSettings {
             const DeepCollectionEquality()
                 .equals(other.publicGoogleKey, publicGoogleKey) &&
             const DeepCollectionEquality()
-                .equals(other.publicIosKey, publicIosKey) &&
+                .equals(other.publicAppleKey, publicAppleKey) &&
             const DeepCollectionEquality()
                 .equals(other.entitlementId, entitlementId) &&
             const DeepCollectionEquality().equals(other.userId, userId) &&
@@ -770,7 +772,7 @@ class _$_PurchasesSettings implements _PurchasesSettings {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(publicGoogleKey),
-      const DeepCollectionEquality().hash(publicIosKey),
+      const DeepCollectionEquality().hash(publicAppleKey),
       const DeepCollectionEquality().hash(entitlementId),
       const DeepCollectionEquality().hash(userId),
       processHandler);
@@ -783,17 +785,17 @@ class _$_PurchasesSettings implements _PurchasesSettings {
 
 abstract class _PurchasesSettings implements PurchasesSettings {
   factory _PurchasesSettings(
-          {required String publicGoogleKey,
-          required String publicIosKey,
+          {String? publicGoogleKey,
+          String? publicAppleKey,
           required String entitlementId,
           required String userId,
           required dynamic Function(bool, DateTime?) processHandler}) =
       _$_PurchasesSettings;
 
   @override
-  String get publicGoogleKey;
+  String? get publicGoogleKey;
   @override
-  String get publicIosKey;
+  String? get publicAppleKey;
   @override
   String get entitlementId;
   @override

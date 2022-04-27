@@ -11,9 +11,15 @@ class PurchasesService {
 
   Future<void> setup() async {
     if (Platform.isAndroid) {
-      await Purchases.setup(settings.publicGoogleKey);
+      if (settings.publicGoogleKey == null) {
+        throw UnimplementedError();
+      }
+      await Purchases.setup(settings.publicGoogleKey!);
     } else if (Platform.isIOS) {
-      await Purchases.setup(settings.publicIosKey);
+      if (settings.publicAppleKey == null) {
+        throw UnimplementedError();
+      }
+      await Purchases.setup(settings.publicAppleKey!);
     }
   }
 
