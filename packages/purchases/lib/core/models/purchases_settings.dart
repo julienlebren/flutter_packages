@@ -9,6 +9,8 @@ class PurchasesSettings with _$PurchasesSettings {
     String? publicAppleKey,
     required String entitlementId,
     required String userId,
+    required String privacyPolicyUrl,
+    required String termsUrl,
     required Function(
       bool isSubscribed,
       DateTime? expirationDate,

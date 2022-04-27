@@ -582,12 +582,16 @@ class _$PurchasesSettingsTearOff {
       String? publicAppleKey,
       required String entitlementId,
       required String userId,
+      required String privacyPolicyUrl,
+      required String termsUrl,
       required dynamic Function(bool, DateTime?) processHandler}) {
     return _PurchasesSettings(
       publicGoogleKey: publicGoogleKey,
       publicAppleKey: publicAppleKey,
       entitlementId: entitlementId,
       userId: userId,
+      privacyPolicyUrl: privacyPolicyUrl,
+      termsUrl: termsUrl,
       processHandler: processHandler,
     );
   }
@@ -602,6 +606,8 @@ mixin _$PurchasesSettings {
   String? get publicAppleKey => throw _privateConstructorUsedError;
   String get entitlementId => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
+  String get privacyPolicyUrl => throw _privateConstructorUsedError;
+  String get termsUrl => throw _privateConstructorUsedError;
   dynamic Function(bool, DateTime?) get processHandler =>
       throw _privateConstructorUsedError;
 
@@ -620,6 +626,8 @@ abstract class $PurchasesSettingsCopyWith<$Res> {
       String? publicAppleKey,
       String entitlementId,
       String userId,
+      String privacyPolicyUrl,
+      String termsUrl,
       dynamic Function(bool, DateTime?) processHandler});
 }
 
@@ -638,6 +646,8 @@ class _$PurchasesSettingsCopyWithImpl<$Res>
     Object? publicAppleKey = freezed,
     Object? entitlementId = freezed,
     Object? userId = freezed,
+    Object? privacyPolicyUrl = freezed,
+    Object? termsUrl = freezed,
     Object? processHandler = freezed,
   }) {
     return _then(_value.copyWith(
@@ -656,6 +666,14 @@ class _$PurchasesSettingsCopyWithImpl<$Res>
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
+              as String,
+      privacyPolicyUrl: privacyPolicyUrl == freezed
+          ? _value.privacyPolicyUrl
+          : privacyPolicyUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      termsUrl: termsUrl == freezed
+          ? _value.termsUrl
+          : termsUrl // ignore: cast_nullable_to_non_nullable
               as String,
       processHandler: processHandler == freezed
           ? _value.processHandler
@@ -677,6 +695,8 @@ abstract class _$PurchasesSettingsCopyWith<$Res>
       String? publicAppleKey,
       String entitlementId,
       String userId,
+      String privacyPolicyUrl,
+      String termsUrl,
       dynamic Function(bool, DateTime?) processHandler});
 }
 
@@ -697,6 +717,8 @@ class __$PurchasesSettingsCopyWithImpl<$Res>
     Object? publicAppleKey = freezed,
     Object? entitlementId = freezed,
     Object? userId = freezed,
+    Object? privacyPolicyUrl = freezed,
+    Object? termsUrl = freezed,
     Object? processHandler = freezed,
   }) {
     return _then(_PurchasesSettings(
@@ -716,6 +738,14 @@ class __$PurchasesSettingsCopyWithImpl<$Res>
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
+      privacyPolicyUrl: privacyPolicyUrl == freezed
+          ? _value.privacyPolicyUrl
+          : privacyPolicyUrl // ignore: cast_nullable_to_non_nullable
+              as String,
+      termsUrl: termsUrl == freezed
+          ? _value.termsUrl
+          : termsUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       processHandler: processHandler == freezed
           ? _value.processHandler
           : processHandler // ignore: cast_nullable_to_non_nullable
@@ -732,6 +762,8 @@ class _$_PurchasesSettings implements _PurchasesSettings {
       this.publicAppleKey,
       required this.entitlementId,
       required this.userId,
+      required this.privacyPolicyUrl,
+      required this.termsUrl,
       required this.processHandler})
       : assert(publicGoogleKey != null || publicAppleKey != null,
             'At least one public key is required');
@@ -745,11 +777,15 @@ class _$_PurchasesSettings implements _PurchasesSettings {
   @override
   final String userId;
   @override
+  final String privacyPolicyUrl;
+  @override
+  final String termsUrl;
+  @override
   final dynamic Function(bool, DateTime?) processHandler;
 
   @override
   String toString() {
-    return 'PurchasesSettings(publicGoogleKey: $publicGoogleKey, publicAppleKey: $publicAppleKey, entitlementId: $entitlementId, userId: $userId, processHandler: $processHandler)';
+    return 'PurchasesSettings(publicGoogleKey: $publicGoogleKey, publicAppleKey: $publicAppleKey, entitlementId: $entitlementId, userId: $userId, privacyPolicyUrl: $privacyPolicyUrl, termsUrl: $termsUrl, processHandler: $processHandler)';
   }
 
   @override
@@ -764,6 +800,9 @@ class _$_PurchasesSettings implements _PurchasesSettings {
             const DeepCollectionEquality()
                 .equals(other.entitlementId, entitlementId) &&
             const DeepCollectionEquality().equals(other.userId, userId) &&
+            const DeepCollectionEquality()
+                .equals(other.privacyPolicyUrl, privacyPolicyUrl) &&
+            const DeepCollectionEquality().equals(other.termsUrl, termsUrl) &&
             (identical(other.processHandler, processHandler) ||
                 other.processHandler == processHandler));
   }
@@ -775,6 +814,8 @@ class _$_PurchasesSettings implements _PurchasesSettings {
       const DeepCollectionEquality().hash(publicAppleKey),
       const DeepCollectionEquality().hash(entitlementId),
       const DeepCollectionEquality().hash(userId),
+      const DeepCollectionEquality().hash(privacyPolicyUrl),
+      const DeepCollectionEquality().hash(termsUrl),
       processHandler);
 
   @JsonKey(ignore: true)
@@ -789,6 +830,8 @@ abstract class _PurchasesSettings implements PurchasesSettings {
           String? publicAppleKey,
           required String entitlementId,
           required String userId,
+          required String privacyPolicyUrl,
+          required String termsUrl,
           required dynamic Function(bool, DateTime?) processHandler}) =
       _$_PurchasesSettings;
 
@@ -800,6 +843,10 @@ abstract class _PurchasesSettings implements PurchasesSettings {
   String get entitlementId;
   @override
   String get userId;
+  @override
+  String get privacyPolicyUrl;
+  @override
+  String get termsUrl;
   @override
   dynamic Function(bool, DateTime?) get processHandler;
   @override
