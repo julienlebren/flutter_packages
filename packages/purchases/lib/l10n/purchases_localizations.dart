@@ -94,41 +94,47 @@ abstract class PurchasesLocalizations {
     Locale('fr')
   ];
 
-  /// No description provided for @subscriptionYearPrice.
-  ///
-  /// In en, this message translates to:
-  /// **'{price}/year'**
-  String subscriptionYearPrice(String price);
-
-  /// No description provided for @subscriptionCupertinoCaption.
+  /// No description provided for @cupertinoDisclaimer.
   ///
   /// In en, this message translates to:
   /// **'Payment will be charged to iTunes Account and subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period. Account will be charged for renewal within 24-hours prior to the end of the current period. Manage auto-renewal by going to the user\'s Account Settings.'**
-  String get subscriptionCupertinoCaption;
+  String get cupertinoDisclaimer;
 
-  /// No description provided for @subscriptionPrivacyPolicyButton.
+  /// No description provided for @priceNotLoaded.
+  ///
+  /// In en, this message translates to:
+  /// **'Unable to contact Store at the moment.'**
+  String get priceNotLoaded;
+
+  /// No description provided for @privacyPolicyButton.
   ///
   /// In en, this message translates to:
   /// **'Privacy policy'**
-  String get subscriptionPrivacyPolicyButton;
+  String get privacyPolicyButton;
 
-  /// No description provided for @subscriptionTermsButton.
-  ///
-  /// In en, this message translates to:
-  /// **'Terms of Use'**
-  String get subscriptionTermsButton;
-
-  /// No description provided for @subscriptionRestoreButton.
+  /// No description provided for @restoreButton.
   ///
   /// In en, this message translates to:
   /// **'Restore purchases'**
-  String get subscriptionRestoreButton;
+  String get restoreButton;
 
-  /// No description provided for @subscriptionRetryButton.
+  /// No description provided for @retryButton.
   ///
   /// In en, this message translates to:
   /// **'Retry'**
-  String get subscriptionRetryButton;
+  String get retryButton;
+
+  /// No description provided for @termsButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Use'**
+  String get termsButton;
+
+  /// No description provided for @yearPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'{price}/year'**
+  String yearPrice(String price);
 }
 
 class _PurchasesLocalizationsDelegate extends LocalizationsDelegate<PurchasesLocalizations> {

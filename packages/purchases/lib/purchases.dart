@@ -19,6 +19,7 @@ part 'core/models/purchases_state.dart';
 part 'services/purchases_service.dart';
 part 'widgets/cupertino_disclaimer.dart';
 part 'widgets/buttons.dart';
+part 'widgets/issue.dart';
 part 'purchases.freezed.dart';
 
 const googlePlayURL = "https://play.google.com/store/account/subscriptions";
