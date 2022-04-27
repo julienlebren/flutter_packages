@@ -28,12 +28,15 @@ class PlatformScaffold extends PlatformWidgetBase<AnnotatedRegion, Widget> {
 
   @override
   Widget createCupertinoWidget(BuildContext context, WidgetRef ref) {
-    /*final appTheme = ref.watch(appThemeProvider);
+    final appTheme = ref.watch(appThemeProvider);
+    final formTheme = ref.watch(formThemeProvider);
+
     final backgroundColor = body is FormWithOverlay || body is FormPage
-        ? appTheme.formBackgroundColor
-        : appTheme.scaffoldBackgroundColor;*/
+        ? formTheme.backgroundColor
+        : appTheme.scaffoldBackgroundColor;
+
     return CupertinoPageScaffold(
-      //backgroundColor: backgroundColor,
+      backgroundColor: backgroundColor,
       navigationBar: appBar?.createCupertinoWidget(context, ref),
       child: SafeArea(
         child: body,
