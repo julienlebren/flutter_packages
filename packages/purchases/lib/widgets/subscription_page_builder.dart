@@ -41,40 +41,38 @@ class SubscriptionPageBuilder extends ConsumerWidget {
       }
     });
 
-    return PlatformModalScaffold(
-      appBar: PlatformNavigationBar(
-        title: title,
-        trailing: isCupertino() && canDiscount
-            ? PlatformNavigationBarButton(
-                onPressed: () => _openOffers(ref),
-                icon: Icons.redeem,
-              )
-            : null,
-      ),
-      body: Container(
-          decoration: BoxDecoration(
-            color: theme.backgroundColor,
-            image: theme.backgroundImage != null
-                ? DecorationImage(
-                    image: AssetImage(theme.backgroundImage!),
-                    fit: BoxFit.cover,
+    return SafeArea(
+      top: false,
+      bottom: false,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: theme.backgroundColor,
+          image: theme.backgroundImage != null
+              ? DecorationImage(
+                  image: AssetImage(theme.backgroundImage!),
+                  fit: BoxFit.cover,
+                )
+              : null,
+        ),
+        child: PlatformModalScaffold(
+          appBar: PlatformNavigationBar(
+            title: title,
+            trailing: isCupertino() && canDiscount
+                ? PlatformNavigationBarButton(
+                    onPressed: () => _openOffers(ref),
+                    icon: Icons.redeem,
                   )
                 : null,
           ),
-          child: /*Column(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            const SubscriptionAppBar(),*/
-              SubscriptionPageContents(
+          body: SubscriptionPageContents(
             header: header,
             body: body,
             footer: footer,
             hasStoreIssue: state.isReady && state.price == null,
             isPurchasing: state.isLoading,
-          )
-          /*],
-        ),*/
           ),
+        ),
+      ),
     );
   }
 }
