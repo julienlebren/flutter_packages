@@ -1,6 +1,6 @@
 name: purchases
 description: A new Flutter package project.
-version: 1.0.7
+version: 1.1.0
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -11,7 +11,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  purchases_flutter: ^3.9.3
+  purchases_flutter: ^3.10.0
   freezed_annotation: ^1.1.0
   flutter_riverpod: ^1.0.0
 

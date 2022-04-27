@@ -3,7 +3,8 @@ part of '../../purchases.dart';
 @freezed
 class PurchasesSettings with _$PurchasesSettings {
   factory PurchasesSettings({
-    required String purchasesApiKey,
+    required String publicGoogleKey,
+    required String publicIosKey,
     required String entitlementId,
     required String userId,
     required Function(

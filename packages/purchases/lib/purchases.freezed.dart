@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of subscription_service;
@@ -577,12 +578,14 @@ class _$PurchasesSettingsTearOff {
   const _$PurchasesSettingsTearOff();
 
   _PurchasesSettings call(
-      {required String purchasesApiKey,
+      {required String publicGoogleKey,
+      required String publicIosKey,
       required String entitlementId,
       required String userId,
       required dynamic Function(bool, DateTime?) processHandler}) {
     return _PurchasesSettings(
-      purchasesApiKey: purchasesApiKey,
+      publicGoogleKey: publicGoogleKey,
+      publicIosKey: publicIosKey,
       entitlementId: entitlementId,
       userId: userId,
       processHandler: processHandler,
@@ -595,7 +598,8 @@ const $PurchasesSettings = _$PurchasesSettingsTearOff();
 
 /// @nodoc
 mixin _$PurchasesSettings {
-  String get purchasesApiKey => throw _privateConstructorUsedError;
+  String get publicGoogleKey => throw _privateConstructorUsedError;
+  String get publicIosKey => throw _privateConstructorUsedError;
   String get entitlementId => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
   dynamic Function(bool, DateTime?) get processHandler =>
@@ -612,7 +616,8 @@ abstract class $PurchasesSettingsCopyWith<$Res> {
           PurchasesSettings value, $Res Function(PurchasesSettings) then) =
       _$PurchasesSettingsCopyWithImpl<$Res>;
   $Res call(
-      {String purchasesApiKey,
+      {String publicGoogleKey,
+      String publicIosKey,
       String entitlementId,
       String userId,
       dynamic Function(bool, DateTime?) processHandler});
@@ -629,15 +634,20 @@ class _$PurchasesSettingsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? purchasesApiKey = freezed,
+    Object? publicGoogleKey = freezed,
+    Object? publicIosKey = freezed,
     Object? entitlementId = freezed,
     Object? userId = freezed,
     Object? processHandler = freezed,
   }) {
     return _then(_value.copyWith(
-      purchasesApiKey: purchasesApiKey == freezed
-          ? _value.purchasesApiKey
-          : purchasesApiKey // ignore: cast_nullable_to_non_nullable
+      publicGoogleKey: publicGoogleKey == freezed
+          ? _value.publicGoogleKey
+          : publicGoogleKey // ignore: cast_nullable_to_non_nullable
+              as String,
+      publicIosKey: publicIosKey == freezed
+          ? _value.publicIosKey
+          : publicIosKey // ignore: cast_nullable_to_non_nullable
               as String,
       entitlementId: entitlementId == freezed
           ? _value.entitlementId
@@ -663,7 +673,8 @@ abstract class _$PurchasesSettingsCopyWith<$Res>
       __$PurchasesSettingsCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String purchasesApiKey,
+      {String publicGoogleKey,
+      String publicIosKey,
       String entitlementId,
       String userId,
       dynamic Function(bool, DateTime?) processHandler});
@@ -682,15 +693,20 @@ class __$PurchasesSettingsCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? purchasesApiKey = freezed,
+    Object? publicGoogleKey = freezed,
+    Object? publicIosKey = freezed,
     Object? entitlementId = freezed,
     Object? userId = freezed,
     Object? processHandler = freezed,
   }) {
     return _then(_PurchasesSettings(
-      purchasesApiKey: purchasesApiKey == freezed
-          ? _value.purchasesApiKey
-          : purchasesApiKey // ignore: cast_nullable_to_non_nullable
+      publicGoogleKey: publicGoogleKey == freezed
+          ? _value.publicGoogleKey
+          : publicGoogleKey // ignore: cast_nullable_to_non_nullable
+              as String,
+      publicIosKey: publicIosKey == freezed
+          ? _value.publicIosKey
+          : publicIosKey // ignore: cast_nullable_to_non_nullable
               as String,
       entitlementId: entitlementId == freezed
           ? _value.entitlementId
@@ -712,13 +728,16 @@ class __$PurchasesSettingsCopyWithImpl<$Res>
 
 class _$_PurchasesSettings implements _PurchasesSettings {
   _$_PurchasesSettings(
-      {required this.purchasesApiKey,
+      {required this.publicGoogleKey,
+      required this.publicIosKey,
       required this.entitlementId,
       required this.userId,
       required this.processHandler});
 
   @override
-  final String purchasesApiKey;
+  final String publicGoogleKey;
+  @override
+  final String publicIosKey;
   @override
   final String entitlementId;
   @override
@@ -728,7 +747,7 @@ class _$_PurchasesSettings implements _PurchasesSettings {
 
   @override
   String toString() {
-    return 'PurchasesSettings(purchasesApiKey: $purchasesApiKey, entitlementId: $entitlementId, userId: $userId, processHandler: $processHandler)';
+    return 'PurchasesSettings(publicGoogleKey: $publicGoogleKey, publicIosKey: $publicIosKey, entitlementId: $entitlementId, userId: $userId, processHandler: $processHandler)';
   }
 
   @override
@@ -736,18 +755,25 @@ class _$_PurchasesSettings implements _PurchasesSettings {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _PurchasesSettings &&
-            (identical(other.purchasesApiKey, purchasesApiKey) ||
-                other.purchasesApiKey == purchasesApiKey) &&
-            (identical(other.entitlementId, entitlementId) ||
-                other.entitlementId == entitlementId) &&
-            (identical(other.userId, userId) || other.userId == userId) &&
+            const DeepCollectionEquality()
+                .equals(other.publicGoogleKey, publicGoogleKey) &&
+            const DeepCollectionEquality()
+                .equals(other.publicIosKey, publicIosKey) &&
+            const DeepCollectionEquality()
+                .equals(other.entitlementId, entitlementId) &&
+            const DeepCollectionEquality().equals(other.userId, userId) &&
             (identical(other.processHandler, processHandler) ||
                 other.processHandler == processHandler));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, purchasesApiKey, entitlementId, userId, processHandler);
+      runtimeType,
+      const DeepCollectionEquality().hash(publicGoogleKey),
+      const DeepCollectionEquality().hash(publicIosKey),
+      const DeepCollectionEquality().hash(entitlementId),
+      const DeepCollectionEquality().hash(userId),
+      processHandler);
 
   @JsonKey(ignore: true)
   @override
@@ -757,14 +783,17 @@ class _$_PurchasesSettings implements _PurchasesSettings {
 
 abstract class _PurchasesSettings implements PurchasesSettings {
   factory _PurchasesSettings(
-          {required String purchasesApiKey,
+          {required String publicGoogleKey,
+          required String publicIosKey,
           required String entitlementId,
           required String userId,
           required dynamic Function(bool, DateTime?) processHandler}) =
       _$_PurchasesSettings;
 
   @override
-  String get purchasesApiKey;
+  String get publicGoogleKey;
+  @override
+  String get publicIosKey;
   @override
   String get entitlementId;
   @override
@@ -939,13 +968,13 @@ class _$_PurchasesState implements _PurchasesState {
 
   @override
   final String? price;
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
   final bool isReady;
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
   final bool isLoading;
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
   final bool isSuccess;
   @override
@@ -961,19 +990,21 @@ class _$_PurchasesState implements _PurchasesState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _PurchasesState &&
-            (identical(other.price, price) || other.price == price) &&
-            (identical(other.isReady, isReady) || other.isReady == isReady) &&
-            (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading) &&
-            (identical(other.isSuccess, isSuccess) ||
-                other.isSuccess == isSuccess) &&
-            (identical(other.errorText, errorText) ||
-                other.errorText == errorText));
+            const DeepCollectionEquality().equals(other.price, price) &&
+            const DeepCollectionEquality().equals(other.isReady, isReady) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
+            const DeepCollectionEquality().equals(other.errorText, errorText));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, price, isReady, isLoading, isSuccess, errorText);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(price),
+      const DeepCollectionEquality().hash(isReady),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(isSuccess),
+      const DeepCollectionEquality().hash(errorText));
 
   @JsonKey(ignore: true)
   @override

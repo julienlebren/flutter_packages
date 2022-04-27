@@ -10,11 +10,11 @@ class PurchasesService {
   Package? subscription;
 
   Future<void> setup() async {
-    await Purchases.setup(
-      settings.purchasesApiKey,
-      appUserId: settings.userId,
-      observerMode: false,
-    );
+    if (Platform.isAndroid) {
+      await Purchases.setup(settings.publicGoogleKey);
+    } else if (Platform.isIOS) {
+      await Purchases.setup(settings.publicIosKey);
+    }
   }
 
   Future<void> fetchOfferings() async {
