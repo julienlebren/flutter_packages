@@ -46,7 +46,7 @@ class SubscriptionPageBuilder extends ConsumerWidget {
       overrides: [
         appThemeProvider.overrideWithValue(
           appTheme.copyWith(
-            scaffoldBackgroundColor: Colors.purpleAccent,
+            scaffoldBackgroundColor: Colors.transparent,
           ),
         ),
       ],
