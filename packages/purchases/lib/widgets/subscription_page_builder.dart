@@ -79,7 +79,9 @@ class SubscriptionPageBuilder extends ConsumerWidget {
                     : null,
               ),
               body: CupertinoTheme(
-                data: cupertinoTheme,
+                data: cupertinoTheme.copyWith(
+                  primaryColor: appTheme.primaryColor,
+                ),
                 child: SubscriptionPageContents(
                   header: header,
                   body: body,
