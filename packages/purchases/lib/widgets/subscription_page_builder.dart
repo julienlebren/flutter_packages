@@ -78,12 +78,15 @@ class SubscriptionPageBuilder extends ConsumerWidget {
                       )
                     : null,
               ),
-              body: SubscriptionPageContents(
-                header: header,
-                body: body,
-                footer: footer,
-                hasStoreIssue: state.isReady && state.price == null,
-                isPurchasing: state.isLoading,
+              body: CupertinoTheme(
+                data: cupertinoTheme,
+                child: SubscriptionPageContents(
+                  header: header,
+                  body: body,
+                  footer: footer,
+                  hasStoreIssue: state.isReady && state.price == null,
+                  isPurchasing: state.isLoading,
+                ),
               ),
             ),
           ),
