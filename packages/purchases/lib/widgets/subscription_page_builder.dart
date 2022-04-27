@@ -140,7 +140,7 @@ class SubscriptionPageContents extends ConsumerWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40),
           child: CustomScrollView(
-            clipBehavior: Clip.none,
+            //clipBehavior: Clip.none,
             physics: isCupertino()
                 ? const AlwaysScrollableScrollPhysics()
                 : const ClampingScrollPhysics(),
