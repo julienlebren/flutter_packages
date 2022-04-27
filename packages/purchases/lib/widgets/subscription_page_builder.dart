@@ -16,11 +16,17 @@ class SubscriptionPageBuilder extends ConsumerWidget {
   final Widget footer;
   final bool canDiscount;
 
+  _openOffers(WidgetRef ref) {
+    final controller = ref.watch(purchasesControllerProvider.notifier);
+    controller.handleEvent(const PurchasesEvent.openOffers());
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(purchasesControllerProvider);
     final appTheme = ref.watch(appThemeProvider);
     final theme = ref.watch(purchasesThemeProvider);
+    final cupertinoTheme = ref.watch(cupertinoThemeProvider);
 
     ref.listen<PurchasesState>(purchasesControllerProvider, (_, state) {
       if (state.errorText != null) {
@@ -45,31 +51,40 @@ class SubscriptionPageBuilder extends ConsumerWidget {
           ),
         ),
       ],
-      child: SafeArea(
-        top: false,
-        bottom: false,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            color: theme.backgroundColor,
-            image: theme.backgroundImage != null
-                ? DecorationImage(
-                    image: AssetImage(theme.backgroundImage!),
-                    fit: BoxFit.cover,
-                  )
-                : null,
-          ),
-          child: PlatformScaffold(
-            body: Column(
-              children: [
-                SubscriptionAppBar(canDiscount: canDiscount),
-                SubscriptionPageContents(
-                  header: header,
-                  body: body,
-                  footer: footer,
-                  hasStoreIssue: state.isReady && state.price == null,
-                  isPurchasing: state.isLoading,
+      child: CupertinoTheme(
+        data: cupertinoTheme.copyWith(primaryColor: theme.textColor),
+        child: SafeArea(
+          top: false,
+          bottom: false,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              color: theme.backgroundColor,
+              image: theme.backgroundImage != null
+                  ? DecorationImage(
+                      image: AssetImage(theme.backgroundImage!),
+                      fit: BoxFit.cover,
+                    )
+                  : null,
+            ),
+            child: PlatformScaffold(
+              appBar: PlatformNavigationBar(
+                leading: PlatformNavigationBarCloseButton(
+                  onPressed: () => Navigator.pop(context),
                 ),
-              ],
+                trailing: isCupertino() && canDiscount
+                    ? PlatformNavigationBarButton(
+                        onPressed: () => _openOffers(ref),
+                        icon: Icons.redeem,
+                      )
+                    : null,
+              ),
+              body: SubscriptionPageContents(
+                header: header,
+                body: body,
+                footer: footer,
+                hasStoreIssue: state.isReady && state.price == null,
+                isPurchasing: state.isLoading,
+              ),
             ),
           ),
         ),
