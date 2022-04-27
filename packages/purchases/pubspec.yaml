@@ -1,6 +1,6 @@
 name: purchases
 description: A new Flutter package project.
-version: 1.5.0
+version: 2.0.0-dev0
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -13,6 +13,11 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  extensions:
+    git:
+      url: https://github.com/julienlebren/flutter_packages
+      path: packages/extensions
+    version: ^0.1.5
   layout_builder:
     git:
       url: https://github.com/julienlebren/flutter_packages

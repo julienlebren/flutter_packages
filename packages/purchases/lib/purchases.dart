@@ -2,6 +2,7 @@ library subscription_service;
 
 import 'dart:io';
 
+import 'package:extensions/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -23,6 +24,7 @@ part 'widgets/buttons.dart';
 part 'widgets/feature.dart';
 part 'widgets/issue.dart';
 part 'widgets/price.dart';
+part 'widgets/subscription_page_builder.dart';
 part 'purchases.freezed.dart';
 
 const googlePlayURL = "https://play.google.com/store/account/subscriptions";

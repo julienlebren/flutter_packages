@@ -177,7 +177,7 @@ packages:
     source: hosted
     version: "2.2.1"
   extensions:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "packages/extensions"
       ref: HEAD
