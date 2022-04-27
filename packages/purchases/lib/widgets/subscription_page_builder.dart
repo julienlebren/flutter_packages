@@ -16,11 +16,6 @@ class SubscriptionPageBuilder extends ConsumerWidget {
   final Widget footer;
   final bool canDiscount;
 
-  _openOffers(WidgetRef ref) {
-    final controller = ref.watch(purchasesControllerProvider.notifier);
-    controller.handleEvent(const PurchasesEvent.openOffers());
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(purchasesControllerProvider);
@@ -63,22 +58,18 @@ class SubscriptionPageBuilder extends ConsumerWidget {
                   )
                 : null,
           ),
-          child: PlatformModalScaffold(
-            appBar: PlatformNavigationBar(
-              title: title,
-              trailing: isCupertino() && canDiscount
-                  ? PlatformNavigationBarButton(
-                      onPressed: () => _openOffers(ref),
-                      icon: Icons.redeem,
-                    )
-                  : null,
-            ),
-            body: SubscriptionPageContents(
-              header: header,
-              body: body,
-              footer: footer,
-              hasStoreIssue: state.isReady && state.price == null,
-              isPurchasing: state.isLoading,
+          child: PlatformScaffold(
+            body: Column(
+              children: [
+                SubscriptionAppBar(canDiscount: canDiscount),
+                SubscriptionPageContents(
+                  header: header,
+                  body: body,
+                  footer: footer,
+                  hasStoreIssue: state.isReady && state.price == null,
+                  isPurchasing: state.isLoading,
+                ),
+              ],
             ),
           ),
         ),
@@ -87,34 +78,49 @@ class SubscriptionPageBuilder extends ConsumerWidget {
   }
 }
 
-/*
-class SubscriptionAppBar extends StatelessWidget {
-  const SubscriptionAppBar({Key? key}) : super(key: key);
+class SubscriptionAppBar extends ConsumerWidget {
+  const SubscriptionAppBar({
+    Key? key,
+    this.canDiscount = false,
+  }) : super(key: key);
+
+  final bool canDiscount;
+
+  _openOffers(WidgetRef ref) {
+    final controller = ref.watch(purchasesControllerProvider.notifier);
+    controller.handleEvent(const PurchasesEvent.openOffers());
+  }
 
   @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 50,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 5),
-        child: Row(
-          children: [
-            PlatformTextButton(
-              title: MaterialLocalizations.of(context)
-                  .closeButtonLabel
-                  .toLowerCase()
-                  .capitalize(),
-              onPressed: () => Navigator.pop(context),
-              color: Colors.white,
-              padding: 14.0,
-            ),
-          ],
+  Widget build(BuildContext context, WidgetRef ref) {
+    final theme = CupertinoTheme.of(context);
+    final textColor = ref.watch(
+      purchasesThemeProvider.select((theme) => theme.textColor),
+    );
+
+    return CupertinoTheme(
+      data: theme.copyWith(primaryColor: textColor),
+      child: SizedBox(
+        height: 50,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 5),
+          child: Row(
+            children: [
+              PlatformNavigationBarCloseButton(
+                onPressed: () => Navigator.pop(context),
+              ),
+              if (isCupertino() && canDiscount)
+                PlatformNavigationBarButton(
+                  onPressed: () => _openOffers(ref),
+                  icon: Icons.redeem,
+                )
+            ],
+          ),
         ),
       ),
     );
   }
 }
-*/
 
 class SubscriptionPageContents extends ConsumerWidget {
   const SubscriptionPageContents({
@@ -140,7 +146,7 @@ class SubscriptionPageContents extends ConsumerWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40),
           child: CustomScrollView(
-            //clipBehavior: Clip.none,
+            clipBehavior: Clip.none,
             physics: isCupertino()
                 ? const AlwaysScrollableScrollPhysics()
                 : const ClampingScrollPhysics(),
