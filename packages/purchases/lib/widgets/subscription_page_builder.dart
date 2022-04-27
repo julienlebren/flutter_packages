@@ -140,10 +140,75 @@ class SubscriptionPageContents extends ConsumerWidget {
               SliverToBoxAdapter(child: header),
               SliverToBoxAdapter(child: body),
               hasStoreIssue
-                  ? const PurchasesIssue()
+                  ? const SubscriptionStoreIssue()
                   : SliverToBoxAdapter(child: footer),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class SubscriptionYearPrice extends ConsumerWidget {
+  const SubscriptionYearPrice({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+    final price = ref.watch(purchasesControllerProvider).price;
+    final theme = ref.watch(purchasesThemeProvider);
+
+    return Container(
+      height: 65,
+      padding: const EdgeInsets.only(
+        bottom: 20,
+        top: 15,
+      ),
+      child: price != null
+          ? Text(
+              l10n.yearPrice(price),
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.w600,
+                letterSpacing: -1,
+                color: theme.textColor,
+              ),
+              textAlign: TextAlign.center,
+            )
+          : const FormLoader(),
+    );
+  }
+}
+
+class SubscriptionStoreIssue extends ConsumerWidget {
+  const SubscriptionStoreIssue({Key? key}) : super(key: key);
+
+  _getOfferings(WidgetRef ref) {
+    final controller = ref.watch(purchasesControllerProvider.notifier);
+    controller.handleEvent(const PurchasesEvent.fetchOfferings());
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+
+    return SliverToBoxAdapter(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(l10n.priceNotLoaded),
+            const SizedBox(height: 10),
+            SizedBox(
+              width: double.infinity,
+              child: PlatformElevatedButton(
+                title: l10n.retryButton,
+                onPressed: () => _getOfferings(ref),
+              ),
+            ),
+          ],
         ),
       ),
     );
