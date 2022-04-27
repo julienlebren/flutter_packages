@@ -1084,3 +1084,355 @@ abstract class _PurchasesState implements PurchasesState {
   _$PurchasesStateCopyWith<_PurchasesState> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+class _$PurchasesThemeTearOff {
+  const _$PurchasesThemeTearOff();
+
+  _PurchasesTheme call(
+      {String? backgroundImage,
+      Color? backgroundColor,
+      required Color primaryColor,
+      required Color textColor,
+      Color? appBarButtonColor,
+      required Color buttonBackgroundColor,
+      required Color buttonTextColor,
+      required Color termsButtonColor,
+      required Color cupertinoDisclaimerColor,
+      double spaceBetweenButtons = 15.0}) {
+    return _PurchasesTheme(
+      backgroundImage: backgroundImage,
+      backgroundColor: backgroundColor,
+      primaryColor: primaryColor,
+      textColor: textColor,
+      appBarButtonColor: appBarButtonColor,
+      buttonBackgroundColor: buttonBackgroundColor,
+      buttonTextColor: buttonTextColor,
+      termsButtonColor: termsButtonColor,
+      cupertinoDisclaimerColor: cupertinoDisclaimerColor,
+      spaceBetweenButtons: spaceBetweenButtons,
+    );
+  }
+}
+
+/// @nodoc
+const $PurchasesTheme = _$PurchasesThemeTearOff();
+
+/// @nodoc
+mixin _$PurchasesTheme {
+  String? get backgroundImage => throw _privateConstructorUsedError;
+  Color? get backgroundColor => throw _privateConstructorUsedError;
+  Color get primaryColor => throw _privateConstructorUsedError;
+  Color get textColor => throw _privateConstructorUsedError;
+  Color? get appBarButtonColor => throw _privateConstructorUsedError;
+  Color get buttonBackgroundColor => throw _privateConstructorUsedError;
+  Color get buttonTextColor => throw _privateConstructorUsedError;
+  Color get termsButtonColor => throw _privateConstructorUsedError;
+  Color get cupertinoDisclaimerColor => throw _privateConstructorUsedError;
+  double get spaceBetweenButtons => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $PurchasesThemeCopyWith<PurchasesTheme> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PurchasesThemeCopyWith<$Res> {
+  factory $PurchasesThemeCopyWith(
+          PurchasesTheme value, $Res Function(PurchasesTheme) then) =
+      _$PurchasesThemeCopyWithImpl<$Res>;
+  $Res call(
+      {String? backgroundImage,
+      Color? backgroundColor,
+      Color primaryColor,
+      Color textColor,
+      Color? appBarButtonColor,
+      Color buttonBackgroundColor,
+      Color buttonTextColor,
+      Color termsButtonColor,
+      Color cupertinoDisclaimerColor,
+      double spaceBetweenButtons});
+}
+
+/// @nodoc
+class _$PurchasesThemeCopyWithImpl<$Res>
+    implements $PurchasesThemeCopyWith<$Res> {
+  _$PurchasesThemeCopyWithImpl(this._value, this._then);
+
+  final PurchasesTheme _value;
+  // ignore: unused_field
+  final $Res Function(PurchasesTheme) _then;
+
+  @override
+  $Res call({
+    Object? backgroundImage = freezed,
+    Object? backgroundColor = freezed,
+    Object? primaryColor = freezed,
+    Object? textColor = freezed,
+    Object? appBarButtonColor = freezed,
+    Object? buttonBackgroundColor = freezed,
+    Object? buttonTextColor = freezed,
+    Object? termsButtonColor = freezed,
+    Object? cupertinoDisclaimerColor = freezed,
+    Object? spaceBetweenButtons = freezed,
+  }) {
+    return _then(_value.copyWith(
+      backgroundImage: backgroundImage == freezed
+          ? _value.backgroundImage
+          : backgroundImage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      backgroundColor: backgroundColor == freezed
+          ? _value.backgroundColor
+          : backgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      primaryColor: primaryColor == freezed
+          ? _value.primaryColor
+          : primaryColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      textColor: textColor == freezed
+          ? _value.textColor
+          : textColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      appBarButtonColor: appBarButtonColor == freezed
+          ? _value.appBarButtonColor
+          : appBarButtonColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      buttonBackgroundColor: buttonBackgroundColor == freezed
+          ? _value.buttonBackgroundColor
+          : buttonBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      buttonTextColor: buttonTextColor == freezed
+          ? _value.buttonTextColor
+          : buttonTextColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      termsButtonColor: termsButtonColor == freezed
+          ? _value.termsButtonColor
+          : termsButtonColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      cupertinoDisclaimerColor: cupertinoDisclaimerColor == freezed
+          ? _value.cupertinoDisclaimerColor
+          : cupertinoDisclaimerColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      spaceBetweenButtons: spaceBetweenButtons == freezed
+          ? _value.spaceBetweenButtons
+          : spaceBetweenButtons // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$PurchasesThemeCopyWith<$Res>
+    implements $PurchasesThemeCopyWith<$Res> {
+  factory _$PurchasesThemeCopyWith(
+          _PurchasesTheme value, $Res Function(_PurchasesTheme) then) =
+      __$PurchasesThemeCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String? backgroundImage,
+      Color? backgroundColor,
+      Color primaryColor,
+      Color textColor,
+      Color? appBarButtonColor,
+      Color buttonBackgroundColor,
+      Color buttonTextColor,
+      Color termsButtonColor,
+      Color cupertinoDisclaimerColor,
+      double spaceBetweenButtons});
+}
+
+/// @nodoc
+class __$PurchasesThemeCopyWithImpl<$Res>
+    extends _$PurchasesThemeCopyWithImpl<$Res>
+    implements _$PurchasesThemeCopyWith<$Res> {
+  __$PurchasesThemeCopyWithImpl(
+      _PurchasesTheme _value, $Res Function(_PurchasesTheme) _then)
+      : super(_value, (v) => _then(v as _PurchasesTheme));
+
+  @override
+  _PurchasesTheme get _value => super._value as _PurchasesTheme;
+
+  @override
+  $Res call({
+    Object? backgroundImage = freezed,
+    Object? backgroundColor = freezed,
+    Object? primaryColor = freezed,
+    Object? textColor = freezed,
+    Object? appBarButtonColor = freezed,
+    Object? buttonBackgroundColor = freezed,
+    Object? buttonTextColor = freezed,
+    Object? termsButtonColor = freezed,
+    Object? cupertinoDisclaimerColor = freezed,
+    Object? spaceBetweenButtons = freezed,
+  }) {
+    return _then(_PurchasesTheme(
+      backgroundImage: backgroundImage == freezed
+          ? _value.backgroundImage
+          : backgroundImage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      backgroundColor: backgroundColor == freezed
+          ? _value.backgroundColor
+          : backgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      primaryColor: primaryColor == freezed
+          ? _value.primaryColor
+          : primaryColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      textColor: textColor == freezed
+          ? _value.textColor
+          : textColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      appBarButtonColor: appBarButtonColor == freezed
+          ? _value.appBarButtonColor
+          : appBarButtonColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      buttonBackgroundColor: buttonBackgroundColor == freezed
+          ? _value.buttonBackgroundColor
+          : buttonBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      buttonTextColor: buttonTextColor == freezed
+          ? _value.buttonTextColor
+          : buttonTextColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      termsButtonColor: termsButtonColor == freezed
+          ? _value.termsButtonColor
+          : termsButtonColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      cupertinoDisclaimerColor: cupertinoDisclaimerColor == freezed
+          ? _value.cupertinoDisclaimerColor
+          : cupertinoDisclaimerColor // ignore: cast_nullable_to_non_nullable
+              as Color,
+      spaceBetweenButtons: spaceBetweenButtons == freezed
+          ? _value.spaceBetweenButtons
+          : spaceBetweenButtons // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PurchasesTheme implements _PurchasesTheme {
+  const _$_PurchasesTheme(
+      {this.backgroundImage,
+      this.backgroundColor,
+      required this.primaryColor,
+      required this.textColor,
+      this.appBarButtonColor,
+      required this.buttonBackgroundColor,
+      required this.buttonTextColor,
+      required this.termsButtonColor,
+      required this.cupertinoDisclaimerColor,
+      this.spaceBetweenButtons = 15.0});
+
+  @override
+  final String? backgroundImage;
+  @override
+  final Color? backgroundColor;
+  @override
+  final Color primaryColor;
+  @override
+  final Color textColor;
+  @override
+  final Color? appBarButtonColor;
+  @override
+  final Color buttonBackgroundColor;
+  @override
+  final Color buttonTextColor;
+  @override
+  final Color termsButtonColor;
+  @override
+  final Color cupertinoDisclaimerColor;
+  @JsonKey()
+  @override
+  final double spaceBetweenButtons;
+
+  @override
+  String toString() {
+    return 'PurchasesTheme(backgroundImage: $backgroundImage, backgroundColor: $backgroundColor, primaryColor: $primaryColor, textColor: $textColor, appBarButtonColor: $appBarButtonColor, buttonBackgroundColor: $buttonBackgroundColor, buttonTextColor: $buttonTextColor, termsButtonColor: $termsButtonColor, cupertinoDisclaimerColor: $cupertinoDisclaimerColor, spaceBetweenButtons: $spaceBetweenButtons)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _PurchasesTheme &&
+            const DeepCollectionEquality()
+                .equals(other.backgroundImage, backgroundImage) &&
+            const DeepCollectionEquality()
+                .equals(other.backgroundColor, backgroundColor) &&
+            const DeepCollectionEquality()
+                .equals(other.primaryColor, primaryColor) &&
+            const DeepCollectionEquality().equals(other.textColor, textColor) &&
+            const DeepCollectionEquality()
+                .equals(other.appBarButtonColor, appBarButtonColor) &&
+            const DeepCollectionEquality()
+                .equals(other.buttonBackgroundColor, buttonBackgroundColor) &&
+            const DeepCollectionEquality()
+                .equals(other.buttonTextColor, buttonTextColor) &&
+            const DeepCollectionEquality()
+                .equals(other.termsButtonColor, termsButtonColor) &&
+            const DeepCollectionEquality().equals(
+                other.cupertinoDisclaimerColor, cupertinoDisclaimerColor) &&
+            const DeepCollectionEquality()
+                .equals(other.spaceBetweenButtons, spaceBetweenButtons));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(backgroundImage),
+      const DeepCollectionEquality().hash(backgroundColor),
+      const DeepCollectionEquality().hash(primaryColor),
+      const DeepCollectionEquality().hash(textColor),
+      const DeepCollectionEquality().hash(appBarButtonColor),
+      const DeepCollectionEquality().hash(buttonBackgroundColor),
+      const DeepCollectionEquality().hash(buttonTextColor),
+      const DeepCollectionEquality().hash(termsButtonColor),
+      const DeepCollectionEquality().hash(cupertinoDisclaimerColor),
+      const DeepCollectionEquality().hash(spaceBetweenButtons));
+
+  @JsonKey(ignore: true)
+  @override
+  _$PurchasesThemeCopyWith<_PurchasesTheme> get copyWith =>
+      __$PurchasesThemeCopyWithImpl<_PurchasesTheme>(this, _$identity);
+}
+
+abstract class _PurchasesTheme implements PurchasesTheme {
+  const factory _PurchasesTheme(
+      {String? backgroundImage,
+      Color? backgroundColor,
+      required Color primaryColor,
+      required Color textColor,
+      Color? appBarButtonColor,
+      required Color buttonBackgroundColor,
+      required Color buttonTextColor,
+      required Color termsButtonColor,
+      required Color cupertinoDisclaimerColor,
+      double spaceBetweenButtons}) = _$_PurchasesTheme;
+
+  @override
+  String? get backgroundImage;
+  @override
+  Color? get backgroundColor;
+  @override
+  Color get primaryColor;
+  @override
+  Color get textColor;
+  @override
+  Color? get appBarButtonColor;
+  @override
+  Color get buttonBackgroundColor;
+  @override
+  Color get buttonTextColor;
+  @override
+  Color get termsButtonColor;
+  @override
+  Color get cupertinoDisclaimerColor;
+  @override
+  double get spaceBetweenButtons;
+  @override
+  @JsonKey(ignore: true)
+  _$PurchasesThemeCopyWith<_PurchasesTheme> get copyWith =>
+      throw _privateConstructorUsedError;
+}

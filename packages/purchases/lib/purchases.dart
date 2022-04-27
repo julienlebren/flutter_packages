@@ -16,10 +16,13 @@ part 'controllers/purchases_controller.dart';
 part 'core/models/purchases_event.dart';
 part 'core/models/purchases_settings.dart';
 part 'core/models/purchases_state.dart';
+part 'core/models/purchases_theme.dart';
 part 'services/purchases_service.dart';
 part 'widgets/cupertino_disclaimer.dart';
 part 'widgets/buttons.dart';
+part 'widgets/feature.dart';
 part 'widgets/issue.dart';
+part 'widgets/price.dart';
 part 'purchases.freezed.dart';
 
 const googlePlayURL = "https://play.google.com/store/account/subscriptions";
@@ -52,4 +55,25 @@ final purchasesLocalizationsProvider = Provider<PurchasesLocalizations>(
     return lookupPurchasesLocalizations(locale);
   },
   dependencies: [localeProvider],
+);
+
+final purchasesThemeProvider = Provider<PurchasesTheme>(
+  (ref) {
+    final appTheme = ref.watch(appThemeProvider);
+    final formTheme = ref.watch(formThemeProvider);
+
+    return PurchasesTheme(
+      primaryColor: appTheme.primaryColor,
+      backgroundColor: appTheme.scaffoldBackgroundColor,
+      textColor: appTheme.textColor,
+      buttonBackgroundColor: formTheme.rowBackgroundColor,
+      buttonTextColor: appTheme.textColor,
+      cupertinoDisclaimerColor: Colors.grey,
+      termsButtonColor: appTheme.primaryColor,
+    );
+  },
+  dependencies: [
+    appThemeProvider,
+    formThemeProvider,
+  ],
 );
