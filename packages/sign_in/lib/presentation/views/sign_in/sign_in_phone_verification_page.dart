@@ -1,4 +1,4 @@
-part of '../../sign_in.dart';
+part of '../../../sign_in.dart';
 
 /// Handles a `SignInPhoneVerificationEvent` in the [SignInPhoneVerificationController]
 /// This function avoids too much code repetition in this file

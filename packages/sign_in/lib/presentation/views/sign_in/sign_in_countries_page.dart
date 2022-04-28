@@ -1,4 +1,4 @@
-part of '../../sign_in.dart';
+part of '../../../sign_in.dart';
 
 /// A provider which returns the list of the country from Libphonenumber
 /// sorted by country name.

@@ -1,4 +1,4 @@
-part of '../../sign_in.dart';
+part of '../../../sign_in.dart';
 
 void _handleEmailLoginEvent(WidgetRef ref, SignInEmailLoginEvent event) {
   final controller = ref.read(signInEmailLoginControllerProvider.notifier);
