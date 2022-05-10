@@ -14,7 +14,7 @@ class SignInPhoneVerificationPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.read(signInLocalizationsProvider);
+    final l10n = ref.watch(signInLocalizationsProvider);
     final isLoading =
         ref.watch(signInPhoneVerificationControllerProvider.select(
       (state) => state.isLoading,

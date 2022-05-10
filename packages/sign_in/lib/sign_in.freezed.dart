@@ -15,6 +15,1230 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
+class _$SettingsEmailEventTearOff {
+  const _$SettingsEmailEventTearOff();
+
+  _SettingsEmailChanged emailChanged(String email) {
+    return _SettingsEmailChanged(
+      email,
+    );
+  }
+
+  _SettingsEmailSubmit submit() {
+    return const _SettingsEmailSubmit();
+  }
+}
+
+/// @nodoc
+const $SettingsEmailEvent = _$SettingsEmailEventTearOff();
+
+/// @nodoc
+mixin _$SettingsEmailEvent {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChanged,
+    required TResult Function() submit,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function()? submit,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function()? submit,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SettingsEmailChanged value) emailChanged,
+    required TResult Function(_SettingsEmailSubmit value) submit,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SettingsEmailChanged value)? emailChanged,
+    TResult Function(_SettingsEmailSubmit value)? submit,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SettingsEmailChanged value)? emailChanged,
+    TResult Function(_SettingsEmailSubmit value)? submit,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SettingsEmailEventCopyWith<$Res> {
+  factory $SettingsEmailEventCopyWith(
+          SettingsEmailEvent value, $Res Function(SettingsEmailEvent) then) =
+      _$SettingsEmailEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SettingsEmailEventCopyWithImpl<$Res>
+    implements $SettingsEmailEventCopyWith<$Res> {
+  _$SettingsEmailEventCopyWithImpl(this._value, this._then);
+
+  final SettingsEmailEvent _value;
+  // ignore: unused_field
+  final $Res Function(SettingsEmailEvent) _then;
+}
+
+/// @nodoc
+abstract class _$SettingsEmailChangedCopyWith<$Res> {
+  factory _$SettingsEmailChangedCopyWith(_SettingsEmailChanged value,
+          $Res Function(_SettingsEmailChanged) then) =
+      __$SettingsEmailChangedCopyWithImpl<$Res>;
+  $Res call({String email});
+}
+
+/// @nodoc
+class __$SettingsEmailChangedCopyWithImpl<$Res>
+    extends _$SettingsEmailEventCopyWithImpl<$Res>
+    implements _$SettingsEmailChangedCopyWith<$Res> {
+  __$SettingsEmailChangedCopyWithImpl(
+      _SettingsEmailChanged _value, $Res Function(_SettingsEmailChanged) _then)
+      : super(_value, (v) => _then(v as _SettingsEmailChanged));
+
+  @override
+  _SettingsEmailChanged get _value => super._value as _SettingsEmailChanged;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+  }) {
+    return _then(_SettingsEmailChanged(
+      email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SettingsEmailChanged implements _SettingsEmailChanged {
+  const _$_SettingsEmailChanged(this.email);
+
+  @override
+  final String email;
+
+  @override
+  String toString() {
+    return 'SettingsEmailEvent.emailChanged(email: $email)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SettingsEmailChanged &&
+            const DeepCollectionEquality().equals(other.email, email));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SettingsEmailChangedCopyWith<_SettingsEmailChanged> get copyWith =>
+      __$SettingsEmailChangedCopyWithImpl<_SettingsEmailChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChanged,
+    required TResult Function() submit,
+  }) {
+    return emailChanged(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function()? submit,
+  }) {
+    return emailChanged?.call(email);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function()? submit,
+    required TResult orElse(),
+  }) {
+    if (emailChanged != null) {
+      return emailChanged(email);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SettingsEmailChanged value) emailChanged,
+    required TResult Function(_SettingsEmailSubmit value) submit,
+  }) {
+    return emailChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SettingsEmailChanged value)? emailChanged,
+    TResult Function(_SettingsEmailSubmit value)? submit,
+  }) {
+    return emailChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SettingsEmailChanged value)? emailChanged,
+    TResult Function(_SettingsEmailSubmit value)? submit,
+    required TResult orElse(),
+  }) {
+    if (emailChanged != null) {
+      return emailChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SettingsEmailChanged implements SettingsEmailEvent {
+  const factory _SettingsEmailChanged(String email) = _$_SettingsEmailChanged;
+
+  String get email;
+  @JsonKey(ignore: true)
+  _$SettingsEmailChangedCopyWith<_SettingsEmailChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SettingsEmailSubmitCopyWith<$Res> {
+  factory _$SettingsEmailSubmitCopyWith(_SettingsEmailSubmit value,
+          $Res Function(_SettingsEmailSubmit) then) =
+      __$SettingsEmailSubmitCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SettingsEmailSubmitCopyWithImpl<$Res>
+    extends _$SettingsEmailEventCopyWithImpl<$Res>
+    implements _$SettingsEmailSubmitCopyWith<$Res> {
+  __$SettingsEmailSubmitCopyWithImpl(
+      _SettingsEmailSubmit _value, $Res Function(_SettingsEmailSubmit) _then)
+      : super(_value, (v) => _then(v as _SettingsEmailSubmit));
+
+  @override
+  _SettingsEmailSubmit get _value => super._value as _SettingsEmailSubmit;
+}
+
+/// @nodoc
+
+class _$_SettingsEmailSubmit implements _SettingsEmailSubmit {
+  const _$_SettingsEmailSubmit();
+
+  @override
+  String toString() {
+    return 'SettingsEmailEvent.submit()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SettingsEmailSubmit);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String email) emailChanged,
+    required TResult Function() submit,
+  }) {
+    return submit();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function()? submit,
+  }) {
+    return submit?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String email)? emailChanged,
+    TResult Function()? submit,
+    required TResult orElse(),
+  }) {
+    if (submit != null) {
+      return submit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SettingsEmailChanged value) emailChanged,
+    required TResult Function(_SettingsEmailSubmit value) submit,
+  }) {
+    return submit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SettingsEmailChanged value)? emailChanged,
+    TResult Function(_SettingsEmailSubmit value)? submit,
+  }) {
+    return submit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SettingsEmailChanged value)? emailChanged,
+    TResult Function(_SettingsEmailSubmit value)? submit,
+    required TResult orElse(),
+  }) {
+    if (submit != null) {
+      return submit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SettingsEmailSubmit implements SettingsEmailEvent {
+  const factory _SettingsEmailSubmit() = _$_SettingsEmailSubmit;
+}
+
+/// @nodoc
+class _$SettingsEmailStateTearOff {
+  const _$SettingsEmailStateTearOff();
+
+  _SettingsEmailState call(
+      {String email = "",
+      bool canSubmit = false,
+      bool isLoading = false,
+      bool isSuccess = false,
+      String? errorText}) {
+    return _SettingsEmailState(
+      email: email,
+      canSubmit: canSubmit,
+      isLoading: isLoading,
+      isSuccess: isSuccess,
+      errorText: errorText,
+    );
+  }
+}
+
+/// @nodoc
+const $SettingsEmailState = _$SettingsEmailStateTearOff();
+
+/// @nodoc
+mixin _$SettingsEmailState {
+  String get email => throw _privateConstructorUsedError;
+  bool get canSubmit => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isSuccess => throw _privateConstructorUsedError;
+  String? get errorText => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SettingsEmailStateCopyWith<SettingsEmailState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SettingsEmailStateCopyWith<$Res> {
+  factory $SettingsEmailStateCopyWith(
+          SettingsEmailState value, $Res Function(SettingsEmailState) then) =
+      _$SettingsEmailStateCopyWithImpl<$Res>;
+  $Res call(
+      {String email,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText});
+}
+
+/// @nodoc
+class _$SettingsEmailStateCopyWithImpl<$Res>
+    implements $SettingsEmailStateCopyWith<$Res> {
+  _$SettingsEmailStateCopyWithImpl(this._value, this._then);
+
+  final SettingsEmailState _value;
+  // ignore: unused_field
+  final $Res Function(SettingsEmailState) _then;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+    Object? canSubmit = freezed,
+    Object? isLoading = freezed,
+    Object? isSuccess = freezed,
+    Object? errorText = freezed,
+  }) {
+    return _then(_value.copyWith(
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      canSubmit: canSubmit == freezed
+          ? _value.canSubmit
+          : canSubmit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuccess: isSuccess == freezed
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorText: errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SettingsEmailStateCopyWith<$Res>
+    implements $SettingsEmailStateCopyWith<$Res> {
+  factory _$SettingsEmailStateCopyWith(
+          _SettingsEmailState value, $Res Function(_SettingsEmailState) then) =
+      __$SettingsEmailStateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String email,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText});
+}
+
+/// @nodoc
+class __$SettingsEmailStateCopyWithImpl<$Res>
+    extends _$SettingsEmailStateCopyWithImpl<$Res>
+    implements _$SettingsEmailStateCopyWith<$Res> {
+  __$SettingsEmailStateCopyWithImpl(
+      _SettingsEmailState _value, $Res Function(_SettingsEmailState) _then)
+      : super(_value, (v) => _then(v as _SettingsEmailState));
+
+  @override
+  _SettingsEmailState get _value => super._value as _SettingsEmailState;
+
+  @override
+  $Res call({
+    Object? email = freezed,
+    Object? canSubmit = freezed,
+    Object? isLoading = freezed,
+    Object? isSuccess = freezed,
+    Object? errorText = freezed,
+  }) {
+    return _then(_SettingsEmailState(
+      email: email == freezed
+          ? _value.email
+          : email // ignore: cast_nullable_to_non_nullable
+              as String,
+      canSubmit: canSubmit == freezed
+          ? _value.canSubmit
+          : canSubmit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuccess: isSuccess == freezed
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorText: errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SettingsEmailState implements _SettingsEmailState {
+  const _$_SettingsEmailState(
+      {this.email = "",
+      this.canSubmit = false,
+      this.isLoading = false,
+      this.isSuccess = false,
+      this.errorText});
+
+  @JsonKey()
+  @override
+  final String email;
+  @JsonKey()
+  @override
+  final bool canSubmit;
+  @JsonKey()
+  @override
+  final bool isLoading;
+  @JsonKey()
+  @override
+  final bool isSuccess;
+  @override
+  final String? errorText;
+
+  @override
+  String toString() {
+    return 'SettingsEmailState(email: $email, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SettingsEmailState &&
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
+            const DeepCollectionEquality().equals(other.errorText, errorText));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(email),
+      const DeepCollectionEquality().hash(canSubmit),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(isSuccess),
+      const DeepCollectionEquality().hash(errorText));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SettingsEmailStateCopyWith<_SettingsEmailState> get copyWith =>
+      __$SettingsEmailStateCopyWithImpl<_SettingsEmailState>(this, _$identity);
+}
+
+abstract class _SettingsEmailState implements SettingsEmailState {
+  const factory _SettingsEmailState(
+      {String email,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText}) = _$_SettingsEmailState;
+
+  @override
+  String get email;
+  @override
+  bool get canSubmit;
+  @override
+  bool get isLoading;
+  @override
+  bool get isSuccess;
+  @override
+  String? get errorText;
+  @override
+  @JsonKey(ignore: true)
+  _$SettingsEmailStateCopyWith<_SettingsEmailState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$SettingsPasswordEventTearOff {
+  const _$SettingsPasswordEventTearOff();
+
+  _SettingsPasswordChanged passwordChanged(String password) {
+    return _SettingsPasswordChanged(
+      password,
+    );
+  }
+
+  _SettingsPasswordSubmit submit() {
+    return const _SettingsPasswordSubmit();
+  }
+}
+
+/// @nodoc
+const $SettingsPasswordEvent = _$SettingsPasswordEventTearOff();
+
+/// @nodoc
+mixin _$SettingsPasswordEvent {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String password) passwordChanged,
+    required TResult Function() submit,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String password)? passwordChanged,
+    TResult Function()? submit,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String password)? passwordChanged,
+    TResult Function()? submit,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SettingsPasswordChanged value) passwordChanged,
+    required TResult Function(_SettingsPasswordSubmit value) submit,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult Function(_SettingsPasswordSubmit value)? submit,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult Function(_SettingsPasswordSubmit value)? submit,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SettingsPasswordEventCopyWith<$Res> {
+  factory $SettingsPasswordEventCopyWith(SettingsPasswordEvent value,
+          $Res Function(SettingsPasswordEvent) then) =
+      _$SettingsPasswordEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SettingsPasswordEventCopyWithImpl<$Res>
+    implements $SettingsPasswordEventCopyWith<$Res> {
+  _$SettingsPasswordEventCopyWithImpl(this._value, this._then);
+
+  final SettingsPasswordEvent _value;
+  // ignore: unused_field
+  final $Res Function(SettingsPasswordEvent) _then;
+}
+
+/// @nodoc
+abstract class _$SettingsPasswordChangedCopyWith<$Res> {
+  factory _$SettingsPasswordChangedCopyWith(_SettingsPasswordChanged value,
+          $Res Function(_SettingsPasswordChanged) then) =
+      __$SettingsPasswordChangedCopyWithImpl<$Res>;
+  $Res call({String password});
+}
+
+/// @nodoc
+class __$SettingsPasswordChangedCopyWithImpl<$Res>
+    extends _$SettingsPasswordEventCopyWithImpl<$Res>
+    implements _$SettingsPasswordChangedCopyWith<$Res> {
+  __$SettingsPasswordChangedCopyWithImpl(_SettingsPasswordChanged _value,
+      $Res Function(_SettingsPasswordChanged) _then)
+      : super(_value, (v) => _then(v as _SettingsPasswordChanged));
+
+  @override
+  _SettingsPasswordChanged get _value =>
+      super._value as _SettingsPasswordChanged;
+
+  @override
+  $Res call({
+    Object? password = freezed,
+  }) {
+    return _then(_SettingsPasswordChanged(
+      password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SettingsPasswordChanged implements _SettingsPasswordChanged {
+  const _$_SettingsPasswordChanged(this.password);
+
+  @override
+  final String password;
+
+  @override
+  String toString() {
+    return 'SettingsPasswordEvent.passwordChanged(password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SettingsPasswordChanged &&
+            const DeepCollectionEquality().equals(other.password, password));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SettingsPasswordChangedCopyWith<_SettingsPasswordChanged> get copyWith =>
+      __$SettingsPasswordChangedCopyWithImpl<_SettingsPasswordChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String password) passwordChanged,
+    required TResult Function() submit,
+  }) {
+    return passwordChanged(password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String password)? passwordChanged,
+    TResult Function()? submit,
+  }) {
+    return passwordChanged?.call(password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String password)? passwordChanged,
+    TResult Function()? submit,
+    required TResult orElse(),
+  }) {
+    if (passwordChanged != null) {
+      return passwordChanged(password);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SettingsPasswordChanged value) passwordChanged,
+    required TResult Function(_SettingsPasswordSubmit value) submit,
+  }) {
+    return passwordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult Function(_SettingsPasswordSubmit value)? submit,
+  }) {
+    return passwordChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult Function(_SettingsPasswordSubmit value)? submit,
+    required TResult orElse(),
+  }) {
+    if (passwordChanged != null) {
+      return passwordChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SettingsPasswordChanged implements SettingsPasswordEvent {
+  const factory _SettingsPasswordChanged(String password) =
+      _$_SettingsPasswordChanged;
+
+  String get password;
+  @JsonKey(ignore: true)
+  _$SettingsPasswordChangedCopyWith<_SettingsPasswordChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SettingsPasswordSubmitCopyWith<$Res> {
+  factory _$SettingsPasswordSubmitCopyWith(_SettingsPasswordSubmit value,
+          $Res Function(_SettingsPasswordSubmit) then) =
+      __$SettingsPasswordSubmitCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SettingsPasswordSubmitCopyWithImpl<$Res>
+    extends _$SettingsPasswordEventCopyWithImpl<$Res>
+    implements _$SettingsPasswordSubmitCopyWith<$Res> {
+  __$SettingsPasswordSubmitCopyWithImpl(_SettingsPasswordSubmit _value,
+      $Res Function(_SettingsPasswordSubmit) _then)
+      : super(_value, (v) => _then(v as _SettingsPasswordSubmit));
+
+  @override
+  _SettingsPasswordSubmit get _value => super._value as _SettingsPasswordSubmit;
+}
+
+/// @nodoc
+
+class _$_SettingsPasswordSubmit implements _SettingsPasswordSubmit {
+  const _$_SettingsPasswordSubmit();
+
+  @override
+  String toString() {
+    return 'SettingsPasswordEvent.submit()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SettingsPasswordSubmit);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String password) passwordChanged,
+    required TResult Function() submit,
+  }) {
+    return submit();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String password)? passwordChanged,
+    TResult Function()? submit,
+  }) {
+    return submit?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String password)? passwordChanged,
+    TResult Function()? submit,
+    required TResult orElse(),
+  }) {
+    if (submit != null) {
+      return submit();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SettingsPasswordChanged value) passwordChanged,
+    required TResult Function(_SettingsPasswordSubmit value) submit,
+  }) {
+    return submit(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult Function(_SettingsPasswordSubmit value)? submit,
+  }) {
+    return submit?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult Function(_SettingsPasswordSubmit value)? submit,
+    required TResult orElse(),
+  }) {
+    if (submit != null) {
+      return submit(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SettingsPasswordSubmit implements SettingsPasswordEvent {
+  const factory _SettingsPasswordSubmit() = _$_SettingsPasswordSubmit;
+}
+
+/// @nodoc
+class _$SettingsPasswordStateTearOff {
+  const _$SettingsPasswordStateTearOff();
+
+  _SettingsPasswordState call(
+      {String password = "",
+      bool passwordHasMinLength = false,
+      bool passwordHasUppercase = false,
+      bool passwordHasLowercase = false,
+      bool passwordHasDigits = false,
+      bool passwordHasSpecialChars = false,
+      bool canSubmit = false,
+      bool isLoading = false,
+      bool isSuccess = false,
+      String? errorText}) {
+    return _SettingsPasswordState(
+      password: password,
+      passwordHasMinLength: passwordHasMinLength,
+      passwordHasUppercase: passwordHasUppercase,
+      passwordHasLowercase: passwordHasLowercase,
+      passwordHasDigits: passwordHasDigits,
+      passwordHasSpecialChars: passwordHasSpecialChars,
+      canSubmit: canSubmit,
+      isLoading: isLoading,
+      isSuccess: isSuccess,
+      errorText: errorText,
+    );
+  }
+}
+
+/// @nodoc
+const $SettingsPasswordState = _$SettingsPasswordStateTearOff();
+
+/// @nodoc
+mixin _$SettingsPasswordState {
+  String get password => throw _privateConstructorUsedError;
+  bool get passwordHasMinLength => throw _privateConstructorUsedError;
+  bool get passwordHasUppercase => throw _privateConstructorUsedError;
+  bool get passwordHasLowercase => throw _privateConstructorUsedError;
+  bool get passwordHasDigits => throw _privateConstructorUsedError;
+  bool get passwordHasSpecialChars => throw _privateConstructorUsedError;
+  bool get canSubmit => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isSuccess => throw _privateConstructorUsedError;
+  String? get errorText => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SettingsPasswordStateCopyWith<SettingsPasswordState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SettingsPasswordStateCopyWith<$Res> {
+  factory $SettingsPasswordStateCopyWith(SettingsPasswordState value,
+          $Res Function(SettingsPasswordState) then) =
+      _$SettingsPasswordStateCopyWithImpl<$Res>;
+  $Res call(
+      {String password,
+      bool passwordHasMinLength,
+      bool passwordHasUppercase,
+      bool passwordHasLowercase,
+      bool passwordHasDigits,
+      bool passwordHasSpecialChars,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText});
+}
+
+/// @nodoc
+class _$SettingsPasswordStateCopyWithImpl<$Res>
+    implements $SettingsPasswordStateCopyWith<$Res> {
+  _$SettingsPasswordStateCopyWithImpl(this._value, this._then);
+
+  final SettingsPasswordState _value;
+  // ignore: unused_field
+  final $Res Function(SettingsPasswordState) _then;
+
+  @override
+  $Res call({
+    Object? password = freezed,
+    Object? passwordHasMinLength = freezed,
+    Object? passwordHasUppercase = freezed,
+    Object? passwordHasLowercase = freezed,
+    Object? passwordHasDigits = freezed,
+    Object? passwordHasSpecialChars = freezed,
+    Object? canSubmit = freezed,
+    Object? isLoading = freezed,
+    Object? isSuccess = freezed,
+    Object? errorText = freezed,
+  }) {
+    return _then(_value.copyWith(
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      passwordHasMinLength: passwordHasMinLength == freezed
+          ? _value.passwordHasMinLength
+          : passwordHasMinLength // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasUppercase: passwordHasUppercase == freezed
+          ? _value.passwordHasUppercase
+          : passwordHasUppercase // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasLowercase: passwordHasLowercase == freezed
+          ? _value.passwordHasLowercase
+          : passwordHasLowercase // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasDigits: passwordHasDigits == freezed
+          ? _value.passwordHasDigits
+          : passwordHasDigits // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasSpecialChars: passwordHasSpecialChars == freezed
+          ? _value.passwordHasSpecialChars
+          : passwordHasSpecialChars // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canSubmit: canSubmit == freezed
+          ? _value.canSubmit
+          : canSubmit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuccess: isSuccess == freezed
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorText: errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SettingsPasswordStateCopyWith<$Res>
+    implements $SettingsPasswordStateCopyWith<$Res> {
+  factory _$SettingsPasswordStateCopyWith(_SettingsPasswordState value,
+          $Res Function(_SettingsPasswordState) then) =
+      __$SettingsPasswordStateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {String password,
+      bool passwordHasMinLength,
+      bool passwordHasUppercase,
+      bool passwordHasLowercase,
+      bool passwordHasDigits,
+      bool passwordHasSpecialChars,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText});
+}
+
+/// @nodoc
+class __$SettingsPasswordStateCopyWithImpl<$Res>
+    extends _$SettingsPasswordStateCopyWithImpl<$Res>
+    implements _$SettingsPasswordStateCopyWith<$Res> {
+  __$SettingsPasswordStateCopyWithImpl(_SettingsPasswordState _value,
+      $Res Function(_SettingsPasswordState) _then)
+      : super(_value, (v) => _then(v as _SettingsPasswordState));
+
+  @override
+  _SettingsPasswordState get _value => super._value as _SettingsPasswordState;
+
+  @override
+  $Res call({
+    Object? password = freezed,
+    Object? passwordHasMinLength = freezed,
+    Object? passwordHasUppercase = freezed,
+    Object? passwordHasLowercase = freezed,
+    Object? passwordHasDigits = freezed,
+    Object? passwordHasSpecialChars = freezed,
+    Object? canSubmit = freezed,
+    Object? isLoading = freezed,
+    Object? isSuccess = freezed,
+    Object? errorText = freezed,
+  }) {
+    return _then(_SettingsPasswordState(
+      password: password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      passwordHasMinLength: passwordHasMinLength == freezed
+          ? _value.passwordHasMinLength
+          : passwordHasMinLength // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasUppercase: passwordHasUppercase == freezed
+          ? _value.passwordHasUppercase
+          : passwordHasUppercase // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasLowercase: passwordHasLowercase == freezed
+          ? _value.passwordHasLowercase
+          : passwordHasLowercase // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasDigits: passwordHasDigits == freezed
+          ? _value.passwordHasDigits
+          : passwordHasDigits // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordHasSpecialChars: passwordHasSpecialChars == freezed
+          ? _value.passwordHasSpecialChars
+          : passwordHasSpecialChars // ignore: cast_nullable_to_non_nullable
+              as bool,
+      canSubmit: canSubmit == freezed
+          ? _value.canSubmit
+          : canSubmit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuccess: isSuccess == freezed
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorText: errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SettingsPasswordState implements _SettingsPasswordState {
+  const _$_SettingsPasswordState(
+      {this.password = "",
+      this.passwordHasMinLength = false,
+      this.passwordHasUppercase = false,
+      this.passwordHasLowercase = false,
+      this.passwordHasDigits = false,
+      this.passwordHasSpecialChars = false,
+      this.canSubmit = false,
+      this.isLoading = false,
+      this.isSuccess = false,
+      this.errorText});
+
+  @JsonKey()
+  @override
+  final String password;
+  @JsonKey()
+  @override
+  final bool passwordHasMinLength;
+  @JsonKey()
+  @override
+  final bool passwordHasUppercase;
+  @JsonKey()
+  @override
+  final bool passwordHasLowercase;
+  @JsonKey()
+  @override
+  final bool passwordHasDigits;
+  @JsonKey()
+  @override
+  final bool passwordHasSpecialChars;
+  @JsonKey()
+  @override
+  final bool canSubmit;
+  @JsonKey()
+  @override
+  final bool isLoading;
+  @JsonKey()
+  @override
+  final bool isSuccess;
+  @override
+  final String? errorText;
+
+  @override
+  String toString() {
+    return 'SettingsPasswordState(password: $password, passwordHasMinLength: $passwordHasMinLength, passwordHasUppercase: $passwordHasUppercase, passwordHasLowercase: $passwordHasLowercase, passwordHasDigits: $passwordHasDigits, passwordHasSpecialChars: $passwordHasSpecialChars, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SettingsPasswordState &&
+            const DeepCollectionEquality().equals(other.password, password) &&
+            const DeepCollectionEquality()
+                .equals(other.passwordHasMinLength, passwordHasMinLength) &&
+            const DeepCollectionEquality()
+                .equals(other.passwordHasUppercase, passwordHasUppercase) &&
+            const DeepCollectionEquality()
+                .equals(other.passwordHasLowercase, passwordHasLowercase) &&
+            const DeepCollectionEquality()
+                .equals(other.passwordHasDigits, passwordHasDigits) &&
+            const DeepCollectionEquality().equals(
+                other.passwordHasSpecialChars, passwordHasSpecialChars) &&
+            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
+            const DeepCollectionEquality().equals(other.errorText, errorText));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(password),
+      const DeepCollectionEquality().hash(passwordHasMinLength),
+      const DeepCollectionEquality().hash(passwordHasUppercase),
+      const DeepCollectionEquality().hash(passwordHasLowercase),
+      const DeepCollectionEquality().hash(passwordHasDigits),
+      const DeepCollectionEquality().hash(passwordHasSpecialChars),
+      const DeepCollectionEquality().hash(canSubmit),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(isSuccess),
+      const DeepCollectionEquality().hash(errorText));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SettingsPasswordStateCopyWith<_SettingsPasswordState> get copyWith =>
+      __$SettingsPasswordStateCopyWithImpl<_SettingsPasswordState>(
+          this, _$identity);
+}
+
+abstract class _SettingsPasswordState implements SettingsPasswordState {
+  const factory _SettingsPasswordState(
+      {String password,
+      bool passwordHasMinLength,
+      bool passwordHasUppercase,
+      bool passwordHasLowercase,
+      bool passwordHasDigits,
+      bool passwordHasSpecialChars,
+      bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText}) = _$_SettingsPasswordState;
+
+  @override
+  String get password;
+  @override
+  bool get passwordHasMinLength;
+  @override
+  bool get passwordHasUppercase;
+  @override
+  bool get passwordHasLowercase;
+  @override
+  bool get passwordHasDigits;
+  @override
+  bool get passwordHasSpecialChars;
+  @override
+  bool get canSubmit;
+  @override
+  bool get isLoading;
+  @override
+  bool get isSuccess;
+  @override
+  String? get errorText;
+  @override
+  @JsonKey(ignore: true)
+  _$SettingsPasswordStateCopyWith<_SettingsPasswordState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$SignInButtonsEventTearOff {
   const _$SignInButtonsEventTearOff();
 

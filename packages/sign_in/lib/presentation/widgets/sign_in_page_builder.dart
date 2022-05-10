@@ -209,7 +209,7 @@ class SignInError extends ConsumerWidget {
   final String errorText;
 
   /*String _errorHandler(WidgetRef ref, String errorText) {
-    final l10n = ref.read(signInLocalizationsProvider);
+    final l10n = ref.watch(signInLocalizationsProvider);
     if (errorText == 'NOT_MOBILE') {
       return l10n.signInPhoneErrorMobile;
     } else if (errorText == 'INVALID_CODE') {

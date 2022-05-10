@@ -60,7 +60,7 @@ class CountriesPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.read(signInLocalizationsProvider);
+    final l10n = ref.watch(signInLocalizationsProvider);
     final listViewTheme = ref.watch(listViewThemeProvider);
 
     return ProviderScope(

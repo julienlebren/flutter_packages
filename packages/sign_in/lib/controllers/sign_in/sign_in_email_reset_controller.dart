@@ -1,43 +1,41 @@
-part of '../sign_in.dart';
+part of '../../sign_in.dart';
 
-final signInEmailLinkControllerProvider = StateNotifierProvider.autoDispose<
-    SignInEmailLinkController, SignInEmailLinkState>((ref) {
+final signInEmailResetControllerProvider = StateNotifierProvider.autoDispose<
+    SignInEmailResetController, SignInEmailResetState>((ref) {
   final service = ref.watch(authServiceProvider);
   final localizations = ref.watch(signInLocalizationsProvider);
-  return SignInEmailLinkController(
-      service, localizations, "authSettings.emailLinkUrl!");
+  return SignInEmailResetController(service, localizations);
 }, dependencies: [
   authServiceProvider,
   signInLocalizationsProvider,
 ]);
 
 @freezed
-class SignInEmailLinkEvent with _$SignInEmailLinkEvent {
-  const factory SignInEmailLinkEvent.emailChanged(String email) =
-      _LinkEmailChanged;
-  const factory SignInEmailLinkEvent.sendLink() = _SendLink;
+class SignInEmailResetEvent with _$SignInEmailResetEvent {
+  const factory SignInEmailResetEvent.emailChanged(String email) =
+      _ResetEmailChanged;
+  const factory SignInEmailResetEvent.submit() = _ResetSubmit;
 }
 
 @freezed
-class SignInEmailLinkState with _$SignInEmailLinkState {
-  const factory SignInEmailLinkState({
+class SignInEmailResetState with _$SignInEmailResetState {
+  const factory SignInEmailResetState({
     @Default("") String email,
     @Default(false) bool canSubmit,
     @Default(false) bool isLoading,
     @Default(false) bool isSuccess,
     String? errorText,
-  }) = _SignInEmailLinkState;
+  }) = _SignInEmailResetState;
 }
 
-class SignInEmailLinkController extends StateNotifier<SignInEmailLinkState> {
-  SignInEmailLinkController(this._service, this._localizations, this._url)
-      : super(const SignInEmailLinkState());
+class SignInEmailResetController extends StateNotifier<SignInEmailResetState> {
+  SignInEmailResetController(this._service, this._localizations)
+      : super(const SignInEmailResetState());
 
   final FirebaseAuthService _service;
   final SignInLocalizations _localizations;
-  final String _url;
 
-  void handleEvent(SignInEmailLinkEvent event) {
+  void handleEvent(SignInEmailResetEvent event) {
     event.when(
       emailChanged: (email) {
         state = state.copyWith(
@@ -45,21 +43,16 @@ class SignInEmailLinkController extends StateNotifier<SignInEmailLinkState> {
           canSubmit: email.isValidEmail(),
         );
       },
-      sendLink: () {
-        _sendLink();
-      },
+      submit: _submit,
     );
   }
 
-  Future<void> _sendLink() async {
+  Future<void> _submit() async {
     if (!state.canSubmit) return;
     state = state.copyWith(isLoading: true);
 
     try {
-      await _service.sendSignInLinkToEmail(
-        email: state.email,
-        url: _url,
-      );
+      await _service.sendPasswordResetEmail(state.email);
 
       state = state.copyWith(
         isSuccess: true,

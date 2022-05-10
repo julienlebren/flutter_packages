@@ -1,41 +1,48 @@
-part of '../sign_in.dart';
+part of '../../sign_in.dart';
 
-final signInEmailResetControllerProvider = StateNotifierProvider.autoDispose<
-    SignInEmailResetController, SignInEmailResetState>((ref) {
+final settingsEmailControllerProvider = StateNotifierProvider.autoDispose<
+    SettingsEmailController, SettingsEmailState>((ref) {
   final service = ref.watch(authServiceProvider);
+  final settings = ref.watch(authSettingsProvider);
   final localizations = ref.watch(signInLocalizationsProvider);
-  return SignInEmailResetController(service, localizations);
+
+  return SettingsEmailController(service, settings.userRef, localizations);
 }, dependencies: [
   authServiceProvider,
+  authSettingsProvider,
   signInLocalizationsProvider,
 ]);
 
 @freezed
-class SignInEmailResetEvent with _$SignInEmailResetEvent {
-  const factory SignInEmailResetEvent.emailChanged(String email) =
-      _ResetEmailChanged;
-  const factory SignInEmailResetEvent.submit() = _ResetSubmit;
+class SettingsEmailEvent with _$SettingsEmailEvent {
+  const factory SettingsEmailEvent.emailChanged(String email) =
+      _SettingsEmailChanged;
+  const factory SettingsEmailEvent.submit() = _SettingsEmailSubmit;
 }
 
 @freezed
-class SignInEmailResetState with _$SignInEmailResetState {
-  const factory SignInEmailResetState({
+class SettingsEmailState with _$SettingsEmailState {
+  const factory SettingsEmailState({
     @Default("") String email,
     @Default(false) bool canSubmit,
     @Default(false) bool isLoading,
     @Default(false) bool isSuccess,
     String? errorText,
-  }) = _SignInEmailResetState;
+  }) = _SettingsEmailState;
 }
 
-class SignInEmailResetController extends StateNotifier<SignInEmailResetState> {
-  SignInEmailResetController(this._service, this._localizations)
-      : super(const SignInEmailResetState());
+class SettingsEmailController extends StateNotifier<SettingsEmailState> {
+  SettingsEmailController(
+    this._service,
+    this._userRef,
+    this._localizations,
+  ) : super(const SettingsEmailState());
 
   final FirebaseAuthService _service;
+  final CollectionReference _userRef;
   final SignInLocalizations _localizations;
 
-  void handleEvent(SignInEmailResetEvent event) {
+  void handleEvent(SettingsEmailEvent event) {
     event.when(
       emailChanged: (email) {
         state = state.copyWith(
@@ -52,7 +59,13 @@ class SignInEmailResetController extends StateNotifier<SignInEmailResetState> {
     state = state.copyWith(isLoading: true);
 
     try {
-      await _service.sendPasswordResetEmail(state.email);
+      await _service.updateEmail(state.email);
+
+      final userId = _service.currentUser!.uid;
+      await _userRef.doc(userId).update({
+        "emailAddress": state.email,
+        "emailVerified": false,
+      });
 
       state = state.copyWith(
         isSuccess: true,

@@ -3,6 +3,7 @@ library sign_in;
 import 'dart:async';
 import 'dart:ui' as ui;
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:extensions/extensions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -22,17 +23,23 @@ import 'package:sign_in/presentation/painters/google_logo.dart';
 import 'package:sign_in/l10n/sign_in_localizations.dart';
 import 'package:the_apple_sign_in/the_apple_sign_in.dart';
 
-part 'controllers/sign_in_buttons_controller.dart';
-part 'controllers/sign_in_email_login_controller.dart';
-part 'controllers/sign_in_email_link_controller.dart';
-part 'controllers/sign_in_email_reset_controller.dart';
-part 'controllers/sign_in_email_register_controller.dart';
-part 'controllers/sign_in_phone_controller.dart';
-part 'controllers/sign_in_phone_verification_controller.dart';
+part 'controllers/settings/settings_email_controller.dart';
+part 'controllers/settings/settings_password_controller.dart';
+part 'controllers/sign_in/sign_in_buttons_controller.dart';
+part 'controllers/sign_in/sign_in_email_login_controller.dart';
+part 'controllers/sign_in/sign_in_email_link_controller.dart';
+part 'controllers/sign_in/sign_in_email_reset_controller.dart';
+part 'controllers/sign_in/sign_in_email_register_controller.dart';
+part 'controllers/sign_in/sign_in_phone_controller.dart';
+part 'controllers/sign_in/sign_in_phone_verification_controller.dart';
 part 'core/enums/sign_in_suppliers.dart';
+part 'core/extensions/password.dart';
 part 'core/models/auth_state.dart';
 part 'core/models/sign_in_theme.dart';
 part 'presentation/router/sign_in_router.dart';
+part 'presentation/views/settings/settings_account_page.dart';
+part 'presentation/views/settings/settings_email_page.dart';
+part 'presentation/views/settings/settings_password_page.dart';
 part 'presentation/views/sign_in/sign_in_countries_page.dart';
 part 'presentation/views/sign_in/sign_in_email_link_page.dart';
 part 'presentation/views/sign_in/sign_in_email_login_page.dart';
@@ -54,9 +61,14 @@ part 'sign_in.freezed.dart';
 final needUserInfoProvider = Provider<bool?>((_) => false);*/
 
 class AuthSettings {
-  AuthSettings(this.userStreamProvider, [this.needUserInfoProvider]);
+  AuthSettings(
+    this.userStreamProvider,
+    this.userRef, [
+    this.needUserInfoProvider,
+  ]);
 
   final StreamProvider userStreamProvider;
+  final CollectionReference userRef;
   final Provider? needUserInfoProvider;
 }
 

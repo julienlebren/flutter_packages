@@ -20,7 +20,7 @@ class SignInPhonePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.read(signInLocalizationsProvider);
+    final l10n = ref.watch(signInLocalizationsProvider);
     final errorText = ref.watch(signInPhoneControllerProvider.select(
       (state) => state.errorText,
     ));
@@ -108,7 +108,7 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = ref.read(signInLocalizationsProvider);
+    final l10n = ref.watch(signInLocalizationsProvider);
     final state = ref.watch(signInPhoneControllerProvider);
 
     return Column(
@@ -152,7 +152,7 @@ class SignInPhoneAutoRetrieve extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.read(signInLocalizationsProvider);
+    final l10n = ref.watch(signInLocalizationsProvider);
     return Padding(
       padding: const EdgeInsets.only(top: 30),
       child: Text(

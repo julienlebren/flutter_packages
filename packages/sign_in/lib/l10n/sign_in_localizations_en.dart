@@ -52,6 +52,45 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get passwordRequirementSpecialChars => 'At least one special character';
 
   @override
+  String get settingsAccountTitle => 'Account';
+
+  @override
+  String get settingsEmailSectionTitle => 'Login information';
+
+  @override
+  String get settingsEmailLabel => 'Email address';
+
+  @override
+  String get settingsPasswordLabel => 'Password';
+
+  @override
+  String get settingsPasswordEdit => 'Change';
+
+  @override
+  String get settingsPasswordUndefined => 'Not set';
+
+  @override
+  String get settingsPasswordUndefinedCaption => 'You haven\'t set a password yet, so you won\'t be able to log in to your account using your email address and password. Only login with third-party account will work.';
+
+  @override
+  String get settingsThirdPartySectionTitle => 'Login with a third-party account';
+
+  @override
+  String get settingsThirdPartyConnected => 'Connected';
+
+  @override
+  String get settingsThirdPartyNotConnected => 'Not connected';
+
+  @override
+  String get settingsThirdPartyCaption => 'You can combine several connection methods to secure access to your account.';
+
+  @override
+  String get settingsLogoutButton => 'Logout';
+
+  @override
+  String get settingsLogoutConfirmation => 'Are you sure you want to logout?';
+
+  @override
   String get signInAnonymously => 'Continue without registration';
 
   @override

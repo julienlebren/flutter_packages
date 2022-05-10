@@ -178,6 +178,84 @@ abstract class SignInLocalizations {
   /// **'At least one special character'**
   String get passwordRequirementSpecialChars;
 
+  /// No description provided for @settingsAccountTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get settingsAccountTitle;
+
+  /// No description provided for @settingsEmailSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Login information'**
+  String get settingsEmailSectionTitle;
+
+  /// No description provided for @settingsEmailLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Email address'**
+  String get settingsEmailLabel;
+
+  /// No description provided for @settingsPasswordLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get settingsPasswordLabel;
+
+  /// No description provided for @settingsPasswordEdit.
+  ///
+  /// In en, this message translates to:
+  /// **'Change'**
+  String get settingsPasswordEdit;
+
+  /// No description provided for @settingsPasswordUndefined.
+  ///
+  /// In en, this message translates to:
+  /// **'Not set'**
+  String get settingsPasswordUndefined;
+
+  /// No description provided for @settingsPasswordUndefinedCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'You haven\'t set a password yet, so you won\'t be able to log in to your account using your email address and password. Only login with third-party account will work.'**
+  String get settingsPasswordUndefinedCaption;
+
+  /// No description provided for @settingsThirdPartySectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Login with a third-party account'**
+  String get settingsThirdPartySectionTitle;
+
+  /// No description provided for @settingsThirdPartyConnected.
+  ///
+  /// In en, this message translates to:
+  /// **'Connected'**
+  String get settingsThirdPartyConnected;
+
+  /// No description provided for @settingsThirdPartyNotConnected.
+  ///
+  /// In en, this message translates to:
+  /// **'Not connected'**
+  String get settingsThirdPartyNotConnected;
+
+  /// No description provided for @settingsThirdPartyCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'You can combine several connection methods to secure access to your account.'**
+  String get settingsThirdPartyCaption;
+
+  /// No description provided for @settingsLogoutButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get settingsLogoutButton;
+
+  /// No description provided for @settingsLogoutConfirmation.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to logout?'**
+  String get settingsLogoutConfirmation;
+
   /// No description provided for @signInAnonymously.
   ///
   /// In en, this message translates to:

@@ -1,4 +1,4 @@
-part of '../sign_in.dart';
+part of '../../sign_in.dart';
 
 final signInEmailRegisterControllerProvider = StateNotifierProvider.autoDispose<
     SignInEmailRegisterController, SignInEmailRegisterState>((ref) {
@@ -61,25 +61,15 @@ class SignInEmailRegisterController
     );
   }
 
-  bool get hasUppercase => state.password.contains(RegExp(r'[A-Z]'));
-  bool get hasDigits => state.password.contains(RegExp(r'[0-9]'));
-  bool get hasLowercase => state.password.contains(RegExp(r'[a-z]'));
-  bool get hasSpecialChars =>
-      state.password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
-  bool get hasMinLength => state.password.length > 6;
-
-  bool get isPasswordCompliant =>
-      hasDigits & hasUppercase & hasLowercase & hasSpecialChars & hasMinLength;
-
   void _checkIfCanSubmit() {
-    if (!state.email.isValidEmail() || !isPasswordCompliant) {
+    if (!state.email.isValidEmail() || !state.password.isPasswordCompliant) {
       state = state.copyWith(
         canSubmit: false,
-        passwordHasMinLength: hasMinLength,
-        passwordHasDigits: hasDigits,
-        passwordHasLowercase: hasLowercase,
-        passwordHasUppercase: hasUppercase,
-        passwordHasSpecialChars: hasSpecialChars,
+        passwordHasMinLength: state.password.hasMinLength,
+        passwordHasDigits: state.password.hasDigits,
+        passwordHasLowercase: state.password.hasLowercase,
+        passwordHasUppercase: state.password.hasUppercase,
+        passwordHasSpecialChars: state.password.hasSpecialChars,
       );
     } else if (state.canSubmit != true) {
       state = state.copyWith(

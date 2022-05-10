@@ -52,6 +52,45 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get passwordRequirementSpecialChars => 'Au moins un caractère spécial';
 
   @override
+  String get settingsAccountTitle => 'Compte';
+
+  @override
+  String get settingsEmailSectionTitle => 'Informations de connexion';
+
+  @override
+  String get settingsEmailLabel => 'Adresse e-mail';
+
+  @override
+  String get settingsPasswordLabel => 'Mot de passe';
+
+  @override
+  String get settingsPasswordEdit => 'Modifier';
+
+  @override
+  String get settingsPasswordUndefined => 'Non défini';
+
+  @override
+  String get settingsPasswordUndefinedCaption => 'Vous n\'avez pas encore défini de mot de passe, vous ne pourrez donc pas vous connecter à votre compte en utilisant votre adresse e-mail et votre mot de passe. Seule la connexion via un compte tiers sera fonctionnelle.';
+
+  @override
+  String get settingsThirdPartySectionTitle => 'Connexion via un compte tiers';
+
+  @override
+  String get settingsThirdPartyConnected => 'Connecté';
+
+  @override
+  String get settingsThirdPartyNotConnected => 'Non connecté';
+
+  @override
+  String get settingsThirdPartyCaption => 'Vous pouvez cumuler plusieurs méthodes de connexion afin de sécuriser l\'accès à votre compte.';
+
+  @override
+  String get settingsLogoutButton => 'Déconnexion';
+
+  @override
+  String get settingsLogoutConfirmation => 'Êtes-vous sûr de vouloir vous déconnecter ?';
+
+  @override
   String get signInAnonymously => 'Continuer sans créer de compte';
 
   @override
