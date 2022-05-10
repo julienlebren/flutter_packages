@@ -34,14 +34,18 @@ class _EmailSection extends ConsumerWidget {
         FormTappableField(
           label: l10n.settingsEmailLabel,
           value: user.email ?? l10n.settingsUndefined,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, SettingsRoutes.settingsEmailPage);
+          },
         ),
         FormTappableField(
           label: l10n.settingsPasswordLabel,
           value: service.hasPassword
               ? l10n.settingsPasswordEdit
               : l10n.settingsUndefined,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, SettingsRoutes.settingsPasswordPage);
+          },
         ),
       ],
       caption:

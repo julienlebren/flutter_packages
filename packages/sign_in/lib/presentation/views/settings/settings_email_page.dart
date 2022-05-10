@@ -10,6 +10,12 @@ class SettingsEmailPage extends ConsumerWidget {
       settingsEmailControllerProvider.select((state) => state.isLoading),
     );
 
+    ref.listen<SettingsEmailState>(settingsEmailControllerProvider, (_, state) {
+      if (state.isSuccess) {
+        Navigator.pop(context);
+      }
+    });
+
     return PlatformScaffold(
       appBar: PlatformNavigationBar(
         title: l10n.settingsEmailTitle,

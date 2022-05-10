@@ -1,9 +1,5 @@
 part of '../../sign_in.dart';
 
-class SettingsNavigatorKeys {
-  static final main = GlobalKey<NavigatorState>();
-}
-
 class SettingsRoutes {
   static const predicate = 'settings';
   static const settingsAccountPage = 'settings/account';
