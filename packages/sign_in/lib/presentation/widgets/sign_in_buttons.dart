@@ -99,7 +99,7 @@ class SignInButtons extends ConsumerWidget {
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                for (var supplier in suppliers) ...[
+                for (final supplier in suppliers) ...[
                   if (supplier == SignInSupplier.anonymous)
                     SizedBox(
                       width: double.infinity,

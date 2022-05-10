@@ -208,12 +208,6 @@ abstract class SignInLocalizations {
   /// **'Change'**
   String get settingsPasswordEdit;
 
-  /// No description provided for @settingsPasswordUndefined.
-  ///
-  /// In en, this message translates to:
-  /// **'Not set'**
-  String get settingsPasswordUndefined;
-
   /// No description provided for @settingsPasswordUndefinedCaption.
   ///
   /// In en, this message translates to:
@@ -255,6 +249,12 @@ abstract class SignInLocalizations {
   /// In en, this message translates to:
   /// **'Are you sure you want to logout?'**
   String get settingsLogoutConfirmation;
+
+  /// No description provided for @settingsUndefined.
+  ///
+  /// In en, this message translates to:
+  /// **'Not set'**
+  String get settingsUndefined;
 
   /// No description provided for @signInAnonymously.
   ///

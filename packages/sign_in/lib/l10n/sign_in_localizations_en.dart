@@ -67,9 +67,6 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get settingsPasswordEdit => 'Change';
 
   @override
-  String get settingsPasswordUndefined => 'Not set';
-
-  @override
   String get settingsPasswordUndefinedCaption => 'You haven\'t set a password yet, so you won\'t be able to log in to your account using your email address and password. Only login with third-party account will work.';
 
   @override
@@ -89,6 +86,9 @@ class SignInLocalizationsEn extends SignInLocalizations {
 
   @override
   String get settingsLogoutConfirmation => 'Are you sure you want to logout?';
+
+  @override
+  String get settingsUndefined => 'Not set';
 
   @override
   String get signInAnonymously => 'Continue without registration';

@@ -25,36 +25,27 @@ class _EmailSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
-    final emailAddress = "user@test.com";
-    /* ref.watch(userProvider.select(
-      (user) => user?.emailAddress,
-    ));*/
-    final hasPassword =
-        false; /*ref.watch(userProvider.select(
-      (user) => user?.hasPassword ?? false,
-    ));*/
-
     final service = ref.watch(authServiceProvider);
-    final user = service.currentUser;
-    print(user?.providerData);
+    final user = service.currentUser!;
 
     return FormSection(
       title: l10n.settingsEmailSectionTitle,
       children: [
         FormTappableField(
           label: l10n.settingsEmailLabel,
-          value: emailAddress,
+          value: user.email ?? l10n.settingsUndefined,
           onPressed: () {},
         ),
         FormTappableField(
           label: l10n.settingsPasswordLabel,
-          value: hasPassword
+          value: service.hasPassword
               ? l10n.settingsPasswordEdit
-              : l10n.settingsPasswordUndefined,
+              : l10n.settingsUndefined,
           onPressed: () {},
         ),
       ],
-      caption: hasPassword ? null : l10n.settingsPasswordUndefinedCaption,
+      caption:
+          service.hasPassword ? null : l10n.settingsPasswordUndefinedCaption,
     );
   }
 }
@@ -67,6 +58,10 @@ class _SocialSection extends ConsumerWidget {
     final l10n = ref.watch(signInLocalizationsProvider);
     final formTheme = ref.watch(formThemeProvider);
     final listViewTheme = ref.watch(listViewThemeProvider);
+    final service = ref.watch(authServiceProvider);
+    final suppliers = ref.watch(authSettingsProvider.select(
+      (settings) => settings.suppliers,
+    ));
 
     return ProviderScope(
       overrides: [
@@ -77,39 +72,96 @@ class _SocialSection extends ConsumerWidget {
       child: FormSection(
         title: l10n.settingsThirdPartySectionTitle,
         children: [
-          ProviderScope(
-            overrides: [
-              listViewThemeProvider.overrideWithValue(
-                listViewTheme.copyWith(valueColor: Colors.green),
-              ),
-            ],
-            child: FormTappableField(
-              leading: SizedBox(
-                width: 16,
-                height: 16,
-                child: CustomPaint(
-                  painter: GoogleLogoPainter(),
+          for (final supplier in suppliers) ...[
+            if (supplier == SignInSupplier.google)
+              ProviderScope(
+                overrides: [
+                  if (service.hasGoogle)
+                    listViewThemeProvider.overrideWithValue(
+                      listViewTheme.copyWith(valueColor: Colors.green),
+                    ),
+                ],
+                child: FormTappableField(
+                  leading: SizedBox(
+                    width: 16,
+                    height: 16,
+                    child: CustomPaint(
+                      painter: GoogleLogoPainter(),
+                    ),
+                  ),
+                  label: "Google",
+                  value: service.hasGoogle
+                      ? l10n.settingsThirdPartyConnected
+                      : l10n.settingsThirdPartyNotConnected,
+                  onPressed: () {
+                    if (service.hasGoogle) {
+                      // Test
+                    } else {
+                      // Test
+                    }
+                  },
                 ),
               ),
-              label: "Google",
-              value: l10n.settingsThirdPartyConnected,
-              onPressed: () {},
-            ),
-          ),
-          FormTappableField(
-            leading: SizedBox(
-              width: 16,
-              height: 16 / (25 / 31),
-              child: CustomPaint(
-                painter: AppleLogoPainter(
-                  color: listViewTheme.labelColor,
+            if (supplier == SignInSupplier.apple && isCupertino())
+              ProviderScope(
+                overrides: [
+                  if (service.hasApple)
+                    listViewThemeProvider.overrideWithValue(
+                      listViewTheme.copyWith(valueColor: Colors.green),
+                    ),
+                ],
+                child: FormTappableField(
+                  leading: SizedBox(
+                    width: 16,
+                    height: 16 / (25 / 31),
+                    child: CustomPaint(
+                      painter: AppleLogoPainter(
+                        color: listViewTheme.labelColor,
+                      ),
+                    ),
+                  ),
+                  label: "Apple",
+                  value: service.hasApple
+                      ? l10n.settingsThirdPartyConnected
+                      : l10n.settingsThirdPartyNotConnected,
+                  onPressed: () {
+                    if (service.hasApple) {
+                      // Test
+                    } else {
+                      // Test
+                    }
+                  },
                 ),
               ),
-            ),
-            label: "Apple",
-            value: l10n.settingsThirdPartyNotConnected,
-            onPressed: () {},
-          ),
+            if (supplier == SignInSupplier.facebook)
+              ProviderScope(
+                overrides: [
+                  if (service.hasFacebook)
+                    listViewThemeProvider.overrideWithValue(
+                      listViewTheme.copyWith(valueColor: Colors.green),
+                    ),
+                ],
+                child: FormTappableField(
+                  leading: Image.asset(
+                    "assets/images/facebook-logo.png",
+                    width: 16,
+                    height: 16,
+                    package: "sign_in",
+                  ),
+                  label: "Facebook",
+                  value: service.hasFacebook
+                      ? l10n.settingsThirdPartyConnected
+                      : l10n.settingsThirdPartyNotConnected,
+                  onPressed: () {
+                    if (service.hasFacebook) {
+                      // Test
+                    } else {
+                      // Test
+                    }
+                  },
+                ),
+              ),
+          ],
         ],
         caption: l10n.settingsThirdPartyCaption,
       ),

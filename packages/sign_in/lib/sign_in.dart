@@ -56,17 +56,15 @@ part 'services/firebase_auth_service.dart';
 part 'services/firebase_auth_errors.dart';
 part 'sign_in.freezed.dart';
 
-/*final userStreamProvider = StreamProvider((_) => const Stream.empty());
-
-final needUserInfoProvider = Provider<bool?>((_) => false);*/
-
 class AuthSettings {
-  AuthSettings(
-    this.userStreamProvider, [
+  AuthSettings({
+    required this.suppliers,
+    required this.userStreamProvider,
     this.userRef,
     this.needUserInfoProvider,
-  ]);
+  });
 
+  final List<SignInSupplier> suppliers;
   final StreamProvider userStreamProvider;
   final CollectionReference? userRef;
   final Provider? needUserInfoProvider;

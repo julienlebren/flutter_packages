@@ -67,9 +67,6 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get settingsPasswordEdit => 'Modifier';
 
   @override
-  String get settingsPasswordUndefined => 'Non défini';
-
-  @override
   String get settingsPasswordUndefinedCaption => 'Vous n\'avez pas encore défini de mot de passe, vous ne pourrez donc pas vous connecter à votre compte en utilisant votre adresse e-mail et votre mot de passe. Seule la connexion via un compte tiers sera fonctionnelle.';
 
   @override
@@ -89,6 +86,9 @@ class SignInLocalizationsFr extends SignInLocalizations {
 
   @override
   String get settingsLogoutConfirmation => 'Êtes-vous sûr de vouloir vous déconnecter ?';
+
+  @override
+  String get settingsUndefined => 'Not set';
 
   @override
   String get signInAnonymously => 'Continuer sans créer de compte';
