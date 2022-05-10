@@ -45,7 +45,6 @@ class _FormContents extends ConsumerStatefulWidget {
 }
 
 class _FormContentsState extends ConsumerState<_FormContents> {
-  final textController = TextEditingController();
   final focusNode = FocusNode();
 
   @override
@@ -60,22 +59,27 @@ class _FormContentsState extends ConsumerState<_FormContents> {
   Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final controller = ref.read(settingsEmailControllerProvider.notifier);
+    final email = ref.watch(
+      settingsEmailControllerProvider.select((state) => state.email),
+    );
 
     return FormPage(
       children: [
         FormSection(
-          child: PlatformTextField(
-            controller: textController,
-            keyboardType: TextInputType.emailAddress,
-            placeholder: l10n.settingsEmailLabel,
-            autocorrect: false,
-            focusNode: focusNode,
-            onChanged: (String value) {
-              controller.handleEvent(SettingsEmailEvent.emailChanged(value));
-            },
-            onSubmitted: (_) {
-              controller.handleEvent(const SettingsEmailEvent.submit());
-            },
+          child: FormRow(
+            child: PlatformTextField(
+              controller: TextEditingController(text: email),
+              keyboardType: TextInputType.emailAddress,
+              placeholder: l10n.settingsEmailLabel,
+              autocorrect: false,
+              focusNode: focusNode,
+              onChanged: (String value) {
+                controller.handleEvent(SettingsEmailEvent.emailChanged(value));
+              },
+              onSubmitted: (_) {
+                controller.handleEvent(const SettingsEmailEvent.submit());
+              },
+            ),
           ),
         ),
       ],

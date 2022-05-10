@@ -61,14 +61,16 @@ class AuthSettings {
   AuthSettings({
     required this.suppliers,
     required this.userStreamProvider,
-    this.userRef,
     this.needUserInfoProvider,
+    this.settingsNavigator,
+    this.userRef,
   });
 
   final List<SignInSupplier> suppliers;
   final StreamProvider userStreamProvider;
-  final CollectionReference? userRef;
   final Provider? needUserInfoProvider;
+  final GlobalKey<NavigatorState>? settingsNavigator;
+  final CollectionReference? userRef;
 }
 
 final authSettingsProvider =
