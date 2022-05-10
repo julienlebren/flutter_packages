@@ -62,13 +62,13 @@ final needUserInfoProvider = Provider<bool?>((_) => false);*/
 
 class AuthSettings {
   AuthSettings(
-    this.userStreamProvider,
-    this.userRef, [
+    this.userStreamProvider, [
+    this.userRef,
     this.needUserInfoProvider,
   ]);
 
   final StreamProvider userStreamProvider;
-  final CollectionReference userRef;
+  final CollectionReference? userRef;
   final Provider? needUserInfoProvider;
 }
 

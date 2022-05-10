@@ -39,7 +39,7 @@ class SettingsEmailController extends StateNotifier<SettingsEmailState> {
   ) : super(const SettingsEmailState());
 
   final FirebaseAuthService _service;
-  final CollectionReference _userRef;
+  final CollectionReference? _userRef;
   final SignInLocalizations _localizations;
 
   void handleEvent(SettingsEmailEvent event) {
@@ -61,11 +61,13 @@ class SettingsEmailController extends StateNotifier<SettingsEmailState> {
     try {
       await _service.updateEmail(state.email);
 
-      final userId = _service.currentUser!.uid;
-      await _userRef.doc(userId).update({
-        "emailAddress": state.email,
-        "emailVerified": false,
-      });
+      if (_userRef != null) {
+        final userId = _service.currentUser!.uid;
+        await _userRef!.doc(userId).update({
+          "emailAddress": state.email,
+          "emailVerified": false,
+        });
+      }
 
       state = state.copyWith(
         isSuccess: true,
