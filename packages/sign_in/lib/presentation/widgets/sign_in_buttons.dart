@@ -2,14 +2,24 @@ part of '../../sign_in.dart';
 
 final signInSupplierProvider = StateProvider<SignInSupplier?>((_) => null);
 
-class SignInButtons extends ConsumerWidget {
-  SignInButtons(this.suppliers, {Key? key}) : super(key: key) {
+class SignInButtons extends ConsumerStatefulWidget {
+  const SignInButtons({Key? key}) : super(key: key);
+
+  @override
+  createState() => _SignInButtonsState();
+}
+
+class _SignInButtonsState extends ConsumerState<SignInButtons> {
+  @override
+  void initState() {
+    super.initState();
+    final suppliers = ref.watch(authSettingsProvider.select(
+      (settings) => settings.suppliers,
+    ));
     if (suppliers.contains(SignInSupplier.phone)) {
       FlutterLibphonenumber().init();
     }
   }
-
-  final List<SignInSupplier> suppliers;
 
   void _handleSignIn(
       BuildContext context, WidgetRef ref, SignInButtonsEvent event) {
@@ -49,7 +59,7 @@ class SignInButtons extends ConsumerWidget {
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final theme = ref.watch(signInThemeProvider);
     final state = ref.watch(signInButtonsControllerProvider);
@@ -58,6 +68,9 @@ class SignInButtons extends ConsumerWidget {
       success: () => true,
       orElse: () => false,
     );
+    final suppliers = ref.watch(authSettingsProvider.select(
+      (settings) => settings.suppliers,
+    ));
 
     ref.listen<SignInButtonsState>(signInButtonsControllerProvider, (_, state) {
       state.maybeWhen(
