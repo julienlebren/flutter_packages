@@ -34,6 +34,10 @@ class _EmailSection extends ConsumerWidget {
       (user) => user?.hasPassword ?? false,
     ));*/
 
+    final service = ref.watch(authServiceProvider);
+    final user = service.currentUser;
+    print(user?.providerData);
+
     return FormSection(
       title: l10n.settingsEmailSectionTitle,
       children: [
