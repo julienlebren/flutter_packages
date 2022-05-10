@@ -36,6 +36,7 @@ part 'core/enums/sign_in_suppliers.dart';
 part 'core/extensions/password.dart';
 part 'core/models/auth_state.dart';
 part 'core/models/sign_in_theme.dart';
+part 'presentation/router/settings_router.dart';
 part 'presentation/router/sign_in_router.dart';
 part 'presentation/views/settings/settings_account_page.dart';
 part 'presentation/views/settings/settings_email_page.dart';

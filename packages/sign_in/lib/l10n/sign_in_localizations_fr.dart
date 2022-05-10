@@ -61,6 +61,9 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get settingsEmailLabel => 'Adresse e-mail';
 
   @override
+  String get settingsEmailTitle => 'Adresse e-mail';
+
+  @override
   String get settingsPasswordLabel => 'Mot de passe';
 
   @override
@@ -88,7 +91,7 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get settingsLogoutConfirmation => 'Êtes-vous sûr de vouloir vous déconnecter ?';
 
   @override
-  String get settingsUndefined => 'Not set';
+  String get settingsUndefined => 'Non défini';
 
   @override
   String get signInAnonymously => 'Continuer sans créer de compte';

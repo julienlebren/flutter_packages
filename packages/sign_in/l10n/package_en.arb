@@ -23,6 +23,7 @@
     "settingsAccountTitle": "Account",
     "settingsEmailSectionTitle": "Login information",
     "settingsEmailLabel": "Email address",
+    "settingsEmailTitle": "Email address",
     "settingsPasswordLabel": "Password",
     "settingsPasswordEdit": "Change",
     "settingsPasswordUndefinedCaption": "You haven't set a password yet, so you won't be able to log in to your account using your email address and password. Only login with third-party account will work.",
