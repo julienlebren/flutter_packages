@@ -77,15 +77,15 @@ class SettingsPasswordController extends StateNotifier<SettingsPasswordState> {
 
   Future<void> _submit() async {
     if (!state.canSubmit) return;
-    state = state.copyWith(isLoading: true);
+    state = state.copyWith(
+      isLoading: true,
+      errorText: null,
+    );
 
     try {
       await _service.updatePassword(state.password);
 
-      state = state.copyWith(
-        isSuccess: true,
-        errorText: null,
-      );
+      state = state.copyWith(isSuccess: true);
     } on FirebaseFunctionsException catch (e) {
       print(e);
       state = state.copyWith(

@@ -56,7 +56,10 @@ class SettingsEmailController extends StateNotifier<SettingsEmailState> {
 
   Future<void> _submit() async {
     if (!state.canSubmit) return;
-    state = state.copyWith(isLoading: true);
+    state = state.copyWith(
+      isLoading: true,
+      errorText: null,
+    );
 
     try {
       await _service.updateEmail(state.email);
@@ -69,10 +72,7 @@ class SettingsEmailController extends StateNotifier<SettingsEmailState> {
         });
       }
 
-      state = state.copyWith(
-        isSuccess: true,
-        errorText: null,
-      );
+      state = state.copyWith(isSuccess: true);
     } on FirebaseAuthException catch (e) {
       state = state.copyWith(
         isLoading: false,
