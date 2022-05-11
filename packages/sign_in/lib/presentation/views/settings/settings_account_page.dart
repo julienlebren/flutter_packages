@@ -27,9 +27,6 @@ class _EmailSection extends ConsumerWidget {
     final l10n = ref.watch(signInLocalizationsProvider);
     final service = ref.watch(authServiceProvider);
     final user = service.currentUser!;
-    final navigator = ref.watch(
-      authSettingsProvider.select((settings) => settings.settingsNavigator!),
-    );
 
     return FormSection(
       title: l10n.settingsEmailSectionTitle,
@@ -38,7 +35,7 @@ class _EmailSection extends ConsumerWidget {
           label: l10n.settingsEmailLabel,
           value: user.email ?? l10n.settingsUndefined,
           onPressed: () {
-            navigator.currentState!.pushNamed(SettingsRoutes.settingsEmailPage);
+            Navigator.pushNamed(context, SettingsRoutes.settingsEmailPage);
           },
         ),
         FormTappableField(
@@ -47,8 +44,7 @@ class _EmailSection extends ConsumerWidget {
               ? l10n.settingsPasswordEdit
               : l10n.settingsUndefined,
           onPressed: () {
-            navigator.currentState!
-                .pushNamed(SettingsRoutes.settingsPasswordPage);
+            Navigator.pushNamed(context, SettingsRoutes.settingsPasswordPage);
           },
         ),
       ],
