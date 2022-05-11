@@ -43,6 +43,7 @@ class SettingsPageBuilder extends ConsumerWidget {
         title: title,
         child: child,
         isSaving: isSaving ?? false,
+        onPressed: onPressed,
       );
     }
   }
