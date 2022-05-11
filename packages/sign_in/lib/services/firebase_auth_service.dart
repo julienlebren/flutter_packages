@@ -218,7 +218,7 @@ class FirebaseAuthService {
         .httpsCallable('updateUserEmail')
         .call({'email': newEmail});
 
-    print(result);
+    print(result.data);
   }
 
   Future<void> updatePassword(String newPassword) async {
