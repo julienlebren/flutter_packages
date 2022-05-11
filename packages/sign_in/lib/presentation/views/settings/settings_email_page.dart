@@ -31,20 +31,21 @@ class SettingsEmailPage extends ConsumerWidget {
       ),
       body: FormWithOverlay(
         isSaving: isSaving,
-        child: const _FormContents(),
+        child: const _SettingsEmailContents(),
       ),
     );
   }
 }
 
-class _FormContents extends ConsumerStatefulWidget {
-  const _FormContents({Key? key}) : super(key: key);
+class _SettingsEmailContents extends ConsumerStatefulWidget {
+  const _SettingsEmailContents({Key? key}) : super(key: key);
 
   @override
-  createState() => _FormContentsState();
+  createState() => _SettingsEmailContentsState();
 }
 
-class _FormContentsState extends ConsumerState<_FormContents> {
+class _SettingsEmailContentsState
+    extends ConsumerState<_SettingsEmailContents> {
   final focusNode = FocusNode();
 
   @override
