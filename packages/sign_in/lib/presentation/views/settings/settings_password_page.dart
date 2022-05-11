@@ -9,6 +9,9 @@ class SettingsPasswordPage extends ConsumerWidget {
     final isSaving = ref.watch(
       settingsPasswordControllerProvider.select((state) => state.isLoading),
     );
+    final canSubmit = ref.watch(
+      settingsPasswordControllerProvider.select((state) => state.canSubmit),
+    );
 
     ref.listen<SettingsPasswordState>(settingsPasswordControllerProvider,
         (_, state) {
@@ -18,14 +21,16 @@ class SettingsPasswordPage extends ConsumerWidget {
     });
 
     return SettingsPageBuilder(
-        title: l10n.settingsPasswordTitle,
-        child: const _SettingsPasswordContents(),
-        isSaving: isSaving,
-        onPressed: () {
-          final controller =
-              ref.read(settingsPasswordControllerProvider.notifier);
-          controller.handleEvent(const SettingsPasswordEvent.submit());
-        });
+      title: l10n.settingsPasswordTitle,
+      child: const _SettingsPasswordContents(),
+      isSaving: isSaving,
+      canSubmit: canSubmit,
+      onPressed: () {
+        final controller =
+            ref.read(settingsPasswordControllerProvider.notifier);
+        controller.handleEvent(const SettingsPasswordEvent.submit());
+      },
+    );
   }
 }
 

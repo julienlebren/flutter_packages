@@ -9,6 +9,9 @@ class SettingsEmailPage extends ConsumerWidget {
     final isSaving = ref.watch(
       settingsEmailControllerProvider.select((state) => state.isLoading),
     );
+    final canSubmit = ref.watch(
+      settingsEmailControllerProvider.select((state) => state.canSubmit),
+    );
 
     ref.listen<SettingsEmailState>(settingsEmailControllerProvider, (_, state) {
       if (state.isSuccess) {
@@ -16,23 +19,15 @@ class SettingsEmailPage extends ConsumerWidget {
       }
     });
 
-    return PlatformScaffold(
-      appBar: PlatformNavigationBar(
-        title: l10n.settingsEmailTitle,
-        trailing: isSaving
-            ? const FormLoader()
-            : PlatformNavigationBarSaveButton(
-                onPressed: () {
-                  final controller =
-                      ref.read(settingsEmailControllerProvider.notifier);
-                  controller.handleEvent(const SettingsEmailEvent.submit());
-                },
-              ),
-      ),
-      body: FormWithOverlay(
-        isSaving: isSaving,
-        child: const _SettingsEmailContents(),
-      ),
+    return SettingsPageBuilder(
+      title: l10n.settingsEmailTitle,
+      child: const _SettingsEmailContents(),
+      isSaving: isSaving,
+      canSubmit: canSubmit,
+      onPressed: () {
+        final controller = ref.read(settingsEmailControllerProvider.notifier);
+        controller.handleEvent(const SettingsEmailEvent.submit());
+      },
     );
   }
 }
