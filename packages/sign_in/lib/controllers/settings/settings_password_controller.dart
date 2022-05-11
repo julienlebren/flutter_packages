@@ -70,7 +70,8 @@ class SettingsPasswordController extends StateNotifier<SettingsPasswordState> {
       passwordHasLowercase: state.password.hasLowercase,
       passwordHasUppercase: state.password.hasUppercase,
       passwordHasSpecialChars: state.password.hasSpecialChars,
-      passwordsMatch: state.password == state.passwordConfirmation,
+      passwordsMatch:
+          state.password != "" && state.password == state.passwordConfirmation,
     );
   }
 

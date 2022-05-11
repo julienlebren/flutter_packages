@@ -15,7 +15,14 @@ class SettingsPasswordPage extends ConsumerWidget {
 
     ref.listen<SettingsPasswordState>(settingsPasswordControllerProvider,
         (_, state) {
-      if (state.isSuccess) {
+      if (state.errorText != null) {
+        showErrorDialog(
+          context,
+          ref,
+          title: l10n.errorTitle,
+          content: state.errorText,
+        );
+      } else if (state.isSuccess) {
         Navigator.pop(context);
       }
     });

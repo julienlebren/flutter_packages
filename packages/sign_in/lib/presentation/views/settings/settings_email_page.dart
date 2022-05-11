@@ -14,7 +14,14 @@ class SettingsEmailPage extends ConsumerWidget {
     );
 
     ref.listen<SettingsEmailState>(settingsEmailControllerProvider, (_, state) {
-      if (state.isSuccess) {
+      if (state.errorText != null) {
+        showErrorDialog(
+          context,
+          ref,
+          title: l10n.errorTitle,
+          content: state.errorText,
+        );
+      } else if (state.isSuccess) {
         Navigator.pop(context);
       }
     });
