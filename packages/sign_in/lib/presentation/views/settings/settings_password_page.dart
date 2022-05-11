@@ -58,7 +58,6 @@ class _SettingsPasswordContentsState
   Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final controller = ref.read(settingsPasswordControllerProvider.notifier);
-    final state = ref.watch(settingsPasswordControllerProvider);
 
     return FormPage(
       children: [
@@ -67,9 +66,9 @@ class _SettingsPasswordContentsState
             FormRow(
               child: PlatformTextField(
                 controller: TextEditingController(),
-                obscureText: true,
                 placeholder: l10n.settingsPasswordLabel,
                 autocorrect: false,
+                obscureText: true,
                 focusNode: focusNode,
                 textInputAction: TextInputAction.next,
                 onChanged: (String value) {
@@ -84,10 +83,9 @@ class _SettingsPasswordContentsState
             FormRow(
               child: PlatformTextField(
                 controller: TextEditingController(),
-                obscureText: true,
-                keyboardType: TextInputType.emailAddress,
                 placeholder: l10n.settingsPasswordConfirmationLabel,
                 autocorrect: false,
+                obscureText: true,
                 focusNode: confirmationFocusNode,
                 onChanged: (String value) {
                   controller.handleEvent(
@@ -100,16 +98,27 @@ class _SettingsPasswordContentsState
             ),
           ],
         ),
-        PasswordRequirements(
-          passwordConfirmation: true,
-          passwordHasDigits: state.passwordHasDigits,
-          passwordHasUppercase: state.passwordHasUppercase,
-          passwordHasLowercase: state.passwordHasLowercase,
-          passwordHasMinLength: state.passwordHasMinLength,
-          passwordHasSpecialChars: state.passwordHasSpecialChars,
-          passwordsMatch: state.passwordsMatch,
-        ),
+        const SettingsPasswordRequirements(),
       ],
+    );
+  }
+}
+
+class SettingsPasswordRequirements extends ConsumerWidget {
+  const SettingsPasswordRequirements({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(settingsPasswordControllerProvider);
+
+    return PasswordRequirements(
+      passwordConfirmation: true,
+      passwordHasDigits: state.passwordHasDigits,
+      passwordHasUppercase: state.passwordHasUppercase,
+      passwordHasLowercase: state.passwordHasLowercase,
+      passwordHasMinLength: state.passwordHasMinLength,
+      passwordHasSpecialChars: state.passwordHasSpecialChars,
+      passwordsMatch: state.passwordsMatch,
     );
   }
 }
