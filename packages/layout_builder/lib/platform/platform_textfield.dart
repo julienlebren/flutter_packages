@@ -12,6 +12,7 @@ class PlatformTextField
     this.placeholder,
     this.placeholderStyle,
     this.inputFormatters,
+    this.clearButtonMode = OverlayVisibilityMode.never,
     this.onChanged,
     this.onSubmitted,
     this.obscureText = false,
@@ -29,6 +30,7 @@ class PlatformTextField
   final String? placeholder;
   final TextStyle? placeholderStyle;
   final List<TextInputFormatter>? inputFormatters;
+  final OverlayVisibilityMode clearButtonMode;
   final ValueChanged<String>? onChanged;
   final ValueChanged<String>? onSubmitted;
   final bool obscureText;
@@ -80,6 +82,7 @@ class PlatformTextField
       placeholder: placeholder,
       decoration: decoration,
       inputFormatters: inputFormatters,
+      clearButtonMode: clearButtonMode,
       onChanged: onChanged,
       onSubmitted: onSubmitted,
       obscureText: obscureText,
