@@ -74,7 +74,7 @@ class _SettingsPasswordContentsState
             FormRow(
               child: PlatformTextField(
                 controller: TextEditingController(),
-                placeholder: l10n.settingsPasswordLabel,
+                placeholder: l10n.settingsPasswordPlaceholder,
                 autocorrect: false,
                 obscureText: true,
                 focusNode: focusNode,
@@ -91,7 +91,7 @@ class _SettingsPasswordContentsState
             FormRow(
               child: PlatformTextField(
                 controller: TextEditingController(),
-                placeholder: l10n.settingsPasswordConfirmationLabel,
+                placeholder: l10n.settingsPasswordConfirmationPlaceholder,
                 autocorrect: false,
                 obscureText: true,
                 focusNode: confirmationFocusNode,

@@ -67,13 +67,19 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get settingsEmailTitle => 'Adresse e-mail';
 
   @override
+  String get settingsEmailPlaceholder => 'Nouvelle adresse e-mail';
+
+  @override
   String get settingsPasswordTitle => 'Mot de passe';
 
   @override
   String get settingsPasswordLabel => 'Mot de passe';
 
   @override
-  String get settingsPasswordConfirmationLabel => 'Confirmez le mot de passe';
+  String get settingsPasswordPlaceholder => 'Nouveau mot de passe';
+
+  @override
+  String get settingsPasswordConfirmationPlaceholder => 'Confirmez le mot de passe';
 
   @override
   String get settingsPasswordEdit => 'Modifier';

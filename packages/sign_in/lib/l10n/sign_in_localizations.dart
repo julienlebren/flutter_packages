@@ -208,6 +208,12 @@ abstract class SignInLocalizations {
   /// **'Email address'**
   String get settingsEmailTitle;
 
+  /// No description provided for @settingsEmailPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'New email address'**
+  String get settingsEmailPlaceholder;
+
   /// No description provided for @settingsPasswordTitle.
   ///
   /// In en, this message translates to:
@@ -220,11 +226,17 @@ abstract class SignInLocalizations {
   /// **'Password'**
   String get settingsPasswordLabel;
 
-  /// No description provided for @settingsPasswordConfirmationLabel.
+  /// No description provided for @settingsPasswordPlaceholder.
+  ///
+  /// In en, this message translates to:
+  /// **'New password'**
+  String get settingsPasswordPlaceholder;
+
+  /// No description provided for @settingsPasswordConfirmationPlaceholder.
   ///
   /// In en, this message translates to:
   /// **'Confirm password'**
-  String get settingsPasswordConfirmationLabel;
+  String get settingsPasswordConfirmationPlaceholder;
 
   /// No description provided for @settingsPasswordEdit.
   ///

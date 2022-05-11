@@ -214,9 +214,11 @@ class FirebaseAuthService {
   }
 
   Future<void> updateEmail(String newEmail) async {
-    await FirebaseFunctions.instanceFor(region: 'europe-west3')
+    final result = await FirebaseFunctions.instanceFor(region: 'europe-west3')
         .httpsCallable('updateUserEmail')
         .call({'email': newEmail});
+
+    print(result);
   }
 
   Future<void> updatePassword(String newPassword) async {

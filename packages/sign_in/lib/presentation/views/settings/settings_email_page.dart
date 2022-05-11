@@ -71,7 +71,7 @@ class _SettingsEmailContentsState
             child: PlatformTextField(
               controller: TextEditingController(text: email),
               keyboardType: TextInputType.emailAddress,
-              placeholder: l10n.settingsEmailLabel,
+              placeholder: l10n.settingsEmailPlaceholder,
               autocorrect: false,
               focusNode: focusNode,
               clearButtonMode: OverlayVisibilityMode.always,
