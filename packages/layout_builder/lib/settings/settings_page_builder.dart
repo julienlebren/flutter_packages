@@ -84,7 +84,7 @@ class SettingsPageContents extends StatelessWidget {
 
   Widget? get trailingButton => onPressed != null
       ? PlatformNavigationBarSaveButton(
-          onPressed: canSubmit ? () => onPressed : null,
+          onPressed: canSubmit ? onPressed : null,
         )
       : null;
 }
