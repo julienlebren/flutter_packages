@@ -51,8 +51,8 @@ class _SettingsEmailContentsState
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(milliseconds: 100), () {
-      //focusNode.requestFocus();
+    Future.delayed(const Duration(milliseconds: 300), () {
+      focusNode.requestFocus();
     });
   }
 
