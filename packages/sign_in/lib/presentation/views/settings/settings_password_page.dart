@@ -18,9 +18,14 @@ class SettingsPasswordPage extends ConsumerWidget {
     });
 
     return SettingsPageBuilder(
-      title: l10n.settingsEmailTitle,
-      child: const _SettingsPasswordContents(),
-    );
+        title: l10n.settingsEmailTitle,
+        child: const _SettingsPasswordContents(),
+        isSaving: isSaving,
+        onPressed: () {
+          final controller =
+              ref.read(settingsPasswordControllerProvider.notifier);
+          controller.handleEvent(const SettingsPasswordEvent.submit());
+        });
   }
 }
 
