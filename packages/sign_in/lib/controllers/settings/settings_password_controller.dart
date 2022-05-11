@@ -87,6 +87,7 @@ class SettingsPasswordController extends StateNotifier<SettingsPasswordState> {
         errorText: null,
       );
     } on FirebaseAuthException catch (e) {
+      print(e);
       state = state.copyWith(
         isLoading: false,
         errorText: e.description(_localizations),
