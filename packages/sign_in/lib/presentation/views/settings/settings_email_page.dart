@@ -62,9 +62,7 @@ class _SettingsEmailContentsState
   Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final controller = ref.read(settingsEmailControllerProvider.notifier);
-    final email = ref.watch(
-      settingsEmailControllerProvider.select((state) => state.email),
-    );
+    final email = ref.read(settingsEmailControllerProvider).email;
 
     return FormPage(
       children: [
