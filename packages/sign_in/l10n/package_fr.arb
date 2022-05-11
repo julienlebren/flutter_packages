@@ -43,6 +43,7 @@
     "passwordRequirementLowercase": "Au moins une minuscule",
     "passwordRequirementDigits": "Au moins un chiffre",
     "passwordRequirementSpecialChars": "Au moins un caractère spécial",
+    "passwordRequirementMatch": "La confirmation est identique",
     "signInWithFacebook": "Continuer avec Facebook",
     "signInWithGoogle": "Continuer avec Google",
     "signInWithPhone": "Continuer avec un numéro",

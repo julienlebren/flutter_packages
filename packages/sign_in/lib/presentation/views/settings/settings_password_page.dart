@@ -58,6 +58,7 @@ class _SettingsPasswordContentsState
   Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final controller = ref.read(settingsPasswordControllerProvider.notifier);
+    final state = ref.watch(settingsPasswordControllerProvider);
 
     return FormPage(
       children: [
@@ -96,6 +97,15 @@ class _SettingsPasswordContentsState
                   controller.handleEvent(const SettingsPasswordEvent.submit());
                 },
               ),
+            ),
+            PasswordRequirements(
+              passwordConfirmation: true,
+              passwordHasDigits: state.passwordHasDigits,
+              passwordHasUppercase: state.passwordHasUppercase,
+              passwordHasLowercase: state.passwordHasLowercase,
+              passwordHasMinLength: state.passwordHasMinLength,
+              passwordHasSpecialChars: state.passwordHasSpecialChars,
+              passwordsMatch: state.passwordsMatch,
             ),
           ],
         ),

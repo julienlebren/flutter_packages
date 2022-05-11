@@ -20,6 +20,7 @@
     "passwordRequirementLowercase": "At least a lowercase",
     "passwordRequirementDigits": "At least one number",
     "passwordRequirementSpecialChars": "At least one special character",
+    "passwordRequirementMatch": "Passwords match",
     "settingsAccountTitle": "Account",
     "settingsEmailSectionTitle": "Login information",
     "settingsEmailLabel": "Email address",

@@ -52,6 +52,9 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get passwordRequirementSpecialChars => 'Au moins un caractère spécial';
 
   @override
+  String get passwordRequirementMatch => 'La confirmation est identique';
+
+  @override
   String get settingsAccountTitle => 'Compte';
 
   @override

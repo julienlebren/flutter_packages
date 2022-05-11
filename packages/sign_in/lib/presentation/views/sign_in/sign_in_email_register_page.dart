@@ -53,9 +53,7 @@ class _SignInEmailRegisterPageFormState
   @override
   Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
-    final canSubmit = ref.watch(
-      signInEmailRegisterControllerProvider.select((state) => state.canSubmit),
-    );
+    final state = ref.watch(signInEmailRegisterControllerProvider);
 
     return Column(
       children: [
@@ -88,10 +86,16 @@ class _SignInEmailRegisterPageFormState
           },
         ),
         if (isCupertino()) const SignInDivider(),
-        const SignInPasswordRequirements(),
+        PasswordRequirements(
+          passwordHasDigits: state.passwordHasDigits,
+          passwordHasUppercase: state.passwordHasUppercase,
+          passwordHasLowercase: state.passwordHasLowercase,
+          passwordHasMinLength: state.passwordHasMinLength,
+          passwordHasSpecialChars: state.passwordHasSpecialChars,
+        ),
         SignInSubmitButton(
           title: l10n.continueButton,
-          onPressed: canSubmit
+          onPressed: state.canSubmit
               ? () {
                   _handleEmailRegisterEvent(
                       ref, const SignInEmailRegisterEvent.submit());
@@ -104,89 +108,6 @@ class _SignInEmailRegisterPageFormState
             final navigator = SignInNavigatorKeys.modal.currentState!;
             navigator.pushReplacementNamed(SignInRoutes.signInEmailPage);
           },
-        ),
-      ],
-    );
-  }
-}
-
-class SignInPasswordRequirements extends ConsumerWidget {
-  const SignInPasswordRequirements({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.watch(signInLocalizationsProvider);
-    final state = ref.watch(signInEmailRegisterControllerProvider);
-
-    return SizedBox(
-      width: double.infinity,
-      child: Padding(
-        padding: const EdgeInsets.only(top: 15, bottom: 5),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(l10n.passwordRequirements,
-                style: const TextStyle(fontSize: 13)),
-            const SizedBox(height: 5),
-            SignInPasswordRequirement(
-              label: l10n.passwordRequirementMinLength,
-              isValid: state.passwordHasMinLength,
-            ),
-            SignInPasswordRequirement(
-              label: l10n.passwordRequirementUppercase,
-              isValid: state.passwordHasUppercase,
-            ),
-            SignInPasswordRequirement(
-              label: l10n.passwordRequirementLowercase,
-              isValid: state.passwordHasLowercase,
-            ),
-            SignInPasswordRequirement(
-              label: l10n.passwordRequirementDigits,
-              isValid: state.passwordHasDigits,
-            ),
-            SignInPasswordRequirement(
-              label: l10n.passwordRequirementSpecialChars,
-              isValid: state.passwordHasSpecialChars,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class SignInPasswordRequirement extends StatelessWidget {
-  const SignInPasswordRequirement({
-    Key? key,
-    required this.label,
-    this.isValid = false,
-  }) : super(key: key);
-
-  final bool isValid;
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        isValid
-            ? Icon(
-                PlatformIcons.checkmarkFill,
-                size: 14,
-                color: Colors.green,
-              )
-            : const Icon(
-                CupertinoIcons.circle,
-                size: 14,
-                color: Colors.grey,
-              ),
-        const SizedBox(width: 5),
-        Text(
-          label,
-          style: TextStyle(
-              color: isValid ? Colors.green : Colors.grey, fontSize: 13),
         ),
       ],
     );

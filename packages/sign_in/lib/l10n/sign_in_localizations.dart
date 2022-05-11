@@ -178,6 +178,12 @@ abstract class SignInLocalizations {
   /// **'At least one special character'**
   String get passwordRequirementSpecialChars;
 
+  /// No description provided for @passwordRequirementMatch.
+  ///
+  /// In en, this message translates to:
+  /// **'Passwords match'**
+  String get passwordRequirementMatch;
+
   /// No description provided for @settingsAccountTitle.
   ///
   /// In en, this message translates to:

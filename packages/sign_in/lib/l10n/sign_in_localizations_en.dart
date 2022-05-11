@@ -52,6 +52,9 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get passwordRequirementSpecialChars => 'At least one special character';
 
   @override
+  String get passwordRequirementMatch => 'Passwords match';
+
+  @override
   String get settingsAccountTitle => 'Account';
 
   @override
