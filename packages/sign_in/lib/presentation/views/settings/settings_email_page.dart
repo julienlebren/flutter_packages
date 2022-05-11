@@ -31,7 +31,7 @@ class SettingsEmailPage extends ConsumerWidget {
       ),
       body: FormWithOverlay(
         isSaving: isSaving,
-        child: const _SettingsEmailContents(),
+        child: Container(),
       ),
     );
   }
