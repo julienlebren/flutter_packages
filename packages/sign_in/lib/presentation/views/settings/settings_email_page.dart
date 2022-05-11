@@ -31,7 +31,7 @@ class SettingsEmailPage extends ConsumerWidget {
       ),
       body: FormWithOverlay(
         isSaving: isSaving,
-        child: Container(),
+        child: const _SettingsEmailContents(),
       ),
     );
   }
@@ -52,7 +52,7 @@ class _SettingsEmailContentsState
   void initState() {
     super.initState();
     Future.delayed(const Duration(milliseconds: 100), () {
-      focusNode.requestFocus();
+      //focusNode.requestFocus();
     });
   }
 
