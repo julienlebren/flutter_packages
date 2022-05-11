@@ -35,7 +35,8 @@ class _EmailSection extends ConsumerWidget {
           label: l10n.settingsEmailLabel,
           value: user.email ?? l10n.settingsUndefined,
           onPressed: () {
-            Navigator.pushNamed(context, SettingsRoutes.settingsEmailPage);
+            Navigator.of(context, rootNavigator: true)
+                .pushNamed(SettingsRoutes.settingsEmailPage);
           },
         ),
         FormTappableField(
@@ -44,7 +45,8 @@ class _EmailSection extends ConsumerWidget {
               ? l10n.settingsPasswordEdit
               : l10n.settingsUndefined,
           onPressed: () {
-            Navigator.pushNamed(context, SettingsRoutes.settingsPasswordPage);
+            Navigator.of(context, rootNavigator: true)
+                .pushNamed(SettingsRoutes.settingsPasswordPage);
           },
         ),
       ],
