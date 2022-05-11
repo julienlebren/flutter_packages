@@ -214,13 +214,20 @@ class FirebaseAuthService {
   }
 
   Future<void> updateEmail(String newEmail) async {
-    await currentUser!.updateEmail(newEmail);
+    await FirebaseFunctions.instanceFor(region: 'europe-west3')
+        .httpsCallable('updateUserEmail')
+        .call({'email': newEmail});
   }
 
   Future<void> updatePassword(String newPassword) async {
     await FirebaseFunctions.instanceFor(region: 'europe-west3')
         .httpsCallable('updateUserPassword')
         .call({'password': newPassword});
+
+    await signInWithEmailAndPassword(
+      email: currentUser!.email!,
+      password: newPassword,
+    );
   }
 
   Future<void> sendPasswordResetEmail(String email) async {
