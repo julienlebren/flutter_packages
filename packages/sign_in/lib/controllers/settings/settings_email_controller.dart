@@ -36,7 +36,7 @@ class SettingsEmailController extends StateNotifier<SettingsEmailState> {
     this._service,
     this._userRef,
     this._localizations,
-  ) : super(const SettingsEmailState());
+  ) : super(SettingsEmailState(email: _service.currentUser!.email ?? ""));
 
   final FirebaseAuthService _service;
   final CollectionReference? _userRef;
