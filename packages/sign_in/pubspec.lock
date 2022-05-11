@@ -501,10 +501,10 @@ packages:
     description:
       path: "packages/layout_builder"
       ref: HEAD
-      resolved-ref: "14c065a21e0ad2639c57d227a43deebdeec30a76"
+      resolved-ref: b678613b9a2f4875b9813392a03bc1a912d14825
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "2.3.2+1"
+    version: "2.3.2+2"
   lints:
     dependency: transitive
     description:
