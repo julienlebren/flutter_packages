@@ -36,7 +36,6 @@ class PlatformScaffold extends PlatformWidgetBase<AnnotatedRegion, Widget> {
         : appTheme.scaffoldBackgroundColor;
 
     return CupertinoPageScaffold(
-      resizeToAvoidBottomInset: false,
       backgroundColor: backgroundColor,
       navigationBar: appBar?.createCupertinoWidget(context, ref),
       child: SafeArea(
