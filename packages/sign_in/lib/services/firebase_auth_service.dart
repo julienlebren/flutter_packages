@@ -12,6 +12,7 @@ class FirebaseAuthService {
   User? get currentUser => _firebaseAuth.currentUser;
 
   bool _hasProvider(String providerId) {
+    print(currentUser!.providerData);
     for (final provider in currentUser!.providerData) {
       if (provider.providerId == providerId) return true;
     }
