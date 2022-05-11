@@ -74,6 +74,7 @@ class _SettingsEmailContentsState
               placeholder: l10n.settingsEmailLabel,
               autocorrect: false,
               focusNode: focusNode,
+              clearButtonMode: OverlayVisibilityMode.always,
               onChanged: (String value) {
                 controller.handleEvent(SettingsEmailEvent.emailChanged(value));
               },
