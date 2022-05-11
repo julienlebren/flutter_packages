@@ -5,10 +5,14 @@ class SettingsPageBuilder extends ConsumerWidget {
     Key? key,
     required this.title,
     this.provider,
+    this.isSaving,
+    this.onPressed,
     required this.child,
   }) : super(key: key);
 
   final String title;
+  final bool? isSaving;
+  final VoidCallback? onPressed;
   final ProviderBase<SettingsState>? provider;
   final Widget child;
 
@@ -38,6 +42,7 @@ class SettingsPageBuilder extends ConsumerWidget {
       return SettingsPageContents(
         title: title,
         child: child,
+        isSaving: isSaving ?? false,
       );
     }
   }
@@ -49,18 +54,20 @@ class SettingsPageContents extends StatelessWidget {
     required this.title,
     required this.child,
     this.isSaving = false,
+    this.onPressed,
   }) : super(key: key);
 
   final String title;
   final Widget child;
   final bool isSaving;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return PlatformScaffold(
       appBar: PlatformNavigationBar(
         title: title,
-        trailing: isSaving ? const FormLoader() : null,
+        trailing: isSaving ? const FormLoader() : trailingButton,
       ),
       body: FormWithOverlay(
         child: child,
@@ -68,4 +75,10 @@ class SettingsPageContents extends StatelessWidget {
       ),
     );
   }
+
+  Widget? get trailingButton => onPressed != null
+      ? PlatformNavigationBarSaveButton(
+          onPressed: isSaving ? null : () => onPressed,
+        )
+      : null;
 }
