@@ -18,7 +18,7 @@ class SettingsPasswordPage extends ConsumerWidget {
     });
 
     return SettingsPageBuilder(
-        title: l10n.settingsEmailTitle,
+        title: l10n.settingsPasswordTitle,
         child: const _SettingsPasswordContents(),
         isSaving: isSaving,
         onPressed: () {
@@ -39,6 +39,7 @@ class _SettingsPasswordContents extends ConsumerStatefulWidget {
 class _SettingsPasswordContentsState
     extends ConsumerState<_SettingsPasswordContents> {
   final focusNode = FocusNode();
+  final confirmationFocusNode = FocusNode();
 
   @override
   void initState() {
@@ -51,29 +52,47 @@ class _SettingsPasswordContentsState
   @override
   Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
-    final controller = ref.read(settingsEmailControllerProvider.notifier);
-    final email = ref.watch(
-      settingsEmailControllerProvider.select((state) => state.email),
-    );
+    final controller = ref.read(settingsPasswordControllerProvider.notifier);
 
     return FormPage(
       children: [
         FormSection(
-          child: FormRow(
-            child: PlatformTextField(
-              controller: TextEditingController(text: email),
-              keyboardType: TextInputType.emailAddress,
-              placeholder: l10n.settingsEmailLabel,
-              autocorrect: false,
-              focusNode: focusNode,
-              onChanged: (String value) {
-                controller.handleEvent(SettingsEmailEvent.emailChanged(value));
-              },
-              onSubmitted: (_) {
-                controller.handleEvent(const SettingsEmailEvent.submit());
-              },
+          children: [
+            FormRow(
+              child: PlatformTextField(
+                controller: TextEditingController(),
+                obscureText: true,
+                placeholder: l10n.settingsPasswordLabel,
+                autocorrect: false,
+                focusNode: focusNode,
+                textInputAction: TextInputAction.next,
+                onChanged: (String value) {
+                  controller.handleEvent(
+                      SettingsPasswordEvent.passwordChanged(value));
+                },
+                onSubmitted: (_) {
+                  confirmationFocusNode.requestFocus();
+                },
+              ),
             ),
-          ),
+            FormRow(
+              child: PlatformTextField(
+                controller: TextEditingController(),
+                obscureText: true,
+                keyboardType: TextInputType.emailAddress,
+                placeholder: l10n.settingsPasswordConfirmationLabel,
+                autocorrect: false,
+                focusNode: confirmationFocusNode,
+                onChanged: (String value) {
+                  controller.handleEvent(
+                      SettingsPasswordEvent.passwordConfirmationChanged(value));
+                },
+                onSubmitted: (_) {
+                  controller.handleEvent(const SettingsPasswordEvent.submit());
+                },
+              ),
+            ),
+          ],
         ),
       ],
     );

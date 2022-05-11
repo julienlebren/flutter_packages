@@ -572,6 +572,13 @@ class _$SettingsPasswordEventTearOff {
     );
   }
 
+  _SettingsPasswordConfirmationChanged passwordConfirmationChanged(
+      String password) {
+    return _SettingsPasswordConfirmationChanged(
+      password,
+    );
+  }
+
   _SettingsPasswordSubmit submit() {
     return const _SettingsPasswordSubmit();
   }
@@ -585,18 +592,21 @@ mixin _$SettingsPasswordEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) passwordConfirmationChanged,
     required TResult Function() submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? passwordConfirmationChanged,
     TResult Function()? submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? passwordConfirmationChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) =>
@@ -604,18 +614,24 @@ mixin _$SettingsPasswordEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SettingsPasswordChanged value) passwordChanged,
+    required TResult Function(_SettingsPasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_SettingsPasswordSubmit value) submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult Function(_SettingsPasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_SettingsPasswordSubmit value)? submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult Function(_SettingsPasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_SettingsPasswordSubmit value)? submit,
     required TResult orElse(),
   }) =>
@@ -707,6 +723,7 @@ class _$_SettingsPasswordChanged implements _SettingsPasswordChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) passwordConfirmationChanged,
     required TResult Function() submit,
   }) {
     return passwordChanged(password);
@@ -716,6 +733,7 @@ class _$_SettingsPasswordChanged implements _SettingsPasswordChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? passwordConfirmationChanged,
     TResult Function()? submit,
   }) {
     return passwordChanged?.call(password);
@@ -725,6 +743,7 @@ class _$_SettingsPasswordChanged implements _SettingsPasswordChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? passwordConfirmationChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -738,6 +757,8 @@ class _$_SettingsPasswordChanged implements _SettingsPasswordChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SettingsPasswordChanged value) passwordChanged,
+    required TResult Function(_SettingsPasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_SettingsPasswordSubmit value) submit,
   }) {
     return passwordChanged(this);
@@ -747,6 +768,8 @@ class _$_SettingsPasswordChanged implements _SettingsPasswordChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult Function(_SettingsPasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_SettingsPasswordSubmit value)? submit,
   }) {
     return passwordChanged?.call(this);
@@ -756,6 +779,8 @@ class _$_SettingsPasswordChanged implements _SettingsPasswordChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult Function(_SettingsPasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_SettingsPasswordSubmit value)? submit,
     required TResult orElse(),
   }) {
@@ -774,6 +799,158 @@ abstract class _SettingsPasswordChanged implements SettingsPasswordEvent {
   @JsonKey(ignore: true)
   _$SettingsPasswordChangedCopyWith<_SettingsPasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SettingsPasswordConfirmationChangedCopyWith<$Res> {
+  factory _$SettingsPasswordConfirmationChangedCopyWith(
+          _SettingsPasswordConfirmationChanged value,
+          $Res Function(_SettingsPasswordConfirmationChanged) then) =
+      __$SettingsPasswordConfirmationChangedCopyWithImpl<$Res>;
+  $Res call({String password});
+}
+
+/// @nodoc
+class __$SettingsPasswordConfirmationChangedCopyWithImpl<$Res>
+    extends _$SettingsPasswordEventCopyWithImpl<$Res>
+    implements _$SettingsPasswordConfirmationChangedCopyWith<$Res> {
+  __$SettingsPasswordConfirmationChangedCopyWithImpl(
+      _SettingsPasswordConfirmationChanged _value,
+      $Res Function(_SettingsPasswordConfirmationChanged) _then)
+      : super(_value, (v) => _then(v as _SettingsPasswordConfirmationChanged));
+
+  @override
+  _SettingsPasswordConfirmationChanged get _value =>
+      super._value as _SettingsPasswordConfirmationChanged;
+
+  @override
+  $Res call({
+    Object? password = freezed,
+  }) {
+    return _then(_SettingsPasswordConfirmationChanged(
+      password == freezed
+          ? _value.password
+          : password // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SettingsPasswordConfirmationChanged
+    implements _SettingsPasswordConfirmationChanged {
+  const _$_SettingsPasswordConfirmationChanged(this.password);
+
+  @override
+  final String password;
+
+  @override
+  String toString() {
+    return 'SettingsPasswordEvent.passwordConfirmationChanged(password: $password)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SettingsPasswordConfirmationChanged &&
+            const DeepCollectionEquality().equals(other.password, password));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SettingsPasswordConfirmationChangedCopyWith<
+          _SettingsPasswordConfirmationChanged>
+      get copyWith => __$SettingsPasswordConfirmationChangedCopyWithImpl<
+          _SettingsPasswordConfirmationChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) passwordConfirmationChanged,
+    required TResult Function() submit,
+  }) {
+    return passwordConfirmationChanged(password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? passwordConfirmationChanged,
+    TResult Function()? submit,
+  }) {
+    return passwordConfirmationChanged?.call(password);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? passwordConfirmationChanged,
+    TResult Function()? submit,
+    required TResult orElse(),
+  }) {
+    if (passwordConfirmationChanged != null) {
+      return passwordConfirmationChanged(password);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SettingsPasswordChanged value) passwordChanged,
+    required TResult Function(_SettingsPasswordConfirmationChanged value)
+        passwordConfirmationChanged,
+    required TResult Function(_SettingsPasswordSubmit value) submit,
+  }) {
+    return passwordConfirmationChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult Function(_SettingsPasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_SettingsPasswordSubmit value)? submit,
+  }) {
+    return passwordConfirmationChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult Function(_SettingsPasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
+    TResult Function(_SettingsPasswordSubmit value)? submit,
+    required TResult orElse(),
+  }) {
+    if (passwordConfirmationChanged != null) {
+      return passwordConfirmationChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SettingsPasswordConfirmationChanged
+    implements SettingsPasswordEvent {
+  const factory _SettingsPasswordConfirmationChanged(String password) =
+      _$_SettingsPasswordConfirmationChanged;
+
+  String get password;
+  @JsonKey(ignore: true)
+  _$SettingsPasswordConfirmationChangedCopyWith<
+          _SettingsPasswordConfirmationChanged>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -818,6 +995,7 @@ class _$_SettingsPasswordSubmit implements _SettingsPasswordSubmit {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String password) passwordChanged,
+    required TResult Function(String password) passwordConfirmationChanged,
     required TResult Function() submit,
   }) {
     return submit();
@@ -827,6 +1005,7 @@ class _$_SettingsPasswordSubmit implements _SettingsPasswordSubmit {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? passwordConfirmationChanged,
     TResult Function()? submit,
   }) {
     return submit?.call();
@@ -836,6 +1015,7 @@ class _$_SettingsPasswordSubmit implements _SettingsPasswordSubmit {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(String password)? passwordChanged,
+    TResult Function(String password)? passwordConfirmationChanged,
     TResult Function()? submit,
     required TResult orElse(),
   }) {
@@ -849,6 +1029,8 @@ class _$_SettingsPasswordSubmit implements _SettingsPasswordSubmit {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SettingsPasswordChanged value) passwordChanged,
+    required TResult Function(_SettingsPasswordConfirmationChanged value)
+        passwordConfirmationChanged,
     required TResult Function(_SettingsPasswordSubmit value) submit,
   }) {
     return submit(this);
@@ -858,6 +1040,8 @@ class _$_SettingsPasswordSubmit implements _SettingsPasswordSubmit {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult Function(_SettingsPasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_SettingsPasswordSubmit value)? submit,
   }) {
     return submit?.call(this);
@@ -867,6 +1051,8 @@ class _$_SettingsPasswordSubmit implements _SettingsPasswordSubmit {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult Function(_SettingsPasswordConfirmationChanged value)?
+        passwordConfirmationChanged,
     TResult Function(_SettingsPasswordSubmit value)? submit,
     required TResult orElse(),
   }) {
@@ -887,22 +1073,26 @@ class _$SettingsPasswordStateTearOff {
 
   _SettingsPasswordState call(
       {String password = "",
+      String passwordConfirmation = "",
       bool passwordHasMinLength = false,
       bool passwordHasUppercase = false,
       bool passwordHasLowercase = false,
       bool passwordHasDigits = false,
       bool passwordHasSpecialChars = false,
+      bool passwordsMatch = false,
       bool canSubmit = false,
       bool isLoading = false,
       bool isSuccess = false,
       String? errorText}) {
     return _SettingsPasswordState(
       password: password,
+      passwordConfirmation: passwordConfirmation,
       passwordHasMinLength: passwordHasMinLength,
       passwordHasUppercase: passwordHasUppercase,
       passwordHasLowercase: passwordHasLowercase,
       passwordHasDigits: passwordHasDigits,
       passwordHasSpecialChars: passwordHasSpecialChars,
+      passwordsMatch: passwordsMatch,
       canSubmit: canSubmit,
       isLoading: isLoading,
       isSuccess: isSuccess,
@@ -917,11 +1107,13 @@ const $SettingsPasswordState = _$SettingsPasswordStateTearOff();
 /// @nodoc
 mixin _$SettingsPasswordState {
   String get password => throw _privateConstructorUsedError;
+  String get passwordConfirmation => throw _privateConstructorUsedError;
   bool get passwordHasMinLength => throw _privateConstructorUsedError;
   bool get passwordHasUppercase => throw _privateConstructorUsedError;
   bool get passwordHasLowercase => throw _privateConstructorUsedError;
   bool get passwordHasDigits => throw _privateConstructorUsedError;
   bool get passwordHasSpecialChars => throw _privateConstructorUsedError;
+  bool get passwordsMatch => throw _privateConstructorUsedError;
   bool get canSubmit => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   bool get isSuccess => throw _privateConstructorUsedError;
@@ -939,11 +1131,13 @@ abstract class $SettingsPasswordStateCopyWith<$Res> {
       _$SettingsPasswordStateCopyWithImpl<$Res>;
   $Res call(
       {String password,
+      String passwordConfirmation,
       bool passwordHasMinLength,
       bool passwordHasUppercase,
       bool passwordHasLowercase,
       bool passwordHasDigits,
       bool passwordHasSpecialChars,
+      bool passwordsMatch,
       bool canSubmit,
       bool isLoading,
       bool isSuccess,
@@ -962,11 +1156,13 @@ class _$SettingsPasswordStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? password = freezed,
+    Object? passwordConfirmation = freezed,
     Object? passwordHasMinLength = freezed,
     Object? passwordHasUppercase = freezed,
     Object? passwordHasLowercase = freezed,
     Object? passwordHasDigits = freezed,
     Object? passwordHasSpecialChars = freezed,
+    Object? passwordsMatch = freezed,
     Object? canSubmit = freezed,
     Object? isLoading = freezed,
     Object? isSuccess = freezed,
@@ -976,6 +1172,10 @@ class _$SettingsPasswordStateCopyWithImpl<$Res>
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      passwordConfirmation: passwordConfirmation == freezed
+          ? _value.passwordConfirmation
+          : passwordConfirmation // ignore: cast_nullable_to_non_nullable
               as String,
       passwordHasMinLength: passwordHasMinLength == freezed
           ? _value.passwordHasMinLength
@@ -996,6 +1196,10 @@ class _$SettingsPasswordStateCopyWithImpl<$Res>
       passwordHasSpecialChars: passwordHasSpecialChars == freezed
           ? _value.passwordHasSpecialChars
           : passwordHasSpecialChars // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordsMatch: passwordsMatch == freezed
+          ? _value.passwordsMatch
+          : passwordsMatch // ignore: cast_nullable_to_non_nullable
               as bool,
       canSubmit: canSubmit == freezed
           ? _value.canSubmit
@@ -1026,11 +1230,13 @@ abstract class _$SettingsPasswordStateCopyWith<$Res>
   @override
   $Res call(
       {String password,
+      String passwordConfirmation,
       bool passwordHasMinLength,
       bool passwordHasUppercase,
       bool passwordHasLowercase,
       bool passwordHasDigits,
       bool passwordHasSpecialChars,
+      bool passwordsMatch,
       bool canSubmit,
       bool isLoading,
       bool isSuccess,
@@ -1051,11 +1257,13 @@ class __$SettingsPasswordStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? password = freezed,
+    Object? passwordConfirmation = freezed,
     Object? passwordHasMinLength = freezed,
     Object? passwordHasUppercase = freezed,
     Object? passwordHasLowercase = freezed,
     Object? passwordHasDigits = freezed,
     Object? passwordHasSpecialChars = freezed,
+    Object? passwordsMatch = freezed,
     Object? canSubmit = freezed,
     Object? isLoading = freezed,
     Object? isSuccess = freezed,
@@ -1065,6 +1273,10 @@ class __$SettingsPasswordStateCopyWithImpl<$Res>
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
+              as String,
+      passwordConfirmation: passwordConfirmation == freezed
+          ? _value.passwordConfirmation
+          : passwordConfirmation // ignore: cast_nullable_to_non_nullable
               as String,
       passwordHasMinLength: passwordHasMinLength == freezed
           ? _value.passwordHasMinLength
@@ -1085,6 +1297,10 @@ class __$SettingsPasswordStateCopyWithImpl<$Res>
       passwordHasSpecialChars: passwordHasSpecialChars == freezed
           ? _value.passwordHasSpecialChars
           : passwordHasSpecialChars // ignore: cast_nullable_to_non_nullable
+              as bool,
+      passwordsMatch: passwordsMatch == freezed
+          ? _value.passwordsMatch
+          : passwordsMatch // ignore: cast_nullable_to_non_nullable
               as bool,
       canSubmit: canSubmit == freezed
           ? _value.canSubmit
@@ -1111,11 +1327,13 @@ class __$SettingsPasswordStateCopyWithImpl<$Res>
 class _$_SettingsPasswordState implements _SettingsPasswordState {
   const _$_SettingsPasswordState(
       {this.password = "",
+      this.passwordConfirmation = "",
       this.passwordHasMinLength = false,
       this.passwordHasUppercase = false,
       this.passwordHasLowercase = false,
       this.passwordHasDigits = false,
       this.passwordHasSpecialChars = false,
+      this.passwordsMatch = false,
       this.canSubmit = false,
       this.isLoading = false,
       this.isSuccess = false,
@@ -1124,6 +1342,9 @@ class _$_SettingsPasswordState implements _SettingsPasswordState {
   @JsonKey()
   @override
   final String password;
+  @JsonKey()
+  @override
+  final String passwordConfirmation;
   @JsonKey()
   @override
   final bool passwordHasMinLength;
@@ -1141,6 +1362,9 @@ class _$_SettingsPasswordState implements _SettingsPasswordState {
   final bool passwordHasSpecialChars;
   @JsonKey()
   @override
+  final bool passwordsMatch;
+  @JsonKey()
+  @override
   final bool canSubmit;
   @JsonKey()
   @override
@@ -1153,7 +1377,7 @@ class _$_SettingsPasswordState implements _SettingsPasswordState {
 
   @override
   String toString() {
-    return 'SettingsPasswordState(password: $password, passwordHasMinLength: $passwordHasMinLength, passwordHasUppercase: $passwordHasUppercase, passwordHasLowercase: $passwordHasLowercase, passwordHasDigits: $passwordHasDigits, passwordHasSpecialChars: $passwordHasSpecialChars, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+    return 'SettingsPasswordState(password: $password, passwordConfirmation: $passwordConfirmation, passwordHasMinLength: $passwordHasMinLength, passwordHasUppercase: $passwordHasUppercase, passwordHasLowercase: $passwordHasLowercase, passwordHasDigits: $passwordHasDigits, passwordHasSpecialChars: $passwordHasSpecialChars, passwordsMatch: $passwordsMatch, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
   }
 
   @override
@@ -1162,6 +1386,8 @@ class _$_SettingsPasswordState implements _SettingsPasswordState {
         (other.runtimeType == runtimeType &&
             other is _SettingsPasswordState &&
             const DeepCollectionEquality().equals(other.password, password) &&
+            const DeepCollectionEquality()
+                .equals(other.passwordConfirmation, passwordConfirmation) &&
             const DeepCollectionEquality()
                 .equals(other.passwordHasMinLength, passwordHasMinLength) &&
             const DeepCollectionEquality()
@@ -1172,6 +1398,8 @@ class _$_SettingsPasswordState implements _SettingsPasswordState {
                 .equals(other.passwordHasDigits, passwordHasDigits) &&
             const DeepCollectionEquality().equals(
                 other.passwordHasSpecialChars, passwordHasSpecialChars) &&
+            const DeepCollectionEquality()
+                .equals(other.passwordsMatch, passwordsMatch) &&
             const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
             const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
@@ -1182,11 +1410,13 @@ class _$_SettingsPasswordState implements _SettingsPasswordState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(password),
+      const DeepCollectionEquality().hash(passwordConfirmation),
       const DeepCollectionEquality().hash(passwordHasMinLength),
       const DeepCollectionEquality().hash(passwordHasUppercase),
       const DeepCollectionEquality().hash(passwordHasLowercase),
       const DeepCollectionEquality().hash(passwordHasDigits),
       const DeepCollectionEquality().hash(passwordHasSpecialChars),
+      const DeepCollectionEquality().hash(passwordsMatch),
       const DeepCollectionEquality().hash(canSubmit),
       const DeepCollectionEquality().hash(isLoading),
       const DeepCollectionEquality().hash(isSuccess),
@@ -1202,11 +1432,13 @@ class _$_SettingsPasswordState implements _SettingsPasswordState {
 abstract class _SettingsPasswordState implements SettingsPasswordState {
   const factory _SettingsPasswordState(
       {String password,
+      String passwordConfirmation,
       bool passwordHasMinLength,
       bool passwordHasUppercase,
       bool passwordHasLowercase,
       bool passwordHasDigits,
       bool passwordHasSpecialChars,
+      bool passwordsMatch,
       bool canSubmit,
       bool isLoading,
       bool isSuccess,
@@ -1214,6 +1446,8 @@ abstract class _SettingsPasswordState implements SettingsPasswordState {
 
   @override
   String get password;
+  @override
+  String get passwordConfirmation;
   @override
   bool get passwordHasMinLength;
   @override
@@ -1224,6 +1458,8 @@ abstract class _SettingsPasswordState implements SettingsPasswordState {
   bool get passwordHasDigits;
   @override
   bool get passwordHasSpecialChars;
+  @override
+  bool get passwordsMatch;
   @override
   bool get canSubmit;
   @override

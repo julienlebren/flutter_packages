@@ -202,11 +202,23 @@ abstract class SignInLocalizations {
   /// **'Email address'**
   String get settingsEmailTitle;
 
+  /// No description provided for @settingsPasswordTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Password'**
+  String get settingsPasswordTitle;
+
   /// No description provided for @settingsPasswordLabel.
   ///
   /// In en, this message translates to:
   /// **'Password'**
   String get settingsPasswordLabel;
+
+  /// No description provided for @settingsPasswordConfirmationLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm password'**
+  String get settingsPasswordConfirmationLabel;
 
   /// No description provided for @settingsPasswordEdit.
   ///
