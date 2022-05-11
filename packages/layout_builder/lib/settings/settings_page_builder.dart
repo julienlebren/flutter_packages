@@ -6,12 +6,14 @@ class SettingsPageBuilder extends ConsumerWidget {
     required this.title,
     this.provider,
     this.isSaving,
+    this.canSubmit,
     this.onPressed,
     required this.child,
   }) : super(key: key);
 
   final String title;
   final bool? isSaving;
+  final bool? canSubmit;
   final VoidCallback? onPressed;
   final ProviderBase<SettingsState>? provider;
   final Widget child;
@@ -43,6 +45,7 @@ class SettingsPageBuilder extends ConsumerWidget {
         title: title,
         child: child,
         isSaving: isSaving ?? false,
+        canSubmit: canSubmit ?? false,
         onPressed: onPressed,
       );
     }
@@ -54,12 +57,14 @@ class SettingsPageContents extends StatelessWidget {
     Key? key,
     required this.title,
     required this.child,
+    this.canSubmit = false,
     this.isSaving = false,
     this.onPressed,
   }) : super(key: key);
 
   final String title;
   final Widget child;
+  final bool canSubmit;
   final bool isSaving;
   final VoidCallback? onPressed;
 
@@ -79,7 +84,7 @@ class SettingsPageContents extends StatelessWidget {
 
   Widget? get trailingButton => onPressed != null
       ? PlatformNavigationBarSaveButton(
-          onPressed: isSaving ? null : () => onPressed,
+          onPressed: canSubmit ? () => onPressed : null,
         )
       : null;
 }

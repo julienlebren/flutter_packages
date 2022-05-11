@@ -64,22 +64,26 @@ class _SettingsEmailContentsState
       settingsEmailControllerProvider.select((state) => state.email),
     );
 
-    return FormSection(
-      child: FormRow(
-        child: PlatformTextField(
-          controller: TextEditingController(text: email),
-          keyboardType: TextInputType.emailAddress,
-          placeholder: l10n.settingsEmailLabel,
-          autocorrect: false,
-          focusNode: focusNode,
-          onChanged: (String value) {
-            controller.handleEvent(SettingsEmailEvent.emailChanged(value));
-          },
-          onSubmitted: (_) {
-            controller.handleEvent(const SettingsEmailEvent.submit());
-          },
+    return FormPage(
+      children: [
+        FormSection(
+          child: FormRow(
+            child: PlatformTextField(
+              controller: TextEditingController(text: email),
+              keyboardType: TextInputType.emailAddress,
+              placeholder: l10n.settingsEmailLabel,
+              autocorrect: false,
+              focusNode: focusNode,
+              onChanged: (String value) {
+                controller.handleEvent(SettingsEmailEvent.emailChanged(value));
+              },
+              onSubmitted: (_) {
+                controller.handleEvent(const SettingsEmailEvent.submit());
+              },
+            ),
+          ),
         ),
-      ),
+      ],
     );
   }
 }
