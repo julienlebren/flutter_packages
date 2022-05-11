@@ -217,7 +217,9 @@ class FirebaseAuthService {
   }
 
   Future<void> updatePassword(String newPassword) async {
-    await currentUser!.updatePassword(newPassword);
+    await FirebaseFunctions.instance
+        .httpsCallable('updateUserPassword')
+        .call({'password': newPassword});
   }
 
   Future<void> sendPasswordResetEmail(String email) async {

@@ -86,11 +86,11 @@ class SettingsPasswordController extends StateNotifier<SettingsPasswordState> {
         isSuccess: true,
         errorText: null,
       );
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseFunctionsException catch (e) {
       print(e);
       state = state.copyWith(
         isLoading: false,
-        errorText: e.description(_localizations),
+        errorText: _localizations.errorUnknown,
       );
     } catch (e) {
       state = state.copyWith(
