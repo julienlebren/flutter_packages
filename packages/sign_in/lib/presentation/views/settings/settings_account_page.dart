@@ -35,7 +35,7 @@ class _EmailSection extends ConsumerWidget {
           label: l10n.settingsEmailLabel,
           value: user.email ?? l10n.settingsUndefined,
           onPressed: () {
-            Navigator.pushNamed(context, SettingsRoutes.settingsEmailPage);
+            Navigator.pushNamed(context, SettingsRoutes.settingsAccountPage);
           },
         ),
         FormTappableField(
