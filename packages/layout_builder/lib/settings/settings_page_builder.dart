@@ -73,7 +73,8 @@ class SettingsPageContents extends StatelessWidget {
     return PlatformScaffold(
       appBar: PlatformNavigationBar(
         title: title,
-        trailing: isSaving ? const FormLoader() : trailingButton,
+        trailing:
+            isSaving ? const FormLoader(delayBeforeDisplay: 0) : trailingButton,
       ),
       body: FormWithOverlay(
         child: child,
