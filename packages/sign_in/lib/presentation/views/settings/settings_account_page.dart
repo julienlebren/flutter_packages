@@ -68,11 +68,13 @@ class _AnonymousSection extends ConsumerWidget {
                   size: 40,
                 ),
                 const SizedBox(width: 10),
-                Text(
-                  l10n.settingsNoAccount,
-                  style: const TextStyle(color: Colors.black, fontSize: 20),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+                Flexible(
+                  child: Text(
+                    l10n.settingsNoAccount,
+                    style: const TextStyle(color: Colors.black, fontSize: 18),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
                 const Spacer(),
               ],
