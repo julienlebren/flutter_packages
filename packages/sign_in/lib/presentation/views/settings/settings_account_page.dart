@@ -1,9 +1,9 @@
 part of '../../../sign_in.dart';
 
 final userEmailProvider = Provider<User?>((ref) {
-  final authStateChanges = ref.watch(authStateChangesProvider);
+  final userChanges = ref.watch(userChangesProvider);
 
-  return authStateChanges.maybeWhen(
+  return userChanges.maybeWhen(
     data: (user) {
       print("user is $user");
       return user;

@@ -8,6 +8,7 @@ class FirebaseAuthService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   Stream<User?> authStateChanges() => _firebaseAuth.authStateChanges();
+  Stream<User?> userChanges() => _firebaseAuth.userChanges();
 
   User? get currentUser => _firebaseAuth.currentUser;
 

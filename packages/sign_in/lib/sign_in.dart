@@ -164,6 +164,9 @@ final signInThemeProvider = Provider<SignInTheme>(
 final authStateChangesProvider = StreamProvider<User?>(
     (ref) => ref.watch(authServiceProvider).authStateChanges());
 
+final userChangesProvider = StreamProvider<User?>(
+    (ref) => ref.watch(authServiceProvider).userChanges());
+
 /// A provider which returns an instance of [FirebaseAuthService]
 final authServiceProvider =
     Provider<FirebaseAuthService>((ref) => FirebaseAuthService.instance);
