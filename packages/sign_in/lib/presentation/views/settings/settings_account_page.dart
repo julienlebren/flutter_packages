@@ -227,7 +227,28 @@ class _LogoutSection extends ConsumerWidget {
 
   _confirmLogout(BuildContext context, WidgetRef ref) async {
     final l10n = ref.watch(signInLocalizationsProvider);
-    await showAlertDialog(
+
+    showPlatformModalSheet(
+      context: context,
+      ref: ref,
+      title: l10n.settingsLogoutConfirmation,
+      actions: [
+        PlatformModalSheetAction(
+          title: l10n.settingsLogoutButton,
+          onPressed: () {
+            if (isMaterial()) {
+              Navigator.of(context, rootNavigator: true).pop();
+            }
+            final controller =
+                ref.read(signInButtonsControllerProvider.notifier);
+            controller.signOut();
+          },
+          isDestructiveAction: true,
+        ),
+      ],
+    );
+
+    /*await showAlertDialog(
       context,
       ref,
       title: l10n.settingsLogoutButton,
@@ -248,7 +269,7 @@ class _LogoutSection extends ConsumerWidget {
           },
         ),
       ],
-    );
+    );*/
   }
 
   @override
