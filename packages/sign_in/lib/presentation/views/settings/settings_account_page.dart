@@ -38,16 +38,14 @@ class _EmailSection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final service = ref.watch(authServiceProvider);
-    final user = service.currentUser!;
-
-    final u = ref.watch(userEmailProvider);
+    final user = ref.watch(userEmailProvider);
 
     return FormSection(
       title: l10n.settingsEmailSectionTitle,
       children: [
         FormTappableField(
           label: l10n.settingsEmailLabel,
-          value: user.email ?? l10n.settingsUndefined,
+          value: user?.email ?? l10n.settingsUndefined,
           onPressed: () {
             Navigator.of(context, rootNavigator: true)
                 .pushNamed(SettingsRoutes.settingsEmailPage);
