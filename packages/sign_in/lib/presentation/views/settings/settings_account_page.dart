@@ -69,38 +69,13 @@ class _EmailSection extends ConsumerWidget {
 class _SocialSection extends ConsumerWidget {
   const _SocialSection({Key? key}) : super(key: key);
 
-  void _showModalSheet(
-    BuildContext context,
-    WidgetRef ref, {
-    required String providerName,
-    required String providerId,
-  }) {
-    final l10n = ref.watch(signInLocalizationsProvider);
-    showPlatformModalSheet(
-      context: context,
-      ref: ref,
-      title: l10n.unlinkTitle,
-      actions: [
-        PlatformModalSheetAction(
-          title: l10n.unlinkProvider(providerName),
-          icon: Icons.delete,
-          onPressed: () {},
-          isDestructiveAction: true,
-        ),
-      ],
-    );
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final formTheme = ref.watch(formThemeProvider);
-    final listViewTheme = ref.watch(listViewThemeProvider);
-    final service = ref.watch(authServiceProvider);
     final suppliers = ref.watch(authSettingsProvider.select(
       (settings) => settings.suppliers,
     ));
-    final controller = ref.read(settingsAccountControllerProvider.notifier);
 
     return ProviderScope(
       overrides: [
@@ -112,103 +87,80 @@ class _SocialSection extends ConsumerWidget {
         title: l10n.settingsThirdPartySectionTitle,
         children: [
           for (final supplier in suppliers) ...[
-            if (supplier == SignInSupplier.google)
-              ProviderScope(
-                overrides: [
-                  if (service.hasGoogle)
-                    listViewThemeProvider.overrideWithValue(
-                      listViewTheme.copyWith(valueColor: Colors.green),
-                    ),
-                ],
-                child: FormTappableField(
-                  leading: SizedBox(
-                    width: 16,
-                    height: 16,
-                    child: CustomPaint(
-                      painter: GoogleLogoPainter(),
-                    ),
-                  ),
-                  label: "Google",
-                  value: service.hasGoogle
-                      ? l10n.settingsThirdPartyConnected
-                      : l10n.settingsThirdPartyNotConnected,
-                  onPressed: () {
-                    if (service.hasGoogle) {
-                      controller.handleEvent(
-                          const SettingsAccountEvent.unlink("google.com"));
-                    } else {
-                      controller.handleEvent(
-                          const SettingsAccountEvent.signInWithGoogle());
-                    }
-                  },
-                ),
-              ),
-            if (supplier == SignInSupplier.apple && isCupertino())
-              ProviderScope(
-                overrides: [
-                  if (service.hasApple)
-                    listViewThemeProvider.overrideWithValue(
-                      listViewTheme.copyWith(valueColor: Colors.green),
-                    ),
-                ],
-                child: FormTappableField(
-                  leading: SizedBox(
-                    width: 16,
-                    height: 16 / (25 / 31),
-                    child: CustomPaint(
-                      painter: AppleLogoPainter(
-                        color: listViewTheme.labelColor,
-                      ),
-                    ),
-                  ),
-                  label: "Apple",
-                  value: service.hasApple
-                      ? l10n.settingsThirdPartyConnected
-                      : l10n.settingsThirdPartyNotConnected,
-                  onPressed: () {
-                    if (service.hasApple) {
-                      controller.handleEvent(
-                          const SettingsAccountEvent.unlink("apple.com"));
-                    } else {
-                      controller.handleEvent(
-                          const SettingsAccountEvent.signInWithApple());
-                    }
-                  },
-                ),
-              ),
-            if (supplier == SignInSupplier.facebook)
-              ProviderScope(
-                overrides: [
-                  if (service.hasFacebook)
-                    listViewThemeProvider.overrideWithValue(
-                      listViewTheme.copyWith(valueColor: Colors.green),
-                    ),
-                ],
-                child: FormTappableField(
-                  leading: Image.asset(
-                    "assets/images/facebook-logo.png",
-                    width: 16,
-                    height: 16,
-                    package: "sign_in",
-                  ),
-                  label: "Facebook",
-                  value: service.hasFacebook
-                      ? l10n.settingsThirdPartyConnected
-                      : l10n.settingsThirdPartyNotConnected,
-                  onPressed: () {
-                    if (service.hasFacebook) {
-                      controller.handleEvent(
-                          const SettingsAccountEvent.unlink("facebook.com"));
-                    } else {
-                      controller.handleEvent(
-                          const SettingsAccountEvent.signInWithFacebook());
-                    }
-                  },
-                ),
-              ),
+            _SocialRow(supplier: supplier),
           ],
         ],
         caption: l10n.settingsThirdPartyCaption,
+      ),
+    );
+  }
+}
+
+final userSupplierProvider = Provider.family<bool, String>((ref, supplierId) {
+  final user = ref.watch(userEmailProvider)!;
+  for (final supplier in user.providerData) {
+    if (supplier.providerId == supplierId) return true;
+  }
+  return false;
+});
+
+class _SocialRow extends ConsumerWidget {
+  const _SocialRow({
+    required this.supplier,
+    Key? key,
+  }) : super(key: key);
+
+  final SignInSupplier supplier;
+
+  void _showModalSheet(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(signInLocalizationsProvider);
+
+    showPlatformModalSheet(
+      context: context,
+      ref: ref,
+      title: l10n.unlinkTitle,
+      actions: [
+        PlatformModalSheetAction(
+          title: l10n.unlinkProvider(supplier.name),
+          icon: Icons.delete,
+          onPressed: () {
+            final controller =
+                ref.read(settingsAccountControllerProvider.notifier);
+            controller.handleEvent(SettingsAccountEvent.unlink(supplier.id));
+          },
+          isDestructiveAction: true,
+        ),
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(signInLocalizationsProvider);
+    final listViewTheme = ref.watch(listViewThemeProvider);
+    final controller = ref.read(settingsAccountControllerProvider.notifier);
+    final isConnected = ref.watch(userSupplierProvider(supplier.id));
+
+    return ProviderScope(
+      overrides: [
+        if (isConnected)
+          listViewThemeProvider.overrideWithValue(
+            listViewTheme.copyWith(valueColor: Colors.green),
+          ),
+      ],
+      child: FormTappableField(
+        leading: supplier.icon(size: 16, color: listViewTheme.labelColor),
+        label: supplier.name,
+        value: isConnected
+            ? l10n.settingsThirdPartyConnected
+            : l10n.settingsThirdPartyNotConnected,
+        onPressed: () {
+          if (isConnected) {
+            _showModalSheet(context, ref);
+          } else {
+            controller.handleEvent(supplier.settingsAccountEvent!);
+          }
+        },
       ),
     );
   }
