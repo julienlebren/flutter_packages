@@ -233,4 +233,12 @@ class SignInLocalizationsEn extends SignInLocalizations {
 
   @override
   String get errorUnknown => 'An unknown error has occurred.';
+
+  @override
+  String get unlinkTitle => 'What do you want to do?';
+
+  @override
+  String unlinkProvider(String provider) {
+    return 'Disconnect $provider';
+  }
 }

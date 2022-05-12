@@ -15,6 +15,607 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
+class _$SettingsAccountEventTearOff {
+  const _$SettingsAccountEventTearOff();
+
+  _SettingsConnectFacebook signInWithFacebook() {
+    return const _SettingsConnectFacebook();
+  }
+
+  _SettingsConnectGoogle signInWithGoogle() {
+    return const _SettingsConnectGoogle();
+  }
+
+  _SettingsConnectApple signInWithApple() {
+    return const _SettingsConnectApple();
+  }
+
+  _SettingsUnlink unlink(String providerId) {
+    return _SettingsUnlink(
+      providerId,
+    );
+  }
+}
+
+/// @nodoc
+const $SettingsAccountEvent = _$SettingsAccountEventTearOff();
+
+/// @nodoc
+mixin _$SettingsAccountEvent {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signInWithFacebook,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithApple,
+    required TResult Function(String providerId) unlink,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function(String providerId)? unlink,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function(String providerId)? unlink,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SettingsConnectFacebook value)
+        signInWithFacebook,
+    required TResult Function(_SettingsConnectGoogle value) signInWithGoogle,
+    required TResult Function(_SettingsConnectApple value) signInWithApple,
+    required TResult Function(_SettingsUnlink value) unlink,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult Function(_SettingsConnectApple value)? signInWithApple,
+    TResult Function(_SettingsUnlink value)? unlink,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult Function(_SettingsConnectApple value)? signInWithApple,
+    TResult Function(_SettingsUnlink value)? unlink,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SettingsAccountEventCopyWith<$Res> {
+  factory $SettingsAccountEventCopyWith(SettingsAccountEvent value,
+          $Res Function(SettingsAccountEvent) then) =
+      _$SettingsAccountEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SettingsAccountEventCopyWithImpl<$Res>
+    implements $SettingsAccountEventCopyWith<$Res> {
+  _$SettingsAccountEventCopyWithImpl(this._value, this._then);
+
+  final SettingsAccountEvent _value;
+  // ignore: unused_field
+  final $Res Function(SettingsAccountEvent) _then;
+}
+
+/// @nodoc
+abstract class _$SettingsConnectFacebookCopyWith<$Res> {
+  factory _$SettingsConnectFacebookCopyWith(_SettingsConnectFacebook value,
+          $Res Function(_SettingsConnectFacebook) then) =
+      __$SettingsConnectFacebookCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SettingsConnectFacebookCopyWithImpl<$Res>
+    extends _$SettingsAccountEventCopyWithImpl<$Res>
+    implements _$SettingsConnectFacebookCopyWith<$Res> {
+  __$SettingsConnectFacebookCopyWithImpl(_SettingsConnectFacebook _value,
+      $Res Function(_SettingsConnectFacebook) _then)
+      : super(_value, (v) => _then(v as _SettingsConnectFacebook));
+
+  @override
+  _SettingsConnectFacebook get _value =>
+      super._value as _SettingsConnectFacebook;
+}
+
+/// @nodoc
+
+class _$_SettingsConnectFacebook implements _SettingsConnectFacebook {
+  const _$_SettingsConnectFacebook();
+
+  @override
+  String toString() {
+    return 'SettingsAccountEvent.signInWithFacebook()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SettingsConnectFacebook);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signInWithFacebook,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithApple,
+    required TResult Function(String providerId) unlink,
+  }) {
+    return signInWithFacebook();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function(String providerId)? unlink,
+  }) {
+    return signInWithFacebook?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function(String providerId)? unlink,
+    required TResult orElse(),
+  }) {
+    if (signInWithFacebook != null) {
+      return signInWithFacebook();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SettingsConnectFacebook value)
+        signInWithFacebook,
+    required TResult Function(_SettingsConnectGoogle value) signInWithGoogle,
+    required TResult Function(_SettingsConnectApple value) signInWithApple,
+    required TResult Function(_SettingsUnlink value) unlink,
+  }) {
+    return signInWithFacebook(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult Function(_SettingsConnectApple value)? signInWithApple,
+    TResult Function(_SettingsUnlink value)? unlink,
+  }) {
+    return signInWithFacebook?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult Function(_SettingsConnectApple value)? signInWithApple,
+    TResult Function(_SettingsUnlink value)? unlink,
+    required TResult orElse(),
+  }) {
+    if (signInWithFacebook != null) {
+      return signInWithFacebook(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SettingsConnectFacebook implements SettingsAccountEvent {
+  const factory _SettingsConnectFacebook() = _$_SettingsConnectFacebook;
+}
+
+/// @nodoc
+abstract class _$SettingsConnectGoogleCopyWith<$Res> {
+  factory _$SettingsConnectGoogleCopyWith(_SettingsConnectGoogle value,
+          $Res Function(_SettingsConnectGoogle) then) =
+      __$SettingsConnectGoogleCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SettingsConnectGoogleCopyWithImpl<$Res>
+    extends _$SettingsAccountEventCopyWithImpl<$Res>
+    implements _$SettingsConnectGoogleCopyWith<$Res> {
+  __$SettingsConnectGoogleCopyWithImpl(_SettingsConnectGoogle _value,
+      $Res Function(_SettingsConnectGoogle) _then)
+      : super(_value, (v) => _then(v as _SettingsConnectGoogle));
+
+  @override
+  _SettingsConnectGoogle get _value => super._value as _SettingsConnectGoogle;
+}
+
+/// @nodoc
+
+class _$_SettingsConnectGoogle implements _SettingsConnectGoogle {
+  const _$_SettingsConnectGoogle();
+
+  @override
+  String toString() {
+    return 'SettingsAccountEvent.signInWithGoogle()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SettingsConnectGoogle);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signInWithFacebook,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithApple,
+    required TResult Function(String providerId) unlink,
+  }) {
+    return signInWithGoogle();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function(String providerId)? unlink,
+  }) {
+    return signInWithGoogle?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function(String providerId)? unlink,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogle != null) {
+      return signInWithGoogle();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SettingsConnectFacebook value)
+        signInWithFacebook,
+    required TResult Function(_SettingsConnectGoogle value) signInWithGoogle,
+    required TResult Function(_SettingsConnectApple value) signInWithApple,
+    required TResult Function(_SettingsUnlink value) unlink,
+  }) {
+    return signInWithGoogle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult Function(_SettingsConnectApple value)? signInWithApple,
+    TResult Function(_SettingsUnlink value)? unlink,
+  }) {
+    return signInWithGoogle?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult Function(_SettingsConnectApple value)? signInWithApple,
+    TResult Function(_SettingsUnlink value)? unlink,
+    required TResult orElse(),
+  }) {
+    if (signInWithGoogle != null) {
+      return signInWithGoogle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SettingsConnectGoogle implements SettingsAccountEvent {
+  const factory _SettingsConnectGoogle() = _$_SettingsConnectGoogle;
+}
+
+/// @nodoc
+abstract class _$SettingsConnectAppleCopyWith<$Res> {
+  factory _$SettingsConnectAppleCopyWith(_SettingsConnectApple value,
+          $Res Function(_SettingsConnectApple) then) =
+      __$SettingsConnectAppleCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SettingsConnectAppleCopyWithImpl<$Res>
+    extends _$SettingsAccountEventCopyWithImpl<$Res>
+    implements _$SettingsConnectAppleCopyWith<$Res> {
+  __$SettingsConnectAppleCopyWithImpl(
+      _SettingsConnectApple _value, $Res Function(_SettingsConnectApple) _then)
+      : super(_value, (v) => _then(v as _SettingsConnectApple));
+
+  @override
+  _SettingsConnectApple get _value => super._value as _SettingsConnectApple;
+}
+
+/// @nodoc
+
+class _$_SettingsConnectApple implements _SettingsConnectApple {
+  const _$_SettingsConnectApple();
+
+  @override
+  String toString() {
+    return 'SettingsAccountEvent.signInWithApple()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SettingsConnectApple);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signInWithFacebook,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithApple,
+    required TResult Function(String providerId) unlink,
+  }) {
+    return signInWithApple();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function(String providerId)? unlink,
+  }) {
+    return signInWithApple?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function(String providerId)? unlink,
+    required TResult orElse(),
+  }) {
+    if (signInWithApple != null) {
+      return signInWithApple();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SettingsConnectFacebook value)
+        signInWithFacebook,
+    required TResult Function(_SettingsConnectGoogle value) signInWithGoogle,
+    required TResult Function(_SettingsConnectApple value) signInWithApple,
+    required TResult Function(_SettingsUnlink value) unlink,
+  }) {
+    return signInWithApple(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult Function(_SettingsConnectApple value)? signInWithApple,
+    TResult Function(_SettingsUnlink value)? unlink,
+  }) {
+    return signInWithApple?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult Function(_SettingsConnectApple value)? signInWithApple,
+    TResult Function(_SettingsUnlink value)? unlink,
+    required TResult orElse(),
+  }) {
+    if (signInWithApple != null) {
+      return signInWithApple(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SettingsConnectApple implements SettingsAccountEvent {
+  const factory _SettingsConnectApple() = _$_SettingsConnectApple;
+}
+
+/// @nodoc
+abstract class _$SettingsUnlinkCopyWith<$Res> {
+  factory _$SettingsUnlinkCopyWith(
+          _SettingsUnlink value, $Res Function(_SettingsUnlink) then) =
+      __$SettingsUnlinkCopyWithImpl<$Res>;
+  $Res call({String providerId});
+}
+
+/// @nodoc
+class __$SettingsUnlinkCopyWithImpl<$Res>
+    extends _$SettingsAccountEventCopyWithImpl<$Res>
+    implements _$SettingsUnlinkCopyWith<$Res> {
+  __$SettingsUnlinkCopyWithImpl(
+      _SettingsUnlink _value, $Res Function(_SettingsUnlink) _then)
+      : super(_value, (v) => _then(v as _SettingsUnlink));
+
+  @override
+  _SettingsUnlink get _value => super._value as _SettingsUnlink;
+
+  @override
+  $Res call({
+    Object? providerId = freezed,
+  }) {
+    return _then(_SettingsUnlink(
+      providerId == freezed
+          ? _value.providerId
+          : providerId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SettingsUnlink implements _SettingsUnlink {
+  const _$_SettingsUnlink(this.providerId);
+
+  @override
+  final String providerId;
+
+  @override
+  String toString() {
+    return 'SettingsAccountEvent.unlink(providerId: $providerId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SettingsUnlink &&
+            const DeepCollectionEquality()
+                .equals(other.providerId, providerId));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(providerId));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SettingsUnlinkCopyWith<_SettingsUnlink> get copyWith =>
+      __$SettingsUnlinkCopyWithImpl<_SettingsUnlink>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signInWithFacebook,
+    required TResult Function() signInWithGoogle,
+    required TResult Function() signInWithApple,
+    required TResult Function(String providerId) unlink,
+  }) {
+    return unlink(providerId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function(String providerId)? unlink,
+  }) {
+    return unlink?.call(providerId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signInWithFacebook,
+    TResult Function()? signInWithGoogle,
+    TResult Function()? signInWithApple,
+    TResult Function(String providerId)? unlink,
+    required TResult orElse(),
+  }) {
+    if (unlink != null) {
+      return unlink(providerId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SettingsConnectFacebook value)
+        signInWithFacebook,
+    required TResult Function(_SettingsConnectGoogle value) signInWithGoogle,
+    required TResult Function(_SettingsConnectApple value) signInWithApple,
+    required TResult Function(_SettingsUnlink value) unlink,
+  }) {
+    return unlink(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult Function(_SettingsConnectApple value)? signInWithApple,
+    TResult Function(_SettingsUnlink value)? unlink,
+  }) {
+    return unlink?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult Function(_SettingsConnectApple value)? signInWithApple,
+    TResult Function(_SettingsUnlink value)? unlink,
+    required TResult orElse(),
+  }) {
+    if (unlink != null) {
+      return unlink(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SettingsUnlink implements SettingsAccountEvent {
+  const factory _SettingsUnlink(String providerId) = _$_SettingsUnlink;
+
+  String get providerId;
+  @JsonKey(ignore: true)
+  _$SettingsUnlinkCopyWith<_SettingsUnlink> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$SettingsEmailEventTearOff {
   const _$SettingsEmailEventTearOff();
 

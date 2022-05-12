@@ -531,6 +531,18 @@ abstract class SignInLocalizations {
   /// In en, this message translates to:
   /// **'An unknown error has occurred.'**
   String get errorUnknown;
+
+  /// No description provided for @unlinkTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'What do you want to do?'**
+  String get unlinkTitle;
+
+  /// No description provided for @unlinkProvider.
+  ///
+  /// In en, this message translates to:
+  /// **'Disconnect {provider}'**
+  String unlinkProvider(String provider);
 }
 
 class _SignInLocalizationsDelegate extends LocalizationsDelegate<SignInLocalizations> {

@@ -70,5 +70,14 @@
     "errorWeakPassword": "Le mot de passe n'est pas assez complexe.",
     "errorOperationNotAllowed": "Cette opération n'est pas autorisée.",
     "errorPhoneNotMobile": "Vous devez saisir un numéro de téléphone mobile.",
-    "errorUnknown": "Une erreur inconnue est survenue."
+    "errorUnknown": "Une erreur inconnue est survenue.",
+    "unlinkTitle": "Que souhaitez-vous faire ?",
+    "unlinkProvider": "Déconnecter {provider}",
+    "@unlinkProvider" : {
+      "placeholders": {
+        "provider": { 
+          "type": "String"
+          }
+      }
+    }
 }

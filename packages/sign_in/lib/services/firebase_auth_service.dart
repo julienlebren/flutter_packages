@@ -233,6 +233,10 @@ class FirebaseAuthService {
     await _firebaseAuth.sendPasswordResetEmail(email: email);
   }
 
+  Future<User> unlink(String providerId) async {
+    return await currentUser!.unlink(providerId);
+  }
+
   Future<void> signOut() async {
     final googleSignIn = GoogleSignIn();
     await googleSignIn.signOut();

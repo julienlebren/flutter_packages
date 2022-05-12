@@ -24,6 +24,7 @@ import 'package:sign_in/presentation/painters/google_logo.dart';
 import 'package:sign_in/l10n/sign_in_localizations.dart';
 import 'package:the_apple_sign_in/the_apple_sign_in.dart';
 
+part 'controllers/settings/settings_account_controller.dart';
 part 'controllers/settings/settings_email_controller.dart';
 part 'controllers/settings/settings_password_controller.dart';
 part 'controllers/sign_in/sign_in_buttons_controller.dart';

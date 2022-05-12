@@ -4,10 +4,7 @@ final userEmailProvider = Provider<User?>((ref) {
   final userChanges = ref.watch(userChangesProvider);
 
   return userChanges.maybeWhen(
-    data: (user) {
-      print("user is $user");
-      return user;
-    },
+    data: (user) => user,
     orElse: () => null,
   );
 });
@@ -19,6 +16,7 @@ class SettingsAccountPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
     return SettingsPageBuilder(
+      provider: settingsAccountControllerProvider,
       title: l10n.settingsAccountTitle,
       child: const FormPage(
         children: [
@@ -71,6 +69,28 @@ class _EmailSection extends ConsumerWidget {
 class _SocialSection extends ConsumerWidget {
   const _SocialSection({Key? key}) : super(key: key);
 
+  void _showModalSheet(
+    BuildContext context,
+    WidgetRef ref, {
+    required String providerName,
+    required String providerId,
+  }) {
+    final l10n = ref.watch(signInLocalizationsProvider);
+    showPlatformModalSheet(
+      context: context,
+      ref: ref,
+      title: l10n.unlinkTitle,
+      actions: [
+        PlatformModalSheetAction(
+          title: l10n.unlinkProvider(providerName),
+          icon: Icons.delete,
+          onPressed: () {},
+          isDestructiveAction: true,
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
@@ -80,6 +100,7 @@ class _SocialSection extends ConsumerWidget {
     final suppliers = ref.watch(authSettingsProvider.select(
       (settings) => settings.suppliers,
     ));
+    final controller = ref.read(settingsAccountControllerProvider.notifier);
 
     return ProviderScope(
       overrides: [
@@ -113,9 +134,11 @@ class _SocialSection extends ConsumerWidget {
                       : l10n.settingsThirdPartyNotConnected,
                   onPressed: () {
                     if (service.hasGoogle) {
-                      // Test
+                      controller.handleEvent(
+                          const SettingsAccountEvent.unlink("google.com"));
                     } else {
-                      // Test
+                      controller.handleEvent(
+                          const SettingsAccountEvent.signInWithGoogle());
                     }
                   },
                 ),
@@ -144,9 +167,11 @@ class _SocialSection extends ConsumerWidget {
                       : l10n.settingsThirdPartyNotConnected,
                   onPressed: () {
                     if (service.hasApple) {
-                      // Test
+                      controller.handleEvent(
+                          const SettingsAccountEvent.unlink("apple.com"));
                     } else {
-                      // Test
+                      controller.handleEvent(
+                          const SettingsAccountEvent.signInWithApple());
                     }
                   },
                 ),
@@ -172,9 +197,11 @@ class _SocialSection extends ConsumerWidget {
                       : l10n.settingsThirdPartyNotConnected,
                   onPressed: () {
                     if (service.hasFacebook) {
-                      // Test
+                      controller.handleEvent(
+                          const SettingsAccountEvent.unlink("facebook.com"));
                     } else {
-                      // Test
+                      controller.handleEvent(
+                          const SettingsAccountEvent.signInWithFacebook());
                     }
                   },
                 ),

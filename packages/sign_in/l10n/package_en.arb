@@ -99,5 +99,14 @@
     "errorWeakPassword": "This password is not strong enough.",
     "errorOperationNotAllowed": "This operation is not allowed.",
     "errorPhoneNotMobile": "You must enter a mobile phone number.",
-    "errorUnknown": "An unknown error has occurred."
+    "errorUnknown": "An unknown error has occurred.",
+    "unlinkTitle": "What do you want to do?",
+    "unlinkProvider": "Disconnect {provider}",
+    "@unlinkProvider" : {
+      "placeholders": {
+        "provider": { 
+          "type": "String"
+          }
+      }
+    }
 }
