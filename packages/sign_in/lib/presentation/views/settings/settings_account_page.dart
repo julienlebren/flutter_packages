@@ -37,6 +37,7 @@ class _EmailSection extends ConsumerWidget {
     final l10n = ref.watch(signInLocalizationsProvider);
     final service = ref.watch(authServiceProvider);
     final user = ref.watch(userEmailProvider);
+    print("user is $user");
 
     return FormSection(
       title: l10n.settingsEmailSectionTitle,
@@ -73,9 +74,12 @@ class _SocialSection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final formTheme = ref.watch(formThemeProvider);
-    final suppliers = ref.watch(authSettingsProvider.select(
-      (settings) => settings.suppliers,
-    ));
+    final suppliers = ref
+        .watch(authSettingsProvider.select(
+          (settings) => settings.suppliers,
+        ))
+        .where((supplier) => supplier.isThirdParty)
+        .toList();
 
     return ProviderScope(
       overrides: [

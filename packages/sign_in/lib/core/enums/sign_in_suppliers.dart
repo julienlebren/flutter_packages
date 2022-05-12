@@ -11,6 +11,17 @@ enum SignInSupplier {
 }
 
 extension SignInSupplierX on SignInSupplier {
+  bool get isThirdParty {
+    switch (this) {
+      case SignInSupplier.google:
+      case SignInSupplier.apple:
+      case SignInSupplier.facebook:
+        return true;
+      default:
+        return false;
+    }
+  }
+
   String get name {
     switch (this) {
       case SignInSupplier.google:
