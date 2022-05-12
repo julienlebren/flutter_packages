@@ -11,6 +11,11 @@ class FirebaseAuthService {
 
   User? get currentUser => _firebaseAuth.currentUser;
 
+  String? get email {
+    print("currentUser: $currentUser");
+    return currentUser!.email;
+  }
+
   bool _hasProvider(String providerId) {
     print(currentUser!.providerData);
     for (final provider in currentUser!.providerData) {
