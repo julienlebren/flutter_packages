@@ -5,6 +5,7 @@ final userEmailProvider = Provider<User?>((ref) {
 
   return authStateChanges.maybeWhen(
     data: (user) {
+      print("user is $user");
       return user;
     },
     orElse: () => null,
@@ -40,7 +41,6 @@ class _EmailSection extends ConsumerWidget {
     final user = service.currentUser!;
 
     final u = ref.watch(userEmailProvider);
-    print("user is $u");
 
     return FormSection(
       title: l10n.settingsEmailSectionTitle,
