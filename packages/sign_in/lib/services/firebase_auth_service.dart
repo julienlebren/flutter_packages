@@ -73,7 +73,13 @@ class FirebaseAuthService {
   Future<UserCredential> _signInWithCredential(
       OAuthCredential credential) async {
     if (currentUser != null) {
-      return await currentUser!.linkWithCredential(credential);
+      final isAnonymous = currentUser!.isAnonymous;
+      final userCredential = await currentUser!.linkWithCredential(credential);
+
+      if (isAnonymous) {
+        await updateEmail(userCredential.user!.email!);
+      }
+      return userCredential;
     } else {
       return await _firebaseAuth.signInWithCredential(credential);
     }

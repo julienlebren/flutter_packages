@@ -22,7 +22,13 @@ class SettingsEmailPage extends ConsumerWidget {
           content: state.errorText,
         );
       } else if (state.isSuccess) {
-        Navigator.pop(context);
+        final isAnonymous = ref.read(userAnonymousProvider);
+        if (isAnonymous) {
+          Navigator.of(context, rootNavigator: true)
+              .pushReplacementNamed(SettingsRoutes.settingsPasswordPage);
+        } else {
+          Navigator.pop(context);
+        }
       }
     });
 

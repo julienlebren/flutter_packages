@@ -93,8 +93,8 @@ class _EmailSection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final hasPassword = ref.watch(userSupplierProvider("password"));
+    final isAnonymous = ref.watch(userAnonymousProvider);
     final user = ref.watch(userEmailProvider);
-    print("user is $user");
 
     return FormSection(
       title: l10n.settingsEmailSectionTitle,
@@ -107,17 +107,21 @@ class _EmailSection extends ConsumerWidget {
                 .pushNamed(SettingsRoutes.settingsEmailPage);
           },
         ),
-        FormTappableField(
-          label: l10n.settingsPasswordLabel,
-          value:
-              hasPassword ? l10n.settingsPasswordEdit : l10n.settingsUndefined,
-          onPressed: () {
-            Navigator.of(context, rootNavigator: true)
-                .pushNamed(SettingsRoutes.settingsPasswordPage);
-          },
-        ),
+        if (!isAnonymous)
+          FormTappableField(
+            label: l10n.settingsPasswordLabel,
+            value: hasPassword
+                ? l10n.settingsPasswordEdit
+                : l10n.settingsUndefined,
+            onPressed: () {
+              Navigator.of(context, rootNavigator: true)
+                  .pushNamed(SettingsRoutes.settingsPasswordPage);
+            },
+          ),
       ],
-      caption: hasPassword ? null : l10n.settingsPasswordUndefinedCaption,
+      caption: isAnonymous || hasPassword
+          ? null
+          : l10n.settingsPasswordUndefinedCaption,
     );
   }
 }
@@ -247,29 +251,6 @@ class _LogoutSection extends ConsumerWidget {
         ),
       ],
     );
-
-    /*await showAlertDialog(
-      context,
-      ref,
-      title: l10n.settingsLogoutButton,
-      content: l10n.settingsLogoutConfirmation,
-      displayCancelButton: true,
-      actions: [
-        PlatformDialogAction(
-          buttonText: l10n.settingsLogoutButton,
-          isDestructiveAction: true,
-          isDefaultAction: true,
-          onPressed: () async {
-            if (isMaterial()) {
-              Navigator.of(context, rootNavigator: true).pop();
-            }
-            final controller =
-                ref.read(signInButtonsControllerProvider.notifier);
-            controller.signOut();
-          },
-        ),
-      ],
-    );*/
   }
 
   @override
