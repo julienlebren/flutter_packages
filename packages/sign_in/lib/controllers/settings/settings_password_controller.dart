@@ -84,10 +84,8 @@ class SettingsPasswordController extends StateNotifier<SettingsPasswordState> {
 
     try {
       await _service.updatePassword(state.password);
-
       state = state.copyWith(isSuccess: true);
-    } on FirebaseFunctionsException catch (e) {
-      print(e);
+    } on FirebaseFunctionsException catch (_) {
       state = state.copyWith(
         isLoading: false,
         errorText: _localizations.errorUnknown,

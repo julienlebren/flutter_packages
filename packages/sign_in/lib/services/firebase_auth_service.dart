@@ -12,13 +12,7 @@ class FirebaseAuthService {
 
   User? get currentUser => _firebaseAuth.currentUser;
 
-  String? get email {
-    print("currentUser: $currentUser");
-    return currentUser!.email;
-  }
-
   bool _hasProvider(String providerId) {
-    print(currentUser!.providerData);
     for (final provider in currentUser!.providerData) {
       if (provider.providerId == providerId) return true;
     }
@@ -224,19 +218,15 @@ class FirebaseAuthService {
         .httpsCallable('updateUserEmail')
         .call({'email': newEmail});
 
-    final bla = await _firebaseAuth.signInWithCustomToken(result.data);
-    print("new user is ${bla.user}");
+    await _firebaseAuth.signInWithCustomToken(result.data);
   }
 
   Future<void> updatePassword(String newPassword) async {
-    final token = await FirebaseFunctions.instanceFor(region: 'europe-west3')
+    final result = await FirebaseFunctions.instanceFor(region: 'europe-west3')
         .httpsCallable('updateUserPassword')
         .call({'password': newPassword});
 
-    await signInWithEmailAndPassword(
-      email: currentUser!.email!,
-      password: newPassword,
-    );
+    await _firebaseAuth.signInWithCustomToken(result.data);
   }
 
   Future<void> sendPasswordResetEmail(String email) async {

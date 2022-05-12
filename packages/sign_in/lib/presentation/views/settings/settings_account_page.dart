@@ -45,7 +45,7 @@ class _EmailSection extends ConsumerWidget {
       children: [
         FormTappableField(
           label: l10n.settingsEmailLabel,
-          value: service.email ?? l10n.settingsUndefined,
+          value: user?.email ?? l10n.settingsUndefined,
           onPressed: () {
             Navigator.of(context, rootNavigator: true)
                 .pushNamed(SettingsRoutes.settingsEmailPage);

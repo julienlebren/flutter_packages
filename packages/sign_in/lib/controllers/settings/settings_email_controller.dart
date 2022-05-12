@@ -63,20 +63,11 @@ class SettingsEmailController extends StateNotifier<SettingsEmailState> {
 
     try {
       await _service.updateEmail(state.email);
-
-      if (_userRef != null) {
-        final userId = _service.currentUser!.uid;
-        await _userRef!.doc(userId).update({
-          "emailAddress": state.email,
-          "emailVerified": false,
-        });
-      }
-
       state = state.copyWith(isSuccess: true);
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseFunctionsException catch (_) {
       state = state.copyWith(
         isLoading: false,
-        errorText: e.description(_localizations),
+        errorText: _localizations.errorUnknown,
       );
     } catch (e) {
       state = state.copyWith(
