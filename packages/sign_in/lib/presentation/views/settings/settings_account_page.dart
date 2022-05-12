@@ -72,8 +72,8 @@ class _AnonymousSection extends ConsumerWidget {
                 Flexible(
                   child: Text(
                     l10n.settingsNoAccount,
-                    style: const TextStyle(color: Colors.black, fontSize: 18),
-                    maxLines: 2,
+                    style: const TextStyle(color: Colors.black, fontSize: 17),
+                    maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
