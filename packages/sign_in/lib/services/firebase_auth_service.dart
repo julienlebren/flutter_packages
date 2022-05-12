@@ -82,6 +82,15 @@ class FirebaseAuthService {
     return userCredential.user;
   }
 
+  Future<UserCredential> _signInWithCredential(
+      OAuthCredential credential) async {
+    if (currentUser != null) {
+      return await currentUser!.linkWithCredential(credential);
+    } else {
+      return await _firebaseAuth.signInWithCredential(credential);
+    }
+  }
+
   Future<User?> signInWithApple() async {
     final scopes = [Scope.email, Scope.fullName];
 
@@ -98,8 +107,8 @@ class FirebaseAuthService {
           accessToken:
               String.fromCharCodes(appleIdCredential.authorizationCode!),
         );
-        final userCredential =
-            await _firebaseAuth.signInWithCredential(credential);
+        final userCredential = await _signInWithCredential(credential);
+
         final firebaseUser = userCredential.user!;
         if (scopes.contains(Scope.fullName)) {
           final fullName = appleIdCredential.fullName;
@@ -131,11 +140,11 @@ class FirebaseAuthService {
     if (googleUser != null) {
       final googleAuth = await googleUser.authentication;
       if (googleAuth.idToken != null) {
-        final userCredential = await _firebaseAuth
-            .signInWithCredential(GoogleAuthProvider.credential(
+        final credential = GoogleAuthProvider.credential(
           idToken: googleAuth.idToken,
           accessToken: googleAuth.accessToken,
-        ));
+        );
+        final userCredential = await _signInWithCredential(credential);
         return userCredential.user;
       } else {
         throw FirebaseAuthException(code: 'ERROR_MISSING_GOOGLE_ID_TOKEN');
@@ -154,9 +163,9 @@ class FirebaseAuthService {
     switch (response.status) {
       case FacebookLoginStatus.success:
         final accessToken = response.accessToken;
-        final userCredential = await _firebaseAuth.signInWithCredential(
-          FacebookAuthProvider.credential(accessToken!.token),
-        );
+        final credential = FacebookAuthProvider.credential(accessToken!.token);
+
+        final userCredential = await _signInWithCredential(credential);
         return userCredential.user;
       case FacebookLoginStatus.cancel:
         throw FirebaseAuthException(code: 'ERROR_ABORTED_BY_USER');
