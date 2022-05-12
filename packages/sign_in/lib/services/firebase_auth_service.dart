@@ -12,18 +12,6 @@ class FirebaseAuthService {
 
   User? get currentUser => _firebaseAuth.currentUser;
 
-  bool _hasProvider(String providerId) {
-    for (final provider in currentUser!.providerData) {
-      if (provider.providerId == providerId) return true;
-    }
-    return false;
-  }
-
-  bool get hasPassword => _hasProvider("password");
-  bool get hasGoogle => _hasProvider("google.com");
-  bool get hasApple => _hasProvider("apple.com");
-  bool get hasFacebook => _hasProvider("facebook.com");
-
   Future<Map<String, dynamic>> parsePhoneNumber(
     CountryWithPhoneCode country,
     String inputText,

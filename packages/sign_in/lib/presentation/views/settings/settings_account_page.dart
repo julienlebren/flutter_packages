@@ -9,6 +9,14 @@ final userEmailProvider = Provider<User?>((ref) {
   );
 });
 
+final userSupplierProvider = Provider.family<bool, String>((ref, supplierId) {
+  final user = ref.watch(userEmailProvider)!;
+  for (final supplier in user.providerData) {
+    if (supplier.providerId == supplierId) return true;
+  }
+  return false;
+});
+
 class SettingsAccountPage extends ConsumerWidget {
   const SettingsAccountPage({Key? key}) : super(key: key);
 
@@ -35,7 +43,7 @@ class _EmailSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
-    final service = ref.watch(authServiceProvider);
+    final hasPassword = ref.watch(userSupplierProvider("password"));
     final user = ref.watch(userEmailProvider);
     print("user is $user");
 
@@ -52,17 +60,15 @@ class _EmailSection extends ConsumerWidget {
         ),
         FormTappableField(
           label: l10n.settingsPasswordLabel,
-          value: service.hasPassword
-              ? l10n.settingsPasswordEdit
-              : l10n.settingsUndefined,
+          value:
+              hasPassword ? l10n.settingsPasswordEdit : l10n.settingsUndefined,
           onPressed: () {
             Navigator.of(context, rootNavigator: true)
                 .pushNamed(SettingsRoutes.settingsPasswordPage);
           },
         ),
       ],
-      caption:
-          service.hasPassword ? null : l10n.settingsPasswordUndefinedCaption,
+      caption: hasPassword ? null : l10n.settingsPasswordUndefinedCaption,
     );
   }
 }
@@ -100,14 +106,6 @@ class _SocialSection extends ConsumerWidget {
   }
 }
 
-final userSupplierProvider = Provider.family<bool, String>((ref, supplierId) {
-  final user = ref.watch(userEmailProvider)!;
-  for (final supplier in user.providerData) {
-    if (supplier.providerId == supplierId) return true;
-  }
-  return false;
-});
-
 class _SocialRow extends ConsumerWidget {
   const _SocialRow({
     required this.supplier,
@@ -143,14 +141,17 @@ class _SocialRow extends ConsumerWidget {
     final l10n = ref.watch(signInLocalizationsProvider);
     final listViewTheme = ref.watch(listViewThemeProvider);
     final controller = ref.read(settingsAccountControllerProvider.notifier);
+    final hasMultipleConnections =
+        ref.watch(userEmailProvider)!.providerData.length > 1;
     final isConnected = ref.watch(userSupplierProvider(supplier.id));
 
     return ProviderScope(
       overrides: [
-        if (isConnected)
-          listViewThemeProvider.overrideWithValue(
-            listViewTheme.copyWith(valueColor: Colors.green),
+        listViewThemeProvider.overrideWithValue(
+          listViewTheme.copyWith(
+            valueColor: isConnected ? Colors.green : listViewTheme.valueColor,
           ),
+        ),
       ],
       child: FormTappableField(
         leading: supplier.icon(size: 16, color: listViewTheme.labelColor),
@@ -158,13 +159,15 @@ class _SocialRow extends ConsumerWidget {
         value: isConnected
             ? l10n.settingsThirdPartyConnected
             : l10n.settingsThirdPartyNotConnected,
-        onPressed: () {
-          if (isConnected) {
-            _showModalSheet(context, ref);
-          } else {
-            controller.handleEvent(supplier.settingsAccountEvent!);
-          }
-        },
+        onPressed: isConnected && !hasMultipleConnections
+            ? null
+            : () {
+                if (isConnected) {
+                  _showModalSheet(context, ref);
+                } else {
+                  controller.handleEvent(supplier.settingsAccountEvent!);
+                }
+              },
       ),
     );
   }
