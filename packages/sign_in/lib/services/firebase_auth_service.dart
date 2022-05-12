@@ -218,7 +218,8 @@ class FirebaseAuthService {
         .httpsCallable('updateUserEmail')
         .call({'email': newEmail});
 
-    await _firebaseAuth.signInWithCustomToken(result.data);
+    final bla = await _firebaseAuth.signInWithCustomToken(result.data);
+    print("new user is ${bla.user}");
   }
 
   Future<void> updatePassword(String newPassword) async {
