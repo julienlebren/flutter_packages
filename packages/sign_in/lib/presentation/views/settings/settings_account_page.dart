@@ -1,5 +1,16 @@
 part of '../../../sign_in.dart';
 
+final userEmailProvider = Provider<User?>((ref) {
+  final authStateChanges = ref.watch(authStateChangesProvider);
+
+  return authStateChanges.maybeWhen(
+    data: (user) {
+      return user;
+    },
+    orElse: () => null,
+  );
+});
+
 class SettingsAccountPage extends ConsumerWidget {
   const SettingsAccountPage({Key? key}) : super(key: key);
 
@@ -26,18 +37,17 @@ class _EmailSection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final service = ref.watch(authServiceProvider);
-    final authState = ref.watch(authStateChangesProvider);
-    final email = authState.maybeWhen(
-      data: (user) => user!.email,
-      orElse: () => null,
-    );
+    final user = service.currentUser!;
+
+    final u = ref.watch(userEmailProvider);
+    print("user is $u");
 
     return FormSection(
       title: l10n.settingsEmailSectionTitle,
       children: [
         FormTappableField(
           label: l10n.settingsEmailLabel,
-          value: email ?? l10n.settingsUndefined,
+          value: user.email ?? l10n.settingsUndefined,
           onPressed: () {
             Navigator.of(context, rootNavigator: true)
                 .pushNamed(SettingsRoutes.settingsEmailPage);
