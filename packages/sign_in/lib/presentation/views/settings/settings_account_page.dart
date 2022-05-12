@@ -73,7 +73,7 @@ class _AnonymousSection extends ConsumerWidget {
                   child: Text(
                     l10n.settingsNoAccount,
                     style: const TextStyle(color: Colors.black, fontSize: 17),
-                    maxLines: 3,
+                    maxLines: 4,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
