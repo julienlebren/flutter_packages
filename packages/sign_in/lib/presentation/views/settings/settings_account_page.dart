@@ -28,10 +28,44 @@ class SettingsAccountPage extends ConsumerWidget {
       title: l10n.settingsAccountTitle,
       child: const FormPage(
         children: [
+          _AnonymousSection(),
           _EmailSection(),
           _SocialSection(),
           _LogoutSection(),
         ],
+      ),
+    );
+  }
+}
+
+class _AnonymousSection extends ConsumerWidget {
+  const _AnonymousSection({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(signInLocalizationsProvider);
+
+    return FormSection(
+      child: Padding(
+        padding: EdgeInsets.only(top: isMaterial() ? 10 : 0),
+        child: Container(
+          color: Colors.amber,
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+          child: SizedBox(
+            width: double.infinity,
+            child: Row(
+              children: [
+                const Icon(Icons.warning, size: 40),
+                const SizedBox(width: 10),
+                Text(
+                  l10n.settingsNoAccount,
+                  style: const TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                const Spacer(),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

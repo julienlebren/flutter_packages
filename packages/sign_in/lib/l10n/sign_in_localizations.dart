@@ -190,6 +190,12 @@ abstract class SignInLocalizations {
   /// **'Account'**
   String get settingsAccountTitle;
 
+  /// No description provided for @settingsNoAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'You are currently not logged in, your settings and other data are not saved and may be lost.'**
+  String get settingsNoAccount;
+
   /// No description provided for @settingsEmailSectionTitle.
   ///
   /// In en, this message translates to:

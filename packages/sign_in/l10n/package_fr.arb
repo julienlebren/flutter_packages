@@ -8,6 +8,7 @@
     "emailResetSuccessDescription": "Nous venons d'envoyer un lien sur {email} un lien pour réinitialiser votre mot de passe.",
     "errorTitle": "Aïe ! Il y a eu un problème...",
     "settingsAccountTitle": "Compte",
+    "settingsNoAccount": "Vous n'êtes actuellement pas connecté, vos réglages et autres données ne sont pas sauvegardées et pourraient être perdus.",
     "settingsEmailSectionTitle": "Informations de connexion",
     "settingsEmailLabel": "Adresse e-mail",
     "settingsEmailTitle": "Adresse e-mail",
