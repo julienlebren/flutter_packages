@@ -9,6 +9,11 @@ final userEmailProvider = Provider<User?>((ref) {
   );
 });
 
+final userAnonymousProvider = Provider<bool>((ref) {
+  final user = ref.watch(userEmailProvider)!;
+  return user.providerData.isEmpty;
+});
+
 final userSupplierProvider = Provider.family<bool, String>((ref, supplierId) {
   final user = ref.watch(userEmailProvider)!;
   for (final supplier in user.providerData) {
@@ -23,15 +28,17 @@ class SettingsAccountPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
+    final isAnonymous = ref.watch(userAnonymousProvider);
+
     return SettingsPageBuilder(
       provider: settingsAccountControllerProvider,
       title: l10n.settingsAccountTitle,
-      child: const FormPage(
+      child: FormPage(
         children: [
-          _AnonymousSection(),
-          _EmailSection(),
-          _SocialSection(),
-          _LogoutSection(),
+          if (isAnonymous) const _AnonymousSection(),
+          const _EmailSection(),
+          const _SocialSection(),
+          if (!isAnonymous) const _LogoutSection(),
         ],
       ),
     );
@@ -55,11 +62,17 @@ class _AnonymousSection extends ConsumerWidget {
             width: double.infinity,
             child: Row(
               children: [
-                const Icon(Icons.warning, size: 40),
+                const Icon(
+                  Icons.warning,
+                  color: Colors.black,
+                  size: 40,
+                ),
                 const SizedBox(width: 10),
                 Text(
                   l10n.settingsNoAccount,
-                  style: const TextStyle(color: Colors.white, fontSize: 20),
+                  style: const TextStyle(color: Colors.black, fontSize: 20),
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                 ),
                 const Spacer(),
               ],
