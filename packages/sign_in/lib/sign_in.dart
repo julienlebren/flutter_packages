@@ -162,7 +162,8 @@ final signInThemeProvider = Provider<SignInTheme>(
 /// We use a [StreamProvider] here to handle the status of the stream,
 /// it allows us to know when the stream is loading or when it has data.
 final authStateChangesProvider = StreamProvider<User?>(
-    (ref) => ref.watch(authServiceProvider).authStateChanges());
+  (ref) => FirebaseAuth.instance.authStateChanges(),
+);
 
 /// A provider which returns an instance of [FirebaseAuthService]
 final authServiceProvider =
