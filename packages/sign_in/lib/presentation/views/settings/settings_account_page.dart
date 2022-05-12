@@ -61,6 +61,7 @@ class _AnonymousSection extends ConsumerWidget {
           child: SizedBox(
             width: double.infinity,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 const Icon(
                   Icons.warning,
@@ -76,7 +77,6 @@ class _AnonymousSection extends ConsumerWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                 ),
-                const Spacer(),
               ],
             ),
           ),
