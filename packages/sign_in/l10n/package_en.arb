@@ -23,6 +23,14 @@
     "passwordRequirementMatch": "Passwords match",
     "settingsAccountTitle": "Account",
     "settingsCreateAccountButton": "Create an account",
+    "settingsCreateAccountWith": "Create an account with {supplier}",
+    "@settingsCreateAccountWith" : {
+      "placeholders": {
+        "supplier": { 
+          "type": "String"
+          }
+      }
+    },
     "settingsNoAccount": "You are currently not logged in, your settings and other data are not saved and may be lost.",
     "settingsEmailSectionTitle": "Login information",
     "settingsEmailLabel": "Email address",

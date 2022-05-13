@@ -61,6 +61,11 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get settingsCreateAccountButton => 'Créer un compte';
 
   @override
+  String settingsCreateAccountWith(String supplier) {
+    return 'Créer un compte avec $supplier';
+  }
+
+  @override
   String get settingsNoAccount => 'Vous n\'êtes actuellement pas connecté, vos réglages et autres données ne sont pas sauvegardées et pourraient être perdus.';
 
   @override

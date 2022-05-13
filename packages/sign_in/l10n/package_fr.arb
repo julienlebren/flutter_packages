@@ -9,6 +9,7 @@
     "errorTitle": "Aïe ! Il y a eu un problème...",
     "settingsAccountTitle": "Compte",
     "settingsCreateAccountButton": "Créer un compte",
+    "settingsCreateAccountWith": "Créer un compte avec {supplier}",
     "settingsNoAccount": "Vous n'êtes actuellement pas connecté, vos réglages et autres données ne sont pas sauvegardées et pourraient être perdus.",
     "settingsEmailSectionTitle": "Informations de connexion",
     "settingsEmailLabel": "Adresse e-mail",

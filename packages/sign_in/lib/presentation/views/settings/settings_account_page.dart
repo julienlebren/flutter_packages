@@ -110,13 +110,27 @@ class _ButtonsSection extends ConsumerWidget {
       children: [
         for (final supplier in suppliers) ...[
           FormSection(
-            child: SignInSupplierButton(
+            child: /*SignInButton(
+              assetName: assetName,
+              icon: icon,
+              iconSize: iconSize,
+              title: title,
+              color: theme.buttonBackgroundColor,
+              textColor: theme.buttonTextColor,
+              padding: theme.buttonPadding,
+              radius: theme.buttonRadius,
+              fontSize: theme.buttonFontSize,
+              onPressed: () {}),
+            ),*/
+
+                SignInSupplierButton(
               icon: supplier.icon(size: 16, color: labelColor),
               iconSize: 16,
-              title: l10n.signInWithGoogle,
+              title: l10n.settingsCreateAccountWith(supplier.name),
               onPressed: () {},
             ),
           ),
+          const SizedBox(height: 10),
         ],
       ],
     );
