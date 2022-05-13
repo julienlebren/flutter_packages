@@ -58,6 +58,9 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get settingsAccountTitle => 'Account';
 
   @override
+  String get settingsCreateAccountButton => 'Create an account';
+
+  @override
   String get settingsNoAccount => 'You are currently not logged in, your settings and other data are not saved and may be lost.';
 
   @override

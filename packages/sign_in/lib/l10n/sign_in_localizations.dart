@@ -190,6 +190,12 @@ abstract class SignInLocalizations {
   /// **'Account'**
   String get settingsAccountTitle;
 
+  /// No description provided for @settingsCreateAccountButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Create an account'**
+  String get settingsCreateAccountButton;
+
   /// No description provided for @settingsNoAccount.
   ///
   /// In en, this message translates to:

@@ -53,35 +53,44 @@ class _AnonymousSection extends ConsumerWidget {
     final l10n = ref.watch(signInLocalizationsProvider);
 
     return FormSection(
-      child: Padding(
-        padding: EdgeInsets.only(top: isMaterial() ? 10 : 0),
-        child: Container(
-          color: Colors.amber,
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-          child: SizedBox(
-            width: double.infinity,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                const Icon(
-                  Icons.warning,
-                  color: Colors.black,
-                  size: 40,
-                ),
-                const SizedBox(width: 10),
-                Flexible(
-                  child: Text(
-                    l10n.settingsNoAccount,
-                    style: const TextStyle(color: Colors.black, fontSize: 17),
-                    maxLines: 4,
-                    overflow: TextOverflow.ellipsis,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(top: isMaterial() ? 10 : 0),
+          child: Container(
+            color: Colors.amber,
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            child: SizedBox(
+              width: double.infinity,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Icon(
+                    Icons.warning,
+                    color: Colors.black,
+                    size: 40,
                   ),
-                ),
-              ],
+                  const SizedBox(width: 10),
+                  Flexible(
+                    child: Text(
+                      l10n.settingsNoAccount,
+                      style: const TextStyle(color: Colors.black, fontSize: 17),
+                      maxLines: 4,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
-      ),
+        FormCenteredButton(
+          value: l10n.settingsCreateAccountButton,
+          onPressed: () {
+            Navigator.of(context, rootNavigator: true)
+                .pushNamed(SignInRoutes.signInLandingPage);
+          },
+        ),
+      ],
     );
   }
 }
@@ -103,13 +112,8 @@ class _EmailSection extends ConsumerWidget {
           label: l10n.settingsEmailLabel,
           value: user?.email ?? l10n.settingsUndefined,
           onPressed: () {
-            if (isAnonymous) {
-              Navigator.of(context, rootNavigator: true)
-                  .pushNamed(SignInRoutes.signInEmailRegisterPage);
-            } else {
-              Navigator.of(context, rootNavigator: true)
-                  .pushNamed(SettingsRoutes.settingsEmailPage);
-            }
+            Navigator.of(context, rootNavigator: true)
+                .pushNamed(SettingsRoutes.settingsEmailPage);
           },
         ),
         if (!isAnonymous)
