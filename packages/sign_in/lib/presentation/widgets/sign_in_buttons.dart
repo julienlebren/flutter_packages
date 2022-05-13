@@ -216,10 +216,11 @@ class SignInButtonContents extends ConsumerWidget {
     final buttonFontSize = ref.watch(signInThemeProvider.select(
       (theme) => theme.buttonFontSize,
     ));
+    final iconSize = buttonFontSize * 1.6;
 
     return Row(
       children: <Widget>[
-        supplier.icon(size: 16, color: buttonTextColor),
+        supplier.icon(size: iconSize, color: buttonTextColor),
         const Spacer(),
         Text(
           l10n.signInWith(supplier.name(l10n)),
