@@ -123,13 +123,18 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get signInAnonymously => 'Continuer sans créer de compte';
 
   @override
-  String get signInWithApple => 'Continuer avec Apple';
+  String signInWith(String supplier) {
+    return 'Continuer avec $supplier';
+  }
 
   @override
-  String get signInWithEmail => 'Continuer avec un e-mail';
+  String get signInWithEmail => 'un e-mail';
 
   @override
-  String get signInWithEmailLinkTitle => 'Sign in with e-mail';
+  String get signInWithEmailLink => 'e-mail';
+
+  @override
+  String get signInWithEmailLinkTitle => 'S\'identifier avec un e-mail';
 
   @override
   String get signInWithEmailLinkSubtitle => 'No password required, we just send you an email with a link to log in to the app.';
@@ -171,13 +176,7 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get signInWithEmailInvalidPasswordConfirmation => 'Passwords do not match';
 
   @override
-  String get signInWithFacebook => 'Continuer avec Facebook';
-
-  @override
-  String get signInWithGoogle => 'Continuer avec Google';
-
-  @override
-  String get signInWithPhone => 'Continuer avec un numéro';
+  String get signInWithPhone => 'un numéro';
 
   @override
   String get signInPhoneTitle => 'Numéro de téléphone';

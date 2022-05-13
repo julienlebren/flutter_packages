@@ -316,17 +316,23 @@ abstract class SignInLocalizations {
   /// **'Continue without registration'**
   String get signInAnonymously;
 
-  /// No description provided for @signInWithApple.
+  /// No description provided for @signInWith.
   ///
   /// In en, this message translates to:
-  /// **'Sign in with Apple'**
-  String get signInWithApple;
+  /// **'Continue with {supplier}'**
+  String signInWith(String supplier);
 
   /// No description provided for @signInWithEmail.
   ///
   /// In en, this message translates to:
-  /// **'Sign in with e-mail'**
+  /// **'e-mail'**
   String get signInWithEmail;
+
+  /// No description provided for @signInWithEmailLink.
+  ///
+  /// In en, this message translates to:
+  /// **'e-mail'**
+  String get signInWithEmailLink;
 
   /// No description provided for @signInWithEmailLinkTitle.
   ///
@@ -412,22 +418,10 @@ abstract class SignInLocalizations {
   /// **'Passwords do not match'**
   String get signInWithEmailInvalidPasswordConfirmation;
 
-  /// No description provided for @signInWithFacebook.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign in with Facebook'**
-  String get signInWithFacebook;
-
-  /// No description provided for @signInWithGoogle.
-  ///
-  /// In en, this message translates to:
-  /// **'Sign in with Google'**
-  String get signInWithGoogle;
-
   /// No description provided for @signInWithPhone.
   ///
   /// In en, this message translates to:
-  /// **'Sign in with phone number'**
+  /// **'phone number'**
   String get signInWithPhone;
 
   /// No description provided for @signInPhoneTitle.

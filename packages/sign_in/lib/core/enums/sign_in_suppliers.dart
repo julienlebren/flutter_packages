@@ -22,7 +22,7 @@ extension SignInSupplierX on SignInSupplier {
     }
   }
 
-  String get name {
+  String name(SignInLocalizations l10n) {
     switch (this) {
       case SignInSupplier.google:
         return "Google";
@@ -30,6 +30,10 @@ extension SignInSupplierX on SignInSupplier {
         return "Apple";
       case SignInSupplier.facebook:
         return "Facebook";
+      case SignInSupplier.email:
+        return l10n.signInWithEmail;
+      case SignInSupplier.emailLink:
+        return l10n.signInWithEmailLink;
       default:
         return "";
     }
@@ -90,6 +94,25 @@ extension SignInSupplierX on SignInSupplier {
         return const SettingsAccountEvent.signInWithFacebook();
       default:
         return null;
+    }
+  }
+
+  SignInButtonsEvent get signInButtonsEvent {
+    switch (this) {
+      case SignInSupplier.google:
+        return const SignInButtonsEvent.signInWithGoogle();
+      case SignInSupplier.apple:
+        return const SignInButtonsEvent.signInWithApple();
+      case SignInSupplier.facebook:
+        return const SignInButtonsEvent.signInWithFacebook();
+      case SignInSupplier.anonymous:
+        return const SignInButtonsEvent.signInAnonymously();
+      case SignInSupplier.emailLink:
+        return const SignInButtonsEvent.signInWithEmailLink("");
+      case SignInSupplier.email:
+        return const SignInButtonsEvent.signInWithEmail();
+      case SignInSupplier.phone:
+        return const SignInButtonsEvent.signInWithPhone();
     }
   }
 }

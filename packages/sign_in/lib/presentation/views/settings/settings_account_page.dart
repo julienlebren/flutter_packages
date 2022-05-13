@@ -108,7 +108,7 @@ class _ButtonsSection extends ConsumerWidget {
 
     return Column(
       children: [
-        for (final supplier in suppliers) ...[
+        /*for (final supplier in suppliers) ...[
           FormSection(
             child: /*SignInButton(
               assetName: assetName,
@@ -126,12 +126,12 @@ class _ButtonsSection extends ConsumerWidget {
                 SignInSupplierButton(
               icon: supplier.icon(size: 16, color: labelColor),
               iconSize: 16,
-              title: l10n.settingsCreateAccountWith(supplier.name),
+              title: l10n.settingsCreateAccountWith(supplier.name(l10n)),
               onPressed: () {},
             ),
           ),
           const SizedBox(height: 10),
-        ],
+        ],*/
       ],
     );
   }
@@ -227,7 +227,7 @@ class _SocialRow extends ConsumerWidget {
       title: l10n.unlinkTitle,
       actions: [
         PlatformModalSheetAction(
-          title: l10n.unlinkProvider(supplier.name),
+          title: l10n.unlinkProvider(supplier.name(l10n)),
           icon: Icons.delete,
           onPressed: () {
             final controller =
@@ -259,7 +259,7 @@ class _SocialRow extends ConsumerWidget {
       ],
       child: FormTappableField(
         leading: supplier.icon(size: 16, color: listViewTheme.labelColor),
-        label: supplier.name,
+        label: supplier.name(l10n),
         value: isConnected
             ? l10n.settingsThirdPartyConnected
             : l10n.settingsThirdPartyNotConnected,

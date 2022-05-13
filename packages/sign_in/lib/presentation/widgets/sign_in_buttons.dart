@@ -2,6 +2,43 @@ part of '../../sign_in.dart';
 
 final signInSupplierProvider = StateProvider<SignInSupplier?>((_) => null);
 
+void _handleSignIn(
+    BuildContext context, WidgetRef ref, SignInButtonsEvent event) {
+  ref.read(signInSupplierProvider.state).state = event.when(
+    signInWithFacebook: () => SignInSupplier.facebook,
+    signInWithGoogle: () => SignInSupplier.google,
+    signInWithApple: () => SignInSupplier.apple,
+    signInWithEmail: () => SignInSupplier.email,
+    signInWithEmailLink: (_) => SignInSupplier.emailLink,
+    signInWithPhone: () => SignInSupplier.phone,
+    signInAnonymously: () => SignInSupplier.anonymous,
+  );
+
+  final navigator = SignInNavigatorKeys.main.currentState!;
+
+  event.maybeWhen(
+    signInWithPhone: () {
+      navigator.pushNamed(SignInRoutes.signInPhonePage);
+    },
+    signInWithEmail: () {
+      navigator.pushNamed(SignInRoutes.signInEmailPage);
+    },
+    signInWithEmailLink: (_) {
+      navigator.pushNamed(SignInRoutes.signInEmailLinkPage);
+    },
+    orElse: () {
+      final authStateArguments = ref.watch(authSettingsProvider);
+      final authState = ref.read(authStateProvider(authStateArguments));
+      if (authState == const AuthState.needUserInformation()) {
+        navigator.pushNamed(SignInRoutes.signInUnknownPage);
+      } else {
+        final controller = ref.read(signInButtonsControllerProvider.notifier);
+        controller.handleEvent(event);
+      }
+    },
+  );
+}
+
 class SignInButtons extends ConsumerStatefulWidget {
   const SignInButtons({Key? key}) : super(key: key);
 
@@ -17,43 +54,6 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
     if (suppliers.contains(SignInSupplier.phone)) {
       FlutterLibphonenumber().init();
     }
-  }
-
-  void _handleSignIn(
-      BuildContext context, WidgetRef ref, SignInButtonsEvent event) {
-    ref.read(signInSupplierProvider.state).state = event.when(
-      signInWithFacebook: () => SignInSupplier.facebook,
-      signInWithGoogle: () => SignInSupplier.google,
-      signInWithApple: () => SignInSupplier.apple,
-      signInWithEmail: () => SignInSupplier.email,
-      signInWithEmailLink: (_) => SignInSupplier.emailLink,
-      signInWithPhone: () => SignInSupplier.phone,
-      signInAnonymously: () => SignInSupplier.anonymous,
-    );
-
-    final navigator = SignInNavigatorKeys.main.currentState!;
-
-    event.maybeWhen(
-      signInWithPhone: () {
-        navigator.pushNamed(SignInRoutes.signInPhonePage);
-      },
-      signInWithEmail: () {
-        navigator.pushNamed(SignInRoutes.signInEmailPage);
-      },
-      signInWithEmailLink: (_) {
-        navigator.pushNamed(SignInRoutes.signInEmailLinkPage);
-      },
-      orElse: () {
-        final authStateArguments = ref.watch(authSettingsProvider);
-        final authState = ref.read(authStateProvider(authStateArguments));
-        if (authState == const AuthState.needUserInformation()) {
-          navigator.pushNamed(SignInRoutes.signInUnknownPage);
-        } else {
-          final controller = ref.read(signInButtonsControllerProvider.notifier);
-          controller.handleEvent(event);
-        }
-      },
-    );
   }
 
   @override
@@ -111,18 +111,26 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 for (final supplier in suppliers) ...[
-                  if (supplier == SignInSupplier.anonymous)
+                  if (supplier == SignInSupplier.anonymous) ...[
                     SizedBox(
                       width: double.infinity,
                       child: PlatformTextButton(
                         title: l10n.signInAnonymously,
                         onPressed: () {
-                          _handleSignIn(context, ref,
-                              const SignInButtonsEvent.signInAnonymously());
+                          _handleSignIn(
+                              context, ref, supplier.signInButtonsEvent);
                         },
                         color: theme.buttonTextColor,
                       ),
                     ),
+                  ] else ...[
+                    const ProviderScope(
+                      child: SignInSupplierButton(),
+                    ),
+                    SizedBox(height: theme.spaceBetweenButtons),
+                  ],
+
+                  /*
                   if (supplier == SignInSupplier.google)
                     SignInSupplierButton(
                       icon: SizedBox(
@@ -203,6 +211,7 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
                       },
                     ),
                   SizedBox(height: theme.spaceBetweenButtons),
+                  */
                 ],
               ],
             ),
@@ -211,56 +220,97 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
 }
 
 class SignInSupplierButton extends ConsumerWidget {
-  const SignInSupplierButton({
-    Key? key,
-    this.assetName,
-    this.icon,
-    required this.iconSize,
-    required this.title,
-    required this.onPressed,
-  }) : super(key: key);
-
-  final String? assetName;
-  final Widget? icon;
-  final double iconSize;
-  final String title;
-  final VoidCallback onPressed;
+  const SignInSupplierButton({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final theme = ref.watch(signInThemeProvider);
+    final maxWidth = ref.watch(signInThemeProvider.select(
+      (theme) => theme.maxWidth,
+    ));
 
     return Container(
-      constraints: BoxConstraints(maxWidth: theme.maxWidth),
-      child: SizedBox(
+      constraints: BoxConstraints(maxWidth: maxWidth),
+      child: const SizedBox(
         width: double.infinity,
-        child: SignInButton(
-          assetName: assetName,
-          icon: icon,
-          iconSize: iconSize,
-          title: title,
-          color: theme.buttonBackgroundColor,
-          textColor: theme.buttonTextColor,
-          padding: theme.buttonPadding,
-          radius: theme.buttonRadius,
-          fontSize: theme.buttonFontSize,
-          onPressed: onPressed,
-        ),
+        child: SignInButton(),
       ),
     );
   }
 }
 
-class SignInCompleteButton extends StatelessWidget {
-  const SignInCompleteButton({Key? key}) : super(key: key);
+final _currentSupplier = Provider<SignInSupplier>((ref) {
+  throw UnimplementedError();
+});
+
+class SignInButton extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
+  const SignInButton({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: const [
-        Text("Your profile is incomplete."),
+  ElevatedButton createMaterialWidget(BuildContext context, WidgetRef ref) {
+    final theme = ref.watch(signInThemeProvider);
+    final supplier = ref.watch(_currentSupplier);
+
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        primary: theme.buttonBackgroundColor,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(theme.buttonRadius),
+        ),
+      ),
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: theme.buttonPadding),
+        child: const SignInButtonContents(),
+      ),
+      onPressed: () {
+        _handleSignIn(context, ref, supplier.signInButtonsEvent);
+      },
+    );
+  }
+
+  @override
+  CupertinoButton createCupertinoWidget(BuildContext context, WidgetRef ref) {
+    final theme = ref.watch(signInThemeProvider);
+    final supplier = ref.watch(_currentSupplier);
+
+    return CupertinoButton(
+      color: theme.buttonBackgroundColor,
+      padding: EdgeInsets.all(theme.buttonPadding),
+      borderRadius: BorderRadius.circular(theme.buttonRadius),
+      child: const SignInButtonContents(),
+      onPressed: () {
+        _handleSignIn(context, ref, supplier.signInButtonsEvent);
+      },
+    );
+  }
+}
+
+class SignInButtonContents extends ConsumerWidget {
+  const SignInButtonContents({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final supplier = ref.watch(_currentSupplier);
+    final l10n = ref.watch(signInLocalizationsProvider);
+    final buttonTextColor = ref.watch(signInThemeProvider.select(
+      (theme) => theme.buttonTextColor,
+    ));
+    final buttonFontSize = ref.watch(signInThemeProvider.select(
+      (theme) => theme.buttonFontSize,
+    ));
+
+    return Row(
+      children: <Widget>[
+        supplier.icon(size: 16, color: buttonTextColor),
+        const Spacer(),
+        Text(
+          l10n.signInWith(supplier.name(l10n)),
+          style: TextStyle(
+            fontSize: buttonFontSize,
+            fontWeight: FontWeight.w400,
+            color: buttonTextColor,
+          ),
+        ),
+        const Spacer(),
       ],
     );
   }
