@@ -65,7 +65,7 @@ extension SignInSupplierX on SignInSupplier {
       case SignInSupplier.apple:
         return SizedBox(
           width: size,
-          height: size, // / (25 / 31),
+          height: size / (25 / 31),
           child: CustomPaint(
             painter: AppleLogoPainter(
               color: color!,
