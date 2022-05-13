@@ -65,7 +65,7 @@ extension SignInSupplierX on SignInSupplier {
       case SignInSupplier.apple:
         return SizedBox(
           width: size,
-          height: size / (25 / 31),
+          height: size, // / (25 / 31),
           child: CustomPaint(
             painter: AppleLogoPainter(
               color: color!,
@@ -84,13 +84,13 @@ extension SignInSupplierX on SignInSupplier {
         return Icon(
           Icons.email_outlined,
           color: color,
-          size: size,
+          size: size * 1.2,
         );
       case SignInSupplier.phone:
         return Icon(
           Icons.phone_android,
           color: color,
-          size: size,
+          size: size * 1.2,
         );
       default:
         return const SizedBox.shrink();
