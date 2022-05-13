@@ -105,7 +105,7 @@ class _EmailSection extends ConsumerWidget {
           onPressed: () {
             if (isAnonymous) {
               Navigator.of(context, rootNavigator: true)
-                  .pushNamed(SignInRoutes.signInEmailPage);
+                  .pushNamed(SignInRoutes.signInEmailRegisterPage);
             } else {
               Navigator.of(context, rootNavigator: true)
                   .pushNamed(SettingsRoutes.settingsEmailPage);
@@ -200,7 +200,7 @@ class _SocialRow extends ConsumerWidget {
     final listViewTheme = ref.watch(listViewThemeProvider);
     final controller = ref.read(settingsAccountControllerProvider.notifier);
     final hasMultipleConnections =
-        ref.watch(userEmailProvider)!.providerData.length > 1;
+        (ref.watch(userEmailProvider)?.providerData ?? []).length > 1;
     final isConnected = ref.watch(userSupplierProvider(supplier.id));
 
     return ProviderScope(
