@@ -216,7 +216,7 @@ class SignInButtonContents extends ConsumerWidget {
     final buttonFontSize = ref.watch(signInThemeProvider.select(
       (theme) => theme.buttonFontSize,
     ));
-    final iconSize = buttonFontSize * 1.6;
+    final iconSize = buttonFontSize * 1.3;
 
     return Row(
       children: <Widget>[
