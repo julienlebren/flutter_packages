@@ -79,6 +79,19 @@ extension SignInSupplierX on SignInSupplier {
           height: size,
           package: "sign_in",
         );
+      case SignInSupplier.email:
+      case SignInSupplier.emailLink:
+        return Icon(
+          Icons.email_outlined,
+          color: color,
+          size: size,
+        );
+      case SignInSupplier.phone:
+        return Icon(
+          Icons.phone_android,
+          color: color,
+          size: size,
+        );
       default:
         return const SizedBox.shrink();
     }

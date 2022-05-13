@@ -88,7 +88,6 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
     });
 
     final iconSize = theme.buttonFontSize * 1.6;
-    final iconTidySize = iconSize * (25 / 31);
 
     final buttonHeight =
         iconSize + (theme.buttonPadding * 2) + theme.spaceBetweenButtons + 1;
@@ -124,7 +123,7 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
                       ),
                     ),
                   ] else ...[
-                     ProviderScope(
+                    ProviderScope(
                       overrides: [
                         _currentSupplier.overrideWithValue(supplier),
                       ],
@@ -132,89 +131,6 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
                     ),
                     SizedBox(height: theme.spaceBetweenButtons),
                   ],
-
-                  /*
-                  if (supplier == SignInSupplier.google)
-                    SignInSupplierButton(
-                      icon: SizedBox(
-                        width: iconTidySize,
-                        height: iconTidySize,
-                        child: CustomPaint(
-                          painter: GoogleLogoPainter(),
-                        ),
-                      ),
-                      iconSize: iconSize,
-                      title: l10n.signInWithGoogle,
-                      onPressed: () {
-                        _handleSignIn(context, ref,
-                            const SignInButtonsEvent.signInWithGoogle());
-                      },
-                    ),
-                  if (supplier == SignInSupplier.apple && isCupertino())
-                    SignInSupplierButton(
-                      icon: SizedBox(
-                        width: iconTidySize,
-                        height: iconSize,
-                        child: CustomPaint(
-                          painter: AppleLogoPainter(
-                            color: theme.buttonTextColor,
-                          ),
-                        ),
-                      ),
-                      iconSize: iconSize,
-                      title: l10n.signInWithApple,
-                      onPressed: () {
-                        _handleSignIn(context, ref,
-                            const SignInButtonsEvent.signInWithApple());
-                      },
-                    ),
-                  if (supplier == SignInSupplier.facebook)
-                    SignInSupplierButton(
-                      assetName: "assets/images/facebook-logo.png",
-                      iconSize: iconSize,
-                      title: l10n.signInWithFacebook,
-                      onPressed: () {
-                        _handleSignIn(context, ref,
-                            const SignInButtonsEvent.signInWithFacebook());
-                      },
-                    ),
-                  if (supplier == SignInSupplier.email ||
-                      supplier == SignInSupplier.emailLink)
-                    SignInSupplierButton(
-                      icon: Icon(
-                        Icons.email_outlined,
-                        color: theme.buttonTextColor,
-                        size: iconSize,
-                      ),
-                      iconSize: iconSize,
-                      title: l10n.signInWithEmail,
-                      onPressed: () {
-                        _handleSignIn(
-                          context,
-                          ref,
-                          supplier == SignInSupplier.email
-                              ? const SignInButtonsEvent.signInWithEmail()
-                              : const SignInButtonsEvent.signInWithEmailLink(
-                                  ""),
-                        );
-                      },
-                    ),
-                  if (supplier == SignInSupplier.phone)
-                    SignInSupplierButton(
-                      icon: Icon(
-                        Icons.phone_android,
-                        color: theme.buttonTextColor,
-                        size: iconSize,
-                      ),
-                      iconSize: iconSize,
-                      title: l10n.signInWithPhone,
-                      onPressed: () {
-                        _handleSignIn(context, ref,
-                            const SignInButtonsEvent.signInWithPhone());
-                      },
-                    ),
-                  SizedBox(height: theme.spaceBetweenButtons),
-                  */
                 ],
               ],
             ),

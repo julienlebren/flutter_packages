@@ -95,10 +95,6 @@ class _ButtonsSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.watch(signInLocalizationsProvider);
-    final labelColor = ref.watch(listViewThemeProvider.select(
-      (theme) => theme.labelColor,
-    ));
     final suppliers = ref
         .watch(authSettingsProvider.select(
           (settings) => settings.suppliers,
@@ -108,30 +104,17 @@ class _ButtonsSection extends ConsumerWidget {
 
     return Column(
       children: [
-        /*for (final supplier in suppliers) ...[
+        for (final supplier in suppliers) ...[
           FormSection(
-            child: /*SignInButton(
-              assetName: assetName,
-              icon: icon,
-              iconSize: iconSize,
-              title: title,
-              color: theme.buttonBackgroundColor,
-              textColor: theme.buttonTextColor,
-              padding: theme.buttonPadding,
-              radius: theme.buttonRadius,
-              fontSize: theme.buttonFontSize,
-              onPressed: () {}),
-            ),*/
-
-                SignInSupplierButton(
-              icon: supplier.icon(size: 16, color: labelColor),
-              iconSize: 16,
-              title: l10n.settingsCreateAccountWith(supplier.name(l10n)),
-              onPressed: () {},
+            child: ProviderScope(
+              overrides: [
+                _currentSupplier.overrideWithValue(supplier),
+              ],
+              child: const SignInSupplierButton(),
             ),
           ),
           const SizedBox(height: 10),
-        ],*/
+        ],
       ],
     );
   }
