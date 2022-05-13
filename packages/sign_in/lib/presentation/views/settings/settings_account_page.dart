@@ -95,8 +95,27 @@ class _ButtonsSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return const FormSection(
-      child: SignInButtons(),
+    final l10n = ref.watch(signInLocalizationsProvider);
+    final suppliers = ref
+        .watch(authSettingsProvider.select(
+          (settings) => settings.suppliers,
+        ))
+        .where((supplier) => supplier != SignInSupplier.anonymous)
+        .toList();
+
+    return Column(
+      children: [
+        for (final supplier in suppliers) ...[
+          FormSection(
+            child: SignInSupplierButton(
+              icon: supplier.icon(size: 16),
+              iconSize: 16,
+              title: l10n.signInWithGoogle,
+              onPressed: () {},
+            ),
+          ),
+        ],
+      ],
     );
   }
 }
