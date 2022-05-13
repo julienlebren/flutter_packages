@@ -96,6 +96,9 @@ class _ButtonsSection extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
+    final labelColor = ref.watch(listViewThemeProvider.select(
+      (theme) => theme.labelColor,
+    ));
     final suppliers = ref
         .watch(authSettingsProvider.select(
           (settings) => settings.suppliers,
@@ -108,7 +111,7 @@ class _ButtonsSection extends ConsumerWidget {
         for (final supplier in suppliers) ...[
           FormSection(
             child: SignInSupplierButton(
-              icon: supplier.icon(size: 16),
+              icon: supplier.icon(size: 16, color: labelColor),
               iconSize: 16,
               title: l10n.signInWithGoogle,
               onPressed: () {},
