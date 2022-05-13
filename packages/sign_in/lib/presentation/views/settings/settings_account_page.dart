@@ -10,8 +10,8 @@ final userEmailProvider = Provider<User?>((ref) {
 });
 
 final userAnonymousProvider = Provider<bool>((ref) {
-  final user = ref.watch(userEmailProvider)!;
-  return user.providerData.isEmpty;
+  final user = ref.watch(userEmailProvider);
+  return user?.providerData.isEmpty ?? false;
 });
 
 final userSupplierProvider = Provider.family<bool, String>((ref, supplierId) {
