@@ -124,8 +124,11 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
                       ),
                     ),
                   ] else ...[
-                    const ProviderScope(
-                      child: SignInSupplierButton(),
+                     ProviderScope(
+                      overrides: [
+                        _currentSupplier.overrideWithValue(supplier),
+                      ],
+                      child: const SignInSupplierButton(),
                     ),
                     SizedBox(height: theme.spaceBetweenButtons),
                   ],
