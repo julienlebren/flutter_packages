@@ -15,8 +15,8 @@ final userAnonymousProvider = Provider<bool>((ref) {
 });
 
 final userSupplierProvider = Provider.family<bool, String>((ref, supplierId) {
-  final user = ref.watch(userEmailProvider)!;
-  for (final supplier in user.providerData) {
+  final user = ref.watch(userEmailProvider);
+  for (final supplier in user?.providerData ?? []) {
     if (supplier.providerId == supplierId) return true;
   }
   return false;
@@ -103,8 +103,13 @@ class _EmailSection extends ConsumerWidget {
           label: l10n.settingsEmailLabel,
           value: user?.email ?? l10n.settingsUndefined,
           onPressed: () {
-            Navigator.of(context, rootNavigator: true)
-                .pushNamed(SettingsRoutes.settingsEmailPage);
+            if (isAnonymous) {
+              Navigator.of(context, rootNavigator: true)
+                  .pushNamed(SignInRoutes.signInEmailPage);
+            } else {
+              Navigator.of(context, rootNavigator: true)
+                  .pushNamed(SettingsRoutes.settingsEmailPage);
+            }
           },
         ),
         if (!isAnonymous)
