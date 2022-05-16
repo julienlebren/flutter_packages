@@ -522,10 +522,10 @@ packages:
     description:
       path: "packages/layout_builder"
       ref: HEAD
-      resolved-ref: "0abbff11cbff378a54bf26c399bc01159e18b757"
+      resolved-ref: "51077358ac9a96efd6ba77ffddcd98a3376c180a"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "2.3.5+2"
+    version: "2.4.0"
   lints:
     dependency: transitive
     description:
@@ -587,10 +587,12 @@ packages:
   modal_bottom_sheet:
     dependency: "direct main"
     description:
-      name: modal_bottom_sheet
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0"
+      path: "packages/modal_bottom_sheet"
+      ref: HEAD
+      resolved-ref: "51077358ac9a96efd6ba77ffddcd98a3376c180a"
+      url: "https://github.com/julienlebren/flutter_packages"
+    source: git
+    version: "2.0.2-dev.1"
   numberpicker:
     dependency: transitive
     description:
