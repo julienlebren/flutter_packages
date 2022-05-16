@@ -394,10 +394,12 @@ packages:
   modal_bottom_sheet:
     dependency: "direct main"
     description:
-      name: modal_bottom_sheet
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0"
+      path: "packages/modal_bottom_sheet"
+      ref: HEAD
+      resolved-ref: "16ab6f87220382a9e68e1dea2beddc97c1e8747a"
+      url: "https://github.com/julienlebren/flutter_packages"
+    source: git
+    version: "2.0.2-dev.1"
   numberpicker:
     dependency: "direct main"
     description:
@@ -692,4 +694,4 @@ packages:
     version: "3.1.0"
 sdks:
   dart: ">=2.16.1 <3.0.0"
-  flutter: ">=1.24.0-10.2.pre"
+  flutter: ">=2.0.0"
