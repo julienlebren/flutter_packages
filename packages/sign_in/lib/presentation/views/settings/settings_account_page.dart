@@ -102,29 +102,20 @@ class _ButtonsSection extends ConsumerWidget {
         .where((supplier) => supplier != SignInSupplier.anonymous)
         .toList();
 
-    return ProviderScope(
-      overrides: [
-        signInButtonHandler.overrideWithValue((supplier) {
-          final controller =
-              ref.read(settingsAccountControllerProvider.notifier);
-          controller.handleEvent(supplier.settingsAccountEvent!);
-        }),
-      ],
-      child: Column(
-        children: [
-          for (final supplier in suppliers) ...[
-            FormSection(
-              child: ProviderScope(
-                overrides: [
-                  _currentSupplier.overrideWithValue(supplier),
-                ],
-                child: const SignInSupplierButton(),
-              ),
+    return Column(
+      children: [
+        for (final supplier in suppliers) ...[
+          FormSection(
+            child: ProviderScope(
+              overrides: [
+                _currentSupplier.overrideWithValue(supplier),
+              ],
+              child: const SignInSupplierButton(),
             ),
-            const SizedBox(height: 10),
-          ],
+          ),
+          const SizedBox(height: 10),
         ],
-      ),
+      ],
     );
   }
 }
