@@ -2,8 +2,48 @@ part of '../../sign_in.dart';
 
 final signInSupplierProvider = StateProvider<SignInSupplier?>((_) => null);
 
-void _handleSignIn(
-    BuildContext context, WidgetRef ref, SignInButtonsEvent event) {
+final signInButtonHandler = Provider<Function(SignInSupplier)>(
+  (ref) => ((supplier) {
+    final event = supplier.signInButtonsEvent;
+
+    ref.read(signInSupplierProvider.state).state = event.when(
+      signInWithFacebook: () => SignInSupplier.facebook,
+      signInWithGoogle: () => SignInSupplier.google,
+      signInWithApple: () => SignInSupplier.apple,
+      signInWithEmail: () => SignInSupplier.email,
+      signInWithEmailLink: (_) => SignInSupplier.emailLink,
+      signInWithPhone: () => SignInSupplier.phone,
+      signInAnonymously: () => SignInSupplier.anonymous,
+    );
+
+    final navigator = SignInNavigatorKeys.main.currentState!;
+
+    event.maybeWhen(
+      signInWithPhone: () {
+        navigator.pushNamed(SignInRoutes.signInPhonePage);
+      },
+      signInWithEmail: () {
+        navigator.pushNamed(SignInRoutes.signInEmailPage);
+      },
+      signInWithEmailLink: (_) {
+        navigator.pushNamed(SignInRoutes.signInEmailLinkPage);
+      },
+      orElse: () {
+        final authStateArguments = ref.watch(authSettingsProvider);
+        final authState = ref.read(authStateProvider(authStateArguments));
+        if (authState == const AuthState.needUserInformation()) {
+          navigator.pushNamed(SignInRoutes.signInUnknownPage);
+        } else {
+          final controller = ref.read(signInButtonsControllerProvider.notifier);
+          controller.handleEvent(event);
+        }
+      },
+    );
+  }),
+);
+
+/*
+void _handleSignIn(WidgetRef ref, SignInButtonsEvent event) {
   ref.read(signInSupplierProvider.state).state = event.when(
     signInWithFacebook: () => SignInSupplier.facebook,
     signInWithGoogle: () => SignInSupplier.google,
@@ -38,6 +78,7 @@ void _handleSignIn(
     },
   );
 }
+*/
 
 class SignInButtons extends ConsumerStatefulWidget {
   const SignInButtons({Key? key}) : super(key: key);
@@ -116,8 +157,7 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
                       child: PlatformTextButton(
                         title: l10n.signInAnonymously,
                         onPressed: () {
-                          _handleSignIn(
-                              context, ref, supplier.signInButtonsEvent);
+                          ref.read(signInButtonHandler)(supplier);
                         },
                         color: theme.buttonTextColor,
                       ),
@@ -181,7 +221,7 @@ class SignInButton extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
         child: const SignInButtonContents(),
       ),
       onPressed: () {
-        _handleSignIn(context, ref, supplier.signInButtonsEvent);
+        ref.read(signInButtonHandler)(supplier);
       },
     );
   }
@@ -197,7 +237,7 @@ class SignInButton extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
       borderRadius: BorderRadius.circular(theme.buttonRadius),
       child: const SignInButtonContents(),
       onPressed: () {
-        _handleSignIn(context, ref, supplier.signInButtonsEvent);
+        ref.read(signInButtonHandler)(supplier);
       },
     );
   }
