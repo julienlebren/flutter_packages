@@ -15,12 +15,12 @@ PageRoute<T> platformPageRoute<T>({
       fullscreenDialog: fullscreenDialog,
     );
   } else {
-    return CupertinoPageRoute<T>(
+    return MaterialWithModalsPageRoute<T>(
       builder: builder,
       settings: settings,
       maintainState: maintainState,
       fullscreenDialog: fullscreenDialog,
-      title: iosTitle,
+      //title: iosTitle,
     );
   }
 }
