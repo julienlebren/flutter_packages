@@ -40,6 +40,7 @@ final signInButtonHandler = Provider<Function(SignInSupplier)>(
       },
     );
   }),
+  dependencies: [authSettingsProvider],
 );
 
 /*
