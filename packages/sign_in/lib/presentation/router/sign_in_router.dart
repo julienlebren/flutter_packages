@@ -113,6 +113,7 @@ class SignInNavigator extends ConsumerWidget {
             if (signInSupplier == SignInSupplier.apple ||
                 signInSupplier == SignInSupplier.google ||
                 signInSupplier == SignInSupplier.facebook) {
+              print("ici voir ?");
               navigator.pushNamed(SignInRoutes.signInUnknownPage); // workaround
             }
           }
