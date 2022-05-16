@@ -250,35 +250,35 @@ class _CupertinoModalTransition extends StatelessWidget {
       curve: animationCurve ?? Curves.easeOut,
     );
 
-    return /*AnnotatedRegion<SystemUiOverlayStyle>(
+    return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
-      child:*/
-        AnimatedBuilder(
-      animation: curvedAnimation,
-      child: body,
-      builder: (context, child) {
-        final progress = curvedAnimation.value;
-        final yOffset = progress * paddingTop;
-        final scale = 1 - progress / 10;
-        final radius = progress == 0
-            ? 0.0
-            : (1 - progress) * startRoundCorner + progress * topRadius.x;
-        return Stack(
-          children: <Widget>[
-            Container(color: backgroundColor),
-            Transform.translate(
-              offset: Offset(0, yOffset),
-              child: Transform.scale(
-                scale: scale,
-                alignment: Alignment.topCenter,
-                child: ClipRRect(
-                    borderRadius: BorderRadius.circular(radius), child: child),
+      child: AnimatedBuilder(
+        animation: curvedAnimation,
+        child: body,
+        builder: (context, child) {
+          final progress = curvedAnimation.value;
+          final yOffset = progress * paddingTop;
+          final scale = 1 - progress / 10;
+          final radius = progress == 0
+              ? 0.0
+              : (1 - progress) * startRoundCorner + progress * topRadius.x;
+          return Stack(
+            children: <Widget>[
+              Container(color: backgroundColor),
+              Transform.translate(
+                offset: Offset(0, yOffset),
+                child: Transform.scale(
+                  scale: scale,
+                  alignment: Alignment.topCenter,
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(radius),
+                      child: child),
+                ),
               ),
-            ),
-          ],
-        );
-      },
-      //),
+            ],
+          );
+        },
+      ),
     );
   }
 }
