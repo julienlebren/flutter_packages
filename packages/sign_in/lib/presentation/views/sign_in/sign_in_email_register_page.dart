@@ -54,6 +54,7 @@ class _SignInEmailRegisterPageFormState
   Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final state = ref.watch(signInEmailRegisterControllerProvider);
+    final signInArea = ref.watch(signInAreaProvider);
 
     return Column(
       children: [
@@ -102,13 +103,14 @@ class _SignInEmailRegisterPageFormState
                 }
               : null,
         ),
-        PlatformTextButton(
-          title: l10n.signInWithEmailAlreadyAccount,
-          onPressed: () {
-            final navigator = SignInNavigatorKeys.modal.currentState!;
-            navigator.pushReplacementNamed(SignInRoutes.signInEmailPage);
-          },
-        ),
+        if (signInArea == SignInArea.signIn)
+          PlatformTextButton(
+            title: l10n.signInWithEmailAlreadyAccount,
+            onPressed: () {
+              final navigator = SignInNavigatorKeys.modal.currentState!;
+              navigator.pushReplacementNamed(SignInRoutes.signInEmailPage);
+            },
+          ),
       ],
     );
   }

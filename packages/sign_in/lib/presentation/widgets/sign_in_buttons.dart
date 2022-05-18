@@ -2,6 +2,13 @@ part of '../../sign_in.dart';
 
 final signInSupplierProvider = StateProvider<SignInSupplier?>((_) => null);
 
+enum SignInArea {
+  signIn,
+  settings,
+}
+
+final signInAreaProvider = Provider<SignInArea>((_) => SignInArea.signIn);
+
 void _handleSignIn(
   BuildContext context,
   WidgetRef ref,
@@ -24,7 +31,13 @@ void _handleSignIn(
       navigator.pushNamed(SignInRoutes.signInPhonePage, arguments: true);
     },
     signInWithEmail: () {
-      navigator.pushNamed(SignInRoutes.signInEmailPage, arguments: true);
+      final signInArea = ref.watch(signInAreaProvider);
+      if (signInArea == SignInArea.settings) {
+        navigator.pushNamed(SignInRoutes.signInEmailRegisterPage,
+            arguments: true);
+      } else {
+        navigator.pushNamed(SignInRoutes.signInEmailPage, arguments: true);
+      }
     },
     signInWithEmailLink: (_) {
       navigator.pushNamed(SignInRoutes.signInEmailLinkPage, arguments: true);
@@ -206,6 +219,7 @@ class SignInButtonContents extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final supplier = ref.watch(_currentSupplier);
+    final signInArea = ref.watch(signInAreaProvider);
     final l10n = ref.watch(signInLocalizationsProvider);
     final buttonTextColor = ref.watch(signInThemeProvider.select(
       (theme) => theme.buttonTextColor,
@@ -220,7 +234,9 @@ class SignInButtonContents extends ConsumerWidget {
         supplier.icon(size: iconSize, color: buttonTextColor),
         const Spacer(),
         Text(
-          l10n.signInWith(supplier.name(l10n)),
+          signInArea == SignInArea.settings
+              ? l10n.settingsCreateAccountWith(supplier.name(l10n))
+              : l10n.signInWith(supplier.name(l10n)),
           style: TextStyle(
             fontSize: buttonFontSize,
             fontWeight: FontWeight.w400,

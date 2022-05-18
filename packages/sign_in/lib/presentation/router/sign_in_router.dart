@@ -39,7 +39,6 @@ class SignInRouter {
   ) {
     final isRootNavigator =
         settings.arguments != null ? (settings.arguments as bool) : false;
-    print("name: ${settings.name!} / isRootNavigator: $isRootNavigator");
 
     if (isRootNavigator) {
       return platformPageRoute(
@@ -101,11 +100,16 @@ class SignInNavigator extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Navigator(
-      key: SignInNavigatorKeys.modal,
-      initialRoute: routeName,
-      onGenerateRoute: (settings) =>
-          SignInRouter.onGenerateRoute(settings, ref),
+    return ProviderScope(
+      overrides: [
+        signInAreaProvider.overrideWithValue(SignInArea.settings),
+      ],
+      child: Navigator(
+        key: SignInNavigatorKeys.modal,
+        initialRoute: routeName,
+        onGenerateRoute: (settings) =>
+            SignInRouter.onGenerateRoute(settings, ref),
+      ),
     );
   }
 }
