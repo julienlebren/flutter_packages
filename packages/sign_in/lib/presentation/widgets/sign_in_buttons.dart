@@ -21,13 +21,13 @@ void _handleSignIn(
 
   event.maybeWhen(
     signInWithPhone: () {
-      navigator.pushNamed(SignInRoutes.signInPhonePage);
+      navigator.pushNamed(SignInRoutes.signInPhonePage, arguments: true);
     },
     signInWithEmail: () {
-      navigator.pushNamed(SignInRoutes.signInEmailPage);
+      navigator.pushNamed(SignInRoutes.signInEmailPage, arguments: true);
     },
     signInWithEmailLink: (_) {
-      navigator.pushNamed(SignInRoutes.signInEmailLinkPage);
+      navigator.pushNamed(SignInRoutes.signInEmailLinkPage, arguments: true);
     },
     orElse: () {
       final controller = ref.read(signInButtonsControllerProvider.notifier);
