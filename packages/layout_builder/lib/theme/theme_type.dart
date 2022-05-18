@@ -21,7 +21,7 @@ extension ThemeBrightness on ThemeType {
     } else if (this == ThemeType.light) {
       return Brightness.light;
     } else {
-      return WidgetsBinding.instance!.window.platformBrightness;
+      return WidgetsBinding.instance.window.platformBrightness;
     }
   }
 }
