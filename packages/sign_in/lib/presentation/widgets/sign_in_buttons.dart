@@ -2,7 +2,11 @@ part of '../../sign_in.dart';
 
 final signInSupplierProvider = StateProvider<SignInSupplier?>((_) => null);
 
-void _handleSignIn(WidgetRef ref, SignInButtonsEvent event) {
+void _handleSignIn(
+  BuildContext context,
+  WidgetRef ref,
+  SignInButtonsEvent event,
+) {
   ref.read(signInSupplierProvider.state).state = event.when(
     signInWithFacebook: () => SignInSupplier.facebook,
     signInWithGoogle: () => SignInSupplier.google,
@@ -13,7 +17,7 @@ void _handleSignIn(WidgetRef ref, SignInButtonsEvent event) {
     signInAnonymously: () => SignInSupplier.anonymous,
   );
 
-  /*final navigator = SignInNavigatorKeys.main.currentState!;
+  final navigator = Navigator.of(context, rootNavigator: true);
 
   event.maybeWhen(
     signInWithPhone: () {
@@ -26,16 +30,10 @@ void _handleSignIn(WidgetRef ref, SignInButtonsEvent event) {
       navigator.pushNamed(SignInRoutes.signInEmailLinkPage);
     },
     orElse: () {
-      final authStateArguments = ref.watch(authSettingsProvider);
-      final authState = ref.read(authStateProvider(authStateArguments));
-      if (authState == const AuthState.needUserInformation()) {
-        navigator.pushNamed(SignInRoutes.signInUnknownPage);
-      } else {
-        final controller = ref.read(signInButtonsControllerProvider.notifier);
-        controller.handleEvent(event);
-      }
+      final controller = ref.read(signInButtonsControllerProvider.notifier);
+      controller.handleEvent(event);
     },
-  );*/
+  );
 }
 
 class SignInButtons extends ConsumerStatefulWidget {
@@ -115,7 +113,8 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
                       child: PlatformTextButton(
                         title: l10n.signInAnonymously,
                         onPressed: () {
-                          _handleSignIn(ref, supplier.signInButtonsEvent);
+                          _handleSignIn(
+                              context, ref, supplier.signInButtonsEvent);
                         },
                         color: theme.buttonTextColor,
                       ),
@@ -179,7 +178,7 @@ class SignInButton extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
         child: const SignInButtonContents(),
       ),
       onPressed: () {
-        _handleSignIn(ref, supplier.signInButtonsEvent);
+        _handleSignIn(context, ref, supplier.signInButtonsEvent);
       },
     );
   }
@@ -195,7 +194,7 @@ class SignInButton extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
       borderRadius: BorderRadius.circular(theme.buttonRadius),
       child: const SignInButtonContents(),
       onPressed: () {
-        _handleSignIn(ref, supplier.signInButtonsEvent);
+        _handleSignIn(context, ref, supplier.signInButtonsEvent);
       },
     );
   }
