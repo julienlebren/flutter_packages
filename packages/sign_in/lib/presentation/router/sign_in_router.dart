@@ -9,8 +9,6 @@ final signInLandingPageProvider = Provider<Widget>(
   (_) => const SizedBox.shrink(),
 );
 
-final signingInFromSettings = StateProvider<bool>((_) => false);
-
 class SignInNavigatorKeys {
   static final modal = GlobalKey<NavigatorState>();
 }
@@ -35,7 +33,7 @@ class SignInRouter {
     WidgetRef ref,
   ) {
     final isRootNavigator =
-        settings.arguments != null ? (settings.arguments as bool) : true;
+        settings.arguments != null ? (settings.arguments as bool) : false;
     print("name: ${settings.name!} / isRootNavigator: $isRootNavigator");
 
     if (isRootNavigator) {
