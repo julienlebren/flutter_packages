@@ -5,8 +5,11 @@ final signInRouterProvider =
   (_) => SignInRouter.onGenerateRoute,
 );
 
-final signInLandingPageProvider =
-    Provider<Widget>((_) => const SizedBox.shrink());
+final signInLandingPageProvider = Provider<Widget>(
+  (_) => const SizedBox.shrink(),
+);
+
+final signingInFromSettings = StateProvider<bool>((_) => false);
 
 class SignInNavigatorKeys {
   static final main = GlobalKey<NavigatorState>();
@@ -34,6 +37,7 @@ class SignInRouter {
   ) {
     final isRootNavigator =
         settings.arguments != null ? (settings.arguments as bool) : true;
+    print("name: ${settings.name!} / isRootNavigator: $isRootNavigator");
 
     if (isRootNavigator) {
       return platformPageRoute(
@@ -76,7 +80,9 @@ class SignInRouter {
           );
       }
     }
-    return null;
+    return platformPageRoute(
+      builder: (_) => const SignInUnknownPage(),
+    );
   }
 }
 
@@ -113,7 +119,6 @@ class SignInNavigator extends ConsumerWidget {
             if (signInSupplier == SignInSupplier.apple ||
                 signInSupplier == SignInSupplier.google ||
                 signInSupplier == SignInSupplier.facebook) {
-              print("ici voir ?");
               navigator.pushNamed(SignInRoutes.signInUnknownPage); // workaround
             }
           }
@@ -139,6 +144,57 @@ class SignInNavigator extends ConsumerWidget {
             arguments: (navigatorKey == SignInNavigatorKeys.main),
           ),
           ref),
+    );
+  }
+}
+
+class SignInSplashPage extends ConsumerWidget {
+  const SignInSplashPage({
+    required this.home,
+    Key? key,
+  }) : super(key: key);
+
+  final Widget home;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final authArguments = ref.read(authSettingsProvider);
+    final authState = ref.read(authStateProvider(authArguments));
+
+    ref.listen<AuthState>(authStateProvider(authArguments), (_, authState) {
+      authState.maybeWhen(
+        needUserInformation: () {
+          // Push SignInRoutes.signInUserInfoPage en fullScreen si ath Google, Apple, Facebook
+          // Le push dans le navigator SignIn Modal le cas échéant
+        },
+        orElse: () => null,
+      );
+    });
+
+    return authState.maybeWhen(
+      initializing: () => const ScaffoldLoader(),
+      needUserInformation: () {
+        final isSigninIn = ref.watch(signInSupplierProvider) != null;
+        if (isSigninIn) {
+          return const SignInPage();
+        } else {
+          return const ScaffoldLoader();
+        }
+      },
+      authed: (_) => home,
+      orElse: () => const SignInPage(),
+    );
+  }
+}
+
+class SignInPage extends StatelessWidget {
+  const SignInPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SignInNavigator(
+      navigatorKey: SignInNavigatorKeys.main,
+      routeName: SignInRoutes.signInLandingPage,
     );
   }
 }

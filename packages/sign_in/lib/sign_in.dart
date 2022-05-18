@@ -51,6 +51,7 @@ part 'presentation/views/sign_in/sign_in_email_register_page.dart';
 part 'presentation/widgets/sign_in_landing_page_builder.dart';
 part 'presentation/views/sign_in/sign_in_phone_page.dart';
 part 'presentation/views/sign_in/sign_in_phone_verification_page.dart';
+part 'presentation/views/sign_in/sign_in_unknown_page.dart';
 part 'presentation/widgets/password_requirement.dart';
 part 'presentation/widgets/sign_in_buttons.dart';
 part 'presentation/widgets/sign_in_page_builder.dart';
