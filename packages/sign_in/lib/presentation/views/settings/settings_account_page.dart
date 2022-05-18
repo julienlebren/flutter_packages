@@ -95,6 +95,10 @@ class _ButtonsSection extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final backgroundColor = ref.watch(
+      appThemeProvider.select((theme) => theme.listTileBackground),
+    );
+    final signInTheme = ref.watch(signInThemeProvider);
     final suppliers = ref
         .watch(authSettingsProvider.select(
           (settings) => settings.suppliers,
@@ -102,20 +106,27 @@ class _ButtonsSection extends ConsumerWidget {
         .where((supplier) => supplier != SignInSupplier.anonymous)
         .toList();
 
-    return Column(
-      children: [
-        for (final supplier in suppliers) ...[
-          FormSection(
-            child: ProviderScope(
-              overrides: [
-                _currentSupplier.overrideWithValue(supplier),
-              ],
-              child: const SignInSupplierButton(),
-            ),
-          ),
-          const SizedBox(height: 10),
-        ],
+    return ProviderScope(
+      overrides: [
+        signInThemeProvider.overrideWithValue(signInTheme.copyWith(
+          buttonBackgroundColor: backgroundColor,
+        )),
       ],
+      child: Column(
+        children: [
+          for (final supplier in suppliers) ...[
+            FormSection(
+              child: ProviderScope(
+                overrides: [
+                  _currentSupplier.overrideWithValue(supplier),
+                ],
+                child: const SignInSupplierButton(),
+              ),
+            ),
+            const SizedBox(height: 10),
+          ],
+        ],
+      ),
     );
   }
 }
