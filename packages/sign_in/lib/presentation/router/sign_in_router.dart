@@ -83,7 +83,7 @@ class SignInRouter {
 
       final signInCustomRouter = ref.read(signInCustomRouterProvider);
       if (signInCustomRouter != null) {
-        signInCustomRouter(settings, ref);
+        return signInCustomRouter(settings, ref);
       }
     }
     return platformPageRoute(
