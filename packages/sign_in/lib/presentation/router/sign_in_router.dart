@@ -1,8 +1,13 @@
 part of '../../sign_in.dart';
 
-final signInRouterProvider =
+/*final signInRouterProvider =
     Provider<Route<dynamic>? Function(RouteSettings settings, WidgetRef ref)>(
   (_) => SignInRouter.onGenerateRoute,
+);*/
+
+final signInCustomRouterProvider =
+    Provider<Route<dynamic>? Function(RouteSettings settings, WidgetRef ref)?>(
+  (_) => null,
 );
 
 final signInLandingPageProvider = Provider<Widget>(
@@ -75,6 +80,11 @@ class SignInRouter {
             fullscreenDialog: true,
           );
       }
+
+      final signInCustomRouter = ref.read(signInCustomRouterProvider);
+      if (signInCustomRouter != null) {
+        signInCustomRouter(settings, ref);
+      }
     }
     return platformPageRoute(
       builder: (_) => const SignInUnknownPage(),
@@ -91,16 +101,11 @@ class SignInNavigator extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final signInRouter = ref.read(signInRouterProvider);
-
     return Navigator(
       key: SignInNavigatorKeys.modal,
       initialRoute: routeName,
-      onGenerateRoute: (settings) => signInRouter(
-          RouteSettings(
-            name: settings.name!,
-          ),
-          ref),
+      onGenerateRoute: (settings) =>
+          SignInRouter.onGenerateRoute(settings, ref),
     );
   }
 }
