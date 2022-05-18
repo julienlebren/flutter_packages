@@ -12,7 +12,6 @@ final signInLandingPageProvider = Provider<Widget>(
 final signingInFromSettings = StateProvider<bool>((_) => false);
 
 class SignInNavigatorKeys {
-  static final main = GlobalKey<NavigatorState>();
   static final modal = GlobalKey<NavigatorState>();
 }
 
@@ -42,7 +41,6 @@ class SignInRouter {
     if (isRootNavigator) {
       return platformPageRoute(
         builder: (_) => SignInNavigator(
-          navigatorKey: SignInNavigatorKeys.modal,
           routeName: settings.name!,
         ),
         fullscreenDialog: true,
@@ -89,104 +87,22 @@ class SignInRouter {
 class SignInNavigator extends ConsumerWidget {
   const SignInNavigator({
     Key? key,
-    required this.navigatorKey,
     required this.routeName,
   }) : super(key: key);
-
-  final GlobalKey<NavigatorState> navigatorKey;
   final String routeName;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final signInRouter = ref.read(signInRouterProvider);
-    final authArguments = ref.read(authSettingsProvider);
-
-    ref.listen<AuthState>(authStateProvider(authArguments), (_, authState) {
-      authState.maybeWhen(
-        authed: (_) {
-          if (navigatorKey == SignInNavigatorKeys.main) {
-            final navigator = SignInNavigatorKeys.main.currentState!;
-            navigator.pop();
-          }
-        },
-        needUserInformation: () {
-          final navigator = navigatorKey.currentState!;
-
-          if (navigatorKey == SignInNavigatorKeys.modal) {
-            navigator.pushReplacementNamed(SignInRoutes.signInUserInfoPage);
-          } else {
-            final signInSupplier = ref.read(signInSupplierProvider);
-            if (signInSupplier == SignInSupplier.apple ||
-                signInSupplier == SignInSupplier.google ||
-                signInSupplier == SignInSupplier.facebook) {
-              navigator.pushNamed(SignInRoutes.signInUnknownPage); // workaround
-            }
-          }
-        },
-        orElse: () => null,
-      );
-    });
 
     return Navigator(
-      key: navigatorKey,
+      key: SignInNavigatorKeys.modal,
       initialRoute: routeName,
       onGenerateRoute: (settings) => signInRouter(
           RouteSettings(
             name: settings.name!,
-            arguments: (navigatorKey == SignInNavigatorKeys.main),
           ),
           ref),
-    );
-  }
-}
-
-class SignInSplashPage extends ConsumerWidget {
-  const SignInSplashPage({
-    required this.home,
-    Key? key,
-  }) : super(key: key);
-
-  final Widget home;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final authArguments = ref.read(authSettingsProvider);
-    final authState = ref.read(authStateProvider(authArguments));
-
-    ref.listen<AuthState>(authStateProvider(authArguments), (_, authState) {
-      authState.maybeWhen(
-        needUserInformation: () {
-          // Push SignInRoutes.signInUserInfoPage en fullScreen si ath Google, Apple, Facebook
-          // Le push dans le navigator SignIn Modal le cas échéant
-        },
-        orElse: () => null,
-      );
-    });
-
-    return authState.maybeWhen(
-      initializing: () => const ScaffoldLoader(),
-      needUserInformation: () {
-        final isSigninIn = ref.watch(signInSupplierProvider) != null;
-        if (isSigninIn) {
-          return const SignInPage();
-        } else {
-          return const ScaffoldLoader();
-        }
-      },
-      authed: (_) => home,
-      orElse: () => const SignInPage(),
-    );
-  }
-}
-
-class SignInPage extends StatelessWidget {
-  const SignInPage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SignInNavigator(
-      navigatorKey: SignInNavigatorKeys.main,
-      routeName: SignInRoutes.signInLandingPage,
     );
   }
 }

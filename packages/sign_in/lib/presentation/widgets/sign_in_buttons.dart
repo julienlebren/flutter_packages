@@ -13,7 +13,7 @@ void _handleSignIn(WidgetRef ref, SignInButtonsEvent event) {
     signInAnonymously: () => SignInSupplier.anonymous,
   );
 
-  final navigator = SignInNavigatorKeys.main.currentState!;
+  /*final navigator = SignInNavigatorKeys.main.currentState!;
 
   event.maybeWhen(
     signInWithPhone: () {
@@ -35,7 +35,7 @@ void _handleSignIn(WidgetRef ref, SignInButtonsEvent event) {
         controller.handleEvent(event);
       }
     },
-  );
+  );*/
 }
 
 class SignInButtons extends ConsumerStatefulWidget {

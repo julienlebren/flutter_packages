@@ -142,7 +142,8 @@ class SignInCloseButton extends ConsumerWidget {
       onPressed: () {
         ref.read(signInSupplierProvider.state).state = null;
 
-        final navigator = SignInNavigatorKeys.main.currentState!;
+        //final navigator = SignInNavigatorKeys.main.currentState!;
+        final navigator = Navigator.of(context, rootNavigator: true);
         navigator.pop();
       },
     );
