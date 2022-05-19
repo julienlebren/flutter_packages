@@ -47,7 +47,7 @@ class SplashPageBuilder extends ConsumerWidget {
       );
     });*/
 
-    ref.listen<dynamic>(settings.needUserInfoProvider!, (
+    ref.listen<bool>(settings.needUserInfoProvider!, (
       previous,
       needUserInfo,
     ) {
