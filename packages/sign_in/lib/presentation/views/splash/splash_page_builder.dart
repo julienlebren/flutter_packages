@@ -94,7 +94,7 @@ final authSplashProvider =
       if (isSigninIn) {
         return const AuthSplashState.notAuthed();
       } else {
-        return const AuthSplashState.authed();
+        return const AuthSplashState.initializing();
       }
     },
     authed: (_) => const AuthSplashState.authed(),
