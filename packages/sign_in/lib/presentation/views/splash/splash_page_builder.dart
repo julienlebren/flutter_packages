@@ -49,14 +49,14 @@ class SplashPageBuilder extends ConsumerWidget {
 
     return authState.maybeWhen(
       initializing: () => loader,
-      needUserInformation: () {
+      /*needUserInformation: () {
         final isSigninIn = ref.watch(signInSupplierProvider) != null;
         if (isSigninIn) {
           return landing;
         } else {
           return loader;
         }
-      },
+      },*/
       authed: (_) => home,
       orElse: () => landing,
     );
