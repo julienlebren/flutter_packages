@@ -23,12 +23,15 @@ class SplashPageBuilder extends ConsumerWidget {
     ) {
       authState.maybeWhen(
         authed: (_) {
-          if (previousState == AuthState.needUserInformation(_)) {
-            final navigator = Navigator.of(context, rootNavigator: true);
-            Future.delayed(const Duration(milliseconds: 200), () {
-              navigator.pop();
-            });
-          }
+          previousState?.maybeWhen(
+            needUserInformation: (_) {
+              final navigator = Navigator.of(context, rootNavigator: true);
+              Future.delayed(const Duration(milliseconds: 200), () {
+                navigator.pop();
+              });
+            },
+            orElse: () => null,
+          );
         },
         needUserInformation: (_) {
           final supplier = ref.watch(signInSupplierProvider);
