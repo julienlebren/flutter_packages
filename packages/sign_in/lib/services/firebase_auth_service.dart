@@ -71,7 +71,7 @@ class FirebaseAuthService {
   }
 
   Future<UserCredential> _signInWithCredential(
-      OAuthCredential credential) async {
+      AuthCredential credential) async {
     if (currentUser != null) {
       final isAnonymous = currentUser!.isAnonymous;
       final userCredential = await currentUser!.linkWithCredential(credential);
@@ -194,7 +194,7 @@ class FirebaseAuthService {
     return userCredential.user;
   }
 
-  Future<User?> createUserWithEmailAndPassword({
+  /*Future<User?> createUserWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
@@ -203,17 +203,21 @@ class FirebaseAuthService {
       password: password,
     );
     return userCredential.user;
-  }
+  }*/
 
-  Future<User?> signInWithEmailAndPassword({
+  Future<void> signInWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
-    final userCredential = await _firebaseAuth.signInWithEmailAndPassword(
+    final credential =
+        EmailAuthProvider.credential(email: email, password: password);
+
+    final userCredential = await _signInWithCredential(credential);
+    /*final userCredential = await _firebaseAuth.signInWithEmailAndPassword(
       email: email,
       password: password,
     );
-    return userCredential.user;
+    return userCredential.user;*/
   }
 
   Future<void> updateEmail(String newEmail) async {

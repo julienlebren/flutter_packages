@@ -89,7 +89,7 @@ class SignInEmailRegisterController
     state = state.copyWith(isLoading: true);
 
     try {
-      await _service.createUserWithEmailAndPassword(
+      await _service.signInWithEmailAndPassword(
         email: state.email,
         password: state.password,
       );
