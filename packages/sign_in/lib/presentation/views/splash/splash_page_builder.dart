@@ -23,21 +23,21 @@ class SplashPageBuilder extends ConsumerWidget {
     ) {
       authState.maybeWhen(
         authed: (_) {
-          if (previousState == const AuthState.needUserInformation()) {
+          if (previousState == AuthState.needUserInformation(_)) {
             final navigator = Navigator.of(context, rootNavigator: true);
             Future.delayed(const Duration(milliseconds: 200), () {
               navigator.pop();
             });
           }
         },
-        needUserInformation: () {
+        needUserInformation: (_) {
           final supplier = ref.watch(signInSupplierProvider);
           if (supplier != null && !supplier.isThirdParty) {
             final navigator = SignInNavigatorKeys.modal.currentState!;
             navigator.pushReplacementNamed(SignInRoutes.signInUserInfoPage);
           } else {
             final navigator = Navigator.of(context, rootNavigator: true);
-            Future.delayed(const Duration(milliseconds: 200), () {
+            Future.delayed(const Duration(milliseconds: 300), () {
               navigator.pushNamed(SignInRoutes.signInUserInfoPage,
                   arguments: true);
             });
@@ -89,12 +89,14 @@ final authSplashProvider =
 
   return authState.maybeWhen(
     initializing: () => const AuthSplashState.initializing(),
-    needUserInformation: () {
-      final isSigninIn = ref.watch(signInSupplierProvider) != null;
-      if (isSigninIn) {
-        return const AuthSplashState.notAuthed();
-      } else {
-        return const AuthSplashState.initializing();
+    needUserInformation: (status) {
+      switch (status) {
+        case NeedUserInfo.signIn:
+          return const AuthSplashState.notAuthed();
+        case NeedUserInfo.launching:
+          return const AuthSplashState.initializing();
+        case NeedUserInfo.settings:
+          return const AuthSplashState.authed();
       }
     },
     authed: (_) => const AuthSplashState.authed(),

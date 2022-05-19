@@ -88,14 +88,14 @@ final authStateProvider =
   return authStateChanges.when(
     loading: () => const AuthState.initializing(),
     error: (error, _) => AuthState.error(error.toString()),
-    data: (user) {
-      if (user == null) {
+    data: (firebaseUser) {
+      if (firebaseUser == null) {
         return const AuthState.notAuthed();
       } else {
+        final isSigninIn = ref.watch(signInSupplierProvider) != null;
         final user = ref.watch(settings.userStreamProvider);
         return user.when(
           loading: () {
-            final isSigninIn = ref.watch(signInSupplierProvider) != null;
             if (isSigninIn) {
               return const AuthState.notAuthed();
             } else {
@@ -110,11 +110,19 @@ final authStateProvider =
               if (settings.needUserInfoProvider != null) {
                 final needUserInfo = ref.watch(settings.needUserInfoProvider!);
                 if (needUserInfo == true) {
-                  return const AuthState.needUserInformation();
+                  if (isSigninIn) {
+                    return const AuthState.needUserInformation(
+                        NeedUserInfo.signIn);
+                  } else if (firebaseUser.isAnonymous) {
+                    return const AuthState.needUserInformation(
+                        NeedUserInfo.settings);
+                  } else {
+                    return const AuthState.needUserInformation(
+                        NeedUserInfo.launching);
+                  }
                 } else if (needUserInfo == false) {
                   return AuthState.authed(user);
                 } else {
-                  final isSigninIn = ref.watch(signInSupplierProvider) != null;
                   if (isSigninIn) {
                     return const AuthState.notAuthed();
                   } else {
