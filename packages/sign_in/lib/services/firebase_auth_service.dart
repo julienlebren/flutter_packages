@@ -194,30 +194,33 @@ class FirebaseAuthService {
     return userCredential.user;
   }
 
-  /*Future<User?> createUserWithEmailAndPassword({
+  Future<User?> createUserWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
-    final userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
+    if (currentUser != null) {
+      final credential =
+          EmailAuthProvider.credential(email: email, password: password);
+      final userCredential = await _signInWithCredential(credential);
+      return userCredential.user;
+    } else {
+      final userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return userCredential.user;
+    }
+  }
+
+  Future<User?> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) async {
+    final userCredential = await _firebaseAuth.signInWithEmailAndPassword(
       email: email,
       password: password,
     );
     return userCredential.user;
-  }*/
-
-  Future<void> signInWithEmailAndPassword({
-    required String email,
-    required String password,
-  }) async {
-    final credential =
-        EmailAuthProvider.credential(email: email, password: password);
-
-    final userCredential = await _signInWithCredential(credential);
-    /*final userCredential = await _firebaseAuth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
-    return userCredential.user;*/
   }
 
   Future<void> updateEmail(String newEmail) async {
