@@ -26,7 +26,7 @@ class SplashPageBuilder extends ConsumerWidget {
           previousState?.maybeWhen(
             needUserInformation: (_) {
               final navigator = Navigator.of(context, rootNavigator: true);
-              Future.delayed(const Duration(milliseconds: 200), () {
+              Future.delayed(const Duration(milliseconds: 1000), () {
                 navigator.pop();
               });
             },
