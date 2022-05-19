@@ -64,6 +64,11 @@ class SplashPageBuilder extends ConsumerWidget {
                   arguments: true);
             });
           }
+        } else if (previous != null && previous && !needUserInfo) {
+          final navigator = Navigator.of(context, rootNavigator: true);
+          Future.delayed(const Duration(milliseconds: 200), () {
+            navigator.pop();
+          });
         }
       }
     });
