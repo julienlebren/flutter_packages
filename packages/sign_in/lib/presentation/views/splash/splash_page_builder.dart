@@ -1,5 +1,34 @@
 part of '../../../sign_in.dart';
 
+final authSplashProvider =
+    Provider.family<AuthSplashState, AuthSettings>((ref, settings) {
+  final authState = ref.watch(authStateProvider(settings));
+
+  return authState.maybeWhen(
+    initializing: () => const AuthSplashState.initializing(),
+    needUserInformation: (_) {
+      final isSigninIn = ref.watch(signInSupplierProvider) != null;
+      print("isSigninIn: $isSigninIn");
+      if (isSigninIn) {
+        return const AuthSplashState.notAuthed();
+      } else {
+        return const AuthSplashState.authed();
+      }
+      /*switch (status) {
+        case NeedUserInfo.signIn:
+          return const AuthSplashState.notAuthed();
+        case NeedUserInfo.launching:
+          return const AuthSplashState.initializing();
+        case NeedUserInfo.settings:
+          return const AuthSplashState.authed();
+      }*/
+    },
+    authed: (_) => const AuthSplashState.authed(),
+    error: (error) => AuthSplashState.error(error),
+    orElse: () => const AuthSplashState.notAuthed(),
+  );
+});
+
 class SplashPageBuilder extends ConsumerWidget {
   const SplashPageBuilder({
     required this.home,
@@ -49,32 +78,6 @@ class SplashPageBuilder extends ConsumerWidget {
       );
     });
 
-    /*ref.listen<bool?>(settings.needUserInfoProvider!, (
-      previous,
-      needUserInfo,
-    ) {
-      if (needUserInfo != null) {
-        if (needUserInfo) {
-          final supplier = ref.watch(signInSupplierProvider);
-          if (supplier != null && !supplier.isThirdParty) {
-            final navigator = SignInNavigatorKeys.modal.currentState!;
-            navigator.pushReplacementNamed(SignInRoutes.signInUserInfoPage);
-          } else {
-            final navigator = Navigator.of(context, rootNavigator: true);
-            Future.delayed(const Duration(milliseconds: 200), () {
-              navigator.pushNamed(SignInRoutes.signInUserInfoPage,
-                  arguments: true);
-            });
-          }
-        } else if (previous != null && previous && !needUserInfo) {
-          final navigator = Navigator.of(context, rootNavigator: true);
-          Future.delayed(const Duration(milliseconds: 200), () {
-            navigator.pop();
-          });
-        }
-      }
-    });*/
-
     final authSplashState = ref.watch(authSplashProvider(settings));
     print("authSplashState is $authSplashState");
     return authSplashState.maybeWhen(
@@ -84,25 +87,3 @@ class SplashPageBuilder extends ConsumerWidget {
     );
   }
 }
-
-final authSplashProvider =
-    Provider.family<AuthSplashState, AuthSettings>((ref, settings) {
-  final authState = ref.watch(authStateProvider(settings));
-
-  return authState.maybeWhen(
-    initializing: () => const AuthSplashState.initializing(),
-    needUserInformation: (status) {
-      switch (status) {
-        case NeedUserInfo.signIn:
-          return const AuthSplashState.notAuthed();
-        case NeedUserInfo.launching:
-          return const AuthSplashState.initializing();
-        case NeedUserInfo.settings:
-          return const AuthSplashState.authed();
-      }
-    },
-    authed: (_) => const AuthSplashState.authed(),
-    error: (error) => AuthSplashState.error(error),
-    orElse: () => const AuthSplashState.notAuthed(),
-  );
-});
