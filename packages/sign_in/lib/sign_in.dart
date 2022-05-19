@@ -72,7 +72,7 @@ class AuthSettings {
 
   final List<SignInSupplier> suppliers;
   final StreamProvider userStreamProvider;
-  final Provider<bool>? needUserInfoProvider;
+  final Provider<bool?>? needUserInfoProvider;
   final GlobalKey<NavigatorState>? settingsNavigator;
   final CollectionReference? userRef;
 }

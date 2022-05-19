@@ -47,21 +47,23 @@ class SplashPageBuilder extends ConsumerWidget {
       );
     });*/
 
-    ref.listen<bool>(settings.needUserInfoProvider!, (
+    ref.listen<bool?>(settings.needUserInfoProvider!, (
       previous,
       needUserInfo,
     ) {
-      if (needUserInfo) {
-        final supplier = ref.watch(signInSupplierProvider);
-        if (supplier != null && !supplier.isThirdParty) {
-          final navigator = SignInNavigatorKeys.modal.currentState!;
-          navigator.pushReplacementNamed(SignInRoutes.signInUserInfoPage);
-        } else {
-          final navigator = Navigator.of(context, rootNavigator: true);
-          Future.delayed(const Duration(milliseconds: 200), () {
-            navigator.pushNamed(SignInRoutes.signInUserInfoPage,
-                arguments: true);
-          });
+      if (needUserInfo != null) {
+        if (needUserInfo) {
+          final supplier = ref.watch(signInSupplierProvider);
+          if (supplier != null && !supplier.isThirdParty) {
+            final navigator = SignInNavigatorKeys.modal.currentState!;
+            navigator.pushReplacementNamed(SignInRoutes.signInUserInfoPage);
+          } else {
+            final navigator = Navigator.of(context, rootNavigator: true);
+            Future.delayed(const Duration(milliseconds: 200), () {
+              navigator.pushNamed(SignInRoutes.signInUserInfoPage,
+                  arguments: true);
+            });
+          }
         }
       }
     });
