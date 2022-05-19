@@ -589,10 +589,10 @@ packages:
     description:
       path: "packages/modal_bottom_sheet"
       ref: HEAD
-      resolved-ref: "51077358ac9a96efd6ba77ffddcd98a3376c180a"
+      resolved-ref: "162f88b2e44ecfbf51d8e2a17f466130204c18e1"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "2.0.2-dev.1"
+    version: "2.0.2-dev.3"
   numberpicker:
     dependency: transitive
     description:
