@@ -17,7 +17,7 @@ class SplashPageBuilder extends ConsumerWidget {
     final settings = ref.read(authSettingsProvider);
     final authState = ref.watch(authStateProvider(settings));
 
-    /*ref.listen<AuthState>(authStateProvider(authArguments), (
+    ref.listen<AuthState>(authStateProvider(settings), (
       previousState,
       authState,
     ) {
@@ -45,9 +45,9 @@ class SplashPageBuilder extends ConsumerWidget {
         },
         orElse: () => null,
       );
-    });*/
+    });
 
-    ref.listen<bool?>(settings.needUserInfoProvider!, (
+    /*ref.listen<bool?>(settings.needUserInfoProvider!, (
       previous,
       needUserInfo,
     ) {
@@ -71,7 +71,7 @@ class SplashPageBuilder extends ConsumerWidget {
           });
         }
       }
-    });
+    });*/
 
     final authSplashState = ref.watch(authSplashProvider(settings));
     print("authSplashState is $authSplashState");

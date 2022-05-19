@@ -107,7 +107,7 @@ final authStateProvider =
             if (user == null) {
               return const AuthState.waitingUserCreation();
             } else {
-              /*if (settings.needUserInfoProvider != null) {
+              if (settings.needUserInfoProvider != null) {
                 final needUserInfo = ref.watch(settings.needUserInfoProvider!);
                 if (needUserInfo == true) {
                   return const AuthState.needUserInformation();
@@ -121,9 +121,9 @@ final authStateProvider =
                     return const AuthState.initializing();
                   }
                 }
-              } else {*/
-              return AuthState.authed(user);
-              //}
+              } else {
+                return AuthState.authed(user);
+              }
             }
           },
         );
