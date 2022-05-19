@@ -15,7 +15,6 @@ class SplashPageBuilder extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final settings = ref.read(authSettingsProvider);
-    final authState = ref.watch(authStateProvider(settings));
 
     ref.listen<AuthState>(authStateProvider(settings), (
       previousState,
@@ -26,7 +25,9 @@ class SplashPageBuilder extends ConsumerWidget {
           previousState?.maybeWhen(
             needUserInformation: (_) {
               final navigator = Navigator.of(context, rootNavigator: true);
-              navigator.pop();
+              Future.delayed(const Duration(milliseconds: 300), () {
+                navigator.pop();
+              });
             },
             orElse: () => null,
           );
@@ -38,7 +39,7 @@ class SplashPageBuilder extends ConsumerWidget {
             navigator.pushReplacementNamed(SignInRoutes.signInUserInfoPage);
           } else {
             final navigator = Navigator.of(context, rootNavigator: true);
-            Future.delayed(const Duration(milliseconds: 2300), () {
+            Future.delayed(const Duration(milliseconds: 300), () {
               navigator.pushNamed(SignInRoutes.signInUserInfoPage,
                   arguments: true);
             });
