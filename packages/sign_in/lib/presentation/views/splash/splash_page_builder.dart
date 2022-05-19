@@ -83,21 +83,7 @@ class SplashPageBuilder extends ConsumerWidget {
           return loader;
         }
       },*/
-      authed: (_) {
-        final isSigninIn = ref.watch(signInSupplierProvider) != null;
-
-        return FutureBuilder(
-          future: Future.delayed(
-              Duration(milliseconds: isSigninIn ? 200 : 0), () {}),
-          builder: (_, snapshot) {
-            if (snapshot.connectionState == ConnectionState.done) {
-              return home;
-            } else {
-              return loader;
-            }
-          },
-        );
-      },
+      authed: (_) => home,
       orElse: () => landing,
     );
   }
