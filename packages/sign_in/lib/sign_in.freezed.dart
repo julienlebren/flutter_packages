@@ -8017,6 +8017,600 @@ abstract class _SignInPhoneVerificationState
 }
 
 /// @nodoc
+class _$AuthSplashStateTearOff {
+  const _$AuthSplashStateTearOff();
+
+  _SplashInitializingAuth initializing() {
+    return const _SplashInitializingAuth();
+  }
+
+  _SplashNotAuthed notAuthed() {
+    return const _SplashNotAuthed();
+  }
+
+  _SplashAuthed authed() {
+    return const _SplashAuthed();
+  }
+
+  _SplashAuthError error(String error) {
+    return _SplashAuthError(
+      error,
+    );
+  }
+}
+
+/// @nodoc
+const $AuthSplashState = _$AuthSplashStateTearOff();
+
+/// @nodoc
+mixin _$AuthSplashState {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initializing,
+    required TResult Function() notAuthed,
+    required TResult Function() authed,
+    required TResult Function(String error) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SplashInitializingAuth value) initializing,
+    required TResult Function(_SplashNotAuthed value) notAuthed,
+    required TResult Function(_SplashAuthed value) authed,
+    required TResult Function(_SplashAuthError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SplashInitializingAuth value)? initializing,
+    TResult Function(_SplashNotAuthed value)? notAuthed,
+    TResult Function(_SplashAuthed value)? authed,
+    TResult Function(_SplashAuthError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SplashInitializingAuth value)? initializing,
+    TResult Function(_SplashNotAuthed value)? notAuthed,
+    TResult Function(_SplashAuthed value)? authed,
+    TResult Function(_SplashAuthError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $AuthSplashStateCopyWith<$Res> {
+  factory $AuthSplashStateCopyWith(
+          AuthSplashState value, $Res Function(AuthSplashState) then) =
+      _$AuthSplashStateCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$AuthSplashStateCopyWithImpl<$Res>
+    implements $AuthSplashStateCopyWith<$Res> {
+  _$AuthSplashStateCopyWithImpl(this._value, this._then);
+
+  final AuthSplashState _value;
+  // ignore: unused_field
+  final $Res Function(AuthSplashState) _then;
+}
+
+/// @nodoc
+abstract class _$SplashInitializingAuthCopyWith<$Res> {
+  factory _$SplashInitializingAuthCopyWith(_SplashInitializingAuth value,
+          $Res Function(_SplashInitializingAuth) then) =
+      __$SplashInitializingAuthCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SplashInitializingAuthCopyWithImpl<$Res>
+    extends _$AuthSplashStateCopyWithImpl<$Res>
+    implements _$SplashInitializingAuthCopyWith<$Res> {
+  __$SplashInitializingAuthCopyWithImpl(_SplashInitializingAuth _value,
+      $Res Function(_SplashInitializingAuth) _then)
+      : super(_value, (v) => _then(v as _SplashInitializingAuth));
+
+  @override
+  _SplashInitializingAuth get _value => super._value as _SplashInitializingAuth;
+}
+
+/// @nodoc
+
+class _$_SplashInitializingAuth implements _SplashInitializingAuth {
+  const _$_SplashInitializingAuth();
+
+  @override
+  String toString() {
+    return 'AuthSplashState.initializing()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SplashInitializingAuth);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initializing,
+    required TResult Function() notAuthed,
+    required TResult Function() authed,
+    required TResult Function(String error) error,
+  }) {
+    return initializing();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
+  }) {
+    return initializing?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (initializing != null) {
+      return initializing();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SplashInitializingAuth value) initializing,
+    required TResult Function(_SplashNotAuthed value) notAuthed,
+    required TResult Function(_SplashAuthed value) authed,
+    required TResult Function(_SplashAuthError value) error,
+  }) {
+    return initializing(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SplashInitializingAuth value)? initializing,
+    TResult Function(_SplashNotAuthed value)? notAuthed,
+    TResult Function(_SplashAuthed value)? authed,
+    TResult Function(_SplashAuthError value)? error,
+  }) {
+    return initializing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SplashInitializingAuth value)? initializing,
+    TResult Function(_SplashNotAuthed value)? notAuthed,
+    TResult Function(_SplashAuthed value)? authed,
+    TResult Function(_SplashAuthError value)? error,
+    required TResult orElse(),
+  }) {
+    if (initializing != null) {
+      return initializing(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SplashInitializingAuth implements AuthSplashState {
+  const factory _SplashInitializingAuth() = _$_SplashInitializingAuth;
+}
+
+/// @nodoc
+abstract class _$SplashNotAuthedCopyWith<$Res> {
+  factory _$SplashNotAuthedCopyWith(
+          _SplashNotAuthed value, $Res Function(_SplashNotAuthed) then) =
+      __$SplashNotAuthedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SplashNotAuthedCopyWithImpl<$Res>
+    extends _$AuthSplashStateCopyWithImpl<$Res>
+    implements _$SplashNotAuthedCopyWith<$Res> {
+  __$SplashNotAuthedCopyWithImpl(
+      _SplashNotAuthed _value, $Res Function(_SplashNotAuthed) _then)
+      : super(_value, (v) => _then(v as _SplashNotAuthed));
+
+  @override
+  _SplashNotAuthed get _value => super._value as _SplashNotAuthed;
+}
+
+/// @nodoc
+
+class _$_SplashNotAuthed implements _SplashNotAuthed {
+  const _$_SplashNotAuthed();
+
+  @override
+  String toString() {
+    return 'AuthSplashState.notAuthed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SplashNotAuthed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initializing,
+    required TResult Function() notAuthed,
+    required TResult Function() authed,
+    required TResult Function(String error) error,
+  }) {
+    return notAuthed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
+  }) {
+    return notAuthed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (notAuthed != null) {
+      return notAuthed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SplashInitializingAuth value) initializing,
+    required TResult Function(_SplashNotAuthed value) notAuthed,
+    required TResult Function(_SplashAuthed value) authed,
+    required TResult Function(_SplashAuthError value) error,
+  }) {
+    return notAuthed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SplashInitializingAuth value)? initializing,
+    TResult Function(_SplashNotAuthed value)? notAuthed,
+    TResult Function(_SplashAuthed value)? authed,
+    TResult Function(_SplashAuthError value)? error,
+  }) {
+    return notAuthed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SplashInitializingAuth value)? initializing,
+    TResult Function(_SplashNotAuthed value)? notAuthed,
+    TResult Function(_SplashAuthed value)? authed,
+    TResult Function(_SplashAuthError value)? error,
+    required TResult orElse(),
+  }) {
+    if (notAuthed != null) {
+      return notAuthed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SplashNotAuthed implements AuthSplashState {
+  const factory _SplashNotAuthed() = _$_SplashNotAuthed;
+}
+
+/// @nodoc
+abstract class _$SplashAuthedCopyWith<$Res> {
+  factory _$SplashAuthedCopyWith(
+          _SplashAuthed value, $Res Function(_SplashAuthed) then) =
+      __$SplashAuthedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$SplashAuthedCopyWithImpl<$Res>
+    extends _$AuthSplashStateCopyWithImpl<$Res>
+    implements _$SplashAuthedCopyWith<$Res> {
+  __$SplashAuthedCopyWithImpl(
+      _SplashAuthed _value, $Res Function(_SplashAuthed) _then)
+      : super(_value, (v) => _then(v as _SplashAuthed));
+
+  @override
+  _SplashAuthed get _value => super._value as _SplashAuthed;
+}
+
+/// @nodoc
+
+class _$_SplashAuthed implements _SplashAuthed {
+  const _$_SplashAuthed();
+
+  @override
+  String toString() {
+    return 'AuthSplashState.authed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SplashAuthed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initializing,
+    required TResult Function() notAuthed,
+    required TResult Function() authed,
+    required TResult Function(String error) error,
+  }) {
+    return authed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
+  }) {
+    return authed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (authed != null) {
+      return authed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SplashInitializingAuth value) initializing,
+    required TResult Function(_SplashNotAuthed value) notAuthed,
+    required TResult Function(_SplashAuthed value) authed,
+    required TResult Function(_SplashAuthError value) error,
+  }) {
+    return authed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SplashInitializingAuth value)? initializing,
+    TResult Function(_SplashNotAuthed value)? notAuthed,
+    TResult Function(_SplashAuthed value)? authed,
+    TResult Function(_SplashAuthError value)? error,
+  }) {
+    return authed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SplashInitializingAuth value)? initializing,
+    TResult Function(_SplashNotAuthed value)? notAuthed,
+    TResult Function(_SplashAuthed value)? authed,
+    TResult Function(_SplashAuthError value)? error,
+    required TResult orElse(),
+  }) {
+    if (authed != null) {
+      return authed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SplashAuthed implements AuthSplashState {
+  const factory _SplashAuthed() = _$_SplashAuthed;
+}
+
+/// @nodoc
+abstract class _$SplashAuthErrorCopyWith<$Res> {
+  factory _$SplashAuthErrorCopyWith(
+          _SplashAuthError value, $Res Function(_SplashAuthError) then) =
+      __$SplashAuthErrorCopyWithImpl<$Res>;
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$SplashAuthErrorCopyWithImpl<$Res>
+    extends _$AuthSplashStateCopyWithImpl<$Res>
+    implements _$SplashAuthErrorCopyWith<$Res> {
+  __$SplashAuthErrorCopyWithImpl(
+      _SplashAuthError _value, $Res Function(_SplashAuthError) _then)
+      : super(_value, (v) => _then(v as _SplashAuthError));
+
+  @override
+  _SplashAuthError get _value => super._value as _SplashAuthError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(_SplashAuthError(
+      error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SplashAuthError implements _SplashAuthError {
+  const _$_SplashAuthError(this.error);
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'AuthSplashState.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SplashAuthError &&
+            const DeepCollectionEquality().equals(other.error, error));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SplashAuthErrorCopyWith<_SplashAuthError> get copyWith =>
+      __$SplashAuthErrorCopyWithImpl<_SplashAuthError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initializing,
+    required TResult Function() notAuthed,
+    required TResult Function() authed,
+    required TResult Function(String error) error,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
+  }) {
+    return error?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initializing,
+    TResult Function()? notAuthed,
+    TResult Function()? authed,
+    TResult Function(String error)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SplashInitializingAuth value) initializing,
+    required TResult Function(_SplashNotAuthed value) notAuthed,
+    required TResult Function(_SplashAuthed value) authed,
+    required TResult Function(_SplashAuthError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SplashInitializingAuth value)? initializing,
+    TResult Function(_SplashNotAuthed value)? notAuthed,
+    TResult Function(_SplashAuthed value)? authed,
+    TResult Function(_SplashAuthError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SplashInitializingAuth value)? initializing,
+    TResult Function(_SplashNotAuthed value)? notAuthed,
+    TResult Function(_SplashAuthed value)? authed,
+    TResult Function(_SplashAuthError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SplashAuthError implements AuthSplashState {
+  const factory _SplashAuthError(String error) = _$_SplashAuthError;
+
+  String get error;
+  @JsonKey(ignore: true)
+  _$SplashAuthErrorCopyWith<_SplashAuthError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$AuthStateTearOff {
   const _$AuthStateTearOff();
 

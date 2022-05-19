@@ -73,18 +73,32 @@ class SplashPageBuilder extends ConsumerWidget {
       }
     });
 
-    return authState.maybeWhen(
+    final authSplashState = ref.watch(authSplashProvider(settings));
+    print("authSplashState is $authSplashState");
+    return authSplashState.maybeWhen(
       initializing: () => loader,
-      /*needUserInformation: () {
-        final isSigninIn = ref.watch(signInSupplierProvider) != null;
-        if (isSigninIn) {
-          return landing;
-        } else {
-          return loader;
-        }
-      },*/
-      authed: (_) => home,
+      authed: () => home,
       orElse: () => landing,
     );
   }
 }
+
+final authSplashProvider =
+    Provider.family<AuthSplashState, AuthSettings>((ref, settings) {
+  final authState = ref.watch(authStateProvider(settings));
+
+  return authState.maybeWhen(
+    initializing: () => const AuthSplashState.initializing(),
+    needUserInformation: () {
+      final isSigninIn = ref.watch(signInSupplierProvider) != null;
+      if (isSigninIn) {
+        return const AuthSplashState.notAuthed();
+      } else {
+        return const AuthSplashState.authed();
+      }
+    },
+    authed: (_) => const AuthSplashState.authed(),
+    error: (error) => AuthSplashState.error(error),
+    orElse: () => const AuthSplashState.notAuthed(),
+  );
+});
