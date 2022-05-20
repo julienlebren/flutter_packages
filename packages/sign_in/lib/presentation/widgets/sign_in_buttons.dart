@@ -24,7 +24,9 @@ void _handleSignIn(
     signInAnonymously: () => SignInSupplier.anonymous,
   );
 
-  final navigator = Navigator.of(context, rootNavigator: true);
+  final settings = ref.read(authSettingsProvider);
+  final navigator = settings.mainNavigator.currentState!;
+  //final navigator = Navigator.of(context, rootNavigator: true);
 
   event.maybeWhen(
     signInWithPhone: () {
