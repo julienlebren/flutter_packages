@@ -29,13 +29,16 @@ class SettingsAccountPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final isAnonymous = ref.watch(userAnonymousProvider);
+    final settings = ref.watch(authSettingsProvider);
+    final authState = ref.watch(authStateProvider(settings));
 
     return SettingsPageBuilder(
       provider: settingsAccountControllerProvider,
       title: l10n.settingsAccountTitle,
       child: FormPage(
         children: [
-          if (isAnonymous) ...[
+          if (isAnonymous ||
+              authState == const AuthState.needUserInformation()) ...[
             const _AnonymousSection(),
             const _ButtonsSection(),
           ] else ...[
