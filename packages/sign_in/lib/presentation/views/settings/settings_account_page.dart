@@ -108,7 +108,6 @@ class _ButtonsSection extends ConsumerWidget {
 
     return ProviderScope(
       overrides: [
-        signInAreaProvider.overrideWithValue(SignInArea.settings),
         signInThemeProvider.overrideWithValue(signInTheme.copyWith(
           buttonBackgroundColor: backgroundColor,
         )),
@@ -289,6 +288,7 @@ class _LogoutSection extends ConsumerWidget {
             if (isMaterial()) {
               Navigator.of(context, rootNavigator: true).pop();
             }
+            ref.read(signInAreaProvider.state).state = SignInArea.signIn;
             final controller =
                 ref.read(signInButtonsControllerProvider.notifier);
             controller.signOut();

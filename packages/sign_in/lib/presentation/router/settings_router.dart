@@ -12,6 +12,8 @@ class SettingsRouter {
     RouteSettings settings,
     WidgetRef ref,
   ) {
+    ref.read(signInAreaProvider.state).state = SignInArea.settings;
+
     switch (settings.name) {
       case SettingsRoutes.settingsAccountPage:
         return platformPageRoute(

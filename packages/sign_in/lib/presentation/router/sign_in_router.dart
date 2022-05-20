@@ -100,16 +100,11 @@ class SignInNavigator extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return ProviderScope(
-      overrides: [
-        signInAreaProvider.overrideWithValue(SignInArea.settings),
-      ],
-      child: Navigator(
-        key: SignInNavigatorKeys.modal,
-        initialRoute: routeName,
-        onGenerateRoute: (settings) =>
-            SignInRouter.onGenerateRoute(settings, ref),
-      ),
+    return Navigator(
+      key: SignInNavigatorKeys.modal,
+      initialRoute: routeName,
+      onGenerateRoute: (settings) =>
+          SignInRouter.onGenerateRoute(settings, ref),
     );
   }
 }
