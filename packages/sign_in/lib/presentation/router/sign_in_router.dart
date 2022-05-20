@@ -41,6 +41,8 @@ class SignInRouter {
         settings.arguments != null ? (settings.arguments as bool) : false;
 
     if (isRootNavigator) {
+      ref.read(signInAreaProvider.state).state = SignInArea.signIn;
+
       return platformPageRoute(
         builder: (_) => SignInNavigator(
           routeName: settings.name!,

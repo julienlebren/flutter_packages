@@ -7,7 +7,7 @@ enum SignInArea {
   settings,
 }
 
-final signInAreaProvider = StateProvider<SignInArea>((_) => SignInArea.signIn);
+final signInAreaProvider = StateProvider<SignInArea?>((_) => null);
 
 void _handleSignIn(
   BuildContext context,

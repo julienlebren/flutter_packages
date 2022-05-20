@@ -6,13 +6,14 @@ final authSplashProvider = Provider.family<AuthSplashState, AuthSettings>(
 
     return authState.maybeWhen(
       initializing: () => const AuthSplashState.initializing(),
-      needUserInformation: (_) {
+      needUserInformation: () {
         final signInArea = ref.read(signInAreaProvider);
-        print("signInArea: $signInArea");
         if (signInArea == SignInArea.signIn) {
           return const AuthSplashState.notAuthed();
-        } else {
+        } else if (signInArea == SignInArea.settings) {
           return const AuthSplashState.authed();
+        } else {
+          return const AuthSplashState.initializing();
         }
       },
       authed: (_) => const AuthSplashState.authed(),
@@ -46,7 +47,7 @@ class SplashPageBuilder extends ConsumerWidget {
       authState.maybeWhen(
         authed: (_) {
           previousState?.maybeWhen(
-            needUserInformation: (_) {
+            needUserInformation: () {
               final navigator = Navigator.of(context, rootNavigator: true);
               Future.delayed(const Duration(milliseconds: 300), () {
                 navigator.pop();
@@ -55,7 +56,7 @@ class SplashPageBuilder extends ConsumerWidget {
             orElse: () => null,
           );
         },
-        needUserInformation: (_) {
+        needUserInformation: () {
           final supplier = ref.watch(signInSupplierProvider);
           if (supplier != null && !supplier.isThirdParty) {
             final navigator = SignInNavigatorKeys.modal.currentState!;

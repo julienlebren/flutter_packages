@@ -112,16 +112,7 @@ final authStateProvider =
               if (settings.needUserInfoProvider != null) {
                 final needUserInfo = ref.watch(settings.needUserInfoProvider!);
                 if (needUserInfo == true) {
-                  if (isSigninIn) {
-                    return const AuthState.needUserInformation(
-                        NeedUserInfo.signIn);
-                  } else if (firebaseUser.isAnonymous) {
-                    return const AuthState.needUserInformation(
-                        NeedUserInfo.settings);
-                  } else {
-                    return const AuthState.needUserInformation(
-                        NeedUserInfo.launching);
-                  }
+                  return const AuthState.needUserInformation();
                 } else if (needUserInfo == false) {
                   return AuthState.authed(user);
                 } else {

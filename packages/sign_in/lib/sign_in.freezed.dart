@@ -8626,10 +8626,8 @@ class _$AuthStateTearOff {
     return const _WaitingUserCreation();
   }
 
-  _NeedUserInformation needUserInformation(NeedUserInfo status) {
-    return _NeedUserInformation(
-      status,
-    );
+  _NeedUserInformation needUserInformation() {
+    return const _NeedUserInformation();
   }
 
   _Authed authed(dynamic user) {
@@ -8655,7 +8653,7 @@ mixin _$AuthState {
     required TResult Function() initializing,
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
-    required TResult Function(NeedUserInfo status) needUserInformation,
+    required TResult Function() needUserInformation,
     required TResult Function(dynamic user) authed,
     required TResult Function(String error) error,
   }) =>
@@ -8665,7 +8663,7 @@ mixin _$AuthState {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
-    TResult Function(NeedUserInfo status)? needUserInformation,
+    TResult Function()? needUserInformation,
     TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
   }) =>
@@ -8675,7 +8673,7 @@ mixin _$AuthState {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
-    TResult Function(NeedUserInfo status)? needUserInformation,
+    TResult Function()? needUserInformation,
     TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -8773,7 +8771,7 @@ class _$_InitializingAuth implements _InitializingAuth {
     required TResult Function() initializing,
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
-    required TResult Function(NeedUserInfo status) needUserInformation,
+    required TResult Function() needUserInformation,
     required TResult Function(dynamic user) authed,
     required TResult Function(String error) error,
   }) {
@@ -8786,7 +8784,7 @@ class _$_InitializingAuth implements _InitializingAuth {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
-    TResult Function(NeedUserInfo status)? needUserInformation,
+    TResult Function()? needUserInformation,
     TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
   }) {
@@ -8799,7 +8797,7 @@ class _$_InitializingAuth implements _InitializingAuth {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
-    TResult Function(NeedUserInfo status)? needUserInformation,
+    TResult Function()? needUserInformation,
     TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -8900,7 +8898,7 @@ class _$_NotAuthed implements _NotAuthed {
     required TResult Function() initializing,
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
-    required TResult Function(NeedUserInfo status) needUserInformation,
+    required TResult Function() needUserInformation,
     required TResult Function(dynamic user) authed,
     required TResult Function(String error) error,
   }) {
@@ -8913,7 +8911,7 @@ class _$_NotAuthed implements _NotAuthed {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
-    TResult Function(NeedUserInfo status)? needUserInformation,
+    TResult Function()? needUserInformation,
     TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
   }) {
@@ -8926,7 +8924,7 @@ class _$_NotAuthed implements _NotAuthed {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
-    TResult Function(NeedUserInfo status)? needUserInformation,
+    TResult Function()? needUserInformation,
     TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -9029,7 +9027,7 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
     required TResult Function() initializing,
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
-    required TResult Function(NeedUserInfo status) needUserInformation,
+    required TResult Function() needUserInformation,
     required TResult Function(dynamic user) authed,
     required TResult Function(String error) error,
   }) {
@@ -9042,7 +9040,7 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
-    TResult Function(NeedUserInfo status)? needUserInformation,
+    TResult Function()? needUserInformation,
     TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
   }) {
@@ -9055,7 +9053,7 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
-    TResult Function(NeedUserInfo status)? needUserInformation,
+    TResult Function()? needUserInformation,
     TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -9119,7 +9117,6 @@ abstract class _$NeedUserInformationCopyWith<$Res> {
   factory _$NeedUserInformationCopyWith(_NeedUserInformation value,
           $Res Function(_NeedUserInformation) then) =
       __$NeedUserInformationCopyWithImpl<$Res>;
-  $Res call({NeedUserInfo status});
 }
 
 /// @nodoc
@@ -9132,50 +9129,26 @@ class __$NeedUserInformationCopyWithImpl<$Res>
 
   @override
   _NeedUserInformation get _value => super._value as _NeedUserInformation;
-
-  @override
-  $Res call({
-    Object? status = freezed,
-  }) {
-    return _then(_NeedUserInformation(
-      status == freezed
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as NeedUserInfo,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$_NeedUserInformation implements _NeedUserInformation {
-  const _$_NeedUserInformation(this.status);
-
-  @override
-  final NeedUserInfo status;
+  const _$_NeedUserInformation();
 
   @override
   String toString() {
-    return 'AuthState.needUserInformation(status: $status)';
+    return 'AuthState.needUserInformation()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _NeedUserInformation &&
-            const DeepCollectionEquality().equals(other.status, status));
+        (other.runtimeType == runtimeType && other is _NeedUserInformation);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(status));
-
-  @JsonKey(ignore: true)
-  @override
-  _$NeedUserInformationCopyWith<_NeedUserInformation> get copyWith =>
-      __$NeedUserInformationCopyWithImpl<_NeedUserInformation>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
@@ -9183,11 +9156,11 @@ class _$_NeedUserInformation implements _NeedUserInformation {
     required TResult Function() initializing,
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
-    required TResult Function(NeedUserInfo status) needUserInformation,
+    required TResult Function() needUserInformation,
     required TResult Function(dynamic user) authed,
     required TResult Function(String error) error,
   }) {
-    return needUserInformation(status);
+    return needUserInformation();
   }
 
   @override
@@ -9196,11 +9169,11 @@ class _$_NeedUserInformation implements _NeedUserInformation {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
-    TResult Function(NeedUserInfo status)? needUserInformation,
+    TResult Function()? needUserInformation,
     TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
   }) {
-    return needUserInformation?.call(status);
+    return needUserInformation?.call();
   }
 
   @override
@@ -9209,13 +9182,13 @@ class _$_NeedUserInformation implements _NeedUserInformation {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
-    TResult Function(NeedUserInfo status)? needUserInformation,
+    TResult Function()? needUserInformation,
     TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (needUserInformation != null) {
-      return needUserInformation(status);
+      return needUserInformation();
     }
     return orElse();
   }
@@ -9265,13 +9238,7 @@ class _$_NeedUserInformation implements _NeedUserInformation {
 }
 
 abstract class _NeedUserInformation implements AuthState {
-  const factory _NeedUserInformation(NeedUserInfo status) =
-      _$_NeedUserInformation;
-
-  NeedUserInfo get status;
-  @JsonKey(ignore: true)
-  _$NeedUserInformationCopyWith<_NeedUserInformation> get copyWith =>
-      throw _privateConstructorUsedError;
+  const factory _NeedUserInformation() = _$_NeedUserInformation;
 }
 
 /// @nodoc
@@ -9339,7 +9306,7 @@ class _$_Authed implements _Authed {
     required TResult Function() initializing,
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
-    required TResult Function(NeedUserInfo status) needUserInformation,
+    required TResult Function() needUserInformation,
     required TResult Function(dynamic user) authed,
     required TResult Function(String error) error,
   }) {
@@ -9352,7 +9319,7 @@ class _$_Authed implements _Authed {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
-    TResult Function(NeedUserInfo status)? needUserInformation,
+    TResult Function()? needUserInformation,
     TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
   }) {
@@ -9365,7 +9332,7 @@ class _$_Authed implements _Authed {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
-    TResult Function(NeedUserInfo status)? needUserInformation,
+    TResult Function()? needUserInformation,
     TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -9494,7 +9461,7 @@ class _$_AuthError implements _AuthError {
     required TResult Function() initializing,
     required TResult Function() notAuthed,
     required TResult Function() waitingUserCreation,
-    required TResult Function(NeedUserInfo status) needUserInformation,
+    required TResult Function() needUserInformation,
     required TResult Function(dynamic user) authed,
     required TResult Function(String error) error,
   }) {
@@ -9507,7 +9474,7 @@ class _$_AuthError implements _AuthError {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
-    TResult Function(NeedUserInfo status)? needUserInformation,
+    TResult Function()? needUserInformation,
     TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
   }) {
@@ -9520,7 +9487,7 @@ class _$_AuthError implements _AuthError {
     TResult Function()? initializing,
     TResult Function()? notAuthed,
     TResult Function()? waitingUserCreation,
-    TResult Function(NeedUserInfo status)? needUserInformation,
+    TResult Function()? needUserInformation,
     TResult Function(dynamic user)? authed,
     TResult Function(String error)? error,
     required TResult orElse(),
