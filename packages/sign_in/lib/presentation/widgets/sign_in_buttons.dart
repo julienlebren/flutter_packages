@@ -40,7 +40,8 @@ void _handleSignIn(
         navigator.pushNamed(SignInRoutes.signInEmailRegisterPage,
             arguments: true);
       } else {
-        navigator.pushNamed(SignInRoutes.signInEmailPage, arguments: true);
+        navigator.pushNamed(SignInRoutes.signInEmailRegisterPage,
+            arguments: true);
       }
     },
     signInWithEmailLink: (_) {

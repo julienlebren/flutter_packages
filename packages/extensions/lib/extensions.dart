@@ -7,4 +7,5 @@ import 'package:intl/intl.dart';
 part 'color.dart';
 part 'date.dart';
 part 'int.dart';
+part 'iterable.dart';
 part 'string.dart';

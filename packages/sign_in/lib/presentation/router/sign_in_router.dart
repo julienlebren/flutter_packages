@@ -21,7 +21,7 @@ class SignInNavigatorKeys {
 class SignInRoutes {
   static const predicate = 'sign-in';
   static const signInLandingPage = 'sign-in';
-  static const signInEmailPage = 'sign-in/email';
+  static const signInEmailLoginPage = 'sign-in/email';
   static const signInEmailResetPage = 'sign-in/email/reset';
   static const signInEmailRegisterPage = 'sign-in/email/register';
   static const signInEmailLinkPage = 'sign-in/link';
@@ -49,7 +49,7 @@ class SignInRouter {
       );
     } else {
       switch (settings.name) {
-        case SignInRoutes.signInEmailPage:
+        case SignInRoutes.signInEmailLoginPage:
           return platformPageRoute(
             builder: (_) => const SignInEmailLoginPage(),
           );
