@@ -1,33 +1,27 @@
 part of '../../../sign_in.dart';
 
-final authSplashProvider =
-    Provider.family<AuthSplashState, AuthSettings>((ref, settings) {
-  final authState = ref.watch(authStateProvider(settings));
+final authSplashProvider = Provider.family<AuthSplashState, AuthSettings>(
+  (ref, settings) {
+    final authState = ref.watch(authStateProvider(settings));
 
-  return authState.maybeWhen(
-    initializing: () => const AuthSplashState.initializing(),
-    needUserInformation: (_) {
-      final isSigninIn = ref.watch(signInSupplierProvider) != null;
-      print("isSigninIn: $isSigninIn");
-      if (isSigninIn) {
-        return const AuthSplashState.notAuthed();
-      } else {
-        return const AuthSplashState.authed();
-      }
-      /*switch (status) {
-        case NeedUserInfo.signIn:
+    return authState.maybeWhen(
+      initializing: () => const AuthSplashState.initializing(),
+      needUserInformation: (_) {
+        final signInArea = ref.read(signInAreaProvider);
+        print("signInArea: $signInArea");
+        if (signInArea == SignInArea.signIn) {
           return const AuthSplashState.notAuthed();
-        case NeedUserInfo.launching:
-          return const AuthSplashState.initializing();
-        case NeedUserInfo.settings:
+        } else {
           return const AuthSplashState.authed();
-      }*/
-    },
-    authed: (_) => const AuthSplashState.authed(),
-    error: (error) => AuthSplashState.error(error),
-    orElse: () => const AuthSplashState.notAuthed(),
-  );
-});
+        }
+      },
+      authed: (_) => const AuthSplashState.authed(),
+      error: (error) => AuthSplashState.error(error),
+      orElse: () => const AuthSplashState.notAuthed(),
+    );
+  },
+  dependencies: [signInAreaProvider],
+);
 
 class SplashPageBuilder extends ConsumerWidget {
   const SplashPageBuilder({
