@@ -108,6 +108,7 @@ class _ButtonsSection extends ConsumerWidget {
 
     return ProviderScope(
       overrides: [
+        signInAreaProvider.overrideWithValue(SignInArea.settings),
         signInThemeProvider.overrideWithValue(signInTheme.copyWith(
           buttonBackgroundColor: backgroundColor,
         )),
