@@ -13,7 +13,7 @@ class SignInLandingPageBuilder extends ConsumerWidget {
     final signInTheme = ref.watch(signInThemeProvider);
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: systemOverlayStyle,
+      value: signInTheme.scaffoldBackgroundColor.uiOverlayStyle,
       child: SafeArea(
         top: false,
         bottom: false,
