@@ -24,8 +24,10 @@ void _handleSignIn(
     signInAnonymously: () => SignInSupplier.anonymous,
   );
 
-  //final settings = ref.read(authSettingsProvider);
-  //final navigator = settings.mainNavigator.currentState!;
+  if (ref.read(signInAreaProvider) == null) {
+    ref.read(signInAreaProvider.state).state = SignInArea.signIn;
+  }
+
   final navigator = Navigator.of(context, rootNavigator: true);
 
   event.maybeWhen(

@@ -37,8 +37,7 @@ class SettingsAccountPage extends ConsumerWidget {
       title: l10n.settingsAccountTitle,
       child: FormPage(
         children: [
-          if (isAnonymous ||
-              authState == const AuthState.needUserInformation()) ...[
+          if (isAnonymous) ...[
             const _AnonymousSection(),
             const _ButtonsSection(),
           ] else ...[

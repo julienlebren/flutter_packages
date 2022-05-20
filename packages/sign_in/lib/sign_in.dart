@@ -67,7 +67,6 @@ class AuthSettings {
     required this.suppliers,
     required this.userStreamProvider,
     this.needUserInfoProvider,
-    required this.mainNavigator,
     this.settingsNavigator,
     this.userRef,
   });
@@ -75,7 +74,6 @@ class AuthSettings {
   final List<SignInSupplier> suppliers;
   final StreamProvider userStreamProvider;
   final Provider<bool?>? needUserInfoProvider;
-  final GlobalKey<NavigatorState> mainNavigator;
   final GlobalKey<NavigatorState>? settingsNavigator;
   final CollectionReference? userRef;
 }
