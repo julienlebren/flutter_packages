@@ -1,4 +1,4 @@
-part of 'extensions.dart';
+/*part of 'extensions.dart';
 
 extension ListX<E> on List<E> {
   List<E> sortedBy(Comparable key(E e)) {
@@ -7,3 +7,4 @@ extension ListX<E> on List<E> {
     return tmpList;
   }
 }
+*/
