@@ -12,25 +12,28 @@ class SignInLandingPageBuilder extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final signInTheme = ref.watch(signInThemeProvider);
 
-    return SafeArea(
-      top: false,
-      bottom: false,
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-          color: signInTheme.scaffoldBackgroundColor,
-          image: signInTheme.backgroundImage != null
-              ? DecorationImage(
-                  image: AssetImage(signInTheme.backgroundImage!),
-                  fit: BoxFit.cover,
-                )
-              : null,
-        ),
-        child: Scaffold(
-          backgroundColor: Colors.transparent,
-          body: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40.0),
-              child: child,
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: systemOverlayStyle,
+      child: SafeArea(
+        top: false,
+        bottom: false,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: signInTheme.scaffoldBackgroundColor,
+            image: signInTheme.backgroundImage != null
+                ? DecorationImage(
+                    image: AssetImage(signInTheme.backgroundImage!),
+                    fit: BoxFit.cover,
+                  )
+                : null,
+          ),
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            body: SafeArea(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                child: child,
+              ),
             ),
           ),
         ),

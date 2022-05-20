@@ -19,4 +19,10 @@ extension ColorX on Color {
 
     return hslLight.toColor();
   }
+
+  SystemUiOverlayStyle get uiOverlayStyle {
+    return (computeLuminance() > 0.179)
+        ? SystemUiOverlayStyle.dark
+        : SystemUiOverlayStyle.light;
+  }
 }
