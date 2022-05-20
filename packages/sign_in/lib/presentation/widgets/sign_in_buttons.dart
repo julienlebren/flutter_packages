@@ -228,6 +228,7 @@ class SignInButtonContents extends ConsumerWidget {
       (theme) => theme.buttonFontSize,
     ));
     final iconSize = buttonFontSize * 1.3;
+    print("signInArea: $signInArea");
 
     return Row(
       children: <Widget>[
