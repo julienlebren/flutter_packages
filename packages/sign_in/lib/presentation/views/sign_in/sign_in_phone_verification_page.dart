@@ -91,17 +91,29 @@ class _SignInPinCodeFieldState extends ConsumerState<SignInPinCodeField> {
         width: 270,
         child: Material(
           color: signInTheme.scaffoldBackgroundColor,
-          child: PinPut(
+          child: Pinput(
+            length: 6,
+            focusNode: focusNode,
+            pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
+            showCursor: true,
+            onCompleted: (pin) => print(pin),
+            onTap: () {
+              if (controller.text.length == 6) {
+                controller.text = '';
+              }
+            },
+          ),
+
+          /*PinPut(
             fieldsCount: 6,
             textStyle: const TextStyle(fontSize: 56),
-            focusNode: focusNode,
             controller: controller,
             pinAnimationType: PinAnimationType.none,
             submittedFieldDecoration: _pinPutBorder(signInTheme.textColor),
             selectedFieldDecoration: _pinPutBorder(signInTheme.primaryColor),
             followingFieldDecoration: _pinPutBorder(signInTheme.borderColor),
             autovalidateMode: AutovalidateMode.disabled,
-            onChanged: (input) {
+            validator: (input) {
               _handlePhoneVerificationEvent(
                   ref, SignInPhoneVerificationEvent.codeChanged(input));
               if (input.length == 6) {
@@ -114,7 +126,7 @@ class _SignInPinCodeFieldState extends ConsumerState<SignInPinCodeField> {
                 controller.text = '';
               }
             },
-          ),
+          ),*/
         ),
       ),
     );

@@ -18,7 +18,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:layout_builder/layout_builder.dart';
 import 'package:localization/localization.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:pinput/pin_put/pin_put.dart';
+import 'package:pinput/pinput.dart';
 import 'package:sign_in/presentation/painters/apple_logo.dart';
 import 'package:sign_in/presentation/painters/google_logo.dart';
 import 'package:sign_in/l10n/sign_in_localizations.dart';
