@@ -17,7 +17,7 @@ final systemOverlayStyleProvider = Provider<SystemUiOverlayStyle>((ref) {
   // navigation bar. Honestly, so few people will set light mode while their device
   // is in dark mode, isn't it?
   if (appTheme.brightness == Brightness.light &&
-      WidgetsBinding.instance.window.platformBrightness == Brightness.dark) {
+      WidgetsBinding.instance!.window.platformBrightness == Brightness.dark) {
     return SystemUiOverlayStyle(statusBarColor: Colors.transparent);
   } else {
     return SystemUiOverlayStyle(
