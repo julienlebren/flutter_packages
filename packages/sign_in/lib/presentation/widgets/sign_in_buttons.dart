@@ -138,12 +138,14 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
                       ),
                     ),
                   ] else ...[
-                    ProviderScope(
-                      overrides: [
-                        _currentSupplier.overrideWithValue(supplier),
-                      ],
-                      child: const SignInSupplierButton(),
-                    ),
+                    if (isCupertino() ||
+                        (!isCupertino() && supplier != SignInSupplier.apple))
+                      ProviderScope(
+                        overrides: [
+                          _currentSupplier.overrideWithValue(supplier),
+                        ],
+                        child: const SignInSupplierButton(),
+                      ),
                     SizedBox(height: theme.spaceBetweenButtons),
                   ],
                 ],
