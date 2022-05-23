@@ -109,7 +109,9 @@ class SignInScaffold extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async => (appBar?.leading == null),
       child: AnnotatedRegion(
-        value: SystemUiOverlayStyle.dark,
+        value: SystemUiOverlayStyle(
+          statusBarColor: Colors.blue,
+        ),
         child: PlatformScaffold(
           appBar: appBar,
           body: Padding(
