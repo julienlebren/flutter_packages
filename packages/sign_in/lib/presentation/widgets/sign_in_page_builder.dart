@@ -108,22 +108,25 @@ class SignInScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async => (appBar?.leading == null),
-      child: PlatformScaffold(
-        appBar: appBar,
-        body: Padding(
-          padding: const EdgeInsets.only(
-            left: 25,
-            right: 25,
-            bottom: 20,
-          ),
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              return SizedBox(
-                width: constraints.maxWidth,
-                height: constraints.maxHeight,
-                child: child,
-              );
-            },
+      child: AnnotatedRegion(
+        value: SystemUiOverlayStyle.light,
+        child: PlatformScaffold(
+          appBar: appBar,
+          body: Padding(
+            padding: const EdgeInsets.only(
+              left: 25,
+              right: 25,
+              bottom: 20,
+            ),
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return SizedBox(
+                  width: constraints.maxWidth,
+                  height: constraints.maxHeight,
+                  child: child,
+                );
+              },
+            ),
           ),
         ),
       ),
@@ -247,6 +250,7 @@ class SignInSubmitButton extends ConsumerWidget {
     final backgroundColor = ref.watch(
       signInThemeProvider.select((theme) => theme.scaffoldBackgroundColor),
     );
+    print("backgroundColor: $backgroundColor");
 
     return Column(
       mainAxisSize: MainAxisSize.min,
