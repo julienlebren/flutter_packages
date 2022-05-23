@@ -228,11 +228,11 @@ class SignInButtonContents extends ConsumerWidget {
     final supplier = ref.watch(_currentSupplier);
     final signInArea = ref.watch(signInAreaProvider);
     final l10n = ref.watch(signInLocalizationsProvider);
-    final buttonTextColor = signInArea == SignInArea.signIn
-        ? ref.watch(signInThemeProvider.select(
+    final buttonTextColor = signInArea == SignInArea.settings
+        ? ref.watch(appThemeProvider.select((theme) => theme.textColor))
+        : ref.watch(signInThemeProvider.select(
             (theme) => theme.buttonTextColor,
-          ))
-        : ref.watch(appThemeProvider.select((theme) => theme.textColor));
+          ));
     final buttonFontSize = ref.watch(signInThemeProvider.select(
       (theme) => theme.buttonFontSize,
     ));
