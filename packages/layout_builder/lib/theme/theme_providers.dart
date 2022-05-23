@@ -20,9 +20,9 @@ final systemOverlayStyleProvider = Provider<SystemUiOverlayStyle>((ref) {
       WidgetsBinding.instance!.window.platformBrightness == Brightness.dark) {
     return SystemUiOverlayStyle(statusBarColor: Colors.transparent);
   } else {
-    print("here?");
+    print("here: ${appTheme.statusBarColor}");
     return SystemUiOverlayStyle(
-      statusBarColor: appTheme.statusBarColor,
+      statusBarColor: Colors.green, //appTheme.statusBarColor,
       systemNavigationBarColor: appTheme.materialSystemBarColor,
       systemNavigationBarIconBrightness: appTheme.materialSystemBarColor != null
           ? (appTheme.materialSystemBarColor!.computeLuminance() > 0.5
