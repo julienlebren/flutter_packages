@@ -109,7 +109,7 @@ class SignInScaffold extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async => (appBar?.leading == null),
       child: AnnotatedRegion(
-        value: SystemUiOverlayStyle.light,
+        value: SystemUiOverlayStyle.dark,
         child: PlatformScaffold(
           appBar: appBar,
           body: Padding(
@@ -248,9 +248,8 @@ class SignInSubmitButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final backgroundColor = ref.watch(
-      signInThemeProvider.select((theme) => theme.scaffoldBackgroundColor),
+      appThemeProvider.select((theme) => theme.scaffoldBackgroundColor),
     );
-    print("backgroundColor: $backgroundColor");
 
     return Column(
       mainAxisSize: MainAxisSize.min,
