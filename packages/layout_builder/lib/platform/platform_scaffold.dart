@@ -16,7 +16,6 @@ class PlatformScaffold extends PlatformWidgetBase<AnnotatedRegion, Widget> {
   @override
   AnnotatedRegion createMaterialWidget(BuildContext context, WidgetRef ref) {
     final systemOverlayStyle = ref.watch(systemOverlayStyleProvider);
-    print("systemOverlayStyle: ${systemOverlayStyle.statusBarColor}");
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: systemOverlayStyle,
