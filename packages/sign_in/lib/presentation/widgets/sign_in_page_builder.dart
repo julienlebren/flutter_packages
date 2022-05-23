@@ -108,27 +108,22 @@ class SignInScaffold extends StatelessWidget {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async => (appBar?.leading == null),
-      child: AnnotatedRegion(
-        value: SystemUiOverlayStyle(
-          statusBarColor: Colors.blue,
-        ),
-        child: PlatformScaffold(
-          appBar: appBar,
-          body: Padding(
-            padding: const EdgeInsets.only(
-              left: 25,
-              right: 25,
-              bottom: 20,
-            ),
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-                return SizedBox(
-                  width: constraints.maxWidth,
-                  height: constraints.maxHeight,
-                  child: child,
-                );
-              },
-            ),
+      child: PlatformScaffold(
+        appBar: appBar,
+        body: Padding(
+          padding: const EdgeInsets.only(
+            left: 25,
+            right: 25,
+            bottom: 20,
+          ),
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return SizedBox(
+                width: constraints.maxWidth,
+                height: constraints.maxHeight,
+                child: child,
+              );
+            },
           ),
         ),
       ),
