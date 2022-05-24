@@ -251,8 +251,8 @@ class FirebaseAuthService {
     print("service signOut ok 1");
     final googleSignIn = GoogleSignIn();
     await googleSignIn.signOut();
-    final facebookLogin = FacebookLogin();
-    await facebookLogin.logOut();
+    //final facebookLogin = FacebookLogin();
+    //await facebookLogin.logOut();
     print("service signOut ok 2");
     await _firebaseAuth.signOut();
   }
