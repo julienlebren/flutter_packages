@@ -175,14 +175,14 @@ class _SocialRow extends ConsumerWidget {
   void _showModalSheet(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
 
-    showPlatformModalSheet(
-      context: context,
-      ref: ref,
+    showAlertDialog(
+      context,
+      ref,
       title: l10n.unlinkTitle,
+      displayCancelButton: true,
       actions: [
-        PlatformModalSheetAction(
-          title: l10n.unlinkProvider(supplier.name(l10n)),
-          icon: Icons.delete,
+        PlatformDialogAction(
+          buttonText: l10n.unlinkProvider(supplier.name(l10n)),
           onPressed: () {
             final controller =
                 ref.read(settingsAccountControllerProvider.notifier);
