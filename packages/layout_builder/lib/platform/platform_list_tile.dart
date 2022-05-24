@@ -251,26 +251,24 @@ class ListTileContents extends ConsumerWidget {
                       ),
                     ),
                   if (value != null)
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(right: 7),
-                        child: Text(
-                          value!,
-                          style: TextStyle(
-                            fontSize: isCupertino() ? 17 : 16,
-                            letterSpacing: isCupertino() ? -0.5 : 0,
-                            color: isMaterial() && label != null
-                                ? (listTheme.valueColorEnforced
-                                    ? listTheme.valueColor
-                                    : appTheme.primaryColor)
-                                : (label != null
-                                    ? listTheme.valueColor
-                                    : listTheme.labelColor),
-                          ),
-                          textAlign:
-                              label != null ? TextAlign.right : TextAlign.left,
-                          overflow: TextOverflow.ellipsis,
+                    Padding(
+                      padding: EdgeInsets.only(right: 7),
+                      child: Text(
+                        value!,
+                        style: TextStyle(
+                          fontSize: isCupertino() ? 17 : 16,
+                          letterSpacing: isCupertino() ? -0.5 : 0,
+                          color: isMaterial() && label != null
+                              ? (listTheme.valueColorEnforced
+                                  ? listTheme.valueColor
+                                  : appTheme.primaryColor)
+                              : (label != null
+                                  ? listTheme.valueColor
+                                  : listTheme.labelColor),
                         ),
+                        textAlign:
+                            label != null ? TextAlign.right : TextAlign.left,
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                   if (trailing != null) trailing!
