@@ -238,12 +238,12 @@ class _LogoutSection extends ConsumerWidget {
   _confirmLogout(BuildContext context, WidgetRef ref) async {
     final l10n = ref.watch(signInLocalizationsProvider);
 
-    showPlatformModalSheet(
+    showPlatformSheetAlert(
       context: context,
       ref: ref,
       title: l10n.settingsLogoutConfirmation,
       actions: [
-        PlatformModalSheetAction(
+        AlertAction(
           title: l10n.settingsLogoutButton,
           onPressed: () {
             if (isMaterial()) {
