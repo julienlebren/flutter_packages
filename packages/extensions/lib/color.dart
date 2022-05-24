@@ -25,4 +25,8 @@ extension ColorX on Color {
         ? SystemUiOverlayStyle.dark
         : SystemUiOverlayStyle.light;
   }
+
+  Brightness get brightness {
+    return computeLuminance() > 0.5 ? Brightness.dark : Brightness.light;
+  }
 }
