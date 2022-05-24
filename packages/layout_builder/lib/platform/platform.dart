@@ -35,6 +35,7 @@ part 'platform_route.dart';
 part 'platform_scaffold.dart';
 part 'platform_scrollbar.dart';
 part 'platform_search_bar.dart';
+part 'platform_sheet_alert.dart';
 part 'platform_single_picker.dart';
 part 'platform_switch.dart';
 part 'platform_tab_navigator.dart';
