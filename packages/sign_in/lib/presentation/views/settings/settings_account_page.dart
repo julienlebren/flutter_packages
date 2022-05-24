@@ -244,6 +244,7 @@ class _LogoutSection extends ConsumerWidget {
         AlertAction(
           title: l10n.settingsLogoutButton,
           onPressed: () {
+            print("ici ok");
             ref.read(signInAreaProvider.state).state = SignInArea.signIn;
             final controller =
                 ref.read(signInButtonsControllerProvider.notifier);

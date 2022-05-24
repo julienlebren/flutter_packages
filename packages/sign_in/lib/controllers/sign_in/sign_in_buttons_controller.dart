@@ -59,6 +59,7 @@ class SignInButtonsController extends StateNotifier<SignInButtonsState> {
   }
 
   Future<void> signOut() async {
+    print("signOut ok");
     try {
       _service.signOut();
       state = const SignInButtonsState.initial();
