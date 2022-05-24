@@ -21,7 +21,7 @@ packages:
       name: cached_network_image
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.1.0"
+    version: "3.2.1"
   cached_network_image_platform_interface:
     dependency: transitive
     description:
@@ -63,7 +63,7 @@ packages:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.15.0"
+    version: "1.16.0"
   crypto:
     dependency: transitive
     description:
@@ -76,17 +76,17 @@ packages:
     description:
       path: "packages/extensions"
       ref: HEAD
-      resolved-ref: "36b6dd39a1d75481b72d30f0116d1e9530e00a63"
+      resolved-ref: "06960aa7779bcbadf648ee49a0f267dc7e83c8b4"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.1.6"
+    version: "0.2.4"
   fake_async:
     dependency: transitive
     description:
       name: fake_async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.0"
+    version: "1.3.0"
   ffi:
     dependency: transitive
     description:
@@ -119,7 +119,7 @@ packages:
       name: flutter_cache_manager
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.1.2"
+    version: "3.3.0"
   flutter_localizations:
     dependency: transitive
     description: flutter
@@ -184,19 +184,19 @@ packages:
     description:
       path: "packages/layout_builder"
       ref: HEAD
-      resolved-ref: "36b6dd39a1d75481b72d30f0116d1e9530e00a63"
+      resolved-ref: "06960aa7779bcbadf648ee49a0f267dc7e83c8b4"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "2.2.0"
+    version: "2.5.4"
   localization:
     dependency: transitive
     description:
       path: "packages/localization"
       ref: HEAD
-      resolved-ref: "36b6dd39a1d75481b72d30f0116d1e9530e00a63"
+      resolved-ref: "06960aa7779bcbadf648ee49a0f267dc7e83c8b4"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "1.1.0"
+    version: "1.1.3"
   matcher:
     dependency: transitive
     description:
@@ -210,7 +210,7 @@ packages:
       name: material_color_utilities
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.3"
+    version: "0.1.4"
   meta:
     dependency: transitive
     description:
@@ -221,10 +221,12 @@ packages:
   modal_bottom_sheet:
     dependency: transitive
     description:
-      name: modal_bottom_sheet
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.0"
+      path: "packages/modal_bottom_sheet"
+      ref: HEAD
+      resolved-ref: "06960aa7779bcbadf648ee49a0f267dc7e83c8b4"
+      url: "https://github.com/julienlebren/flutter_packages"
+    source: git
+    version: "2.0.2-dev.3"
   numberpicker:
     dependency: transitive
     description:
@@ -245,7 +247,7 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0"
+    version: "1.8.1"
   path_provider:
     dependency: transitive
     description:
@@ -334,7 +336,7 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.1"
+    version: "1.8.2"
   sqflite:
     dependency: transitive
     description:
@@ -397,7 +399,7 @@ packages:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.8"
+    version: "0.4.9"
   typed_data:
     dependency: transitive
     description:
@@ -418,7 +420,7 @@ packages:
       name: vector_math
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.2"
   win32:
     dependency: transitive
     description:
@@ -434,5 +436,5 @@ packages:
     source: hosted
     version: "0.2.0"
 sdks:
-  dart: ">=2.16.1 <3.0.0"
-  flutter: ">=1.24.0-10.2.pre"
+  dart: ">=2.17.0 <3.0.0"
+  flutter: ">=3.0.0"

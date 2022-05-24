@@ -1,6 +1,6 @@
 name: avatar
 description: A widget handling an avatar
-version: 0.1.16
+version: 0.1.17
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -15,13 +15,13 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/extensions
-    version: ^0.1.2
+    version: ^0.2.4
   layout_builder:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/layout_builder
-    version: ^2.2.0
-  cached_network_image: ^3.1.0-alpha.1 
+    version: ^2.5.4
+  cached_network_image: ^3.2.1 
    
 dev_dependencies:
   flutter_test:
