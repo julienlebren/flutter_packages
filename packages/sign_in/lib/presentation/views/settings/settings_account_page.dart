@@ -29,8 +29,6 @@ class SettingsAccountPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final isAnonymous = ref.watch(userAnonymousProvider);
-    final settings = ref.watch(authSettingsProvider);
-    final authState = ref.watch(authStateProvider(settings));
 
     return SettingsPageBuilder(
       provider: settingsAccountControllerProvider,
@@ -246,9 +244,6 @@ class _LogoutSection extends ConsumerWidget {
         AlertAction(
           title: l10n.settingsLogoutButton,
           onPressed: () {
-            if (isMaterial()) {
-              Navigator.of(context, rootNavigator: true).pop();
-            }
             ref.read(signInAreaProvider.state).state = SignInArea.signIn;
             final controller =
                 ref.read(signInButtonsControllerProvider.notifier);
