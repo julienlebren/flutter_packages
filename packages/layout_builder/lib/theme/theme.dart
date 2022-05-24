@@ -47,6 +47,7 @@ class ListViewTheme with _$ListViewTheme {
     @Default(15) double separatorPadding,
     required Color labelColor,
     required Color valueColor,
+    @Default(false) double valueColorEnforced,
     @Default(17) double labelFontSize,
     required Color captionColor,
     @Default(13) double captionFontSize,

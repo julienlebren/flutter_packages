@@ -250,6 +250,7 @@ class _SocialRow extends ConsumerWidget {
         listViewThemeProvider.overrideWithValue(
           listViewTheme.copyWith(
             valueColor: isConnected ? Colors.green : listViewTheme.valueColor,
+            valueColorEnforced: true,
           ),
         ),
       ],

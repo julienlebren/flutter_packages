@@ -644,6 +644,7 @@ class _$ListViewThemeTearOff {
       {double separatorPadding = 15,
       required Color labelColor,
       required Color valueColor,
+      double valueColorEnforced = false,
       double labelFontSize = 17,
       required Color captionColor,
       double captionFontSize = 13,
@@ -653,6 +654,7 @@ class _$ListViewThemeTearOff {
       separatorPadding: separatorPadding,
       labelColor: labelColor,
       valueColor: valueColor,
+      valueColorEnforced: valueColorEnforced,
       labelFontSize: labelFontSize,
       captionColor: captionColor,
       captionFontSize: captionFontSize,
@@ -670,6 +672,7 @@ mixin _$ListViewTheme {
   double get separatorPadding => throw _privateConstructorUsedError;
   Color get labelColor => throw _privateConstructorUsedError;
   Color get valueColor => throw _privateConstructorUsedError;
+  double get valueColorEnforced => throw _privateConstructorUsedError;
   double get labelFontSize => throw _privateConstructorUsedError;
   Color get captionColor => throw _privateConstructorUsedError;
   double get captionFontSize => throw _privateConstructorUsedError;
@@ -690,6 +693,7 @@ abstract class $ListViewThemeCopyWith<$Res> {
       {double separatorPadding,
       Color labelColor,
       Color valueColor,
+      double valueColorEnforced,
       double labelFontSize,
       Color captionColor,
       double captionFontSize,
@@ -711,6 +715,7 @@ class _$ListViewThemeCopyWithImpl<$Res>
     Object? separatorPadding = freezed,
     Object? labelColor = freezed,
     Object? valueColor = freezed,
+    Object? valueColorEnforced = freezed,
     Object? labelFontSize = freezed,
     Object? captionColor = freezed,
     Object? captionFontSize = freezed,
@@ -730,6 +735,10 @@ class _$ListViewThemeCopyWithImpl<$Res>
           ? _value.valueColor
           : valueColor // ignore: cast_nullable_to_non_nullable
               as Color,
+      valueColorEnforced: valueColorEnforced == freezed
+          ? _value.valueColorEnforced
+          : valueColorEnforced // ignore: cast_nullable_to_non_nullable
+              as double,
       labelFontSize: labelFontSize == freezed
           ? _value.labelFontSize
           : labelFontSize // ignore: cast_nullable_to_non_nullable
@@ -765,6 +774,7 @@ abstract class _$ListViewThemeCopyWith<$Res>
       {double separatorPadding,
       Color labelColor,
       Color valueColor,
+      double valueColorEnforced,
       double labelFontSize,
       Color captionColor,
       double captionFontSize,
@@ -788,6 +798,7 @@ class __$ListViewThemeCopyWithImpl<$Res>
     Object? separatorPadding = freezed,
     Object? labelColor = freezed,
     Object? valueColor = freezed,
+    Object? valueColorEnforced = freezed,
     Object? labelFontSize = freezed,
     Object? captionColor = freezed,
     Object? captionFontSize = freezed,
@@ -807,6 +818,10 @@ class __$ListViewThemeCopyWithImpl<$Res>
           ? _value.valueColor
           : valueColor // ignore: cast_nullable_to_non_nullable
               as Color,
+      valueColorEnforced: valueColorEnforced == freezed
+          ? _value.valueColorEnforced
+          : valueColorEnforced // ignore: cast_nullable_to_non_nullable
+              as double,
       labelFontSize: labelFontSize == freezed
           ? _value.labelFontSize
           : labelFontSize // ignore: cast_nullable_to_non_nullable
@@ -838,6 +853,7 @@ class _$_ListViewTheme implements _ListViewTheme {
       {this.separatorPadding = 15,
       required this.labelColor,
       required this.valueColor,
+      this.valueColorEnforced = false,
       this.labelFontSize = 17,
       required this.captionColor,
       this.captionFontSize = 13,
@@ -851,6 +867,9 @@ class _$_ListViewTheme implements _ListViewTheme {
   final Color labelColor;
   @override
   final Color valueColor;
+  @JsonKey()
+  @override
+  final double valueColorEnforced;
   @JsonKey()
   @override
   final double labelFontSize;
@@ -868,7 +887,7 @@ class _$_ListViewTheme implements _ListViewTheme {
 
   @override
   String toString() {
-    return 'ListViewTheme(separatorPadding: $separatorPadding, labelColor: $labelColor, valueColor: $valueColor, labelFontSize: $labelFontSize, captionColor: $captionColor, captionFontSize: $captionFontSize, labelMaxLines: $labelMaxLines, captionMaxLines: $captionMaxLines)';
+    return 'ListViewTheme(separatorPadding: $separatorPadding, labelColor: $labelColor, valueColor: $valueColor, valueColorEnforced: $valueColorEnforced, labelFontSize: $labelFontSize, captionColor: $captionColor, captionFontSize: $captionFontSize, labelMaxLines: $labelMaxLines, captionMaxLines: $captionMaxLines)';
   }
 
   @override
@@ -882,6 +901,8 @@ class _$_ListViewTheme implements _ListViewTheme {
                 .equals(other.labelColor, labelColor) &&
             const DeepCollectionEquality()
                 .equals(other.valueColor, valueColor) &&
+            const DeepCollectionEquality()
+                .equals(other.valueColorEnforced, valueColorEnforced) &&
             const DeepCollectionEquality()
                 .equals(other.labelFontSize, labelFontSize) &&
             const DeepCollectionEquality()
@@ -900,6 +921,7 @@ class _$_ListViewTheme implements _ListViewTheme {
       const DeepCollectionEquality().hash(separatorPadding),
       const DeepCollectionEquality().hash(labelColor),
       const DeepCollectionEquality().hash(valueColor),
+      const DeepCollectionEquality().hash(valueColorEnforced),
       const DeepCollectionEquality().hash(labelFontSize),
       const DeepCollectionEquality().hash(captionColor),
       const DeepCollectionEquality().hash(captionFontSize),
@@ -917,6 +939,7 @@ abstract class _ListViewTheme implements ListViewTheme {
       {double separatorPadding,
       required Color labelColor,
       required Color valueColor,
+      double valueColorEnforced,
       double labelFontSize,
       required Color captionColor,
       double captionFontSize,
@@ -929,6 +952,8 @@ abstract class _ListViewTheme implements ListViewTheme {
   Color get labelColor;
   @override
   Color get valueColor;
+  @override
+  double get valueColorEnforced;
   @override
   double get labelFontSize;
   @override
