@@ -10,10 +10,17 @@ final firestoreServiceProvider =
     Provider<FirestoreService>((ref) => FirestoreService.instance);
 
 class FirestoreService {
-  FirestoreService._();
+  FirestoreService._() {
+    firestore.settings = const Settings(
+      persistenceEnabled: true,
+      cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED,
+    );
+  }
 
   static final instance = FirestoreService._();
   static final firestore = FirebaseFirestore.instance;
+
+  void setPersistence() {}
 
   String newDocumentId(String path) {
     return firestore.collection(path).doc().id;
