@@ -90,23 +90,25 @@ class UploadWidget extends ConsumerWidget {
   }
 
   Future<void> _cropImage(WidgetRef ref, File imageFile) async {
-    File? croppedFile = await ImageCropper.cropImage(
+    final croppedFile = await ImageCropper().cropImage(
       sourcePath: imageFile.path,
       aspectRatio: isRounded ? CropAspectRatio(ratioX: 1, ratioY: 1) : null,
       cropStyle: isRounded ? CropStyle.circle : CropStyle.rectangle,
-      androidUiSettings: AndroidUiSettings(
-        toolbarTitle: l10n.cropPicture,
-        toolbarColor: Colors.black,
-        toolbarWidgetColor: Colors.white,
-        initAspectRatio: CropAspectRatioPreset.original,
-        lockAspectRatio: false,
-      ),
-      iosUiSettings: IOSUiSettings(
-        title: l10n.cropPicture,
-      ),
+      uiSettings: [
+        AndroidUiSettings(
+          toolbarTitle: l10n.cropPicture,
+          toolbarColor: Colors.black,
+          toolbarWidgetColor: Colors.white,
+          initAspectRatio: CropAspectRatioPreset.original,
+          lockAspectRatio: false,
+        ),
+        IOSUiSettings(
+          title: l10n.cropPicture,
+        ),
+      ],
     );
     if (croppedFile != null) {
-      _controller(ref).uploadPhoto(croppedFile);
+      _controller(ref).uploadPhoto(File(croppedFile.path));
     }
   }
 
