@@ -325,10 +325,10 @@ packages:
     description:
       path: "packages/firestore_service"
       ref: HEAD
-      resolved-ref: f297d3f6992d41ec81566d803931a93afc376aa4
+      resolved-ref: "9aa825433e5f2ed31735f59a293bbe1c2b6603e7"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.1.8"
+    version: "0.2.0"
   fixnum:
     dependency: transitive
     description:
