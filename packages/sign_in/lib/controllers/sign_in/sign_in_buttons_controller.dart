@@ -44,6 +44,7 @@ class SignInButtonsController extends StateNotifier<SignInButtonsState> {
       );
       state = const SignInButtonsState.success();
     } on FirebaseAuthException catch (e) {
+      print(e.toString());
       if (e.code == "ERROR_AUTHORIZATION_DENIED") {
         state = const SignInButtonsState.initial();
       } else if (e.code != "ERROR_ABORTED_BY_USER") {
@@ -52,6 +53,7 @@ class SignInButtonsController extends StateNotifier<SignInButtonsState> {
         state = const SignInButtonsState.initial();
       }
     } on Exception catch (e) {
+      print(e.toString());
       state = SignInButtonsState.error(e.toString());
     }
   }
