@@ -43,7 +43,9 @@ class FormSection extends ConsumerWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       if (isMaterial()) ...[
-                        SizedBox(height: title != null ? 5 : 15),
+                        SizedBox(
+                            height:
+                                (title == null && caption != null) ? 15 : 5),
                         if (caption != null && !displayCaptionOnlyOnIOS)
                           FormSectionCaption(caption: caption!),
                       ],
