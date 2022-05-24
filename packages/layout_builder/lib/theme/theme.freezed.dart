@@ -644,7 +644,7 @@ class _$ListViewThemeTearOff {
       {double separatorPadding = 15,
       required Color labelColor,
       required Color valueColor,
-      double valueColorEnforced = false,
+      bool valueColorEnforced = false,
       double labelFontSize = 17,
       required Color captionColor,
       double captionFontSize = 13,
@@ -672,7 +672,7 @@ mixin _$ListViewTheme {
   double get separatorPadding => throw _privateConstructorUsedError;
   Color get labelColor => throw _privateConstructorUsedError;
   Color get valueColor => throw _privateConstructorUsedError;
-  double get valueColorEnforced => throw _privateConstructorUsedError;
+  bool get valueColorEnforced => throw _privateConstructorUsedError;
   double get labelFontSize => throw _privateConstructorUsedError;
   Color get captionColor => throw _privateConstructorUsedError;
   double get captionFontSize => throw _privateConstructorUsedError;
@@ -693,7 +693,7 @@ abstract class $ListViewThemeCopyWith<$Res> {
       {double separatorPadding,
       Color labelColor,
       Color valueColor,
-      double valueColorEnforced,
+      bool valueColorEnforced,
       double labelFontSize,
       Color captionColor,
       double captionFontSize,
@@ -738,7 +738,7 @@ class _$ListViewThemeCopyWithImpl<$Res>
       valueColorEnforced: valueColorEnforced == freezed
           ? _value.valueColorEnforced
           : valueColorEnforced // ignore: cast_nullable_to_non_nullable
-              as double,
+              as bool,
       labelFontSize: labelFontSize == freezed
           ? _value.labelFontSize
           : labelFontSize // ignore: cast_nullable_to_non_nullable
@@ -774,7 +774,7 @@ abstract class _$ListViewThemeCopyWith<$Res>
       {double separatorPadding,
       Color labelColor,
       Color valueColor,
-      double valueColorEnforced,
+      bool valueColorEnforced,
       double labelFontSize,
       Color captionColor,
       double captionFontSize,
@@ -821,7 +821,7 @@ class __$ListViewThemeCopyWithImpl<$Res>
       valueColorEnforced: valueColorEnforced == freezed
           ? _value.valueColorEnforced
           : valueColorEnforced // ignore: cast_nullable_to_non_nullable
-              as double,
+              as bool,
       labelFontSize: labelFontSize == freezed
           ? _value.labelFontSize
           : labelFontSize // ignore: cast_nullable_to_non_nullable
@@ -869,7 +869,7 @@ class _$_ListViewTheme implements _ListViewTheme {
   final Color valueColor;
   @JsonKey()
   @override
-  final double valueColorEnforced;
+  final bool valueColorEnforced;
   @JsonKey()
   @override
   final double labelFontSize;
@@ -939,7 +939,7 @@ abstract class _ListViewTheme implements ListViewTheme {
       {double separatorPadding,
       required Color labelColor,
       required Color valueColor,
-      double valueColorEnforced,
+      bool valueColorEnforced,
       double labelFontSize,
       required Color captionColor,
       double captionFontSize,
@@ -953,7 +953,7 @@ abstract class _ListViewTheme implements ListViewTheme {
   @override
   Color get valueColor;
   @override
-  double get valueColorEnforced;
+  bool get valueColorEnforced;
   @override
   double get labelFontSize;
   @override
