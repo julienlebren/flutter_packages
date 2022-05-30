@@ -2,7 +2,9 @@ part of platform;
 
 class PlatformActivityIndicator extends PlatformWidgetBase<
     CircularProgressIndicator, CupertinoActivityIndicator> {
-  const PlatformActivityIndicator() : super();
+  const PlatformActivityIndicator({this.color}) : super();
+
+  final Color? color;
 
   @override
   CircularProgressIndicator createMaterialWidget(
@@ -13,7 +15,7 @@ class PlatformActivityIndicator extends PlatformWidgetBase<
   @override
   CupertinoActivityIndicator createCupertinoWidget(
       BuildContext context, WidgetRef ref) {
-    return CupertinoActivityIndicator();
+    return CupertinoActivityIndicator(color: color);
   }
 }
 
