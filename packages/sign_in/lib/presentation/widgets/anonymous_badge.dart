@@ -32,9 +32,9 @@ class AnonymousBadge extends ConsumerWidget {
                       l10n.settingsNoAccount,
                       style: const TextStyle(
                         color: Colors.black,
-                        fontSize: 17,
+                        fontSize: 16,
                       ),
-                      maxLines: 4,
+                      maxLines: 5,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
