@@ -119,7 +119,10 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
     return SizedBox(
       height: boxHeight,
       child: isLoading
-          ? const Loader(delayBeforeDisplay: 0)
+          ? PlatformActivityIndicator(
+              color: theme.scaffoldBackgroundColor.brightness == Brightness.dark
+                  ? Colors.white
+                  : null)
           : Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
