@@ -205,7 +205,7 @@ abstract class SignInLocalizations {
   /// No description provided for @settingsNoAccount.
   ///
   /// In en, this message translates to:
-  /// **'You are currently not logged in, your settings and other data are not saved and may be lost.'**
+  /// **'You are currently not logged in, your settings and other data are not saved and may be lost. Tap here to create an account.'**
   String get settingsNoAccount;
 
   /// No description provided for @settingsEmailSectionTitle.

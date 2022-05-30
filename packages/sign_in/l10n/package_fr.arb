@@ -10,7 +10,7 @@
     "settingsAccountTitle": "Compte",
     "settingsCreateAccountButton": "Créer un compte",
     "settingsCreateAccountWith": "Créer un compte avec {supplier}",
-    "settingsNoAccount": "Vous n'êtes actuellement pas connecté, vos réglages et autres données ne sont pas sauvegardées et pourraient être perdus.",
+    "settingsNoAccount": "Vous n'êtes actuellement pas connecté, vos réglages et autres données ne sont pas sauvegardées et pourraient être perdus. Appuyez ici pour créer un compte.",
     "settingsEmailSectionTitle": "Informations de connexion",
     "settingsEmailLabel": "Adresse e-mail",
     "settingsEmailTitle": "Adresse e-mail",

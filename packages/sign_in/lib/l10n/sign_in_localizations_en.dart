@@ -66,7 +66,7 @@ class SignInLocalizationsEn extends SignInLocalizations {
   }
 
   @override
-  String get settingsNoAccount => 'You are currently not logged in, your settings and other data are not saved and may be lost.';
+  String get settingsNoAccount => 'You are currently not logged in, your settings and other data are not saved and may be lost. Tap here to create an account.';
 
   @override
   String get settingsEmailSectionTitle => 'Login information';

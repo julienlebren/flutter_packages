@@ -27,28 +27,16 @@ class AnonymousBadge extends ConsumerWidget {
                     size: 40,
                   ),
                   const SizedBox(width: 10),
-                  Column(
-                    children: [
-                      Flexible(
-                        child: Text(
-                          l10n.settingsNoAccount,
-                          style: const TextStyle(
-                            color: Colors.black,
-                            fontSize: 17,
-                          ),
-                          maxLines: 4,
-                          overflow: TextOverflow.ellipsis,
-                        ),
+                  Flexible(
+                    child: Text(
+                      l10n.settingsNoAccount,
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 17,
                       ),
-                      Text(
-                        l10n.settingsCreateAccountButton,
-                        style: const TextStyle(
-                          color: Colors.black,
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
+                      maxLines: 4,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                 ],
               ),
