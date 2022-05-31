@@ -1,22 +1,24 @@
 part of platform;
 
 PageRoute<T> platformPageRoute<T>({
-  required WidgetBuilder builder,
+  //required WidgetBuilder builder,
+  required Widget child,
   RouteSettings? settings,
   bool maintainState = true,
   bool fullscreenDialog = false,
   String? iosTitle,
 }) {
   if (isMaterial()) {
-    return MaterialPageRoute<T>(
+    return PageTransition(child: child, type: PageTransitionType.scale);
+    /*return MaterialPageRoute<T>(
       builder: builder,
       settings: settings,
       maintainState: maintainState,
       fullscreenDialog: fullscreenDialog,
-    );
+    );*/
   } else {
     return MaterialWithModalsPageRoute<T>(
-      builder: builder,
+      builder: (_) => child,
       settings: settings,
       maintainState: maintainState,
       fullscreenDialog: fullscreenDialog,
