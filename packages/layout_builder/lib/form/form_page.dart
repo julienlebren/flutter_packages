@@ -102,3 +102,52 @@ class FormPage extends ConsumerWidget {
     );
   }
 }
+
+class FormWithFixedButton extends ConsumerWidget {
+  const FormWithFixedButton({
+    Key? key,
+    required this.children,
+    required this.buttonText,
+    this.onPressed,
+  }) : super(key: key);
+
+  final List<Widget> children;
+  final String buttonText;
+  final VoidCallback? onPressed;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Stack(
+      children: [
+        FormPage(
+          children: children,
+        ),
+        LayoutBuilder(builder: (context, constraints) {
+          final backgroundColor = ref.watch(appThemeProvider.select(
+            (theme) => theme.groupedListBackgroundColor,
+          ));
+
+          return Container(
+            alignment: Alignment.bottomCenter,
+            padding: const EdgeInsets.symmetric(horizontal: 18),
+            width: constraints.maxWidth,
+            height: constraints.maxHeight,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  color: backgroundColor,
+                  child: PlatformFullSizedElevatedButton(
+                    title: buttonText,
+                    onPressed: onPressed,
+                  ),
+                ),
+                Container(color: backgroundColor, height: 40),
+              ],
+            ),
+          );
+        }),
+      ],
+    );
+  }
+}
