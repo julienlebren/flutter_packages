@@ -66,8 +66,6 @@ class PlatformModalScaffold extends PlatformScaffold {
         ? formTheme.backgroundColor
         : appTheme.scaffoldBackgroundColor;
 
-    print("body is ${body.debugDescribeChildren()}");
-
     return Padding(
       padding: EdgeInsets.only(top: appBar != null ? 10 : 0),
       child: CupertinoPageScaffold(
