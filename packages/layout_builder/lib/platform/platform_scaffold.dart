@@ -60,7 +60,9 @@ class PlatformModalScaffold extends PlatformScaffold {
     final appTheme = ref.watch(appThemeProvider);
     final formTheme = ref.watch(formThemeProvider);
 
-    final backgroundColor = body is FormWithOverlay || body is FormPage
+    final backgroundColor = body is FormWithOverlay ||
+            body is FormPage ||
+            body is FormWithFixedButton
         ? formTheme.backgroundColor
         : appTheme.scaffoldBackgroundColor;
 
