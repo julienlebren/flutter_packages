@@ -72,6 +72,7 @@ class _CupertinoBottomSheetContainer extends StatelessWidget {
 Future<T?> showCupertinoModalBottomSheet<T>({
   required BuildContext context,
   required WidgetBuilder builder,
+  NavigatorState? navigator,
   Color? backgroundColor,
   double? elevation,
   double? closeProgressThreshold,
@@ -100,33 +101,35 @@ Future<T?> showCupertinoModalBottomSheet<T>({
       ? MaterialLocalizations.of(context).modalBarrierDismissLabel
       : '';
 
-  final result =
-      await Navigator.of(context, rootNavigator: useRootNavigator).push(
+  final _navigator =
+      navigator ?? Navigator.of(context, rootNavigator: useRootNavigator);
+  final result = _navigator.push(
     CupertinoModalBottomSheetRoute<T>(
-        builder: builder,
-        containerBuilder: (context, _, child) => _CupertinoBottomSheetContainer(
-              child: child,
-              backgroundColor: backgroundColor,
-              topRadius: topRadius,
-              shadow: shadow,
-            ),
-        secondAnimationController: secondAnimation,
-        expanded: expand,
-        closeProgressThreshold: closeProgressThreshold,
-        barrierLabel: barrierLabel,
-        elevation: elevation,
-        bounce: bounce,
-        shape: shape,
-        clipBehavior: clipBehavior,
-        isDismissible: isDismissible ?? expand == false ? true : false,
-        modalBarrierColor: barrierColor ?? Colors.black12,
-        enableDrag: enableDrag,
+      builder: builder,
+      containerBuilder: (context, _, child) => _CupertinoBottomSheetContainer(
+        child: child,
+        backgroundColor: backgroundColor,
         topRadius: topRadius,
-        animationCurve: animationCurve,
-        previousRouteAnimationCurve: previousRouteAnimationCurve,
-        duration: duration,
-        settings: settings,
-        transitionBackgroundColor: transitionBackgroundColor ?? Colors.black),
+        shadow: shadow,
+      ),
+      secondAnimationController: secondAnimation,
+      expanded: expand,
+      closeProgressThreshold: closeProgressThreshold,
+      barrierLabel: barrierLabel,
+      elevation: elevation,
+      bounce: bounce,
+      shape: shape,
+      clipBehavior: clipBehavior,
+      isDismissible: isDismissible ?? expand == false ? true : false,
+      modalBarrierColor: barrierColor ?? Colors.black12,
+      enableDrag: enableDrag,
+      topRadius: topRadius,
+      animationCurve: animationCurve,
+      previousRouteAnimationCurve: previousRouteAnimationCurve,
+      duration: duration,
+      settings: settings,
+      transitionBackgroundColor: transitionBackgroundColor ?? Colors.black,
+    ),
   );
   return result;
 }

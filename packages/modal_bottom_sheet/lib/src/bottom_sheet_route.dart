@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 import '../modal_bottom_sheet.dart';
@@ -16,7 +14,7 @@ class _ModalBottomSheet<T> extends StatefulWidget {
     this.expanded = false,
     this.enableDrag = true,
     this.animationCurve,
-  })  : super(key: key);
+  }) : super(key: key);
 
   final double? closeProgressThreshold;
   final ModalBottomSheetRoute<T> route;
@@ -138,7 +136,7 @@ class ModalBottomSheetRoute<T> extends PopupRoute<T> {
     this.animationCurve,
     this.duration,
     RouteSettings? settings,
-  })  : super(settings: settings);
+  }) : super(settings: settings);
 
   final double? closeProgressThreshold;
   final WidgetWithChildBuilder? containerBuilder;
@@ -217,51 +215,4 @@ class ModalBottomSheetRoute<T> extends PopupRoute<T> {
   ) {
     return child;
   }
-}
-
-/// Shows a modal material design bottom sheet.
-Future<T?> showCustomModalBottomSheet<T>({
-  required BuildContext context,
-  required WidgetBuilder builder,
-  required WidgetWithChildBuilder containerWidget,
-  Color? backgroundColor,
-  double? elevation,
-  ShapeBorder? shape,
-  Clip? clipBehavior,
-  Color? barrierColor,
-  bool bounce = false,
-  bool expand = false,
-  AnimationController? secondAnimation,
-  Curve? animationCurve,
-  bool useRootNavigator = false,
-  bool isDismissible = true,
-  bool enableDrag = true,
-  Duration? duration,
-  RouteSettings? settings,
-}) async {
-  assert(debugCheckHasMediaQuery(context));
-  assert(debugCheckHasMaterialLocalizations(context));
-  final hasMaterialLocalizations =
-      Localizations.of<MaterialLocalizations>(context, MaterialLocalizations) !=
-          null;
-  final barrierLabel = hasMaterialLocalizations
-      ? MaterialLocalizations.of(context).modalBarrierDismissLabel
-      : '';
-
-  final result = await Navigator.of(context, rootNavigator: useRootNavigator)
-      .push(ModalBottomSheetRoute<T>(
-    builder: builder,
-    bounce: bounce,
-    containerBuilder: containerWidget,
-    secondAnimationController: secondAnimation,
-    expanded: expand,
-    barrierLabel: barrierLabel,
-    isDismissible: isDismissible,
-    modalBarrierColor: barrierColor,
-    enableDrag: enableDrag,
-    animationCurve: animationCurve,
-    duration: duration,
-    settings: settings,
-  ));
-  return result;
 }
