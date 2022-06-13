@@ -129,6 +129,27 @@ class FormWithFixedButton extends ConsumerWidget {
 
           return Container(
             alignment: Alignment.bottomCenter,
+            width: constraints.maxWidth,
+            height: constraints.maxHeight,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 18),
+                  color: backgroundColor,
+                  child: PlatformFullSizedElevatedButton(
+                    title: buttonText,
+                    onPressed: onPressed,
+                  ),
+                ),
+                Container(color: backgroundColor, height: 40),
+              ],
+            ),
+          );
+
+/*
+          return Container(
+            alignment: Alignment.bottomCenter,
             padding: const EdgeInsets.symmetric(horizontal: 18),
             width: constraints.maxWidth,
             height: constraints.maxHeight,
@@ -146,6 +167,7 @@ class FormWithFixedButton extends ConsumerWidget {
               ],
             ),
           );
+          */
         }),
       ],
     );
