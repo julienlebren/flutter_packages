@@ -134,25 +134,25 @@ class FormWithFixedButton extends ConsumerWidget {
             alignment: Alignment.bottomCenter,
             width: constraints.maxWidth,
             height: constraints.maxHeight,
-            child: SafeArea(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Container(
-                    color: dividerColor,
-                    height: 0.5,
-                  ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 18, vertical: 15),
-                    color: backgroundColor,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  color: dividerColor,
+                  height: 0.5,
+                ),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 18, vertical: 15),
+                  color: backgroundColor,
+                  child: SafeArea(
                     child: PlatformFullSizedElevatedButton(
                       title: buttonText,
                       onPressed: onPressed,
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           );
 
