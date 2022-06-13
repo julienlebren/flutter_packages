@@ -126,24 +126,33 @@ class FormWithFixedButton extends ConsumerWidget {
           final backgroundColor = ref.watch(appThemeProvider.select(
             (theme) => theme.scaffoldBackgroundColor,
           ));
+          final dividerColor = ref.watch(appThemeProvider.select(
+            (theme) => theme.dividerColor,
+          ));
 
           return Container(
             alignment: Alignment.bottomCenter,
             width: constraints.maxWidth,
             height: constraints.maxHeight,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 18),
-                  color: backgroundColor,
-                  child: PlatformFullSizedElevatedButton(
-                    title: buttonText,
-                    onPressed: onPressed,
+            child: SafeArea(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    color: dividerColor,
+                    height: 0.5,
                   ),
-                ),
-                Container(color: backgroundColor, height: 40),
-              ],
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 18, vertical: 15),
+                    color: backgroundColor,
+                    child: PlatformFullSizedElevatedButton(
+                      title: buttonText,
+                      onPressed: onPressed,
+                    ),
+                  ),
+                ],
+              ),
             ),
           );
 
