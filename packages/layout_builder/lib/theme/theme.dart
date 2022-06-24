@@ -39,6 +39,7 @@ class AppTheme with _$AppTheme {
     required Color textColor,
     required Color dividerColor,
     required Color shadowColor,
+    required Color disclosureIndicatorColor,
   }) = _AppTheme;
 }
 

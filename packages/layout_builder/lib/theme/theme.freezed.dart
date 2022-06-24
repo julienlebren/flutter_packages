@@ -39,7 +39,8 @@ class _$AppThemeTearOff {
       required Color borderColor,
       required Color textColor,
       required Color dividerColor,
-      required Color shadowColor}) {
+      required Color shadowColor,
+      required Color disclosureIndicatorColor}) {
     return _AppTheme(
       brightness: brightness,
       primaryColor: primaryColor,
@@ -63,6 +64,7 @@ class _$AppThemeTearOff {
       textColor: textColor,
       dividerColor: dividerColor,
       shadowColor: shadowColor,
+      disclosureIndicatorColor: disclosureIndicatorColor,
     );
   }
 }
@@ -95,6 +97,7 @@ mixin _$AppTheme {
   Color get textColor => throw _privateConstructorUsedError;
   Color get dividerColor => throw _privateConstructorUsedError;
   Color get shadowColor => throw _privateConstructorUsedError;
+  Color get disclosureIndicatorColor => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AppThemeCopyWith<AppTheme> get copyWith =>
@@ -126,7 +129,8 @@ abstract class $AppThemeCopyWith<$Res> {
       Color borderColor,
       Color textColor,
       Color dividerColor,
-      Color shadowColor});
+      Color shadowColor,
+      Color disclosureIndicatorColor});
 }
 
 /// @nodoc
@@ -160,6 +164,7 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
     Object? textColor = freezed,
     Object? dividerColor = freezed,
     Object? shadowColor = freezed,
+    Object? disclosureIndicatorColor = freezed,
   }) {
     return _then(_value.copyWith(
       brightness: brightness == freezed
@@ -247,6 +252,10 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
           ? _value.shadowColor
           : shadowColor // ignore: cast_nullable_to_non_nullable
               as Color,
+      disclosureIndicatorColor: disclosureIndicatorColor == freezed
+          ? _value.disclosureIndicatorColor
+          : disclosureIndicatorColor // ignore: cast_nullable_to_non_nullable
+              as Color,
     ));
   }
 }
@@ -277,7 +286,8 @@ abstract class _$AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
       Color borderColor,
       Color textColor,
       Color dividerColor,
-      Color shadowColor});
+      Color shadowColor,
+      Color disclosureIndicatorColor});
 }
 
 /// @nodoc
@@ -312,6 +322,7 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
     Object? textColor = freezed,
     Object? dividerColor = freezed,
     Object? shadowColor = freezed,
+    Object? disclosureIndicatorColor = freezed,
   }) {
     return _then(_AppTheme(
       brightness: brightness == freezed
@@ -399,6 +410,10 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
           ? _value.shadowColor
           : shadowColor // ignore: cast_nullable_to_non_nullable
               as Color,
+      disclosureIndicatorColor: disclosureIndicatorColor == freezed
+          ? _value.disclosureIndicatorColor
+          : disclosureIndicatorColor // ignore: cast_nullable_to_non_nullable
+              as Color,
     ));
   }
 }
@@ -427,7 +442,8 @@ class _$_AppTheme implements _AppTheme {
       required this.borderColor,
       required this.textColor,
       required this.dividerColor,
-      required this.shadowColor});
+      required this.shadowColor,
+      required this.disclosureIndicatorColor});
 
   @override
   final Brightness brightness;
@@ -474,10 +490,12 @@ class _$_AppTheme implements _AppTheme {
   final Color dividerColor;
   @override
   final Color shadowColor;
+  @override
+  final Color disclosureIndicatorColor;
 
   @override
   String toString() {
-    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, cupertinoNavigationBarBackgroundColor: $cupertinoNavigationBarBackgroundColor, tabBarBackgroundColor: $tabBarBackgroundColor, cupertinoTabBarBackgroundColor: $cupertinoTabBarBackgroundColor, groupedListBackgroundColor: $groupedListBackgroundColor, listTileBackground: $listTileBackground, elevatedButtonRadius: $elevatedButtonRadius, elevatedButtonPadding: $elevatedButtonPadding, searchBarRadius: $searchBarRadius, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor)';
+    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, cupertinoNavigationBarBackgroundColor: $cupertinoNavigationBarBackgroundColor, tabBarBackgroundColor: $tabBarBackgroundColor, cupertinoTabBarBackgroundColor: $cupertinoTabBarBackgroundColor, groupedListBackgroundColor: $groupedListBackgroundColor, listTileBackground: $listTileBackground, elevatedButtonRadius: $elevatedButtonRadius, elevatedButtonPadding: $elevatedButtonPadding, searchBarRadius: $searchBarRadius, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor, disclosureIndicatorColor: $disclosureIndicatorColor)';
   }
 
   @override
@@ -528,7 +546,9 @@ class _$_AppTheme implements _AppTheme {
             const DeepCollectionEquality()
                 .equals(other.dividerColor, dividerColor) &&
             const DeepCollectionEquality()
-                .equals(other.shadowColor, shadowColor));
+                .equals(other.shadowColor, shadowColor) &&
+            const DeepCollectionEquality().equals(
+                other.disclosureIndicatorColor, disclosureIndicatorColor));
   }
 
   @override
@@ -555,7 +575,8 @@ class _$_AppTheme implements _AppTheme {
         const DeepCollectionEquality().hash(borderColor),
         const DeepCollectionEquality().hash(textColor),
         const DeepCollectionEquality().hash(dividerColor),
-        const DeepCollectionEquality().hash(shadowColor)
+        const DeepCollectionEquality().hash(shadowColor),
+        const DeepCollectionEquality().hash(disclosureIndicatorColor)
       ]);
 
   @JsonKey(ignore: true)
@@ -586,7 +607,8 @@ abstract class _AppTheme implements AppTheme {
       required Color borderColor,
       required Color textColor,
       required Color dividerColor,
-      required Color shadowColor}) = _$_AppTheme;
+      required Color shadowColor,
+      required Color disclosureIndicatorColor}) = _$_AppTheme;
 
   @override
   Brightness get brightness;
@@ -630,6 +652,8 @@ abstract class _AppTheme implements AppTheme {
   Color get dividerColor;
   @override
   Color get shadowColor;
+  @override
+  Color get disclosureIndicatorColor;
   @override
   @JsonKey(ignore: true)
   _$AppThemeCopyWith<_AppTheme> get copyWith =>

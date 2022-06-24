@@ -290,10 +290,13 @@ class PlatformDisclosureIndicator extends PlatformWidgetBase<SizedBox, Icon> {
 
   @override
   Icon createCupertinoWidget(BuildContext context, WidgetRef ref) {
+    final color = ref.watch(appThemeProvider.select(
+      (theme) => theme.disclosureIndicatorColor,
+    ));
     return Icon(
       CupertinoIcons.chevron_right,
       size: 22,
-      color: Colors.grey,
+      color: color,
     );
   }
 }
