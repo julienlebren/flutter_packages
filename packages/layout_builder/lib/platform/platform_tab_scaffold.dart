@@ -7,6 +7,7 @@ class TabItem with _$TabItem {
     required Widget icon,
     Widget? selectedIcon,
     required PlatformTabNavigator router,
+    @Default(false) bool? popToFirstRoute,
   }) = _TabItem;
 }
 
@@ -23,8 +24,13 @@ class PlatformTabScaffold
       final tabs = ref.watch(tabsProvider);
       final router = tabs[index].router;
       final navigator = router.navigatorKey.currentState!;
-      navigator.popUntil((route) => route.isFirst);
-      //navigator.maybePop();
+
+      final tab = tabs[index];
+      if (tab.popToFirstRoute == true) {
+        navigator.popUntil((route) => route.isFirst);
+      } else {
+        navigator.maybePop();
+      }
     } else {
       ref.read(currentTabIndexProvider.state).state = index;
     }
