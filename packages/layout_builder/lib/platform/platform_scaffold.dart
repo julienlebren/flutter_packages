@@ -62,7 +62,7 @@ class PlatformModalScaffold extends PlatformScaffold {
 
     final backgroundColor = body is FormWithOverlay ||
             body is FormPage ||
-            body is FormWithFixedButton
+            body is FormWithFixedFooter
         ? formTheme.backgroundColor
         : appTheme.scaffoldBackgroundColor;
 

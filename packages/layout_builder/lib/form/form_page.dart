@@ -103,17 +103,15 @@ class FormPage extends ConsumerWidget {
   }
 }
 
-class FormWithFixedButton extends ConsumerWidget {
-  const FormWithFixedButton({
+class FormWithFixedFooter extends ConsumerWidget {
+  const FormWithFixedFooter({
     Key? key,
     required this.children,
-    required this.buttonText,
-    this.onPressed,
+    required this.footer,
   }) : super(key: key);
 
   final List<Widget> children;
-  final String buttonText;
-  final VoidCallback? onPressed;
+  final Widget footer;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -145,12 +143,7 @@ class FormWithFixedButton extends ConsumerWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 18, vertical: 15),
                   color: backgroundColor,
-                  child: SafeArea(
-                    child: PlatformFullSizedElevatedButton(
-                      title: buttonText,
-                      onPressed: onPressed,
-                    ),
-                  ),
+                  child: SafeArea(child: footer),
                 ),
               ],
             ),
