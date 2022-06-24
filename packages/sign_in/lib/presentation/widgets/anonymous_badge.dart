@@ -38,6 +38,7 @@ class AnonymousBadge extends ConsumerWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
+                  const PlatformDisclosureIndicator(),
                 ],
               ),
             ),
