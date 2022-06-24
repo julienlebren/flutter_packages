@@ -69,7 +69,8 @@ class SubscriptionPageBuilder extends ConsumerWidget {
             child: PlatformScaffold(
               appBar: PlatformNavigationBar(
                 leading: PlatformNavigationBarCloseButton(
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: () =>
+                      Navigator.of(context, rootNavigator: true).pop(),
                 ),
                 trailing: isCupertino() && canDiscount
                     ? PlatformNavigationBarButton(
