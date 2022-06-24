@@ -522,10 +522,10 @@ packages:
     description:
       path: "packages/layout_builder"
       ref: HEAD
-      resolved-ref: "96e40bf5994982352dd0e3b0babaac3c05ede288"
+      resolved-ref: "5a06f7b91f3d1c203187e0e5e2a478c2e4a05e3f"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "2.5.5"
+    version: "2.5.23"
   lints:
     dependency: transitive
     description:
@@ -614,6 +614,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.2"
+  page_transition:
+    dependency: transitive
+    description:
+      name: page_transition
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.9"
   path:
     dependency: transitive
     description:

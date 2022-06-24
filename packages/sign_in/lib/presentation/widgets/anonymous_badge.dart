@@ -6,6 +6,7 @@ class AnonymousBadge extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
+    final appTheme = ref.watch(appThemeProvider);
 
     return GestureDetector(
       onTap: () =>
@@ -38,7 +39,14 @@ class AnonymousBadge extends ConsumerWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  const PlatformDisclosureIndicator(),
+                  ProviderScope(
+                    overrides: [
+                      appThemeProvider.overrideWithValue(appTheme.copyWith(
+                        disclosureIndicatorColor: Colors.black,
+                      ))
+                    ],
+                    child: const PlatformDisclosureIndicator(),
+                  ),
                 ],
               ),
             ),
