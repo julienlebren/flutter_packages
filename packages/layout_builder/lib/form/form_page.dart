@@ -140,8 +140,11 @@ class FormWithFixedFooter extends ConsumerWidget {
                   height: 0.5,
                 ),
                 Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 18, vertical: 15),
+                  padding: const EdgeInsets.only(
+                    left: 18,
+                    right: 18,
+                    top: 15,
+                  ),
                   color: backgroundColor,
                   child: SafeArea(child: footer),
                 ),
