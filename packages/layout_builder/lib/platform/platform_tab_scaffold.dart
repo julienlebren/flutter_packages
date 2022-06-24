@@ -23,7 +23,8 @@ class PlatformTabScaffold
       final tabs = ref.watch(tabsProvider);
       final router = tabs[index].router;
       final navigator = router.navigatorKey.currentState!;
-      navigator.maybePop();
+      navigator.popUntil((route) => route.isFirst);
+      //navigator.maybePop();
     } else {
       ref.read(currentTabIndexProvider.state).state = index;
     }
