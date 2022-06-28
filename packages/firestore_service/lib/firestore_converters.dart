@@ -1,4 +1,4 @@
-part of 'firestore_service.dart';
+part of firestore_service;
 
 class TimestampConverter implements JsonConverter<DateTime, Timestamp> {
   const TimestampConverter();

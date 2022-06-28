@@ -5,6 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 part 'firestore_converters.dart';
+part 'firestore_errors.dart';
 
 final firestoreServiceProvider =
     Provider<FirestoreService>((ref) => FirestoreService.instance);
