@@ -4,7 +4,10 @@ final redirectionSettingsProvider =
     Provider<AnonymousRedirectionSettings?>((_) => null);
 
 class AnonymousRedirectionSettings {
-  AnonymousRedirectionSettings(this.navigator, this.tabIndex);
+  AnonymousRedirectionSettings({
+    required this.navigator,
+    required this.tabIndex,
+  });
   final NavigatorState navigator;
   final int tabIndex;
 }
