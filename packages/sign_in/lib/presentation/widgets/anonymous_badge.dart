@@ -35,7 +35,7 @@ class AnonymousBadge extends ConsumerWidget {
                         color: Colors.black,
                         fontSize: 16,
                       ),
-                      maxLines: 5,
+                      maxLines: 8,
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
