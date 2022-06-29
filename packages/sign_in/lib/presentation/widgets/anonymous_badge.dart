@@ -20,11 +20,13 @@ class AnonymousBadge extends ConsumerWidget {
     final l10n = ref.watch(signInLocalizationsProvider);
     final appTheme = ref.watch(appThemeProvider);
     final redirectionSettings = ref.watch(redirectionSettingsProvider);
-    print("navigator: ${redirectionSettings?.navigator}");
-    print("tabIndex: ${redirectionSettings?.tabIndex}");
 
     return GestureDetector(
       onTap: () {
+        ref.read(currentTabIndexProvider.state).state = 3;
+        print("navigator: ${redirectionSettings?.navigator}");
+        print("tabIndex: ${redirectionSettings?.tabIndex}");
+
         if (redirectionSettings != null) {
           ref.read(currentTabIndexProvider.state).state =
               redirectionSettings.tabIndex;
