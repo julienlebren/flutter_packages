@@ -23,10 +23,6 @@ class AnonymousBadge extends ConsumerWidget {
 
     return GestureDetector(
       onTap: () {
-        ref.read(currentTabIndexProvider.state).state = 3;
-        print("navigator: ${redirectionSettings?.navigator}");
-        print("tabIndex: ${redirectionSettings?.tabIndex}");
-
         if (redirectionSettings != null) {
           ref.read(currentTabIndexProvider.state).state =
               redirectionSettings.tabIndex;
