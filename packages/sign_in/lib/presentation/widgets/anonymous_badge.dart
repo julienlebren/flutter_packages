@@ -8,7 +8,7 @@ class AnonymousRedirectionSettings {
     required this.navigator,
     required this.tabIndex,
   });
-  final NavigatorState navigator;
+  final GlobalKey<NavigatorState> navigator;
   final int tabIndex;
 }
 
@@ -26,8 +26,10 @@ class AnonymousBadge extends ConsumerWidget {
         if (redirectionSettings != null) {
           ref.read(currentTabIndexProvider.state).state =
               redirectionSettings.tabIndex;
-          redirectionSettings.navigator
-              .pushNamed(SettingsRoutes.settingsAccountPage);
+          Future<void>.delayed(const Duration(milliseconds: 500), () {
+            redirectionSettings.navigator.currentState!
+                .pushNamed(SettingsRoutes.settingsAccountPage);
+          });
         } else {
           Navigator.pushNamed(context, SettingsRoutes.settingsAccountPage);
         }
