@@ -1,5 +1,7 @@
 part of '../../sign_in.dart';
 
+final accountPageProvider = Provider<VoidCallback?>((_) => null);
+
 class AnonymousBadge extends ConsumerWidget {
   const AnonymousBadge({Key? key}) : super(key: key);
 
@@ -7,10 +9,16 @@ class AnonymousBadge extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final appTheme = ref.watch(appThemeProvider);
+    final accountPageRedirection = ref.watch(accountPageProvider);
 
     return GestureDetector(
-      onTap: () =>
-          Navigator.pushNamed(context, SettingsRoutes.settingsAccountPage),
+      onTap: () {
+        if (accountPageRedirection != null) {
+          accountPageRedirection();
+        } else {
+          Navigator.pushNamed(context, SettingsRoutes.settingsAccountPage);
+        }
+      },
       child: FormSection(
         child: Padding(
           padding: EdgeInsets.only(top: isMaterial() ? 10 : 0),
