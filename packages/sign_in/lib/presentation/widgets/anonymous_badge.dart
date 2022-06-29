@@ -1,6 +1,13 @@
 part of '../../sign_in.dart';
 
-final accountPageProvider = Provider<VoidCallback?>((_) => null);
+final redirectionSettingsProvider =
+    Provider<AnonymousRedirectionSettings?>((_) => null);
+
+class AnonymousRedirectionSettings {
+  AnonymousRedirectionSettings(this.navigator, this.tabIndex);
+  final NavigatorState navigator;
+  final int tabIndex;
+}
 
 class AnonymousBadge extends ConsumerWidget {
   const AnonymousBadge({Key? key}) : super(key: key);
@@ -9,12 +16,15 @@ class AnonymousBadge extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final appTheme = ref.watch(appThemeProvider);
-    final accountPageRedirection = ref.watch(accountPageProvider);
+    final redirectionSettings = ref.watch(redirectionSettingsProvider);
 
     return GestureDetector(
       onTap: () {
-        if (accountPageRedirection != null) {
-          accountPageRedirection();
+        if (redirectionSettings != null) {
+          ref.read(currentTabIndexProvider.state).state =
+              redirectionSettings.tabIndex;
+          redirectionSettings.navigator
+              .pushNamed(SettingsRoutes.settingsAccountPage);
         } else {
           Navigator.pushNamed(context, SettingsRoutes.settingsAccountPage);
         }
