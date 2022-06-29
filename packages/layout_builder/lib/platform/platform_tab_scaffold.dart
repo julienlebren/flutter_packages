@@ -93,8 +93,8 @@ class PlatformTabScaffold
     final _controller = CupertinoTabController();
     final tabs = ref.watch(tabsProvider);
 
-    ref.listen<int>(currentTabIndexProvider, (tabIndex, _) {
-      _controller.index = tabIndex!;
+    ref.listen<int>(currentTabIndexProvider, (_, tabIndex) {
+      _controller.index = tabIndex;
     });
 
     return CupertinoTabScaffold(
