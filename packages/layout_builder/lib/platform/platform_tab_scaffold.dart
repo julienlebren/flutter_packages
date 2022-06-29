@@ -90,11 +90,17 @@ class PlatformTabScaffold
   CupertinoTabScaffold createCupertinoWidget(
       BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
-    final currentTabIndex = ref.watch(currentTabIndexProvider);
+    final _controller = CupertinoTabController();
     final tabs = ref.watch(tabsProvider);
+
+    ref.listen<int>(currentTabIndexProvider, (tabIndex, _) {
+      _controller.index = tabIndex!;
+    });
+
     return CupertinoTabScaffold(
+      controller: _controller,
       tabBar: CupertinoTabBar(
-        currentIndex: currentTabIndex,
+        //currentIndex: currentTabIndex,
         onTap: (index) => onTap(index, ref),
         backgroundColor: appTheme.cupertinoTabBarBackgroundColor,
         inactiveColor: Colors.grey,
