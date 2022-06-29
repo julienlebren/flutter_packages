@@ -20,6 +20,7 @@ class AnonymousBadge extends ConsumerWidget {
     final l10n = ref.watch(signInLocalizationsProvider);
     final appTheme = ref.watch(appThemeProvider);
     final redirectionSettings = ref.watch(redirectionSettingsProvider);
+    print("redirectionSettings: $redirectionSettings");
 
     return GestureDetector(
       onTap: () {
