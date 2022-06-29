@@ -5,10 +5,10 @@ final redirectionSettingsProvider =
 
 class AnonymousRedirectionSettings {
   AnonymousRedirectionSettings({
-    required this.navigator,
+    required this.navigatorKey,
     required this.tabIndex,
   });
-  final GlobalKey<NavigatorState> navigator;
+  final GlobalKey<NavigatorState> navigatorKey;
   final int tabIndex;
 }
 
@@ -27,8 +27,12 @@ class AnonymousBadge extends ConsumerWidget {
           ref.read(currentTabIndexProvider.state).state =
               redirectionSettings.tabIndex;
           Future<void>.delayed(const Duration(milliseconds: 500), () {
-            redirectionSettings.navigator.currentState!
-                .pushNamed(SettingsRoutes.settingsAccountPage);
+            final navigator = redirectionSettings.navigatorKey.currentState!;
+            print(
+                ModalRoute.of(redirectionSettings.navigatorKey.currentContext!)!
+                    .settings
+                    .name);
+            navigator.pushNamed(SettingsRoutes.settingsAccountPage);
           });
         } else {
           Navigator.pushNamed(context, SettingsRoutes.settingsAccountPage);
