@@ -17,9 +17,7 @@ final currentTabIndexProvider = StateProvider<int>((_) => 0);
 
 class PlatformTabScaffold
     extends PlatformWidgetBase<AnnotatedRegion, CupertinoTabScaffold> {
-  PlatformTabScaffold() : super();
-
-  final _controller = CupertinoTabController();
+  const PlatformTabScaffold() : super();
 
   ValueChanged<int>? onTap(int index, WidgetRef ref) {
     if (ref.read(currentTabIndexProvider) == index) {
@@ -92,6 +90,8 @@ class PlatformTabScaffold
   CupertinoTabScaffold createCupertinoWidget(
       BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
+    final currentTabIndex = ref.watch(currentTabIndexProvider);
+    final _controller = CupertinoTabController(initialIndex: currentTabIndex);
     final tabs = ref.watch(tabsProvider);
 
     ref.listen<int>(currentTabIndexProvider, (_, tabIndex) {
