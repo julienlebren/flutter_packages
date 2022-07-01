@@ -26,12 +26,8 @@ class AnonymousBadge extends ConsumerWidget {
         if (redirectionSettings != null) {
           ref.read(currentTabIndexProvider.state).state =
               redirectionSettings.tabIndex;
-          Future<void>.delayed(const Duration(milliseconds: 500), () {
+          Future<void>.delayed(const Duration(milliseconds: 400), () {
             final navigator = redirectionSettings.navigatorKey.currentState!;
-            print(
-                ModalRoute.of(redirectionSettings.navigatorKey.currentContext!)!
-                    .settings
-                    .name);
             navigator.pushNamed(SettingsRoutes.settingsAccountPage);
           });
         } else {
