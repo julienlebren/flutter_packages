@@ -15,6 +15,8 @@ final tabsProvider = Provider<List<TabItem>>((_) => throw UnimplementedError());
 
 final currentTabIndexProvider = StateProvider<int>((_) => 0);
 
+final scrollControllerProvider = StateProvider<ScrollController?>((_) => null);
+
 class PlatformTabScaffold
     extends PlatformWidgetBase<AnnotatedRegion, CupertinoTabScaffold> {
   const PlatformTabScaffold() : super();
@@ -22,11 +24,15 @@ class PlatformTabScaffold
   ValueChanged<int>? onTap(int index, WidgetRef ref) {
     if (ref.read(currentTabIndexProvider) == index) {
       final tabs = ref.watch(tabsProvider);
+      final scrollController = ref.watch(scrollControllerProvider);
       final router = tabs[index].router;
       final navigator = router.navigatorKey.currentState!;
 
       final tab = tabs[index];
-      if (tab.popToFirstRoute == true) {
+      if (scrollController != null && scrollController.offset > 0) {
+        scrollController.animateTo(0,
+            duration: Duration(milliseconds: 1000), curve: Curves.ease);
+      } else if (tab.popToFirstRoute == true) {
         navigator.popUntil((route) => route.isFirst);
       } else {
         navigator.maybePop();
