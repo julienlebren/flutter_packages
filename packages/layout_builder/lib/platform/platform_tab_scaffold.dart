@@ -8,7 +8,7 @@ class TabItem with _$TabItem {
     Widget? selectedIcon,
     required PlatformTabNavigator router,
     @Default(false) bool? popToFirstRoute,
-    ScrollController? scrollController,
+    Provider? scrollControllerProvider,
   }) = _TabItem;
 }
 
@@ -27,8 +27,9 @@ class PlatformTabScaffold
       final navigator = router.navigatorKey.currentState!;
 
       final tab = tabs[index];
-      if (tab.scrollController != null && tab.scrollController!.offset > 0) {
-        tab.scrollController!.animateTo(0,
+      if (tab.scrollControllerProvider != null &&
+          ref.read(tab.scrollControllerProvider!).offset > 0) {
+        ref.read(tab.scrollControllerProvider!).animateTo(0,
             duration: Duration(milliseconds: 1000), curve: Curves.ease);
       } else if (tab.popToFirstRoute == true) {
         navigator.popUntil((route) => route.isFirst);
