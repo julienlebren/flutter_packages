@@ -8,7 +8,7 @@ class TabItem with _$TabItem {
     Widget? selectedIcon,
     required PlatformTabNavigator router,
     @Default(false) bool? popToFirstRoute,
-    Provider? scrollControllerProvider,
+    StateProvider<ScrollController>? scrollControllerProvider,
   }) = _TabItem;
 }
 

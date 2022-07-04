@@ -24,7 +24,7 @@ class _$TabItemTearOff {
       Widget? selectedIcon,
       required PlatformTabNavigator router,
       bool? popToFirstRoute = false,
-      Provider<dynamic>? scrollControllerProvider}) {
+      StateProvider<ScrollController>? scrollControllerProvider}) {
     return _TabItem(
       title: title,
       icon: icon,
@@ -46,7 +46,7 @@ mixin _$TabItem {
   Widget? get selectedIcon => throw _privateConstructorUsedError;
   PlatformTabNavigator get router => throw _privateConstructorUsedError;
   bool? get popToFirstRoute => throw _privateConstructorUsedError;
-  Provider<dynamic>? get scrollControllerProvider =>
+  StateProvider<ScrollController>? get scrollControllerProvider =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -63,7 +63,7 @@ abstract class $TabItemCopyWith<$Res> {
       Widget? selectedIcon,
       PlatformTabNavigator router,
       bool? popToFirstRoute,
-      Provider<dynamic>? scrollControllerProvider});
+      StateProvider<ScrollController>? scrollControllerProvider});
 }
 
 /// @nodoc
@@ -107,7 +107,7 @@ class _$TabItemCopyWithImpl<$Res> implements $TabItemCopyWith<$Res> {
       scrollControllerProvider: scrollControllerProvider == freezed
           ? _value.scrollControllerProvider
           : scrollControllerProvider // ignore: cast_nullable_to_non_nullable
-              as Provider<dynamic>?,
+              as StateProvider<ScrollController>?,
     ));
   }
 }
@@ -123,7 +123,7 @@ abstract class _$TabItemCopyWith<$Res> implements $TabItemCopyWith<$Res> {
       Widget? selectedIcon,
       PlatformTabNavigator router,
       bool? popToFirstRoute,
-      Provider<dynamic>? scrollControllerProvider});
+      StateProvider<ScrollController>? scrollControllerProvider});
 }
 
 /// @nodoc
@@ -168,7 +168,7 @@ class __$TabItemCopyWithImpl<$Res> extends _$TabItemCopyWithImpl<$Res>
       scrollControllerProvider: scrollControllerProvider == freezed
           ? _value.scrollControllerProvider
           : scrollControllerProvider // ignore: cast_nullable_to_non_nullable
-              as Provider<dynamic>?,
+              as StateProvider<ScrollController>?,
     ));
   }
 }
@@ -196,7 +196,7 @@ class _$_TabItem with DiagnosticableTreeMixin implements _TabItem {
   @override
   final bool? popToFirstRoute;
   @override
-  final Provider<dynamic>? scrollControllerProvider;
+  final StateProvider<ScrollController>? scrollControllerProvider;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -256,7 +256,7 @@ abstract class _TabItem implements TabItem {
       Widget? selectedIcon,
       required PlatformTabNavigator router,
       bool? popToFirstRoute,
-      Provider<dynamic>? scrollControllerProvider}) = _$_TabItem;
+      StateProvider<ScrollController>? scrollControllerProvider}) = _$_TabItem;
 
   @override
   String get title;
@@ -269,7 +269,7 @@ abstract class _TabItem implements TabItem {
   @override
   bool? get popToFirstRoute;
   @override
-  Provider<dynamic>? get scrollControllerProvider;
+  StateProvider<ScrollController>? get scrollControllerProvider;
   @override
   @JsonKey(ignore: true)
   _$TabItemCopyWith<_TabItem> get copyWith =>
