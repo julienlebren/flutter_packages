@@ -27,6 +27,6 @@ extension ColorX on Color {
   }
 
   Brightness get brightness {
-    return computeLuminance() > 0.5 ? Brightness.dark : Brightness.light;
+    return computeLuminance() > 0.5 ? Brightness.light : Brightness.dark;
   }
 }
