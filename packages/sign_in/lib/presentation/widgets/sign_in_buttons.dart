@@ -116,7 +116,10 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
       boxHeight += 16;
     }
 
+    print("brightness: ${theme.scaffoldBackgroundColor.brightness}");
+
     return SizedBox(
+      width: double.infinity,
       height: boxHeight,
       child: isLoading
           ? PlatformActivityIndicator(
