@@ -161,24 +161,22 @@ class SubscriptionPageContents extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Expanded(
-      child: FormWithOverlay(
-        isSaving: isPurchasing,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40),
-          child: CustomScrollView(
-            clipBehavior: Clip.none,
-            physics: isCupertino()
-                ? const AlwaysScrollableScrollPhysics()
-                : const ClampingScrollPhysics(),
-            slivers: [
-              SliverToBoxAdapter(child: header),
-              SliverToBoxAdapter(child: body),
-              hasStoreIssue
-                  ? const SubscriptionStoreIssue()
-                  : SliverToBoxAdapter(child: footer),
-            ],
-          ),
+    return FormWithOverlay(
+      isSaving: isPurchasing,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 40),
+        child: CustomScrollView(
+          clipBehavior: Clip.none,
+          physics: isCupertino()
+              ? const AlwaysScrollableScrollPhysics()
+              : const ClampingScrollPhysics(),
+          slivers: [
+            SliverToBoxAdapter(child: header),
+            SliverToBoxAdapter(child: body),
+            hasStoreIssue
+                ? const SubscriptionStoreIssue()
+                : SliverToBoxAdapter(child: footer),
+          ],
         ),
       ),
     );
