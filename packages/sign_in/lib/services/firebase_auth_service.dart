@@ -208,7 +208,11 @@ class FirebaseAuthService {
         email: email,
         password: password,
       );
-      return userCredential.user;
+      final user = userCredential.user;
+      if (user != null && !user.emailVerified) {
+        await user.sendEmailVerification();
+      }
+      return user;
     }
   }
 
