@@ -33,10 +33,11 @@ class SettingsAccountPage extends ConsumerWidget {
 
     ref.listen<AuthState>(authStateProvider(authSettings), (_, state) {
       state.maybeWhen(
-          notAuthed: () {
-            print("Not authed");
-          },
-          orElse: () => null);
+        notAuthed: () {
+          ref.read(currentTabIndexProvider.state).state = 0;
+        },
+        orElse: () => null,
+      );
     });
 
     return SettingsPageBuilder(
