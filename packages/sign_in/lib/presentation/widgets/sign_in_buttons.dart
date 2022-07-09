@@ -116,16 +116,21 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
       boxHeight += 16;
     }
 
-    print("brightness: ${theme.scaffoldBackgroundColor.brightness}");
-
     return SizedBox(
       width: double.infinity,
       height: boxHeight,
       child: isLoading
-          ? PlatformActivityIndicator(
-              color: theme.scaffoldBackgroundColor.brightness == Brightness.dark
-                  ? Colors.white
-                  : null)
+          ? Center(
+              child: SizedBox(
+                width: 30,
+                height: 30,
+                child: PlatformActivityIndicator(
+                    color: theme.scaffoldBackgroundColor.brightness ==
+                            Brightness.dark
+                        ? Colors.white
+                        : null),
+              ),
+            )
           : Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
