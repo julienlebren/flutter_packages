@@ -15,7 +15,6 @@ class SettingsPasswordPage extends ConsumerWidget {
 
     ref.listen<SettingsPasswordState>(settingsPasswordControllerProvider,
         (_, state) {
-      print("state is $state");
       if (state.errorText != null) {
         showErrorDialog(
           context,
@@ -104,9 +103,10 @@ class _SettingsPasswordContentsState
                 },
               ),
             ),
+            if (isMaterial()) const SettingsPasswordRequirements(),
           ],
         ),
-        const SettingsPasswordRequirements(),
+        if (isCupertino()) const SettingsPasswordRequirements(),
       ],
     );
   }

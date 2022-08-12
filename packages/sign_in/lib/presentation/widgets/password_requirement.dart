@@ -27,7 +27,12 @@ class PasswordRequirements extends ConsumerWidget {
     return SizedBox(
       width: double.infinity,
       child: Padding(
-        padding: const EdgeInsets.only(top: 15, bottom: 5),
+        padding: EdgeInsets.only(
+          top: isMaterial() ? 5 : 15,
+          bottom: 5,
+          left: isMaterial() ? 15 : 0,
+          right: isMaterial() ? 15 : 0,
+        ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
