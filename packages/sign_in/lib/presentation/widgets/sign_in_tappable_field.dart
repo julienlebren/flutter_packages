@@ -19,7 +19,7 @@ class SignInTappableField
       child: _contents(ref),
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 0),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 0),
         textStyle: const TextStyle(
           fontSize: 17,
           fontWeight: FontWeight.normal,
