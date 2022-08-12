@@ -28,7 +28,7 @@ class PasswordRequirements extends ConsumerWidget {
       width: double.infinity,
       child: Padding(
         padding: EdgeInsets.only(
-          top: isMaterial() ? 5 : 15,
+          top: 10,
           bottom: 5,
           left: isMaterial() ? 15 : 0,
           right: isMaterial() ? 15 : 0,
