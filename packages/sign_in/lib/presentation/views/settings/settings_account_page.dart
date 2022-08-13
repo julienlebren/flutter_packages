@@ -250,7 +250,7 @@ class _DeleteSection extends ConsumerWidget {
     return FormSection(
       children: [
         FormCenteredButton(
-          value: l10n.settingsLogoutButton,
+          value: l10n.settingsDeleteButton,
           isDestructive: true,
           onPressed: () {
             Navigator.of(context).pushNamed(SettingsRoutes.settingsDeletePage);

@@ -25,7 +25,7 @@ class SettingsDeletePage extends ConsumerWidget {
         children: [
           const Icon(
             Icons.security_update_warning_rounded,
-            size: 60,
+            size: 100,
             color: Colors.red,
           ),
           Text(
