@@ -20,31 +20,29 @@ class SettingsDeletePage extends ConsumerWidget {
 
     return SettingsPageBuilder(
       provider: settingsAccountControllerProvider,
-      title: l10n.settingsAccountTitle,
+      title: l10n.settingsDeleteTitle,
       child: FormPage(
         children: [
           const Icon(
             Icons.security_update_warning_rounded,
+            size: 60,
             color: Colors.red,
-          ),
-          Text(
-            l10n.settingsDeleteTitle,
-            style: PlatformTextStyle.mediumTitle,
           ),
           Text(
             l10n.settingsDeleteCaption,
             style: const TextStyle(color: Colors.grey),
             textAlign: TextAlign.center,
           ),
-          const _DeleteButtonsSection(),
+          const _DeleteButton(),
+          if (kDebugMode) const _LogoutButton(),
         ],
       ),
     );
   }
 }
 
-class _DeleteButtonsSection extends ConsumerWidget {
-  const _DeleteButtonsSection({Key? key}) : super(key: key);
+class _DeleteButton extends ConsumerWidget {
+  const _DeleteButton({Key? key}) : super(key: key);
 
   _confirmDeletion(BuildContext context, WidgetRef ref) async {
     final l10n = ref.watch(signInLocalizationsProvider);
@@ -56,12 +54,7 @@ class _DeleteButtonsSection extends ConsumerWidget {
       actions: [
         AlertAction(
           title: l10n.settingsDeleteButton,
-          onPressed: () {
-            ref.read(signInAreaProvider.state).state = SignInArea.signIn;
-            final controller =
-                ref.read(signInButtonsControllerProvider.notifier);
-            controller.signOut();
-          },
+          onPressed: () {},
           isDestructiveAction: true,
         ),
       ],
@@ -79,16 +72,29 @@ class _DeleteButtonsSection extends ConsumerWidget {
           isDestructive: true,
           onPressed: () => _confirmDeletion(context, ref),
         ),
-        if (kDebugMode)
-          FormCenteredButton(
-            value: l10n.settingsLogoutButton,
-            onPressed: () {
-              ref.read(signInAreaProvider.state).state = SignInArea.signIn;
-              final controller =
-                  ref.read(signInButtonsControllerProvider.notifier);
-              controller.signOut();
-            },
-          ),
+      ],
+    );
+  }
+}
+
+class _LogoutButton extends ConsumerWidget {
+  const _LogoutButton({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(signInLocalizationsProvider);
+
+    return FormSection(
+      children: [
+        FormCenteredButton(
+          value: l10n.settingsLogoutButton,
+          onPressed: () {
+            ref.read(signInAreaProvider.state).state = SignInArea.signIn;
+            final controller =
+                ref.read(signInButtonsControllerProvider.notifier);
+            controller.signOut();
+          },
+        ),
       ],
     );
   }
