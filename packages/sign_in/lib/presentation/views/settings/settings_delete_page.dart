@@ -8,7 +8,7 @@ class SettingsDeletePage extends ConsumerWidget {
     final l10n = ref.watch(signInLocalizationsProvider);
     final authSettings = ref.watch(authSettingsProvider);
     final isSaving = ref.watch(
-      settingsEmailControllerProvider.select((state) => state.isLoading),
+      settingsDeleteControllerProvider.select((state) => state.isLoading),
     );
 
     ref.listen<AuthState>(authStateProvider(authSettings), (_, state) {
@@ -57,7 +57,7 @@ class _DeleteButton extends ConsumerWidget {
         AlertAction(
           title: l10n.settingsDeleteButton,
           onPressed: () {
-            // Détermine la zone de SignIn dans laquelle on se situe (signIn ou settings), 
+            // Détermine la zone de SignIn dans laquelle on se situe (signIn ou settings),
             //ce qui influencera certains paramètres comme la couleur des boutons Apple/Google/etc
             ref.read(signInAreaProvider.state).state = SignInArea.signIn;
 
@@ -75,7 +75,7 @@ class _DeleteButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final isSaving = ref.watch(
-      settingsEmailControllerProvider.select((state) => state.isLoading),
+      settingsDeleteControllerProvider.select((state) => state.isLoading),
     );
 
     return FormSection(
@@ -102,10 +102,10 @@ class _LogoutButton extends ConsumerWidget {
         FormCenteredButton(
           value: l10n.settingsLogoutButton,
           onPressed: () {
-            // Détermine la zone de SignIn dans laquelle on se situe (signIn ou settings), 
+            // Détermine la zone de SignIn dans laquelle on se situe (signIn ou settings),
             //ce qui influencera certains paramètres comme la couleur des boutons Apple/Google/etc
             ref.read(signInAreaProvider.state).state = SignInArea.signIn;
-            
+
             final controller =
                 ref.read(signInButtonsControllerProvider.notifier);
             controller.signOut();
