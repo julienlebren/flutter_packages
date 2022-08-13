@@ -32,6 +32,10 @@
       }
     },
     "settingsNoAccount": "You are currently not logged in, your settings and other data are not saved and may be lost. Tap here to create an account.",
+    "settingsDeleteTitle": "Delete account",
+    "settingsDeleteCaption": "Your account information, profile, and all data stored in the app will be deleted.",
+    "settingsDeleteButton": "Delete account",
+    "settingsDeleteAlertTitle": "Are you sure you want to continue ? This action is irreversible.",
     "settingsEmailSectionTitle": "Login information",
     "settingsEmailLabel": "Email address",
     "settingsEmailTitle": "Email address",

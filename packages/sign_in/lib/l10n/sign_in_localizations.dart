@@ -208,6 +208,30 @@ abstract class SignInLocalizations {
   /// **'You are currently not logged in, your settings and other data are not saved and may be lost. Tap here to create an account.'**
   String get settingsNoAccount;
 
+  /// No description provided for @settingsDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get settingsDeleteTitle;
+
+  /// No description provided for @settingsDeleteCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Your account information, profile, and all data stored in the app will be deleted.'**
+  String get settingsDeleteCaption;
+
+  /// No description provided for @settingsDeleteButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get settingsDeleteButton;
+
+  /// No description provided for @settingsDeleteAlertTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to continue ? This action is irreversible.'**
+  String get settingsDeleteAlertTitle;
+
   /// No description provided for @settingsEmailSectionTitle.
   ///
   /// In en, this message translates to:

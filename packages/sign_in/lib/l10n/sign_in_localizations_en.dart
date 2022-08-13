@@ -69,6 +69,18 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get settingsNoAccount => 'You are currently not logged in, your settings and other data are not saved and may be lost. Tap here to create an account.';
 
   @override
+  String get settingsDeleteTitle => 'Delete account';
+
+  @override
+  String get settingsDeleteCaption => 'Your account information, profile, and all data stored in the app will be deleted.';
+
+  @override
+  String get settingsDeleteButton => 'Delete account';
+
+  @override
+  String get settingsDeleteAlertTitle => 'Are you sure you want to continue ? This action is irreversible.';
+
+  @override
   String get settingsEmailSectionTitle => 'Login information';
 
   @override

@@ -5,6 +5,7 @@ class SettingsRoutes {
   static const settingsAccountPage = 'settings/account';
   static const settingsEmailPage = 'settings/account/email';
   static const settingsPasswordPage = 'settings/account/password';
+  static const settingsDeletePage = 'settings/account/delete';
 }
 
 class SettingsRouter {
@@ -26,6 +27,10 @@ class SettingsRouter {
       case SettingsRoutes.settingsPasswordPage:
         return platformPageRoute(
           builder: (_) => const SettingsPasswordPage(),
+        );
+      case SettingsRoutes.settingsDeletePage:
+        return platformPageRoute(
+          builder: (_) => const SettingsDeletePage(),
         );
     }
     return null;

@@ -69,6 +69,18 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get settingsNoAccount => 'Vous n\'êtes actuellement pas connecté, vos réglages et autres données ne sont pas sauvegardées et pourraient être perdus. Appuyez ici pour créer un compte.';
 
   @override
+  String get settingsDeleteTitle => 'Supprimer le compte';
+
+  @override
+  String get settingsDeleteCaption => 'Les informations de votre compte, votre profil, ainsi que toutes les données enregegistrées dans l\'app seront supprimées.';
+
+  @override
+  String get settingsDeleteButton => 'Supprimer le compte';
+
+  @override
+  String get settingsDeleteAlertTitle => 'Supprimer le compte';
+
+  @override
   String get settingsEmailSectionTitle => 'Informations de connexion';
 
   @override

@@ -50,7 +50,7 @@ class SettingsAccountPage extends ConsumerWidget {
           ] else ...[
             const _EmailSection(),
             const _SocialSection(),
-            const _LogoutSection(),
+            const _DeleteSection(),
           ]
         ],
       ),
@@ -240,30 +240,8 @@ class _SocialRow extends ConsumerWidget {
   }
 }
 
-class _LogoutSection extends ConsumerWidget {
-  const _LogoutSection({Key? key}) : super(key: key);
-
-  _confirmLogout(BuildContext context, WidgetRef ref) async {
-    final l10n = ref.watch(signInLocalizationsProvider);
-
-    showPlatformSheetAlert(
-      context: context,
-      ref: ref,
-      title: l10n.settingsLogoutConfirmation,
-      actions: [
-        AlertAction(
-          title: l10n.settingsLogoutButton,
-          onPressed: () {
-            ref.read(signInAreaProvider.state).state = SignInArea.signIn;
-            final controller =
-                ref.read(signInButtonsControllerProvider.notifier);
-            controller.signOut();
-          },
-          isDestructiveAction: true,
-        ),
-      ],
-    );
-  }
+class _DeleteSection extends ConsumerWidget {
+  const _DeleteSection({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -274,7 +252,9 @@ class _LogoutSection extends ConsumerWidget {
         FormCenteredButton(
           value: l10n.settingsLogoutButton,
           isDestructive: true,
-          onPressed: () => _confirmLogout(context, ref),
+          onPressed: () {
+            Navigator.of(context).pushNamed(SettingsRoutes.settingsDeletePage);
+          },
         ),
       ],
     );
