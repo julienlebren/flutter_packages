@@ -19,7 +19,6 @@ class SettingsDeletePage extends ConsumerWidget {
     });
 
     return SettingsPageBuilder(
-      provider: settingsAccountControllerProvider,
       title: l10n.settingsDeleteTitle,
       child: FormPage(
         children: [
@@ -54,7 +53,11 @@ class _DeleteButton extends ConsumerWidget {
       actions: [
         AlertAction(
           title: l10n.settingsDeleteButton,
-          onPressed: () {},
+          onPressed: () {
+            final controller =
+                ref.read(settingsDeleteControllerProvider.notifier);
+            controller.delete();
+          },
           isDestructiveAction: true,
         ),
       ],

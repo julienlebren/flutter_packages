@@ -134,12 +134,22 @@ class __$SettingsConnectFacebookCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsConnectFacebook implements _SettingsConnectFacebook {
+class _$_SettingsConnectFacebook
+    with DiagnosticableTreeMixin
+    implements _SettingsConnectFacebook {
   const _$_SettingsConnectFacebook();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SettingsAccountEvent.signInWithFacebook()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SettingsAccountEvent.signInWithFacebook'));
   }
 
   @override
@@ -252,12 +262,22 @@ class __$SettingsConnectGoogleCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsConnectGoogle implements _SettingsConnectGoogle {
+class _$_SettingsConnectGoogle
+    with DiagnosticableTreeMixin
+    implements _SettingsConnectGoogle {
   const _$_SettingsConnectGoogle();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SettingsAccountEvent.signInWithGoogle()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'SettingsAccountEvent.signInWithGoogle'));
   }
 
   @override
@@ -370,12 +390,22 @@ class __$SettingsConnectAppleCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsConnectApple implements _SettingsConnectApple {
+class _$_SettingsConnectApple
+    with DiagnosticableTreeMixin
+    implements _SettingsConnectApple {
   const _$_SettingsConnectApple();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SettingsAccountEvent.signInWithApple()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'SettingsAccountEvent.signInWithApple'));
   }
 
   @override
@@ -501,15 +531,25 @@ class __$SettingsUnlinkCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsUnlink implements _SettingsUnlink {
+class _$_SettingsUnlink
+    with DiagnosticableTreeMixin
+    implements _SettingsUnlink {
   const _$_SettingsUnlink(this.providerId);
 
   @override
   final String providerId;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SettingsAccountEvent.unlink(providerId: $providerId)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingsAccountEvent.unlink'))
+      ..add(DiagnosticsProperty('providerId', providerId));
   }
 
   @override
@@ -612,6 +652,221 @@ abstract class _SettingsUnlink implements SettingsAccountEvent {
   String get providerId;
   @JsonKey(ignore: true)
   _$SettingsUnlinkCopyWith<_SettingsUnlink> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+class _$SettingsDeleteStateTearOff {
+  const _$SettingsDeleteStateTearOff();
+
+  _SettingsDeleteState call(
+      {bool canSubmit = false,
+      bool isLoading = false,
+      bool isSuccess = false,
+      String? errorText}) {
+    return _SettingsDeleteState(
+      canSubmit: canSubmit,
+      isLoading: isLoading,
+      isSuccess: isSuccess,
+      errorText: errorText,
+    );
+  }
+}
+
+/// @nodoc
+const $SettingsDeleteState = _$SettingsDeleteStateTearOff();
+
+/// @nodoc
+mixin _$SettingsDeleteState {
+  bool get canSubmit => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isSuccess => throw _privateConstructorUsedError;
+  String? get errorText => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SettingsDeleteStateCopyWith<SettingsDeleteState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SettingsDeleteStateCopyWith<$Res> {
+  factory $SettingsDeleteStateCopyWith(
+          SettingsDeleteState value, $Res Function(SettingsDeleteState) then) =
+      _$SettingsDeleteStateCopyWithImpl<$Res>;
+  $Res call(
+      {bool canSubmit, bool isLoading, bool isSuccess, String? errorText});
+}
+
+/// @nodoc
+class _$SettingsDeleteStateCopyWithImpl<$Res>
+    implements $SettingsDeleteStateCopyWith<$Res> {
+  _$SettingsDeleteStateCopyWithImpl(this._value, this._then);
+
+  final SettingsDeleteState _value;
+  // ignore: unused_field
+  final $Res Function(SettingsDeleteState) _then;
+
+  @override
+  $Res call({
+    Object? canSubmit = freezed,
+    Object? isLoading = freezed,
+    Object? isSuccess = freezed,
+    Object? errorText = freezed,
+  }) {
+    return _then(_value.copyWith(
+      canSubmit: canSubmit == freezed
+          ? _value.canSubmit
+          : canSubmit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuccess: isSuccess == freezed
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorText: errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SettingsDeleteStateCopyWith<$Res>
+    implements $SettingsDeleteStateCopyWith<$Res> {
+  factory _$SettingsDeleteStateCopyWith(_SettingsDeleteState value,
+          $Res Function(_SettingsDeleteState) then) =
+      __$SettingsDeleteStateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {bool canSubmit, bool isLoading, bool isSuccess, String? errorText});
+}
+
+/// @nodoc
+class __$SettingsDeleteStateCopyWithImpl<$Res>
+    extends _$SettingsDeleteStateCopyWithImpl<$Res>
+    implements _$SettingsDeleteStateCopyWith<$Res> {
+  __$SettingsDeleteStateCopyWithImpl(
+      _SettingsDeleteState _value, $Res Function(_SettingsDeleteState) _then)
+      : super(_value, (v) => _then(v as _SettingsDeleteState));
+
+  @override
+  _SettingsDeleteState get _value => super._value as _SettingsDeleteState;
+
+  @override
+  $Res call({
+    Object? canSubmit = freezed,
+    Object? isLoading = freezed,
+    Object? isSuccess = freezed,
+    Object? errorText = freezed,
+  }) {
+    return _then(_SettingsDeleteState(
+      canSubmit: canSubmit == freezed
+          ? _value.canSubmit
+          : canSubmit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isSuccess: isSuccess == freezed
+          ? _value.isSuccess
+          : isSuccess // ignore: cast_nullable_to_non_nullable
+              as bool,
+      errorText: errorText == freezed
+          ? _value.errorText
+          : errorText // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SettingsDeleteState
+    with DiagnosticableTreeMixin
+    implements _SettingsDeleteState {
+  const _$_SettingsDeleteState(
+      {this.canSubmit = false,
+      this.isLoading = false,
+      this.isSuccess = false,
+      this.errorText});
+
+  @JsonKey()
+  @override
+  final bool canSubmit;
+  @JsonKey()
+  @override
+  final bool isLoading;
+  @JsonKey()
+  @override
+  final bool isSuccess;
+  @override
+  final String? errorText;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SettingsDeleteState(canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingsDeleteState'))
+      ..add(DiagnosticsProperty('canSubmit', canSubmit))
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('isSuccess', isSuccess))
+      ..add(DiagnosticsProperty('errorText', errorText));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SettingsDeleteState &&
+            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
+            const DeepCollectionEquality().equals(other.errorText, errorText));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(canSubmit),
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(isSuccess),
+      const DeepCollectionEquality().hash(errorText));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SettingsDeleteStateCopyWith<_SettingsDeleteState> get copyWith =>
+      __$SettingsDeleteStateCopyWithImpl<_SettingsDeleteState>(
+          this, _$identity);
+}
+
+abstract class _SettingsDeleteState implements SettingsDeleteState {
+  const factory _SettingsDeleteState(
+      {bool canSubmit,
+      bool isLoading,
+      bool isSuccess,
+      String? errorText}) = _$_SettingsDeleteState;
+
+  @override
+  bool get canSubmit;
+  @override
+  bool get isLoading;
+  @override
+  bool get isSuccess;
+  @override
+  String? get errorText;
+  @override
+  @JsonKey(ignore: true)
+  _$SettingsDeleteStateCopyWith<_SettingsDeleteState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -726,15 +981,25 @@ class __$SettingsEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsEmailChanged implements _SettingsEmailChanged {
+class _$_SettingsEmailChanged
+    with DiagnosticableTreeMixin
+    implements _SettingsEmailChanged {
   const _$_SettingsEmailChanged(this.email);
 
   @override
   final String email;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SettingsEmailEvent.emailChanged(email: $email)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingsEmailEvent.emailChanged'))
+      ..add(DiagnosticsProperty('email', email));
   }
 
   @override
@@ -848,12 +1113,20 @@ class __$SettingsEmailSubmitCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsEmailSubmit implements _SettingsEmailSubmit {
+class _$_SettingsEmailSubmit
+    with DiagnosticableTreeMixin
+    implements _SettingsEmailSubmit {
   const _$_SettingsEmailSubmit();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SettingsEmailEvent.submit()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SettingsEmailEvent.submit'));
   }
 
   @override
@@ -1084,7 +1357,9 @@ class __$SettingsEmailStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsEmailState implements _SettingsEmailState {
+class _$_SettingsEmailState
+    with DiagnosticableTreeMixin
+    implements _SettingsEmailState {
   const _$_SettingsEmailState(
       {this.email = "",
       this.canSubmit = false,
@@ -1108,8 +1383,20 @@ class _$_SettingsEmailState implements _SettingsEmailState {
   final String? errorText;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SettingsEmailState(email: $email, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingsEmailState'))
+      ..add(DiagnosticsProperty('email', email))
+      ..add(DiagnosticsProperty('canSubmit', canSubmit))
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('isSuccess', isSuccess))
+      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
@@ -1291,15 +1578,26 @@ class __$SettingsPasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsPasswordChanged implements _SettingsPasswordChanged {
+class _$_SettingsPasswordChanged
+    with DiagnosticableTreeMixin
+    implements _SettingsPasswordChanged {
   const _$_SettingsPasswordChanged(this.password);
 
   @override
   final String password;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SettingsPasswordEvent.passwordChanged(password: $password)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'SettingsPasswordEvent.passwordChanged'))
+      ..add(DiagnosticsProperty('password', password));
   }
 
   @override
@@ -1440,6 +1738,7 @@ class __$SettingsPasswordConfirmationChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SettingsPasswordConfirmationChanged
+    with DiagnosticableTreeMixin
     implements _SettingsPasswordConfirmationChanged {
   const _$_SettingsPasswordConfirmationChanged(this.password);
 
@@ -1447,8 +1746,17 @@ class _$_SettingsPasswordConfirmationChanged
   final String password;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SettingsPasswordEvent.passwordConfirmationChanged(password: $password)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SettingsPasswordEvent.passwordConfirmationChanged'))
+      ..add(DiagnosticsProperty('password', password));
   }
 
   @override
@@ -1575,12 +1883,21 @@ class __$SettingsPasswordSubmitCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsPasswordSubmit implements _SettingsPasswordSubmit {
+class _$_SettingsPasswordSubmit
+    with DiagnosticableTreeMixin
+    implements _SettingsPasswordSubmit {
   const _$_SettingsPasswordSubmit();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SettingsPasswordEvent.submit()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingsPasswordEvent.submit'));
   }
 
   @override
@@ -1925,7 +2242,9 @@ class __$SettingsPasswordStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsPasswordState implements _SettingsPasswordState {
+class _$_SettingsPasswordState
+    with DiagnosticableTreeMixin
+    implements _SettingsPasswordState {
   const _$_SettingsPasswordState(
       {this.password = "",
       this.passwordConfirmation = "",
@@ -1977,8 +2296,28 @@ class _$_SettingsPasswordState implements _SettingsPasswordState {
   final String? errorText;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SettingsPasswordState(password: $password, passwordConfirmation: $passwordConfirmation, passwordHasMinLength: $passwordHasMinLength, passwordHasUppercase: $passwordHasUppercase, passwordHasLowercase: $passwordHasLowercase, passwordHasDigits: $passwordHasDigits, passwordHasSpecialChars: $passwordHasSpecialChars, passwordsMatch: $passwordsMatch, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SettingsPasswordState'))
+      ..add(DiagnosticsProperty('password', password))
+      ..add(DiagnosticsProperty('passwordConfirmation', passwordConfirmation))
+      ..add(DiagnosticsProperty('passwordHasMinLength', passwordHasMinLength))
+      ..add(DiagnosticsProperty('passwordHasUppercase', passwordHasUppercase))
+      ..add(DiagnosticsProperty('passwordHasLowercase', passwordHasLowercase))
+      ..add(DiagnosticsProperty('passwordHasDigits', passwordHasDigits))
+      ..add(DiagnosticsProperty(
+          'passwordHasSpecialChars', passwordHasSpecialChars))
+      ..add(DiagnosticsProperty('passwordsMatch', passwordsMatch))
+      ..add(DiagnosticsProperty('canSubmit', canSubmit))
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('isSuccess', isSuccess))
+      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
@@ -2223,12 +2562,22 @@ class __$SignInWithFacebookCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInWithFacebook implements _SignInWithFacebook {
+class _$_SignInWithFacebook
+    with DiagnosticableTreeMixin
+    implements _SignInWithFacebook {
   const _$_SignInWithFacebook();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInButtonsEvent.signInWithFacebook()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'SignInButtonsEvent.signInWithFacebook'));
   }
 
   @override
@@ -2358,12 +2707,21 @@ class __$SignInWithGoogleCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInWithGoogle implements _SignInWithGoogle {
+class _$_SignInWithGoogle
+    with DiagnosticableTreeMixin
+    implements _SignInWithGoogle {
   const _$_SignInWithGoogle();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInButtonsEvent.signInWithGoogle()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInButtonsEvent.signInWithGoogle'));
   }
 
   @override
@@ -2493,12 +2851,21 @@ class __$SignInWithAppleCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInWithApple implements _SignInWithApple {
+class _$_SignInWithApple
+    with DiagnosticableTreeMixin
+    implements _SignInWithApple {
   const _$_SignInWithApple();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInButtonsEvent.signInWithApple()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInButtonsEvent.signInWithApple'));
   }
 
   @override
@@ -2628,12 +2995,21 @@ class __$SignInWithEmailCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInWithEmail implements _SignInWithEmail {
+class _$_SignInWithEmail
+    with DiagnosticableTreeMixin
+    implements _SignInWithEmail {
   const _$_SignInWithEmail();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInButtonsEvent.signInWithEmail()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInButtonsEvent.signInWithEmail'));
   }
 
   @override
@@ -2776,15 +3152,26 @@ class __$SignInWithEmailLinkCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInWithEmailLink implements _SignInWithEmailLink {
+class _$_SignInWithEmailLink
+    with DiagnosticableTreeMixin
+    implements _SignInWithEmailLink {
   const _$_SignInWithEmailLink(this.email);
 
   @override
   final String email;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInButtonsEvent.signInWithEmailLink(email: $email)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'SignInButtonsEvent.signInWithEmailLink'))
+      ..add(DiagnosticsProperty('email', email));
   }
 
   @override
@@ -2928,12 +3315,21 @@ class __$SignInWithPhoneCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInWithPhone implements _SignInWithPhone {
+class _$_SignInWithPhone
+    with DiagnosticableTreeMixin
+    implements _SignInWithPhone {
   const _$_SignInWithPhone();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInButtonsEvent.signInWithPhone()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInButtonsEvent.signInWithPhone'));
   }
 
   @override
@@ -3063,12 +3459,22 @@ class __$SignInAnonymouslyCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInAnonymously implements _SignInAnonymously {
+class _$_SignInAnonymously
+    with DiagnosticableTreeMixin
+    implements _SignInAnonymously {
   const _$_SignInAnonymously();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInButtonsEvent.signInAnonymously()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'SignInButtonsEvent.signInAnonymously'));
   }
 
   @override
@@ -3295,12 +3701,18 @@ class __$SignInInitialCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInInitial implements _SignInInitial {
+class _$_SignInInitial with DiagnosticableTreeMixin implements _SignInInitial {
   const _$_SignInInitial();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInButtonsState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SignInButtonsState.initial'));
   }
 
   @override
@@ -3412,12 +3824,18 @@ class __$SignInLoadingCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInLoading implements _SignInLoading {
+class _$_SignInLoading with DiagnosticableTreeMixin implements _SignInLoading {
   const _$_SignInLoading();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInButtonsState.loading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SignInButtonsState.loading'));
   }
 
   @override
@@ -3529,12 +3947,18 @@ class __$SignInSuccessCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInSuccess implements _SignInSuccess {
+class _$_SignInSuccess with DiagnosticableTreeMixin implements _SignInSuccess {
   const _$_SignInSuccess();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInButtonsState.success()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SignInButtonsState.success'));
   }
 
   @override
@@ -3659,15 +4083,23 @@ class __$SignInErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInError implements _SignInError {
+class _$_SignInError with DiagnosticableTreeMixin implements _SignInError {
   const _$_SignInError(this.errorText);
 
   @override
   final String errorText;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInButtonsState.error(errorText: $errorText)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInButtonsState.error'))
+      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
@@ -3894,15 +4326,25 @@ class __$EmailLoginEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmailLoginEmailChanged implements _EmailLoginEmailChanged {
+class _$_EmailLoginEmailChanged
+    with DiagnosticableTreeMixin
+    implements _EmailLoginEmailChanged {
   const _$_EmailLoginEmailChanged(this.email);
 
   @override
   final String email;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInEmailLoginEvent.emailChanged(email: $email)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInEmailLoginEvent.emailChanged'))
+      ..add(DiagnosticsProperty('email', email));
   }
 
   @override
@@ -4037,15 +4479,26 @@ class __$EmailLoginPasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmailLoginPasswordChanged implements _EmailLoginPasswordChanged {
+class _$_EmailLoginPasswordChanged
+    with DiagnosticableTreeMixin
+    implements _EmailLoginPasswordChanged {
   const _$_EmailLoginPasswordChanged(this.password);
 
   @override
   final String password;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInEmailLoginEvent.passwordChanged(password: $password)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'SignInEmailLoginEvent.passwordChanged'))
+      ..add(DiagnosticsProperty('password', password));
   }
 
   @override
@@ -4167,12 +4620,21 @@ class __$EmailLoginSubmitCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmailLoginSubmit implements _EmailLoginSubmit {
+class _$_EmailLoginSubmit
+    with DiagnosticableTreeMixin
+    implements _EmailLoginSubmit {
   const _$_EmailLoginSubmit();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInEmailLoginEvent.submit()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInEmailLoginEvent.submit'));
   }
 
   @override
@@ -4424,7 +4886,9 @@ class __$SignInEmailLoginStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInEmailLoginState implements _SignInEmailLoginState {
+class _$_SignInEmailLoginState
+    with DiagnosticableTreeMixin
+    implements _SignInEmailLoginState {
   const _$_SignInEmailLoginState(
       {this.email = "",
       this.password = "",
@@ -4452,8 +4916,21 @@ class _$_SignInEmailLoginState implements _SignInEmailLoginState {
   final String? errorText;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInEmailLoginState(email: $email, password: $password, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInEmailLoginState'))
+      ..add(DiagnosticsProperty('email', email))
+      ..add(DiagnosticsProperty('password', password))
+      ..add(DiagnosticsProperty('canSubmit', canSubmit))
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('isSuccess', isSuccess))
+      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
@@ -4624,15 +5101,25 @@ class __$LinkEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LinkEmailChanged implements _LinkEmailChanged {
+class _$_LinkEmailChanged
+    with DiagnosticableTreeMixin
+    implements _LinkEmailChanged {
   const _$_LinkEmailChanged(this.email);
 
   @override
   final String email;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInEmailLinkEvent.emailChanged(email: $email)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInEmailLinkEvent.emailChanged'))
+      ..add(DiagnosticsProperty('email', email));
   }
 
   @override
@@ -4743,12 +5230,19 @@ class __$SendLinkCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SendLink implements _SendLink {
+class _$_SendLink with DiagnosticableTreeMixin implements _SendLink {
   const _$_SendLink();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInEmailLinkEvent.sendLink()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInEmailLinkEvent.sendLink'));
   }
 
   @override
@@ -4979,7 +5473,9 @@ class __$SignInEmailLinkStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInEmailLinkState implements _SignInEmailLinkState {
+class _$_SignInEmailLinkState
+    with DiagnosticableTreeMixin
+    implements _SignInEmailLinkState {
   const _$_SignInEmailLinkState(
       {this.email = "",
       this.canSubmit = false,
@@ -5003,8 +5499,20 @@ class _$_SignInEmailLinkState implements _SignInEmailLinkState {
   final String? errorText;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInEmailLinkState(email: $email, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInEmailLinkState'))
+      ..add(DiagnosticsProperty('email', email))
+      ..add(DiagnosticsProperty('canSubmit', canSubmit))
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('isSuccess', isSuccess))
+      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
@@ -5170,15 +5678,25 @@ class __$ResetEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ResetEmailChanged implements _ResetEmailChanged {
+class _$_ResetEmailChanged
+    with DiagnosticableTreeMixin
+    implements _ResetEmailChanged {
   const _$_ResetEmailChanged(this.email);
 
   @override
   final String email;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInEmailResetEvent.emailChanged(email: $email)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInEmailResetEvent.emailChanged'))
+      ..add(DiagnosticsProperty('email', email));
   }
 
   @override
@@ -5291,12 +5809,19 @@ class __$ResetSubmitCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ResetSubmit implements _ResetSubmit {
+class _$_ResetSubmit with DiagnosticableTreeMixin implements _ResetSubmit {
   const _$_ResetSubmit();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInEmailResetEvent.submit()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInEmailResetEvent.submit'));
   }
 
   @override
@@ -5527,7 +6052,9 @@ class __$SignInEmailResetStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInEmailResetState implements _SignInEmailResetState {
+class _$_SignInEmailResetState
+    with DiagnosticableTreeMixin
+    implements _SignInEmailResetState {
   const _$_SignInEmailResetState(
       {this.email = "",
       this.canSubmit = false,
@@ -5551,8 +6078,20 @@ class _$_SignInEmailResetState implements _SignInEmailResetState {
   final String? errorText;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInEmailResetState(email: $email, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInEmailResetState'))
+      ..add(DiagnosticsProperty('email', email))
+      ..add(DiagnosticsProperty('canSubmit', canSubmit))
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('isSuccess', isSuccess))
+      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
@@ -5730,15 +6269,26 @@ class __$RegisterEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RegisterEmailChanged implements _RegisterEmailChanged {
+class _$_RegisterEmailChanged
+    with DiagnosticableTreeMixin
+    implements _RegisterEmailChanged {
   const _$_RegisterEmailChanged(this.email);
 
   @override
   final String email;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInEmailRegisterEvent.emailChanged(email: $email)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'SignInEmailRegisterEvent.emailChanged'))
+      ..add(DiagnosticsProperty('email', email));
   }
 
   @override
@@ -5872,15 +6422,26 @@ class __$RegisterPasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RegisterPasswordChanged implements _RegisterPasswordChanged {
+class _$_RegisterPasswordChanged
+    with DiagnosticableTreeMixin
+    implements _RegisterPasswordChanged {
   const _$_RegisterPasswordChanged(this.password);
 
   @override
   final String password;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInEmailRegisterEvent.passwordChanged(password: $password)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SignInEmailRegisterEvent.passwordChanged'))
+      ..add(DiagnosticsProperty('password', password));
   }
 
   @override
@@ -6001,12 +6562,21 @@ class __$RegisterSubmitCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RegisterSubmit implements _RegisterSubmit {
+class _$_RegisterSubmit
+    with DiagnosticableTreeMixin
+    implements _RegisterSubmit {
   const _$_RegisterSubmit();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInEmailRegisterEvent.submit()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInEmailRegisterEvent.submit'));
   }
 
   @override
@@ -6334,7 +6904,9 @@ class __$SignInEmailRegisterStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInEmailRegisterState implements _SignInEmailRegisterState {
+class _$_SignInEmailRegisterState
+    with DiagnosticableTreeMixin
+    implements _SignInEmailRegisterState {
   const _$_SignInEmailRegisterState(
       {this.email = "",
       this.password = "",
@@ -6382,8 +6954,27 @@ class _$_SignInEmailRegisterState implements _SignInEmailRegisterState {
   final String? errorText;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInEmailRegisterState(email: $email, password: $password, passwordHasMinLength: $passwordHasMinLength, passwordHasUppercase: $passwordHasUppercase, passwordHasLowercase: $passwordHasLowercase, passwordHasDigits: $passwordHasDigits, passwordHasSpecialChars: $passwordHasSpecialChars, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInEmailRegisterState'))
+      ..add(DiagnosticsProperty('email', email))
+      ..add(DiagnosticsProperty('password', password))
+      ..add(DiagnosticsProperty('passwordHasMinLength', passwordHasMinLength))
+      ..add(DiagnosticsProperty('passwordHasUppercase', passwordHasUppercase))
+      ..add(DiagnosticsProperty('passwordHasLowercase', passwordHasLowercase))
+      ..add(DiagnosticsProperty('passwordHasDigits', passwordHasDigits))
+      ..add(DiagnosticsProperty(
+          'passwordHasSpecialChars', passwordHasSpecialChars))
+      ..add(DiagnosticsProperty('canSubmit', canSubmit))
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('isSuccess', isSuccess))
+      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
@@ -6596,15 +7187,25 @@ class __$CountryChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CountryChanged implements _CountryChanged {
+class _$_CountryChanged
+    with DiagnosticableTreeMixin
+    implements _CountryChanged {
   const _$_CountryChanged(this.country);
 
   @override
   final CountryWithPhoneCode country;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInPhoneEvent.countryChanged(country: $country)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInPhoneEvent.countryChanged'))
+      ..add(DiagnosticsProperty('country', country));
   }
 
   @override
@@ -6737,15 +7338,23 @@ class __$PhoneChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PhoneChanged implements _PhoneChanged {
+class _$_PhoneChanged with DiagnosticableTreeMixin implements _PhoneChanged {
   const _$_PhoneChanged(this.input);
 
   @override
   final String input;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInPhoneEvent.phoneChanged(input: $input)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInPhoneEvent.phoneChanged'))
+      ..add(DiagnosticsProperty('input', input));
   }
 
   @override
@@ -6864,12 +7473,19 @@ class __$VerifyPhoneCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_VerifyPhone implements _VerifyPhone {
+class _$_VerifyPhone with DiagnosticableTreeMixin implements _VerifyPhone {
   const _$_VerifyPhone();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInPhoneEvent.verifyPhone()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInPhoneEvent.verifyPhone'));
   }
 
   @override
@@ -7136,7 +7752,9 @@ class __$SignInPhoneStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInPhoneState implements _SignInPhoneState {
+class _$_SignInPhoneState
+    with DiagnosticableTreeMixin
+    implements _SignInPhoneState {
   const _$_SignInPhoneState(
       {required this.country,
       this.phoneNumber,
@@ -7165,8 +7783,22 @@ class _$_SignInPhoneState implements _SignInPhoneState {
   final String? errorText;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInPhoneState(country: $country, phoneNumber: $phoneNumber, verificationId: $verificationId, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInPhoneState'))
+      ..add(DiagnosticsProperty('country', country))
+      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
+      ..add(DiagnosticsProperty('verificationId', verificationId))
+      ..add(DiagnosticsProperty('canSubmit', canSubmit))
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('isSuccess', isSuccess))
+      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
@@ -7341,12 +7973,20 @@ class __$ResendCodeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ResendCode implements _ResendCode {
+class _$_ResendCode with DiagnosticableTreeMixin implements _ResendCode {
   const _$_ResendCode();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInPhoneVerificationEvent.resendCode()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SignInPhoneVerificationEvent.resendCode'));
   }
 
   @override
@@ -7465,15 +8105,24 @@ class __$CodeChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CodeChanged implements _CodeChanged {
+class _$_CodeChanged with DiagnosticableTreeMixin implements _CodeChanged {
   const _$_CodeChanged(this.input);
 
   @override
   final String input;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInPhoneVerificationEvent.codeChanged(input: $input)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SignInPhoneVerificationEvent.codeChanged'))
+      ..add(DiagnosticsProperty('input', input));
   }
 
   @override
@@ -7592,12 +8241,20 @@ class __$VerifyCodeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_VerifyCode implements _VerifyCode {
+class _$_VerifyCode with DiagnosticableTreeMixin implements _VerifyCode {
   const _$_VerifyCode();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInPhoneVerificationEvent.verifyCode()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SignInPhoneVerificationEvent.verifyCode'));
   }
 
   @override
@@ -7898,7 +8555,9 @@ class __$SignInPhoneVerificationStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
+class _$_SignInPhoneVerificationState
+    with DiagnosticableTreeMixin
+    implements _SignInPhoneVerificationState {
   const _$_SignInPhoneVerificationState(
       {this.countdown = delayBeforeUserCanRequestNewCode,
       required this.phoneNumber,
@@ -7935,8 +8594,24 @@ class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
   final String? errorText;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInPhoneVerificationState(countdown: $countdown, phoneNumber: $phoneNumber, nationalPhoneNumber: $nationalPhoneNumber, verificationId: $verificationId, verificationCode: $verificationCode, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInPhoneVerificationState'))
+      ..add(DiagnosticsProperty('countdown', countdown))
+      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
+      ..add(DiagnosticsProperty('nationalPhoneNumber', nationalPhoneNumber))
+      ..add(DiagnosticsProperty('verificationId', verificationId))
+      ..add(DiagnosticsProperty('verificationCode', verificationCode))
+      ..add(DiagnosticsProperty('canSubmit', canSubmit))
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('isSuccess', isSuccess))
+      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
@@ -8134,12 +8809,21 @@ class __$SplashInitializingAuthCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SplashInitializingAuth implements _SplashInitializingAuth {
+class _$_SplashInitializingAuth
+    with DiagnosticableTreeMixin
+    implements _SplashInitializingAuth {
   const _$_SplashInitializingAuth();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthSplashState.initializing()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AuthSplashState.initializing'));
   }
 
   @override
@@ -8251,12 +8935,20 @@ class __$SplashNotAuthedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SplashNotAuthed implements _SplashNotAuthed {
+class _$_SplashNotAuthed
+    with DiagnosticableTreeMixin
+    implements _SplashNotAuthed {
   const _$_SplashNotAuthed();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthSplashState.notAuthed()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'AuthSplashState.notAuthed'));
   }
 
   @override
@@ -8368,12 +9060,18 @@ class __$SplashAuthedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SplashAuthed implements _SplashAuthed {
+class _$_SplashAuthed with DiagnosticableTreeMixin implements _SplashAuthed {
   const _$_SplashAuthed();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthSplashState.authed()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'AuthSplashState.authed'));
   }
 
   @override
@@ -8498,15 +9196,25 @@ class __$SplashAuthErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SplashAuthError implements _SplashAuthError {
+class _$_SplashAuthError
+    with DiagnosticableTreeMixin
+    implements _SplashAuthError {
   const _$_SplashAuthError(this.error);
 
   @override
   final String error;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthSplashState.error(error: $error)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AuthSplashState.error'))
+      ..add(DiagnosticsProperty('error', error));
   }
 
   @override
@@ -8748,12 +9456,20 @@ class __$InitializingAuthCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_InitializingAuth implements _InitializingAuth {
+class _$_InitializingAuth
+    with DiagnosticableTreeMixin
+    implements _InitializingAuth {
   const _$_InitializingAuth();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthState.initializing()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'AuthState.initializing'));
   }
 
   @override
@@ -8875,12 +9591,18 @@ class __$NotAuthedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NotAuthed implements _NotAuthed {
+class _$_NotAuthed with DiagnosticableTreeMixin implements _NotAuthed {
   const _$_NotAuthed();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthState.notAuthed()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'AuthState.notAuthed'));
   }
 
   @override
@@ -9004,12 +9726,21 @@ class __$WaitingUserCreationCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_WaitingUserCreation implements _WaitingUserCreation {
+class _$_WaitingUserCreation
+    with DiagnosticableTreeMixin
+    implements _WaitingUserCreation {
   const _$_WaitingUserCreation();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthState.waitingUserCreation()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AuthState.waitingUserCreation'));
   }
 
   @override
@@ -9133,12 +9864,21 @@ class __$NeedUserInformationCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NeedUserInformation implements _NeedUserInformation {
+class _$_NeedUserInformation
+    with DiagnosticableTreeMixin
+    implements _NeedUserInformation {
   const _$_NeedUserInformation();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthState.needUserInformation()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AuthState.needUserInformation'));
   }
 
   @override
@@ -9272,15 +10012,23 @@ class __$AuthedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Authed implements _Authed {
+class _$_Authed with DiagnosticableTreeMixin implements _Authed {
   const _$_Authed(this.user);
 
   @override
   final dynamic user;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthState.authed(user: $user)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AuthState.authed'))
+      ..add(DiagnosticsProperty('user', user));
   }
 
   @override
@@ -9427,15 +10175,23 @@ class __$AuthErrorCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AuthError implements _AuthError {
+class _$_AuthError with DiagnosticableTreeMixin implements _AuthError {
   const _$_AuthError(this.error);
 
   @override
   final String error;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'AuthState.error(error: $error)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AuthState.error'))
+      ..add(DiagnosticsProperty('error', error));
   }
 
   @override
@@ -9821,7 +10577,7 @@ class __$SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInTheme implements _SignInTheme {
+class _$_SignInTheme with DiagnosticableTreeMixin implements _SignInTheme {
   const _$_SignInTheme(
       {this.maxWidth = 400,
       this.buttonRadius = 8.0,
@@ -9870,8 +10626,29 @@ class _$_SignInTheme implements _SignInTheme {
   final double spaceBetweenButtons;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SignInTheme(maxWidth: $maxWidth, buttonRadius: $buttonRadius, buttonPadding: $buttonPadding, backgroundImage: $backgroundImage, primaryColor: $primaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, textColor: $textColor, buttonBackgroundColor: $buttonBackgroundColor, buttonTextColor: $buttonTextColor, borderColor: $borderColor, dividerColor: $dividerColor, buttonFontSize: $buttonFontSize, spaceBetweenButtons: $spaceBetweenButtons)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SignInTheme'))
+      ..add(DiagnosticsProperty('maxWidth', maxWidth))
+      ..add(DiagnosticsProperty('buttonRadius', buttonRadius))
+      ..add(DiagnosticsProperty('buttonPadding', buttonPadding))
+      ..add(DiagnosticsProperty('backgroundImage', backgroundImage))
+      ..add(DiagnosticsProperty('primaryColor', primaryColor))
+      ..add(DiagnosticsProperty(
+          'scaffoldBackgroundColor', scaffoldBackgroundColor))
+      ..add(DiagnosticsProperty('textColor', textColor))
+      ..add(DiagnosticsProperty('buttonBackgroundColor', buttonBackgroundColor))
+      ..add(DiagnosticsProperty('buttonTextColor', buttonTextColor))
+      ..add(DiagnosticsProperty('borderColor', borderColor))
+      ..add(DiagnosticsProperty('dividerColor', dividerColor))
+      ..add(DiagnosticsProperty('buttonFontSize', buttonFontSize))
+      ..add(DiagnosticsProperty('spaceBetweenButtons', spaceBetweenButtons));
   }
 
   @override

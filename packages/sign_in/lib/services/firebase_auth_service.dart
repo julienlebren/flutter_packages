@@ -243,6 +243,14 @@ class FirebaseAuthService {
     await _firebaseAuth.signInWithCustomToken(result.data);
   }
 
+  Future<void> deleteAccount() async {
+    await FirebaseFunctions.instanceFor(region: 'europe-west3')
+        .httpsCallable('deleteUser')
+        .call();
+
+    await signOut();
+  }
+
   Future<void> sendPasswordResetEmail(String email) async {
     await _firebaseAuth.sendPasswordResetEmail(email: email);
   }
