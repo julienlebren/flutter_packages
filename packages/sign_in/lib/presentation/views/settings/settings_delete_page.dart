@@ -6,8 +6,10 @@ class SettingsDeletePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
-    final isAnonymous = ref.watch(userAnonymousProvider);
     final authSettings = ref.watch(authSettingsProvider);
+    final isSaving = ref.watch(
+      settingsEmailControllerProvider.select((state) => state.isLoading),
+    );
 
     ref.listen<AuthState>(authStateProvider(authSettings), (_, state) {
       state.maybeWhen(
@@ -20,6 +22,7 @@ class SettingsDeletePage extends ConsumerWidget {
 
     return SettingsPageBuilder(
       title: l10n.settingsDeleteTitle,
+      isSaving: isSaving,
       child: FormPage(
         children: [
           const Icon(
@@ -67,13 +70,16 @@ class _DeleteButton extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(signInLocalizationsProvider);
+    final isSaving = ref.watch(
+      settingsEmailControllerProvider.select((state) => state.isLoading),
+    );
 
     return FormSection(
       children: [
         FormCenteredButton(
           value: l10n.settingsDeleteButton,
           isDestructive: true,
-          onPressed: () => _confirmDeletion(context, ref),
+          onPressed: isSaving ? null : () => _confirmDeletion(context, ref),
         ),
       ],
     );
