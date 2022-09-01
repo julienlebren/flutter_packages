@@ -14,12 +14,20 @@ class PurchasesService {
       if (settings.publicGoogleKey == null) {
         throw UnimplementedError();
       }
-      await Purchases.setup(settings.publicGoogleKey!);
+      await Purchases.setup(
+        settings.publicGoogleKey!,
+        appUserId: settings.userId,
+        observerMode: false,
+      );
     } else if (Platform.isIOS) {
       if (settings.publicAppleKey == null) {
         throw UnimplementedError();
       }
-      await Purchases.setup(settings.publicAppleKey!);
+      await Purchases.setup(
+        settings.publicAppleKey!,
+        appUserId: settings.userId,
+        observerMode: false,
+      );
     }
   }
 
