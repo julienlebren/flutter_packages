@@ -30,10 +30,16 @@ class PurchasesController extends StateNotifier<PurchasesState> {
     }
   }
 
-  Future<void> _purchase() async {
+  Future<void> _purchase({
+    bool restore = false,
+  }) async {
     state = state.copyWith(isLoading: true);
     try {
-      await _service.purchase();
+      if (restore) {
+        await _service.restorePurchase();
+      } else {
+        await _service.purchase();
+      }
       state = state.copyWith(isSuccess: true);
     } on PlatformException catch (e) {
       if (PurchasesErrorHelper.getErrorCode(e) ==
@@ -44,7 +50,7 @@ class PurchasesController extends StateNotifier<PurchasesState> {
       } else {
         state = state.copyWith(
           isLoading: false,
-          errorText: e.toString(),
+          errorText: e.message,
         );
       }
     } catch (e) {
@@ -55,18 +61,7 @@ class PurchasesController extends StateNotifier<PurchasesState> {
     }
   }
 
-  Future<void> _restorePurchases() async {
-    state = state.copyWith(isLoading: true);
-    try {
-      await _service.purchase();
-      state = state.copyWith(isSuccess: true);
-    } catch (e) {
-      state = state.copyWith(
-        isLoading: false,
-        errorText: e.toString(),
-      );
-    }
-  }
+  Future<void> _restorePurchases() => _purchase(restore: true);
 
   Future<void> _openOffers() async {
     await _service.openOffers();
