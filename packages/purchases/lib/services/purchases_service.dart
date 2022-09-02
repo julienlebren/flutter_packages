@@ -56,6 +56,7 @@ class PurchasesService {
 
   Future<void> restorePurchase() async {
     PurchaserInfo purchaserInfo = await Purchases.restoreTransactions();
+    print(purchaserInfo);
     _processInfo(purchaserInfo);
   }
 
