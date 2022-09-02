@@ -11,7 +11,8 @@
       "placeholders": {
       "price": { 
           "type": "String"
-          }
       }
-  }
+    }
+  },
+  "noSubscriptionToRestore": "There is no active subscription to restore."
 }

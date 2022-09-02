@@ -6,5 +6,6 @@
   "restoreButton": "Restaurer les achats",
   "retryButton": "Réessayer",
   "termsButton": "Conditions d'utilisation",
-  "yearPrice": "{price}/an"
+  "yearPrice": "{price}/an",
+  "noSubscriptionToRestore": "Il n'y a aucun abonnement actif à restaurer."
 }

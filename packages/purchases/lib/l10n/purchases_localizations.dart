@@ -141,6 +141,12 @@ abstract class PurchasesLocalizations {
   /// In en, this message translates to:
   /// **'{price}/year'**
   String yearPrice(String price);
+
+  /// No description provided for @noSubscriptionToRestore.
+  ///
+  /// In en, this message translates to:
+  /// **'There is no active subscription to restore.'**
+  String get noSubscriptionToRestore;
 }
 
 class _PurchasesLocalizationsDelegate extends LocalizationsDelegate<PurchasesLocalizations> {

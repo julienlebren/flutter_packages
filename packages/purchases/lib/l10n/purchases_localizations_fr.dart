@@ -32,4 +32,7 @@ class PurchasesLocalizationsFr extends PurchasesLocalizations {
   String yearPrice(String price) {
     return '$price/an';
   }
+
+  @override
+  String get noSubscriptionToRestore => 'Il n\'y a aucun abonnement actif à restaurer.';
 }
