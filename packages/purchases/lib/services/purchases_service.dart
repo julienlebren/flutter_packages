@@ -56,7 +56,6 @@ class PurchasesService {
 
   Future<void> restorePurchase() async {
     PurchaserInfo purchaserInfo = await Purchases.restoreTransactions();
-    print(purchaserInfo);
     _processInfo(purchaserInfo);
   }
 
@@ -64,7 +63,10 @@ class PurchasesService {
     await Purchases.presentCodeRedemptionSheet();
   }
 
-  Future<void> _processInfo(PurchaserInfo info) async {
+  Future<void> _processInfo(
+    PurchaserInfo info, {
+    bool restore = false,
+  }) async {
     final entitlementInfo = info.entitlements.all[settings.entitlementId];
     if (entitlementInfo == null) return;
 
