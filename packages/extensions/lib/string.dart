@@ -14,7 +14,7 @@ extension StringX on String {
   }
 
   String capitalize() {
-    return "${this[0].toUpperCase()}${substring(1)}";
+    return "${this[0].toUpperCase()}${this.toLowerCase().substring(1)}";
   }
 
   DateTime get hourToDate => DateFormat('Hm').parse(this);
