@@ -2,7 +2,6 @@ library subscription_service;
 
 import 'dart:io';
 
-import 'package:extensions/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -61,7 +60,6 @@ final purchasesLocalizationsProvider = Provider<PurchasesLocalizations>(
 final purchasesThemeProvider = Provider<PurchasesTheme>(
   (ref) {
     final appTheme = ref.watch(appThemeProvider);
-    final formTheme = ref.watch(formThemeProvider);
 
     return PurchasesTheme(
       primaryColor: appTheme.primaryColor,
