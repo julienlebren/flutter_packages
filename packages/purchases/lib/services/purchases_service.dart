@@ -14,20 +14,17 @@ class PurchasesService {
       if (settings.publicGoogleKey == null) {
         throw UnimplementedError();
       }
-      await Purchases.setup(
-        settings.publicGoogleKey!,
-        appUserId: settings.userId,
-        observerMode: false,
-      );
+      await Purchases.configure(
+          PurchasesConfiguration(settings.publicGoogleKey!)
+            ..appUserID = settings.userId
+            ..observerMode = false);
     } else if (Platform.isIOS) {
       if (settings.publicAppleKey == null) {
         throw UnimplementedError();
       }
-      await Purchases.setup(
-        settings.publicAppleKey!,
-        appUserId: settings.userId,
-        observerMode: false,
-      );
+      await Purchases.configure(PurchasesConfiguration(settings.publicAppleKey!)
+        ..appUserID = settings.userId
+        ..observerMode = false);
     }
   }
 
@@ -44,18 +41,17 @@ class PurchasesService {
 
   Future<void> purchase() async {
     if (subscription == null) return;
-    PurchaserInfo purchaserInfo =
-        await Purchases.purchasePackage(subscription!);
+    CustomerInfo purchaserInfo = await Purchases.purchasePackage(subscription!);
     _processInfo(purchaserInfo);
   }
 
   Future<void> refreshSubscription() async {
-    PurchaserInfo purchaserInfo = await Purchases.getPurchaserInfo();
+    CustomerInfo purchaserInfo = await Purchases.getCustomerInfo();
     _processInfo(purchaserInfo);
   }
 
   Future<void> restorePurchase() async {
-    PurchaserInfo purchaserInfo = await Purchases.restoreTransactions();
+    CustomerInfo purchaserInfo = await Purchases.restorePurchases();
     _processInfo(purchaserInfo);
   }
 
@@ -63,10 +59,7 @@ class PurchasesService {
     await Purchases.presentCodeRedemptionSheet();
   }
 
-  Future<void> _processInfo(
-    PurchaserInfo info, {
-    bool restore = false,
-  }) async {
+  Future<void> _processInfo(CustomerInfo info) async {
     final entitlementInfo = info.entitlements.all[settings.entitlementId];
     if (entitlementInfo == null) return;
 

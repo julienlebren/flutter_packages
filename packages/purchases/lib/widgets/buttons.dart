@@ -6,9 +6,9 @@ class PurchasesTermsButtons extends ConsumerWidget {
   }) : super(key: key);
 
   Future<void> _openUrl(String url) async {
-    final Uri _url = Uri.parse(url);
-    if (await canLaunchUrl(_url)) {
-      await launchUrl(_url);
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
     }
   }
 
