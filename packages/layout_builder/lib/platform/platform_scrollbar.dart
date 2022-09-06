@@ -3,20 +3,20 @@ part of platform;
 class PlatformScrollbar
     extends PlatformWidgetBase<Scrollbar, CupertinoScrollbar> {
   PlatformScrollbar({
-    this.isAlwaysShown = false,
+    this.thumbVisibility = false,
     this.controller,
     required this.child,
   });
 
   final ScrollController? controller;
-  final bool isAlwaysShown;
+  final bool thumbVisibility;
   final Widget child;
 
   @override
   Scrollbar createMaterialWidget(BuildContext context, WidgetRef ref) {
     return Scrollbar(
       controller: controller,
-      isAlwaysShown: isAlwaysShown,
+      thumbVisibility: thumbVisibility,
       child: child,
     );
   }
@@ -26,7 +26,7 @@ class PlatformScrollbar
       BuildContext context, WidgetRef ref) {
     return CupertinoScrollbar(
       controller: controller,
-      isAlwaysShown: isAlwaysShown,
+      thumbVisibility: thumbVisibility,
       child: child,
     );
   }

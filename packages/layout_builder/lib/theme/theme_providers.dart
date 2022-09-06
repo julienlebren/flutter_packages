@@ -17,7 +17,7 @@ final systemOverlayStyleProvider = Provider<SystemUiOverlayStyle>((ref) {
   // navigation bar. Honestly, so few people will set light mode while their device
   // is in dark mode, isn't it?
   if (appTheme.brightness == Brightness.light &&
-      WidgetsBinding.instance?.window.platformBrightness == Brightness.dark) {
+      WidgetsBinding.instance.window.platformBrightness == Brightness.dark) {
     return SystemUiOverlayStyle(statusBarColor: Colors.transparent);
   } else {
     return SystemUiOverlayStyle(
@@ -69,12 +69,12 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        primary: appTheme.primaryColor,
+        foregroundColor: appTheme.primaryColor,
       ),
     ),
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
-        primary: appTheme.primaryColor,
+        foregroundColor: appTheme.primaryColor,
       ),
     ),
   );
