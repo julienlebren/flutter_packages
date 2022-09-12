@@ -22,10 +22,10 @@ class PlatformSearchBar extends PlatformWidgetBase<TextField, Container> {
         focusedBorder: InputBorder.none,
         enabledBorder: InputBorder.none,
         suffixIcon: Container(
-          transform: Matrix4.translationValues(10.0, 0.0, 0.0),
+          //transform: Matrix4.translationValues(10.0, 0.0, 0.0),
           child: IconButton(
             onPressed: () => controller.clear(),
-            icon: Icon(Icons.clear, color: Colors.black, size: 28),
+            icon: Icon(Icons.clear, color: Colors.black, size: 24),
           ),
         ),
       ),
