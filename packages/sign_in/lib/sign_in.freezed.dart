@@ -12,33 +12,7 @@ part of sign_in;
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SettingsAccountEventTearOff {
-  const _$SettingsAccountEventTearOff();
-
-  _SettingsConnectFacebook signInWithFacebook() {
-    return const _SettingsConnectFacebook();
-  }
-
-  _SettingsConnectGoogle signInWithGoogle() {
-    return const _SettingsConnectGoogle();
-  }
-
-  _SettingsConnectApple signInWithApple() {
-    return const _SettingsConnectApple();
-  }
-
-  _SettingsUnlink unlink(String providerId) {
-    return _SettingsUnlink(
-      providerId,
-    );
-  }
-}
-
-/// @nodoc
-const $SettingsAccountEvent = _$SettingsAccountEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SettingsAccountEvent {
@@ -113,49 +87,40 @@ class _$SettingsAccountEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SettingsConnectFacebookCopyWith<$Res> {
-  factory _$SettingsConnectFacebookCopyWith(_SettingsConnectFacebook value,
-          $Res Function(_SettingsConnectFacebook) then) =
-      __$SettingsConnectFacebookCopyWithImpl<$Res>;
+abstract class _$$_SettingsConnectFacebookCopyWith<$Res> {
+  factory _$$_SettingsConnectFacebookCopyWith(_$_SettingsConnectFacebook value,
+          $Res Function(_$_SettingsConnectFacebook) then) =
+      __$$_SettingsConnectFacebookCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SettingsConnectFacebookCopyWithImpl<$Res>
+class __$$_SettingsConnectFacebookCopyWithImpl<$Res>
     extends _$SettingsAccountEventCopyWithImpl<$Res>
-    implements _$SettingsConnectFacebookCopyWith<$Res> {
-  __$SettingsConnectFacebookCopyWithImpl(_SettingsConnectFacebook _value,
-      $Res Function(_SettingsConnectFacebook) _then)
-      : super(_value, (v) => _then(v as _SettingsConnectFacebook));
+    implements _$$_SettingsConnectFacebookCopyWith<$Res> {
+  __$$_SettingsConnectFacebookCopyWithImpl(_$_SettingsConnectFacebook _value,
+      $Res Function(_$_SettingsConnectFacebook) _then)
+      : super(_value, (v) => _then(v as _$_SettingsConnectFacebook));
 
   @override
-  _SettingsConnectFacebook get _value =>
-      super._value as _SettingsConnectFacebook;
+  _$_SettingsConnectFacebook get _value =>
+      super._value as _$_SettingsConnectFacebook;
 }
 
 /// @nodoc
 
-class _$_SettingsConnectFacebook
-    with DiagnosticableTreeMixin
-    implements _SettingsConnectFacebook {
+class _$_SettingsConnectFacebook implements _SettingsConnectFacebook {
   const _$_SettingsConnectFacebook();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SettingsAccountEvent.signInWithFacebook()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SettingsAccountEvent.signInWithFacebook'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SettingsConnectFacebook);
+        (other.runtimeType == runtimeType &&
+            other is _$_SettingsConnectFacebook);
   }
 
   @override
@@ -242,48 +207,39 @@ abstract class _SettingsConnectFacebook implements SettingsAccountEvent {
 }
 
 /// @nodoc
-abstract class _$SettingsConnectGoogleCopyWith<$Res> {
-  factory _$SettingsConnectGoogleCopyWith(_SettingsConnectGoogle value,
-          $Res Function(_SettingsConnectGoogle) then) =
-      __$SettingsConnectGoogleCopyWithImpl<$Res>;
+abstract class _$$_SettingsConnectGoogleCopyWith<$Res> {
+  factory _$$_SettingsConnectGoogleCopyWith(_$_SettingsConnectGoogle value,
+          $Res Function(_$_SettingsConnectGoogle) then) =
+      __$$_SettingsConnectGoogleCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SettingsConnectGoogleCopyWithImpl<$Res>
+class __$$_SettingsConnectGoogleCopyWithImpl<$Res>
     extends _$SettingsAccountEventCopyWithImpl<$Res>
-    implements _$SettingsConnectGoogleCopyWith<$Res> {
-  __$SettingsConnectGoogleCopyWithImpl(_SettingsConnectGoogle _value,
-      $Res Function(_SettingsConnectGoogle) _then)
-      : super(_value, (v) => _then(v as _SettingsConnectGoogle));
+    implements _$$_SettingsConnectGoogleCopyWith<$Res> {
+  __$$_SettingsConnectGoogleCopyWithImpl(_$_SettingsConnectGoogle _value,
+      $Res Function(_$_SettingsConnectGoogle) _then)
+      : super(_value, (v) => _then(v as _$_SettingsConnectGoogle));
 
   @override
-  _SettingsConnectGoogle get _value => super._value as _SettingsConnectGoogle;
+  _$_SettingsConnectGoogle get _value =>
+      super._value as _$_SettingsConnectGoogle;
 }
 
 /// @nodoc
 
-class _$_SettingsConnectGoogle
-    with DiagnosticableTreeMixin
-    implements _SettingsConnectGoogle {
+class _$_SettingsConnectGoogle implements _SettingsConnectGoogle {
   const _$_SettingsConnectGoogle();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SettingsAccountEvent.signInWithGoogle()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'SettingsAccountEvent.signInWithGoogle'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SettingsConnectGoogle);
+        (other.runtimeType == runtimeType && other is _$_SettingsConnectGoogle);
   }
 
   @override
@@ -370,48 +326,38 @@ abstract class _SettingsConnectGoogle implements SettingsAccountEvent {
 }
 
 /// @nodoc
-abstract class _$SettingsConnectAppleCopyWith<$Res> {
-  factory _$SettingsConnectAppleCopyWith(_SettingsConnectApple value,
-          $Res Function(_SettingsConnectApple) then) =
-      __$SettingsConnectAppleCopyWithImpl<$Res>;
+abstract class _$$_SettingsConnectAppleCopyWith<$Res> {
+  factory _$$_SettingsConnectAppleCopyWith(_$_SettingsConnectApple value,
+          $Res Function(_$_SettingsConnectApple) then) =
+      __$$_SettingsConnectAppleCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SettingsConnectAppleCopyWithImpl<$Res>
+class __$$_SettingsConnectAppleCopyWithImpl<$Res>
     extends _$SettingsAccountEventCopyWithImpl<$Res>
-    implements _$SettingsConnectAppleCopyWith<$Res> {
-  __$SettingsConnectAppleCopyWithImpl(
-      _SettingsConnectApple _value, $Res Function(_SettingsConnectApple) _then)
-      : super(_value, (v) => _then(v as _SettingsConnectApple));
+    implements _$$_SettingsConnectAppleCopyWith<$Res> {
+  __$$_SettingsConnectAppleCopyWithImpl(_$_SettingsConnectApple _value,
+      $Res Function(_$_SettingsConnectApple) _then)
+      : super(_value, (v) => _then(v as _$_SettingsConnectApple));
 
   @override
-  _SettingsConnectApple get _value => super._value as _SettingsConnectApple;
+  _$_SettingsConnectApple get _value => super._value as _$_SettingsConnectApple;
 }
 
 /// @nodoc
 
-class _$_SettingsConnectApple
-    with DiagnosticableTreeMixin
-    implements _SettingsConnectApple {
+class _$_SettingsConnectApple implements _SettingsConnectApple {
   const _$_SettingsConnectApple();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SettingsAccountEvent.signInWithApple()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'SettingsAccountEvent.signInWithApple'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SettingsConnectApple);
+        (other.runtimeType == runtimeType && other is _$_SettingsConnectApple);
   }
 
   @override
@@ -498,29 +444,29 @@ abstract class _SettingsConnectApple implements SettingsAccountEvent {
 }
 
 /// @nodoc
-abstract class _$SettingsUnlinkCopyWith<$Res> {
-  factory _$SettingsUnlinkCopyWith(
-          _SettingsUnlink value, $Res Function(_SettingsUnlink) then) =
-      __$SettingsUnlinkCopyWithImpl<$Res>;
+abstract class _$$_SettingsUnlinkCopyWith<$Res> {
+  factory _$$_SettingsUnlinkCopyWith(
+          _$_SettingsUnlink value, $Res Function(_$_SettingsUnlink) then) =
+      __$$_SettingsUnlinkCopyWithImpl<$Res>;
   $Res call({String providerId});
 }
 
 /// @nodoc
-class __$SettingsUnlinkCopyWithImpl<$Res>
+class __$$_SettingsUnlinkCopyWithImpl<$Res>
     extends _$SettingsAccountEventCopyWithImpl<$Res>
-    implements _$SettingsUnlinkCopyWith<$Res> {
-  __$SettingsUnlinkCopyWithImpl(
-      _SettingsUnlink _value, $Res Function(_SettingsUnlink) _then)
-      : super(_value, (v) => _then(v as _SettingsUnlink));
+    implements _$$_SettingsUnlinkCopyWith<$Res> {
+  __$$_SettingsUnlinkCopyWithImpl(
+      _$_SettingsUnlink _value, $Res Function(_$_SettingsUnlink) _then)
+      : super(_value, (v) => _then(v as _$_SettingsUnlink));
 
   @override
-  _SettingsUnlink get _value => super._value as _SettingsUnlink;
+  _$_SettingsUnlink get _value => super._value as _$_SettingsUnlink;
 
   @override
   $Res call({
     Object? providerId = freezed,
   }) {
-    return _then(_SettingsUnlink(
+    return _then(_$_SettingsUnlink(
       providerId == freezed
           ? _value.providerId
           : providerId // ignore: cast_nullable_to_non_nullable
@@ -531,32 +477,22 @@ class __$SettingsUnlinkCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsUnlink
-    with DiagnosticableTreeMixin
-    implements _SettingsUnlink {
+class _$_SettingsUnlink implements _SettingsUnlink {
   const _$_SettingsUnlink(this.providerId);
 
   @override
   final String providerId;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SettingsAccountEvent.unlink(providerId: $providerId)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SettingsAccountEvent.unlink'))
-      ..add(DiagnosticsProperty('providerId', providerId));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SettingsUnlink &&
+            other is _$_SettingsUnlink &&
             const DeepCollectionEquality()
                 .equals(other.providerId, providerId));
   }
@@ -567,8 +503,8 @@ class _$_SettingsUnlink
 
   @JsonKey(ignore: true)
   @override
-  _$SettingsUnlinkCopyWith<_SettingsUnlink> get copyWith =>
-      __$SettingsUnlinkCopyWithImpl<_SettingsUnlink>(this, _$identity);
+  _$$_SettingsUnlinkCopyWith<_$_SettingsUnlink> get copyWith =>
+      __$$_SettingsUnlinkCopyWithImpl<_$_SettingsUnlink>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -647,34 +583,13 @@ class _$_SettingsUnlink
 }
 
 abstract class _SettingsUnlink implements SettingsAccountEvent {
-  const factory _SettingsUnlink(String providerId) = _$_SettingsUnlink;
+  const factory _SettingsUnlink(final String providerId) = _$_SettingsUnlink;
 
   String get providerId;
   @JsonKey(ignore: true)
-  _$SettingsUnlinkCopyWith<_SettingsUnlink> get copyWith =>
+  _$$_SettingsUnlinkCopyWith<_$_SettingsUnlink> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SettingsDeleteStateTearOff {
-  const _$SettingsDeleteStateTearOff();
-
-  _SettingsDeleteState call(
-      {bool canSubmit = false,
-      bool isLoading = false,
-      bool isSuccess = false,
-      String? errorText}) {
-    return _SettingsDeleteState(
-      canSubmit: canSubmit,
-      isLoading: isLoading,
-      isSuccess: isSuccess,
-      errorText: errorText,
-    );
-  }
-}
-
-/// @nodoc
-const $SettingsDeleteState = _$SettingsDeleteStateTearOff();
 
 /// @nodoc
 mixin _$SettingsDeleteState {
@@ -735,26 +650,26 @@ class _$SettingsDeleteStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SettingsDeleteStateCopyWith<$Res>
+abstract class _$$_SettingsDeleteStateCopyWith<$Res>
     implements $SettingsDeleteStateCopyWith<$Res> {
-  factory _$SettingsDeleteStateCopyWith(_SettingsDeleteState value,
-          $Res Function(_SettingsDeleteState) then) =
-      __$SettingsDeleteStateCopyWithImpl<$Res>;
+  factory _$$_SettingsDeleteStateCopyWith(_$_SettingsDeleteState value,
+          $Res Function(_$_SettingsDeleteState) then) =
+      __$$_SettingsDeleteStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool canSubmit, bool isLoading, bool isSuccess, String? errorText});
 }
 
 /// @nodoc
-class __$SettingsDeleteStateCopyWithImpl<$Res>
+class __$$_SettingsDeleteStateCopyWithImpl<$Res>
     extends _$SettingsDeleteStateCopyWithImpl<$Res>
-    implements _$SettingsDeleteStateCopyWith<$Res> {
-  __$SettingsDeleteStateCopyWithImpl(
-      _SettingsDeleteState _value, $Res Function(_SettingsDeleteState) _then)
-      : super(_value, (v) => _then(v as _SettingsDeleteState));
+    implements _$$_SettingsDeleteStateCopyWith<$Res> {
+  __$$_SettingsDeleteStateCopyWithImpl(_$_SettingsDeleteState _value,
+      $Res Function(_$_SettingsDeleteState) _then)
+      : super(_value, (v) => _then(v as _$_SettingsDeleteState));
 
   @override
-  _SettingsDeleteState get _value => super._value as _SettingsDeleteState;
+  _$_SettingsDeleteState get _value => super._value as _$_SettingsDeleteState;
 
   @override
   $Res call({
@@ -763,7 +678,7 @@ class __$SettingsDeleteStateCopyWithImpl<$Res>
     Object? isSuccess = freezed,
     Object? errorText = freezed,
   }) {
-    return _then(_SettingsDeleteState(
+    return _then(_$_SettingsDeleteState(
       canSubmit: canSubmit == freezed
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
@@ -786,48 +701,35 @@ class __$SettingsDeleteStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsDeleteState
-    with DiagnosticableTreeMixin
-    implements _SettingsDeleteState {
+class _$_SettingsDeleteState implements _SettingsDeleteState {
   const _$_SettingsDeleteState(
       {this.canSubmit = false,
       this.isLoading = false,
       this.isSuccess = false,
       this.errorText});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final bool canSubmit;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isLoading;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isSuccess;
   @override
   final String? errorText;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SettingsDeleteState(canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SettingsDeleteState'))
-      ..add(DiagnosticsProperty('canSubmit', canSubmit))
-      ..add(DiagnosticsProperty('isLoading', isLoading))
-      ..add(DiagnosticsProperty('isSuccess', isSuccess))
-      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SettingsDeleteState &&
+            other is _$_SettingsDeleteState &&
             const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
             const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
@@ -844,17 +746,17 @@ class _$_SettingsDeleteState
 
   @JsonKey(ignore: true)
   @override
-  _$SettingsDeleteStateCopyWith<_SettingsDeleteState> get copyWith =>
-      __$SettingsDeleteStateCopyWithImpl<_SettingsDeleteState>(
+  _$$_SettingsDeleteStateCopyWith<_$_SettingsDeleteState> get copyWith =>
+      __$$_SettingsDeleteStateCopyWithImpl<_$_SettingsDeleteState>(
           this, _$identity);
 }
 
 abstract class _SettingsDeleteState implements SettingsDeleteState {
   const factory _SettingsDeleteState(
-      {bool canSubmit,
-      bool isLoading,
-      bool isSuccess,
-      String? errorText}) = _$_SettingsDeleteState;
+      {final bool canSubmit,
+      final bool isLoading,
+      final bool isSuccess,
+      final String? errorText}) = _$_SettingsDeleteState;
 
   @override
   bool get canSubmit;
@@ -866,27 +768,9 @@ abstract class _SettingsDeleteState implements SettingsDeleteState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$SettingsDeleteStateCopyWith<_SettingsDeleteState> get copyWith =>
+  _$$_SettingsDeleteStateCopyWith<_$_SettingsDeleteState> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SettingsEmailEventTearOff {
-  const _$SettingsEmailEventTearOff();
-
-  _SettingsEmailChanged emailChanged(String email) {
-    return _SettingsEmailChanged(
-      email,
-    );
-  }
-
-  _SettingsEmailSubmit submit() {
-    return const _SettingsEmailSubmit();
-  }
-}
-
-/// @nodoc
-const $SettingsEmailEvent = _$SettingsEmailEventTearOff();
 
 /// @nodoc
 mixin _$SettingsEmailEvent {
@@ -948,29 +832,29 @@ class _$SettingsEmailEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SettingsEmailChangedCopyWith<$Res> {
-  factory _$SettingsEmailChangedCopyWith(_SettingsEmailChanged value,
-          $Res Function(_SettingsEmailChanged) then) =
-      __$SettingsEmailChangedCopyWithImpl<$Res>;
+abstract class _$$_SettingsEmailChangedCopyWith<$Res> {
+  factory _$$_SettingsEmailChangedCopyWith(_$_SettingsEmailChanged value,
+          $Res Function(_$_SettingsEmailChanged) then) =
+      __$$_SettingsEmailChangedCopyWithImpl<$Res>;
   $Res call({String email});
 }
 
 /// @nodoc
-class __$SettingsEmailChangedCopyWithImpl<$Res>
+class __$$_SettingsEmailChangedCopyWithImpl<$Res>
     extends _$SettingsEmailEventCopyWithImpl<$Res>
-    implements _$SettingsEmailChangedCopyWith<$Res> {
-  __$SettingsEmailChangedCopyWithImpl(
-      _SettingsEmailChanged _value, $Res Function(_SettingsEmailChanged) _then)
-      : super(_value, (v) => _then(v as _SettingsEmailChanged));
+    implements _$$_SettingsEmailChangedCopyWith<$Res> {
+  __$$_SettingsEmailChangedCopyWithImpl(_$_SettingsEmailChanged _value,
+      $Res Function(_$_SettingsEmailChanged) _then)
+      : super(_value, (v) => _then(v as _$_SettingsEmailChanged));
 
   @override
-  _SettingsEmailChanged get _value => super._value as _SettingsEmailChanged;
+  _$_SettingsEmailChanged get _value => super._value as _$_SettingsEmailChanged;
 
   @override
   $Res call({
     Object? email = freezed,
   }) {
-    return _then(_SettingsEmailChanged(
+    return _then(_$_SettingsEmailChanged(
       email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -981,32 +865,22 @@ class __$SettingsEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsEmailChanged
-    with DiagnosticableTreeMixin
-    implements _SettingsEmailChanged {
+class _$_SettingsEmailChanged implements _SettingsEmailChanged {
   const _$_SettingsEmailChanged(this.email);
 
   @override
   final String email;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SettingsEmailEvent.emailChanged(email: $email)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SettingsEmailEvent.emailChanged'))
-      ..add(DiagnosticsProperty('email', email));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SettingsEmailChanged &&
+            other is _$_SettingsEmailChanged &&
             const DeepCollectionEquality().equals(other.email, email));
   }
 
@@ -1016,8 +890,8 @@ class _$_SettingsEmailChanged
 
   @JsonKey(ignore: true)
   @override
-  _$SettingsEmailChangedCopyWith<_SettingsEmailChanged> get copyWith =>
-      __$SettingsEmailChangedCopyWithImpl<_SettingsEmailChanged>(
+  _$$_SettingsEmailChangedCopyWith<_$_SettingsEmailChanged> get copyWith =>
+      __$$_SettingsEmailChangedCopyWithImpl<_$_SettingsEmailChanged>(
           this, _$identity);
 
   @override
@@ -1084,55 +958,48 @@ class _$_SettingsEmailChanged
 }
 
 abstract class _SettingsEmailChanged implements SettingsEmailEvent {
-  const factory _SettingsEmailChanged(String email) = _$_SettingsEmailChanged;
+  const factory _SettingsEmailChanged(final String email) =
+      _$_SettingsEmailChanged;
 
   String get email;
   @JsonKey(ignore: true)
-  _$SettingsEmailChangedCopyWith<_SettingsEmailChanged> get copyWith =>
+  _$$_SettingsEmailChangedCopyWith<_$_SettingsEmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SettingsEmailSubmitCopyWith<$Res> {
-  factory _$SettingsEmailSubmitCopyWith(_SettingsEmailSubmit value,
-          $Res Function(_SettingsEmailSubmit) then) =
-      __$SettingsEmailSubmitCopyWithImpl<$Res>;
+abstract class _$$_SettingsEmailSubmitCopyWith<$Res> {
+  factory _$$_SettingsEmailSubmitCopyWith(_$_SettingsEmailSubmit value,
+          $Res Function(_$_SettingsEmailSubmit) then) =
+      __$$_SettingsEmailSubmitCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SettingsEmailSubmitCopyWithImpl<$Res>
+class __$$_SettingsEmailSubmitCopyWithImpl<$Res>
     extends _$SettingsEmailEventCopyWithImpl<$Res>
-    implements _$SettingsEmailSubmitCopyWith<$Res> {
-  __$SettingsEmailSubmitCopyWithImpl(
-      _SettingsEmailSubmit _value, $Res Function(_SettingsEmailSubmit) _then)
-      : super(_value, (v) => _then(v as _SettingsEmailSubmit));
+    implements _$$_SettingsEmailSubmitCopyWith<$Res> {
+  __$$_SettingsEmailSubmitCopyWithImpl(_$_SettingsEmailSubmit _value,
+      $Res Function(_$_SettingsEmailSubmit) _then)
+      : super(_value, (v) => _then(v as _$_SettingsEmailSubmit));
 
   @override
-  _SettingsEmailSubmit get _value => super._value as _SettingsEmailSubmit;
+  _$_SettingsEmailSubmit get _value => super._value as _$_SettingsEmailSubmit;
 }
 
 /// @nodoc
 
-class _$_SettingsEmailSubmit
-    with DiagnosticableTreeMixin
-    implements _SettingsEmailSubmit {
+class _$_SettingsEmailSubmit implements _SettingsEmailSubmit {
   const _$_SettingsEmailSubmit();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SettingsEmailEvent.submit()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SettingsEmailEvent.submit'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SettingsEmailSubmit);
+        (other.runtimeType == runtimeType && other is _$_SettingsEmailSubmit);
   }
 
   @override
@@ -1206,29 +1073,6 @@ abstract class _SettingsEmailSubmit implements SettingsEmailEvent {
 }
 
 /// @nodoc
-class _$SettingsEmailStateTearOff {
-  const _$SettingsEmailStateTearOff();
-
-  _SettingsEmailState call(
-      {String email = "",
-      bool canSubmit = false,
-      bool isLoading = false,
-      bool isSuccess = false,
-      String? errorText}) {
-    return _SettingsEmailState(
-      email: email,
-      canSubmit: canSubmit,
-      isLoading: isLoading,
-      isSuccess: isSuccess,
-      errorText: errorText,
-    );
-  }
-}
-
-/// @nodoc
-const $SettingsEmailState = _$SettingsEmailStateTearOff();
-
-/// @nodoc
 mixin _$SettingsEmailState {
   String get email => throw _privateConstructorUsedError;
   bool get canSubmit => throw _privateConstructorUsedError;
@@ -1297,11 +1141,11 @@ class _$SettingsEmailStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SettingsEmailStateCopyWith<$Res>
+abstract class _$$_SettingsEmailStateCopyWith<$Res>
     implements $SettingsEmailStateCopyWith<$Res> {
-  factory _$SettingsEmailStateCopyWith(
-          _SettingsEmailState value, $Res Function(_SettingsEmailState) then) =
-      __$SettingsEmailStateCopyWithImpl<$Res>;
+  factory _$$_SettingsEmailStateCopyWith(_$_SettingsEmailState value,
+          $Res Function(_$_SettingsEmailState) then) =
+      __$$_SettingsEmailStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {String email,
@@ -1312,15 +1156,15 @@ abstract class _$SettingsEmailStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SettingsEmailStateCopyWithImpl<$Res>
+class __$$_SettingsEmailStateCopyWithImpl<$Res>
     extends _$SettingsEmailStateCopyWithImpl<$Res>
-    implements _$SettingsEmailStateCopyWith<$Res> {
-  __$SettingsEmailStateCopyWithImpl(
-      _SettingsEmailState _value, $Res Function(_SettingsEmailState) _then)
-      : super(_value, (v) => _then(v as _SettingsEmailState));
+    implements _$$_SettingsEmailStateCopyWith<$Res> {
+  __$$_SettingsEmailStateCopyWithImpl(
+      _$_SettingsEmailState _value, $Res Function(_$_SettingsEmailState) _then)
+      : super(_value, (v) => _then(v as _$_SettingsEmailState));
 
   @override
-  _SettingsEmailState get _value => super._value as _SettingsEmailState;
+  _$_SettingsEmailState get _value => super._value as _$_SettingsEmailState;
 
   @override
   $Res call({
@@ -1330,7 +1174,7 @@ class __$SettingsEmailStateCopyWithImpl<$Res>
     Object? isSuccess = freezed,
     Object? errorText = freezed,
   }) {
-    return _then(_SettingsEmailState(
+    return _then(_$_SettingsEmailState(
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -1357,9 +1201,7 @@ class __$SettingsEmailStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsEmailState
-    with DiagnosticableTreeMixin
-    implements _SettingsEmailState {
+class _$_SettingsEmailState implements _SettingsEmailState {
   const _$_SettingsEmailState(
       {this.email = "",
       this.canSubmit = false,
@@ -1367,43 +1209,31 @@ class _$_SettingsEmailState
       this.isSuccess = false,
       this.errorText});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String email;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool canSubmit;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isLoading;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isSuccess;
   @override
   final String? errorText;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SettingsEmailState(email: $email, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SettingsEmailState'))
-      ..add(DiagnosticsProperty('email', email))
-      ..add(DiagnosticsProperty('canSubmit', canSubmit))
-      ..add(DiagnosticsProperty('isLoading', isLoading))
-      ..add(DiagnosticsProperty('isSuccess', isSuccess))
-      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SettingsEmailState &&
+            other is _$_SettingsEmailState &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
@@ -1422,17 +1252,18 @@ class _$_SettingsEmailState
 
   @JsonKey(ignore: true)
   @override
-  _$SettingsEmailStateCopyWith<_SettingsEmailState> get copyWith =>
-      __$SettingsEmailStateCopyWithImpl<_SettingsEmailState>(this, _$identity);
+  _$$_SettingsEmailStateCopyWith<_$_SettingsEmailState> get copyWith =>
+      __$$_SettingsEmailStateCopyWithImpl<_$_SettingsEmailState>(
+          this, _$identity);
 }
 
 abstract class _SettingsEmailState implements SettingsEmailState {
   const factory _SettingsEmailState(
-      {String email,
-      bool canSubmit,
-      bool isLoading,
-      bool isSuccess,
-      String? errorText}) = _$_SettingsEmailState;
+      {final String email,
+      final bool canSubmit,
+      final bool isLoading,
+      final bool isSuccess,
+      final String? errorText}) = _$_SettingsEmailState;
 
   @override
   String get email;
@@ -1446,34 +1277,9 @@ abstract class _SettingsEmailState implements SettingsEmailState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$SettingsEmailStateCopyWith<_SettingsEmailState> get copyWith =>
+  _$$_SettingsEmailStateCopyWith<_$_SettingsEmailState> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SettingsPasswordEventTearOff {
-  const _$SettingsPasswordEventTearOff();
-
-  _SettingsPasswordChanged passwordChanged(String password) {
-    return _SettingsPasswordChanged(
-      password,
-    );
-  }
-
-  _SettingsPasswordConfirmationChanged passwordConfirmationChanged(
-      String password) {
-    return _SettingsPasswordConfirmationChanged(
-      password,
-    );
-  }
-
-  _SettingsPasswordSubmit submit() {
-    return const _SettingsPasswordSubmit();
-  }
-}
-
-/// @nodoc
-const $SettingsPasswordEvent = _$SettingsPasswordEventTearOff();
 
 /// @nodoc
 mixin _$SettingsPasswordEvent {
@@ -1544,30 +1350,30 @@ class _$SettingsPasswordEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SettingsPasswordChangedCopyWith<$Res> {
-  factory _$SettingsPasswordChangedCopyWith(_SettingsPasswordChanged value,
-          $Res Function(_SettingsPasswordChanged) then) =
-      __$SettingsPasswordChangedCopyWithImpl<$Res>;
+abstract class _$$_SettingsPasswordChangedCopyWith<$Res> {
+  factory _$$_SettingsPasswordChangedCopyWith(_$_SettingsPasswordChanged value,
+          $Res Function(_$_SettingsPasswordChanged) then) =
+      __$$_SettingsPasswordChangedCopyWithImpl<$Res>;
   $Res call({String password});
 }
 
 /// @nodoc
-class __$SettingsPasswordChangedCopyWithImpl<$Res>
+class __$$_SettingsPasswordChangedCopyWithImpl<$Res>
     extends _$SettingsPasswordEventCopyWithImpl<$Res>
-    implements _$SettingsPasswordChangedCopyWith<$Res> {
-  __$SettingsPasswordChangedCopyWithImpl(_SettingsPasswordChanged _value,
-      $Res Function(_SettingsPasswordChanged) _then)
-      : super(_value, (v) => _then(v as _SettingsPasswordChanged));
+    implements _$$_SettingsPasswordChangedCopyWith<$Res> {
+  __$$_SettingsPasswordChangedCopyWithImpl(_$_SettingsPasswordChanged _value,
+      $Res Function(_$_SettingsPasswordChanged) _then)
+      : super(_value, (v) => _then(v as _$_SettingsPasswordChanged));
 
   @override
-  _SettingsPasswordChanged get _value =>
-      super._value as _SettingsPasswordChanged;
+  _$_SettingsPasswordChanged get _value =>
+      super._value as _$_SettingsPasswordChanged;
 
   @override
   $Res call({
     Object? password = freezed,
   }) {
-    return _then(_SettingsPasswordChanged(
+    return _then(_$_SettingsPasswordChanged(
       password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -1578,33 +1384,22 @@ class __$SettingsPasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsPasswordChanged
-    with DiagnosticableTreeMixin
-    implements _SettingsPasswordChanged {
+class _$_SettingsPasswordChanged implements _SettingsPasswordChanged {
   const _$_SettingsPasswordChanged(this.password);
 
   @override
   final String password;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SettingsPasswordEvent.passwordChanged(password: $password)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'SettingsPasswordEvent.passwordChanged'))
-      ..add(DiagnosticsProperty('password', password));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SettingsPasswordChanged &&
+            other is _$_SettingsPasswordChanged &&
             const DeepCollectionEquality().equals(other.password, password));
   }
 
@@ -1614,9 +1409,10 @@ class _$_SettingsPasswordChanged
 
   @JsonKey(ignore: true)
   @override
-  _$SettingsPasswordChangedCopyWith<_SettingsPasswordChanged> get copyWith =>
-      __$SettingsPasswordChangedCopyWithImpl<_SettingsPasswordChanged>(
-          this, _$identity);
+  _$$_SettingsPasswordChangedCopyWith<_$_SettingsPasswordChanged>
+      get copyWith =>
+          __$$_SettingsPasswordChangedCopyWithImpl<_$_SettingsPasswordChanged>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1691,42 +1487,43 @@ class _$_SettingsPasswordChanged
 }
 
 abstract class _SettingsPasswordChanged implements SettingsPasswordEvent {
-  const factory _SettingsPasswordChanged(String password) =
+  const factory _SettingsPasswordChanged(final String password) =
       _$_SettingsPasswordChanged;
 
   String get password;
   @JsonKey(ignore: true)
-  _$SettingsPasswordChangedCopyWith<_SettingsPasswordChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_SettingsPasswordChangedCopyWith<_$_SettingsPasswordChanged>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SettingsPasswordConfirmationChangedCopyWith<$Res> {
-  factory _$SettingsPasswordConfirmationChangedCopyWith(
-          _SettingsPasswordConfirmationChanged value,
-          $Res Function(_SettingsPasswordConfirmationChanged) then) =
-      __$SettingsPasswordConfirmationChangedCopyWithImpl<$Res>;
+abstract class _$$_SettingsPasswordConfirmationChangedCopyWith<$Res> {
+  factory _$$_SettingsPasswordConfirmationChangedCopyWith(
+          _$_SettingsPasswordConfirmationChanged value,
+          $Res Function(_$_SettingsPasswordConfirmationChanged) then) =
+      __$$_SettingsPasswordConfirmationChangedCopyWithImpl<$Res>;
   $Res call({String password});
 }
 
 /// @nodoc
-class __$SettingsPasswordConfirmationChangedCopyWithImpl<$Res>
+class __$$_SettingsPasswordConfirmationChangedCopyWithImpl<$Res>
     extends _$SettingsPasswordEventCopyWithImpl<$Res>
-    implements _$SettingsPasswordConfirmationChangedCopyWith<$Res> {
-  __$SettingsPasswordConfirmationChangedCopyWithImpl(
-      _SettingsPasswordConfirmationChanged _value,
-      $Res Function(_SettingsPasswordConfirmationChanged) _then)
-      : super(_value, (v) => _then(v as _SettingsPasswordConfirmationChanged));
+    implements _$$_SettingsPasswordConfirmationChangedCopyWith<$Res> {
+  __$$_SettingsPasswordConfirmationChangedCopyWithImpl(
+      _$_SettingsPasswordConfirmationChanged _value,
+      $Res Function(_$_SettingsPasswordConfirmationChanged) _then)
+      : super(
+            _value, (v) => _then(v as _$_SettingsPasswordConfirmationChanged));
 
   @override
-  _SettingsPasswordConfirmationChanged get _value =>
-      super._value as _SettingsPasswordConfirmationChanged;
+  _$_SettingsPasswordConfirmationChanged get _value =>
+      super._value as _$_SettingsPasswordConfirmationChanged;
 
   @override
   $Res call({
     Object? password = freezed,
   }) {
-    return _then(_SettingsPasswordConfirmationChanged(
+    return _then(_$_SettingsPasswordConfirmationChanged(
       password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -1738,7 +1535,6 @@ class __$SettingsPasswordConfirmationChangedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SettingsPasswordConfirmationChanged
-    with DiagnosticableTreeMixin
     implements _SettingsPasswordConfirmationChanged {
   const _$_SettingsPasswordConfirmationChanged(this.password);
 
@@ -1746,24 +1542,15 @@ class _$_SettingsPasswordConfirmationChanged
   final String password;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SettingsPasswordEvent.passwordConfirmationChanged(password: $password)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SettingsPasswordEvent.passwordConfirmationChanged'))
-      ..add(DiagnosticsProperty('password', password));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SettingsPasswordConfirmationChanged &&
+            other is _$_SettingsPasswordConfirmationChanged &&
             const DeepCollectionEquality().equals(other.password, password));
   }
 
@@ -1773,10 +1560,10 @@ class _$_SettingsPasswordConfirmationChanged
 
   @JsonKey(ignore: true)
   @override
-  _$SettingsPasswordConfirmationChangedCopyWith<
-          _SettingsPasswordConfirmationChanged>
-      get copyWith => __$SettingsPasswordConfirmationChangedCopyWithImpl<
-          _SettingsPasswordConfirmationChanged>(this, _$identity);
+  _$$_SettingsPasswordConfirmationChangedCopyWith<
+          _$_SettingsPasswordConfirmationChanged>
+      get copyWith => __$$_SettingsPasswordConfirmationChangedCopyWithImpl<
+          _$_SettingsPasswordConfirmationChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1852,58 +1639,51 @@ class _$_SettingsPasswordConfirmationChanged
 
 abstract class _SettingsPasswordConfirmationChanged
     implements SettingsPasswordEvent {
-  const factory _SettingsPasswordConfirmationChanged(String password) =
+  const factory _SettingsPasswordConfirmationChanged(final String password) =
       _$_SettingsPasswordConfirmationChanged;
 
   String get password;
   @JsonKey(ignore: true)
-  _$SettingsPasswordConfirmationChangedCopyWith<
-          _SettingsPasswordConfirmationChanged>
+  _$$_SettingsPasswordConfirmationChangedCopyWith<
+          _$_SettingsPasswordConfirmationChanged>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SettingsPasswordSubmitCopyWith<$Res> {
-  factory _$SettingsPasswordSubmitCopyWith(_SettingsPasswordSubmit value,
-          $Res Function(_SettingsPasswordSubmit) then) =
-      __$SettingsPasswordSubmitCopyWithImpl<$Res>;
+abstract class _$$_SettingsPasswordSubmitCopyWith<$Res> {
+  factory _$$_SettingsPasswordSubmitCopyWith(_$_SettingsPasswordSubmit value,
+          $Res Function(_$_SettingsPasswordSubmit) then) =
+      __$$_SettingsPasswordSubmitCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SettingsPasswordSubmitCopyWithImpl<$Res>
+class __$$_SettingsPasswordSubmitCopyWithImpl<$Res>
     extends _$SettingsPasswordEventCopyWithImpl<$Res>
-    implements _$SettingsPasswordSubmitCopyWith<$Res> {
-  __$SettingsPasswordSubmitCopyWithImpl(_SettingsPasswordSubmit _value,
-      $Res Function(_SettingsPasswordSubmit) _then)
-      : super(_value, (v) => _then(v as _SettingsPasswordSubmit));
+    implements _$$_SettingsPasswordSubmitCopyWith<$Res> {
+  __$$_SettingsPasswordSubmitCopyWithImpl(_$_SettingsPasswordSubmit _value,
+      $Res Function(_$_SettingsPasswordSubmit) _then)
+      : super(_value, (v) => _then(v as _$_SettingsPasswordSubmit));
 
   @override
-  _SettingsPasswordSubmit get _value => super._value as _SettingsPasswordSubmit;
+  _$_SettingsPasswordSubmit get _value =>
+      super._value as _$_SettingsPasswordSubmit;
 }
 
 /// @nodoc
 
-class _$_SettingsPasswordSubmit
-    with DiagnosticableTreeMixin
-    implements _SettingsPasswordSubmit {
+class _$_SettingsPasswordSubmit implements _SettingsPasswordSubmit {
   const _$_SettingsPasswordSubmit();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SettingsPasswordEvent.submit()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SettingsPasswordEvent.submit'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SettingsPasswordSubmit);
+        (other.runtimeType == runtimeType &&
+            other is _$_SettingsPasswordSubmit);
   }
 
   @override
@@ -1984,43 +1764,6 @@ class _$_SettingsPasswordSubmit
 abstract class _SettingsPasswordSubmit implements SettingsPasswordEvent {
   const factory _SettingsPasswordSubmit() = _$_SettingsPasswordSubmit;
 }
-
-/// @nodoc
-class _$SettingsPasswordStateTearOff {
-  const _$SettingsPasswordStateTearOff();
-
-  _SettingsPasswordState call(
-      {String password = "",
-      String passwordConfirmation = "",
-      bool passwordHasMinLength = false,
-      bool passwordHasUppercase = false,
-      bool passwordHasLowercase = false,
-      bool passwordHasDigits = false,
-      bool passwordHasSpecialChars = false,
-      bool passwordsMatch = false,
-      bool canSubmit = false,
-      bool isLoading = false,
-      bool isSuccess = false,
-      String? errorText}) {
-    return _SettingsPasswordState(
-      password: password,
-      passwordConfirmation: passwordConfirmation,
-      passwordHasMinLength: passwordHasMinLength,
-      passwordHasUppercase: passwordHasUppercase,
-      passwordHasLowercase: passwordHasLowercase,
-      passwordHasDigits: passwordHasDigits,
-      passwordHasSpecialChars: passwordHasSpecialChars,
-      passwordsMatch: passwordsMatch,
-      canSubmit: canSubmit,
-      isLoading: isLoading,
-      isSuccess: isSuccess,
-      errorText: errorText,
-    );
-  }
-}
-
-/// @nodoc
-const $SettingsPasswordState = _$SettingsPasswordStateTearOff();
 
 /// @nodoc
 mixin _$SettingsPasswordState {
@@ -2140,11 +1883,11 @@ class _$SettingsPasswordStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SettingsPasswordStateCopyWith<$Res>
+abstract class _$$_SettingsPasswordStateCopyWith<$Res>
     implements $SettingsPasswordStateCopyWith<$Res> {
-  factory _$SettingsPasswordStateCopyWith(_SettingsPasswordState value,
-          $Res Function(_SettingsPasswordState) then) =
-      __$SettingsPasswordStateCopyWithImpl<$Res>;
+  factory _$$_SettingsPasswordStateCopyWith(_$_SettingsPasswordState value,
+          $Res Function(_$_SettingsPasswordState) then) =
+      __$$_SettingsPasswordStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {String password,
@@ -2162,15 +1905,16 @@ abstract class _$SettingsPasswordStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SettingsPasswordStateCopyWithImpl<$Res>
+class __$$_SettingsPasswordStateCopyWithImpl<$Res>
     extends _$SettingsPasswordStateCopyWithImpl<$Res>
-    implements _$SettingsPasswordStateCopyWith<$Res> {
-  __$SettingsPasswordStateCopyWithImpl(_SettingsPasswordState _value,
-      $Res Function(_SettingsPasswordState) _then)
-      : super(_value, (v) => _then(v as _SettingsPasswordState));
+    implements _$$_SettingsPasswordStateCopyWith<$Res> {
+  __$$_SettingsPasswordStateCopyWithImpl(_$_SettingsPasswordState _value,
+      $Res Function(_$_SettingsPasswordState) _then)
+      : super(_value, (v) => _then(v as _$_SettingsPasswordState));
 
   @override
-  _SettingsPasswordState get _value => super._value as _SettingsPasswordState;
+  _$_SettingsPasswordState get _value =>
+      super._value as _$_SettingsPasswordState;
 
   @override
   $Res call({
@@ -2187,7 +1931,7 @@ class __$SettingsPasswordStateCopyWithImpl<$Res>
     Object? isSuccess = freezed,
     Object? errorText = freezed,
   }) {
-    return _then(_SettingsPasswordState(
+    return _then(_$_SettingsPasswordState(
       password: password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -2242,9 +1986,7 @@ class __$SettingsPasswordStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsPasswordState
-    with DiagnosticableTreeMixin
-    implements _SettingsPasswordState {
+class _$_SettingsPasswordState implements _SettingsPasswordState {
   const _$_SettingsPasswordState(
       {this.password = "",
       this.passwordConfirmation = "",
@@ -2259,72 +2001,52 @@ class _$_SettingsPasswordState
       this.isSuccess = false,
       this.errorText});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String password;
-  @JsonKey()
   @override
+  @JsonKey()
   final String passwordConfirmation;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool passwordHasMinLength;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool passwordHasUppercase;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool passwordHasLowercase;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool passwordHasDigits;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool passwordHasSpecialChars;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool passwordsMatch;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool canSubmit;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isLoading;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isSuccess;
   @override
   final String? errorText;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SettingsPasswordState(password: $password, passwordConfirmation: $passwordConfirmation, passwordHasMinLength: $passwordHasMinLength, passwordHasUppercase: $passwordHasUppercase, passwordHasLowercase: $passwordHasLowercase, passwordHasDigits: $passwordHasDigits, passwordHasSpecialChars: $passwordHasSpecialChars, passwordsMatch: $passwordsMatch, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SettingsPasswordState'))
-      ..add(DiagnosticsProperty('password', password))
-      ..add(DiagnosticsProperty('passwordConfirmation', passwordConfirmation))
-      ..add(DiagnosticsProperty('passwordHasMinLength', passwordHasMinLength))
-      ..add(DiagnosticsProperty('passwordHasUppercase', passwordHasUppercase))
-      ..add(DiagnosticsProperty('passwordHasLowercase', passwordHasLowercase))
-      ..add(DiagnosticsProperty('passwordHasDigits', passwordHasDigits))
-      ..add(DiagnosticsProperty(
-          'passwordHasSpecialChars', passwordHasSpecialChars))
-      ..add(DiagnosticsProperty('passwordsMatch', passwordsMatch))
-      ..add(DiagnosticsProperty('canSubmit', canSubmit))
-      ..add(DiagnosticsProperty('isLoading', isLoading))
-      ..add(DiagnosticsProperty('isSuccess', isSuccess))
-      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SettingsPasswordState &&
+            other is _$_SettingsPasswordState &&
             const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality()
                 .equals(other.passwordConfirmation, passwordConfirmation) &&
@@ -2364,25 +2086,25 @@ class _$_SettingsPasswordState
 
   @JsonKey(ignore: true)
   @override
-  _$SettingsPasswordStateCopyWith<_SettingsPasswordState> get copyWith =>
-      __$SettingsPasswordStateCopyWithImpl<_SettingsPasswordState>(
+  _$$_SettingsPasswordStateCopyWith<_$_SettingsPasswordState> get copyWith =>
+      __$$_SettingsPasswordStateCopyWithImpl<_$_SettingsPasswordState>(
           this, _$identity);
 }
 
 abstract class _SettingsPasswordState implements SettingsPasswordState {
   const factory _SettingsPasswordState(
-      {String password,
-      String passwordConfirmation,
-      bool passwordHasMinLength,
-      bool passwordHasUppercase,
-      bool passwordHasLowercase,
-      bool passwordHasDigits,
-      bool passwordHasSpecialChars,
-      bool passwordsMatch,
-      bool canSubmit,
-      bool isLoading,
-      bool isSuccess,
-      String? errorText}) = _$_SettingsPasswordState;
+      {final String password,
+      final String passwordConfirmation,
+      final bool passwordHasMinLength,
+      final bool passwordHasUppercase,
+      final bool passwordHasLowercase,
+      final bool passwordHasDigits,
+      final bool passwordHasSpecialChars,
+      final bool passwordsMatch,
+      final bool canSubmit,
+      final bool isLoading,
+      final bool isSuccess,
+      final String? errorText}) = _$_SettingsPasswordState;
 
   @override
   String get password;
@@ -2410,47 +2132,9 @@ abstract class _SettingsPasswordState implements SettingsPasswordState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$SettingsPasswordStateCopyWith<_SettingsPasswordState> get copyWith =>
+  _$$_SettingsPasswordStateCopyWith<_$_SettingsPasswordState> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SignInButtonsEventTearOff {
-  const _$SignInButtonsEventTearOff();
-
-  _SignInWithFacebook signInWithFacebook() {
-    return const _SignInWithFacebook();
-  }
-
-  _SignInWithGoogle signInWithGoogle() {
-    return const _SignInWithGoogle();
-  }
-
-  _SignInWithApple signInWithApple() {
-    return const _SignInWithApple();
-  }
-
-  _SignInWithEmail signInWithEmail() {
-    return const _SignInWithEmail();
-  }
-
-  _SignInWithEmailLink signInWithEmailLink(String email) {
-    return _SignInWithEmailLink(
-      email,
-    );
-  }
-
-  _SignInWithPhone signInWithPhone() {
-    return const _SignInWithPhone();
-  }
-
-  _SignInAnonymously signInAnonymously() {
-    return const _SignInAnonymously();
-  }
-}
-
-/// @nodoc
-const $SignInButtonsEvent = _$SignInButtonsEventTearOff();
 
 /// @nodoc
 mixin _$SignInButtonsEvent {
@@ -2542,48 +2226,38 @@ class _$SignInButtonsEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SignInWithFacebookCopyWith<$Res> {
-  factory _$SignInWithFacebookCopyWith(
-          _SignInWithFacebook value, $Res Function(_SignInWithFacebook) then) =
-      __$SignInWithFacebookCopyWithImpl<$Res>;
+abstract class _$$_SignInWithFacebookCopyWith<$Res> {
+  factory _$$_SignInWithFacebookCopyWith(_$_SignInWithFacebook value,
+          $Res Function(_$_SignInWithFacebook) then) =
+      __$$_SignInWithFacebookCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SignInWithFacebookCopyWithImpl<$Res>
+class __$$_SignInWithFacebookCopyWithImpl<$Res>
     extends _$SignInButtonsEventCopyWithImpl<$Res>
-    implements _$SignInWithFacebookCopyWith<$Res> {
-  __$SignInWithFacebookCopyWithImpl(
-      _SignInWithFacebook _value, $Res Function(_SignInWithFacebook) _then)
-      : super(_value, (v) => _then(v as _SignInWithFacebook));
+    implements _$$_SignInWithFacebookCopyWith<$Res> {
+  __$$_SignInWithFacebookCopyWithImpl(
+      _$_SignInWithFacebook _value, $Res Function(_$_SignInWithFacebook) _then)
+      : super(_value, (v) => _then(v as _$_SignInWithFacebook));
 
   @override
-  _SignInWithFacebook get _value => super._value as _SignInWithFacebook;
+  _$_SignInWithFacebook get _value => super._value as _$_SignInWithFacebook;
 }
 
 /// @nodoc
 
-class _$_SignInWithFacebook
-    with DiagnosticableTreeMixin
-    implements _SignInWithFacebook {
+class _$_SignInWithFacebook implements _SignInWithFacebook {
   const _$_SignInWithFacebook();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInButtonsEvent.signInWithFacebook()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'SignInButtonsEvent.signInWithFacebook'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInWithFacebook);
+        (other.runtimeType == runtimeType && other is _$_SignInWithFacebook);
   }
 
   @override
@@ -2687,47 +2361,38 @@ abstract class _SignInWithFacebook implements SignInButtonsEvent {
 }
 
 /// @nodoc
-abstract class _$SignInWithGoogleCopyWith<$Res> {
-  factory _$SignInWithGoogleCopyWith(
-          _SignInWithGoogle value, $Res Function(_SignInWithGoogle) then) =
-      __$SignInWithGoogleCopyWithImpl<$Res>;
+abstract class _$$_SignInWithGoogleCopyWith<$Res> {
+  factory _$$_SignInWithGoogleCopyWith(
+          _$_SignInWithGoogle value, $Res Function(_$_SignInWithGoogle) then) =
+      __$$_SignInWithGoogleCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SignInWithGoogleCopyWithImpl<$Res>
+class __$$_SignInWithGoogleCopyWithImpl<$Res>
     extends _$SignInButtonsEventCopyWithImpl<$Res>
-    implements _$SignInWithGoogleCopyWith<$Res> {
-  __$SignInWithGoogleCopyWithImpl(
-      _SignInWithGoogle _value, $Res Function(_SignInWithGoogle) _then)
-      : super(_value, (v) => _then(v as _SignInWithGoogle));
+    implements _$$_SignInWithGoogleCopyWith<$Res> {
+  __$$_SignInWithGoogleCopyWithImpl(
+      _$_SignInWithGoogle _value, $Res Function(_$_SignInWithGoogle) _then)
+      : super(_value, (v) => _then(v as _$_SignInWithGoogle));
 
   @override
-  _SignInWithGoogle get _value => super._value as _SignInWithGoogle;
+  _$_SignInWithGoogle get _value => super._value as _$_SignInWithGoogle;
 }
 
 /// @nodoc
 
-class _$_SignInWithGoogle
-    with DiagnosticableTreeMixin
-    implements _SignInWithGoogle {
+class _$_SignInWithGoogle implements _SignInWithGoogle {
   const _$_SignInWithGoogle();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInButtonsEvent.signInWithGoogle()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInButtonsEvent.signInWithGoogle'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInWithGoogle);
+        (other.runtimeType == runtimeType && other is _$_SignInWithGoogle);
   }
 
   @override
@@ -2831,47 +2496,38 @@ abstract class _SignInWithGoogle implements SignInButtonsEvent {
 }
 
 /// @nodoc
-abstract class _$SignInWithAppleCopyWith<$Res> {
-  factory _$SignInWithAppleCopyWith(
-          _SignInWithApple value, $Res Function(_SignInWithApple) then) =
-      __$SignInWithAppleCopyWithImpl<$Res>;
+abstract class _$$_SignInWithAppleCopyWith<$Res> {
+  factory _$$_SignInWithAppleCopyWith(
+          _$_SignInWithApple value, $Res Function(_$_SignInWithApple) then) =
+      __$$_SignInWithAppleCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SignInWithAppleCopyWithImpl<$Res>
+class __$$_SignInWithAppleCopyWithImpl<$Res>
     extends _$SignInButtonsEventCopyWithImpl<$Res>
-    implements _$SignInWithAppleCopyWith<$Res> {
-  __$SignInWithAppleCopyWithImpl(
-      _SignInWithApple _value, $Res Function(_SignInWithApple) _then)
-      : super(_value, (v) => _then(v as _SignInWithApple));
+    implements _$$_SignInWithAppleCopyWith<$Res> {
+  __$$_SignInWithAppleCopyWithImpl(
+      _$_SignInWithApple _value, $Res Function(_$_SignInWithApple) _then)
+      : super(_value, (v) => _then(v as _$_SignInWithApple));
 
   @override
-  _SignInWithApple get _value => super._value as _SignInWithApple;
+  _$_SignInWithApple get _value => super._value as _$_SignInWithApple;
 }
 
 /// @nodoc
 
-class _$_SignInWithApple
-    with DiagnosticableTreeMixin
-    implements _SignInWithApple {
+class _$_SignInWithApple implements _SignInWithApple {
   const _$_SignInWithApple();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInButtonsEvent.signInWithApple()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInButtonsEvent.signInWithApple'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInWithApple);
+        (other.runtimeType == runtimeType && other is _$_SignInWithApple);
   }
 
   @override
@@ -2975,47 +2631,38 @@ abstract class _SignInWithApple implements SignInButtonsEvent {
 }
 
 /// @nodoc
-abstract class _$SignInWithEmailCopyWith<$Res> {
-  factory _$SignInWithEmailCopyWith(
-          _SignInWithEmail value, $Res Function(_SignInWithEmail) then) =
-      __$SignInWithEmailCopyWithImpl<$Res>;
+abstract class _$$_SignInWithEmailCopyWith<$Res> {
+  factory _$$_SignInWithEmailCopyWith(
+          _$_SignInWithEmail value, $Res Function(_$_SignInWithEmail) then) =
+      __$$_SignInWithEmailCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SignInWithEmailCopyWithImpl<$Res>
+class __$$_SignInWithEmailCopyWithImpl<$Res>
     extends _$SignInButtonsEventCopyWithImpl<$Res>
-    implements _$SignInWithEmailCopyWith<$Res> {
-  __$SignInWithEmailCopyWithImpl(
-      _SignInWithEmail _value, $Res Function(_SignInWithEmail) _then)
-      : super(_value, (v) => _then(v as _SignInWithEmail));
+    implements _$$_SignInWithEmailCopyWith<$Res> {
+  __$$_SignInWithEmailCopyWithImpl(
+      _$_SignInWithEmail _value, $Res Function(_$_SignInWithEmail) _then)
+      : super(_value, (v) => _then(v as _$_SignInWithEmail));
 
   @override
-  _SignInWithEmail get _value => super._value as _SignInWithEmail;
+  _$_SignInWithEmail get _value => super._value as _$_SignInWithEmail;
 }
 
 /// @nodoc
 
-class _$_SignInWithEmail
-    with DiagnosticableTreeMixin
-    implements _SignInWithEmail {
+class _$_SignInWithEmail implements _SignInWithEmail {
   const _$_SignInWithEmail();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInButtonsEvent.signInWithEmail()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInButtonsEvent.signInWithEmail'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInWithEmail);
+        (other.runtimeType == runtimeType && other is _$_SignInWithEmail);
   }
 
   @override
@@ -3119,29 +2766,29 @@ abstract class _SignInWithEmail implements SignInButtonsEvent {
 }
 
 /// @nodoc
-abstract class _$SignInWithEmailLinkCopyWith<$Res> {
-  factory _$SignInWithEmailLinkCopyWith(_SignInWithEmailLink value,
-          $Res Function(_SignInWithEmailLink) then) =
-      __$SignInWithEmailLinkCopyWithImpl<$Res>;
+abstract class _$$_SignInWithEmailLinkCopyWith<$Res> {
+  factory _$$_SignInWithEmailLinkCopyWith(_$_SignInWithEmailLink value,
+          $Res Function(_$_SignInWithEmailLink) then) =
+      __$$_SignInWithEmailLinkCopyWithImpl<$Res>;
   $Res call({String email});
 }
 
 /// @nodoc
-class __$SignInWithEmailLinkCopyWithImpl<$Res>
+class __$$_SignInWithEmailLinkCopyWithImpl<$Res>
     extends _$SignInButtonsEventCopyWithImpl<$Res>
-    implements _$SignInWithEmailLinkCopyWith<$Res> {
-  __$SignInWithEmailLinkCopyWithImpl(
-      _SignInWithEmailLink _value, $Res Function(_SignInWithEmailLink) _then)
-      : super(_value, (v) => _then(v as _SignInWithEmailLink));
+    implements _$$_SignInWithEmailLinkCopyWith<$Res> {
+  __$$_SignInWithEmailLinkCopyWithImpl(_$_SignInWithEmailLink _value,
+      $Res Function(_$_SignInWithEmailLink) _then)
+      : super(_value, (v) => _then(v as _$_SignInWithEmailLink));
 
   @override
-  _SignInWithEmailLink get _value => super._value as _SignInWithEmailLink;
+  _$_SignInWithEmailLink get _value => super._value as _$_SignInWithEmailLink;
 
   @override
   $Res call({
     Object? email = freezed,
   }) {
-    return _then(_SignInWithEmailLink(
+    return _then(_$_SignInWithEmailLink(
       email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -3152,33 +2799,22 @@ class __$SignInWithEmailLinkCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInWithEmailLink
-    with DiagnosticableTreeMixin
-    implements _SignInWithEmailLink {
+class _$_SignInWithEmailLink implements _SignInWithEmailLink {
   const _$_SignInWithEmailLink(this.email);
 
   @override
   final String email;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInButtonsEvent.signInWithEmailLink(email: $email)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'SignInButtonsEvent.signInWithEmailLink'))
-      ..add(DiagnosticsProperty('email', email));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SignInWithEmailLink &&
+            other is _$_SignInWithEmailLink &&
             const DeepCollectionEquality().equals(other.email, email));
   }
 
@@ -3188,8 +2824,8 @@ class _$_SignInWithEmailLink
 
   @JsonKey(ignore: true)
   @override
-  _$SignInWithEmailLinkCopyWith<_SignInWithEmailLink> get copyWith =>
-      __$SignInWithEmailLinkCopyWithImpl<_SignInWithEmailLink>(
+  _$$_SignInWithEmailLinkCopyWith<_$_SignInWithEmailLink> get copyWith =>
+      __$$_SignInWithEmailLinkCopyWithImpl<_$_SignInWithEmailLink>(
           this, _$identity);
 
   @override
@@ -3286,56 +2922,48 @@ class _$_SignInWithEmailLink
 }
 
 abstract class _SignInWithEmailLink implements SignInButtonsEvent {
-  const factory _SignInWithEmailLink(String email) = _$_SignInWithEmailLink;
+  const factory _SignInWithEmailLink(final String email) =
+      _$_SignInWithEmailLink;
 
   String get email;
   @JsonKey(ignore: true)
-  _$SignInWithEmailLinkCopyWith<_SignInWithEmailLink> get copyWith =>
+  _$$_SignInWithEmailLinkCopyWith<_$_SignInWithEmailLink> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SignInWithPhoneCopyWith<$Res> {
-  factory _$SignInWithPhoneCopyWith(
-          _SignInWithPhone value, $Res Function(_SignInWithPhone) then) =
-      __$SignInWithPhoneCopyWithImpl<$Res>;
+abstract class _$$_SignInWithPhoneCopyWith<$Res> {
+  factory _$$_SignInWithPhoneCopyWith(
+          _$_SignInWithPhone value, $Res Function(_$_SignInWithPhone) then) =
+      __$$_SignInWithPhoneCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SignInWithPhoneCopyWithImpl<$Res>
+class __$$_SignInWithPhoneCopyWithImpl<$Res>
     extends _$SignInButtonsEventCopyWithImpl<$Res>
-    implements _$SignInWithPhoneCopyWith<$Res> {
-  __$SignInWithPhoneCopyWithImpl(
-      _SignInWithPhone _value, $Res Function(_SignInWithPhone) _then)
-      : super(_value, (v) => _then(v as _SignInWithPhone));
+    implements _$$_SignInWithPhoneCopyWith<$Res> {
+  __$$_SignInWithPhoneCopyWithImpl(
+      _$_SignInWithPhone _value, $Res Function(_$_SignInWithPhone) _then)
+      : super(_value, (v) => _then(v as _$_SignInWithPhone));
 
   @override
-  _SignInWithPhone get _value => super._value as _SignInWithPhone;
+  _$_SignInWithPhone get _value => super._value as _$_SignInWithPhone;
 }
 
 /// @nodoc
 
-class _$_SignInWithPhone
-    with DiagnosticableTreeMixin
-    implements _SignInWithPhone {
+class _$_SignInWithPhone implements _SignInWithPhone {
   const _$_SignInWithPhone();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInButtonsEvent.signInWithPhone()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInButtonsEvent.signInWithPhone'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInWithPhone);
+        (other.runtimeType == runtimeType && other is _$_SignInWithPhone);
   }
 
   @override
@@ -3439,48 +3067,38 @@ abstract class _SignInWithPhone implements SignInButtonsEvent {
 }
 
 /// @nodoc
-abstract class _$SignInAnonymouslyCopyWith<$Res> {
-  factory _$SignInAnonymouslyCopyWith(
-          _SignInAnonymously value, $Res Function(_SignInAnonymously) then) =
-      __$SignInAnonymouslyCopyWithImpl<$Res>;
+abstract class _$$_SignInAnonymouslyCopyWith<$Res> {
+  factory _$$_SignInAnonymouslyCopyWith(_$_SignInAnonymously value,
+          $Res Function(_$_SignInAnonymously) then) =
+      __$$_SignInAnonymouslyCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SignInAnonymouslyCopyWithImpl<$Res>
+class __$$_SignInAnonymouslyCopyWithImpl<$Res>
     extends _$SignInButtonsEventCopyWithImpl<$Res>
-    implements _$SignInAnonymouslyCopyWith<$Res> {
-  __$SignInAnonymouslyCopyWithImpl(
-      _SignInAnonymously _value, $Res Function(_SignInAnonymously) _then)
-      : super(_value, (v) => _then(v as _SignInAnonymously));
+    implements _$$_SignInAnonymouslyCopyWith<$Res> {
+  __$$_SignInAnonymouslyCopyWithImpl(
+      _$_SignInAnonymously _value, $Res Function(_$_SignInAnonymously) _then)
+      : super(_value, (v) => _then(v as _$_SignInAnonymously));
 
   @override
-  _SignInAnonymously get _value => super._value as _SignInAnonymously;
+  _$_SignInAnonymously get _value => super._value as _$_SignInAnonymously;
 }
 
 /// @nodoc
 
-class _$_SignInAnonymously
-    with DiagnosticableTreeMixin
-    implements _SignInAnonymously {
+class _$_SignInAnonymously implements _SignInAnonymously {
   const _$_SignInAnonymously();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInButtonsEvent.signInAnonymously()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'SignInButtonsEvent.signInAnonymously'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInAnonymously);
+        (other.runtimeType == runtimeType && other is _$_SignInAnonymously);
   }
 
   @override
@@ -3584,32 +3202,6 @@ abstract class _SignInAnonymously implements SignInButtonsEvent {
 }
 
 /// @nodoc
-class _$SignInButtonsStateTearOff {
-  const _$SignInButtonsStateTearOff();
-
-  _SignInInitial initial() {
-    return const _SignInInitial();
-  }
-
-  _SignInLoading loading() {
-    return const _SignInLoading();
-  }
-
-  _SignInSuccess success() {
-    return const _SignInSuccess();
-  }
-
-  _SignInError error(String errorText) {
-    return _SignInError(
-      errorText,
-    );
-  }
-}
-
-/// @nodoc
-const $SignInButtonsState = _$SignInButtonsStateTearOff();
-
-/// @nodoc
 mixin _$SignInButtonsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -3681,44 +3273,38 @@ class _$SignInButtonsStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SignInInitialCopyWith<$Res> {
-  factory _$SignInInitialCopyWith(
-          _SignInInitial value, $Res Function(_SignInInitial) then) =
-      __$SignInInitialCopyWithImpl<$Res>;
+abstract class _$$_SignInInitialCopyWith<$Res> {
+  factory _$$_SignInInitialCopyWith(
+          _$_SignInInitial value, $Res Function(_$_SignInInitial) then) =
+      __$$_SignInInitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SignInInitialCopyWithImpl<$Res>
+class __$$_SignInInitialCopyWithImpl<$Res>
     extends _$SignInButtonsStateCopyWithImpl<$Res>
-    implements _$SignInInitialCopyWith<$Res> {
-  __$SignInInitialCopyWithImpl(
-      _SignInInitial _value, $Res Function(_SignInInitial) _then)
-      : super(_value, (v) => _then(v as _SignInInitial));
+    implements _$$_SignInInitialCopyWith<$Res> {
+  __$$_SignInInitialCopyWithImpl(
+      _$_SignInInitial _value, $Res Function(_$_SignInInitial) _then)
+      : super(_value, (v) => _then(v as _$_SignInInitial));
 
   @override
-  _SignInInitial get _value => super._value as _SignInInitial;
+  _$_SignInInitial get _value => super._value as _$_SignInInitial;
 }
 
 /// @nodoc
 
-class _$_SignInInitial with DiagnosticableTreeMixin implements _SignInInitial {
+class _$_SignInInitial implements _SignInInitial {
   const _$_SignInInitial();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInButtonsState.initial()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SignInButtonsState.initial'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInInitial);
+        (other.runtimeType == runtimeType && other is _$_SignInInitial);
   }
 
   @override
@@ -3804,44 +3390,38 @@ abstract class _SignInInitial implements SignInButtonsState {
 }
 
 /// @nodoc
-abstract class _$SignInLoadingCopyWith<$Res> {
-  factory _$SignInLoadingCopyWith(
-          _SignInLoading value, $Res Function(_SignInLoading) then) =
-      __$SignInLoadingCopyWithImpl<$Res>;
+abstract class _$$_SignInLoadingCopyWith<$Res> {
+  factory _$$_SignInLoadingCopyWith(
+          _$_SignInLoading value, $Res Function(_$_SignInLoading) then) =
+      __$$_SignInLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SignInLoadingCopyWithImpl<$Res>
+class __$$_SignInLoadingCopyWithImpl<$Res>
     extends _$SignInButtonsStateCopyWithImpl<$Res>
-    implements _$SignInLoadingCopyWith<$Res> {
-  __$SignInLoadingCopyWithImpl(
-      _SignInLoading _value, $Res Function(_SignInLoading) _then)
-      : super(_value, (v) => _then(v as _SignInLoading));
+    implements _$$_SignInLoadingCopyWith<$Res> {
+  __$$_SignInLoadingCopyWithImpl(
+      _$_SignInLoading _value, $Res Function(_$_SignInLoading) _then)
+      : super(_value, (v) => _then(v as _$_SignInLoading));
 
   @override
-  _SignInLoading get _value => super._value as _SignInLoading;
+  _$_SignInLoading get _value => super._value as _$_SignInLoading;
 }
 
 /// @nodoc
 
-class _$_SignInLoading with DiagnosticableTreeMixin implements _SignInLoading {
+class _$_SignInLoading implements _SignInLoading {
   const _$_SignInLoading();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInButtonsState.loading()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SignInButtonsState.loading'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInLoading);
+        (other.runtimeType == runtimeType && other is _$_SignInLoading);
   }
 
   @override
@@ -3927,44 +3507,38 @@ abstract class _SignInLoading implements SignInButtonsState {
 }
 
 /// @nodoc
-abstract class _$SignInSuccessCopyWith<$Res> {
-  factory _$SignInSuccessCopyWith(
-          _SignInSuccess value, $Res Function(_SignInSuccess) then) =
-      __$SignInSuccessCopyWithImpl<$Res>;
+abstract class _$$_SignInSuccessCopyWith<$Res> {
+  factory _$$_SignInSuccessCopyWith(
+          _$_SignInSuccess value, $Res Function(_$_SignInSuccess) then) =
+      __$$_SignInSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SignInSuccessCopyWithImpl<$Res>
+class __$$_SignInSuccessCopyWithImpl<$Res>
     extends _$SignInButtonsStateCopyWithImpl<$Res>
-    implements _$SignInSuccessCopyWith<$Res> {
-  __$SignInSuccessCopyWithImpl(
-      _SignInSuccess _value, $Res Function(_SignInSuccess) _then)
-      : super(_value, (v) => _then(v as _SignInSuccess));
+    implements _$$_SignInSuccessCopyWith<$Res> {
+  __$$_SignInSuccessCopyWithImpl(
+      _$_SignInSuccess _value, $Res Function(_$_SignInSuccess) _then)
+      : super(_value, (v) => _then(v as _$_SignInSuccess));
 
   @override
-  _SignInSuccess get _value => super._value as _SignInSuccess;
+  _$_SignInSuccess get _value => super._value as _$_SignInSuccess;
 }
 
 /// @nodoc
 
-class _$_SignInSuccess with DiagnosticableTreeMixin implements _SignInSuccess {
+class _$_SignInSuccess implements _SignInSuccess {
   const _$_SignInSuccess();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInButtonsState.success()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SignInButtonsState.success'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInSuccess);
+        (other.runtimeType == runtimeType && other is _$_SignInSuccess);
   }
 
   @override
@@ -4050,29 +3624,29 @@ abstract class _SignInSuccess implements SignInButtonsState {
 }
 
 /// @nodoc
-abstract class _$SignInErrorCopyWith<$Res> {
-  factory _$SignInErrorCopyWith(
-          _SignInError value, $Res Function(_SignInError) then) =
-      __$SignInErrorCopyWithImpl<$Res>;
+abstract class _$$_SignInErrorCopyWith<$Res> {
+  factory _$$_SignInErrorCopyWith(
+          _$_SignInError value, $Res Function(_$_SignInError) then) =
+      __$$_SignInErrorCopyWithImpl<$Res>;
   $Res call({String errorText});
 }
 
 /// @nodoc
-class __$SignInErrorCopyWithImpl<$Res>
+class __$$_SignInErrorCopyWithImpl<$Res>
     extends _$SignInButtonsStateCopyWithImpl<$Res>
-    implements _$SignInErrorCopyWith<$Res> {
-  __$SignInErrorCopyWithImpl(
-      _SignInError _value, $Res Function(_SignInError) _then)
-      : super(_value, (v) => _then(v as _SignInError));
+    implements _$$_SignInErrorCopyWith<$Res> {
+  __$$_SignInErrorCopyWithImpl(
+      _$_SignInError _value, $Res Function(_$_SignInError) _then)
+      : super(_value, (v) => _then(v as _$_SignInError));
 
   @override
-  _SignInError get _value => super._value as _SignInError;
+  _$_SignInError get _value => super._value as _$_SignInError;
 
   @override
   $Res call({
     Object? errorText = freezed,
   }) {
-    return _then(_SignInError(
+    return _then(_$_SignInError(
       errorText == freezed
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
@@ -4083,30 +3657,22 @@ class __$SignInErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInError with DiagnosticableTreeMixin implements _SignInError {
+class _$_SignInError implements _SignInError {
   const _$_SignInError(this.errorText);
 
   @override
   final String errorText;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInButtonsState.error(errorText: $errorText)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInButtonsState.error'))
-      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SignInError &&
+            other is _$_SignInError &&
             const DeepCollectionEquality().equals(other.errorText, errorText));
   }
 
@@ -4116,8 +3682,8 @@ class _$_SignInError with DiagnosticableTreeMixin implements _SignInError {
 
   @JsonKey(ignore: true)
   @override
-  _$SignInErrorCopyWith<_SignInError> get copyWith =>
-      __$SignInErrorCopyWithImpl<_SignInError>(this, _$identity);
+  _$$_SignInErrorCopyWith<_$_SignInError> get copyWith =>
+      __$$_SignInErrorCopyWithImpl<_$_SignInError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4195,37 +3761,13 @@ class _$_SignInError with DiagnosticableTreeMixin implements _SignInError {
 }
 
 abstract class _SignInError implements SignInButtonsState {
-  const factory _SignInError(String errorText) = _$_SignInError;
+  const factory _SignInError(final String errorText) = _$_SignInError;
 
   String get errorText;
   @JsonKey(ignore: true)
-  _$SignInErrorCopyWith<_SignInError> get copyWith =>
+  _$$_SignInErrorCopyWith<_$_SignInError> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SignInEmailLoginEventTearOff {
-  const _$SignInEmailLoginEventTearOff();
-
-  _EmailLoginEmailChanged emailChanged(String email) {
-    return _EmailLoginEmailChanged(
-      email,
-    );
-  }
-
-  _EmailLoginPasswordChanged passwordChanged(String password) {
-    return _EmailLoginPasswordChanged(
-      password,
-    );
-  }
-
-  _EmailLoginSubmit submit() {
-    return const _EmailLoginSubmit();
-  }
-}
-
-/// @nodoc
-const $SignInEmailLoginEvent = _$SignInEmailLoginEventTearOff();
 
 /// @nodoc
 mixin _$SignInEmailLoginEvent {
@@ -4293,29 +3835,30 @@ class _$SignInEmailLoginEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$EmailLoginEmailChangedCopyWith<$Res> {
-  factory _$EmailLoginEmailChangedCopyWith(_EmailLoginEmailChanged value,
-          $Res Function(_EmailLoginEmailChanged) then) =
-      __$EmailLoginEmailChangedCopyWithImpl<$Res>;
+abstract class _$$_EmailLoginEmailChangedCopyWith<$Res> {
+  factory _$$_EmailLoginEmailChangedCopyWith(_$_EmailLoginEmailChanged value,
+          $Res Function(_$_EmailLoginEmailChanged) then) =
+      __$$_EmailLoginEmailChangedCopyWithImpl<$Res>;
   $Res call({String email});
 }
 
 /// @nodoc
-class __$EmailLoginEmailChangedCopyWithImpl<$Res>
+class __$$_EmailLoginEmailChangedCopyWithImpl<$Res>
     extends _$SignInEmailLoginEventCopyWithImpl<$Res>
-    implements _$EmailLoginEmailChangedCopyWith<$Res> {
-  __$EmailLoginEmailChangedCopyWithImpl(_EmailLoginEmailChanged _value,
-      $Res Function(_EmailLoginEmailChanged) _then)
-      : super(_value, (v) => _then(v as _EmailLoginEmailChanged));
+    implements _$$_EmailLoginEmailChangedCopyWith<$Res> {
+  __$$_EmailLoginEmailChangedCopyWithImpl(_$_EmailLoginEmailChanged _value,
+      $Res Function(_$_EmailLoginEmailChanged) _then)
+      : super(_value, (v) => _then(v as _$_EmailLoginEmailChanged));
 
   @override
-  _EmailLoginEmailChanged get _value => super._value as _EmailLoginEmailChanged;
+  _$_EmailLoginEmailChanged get _value =>
+      super._value as _$_EmailLoginEmailChanged;
 
   @override
   $Res call({
     Object? email = freezed,
   }) {
-    return _then(_EmailLoginEmailChanged(
+    return _then(_$_EmailLoginEmailChanged(
       email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -4326,32 +3869,22 @@ class __$EmailLoginEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmailLoginEmailChanged
-    with DiagnosticableTreeMixin
-    implements _EmailLoginEmailChanged {
+class _$_EmailLoginEmailChanged implements _EmailLoginEmailChanged {
   const _$_EmailLoginEmailChanged(this.email);
 
   @override
   final String email;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInEmailLoginEvent.emailChanged(email: $email)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInEmailLoginEvent.emailChanged'))
-      ..add(DiagnosticsProperty('email', email));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _EmailLoginEmailChanged &&
+            other is _$_EmailLoginEmailChanged &&
             const DeepCollectionEquality().equals(other.email, email));
   }
 
@@ -4361,8 +3894,8 @@ class _$_EmailLoginEmailChanged
 
   @JsonKey(ignore: true)
   @override
-  _$EmailLoginEmailChangedCopyWith<_EmailLoginEmailChanged> get copyWith =>
-      __$EmailLoginEmailChangedCopyWithImpl<_EmailLoginEmailChanged>(
+  _$$_EmailLoginEmailChangedCopyWith<_$_EmailLoginEmailChanged> get copyWith =>
+      __$$_EmailLoginEmailChangedCopyWithImpl<_$_EmailLoginEmailChanged>(
           this, _$identity);
 
   @override
@@ -4435,40 +3968,42 @@ class _$_EmailLoginEmailChanged
 }
 
 abstract class _EmailLoginEmailChanged implements SignInEmailLoginEvent {
-  const factory _EmailLoginEmailChanged(String email) =
+  const factory _EmailLoginEmailChanged(final String email) =
       _$_EmailLoginEmailChanged;
 
   String get email;
   @JsonKey(ignore: true)
-  _$EmailLoginEmailChangedCopyWith<_EmailLoginEmailChanged> get copyWith =>
+  _$$_EmailLoginEmailChangedCopyWith<_$_EmailLoginEmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$EmailLoginPasswordChangedCopyWith<$Res> {
-  factory _$EmailLoginPasswordChangedCopyWith(_EmailLoginPasswordChanged value,
-          $Res Function(_EmailLoginPasswordChanged) then) =
-      __$EmailLoginPasswordChangedCopyWithImpl<$Res>;
+abstract class _$$_EmailLoginPasswordChangedCopyWith<$Res> {
+  factory _$$_EmailLoginPasswordChangedCopyWith(
+          _$_EmailLoginPasswordChanged value,
+          $Res Function(_$_EmailLoginPasswordChanged) then) =
+      __$$_EmailLoginPasswordChangedCopyWithImpl<$Res>;
   $Res call({String password});
 }
 
 /// @nodoc
-class __$EmailLoginPasswordChangedCopyWithImpl<$Res>
+class __$$_EmailLoginPasswordChangedCopyWithImpl<$Res>
     extends _$SignInEmailLoginEventCopyWithImpl<$Res>
-    implements _$EmailLoginPasswordChangedCopyWith<$Res> {
-  __$EmailLoginPasswordChangedCopyWithImpl(_EmailLoginPasswordChanged _value,
-      $Res Function(_EmailLoginPasswordChanged) _then)
-      : super(_value, (v) => _then(v as _EmailLoginPasswordChanged));
+    implements _$$_EmailLoginPasswordChangedCopyWith<$Res> {
+  __$$_EmailLoginPasswordChangedCopyWithImpl(
+      _$_EmailLoginPasswordChanged _value,
+      $Res Function(_$_EmailLoginPasswordChanged) _then)
+      : super(_value, (v) => _then(v as _$_EmailLoginPasswordChanged));
 
   @override
-  _EmailLoginPasswordChanged get _value =>
-      super._value as _EmailLoginPasswordChanged;
+  _$_EmailLoginPasswordChanged get _value =>
+      super._value as _$_EmailLoginPasswordChanged;
 
   @override
   $Res call({
     Object? password = freezed,
   }) {
-    return _then(_EmailLoginPasswordChanged(
+    return _then(_$_EmailLoginPasswordChanged(
       password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -4479,33 +4014,22 @@ class __$EmailLoginPasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmailLoginPasswordChanged
-    with DiagnosticableTreeMixin
-    implements _EmailLoginPasswordChanged {
+class _$_EmailLoginPasswordChanged implements _EmailLoginPasswordChanged {
   const _$_EmailLoginPasswordChanged(this.password);
 
   @override
   final String password;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInEmailLoginEvent.passwordChanged(password: $password)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'SignInEmailLoginEvent.passwordChanged'))
-      ..add(DiagnosticsProperty('password', password));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _EmailLoginPasswordChanged &&
+            other is _$_EmailLoginPasswordChanged &&
             const DeepCollectionEquality().equals(other.password, password));
   }
 
@@ -4515,10 +4039,9 @@ class _$_EmailLoginPasswordChanged
 
   @JsonKey(ignore: true)
   @override
-  _$EmailLoginPasswordChangedCopyWith<_EmailLoginPasswordChanged>
-      get copyWith =>
-          __$EmailLoginPasswordChangedCopyWithImpl<_EmailLoginPasswordChanged>(
-              this, _$identity);
+  _$$_EmailLoginPasswordChangedCopyWith<_$_EmailLoginPasswordChanged>
+      get copyWith => __$$_EmailLoginPasswordChangedCopyWithImpl<
+          _$_EmailLoginPasswordChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4590,57 +4113,48 @@ class _$_EmailLoginPasswordChanged
 }
 
 abstract class _EmailLoginPasswordChanged implements SignInEmailLoginEvent {
-  const factory _EmailLoginPasswordChanged(String password) =
+  const factory _EmailLoginPasswordChanged(final String password) =
       _$_EmailLoginPasswordChanged;
 
   String get password;
   @JsonKey(ignore: true)
-  _$EmailLoginPasswordChangedCopyWith<_EmailLoginPasswordChanged>
+  _$$_EmailLoginPasswordChangedCopyWith<_$_EmailLoginPasswordChanged>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$EmailLoginSubmitCopyWith<$Res> {
-  factory _$EmailLoginSubmitCopyWith(
-          _EmailLoginSubmit value, $Res Function(_EmailLoginSubmit) then) =
-      __$EmailLoginSubmitCopyWithImpl<$Res>;
+abstract class _$$_EmailLoginSubmitCopyWith<$Res> {
+  factory _$$_EmailLoginSubmitCopyWith(
+          _$_EmailLoginSubmit value, $Res Function(_$_EmailLoginSubmit) then) =
+      __$$_EmailLoginSubmitCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$EmailLoginSubmitCopyWithImpl<$Res>
+class __$$_EmailLoginSubmitCopyWithImpl<$Res>
     extends _$SignInEmailLoginEventCopyWithImpl<$Res>
-    implements _$EmailLoginSubmitCopyWith<$Res> {
-  __$EmailLoginSubmitCopyWithImpl(
-      _EmailLoginSubmit _value, $Res Function(_EmailLoginSubmit) _then)
-      : super(_value, (v) => _then(v as _EmailLoginSubmit));
+    implements _$$_EmailLoginSubmitCopyWith<$Res> {
+  __$$_EmailLoginSubmitCopyWithImpl(
+      _$_EmailLoginSubmit _value, $Res Function(_$_EmailLoginSubmit) _then)
+      : super(_value, (v) => _then(v as _$_EmailLoginSubmit));
 
   @override
-  _EmailLoginSubmit get _value => super._value as _EmailLoginSubmit;
+  _$_EmailLoginSubmit get _value => super._value as _$_EmailLoginSubmit;
 }
 
 /// @nodoc
 
-class _$_EmailLoginSubmit
-    with DiagnosticableTreeMixin
-    implements _EmailLoginSubmit {
+class _$_EmailLoginSubmit implements _EmailLoginSubmit {
   const _$_EmailLoginSubmit();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInEmailLoginEvent.submit()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInEmailLoginEvent.submit'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _EmailLoginSubmit);
+        (other.runtimeType == runtimeType && other is _$_EmailLoginSubmit);
   }
 
   @override
@@ -4720,31 +4234,6 @@ abstract class _EmailLoginSubmit implements SignInEmailLoginEvent {
 }
 
 /// @nodoc
-class _$SignInEmailLoginStateTearOff {
-  const _$SignInEmailLoginStateTearOff();
-
-  _SignInEmailLoginState call(
-      {String email = "",
-      String password = "",
-      bool canSubmit = false,
-      bool isLoading = false,
-      bool isSuccess = false,
-      String? errorText}) {
-    return _SignInEmailLoginState(
-      email: email,
-      password: password,
-      canSubmit: canSubmit,
-      isLoading: isLoading,
-      isSuccess: isSuccess,
-      errorText: errorText,
-    );
-  }
-}
-
-/// @nodoc
-const $SignInEmailLoginState = _$SignInEmailLoginStateTearOff();
-
-/// @nodoc
 mixin _$SignInEmailLoginState {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
@@ -4820,11 +4309,11 @@ class _$SignInEmailLoginStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SignInEmailLoginStateCopyWith<$Res>
+abstract class _$$_SignInEmailLoginStateCopyWith<$Res>
     implements $SignInEmailLoginStateCopyWith<$Res> {
-  factory _$SignInEmailLoginStateCopyWith(_SignInEmailLoginState value,
-          $Res Function(_SignInEmailLoginState) then) =
-      __$SignInEmailLoginStateCopyWithImpl<$Res>;
+  factory _$$_SignInEmailLoginStateCopyWith(_$_SignInEmailLoginState value,
+          $Res Function(_$_SignInEmailLoginState) then) =
+      __$$_SignInEmailLoginStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {String email,
@@ -4836,15 +4325,16 @@ abstract class _$SignInEmailLoginStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SignInEmailLoginStateCopyWithImpl<$Res>
+class __$$_SignInEmailLoginStateCopyWithImpl<$Res>
     extends _$SignInEmailLoginStateCopyWithImpl<$Res>
-    implements _$SignInEmailLoginStateCopyWith<$Res> {
-  __$SignInEmailLoginStateCopyWithImpl(_SignInEmailLoginState _value,
-      $Res Function(_SignInEmailLoginState) _then)
-      : super(_value, (v) => _then(v as _SignInEmailLoginState));
+    implements _$$_SignInEmailLoginStateCopyWith<$Res> {
+  __$$_SignInEmailLoginStateCopyWithImpl(_$_SignInEmailLoginState _value,
+      $Res Function(_$_SignInEmailLoginState) _then)
+      : super(_value, (v) => _then(v as _$_SignInEmailLoginState));
 
   @override
-  _SignInEmailLoginState get _value => super._value as _SignInEmailLoginState;
+  _$_SignInEmailLoginState get _value =>
+      super._value as _$_SignInEmailLoginState;
 
   @override
   $Res call({
@@ -4855,7 +4345,7 @@ class __$SignInEmailLoginStateCopyWithImpl<$Res>
     Object? isSuccess = freezed,
     Object? errorText = freezed,
   }) {
-    return _then(_SignInEmailLoginState(
+    return _then(_$_SignInEmailLoginState(
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -4886,9 +4376,7 @@ class __$SignInEmailLoginStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInEmailLoginState
-    with DiagnosticableTreeMixin
-    implements _SignInEmailLoginState {
+class _$_SignInEmailLoginState implements _SignInEmailLoginState {
   const _$_SignInEmailLoginState(
       {this.email = "",
       this.password = "",
@@ -4897,47 +4385,34 @@ class _$_SignInEmailLoginState
       this.isSuccess = false,
       this.errorText});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String email;
-  @JsonKey()
   @override
+  @JsonKey()
   final String password;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool canSubmit;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isLoading;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isSuccess;
   @override
   final String? errorText;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInEmailLoginState(email: $email, password: $password, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInEmailLoginState'))
-      ..add(DiagnosticsProperty('email', email))
-      ..add(DiagnosticsProperty('password', password))
-      ..add(DiagnosticsProperty('canSubmit', canSubmit))
-      ..add(DiagnosticsProperty('isLoading', isLoading))
-      ..add(DiagnosticsProperty('isSuccess', isSuccess))
-      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SignInEmailLoginState &&
+            other is _$_SignInEmailLoginState &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
@@ -4958,19 +4433,19 @@ class _$_SignInEmailLoginState
 
   @JsonKey(ignore: true)
   @override
-  _$SignInEmailLoginStateCopyWith<_SignInEmailLoginState> get copyWith =>
-      __$SignInEmailLoginStateCopyWithImpl<_SignInEmailLoginState>(
+  _$$_SignInEmailLoginStateCopyWith<_$_SignInEmailLoginState> get copyWith =>
+      __$$_SignInEmailLoginStateCopyWithImpl<_$_SignInEmailLoginState>(
           this, _$identity);
 }
 
 abstract class _SignInEmailLoginState implements SignInEmailLoginState {
   const factory _SignInEmailLoginState(
-      {String email,
-      String password,
-      bool canSubmit,
-      bool isLoading,
-      bool isSuccess,
-      String? errorText}) = _$_SignInEmailLoginState;
+      {final String email,
+      final String password,
+      final bool canSubmit,
+      final bool isLoading,
+      final bool isSuccess,
+      final String? errorText}) = _$_SignInEmailLoginState;
 
   @override
   String get email;
@@ -4986,27 +4461,9 @@ abstract class _SignInEmailLoginState implements SignInEmailLoginState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$SignInEmailLoginStateCopyWith<_SignInEmailLoginState> get copyWith =>
+  _$$_SignInEmailLoginStateCopyWith<_$_SignInEmailLoginState> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SignInEmailLinkEventTearOff {
-  const _$SignInEmailLinkEventTearOff();
-
-  _LinkEmailChanged emailChanged(String email) {
-    return _LinkEmailChanged(
-      email,
-    );
-  }
-
-  _SendLink sendLink() {
-    return const _SendLink();
-  }
-}
-
-/// @nodoc
-const $SignInEmailLinkEvent = _$SignInEmailLinkEventTearOff();
 
 /// @nodoc
 mixin _$SignInEmailLinkEvent {
@@ -5068,29 +4525,29 @@ class _$SignInEmailLinkEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LinkEmailChangedCopyWith<$Res> {
-  factory _$LinkEmailChangedCopyWith(
-          _LinkEmailChanged value, $Res Function(_LinkEmailChanged) then) =
-      __$LinkEmailChangedCopyWithImpl<$Res>;
+abstract class _$$_LinkEmailChangedCopyWith<$Res> {
+  factory _$$_LinkEmailChangedCopyWith(
+          _$_LinkEmailChanged value, $Res Function(_$_LinkEmailChanged) then) =
+      __$$_LinkEmailChangedCopyWithImpl<$Res>;
   $Res call({String email});
 }
 
 /// @nodoc
-class __$LinkEmailChangedCopyWithImpl<$Res>
+class __$$_LinkEmailChangedCopyWithImpl<$Res>
     extends _$SignInEmailLinkEventCopyWithImpl<$Res>
-    implements _$LinkEmailChangedCopyWith<$Res> {
-  __$LinkEmailChangedCopyWithImpl(
-      _LinkEmailChanged _value, $Res Function(_LinkEmailChanged) _then)
-      : super(_value, (v) => _then(v as _LinkEmailChanged));
+    implements _$$_LinkEmailChangedCopyWith<$Res> {
+  __$$_LinkEmailChangedCopyWithImpl(
+      _$_LinkEmailChanged _value, $Res Function(_$_LinkEmailChanged) _then)
+      : super(_value, (v) => _then(v as _$_LinkEmailChanged));
 
   @override
-  _LinkEmailChanged get _value => super._value as _LinkEmailChanged;
+  _$_LinkEmailChanged get _value => super._value as _$_LinkEmailChanged;
 
   @override
   $Res call({
     Object? email = freezed,
   }) {
-    return _then(_LinkEmailChanged(
+    return _then(_$_LinkEmailChanged(
       email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -5101,32 +4558,22 @@ class __$LinkEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LinkEmailChanged
-    with DiagnosticableTreeMixin
-    implements _LinkEmailChanged {
+class _$_LinkEmailChanged implements _LinkEmailChanged {
   const _$_LinkEmailChanged(this.email);
 
   @override
   final String email;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInEmailLinkEvent.emailChanged(email: $email)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInEmailLinkEvent.emailChanged'))
-      ..add(DiagnosticsProperty('email', email));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LinkEmailChanged &&
+            other is _$_LinkEmailChanged &&
             const DeepCollectionEquality().equals(other.email, email));
   }
 
@@ -5136,8 +4583,8 @@ class _$_LinkEmailChanged
 
   @JsonKey(ignore: true)
   @override
-  _$LinkEmailChangedCopyWith<_LinkEmailChanged> get copyWith =>
-      __$LinkEmailChangedCopyWithImpl<_LinkEmailChanged>(this, _$identity);
+  _$$_LinkEmailChangedCopyWith<_$_LinkEmailChanged> get copyWith =>
+      __$$_LinkEmailChangedCopyWithImpl<_$_LinkEmailChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5203,52 +4650,47 @@ class _$_LinkEmailChanged
 }
 
 abstract class _LinkEmailChanged implements SignInEmailLinkEvent {
-  const factory _LinkEmailChanged(String email) = _$_LinkEmailChanged;
+  const factory _LinkEmailChanged(final String email) = _$_LinkEmailChanged;
 
   String get email;
   @JsonKey(ignore: true)
-  _$LinkEmailChangedCopyWith<_LinkEmailChanged> get copyWith =>
+  _$$_LinkEmailChangedCopyWith<_$_LinkEmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SendLinkCopyWith<$Res> {
-  factory _$SendLinkCopyWith(_SendLink value, $Res Function(_SendLink) then) =
-      __$SendLinkCopyWithImpl<$Res>;
+abstract class _$$_SendLinkCopyWith<$Res> {
+  factory _$$_SendLinkCopyWith(
+          _$_SendLink value, $Res Function(_$_SendLink) then) =
+      __$$_SendLinkCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SendLinkCopyWithImpl<$Res>
+class __$$_SendLinkCopyWithImpl<$Res>
     extends _$SignInEmailLinkEventCopyWithImpl<$Res>
-    implements _$SendLinkCopyWith<$Res> {
-  __$SendLinkCopyWithImpl(_SendLink _value, $Res Function(_SendLink) _then)
-      : super(_value, (v) => _then(v as _SendLink));
+    implements _$$_SendLinkCopyWith<$Res> {
+  __$$_SendLinkCopyWithImpl(
+      _$_SendLink _value, $Res Function(_$_SendLink) _then)
+      : super(_value, (v) => _then(v as _$_SendLink));
 
   @override
-  _SendLink get _value => super._value as _SendLink;
+  _$_SendLink get _value => super._value as _$_SendLink;
 }
 
 /// @nodoc
 
-class _$_SendLink with DiagnosticableTreeMixin implements _SendLink {
+class _$_SendLink implements _SendLink {
   const _$_SendLink();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInEmailLinkEvent.sendLink()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInEmailLinkEvent.sendLink'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SendLink);
+        (other.runtimeType == runtimeType && other is _$_SendLink);
   }
 
   @override
@@ -5322,29 +4764,6 @@ abstract class _SendLink implements SignInEmailLinkEvent {
 }
 
 /// @nodoc
-class _$SignInEmailLinkStateTearOff {
-  const _$SignInEmailLinkStateTearOff();
-
-  _SignInEmailLinkState call(
-      {String email = "",
-      bool canSubmit = false,
-      bool isLoading = false,
-      bool isSuccess = false,
-      String? errorText}) {
-    return _SignInEmailLinkState(
-      email: email,
-      canSubmit: canSubmit,
-      isLoading: isLoading,
-      isSuccess: isSuccess,
-      errorText: errorText,
-    );
-  }
-}
-
-/// @nodoc
-const $SignInEmailLinkState = _$SignInEmailLinkStateTearOff();
-
-/// @nodoc
 mixin _$SignInEmailLinkState {
   String get email => throw _privateConstructorUsedError;
   bool get canSubmit => throw _privateConstructorUsedError;
@@ -5413,11 +4832,11 @@ class _$SignInEmailLinkStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SignInEmailLinkStateCopyWith<$Res>
+abstract class _$$_SignInEmailLinkStateCopyWith<$Res>
     implements $SignInEmailLinkStateCopyWith<$Res> {
-  factory _$SignInEmailLinkStateCopyWith(_SignInEmailLinkState value,
-          $Res Function(_SignInEmailLinkState) then) =
-      __$SignInEmailLinkStateCopyWithImpl<$Res>;
+  factory _$$_SignInEmailLinkStateCopyWith(_$_SignInEmailLinkState value,
+          $Res Function(_$_SignInEmailLinkState) then) =
+      __$$_SignInEmailLinkStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {String email,
@@ -5428,15 +4847,15 @@ abstract class _$SignInEmailLinkStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SignInEmailLinkStateCopyWithImpl<$Res>
+class __$$_SignInEmailLinkStateCopyWithImpl<$Res>
     extends _$SignInEmailLinkStateCopyWithImpl<$Res>
-    implements _$SignInEmailLinkStateCopyWith<$Res> {
-  __$SignInEmailLinkStateCopyWithImpl(
-      _SignInEmailLinkState _value, $Res Function(_SignInEmailLinkState) _then)
-      : super(_value, (v) => _then(v as _SignInEmailLinkState));
+    implements _$$_SignInEmailLinkStateCopyWith<$Res> {
+  __$$_SignInEmailLinkStateCopyWithImpl(_$_SignInEmailLinkState _value,
+      $Res Function(_$_SignInEmailLinkState) _then)
+      : super(_value, (v) => _then(v as _$_SignInEmailLinkState));
 
   @override
-  _SignInEmailLinkState get _value => super._value as _SignInEmailLinkState;
+  _$_SignInEmailLinkState get _value => super._value as _$_SignInEmailLinkState;
 
   @override
   $Res call({
@@ -5446,7 +4865,7 @@ class __$SignInEmailLinkStateCopyWithImpl<$Res>
     Object? isSuccess = freezed,
     Object? errorText = freezed,
   }) {
-    return _then(_SignInEmailLinkState(
+    return _then(_$_SignInEmailLinkState(
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -5473,9 +4892,7 @@ class __$SignInEmailLinkStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInEmailLinkState
-    with DiagnosticableTreeMixin
-    implements _SignInEmailLinkState {
+class _$_SignInEmailLinkState implements _SignInEmailLinkState {
   const _$_SignInEmailLinkState(
       {this.email = "",
       this.canSubmit = false,
@@ -5483,43 +4900,31 @@ class _$_SignInEmailLinkState
       this.isSuccess = false,
       this.errorText});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String email;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool canSubmit;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isLoading;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isSuccess;
   @override
   final String? errorText;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInEmailLinkState(email: $email, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInEmailLinkState'))
-      ..add(DiagnosticsProperty('email', email))
-      ..add(DiagnosticsProperty('canSubmit', canSubmit))
-      ..add(DiagnosticsProperty('isLoading', isLoading))
-      ..add(DiagnosticsProperty('isSuccess', isSuccess))
-      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SignInEmailLinkState &&
+            other is _$_SignInEmailLinkState &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
@@ -5538,18 +4943,18 @@ class _$_SignInEmailLinkState
 
   @JsonKey(ignore: true)
   @override
-  _$SignInEmailLinkStateCopyWith<_SignInEmailLinkState> get copyWith =>
-      __$SignInEmailLinkStateCopyWithImpl<_SignInEmailLinkState>(
+  _$$_SignInEmailLinkStateCopyWith<_$_SignInEmailLinkState> get copyWith =>
+      __$$_SignInEmailLinkStateCopyWithImpl<_$_SignInEmailLinkState>(
           this, _$identity);
 }
 
 abstract class _SignInEmailLinkState implements SignInEmailLinkState {
   const factory _SignInEmailLinkState(
-      {String email,
-      bool canSubmit,
-      bool isLoading,
-      bool isSuccess,
-      String? errorText}) = _$_SignInEmailLinkState;
+      {final String email,
+      final bool canSubmit,
+      final bool isLoading,
+      final bool isSuccess,
+      final String? errorText}) = _$_SignInEmailLinkState;
 
   @override
   String get email;
@@ -5563,27 +4968,9 @@ abstract class _SignInEmailLinkState implements SignInEmailLinkState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$SignInEmailLinkStateCopyWith<_SignInEmailLinkState> get copyWith =>
+  _$$_SignInEmailLinkStateCopyWith<_$_SignInEmailLinkState> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SignInEmailResetEventTearOff {
-  const _$SignInEmailResetEventTearOff();
-
-  _ResetEmailChanged emailChanged(String email) {
-    return _ResetEmailChanged(
-      email,
-    );
-  }
-
-  _ResetSubmit submit() {
-    return const _ResetSubmit();
-  }
-}
-
-/// @nodoc
-const $SignInEmailResetEvent = _$SignInEmailResetEventTearOff();
 
 /// @nodoc
 mixin _$SignInEmailResetEvent {
@@ -5645,29 +5032,29 @@ class _$SignInEmailResetEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ResetEmailChangedCopyWith<$Res> {
-  factory _$ResetEmailChangedCopyWith(
-          _ResetEmailChanged value, $Res Function(_ResetEmailChanged) then) =
-      __$ResetEmailChangedCopyWithImpl<$Res>;
+abstract class _$$_ResetEmailChangedCopyWith<$Res> {
+  factory _$$_ResetEmailChangedCopyWith(_$_ResetEmailChanged value,
+          $Res Function(_$_ResetEmailChanged) then) =
+      __$$_ResetEmailChangedCopyWithImpl<$Res>;
   $Res call({String email});
 }
 
 /// @nodoc
-class __$ResetEmailChangedCopyWithImpl<$Res>
+class __$$_ResetEmailChangedCopyWithImpl<$Res>
     extends _$SignInEmailResetEventCopyWithImpl<$Res>
-    implements _$ResetEmailChangedCopyWith<$Res> {
-  __$ResetEmailChangedCopyWithImpl(
-      _ResetEmailChanged _value, $Res Function(_ResetEmailChanged) _then)
-      : super(_value, (v) => _then(v as _ResetEmailChanged));
+    implements _$$_ResetEmailChangedCopyWith<$Res> {
+  __$$_ResetEmailChangedCopyWithImpl(
+      _$_ResetEmailChanged _value, $Res Function(_$_ResetEmailChanged) _then)
+      : super(_value, (v) => _then(v as _$_ResetEmailChanged));
 
   @override
-  _ResetEmailChanged get _value => super._value as _ResetEmailChanged;
+  _$_ResetEmailChanged get _value => super._value as _$_ResetEmailChanged;
 
   @override
   $Res call({
     Object? email = freezed,
   }) {
-    return _then(_ResetEmailChanged(
+    return _then(_$_ResetEmailChanged(
       email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -5678,32 +5065,22 @@ class __$ResetEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ResetEmailChanged
-    with DiagnosticableTreeMixin
-    implements _ResetEmailChanged {
+class _$_ResetEmailChanged implements _ResetEmailChanged {
   const _$_ResetEmailChanged(this.email);
 
   @override
   final String email;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInEmailResetEvent.emailChanged(email: $email)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInEmailResetEvent.emailChanged'))
-      ..add(DiagnosticsProperty('email', email));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ResetEmailChanged &&
+            other is _$_ResetEmailChanged &&
             const DeepCollectionEquality().equals(other.email, email));
   }
 
@@ -5713,8 +5090,9 @@ class _$_ResetEmailChanged
 
   @JsonKey(ignore: true)
   @override
-  _$ResetEmailChangedCopyWith<_ResetEmailChanged> get copyWith =>
-      __$ResetEmailChangedCopyWithImpl<_ResetEmailChanged>(this, _$identity);
+  _$$_ResetEmailChangedCopyWith<_$_ResetEmailChanged> get copyWith =>
+      __$$_ResetEmailChangedCopyWithImpl<_$_ResetEmailChanged>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5780,54 +5158,47 @@ class _$_ResetEmailChanged
 }
 
 abstract class _ResetEmailChanged implements SignInEmailResetEvent {
-  const factory _ResetEmailChanged(String email) = _$_ResetEmailChanged;
+  const factory _ResetEmailChanged(final String email) = _$_ResetEmailChanged;
 
   String get email;
   @JsonKey(ignore: true)
-  _$ResetEmailChangedCopyWith<_ResetEmailChanged> get copyWith =>
+  _$$_ResetEmailChangedCopyWith<_$_ResetEmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ResetSubmitCopyWith<$Res> {
-  factory _$ResetSubmitCopyWith(
-          _ResetSubmit value, $Res Function(_ResetSubmit) then) =
-      __$ResetSubmitCopyWithImpl<$Res>;
+abstract class _$$_ResetSubmitCopyWith<$Res> {
+  factory _$$_ResetSubmitCopyWith(
+          _$_ResetSubmit value, $Res Function(_$_ResetSubmit) then) =
+      __$$_ResetSubmitCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ResetSubmitCopyWithImpl<$Res>
+class __$$_ResetSubmitCopyWithImpl<$Res>
     extends _$SignInEmailResetEventCopyWithImpl<$Res>
-    implements _$ResetSubmitCopyWith<$Res> {
-  __$ResetSubmitCopyWithImpl(
-      _ResetSubmit _value, $Res Function(_ResetSubmit) _then)
-      : super(_value, (v) => _then(v as _ResetSubmit));
+    implements _$$_ResetSubmitCopyWith<$Res> {
+  __$$_ResetSubmitCopyWithImpl(
+      _$_ResetSubmit _value, $Res Function(_$_ResetSubmit) _then)
+      : super(_value, (v) => _then(v as _$_ResetSubmit));
 
   @override
-  _ResetSubmit get _value => super._value as _ResetSubmit;
+  _$_ResetSubmit get _value => super._value as _$_ResetSubmit;
 }
 
 /// @nodoc
 
-class _$_ResetSubmit with DiagnosticableTreeMixin implements _ResetSubmit {
+class _$_ResetSubmit implements _ResetSubmit {
   const _$_ResetSubmit();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInEmailResetEvent.submit()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInEmailResetEvent.submit'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ResetSubmit);
+        (other.runtimeType == runtimeType && other is _$_ResetSubmit);
   }
 
   @override
@@ -5901,29 +5272,6 @@ abstract class _ResetSubmit implements SignInEmailResetEvent {
 }
 
 /// @nodoc
-class _$SignInEmailResetStateTearOff {
-  const _$SignInEmailResetStateTearOff();
-
-  _SignInEmailResetState call(
-      {String email = "",
-      bool canSubmit = false,
-      bool isLoading = false,
-      bool isSuccess = false,
-      String? errorText}) {
-    return _SignInEmailResetState(
-      email: email,
-      canSubmit: canSubmit,
-      isLoading: isLoading,
-      isSuccess: isSuccess,
-      errorText: errorText,
-    );
-  }
-}
-
-/// @nodoc
-const $SignInEmailResetState = _$SignInEmailResetStateTearOff();
-
-/// @nodoc
 mixin _$SignInEmailResetState {
   String get email => throw _privateConstructorUsedError;
   bool get canSubmit => throw _privateConstructorUsedError;
@@ -5992,11 +5340,11 @@ class _$SignInEmailResetStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SignInEmailResetStateCopyWith<$Res>
+abstract class _$$_SignInEmailResetStateCopyWith<$Res>
     implements $SignInEmailResetStateCopyWith<$Res> {
-  factory _$SignInEmailResetStateCopyWith(_SignInEmailResetState value,
-          $Res Function(_SignInEmailResetState) then) =
-      __$SignInEmailResetStateCopyWithImpl<$Res>;
+  factory _$$_SignInEmailResetStateCopyWith(_$_SignInEmailResetState value,
+          $Res Function(_$_SignInEmailResetState) then) =
+      __$$_SignInEmailResetStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {String email,
@@ -6007,15 +5355,16 @@ abstract class _$SignInEmailResetStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SignInEmailResetStateCopyWithImpl<$Res>
+class __$$_SignInEmailResetStateCopyWithImpl<$Res>
     extends _$SignInEmailResetStateCopyWithImpl<$Res>
-    implements _$SignInEmailResetStateCopyWith<$Res> {
-  __$SignInEmailResetStateCopyWithImpl(_SignInEmailResetState _value,
-      $Res Function(_SignInEmailResetState) _then)
-      : super(_value, (v) => _then(v as _SignInEmailResetState));
+    implements _$$_SignInEmailResetStateCopyWith<$Res> {
+  __$$_SignInEmailResetStateCopyWithImpl(_$_SignInEmailResetState _value,
+      $Res Function(_$_SignInEmailResetState) _then)
+      : super(_value, (v) => _then(v as _$_SignInEmailResetState));
 
   @override
-  _SignInEmailResetState get _value => super._value as _SignInEmailResetState;
+  _$_SignInEmailResetState get _value =>
+      super._value as _$_SignInEmailResetState;
 
   @override
   $Res call({
@@ -6025,7 +5374,7 @@ class __$SignInEmailResetStateCopyWithImpl<$Res>
     Object? isSuccess = freezed,
     Object? errorText = freezed,
   }) {
-    return _then(_SignInEmailResetState(
+    return _then(_$_SignInEmailResetState(
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -6052,9 +5401,7 @@ class __$SignInEmailResetStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInEmailResetState
-    with DiagnosticableTreeMixin
-    implements _SignInEmailResetState {
+class _$_SignInEmailResetState implements _SignInEmailResetState {
   const _$_SignInEmailResetState(
       {this.email = "",
       this.canSubmit = false,
@@ -6062,43 +5409,31 @@ class _$_SignInEmailResetState
       this.isSuccess = false,
       this.errorText});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String email;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool canSubmit;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isLoading;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isSuccess;
   @override
   final String? errorText;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInEmailResetState(email: $email, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInEmailResetState'))
-      ..add(DiagnosticsProperty('email', email))
-      ..add(DiagnosticsProperty('canSubmit', canSubmit))
-      ..add(DiagnosticsProperty('isLoading', isLoading))
-      ..add(DiagnosticsProperty('isSuccess', isSuccess))
-      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SignInEmailResetState &&
+            other is _$_SignInEmailResetState &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
             const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
@@ -6117,18 +5452,18 @@ class _$_SignInEmailResetState
 
   @JsonKey(ignore: true)
   @override
-  _$SignInEmailResetStateCopyWith<_SignInEmailResetState> get copyWith =>
-      __$SignInEmailResetStateCopyWithImpl<_SignInEmailResetState>(
+  _$$_SignInEmailResetStateCopyWith<_$_SignInEmailResetState> get copyWith =>
+      __$$_SignInEmailResetStateCopyWithImpl<_$_SignInEmailResetState>(
           this, _$identity);
 }
 
 abstract class _SignInEmailResetState implements SignInEmailResetState {
   const factory _SignInEmailResetState(
-      {String email,
-      bool canSubmit,
-      bool isLoading,
-      bool isSuccess,
-      String? errorText}) = _$_SignInEmailResetState;
+      {final String email,
+      final bool canSubmit,
+      final bool isLoading,
+      final bool isSuccess,
+      final String? errorText}) = _$_SignInEmailResetState;
 
   @override
   String get email;
@@ -6142,33 +5477,9 @@ abstract class _SignInEmailResetState implements SignInEmailResetState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$SignInEmailResetStateCopyWith<_SignInEmailResetState> get copyWith =>
+  _$$_SignInEmailResetStateCopyWith<_$_SignInEmailResetState> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SignInEmailRegisterEventTearOff {
-  const _$SignInEmailRegisterEventTearOff();
-
-  _RegisterEmailChanged emailChanged(String email) {
-    return _RegisterEmailChanged(
-      email,
-    );
-  }
-
-  _RegisterPasswordChanged passwordChanged(String password) {
-    return _RegisterPasswordChanged(
-      password,
-    );
-  }
-
-  _RegisterSubmit submit() {
-    return const _RegisterSubmit();
-  }
-}
-
-/// @nodoc
-const $SignInEmailRegisterEvent = _$SignInEmailRegisterEventTearOff();
 
 /// @nodoc
 mixin _$SignInEmailRegisterEvent {
@@ -6236,29 +5547,29 @@ class _$SignInEmailRegisterEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$RegisterEmailChangedCopyWith<$Res> {
-  factory _$RegisterEmailChangedCopyWith(_RegisterEmailChanged value,
-          $Res Function(_RegisterEmailChanged) then) =
-      __$RegisterEmailChangedCopyWithImpl<$Res>;
+abstract class _$$_RegisterEmailChangedCopyWith<$Res> {
+  factory _$$_RegisterEmailChangedCopyWith(_$_RegisterEmailChanged value,
+          $Res Function(_$_RegisterEmailChanged) then) =
+      __$$_RegisterEmailChangedCopyWithImpl<$Res>;
   $Res call({String email});
 }
 
 /// @nodoc
-class __$RegisterEmailChangedCopyWithImpl<$Res>
+class __$$_RegisterEmailChangedCopyWithImpl<$Res>
     extends _$SignInEmailRegisterEventCopyWithImpl<$Res>
-    implements _$RegisterEmailChangedCopyWith<$Res> {
-  __$RegisterEmailChangedCopyWithImpl(
-      _RegisterEmailChanged _value, $Res Function(_RegisterEmailChanged) _then)
-      : super(_value, (v) => _then(v as _RegisterEmailChanged));
+    implements _$$_RegisterEmailChangedCopyWith<$Res> {
+  __$$_RegisterEmailChangedCopyWithImpl(_$_RegisterEmailChanged _value,
+      $Res Function(_$_RegisterEmailChanged) _then)
+      : super(_value, (v) => _then(v as _$_RegisterEmailChanged));
 
   @override
-  _RegisterEmailChanged get _value => super._value as _RegisterEmailChanged;
+  _$_RegisterEmailChanged get _value => super._value as _$_RegisterEmailChanged;
 
   @override
   $Res call({
     Object? email = freezed,
   }) {
-    return _then(_RegisterEmailChanged(
+    return _then(_$_RegisterEmailChanged(
       email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -6269,33 +5580,22 @@ class __$RegisterEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RegisterEmailChanged
-    with DiagnosticableTreeMixin
-    implements _RegisterEmailChanged {
+class _$_RegisterEmailChanged implements _RegisterEmailChanged {
   const _$_RegisterEmailChanged(this.email);
 
   @override
   final String email;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInEmailRegisterEvent.emailChanged(email: $email)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'SignInEmailRegisterEvent.emailChanged'))
-      ..add(DiagnosticsProperty('email', email));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RegisterEmailChanged &&
+            other is _$_RegisterEmailChanged &&
             const DeepCollectionEquality().equals(other.email, email));
   }
 
@@ -6305,8 +5605,8 @@ class _$_RegisterEmailChanged
 
   @JsonKey(ignore: true)
   @override
-  _$RegisterEmailChangedCopyWith<_RegisterEmailChanged> get copyWith =>
-      __$RegisterEmailChangedCopyWithImpl<_RegisterEmailChanged>(
+  _$$_RegisterEmailChangedCopyWith<_$_RegisterEmailChanged> get copyWith =>
+      __$$_RegisterEmailChangedCopyWithImpl<_$_RegisterEmailChanged>(
           this, _$identity);
 
   @override
@@ -6379,39 +5679,40 @@ class _$_RegisterEmailChanged
 }
 
 abstract class _RegisterEmailChanged implements SignInEmailRegisterEvent {
-  const factory _RegisterEmailChanged(String email) = _$_RegisterEmailChanged;
+  const factory _RegisterEmailChanged(final String email) =
+      _$_RegisterEmailChanged;
 
   String get email;
   @JsonKey(ignore: true)
-  _$RegisterEmailChangedCopyWith<_RegisterEmailChanged> get copyWith =>
+  _$$_RegisterEmailChangedCopyWith<_$_RegisterEmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$RegisterPasswordChangedCopyWith<$Res> {
-  factory _$RegisterPasswordChangedCopyWith(_RegisterPasswordChanged value,
-          $Res Function(_RegisterPasswordChanged) then) =
-      __$RegisterPasswordChangedCopyWithImpl<$Res>;
+abstract class _$$_RegisterPasswordChangedCopyWith<$Res> {
+  factory _$$_RegisterPasswordChangedCopyWith(_$_RegisterPasswordChanged value,
+          $Res Function(_$_RegisterPasswordChanged) then) =
+      __$$_RegisterPasswordChangedCopyWithImpl<$Res>;
   $Res call({String password});
 }
 
 /// @nodoc
-class __$RegisterPasswordChangedCopyWithImpl<$Res>
+class __$$_RegisterPasswordChangedCopyWithImpl<$Res>
     extends _$SignInEmailRegisterEventCopyWithImpl<$Res>
-    implements _$RegisterPasswordChangedCopyWith<$Res> {
-  __$RegisterPasswordChangedCopyWithImpl(_RegisterPasswordChanged _value,
-      $Res Function(_RegisterPasswordChanged) _then)
-      : super(_value, (v) => _then(v as _RegisterPasswordChanged));
+    implements _$$_RegisterPasswordChangedCopyWith<$Res> {
+  __$$_RegisterPasswordChangedCopyWithImpl(_$_RegisterPasswordChanged _value,
+      $Res Function(_$_RegisterPasswordChanged) _then)
+      : super(_value, (v) => _then(v as _$_RegisterPasswordChanged));
 
   @override
-  _RegisterPasswordChanged get _value =>
-      super._value as _RegisterPasswordChanged;
+  _$_RegisterPasswordChanged get _value =>
+      super._value as _$_RegisterPasswordChanged;
 
   @override
   $Res call({
     Object? password = freezed,
   }) {
-    return _then(_RegisterPasswordChanged(
+    return _then(_$_RegisterPasswordChanged(
       password == freezed
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -6422,33 +5723,22 @@ class __$RegisterPasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RegisterPasswordChanged
-    with DiagnosticableTreeMixin
-    implements _RegisterPasswordChanged {
+class _$_RegisterPasswordChanged implements _RegisterPasswordChanged {
   const _$_RegisterPasswordChanged(this.password);
 
   @override
   final String password;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInEmailRegisterEvent.passwordChanged(password: $password)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SignInEmailRegisterEvent.passwordChanged'))
-      ..add(DiagnosticsProperty('password', password));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RegisterPasswordChanged &&
+            other is _$_RegisterPasswordChanged &&
             const DeepCollectionEquality().equals(other.password, password));
   }
 
@@ -6458,9 +5748,10 @@ class _$_RegisterPasswordChanged
 
   @JsonKey(ignore: true)
   @override
-  _$RegisterPasswordChangedCopyWith<_RegisterPasswordChanged> get copyWith =>
-      __$RegisterPasswordChangedCopyWithImpl<_RegisterPasswordChanged>(
-          this, _$identity);
+  _$$_RegisterPasswordChangedCopyWith<_$_RegisterPasswordChanged>
+      get copyWith =>
+          __$$_RegisterPasswordChangedCopyWithImpl<_$_RegisterPasswordChanged>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -6532,57 +5823,48 @@ class _$_RegisterPasswordChanged
 }
 
 abstract class _RegisterPasswordChanged implements SignInEmailRegisterEvent {
-  const factory _RegisterPasswordChanged(String password) =
+  const factory _RegisterPasswordChanged(final String password) =
       _$_RegisterPasswordChanged;
 
   String get password;
   @JsonKey(ignore: true)
-  _$RegisterPasswordChangedCopyWith<_RegisterPasswordChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_RegisterPasswordChangedCopyWith<_$_RegisterPasswordChanged>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$RegisterSubmitCopyWith<$Res> {
-  factory _$RegisterSubmitCopyWith(
-          _RegisterSubmit value, $Res Function(_RegisterSubmit) then) =
-      __$RegisterSubmitCopyWithImpl<$Res>;
+abstract class _$$_RegisterSubmitCopyWith<$Res> {
+  factory _$$_RegisterSubmitCopyWith(
+          _$_RegisterSubmit value, $Res Function(_$_RegisterSubmit) then) =
+      __$$_RegisterSubmitCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$RegisterSubmitCopyWithImpl<$Res>
+class __$$_RegisterSubmitCopyWithImpl<$Res>
     extends _$SignInEmailRegisterEventCopyWithImpl<$Res>
-    implements _$RegisterSubmitCopyWith<$Res> {
-  __$RegisterSubmitCopyWithImpl(
-      _RegisterSubmit _value, $Res Function(_RegisterSubmit) _then)
-      : super(_value, (v) => _then(v as _RegisterSubmit));
+    implements _$$_RegisterSubmitCopyWith<$Res> {
+  __$$_RegisterSubmitCopyWithImpl(
+      _$_RegisterSubmit _value, $Res Function(_$_RegisterSubmit) _then)
+      : super(_value, (v) => _then(v as _$_RegisterSubmit));
 
   @override
-  _RegisterSubmit get _value => super._value as _RegisterSubmit;
+  _$_RegisterSubmit get _value => super._value as _$_RegisterSubmit;
 }
 
 /// @nodoc
 
-class _$_RegisterSubmit
-    with DiagnosticableTreeMixin
-    implements _RegisterSubmit {
+class _$_RegisterSubmit implements _RegisterSubmit {
   const _$_RegisterSubmit();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInEmailRegisterEvent.submit()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInEmailRegisterEvent.submit'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _RegisterSubmit);
+        (other.runtimeType == runtimeType && other is _$_RegisterSubmit);
   }
 
   @override
@@ -6660,41 +5942,6 @@ class _$_RegisterSubmit
 abstract class _RegisterSubmit implements SignInEmailRegisterEvent {
   const factory _RegisterSubmit() = _$_RegisterSubmit;
 }
-
-/// @nodoc
-class _$SignInEmailRegisterStateTearOff {
-  const _$SignInEmailRegisterStateTearOff();
-
-  _SignInEmailRegisterState call(
-      {String email = "",
-      String password = "",
-      bool passwordHasMinLength = false,
-      bool passwordHasUppercase = false,
-      bool passwordHasLowercase = false,
-      bool passwordHasDigits = false,
-      bool passwordHasSpecialChars = false,
-      bool canSubmit = false,
-      bool isLoading = false,
-      bool isSuccess = false,
-      String? errorText}) {
-    return _SignInEmailRegisterState(
-      email: email,
-      password: password,
-      passwordHasMinLength: passwordHasMinLength,
-      passwordHasUppercase: passwordHasUppercase,
-      passwordHasLowercase: passwordHasLowercase,
-      passwordHasDigits: passwordHasDigits,
-      passwordHasSpecialChars: passwordHasSpecialChars,
-      canSubmit: canSubmit,
-      isLoading: isLoading,
-      isSuccess: isSuccess,
-      errorText: errorText,
-    );
-  }
-}
-
-/// @nodoc
-const $SignInEmailRegisterState = _$SignInEmailRegisterStateTearOff();
 
 /// @nodoc
 mixin _$SignInEmailRegisterState {
@@ -6807,11 +6054,12 @@ class _$SignInEmailRegisterStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SignInEmailRegisterStateCopyWith<$Res>
+abstract class _$$_SignInEmailRegisterStateCopyWith<$Res>
     implements $SignInEmailRegisterStateCopyWith<$Res> {
-  factory _$SignInEmailRegisterStateCopyWith(_SignInEmailRegisterState value,
-          $Res Function(_SignInEmailRegisterState) then) =
-      __$SignInEmailRegisterStateCopyWithImpl<$Res>;
+  factory _$$_SignInEmailRegisterStateCopyWith(
+          _$_SignInEmailRegisterState value,
+          $Res Function(_$_SignInEmailRegisterState) then) =
+      __$$_SignInEmailRegisterStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {String email,
@@ -6828,16 +6076,16 @@ abstract class _$SignInEmailRegisterStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SignInEmailRegisterStateCopyWithImpl<$Res>
+class __$$_SignInEmailRegisterStateCopyWithImpl<$Res>
     extends _$SignInEmailRegisterStateCopyWithImpl<$Res>
-    implements _$SignInEmailRegisterStateCopyWith<$Res> {
-  __$SignInEmailRegisterStateCopyWithImpl(_SignInEmailRegisterState _value,
-      $Res Function(_SignInEmailRegisterState) _then)
-      : super(_value, (v) => _then(v as _SignInEmailRegisterState));
+    implements _$$_SignInEmailRegisterStateCopyWith<$Res> {
+  __$$_SignInEmailRegisterStateCopyWithImpl(_$_SignInEmailRegisterState _value,
+      $Res Function(_$_SignInEmailRegisterState) _then)
+      : super(_value, (v) => _then(v as _$_SignInEmailRegisterState));
 
   @override
-  _SignInEmailRegisterState get _value =>
-      super._value as _SignInEmailRegisterState;
+  _$_SignInEmailRegisterState get _value =>
+      super._value as _$_SignInEmailRegisterState;
 
   @override
   $Res call({
@@ -6853,7 +6101,7 @@ class __$SignInEmailRegisterStateCopyWithImpl<$Res>
     Object? isSuccess = freezed,
     Object? errorText = freezed,
   }) {
-    return _then(_SignInEmailRegisterState(
+    return _then(_$_SignInEmailRegisterState(
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -6904,9 +6152,7 @@ class __$SignInEmailRegisterStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInEmailRegisterState
-    with DiagnosticableTreeMixin
-    implements _SignInEmailRegisterState {
+class _$_SignInEmailRegisterState implements _SignInEmailRegisterState {
   const _$_SignInEmailRegisterState(
       {this.email = "",
       this.password = "",
@@ -6920,68 +6166,49 @@ class _$_SignInEmailRegisterState
       this.isSuccess = false,
       this.errorText});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String email;
-  @JsonKey()
   @override
+  @JsonKey()
   final String password;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool passwordHasMinLength;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool passwordHasUppercase;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool passwordHasLowercase;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool passwordHasDigits;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool passwordHasSpecialChars;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool canSubmit;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isLoading;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isSuccess;
   @override
   final String? errorText;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInEmailRegisterState(email: $email, password: $password, passwordHasMinLength: $passwordHasMinLength, passwordHasUppercase: $passwordHasUppercase, passwordHasLowercase: $passwordHasLowercase, passwordHasDigits: $passwordHasDigits, passwordHasSpecialChars: $passwordHasSpecialChars, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInEmailRegisterState'))
-      ..add(DiagnosticsProperty('email', email))
-      ..add(DiagnosticsProperty('password', password))
-      ..add(DiagnosticsProperty('passwordHasMinLength', passwordHasMinLength))
-      ..add(DiagnosticsProperty('passwordHasUppercase', passwordHasUppercase))
-      ..add(DiagnosticsProperty('passwordHasLowercase', passwordHasLowercase))
-      ..add(DiagnosticsProperty('passwordHasDigits', passwordHasDigits))
-      ..add(DiagnosticsProperty(
-          'passwordHasSpecialChars', passwordHasSpecialChars))
-      ..add(DiagnosticsProperty('canSubmit', canSubmit))
-      ..add(DiagnosticsProperty('isLoading', isLoading))
-      ..add(DiagnosticsProperty('isSuccess', isSuccess))
-      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SignInEmailRegisterState &&
+            other is _$_SignInEmailRegisterState &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.password, password) &&
             const DeepCollectionEquality()
@@ -7017,24 +6244,24 @@ class _$_SignInEmailRegisterState
 
   @JsonKey(ignore: true)
   @override
-  _$SignInEmailRegisterStateCopyWith<_SignInEmailRegisterState> get copyWith =>
-      __$SignInEmailRegisterStateCopyWithImpl<_SignInEmailRegisterState>(
-          this, _$identity);
+  _$$_SignInEmailRegisterStateCopyWith<_$_SignInEmailRegisterState>
+      get copyWith => __$$_SignInEmailRegisterStateCopyWithImpl<
+          _$_SignInEmailRegisterState>(this, _$identity);
 }
 
 abstract class _SignInEmailRegisterState implements SignInEmailRegisterState {
   const factory _SignInEmailRegisterState(
-      {String email,
-      String password,
-      bool passwordHasMinLength,
-      bool passwordHasUppercase,
-      bool passwordHasLowercase,
-      bool passwordHasDigits,
-      bool passwordHasSpecialChars,
-      bool canSubmit,
-      bool isLoading,
-      bool isSuccess,
-      String? errorText}) = _$_SignInEmailRegisterState;
+      {final String email,
+      final String password,
+      final bool passwordHasMinLength,
+      final bool passwordHasUppercase,
+      final bool passwordHasLowercase,
+      final bool passwordHasDigits,
+      final bool passwordHasSpecialChars,
+      final bool canSubmit,
+      final bool isLoading,
+      final bool isSuccess,
+      final String? errorText}) = _$_SignInEmailRegisterState;
 
   @override
   String get email;
@@ -7060,33 +6287,9 @@ abstract class _SignInEmailRegisterState implements SignInEmailRegisterState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$SignInEmailRegisterStateCopyWith<_SignInEmailRegisterState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_SignInEmailRegisterStateCopyWith<_$_SignInEmailRegisterState>
+      get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SignInPhoneEventTearOff {
-  const _$SignInPhoneEventTearOff();
-
-  _CountryChanged countryChanged(CountryWithPhoneCode country) {
-    return _CountryChanged(
-      country,
-    );
-  }
-
-  _PhoneChanged phoneChanged(String input) {
-    return _PhoneChanged(
-      input,
-    );
-  }
-
-  _VerifyPhone verifyPhone() {
-    return const _VerifyPhone();
-  }
-}
-
-/// @nodoc
-const $SignInPhoneEvent = _$SignInPhoneEventTearOff();
 
 /// @nodoc
 mixin _$SignInPhoneEvent {
@@ -7154,29 +6357,29 @@ class _$SignInPhoneEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$CountryChangedCopyWith<$Res> {
-  factory _$CountryChangedCopyWith(
-          _CountryChanged value, $Res Function(_CountryChanged) then) =
-      __$CountryChangedCopyWithImpl<$Res>;
+abstract class _$$_CountryChangedCopyWith<$Res> {
+  factory _$$_CountryChangedCopyWith(
+          _$_CountryChanged value, $Res Function(_$_CountryChanged) then) =
+      __$$_CountryChangedCopyWithImpl<$Res>;
   $Res call({CountryWithPhoneCode country});
 }
 
 /// @nodoc
-class __$CountryChangedCopyWithImpl<$Res>
+class __$$_CountryChangedCopyWithImpl<$Res>
     extends _$SignInPhoneEventCopyWithImpl<$Res>
-    implements _$CountryChangedCopyWith<$Res> {
-  __$CountryChangedCopyWithImpl(
-      _CountryChanged _value, $Res Function(_CountryChanged) _then)
-      : super(_value, (v) => _then(v as _CountryChanged));
+    implements _$$_CountryChangedCopyWith<$Res> {
+  __$$_CountryChangedCopyWithImpl(
+      _$_CountryChanged _value, $Res Function(_$_CountryChanged) _then)
+      : super(_value, (v) => _then(v as _$_CountryChanged));
 
   @override
-  _CountryChanged get _value => super._value as _CountryChanged;
+  _$_CountryChanged get _value => super._value as _$_CountryChanged;
 
   @override
   $Res call({
     Object? country = freezed,
   }) {
-    return _then(_CountryChanged(
+    return _then(_$_CountryChanged(
       country == freezed
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
@@ -7187,32 +6390,22 @@ class __$CountryChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CountryChanged
-    with DiagnosticableTreeMixin
-    implements _CountryChanged {
+class _$_CountryChanged implements _CountryChanged {
   const _$_CountryChanged(this.country);
 
   @override
   final CountryWithPhoneCode country;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInPhoneEvent.countryChanged(country: $country)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInPhoneEvent.countryChanged'))
-      ..add(DiagnosticsProperty('country', country));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CountryChanged &&
+            other is _$_CountryChanged &&
             const DeepCollectionEquality().equals(other.country, country));
   }
 
@@ -7222,8 +6415,8 @@ class _$_CountryChanged
 
   @JsonKey(ignore: true)
   @override
-  _$CountryChangedCopyWith<_CountryChanged> get copyWith =>
-      __$CountryChangedCopyWithImpl<_CountryChanged>(this, _$identity);
+  _$$_CountryChangedCopyWith<_$_CountryChanged> get copyWith =>
+      __$$_CountryChangedCopyWithImpl<_$_CountryChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -7295,39 +6488,39 @@ class _$_CountryChanged
 }
 
 abstract class _CountryChanged implements SignInPhoneEvent {
-  const factory _CountryChanged(CountryWithPhoneCode country) =
+  const factory _CountryChanged(final CountryWithPhoneCode country) =
       _$_CountryChanged;
 
   CountryWithPhoneCode get country;
   @JsonKey(ignore: true)
-  _$CountryChangedCopyWith<_CountryChanged> get copyWith =>
+  _$$_CountryChangedCopyWith<_$_CountryChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$PhoneChangedCopyWith<$Res> {
-  factory _$PhoneChangedCopyWith(
-          _PhoneChanged value, $Res Function(_PhoneChanged) then) =
-      __$PhoneChangedCopyWithImpl<$Res>;
+abstract class _$$_PhoneChangedCopyWith<$Res> {
+  factory _$$_PhoneChangedCopyWith(
+          _$_PhoneChanged value, $Res Function(_$_PhoneChanged) then) =
+      __$$_PhoneChangedCopyWithImpl<$Res>;
   $Res call({String input});
 }
 
 /// @nodoc
-class __$PhoneChangedCopyWithImpl<$Res>
+class __$$_PhoneChangedCopyWithImpl<$Res>
     extends _$SignInPhoneEventCopyWithImpl<$Res>
-    implements _$PhoneChangedCopyWith<$Res> {
-  __$PhoneChangedCopyWithImpl(
-      _PhoneChanged _value, $Res Function(_PhoneChanged) _then)
-      : super(_value, (v) => _then(v as _PhoneChanged));
+    implements _$$_PhoneChangedCopyWith<$Res> {
+  __$$_PhoneChangedCopyWithImpl(
+      _$_PhoneChanged _value, $Res Function(_$_PhoneChanged) _then)
+      : super(_value, (v) => _then(v as _$_PhoneChanged));
 
   @override
-  _PhoneChanged get _value => super._value as _PhoneChanged;
+  _$_PhoneChanged get _value => super._value as _$_PhoneChanged;
 
   @override
   $Res call({
     Object? input = freezed,
   }) {
-    return _then(_PhoneChanged(
+    return _then(_$_PhoneChanged(
       input == freezed
           ? _value.input
           : input // ignore: cast_nullable_to_non_nullable
@@ -7338,30 +6531,22 @@ class __$PhoneChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PhoneChanged with DiagnosticableTreeMixin implements _PhoneChanged {
+class _$_PhoneChanged implements _PhoneChanged {
   const _$_PhoneChanged(this.input);
 
   @override
   final String input;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInPhoneEvent.phoneChanged(input: $input)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInPhoneEvent.phoneChanged'))
-      ..add(DiagnosticsProperty('input', input));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PhoneChanged &&
+            other is _$_PhoneChanged &&
             const DeepCollectionEquality().equals(other.input, input));
   }
 
@@ -7371,8 +6556,8 @@ class _$_PhoneChanged with DiagnosticableTreeMixin implements _PhoneChanged {
 
   @JsonKey(ignore: true)
   @override
-  _$PhoneChangedCopyWith<_PhoneChanged> get copyWith =>
-      __$PhoneChangedCopyWithImpl<_PhoneChanged>(this, _$identity);
+  _$$_PhoneChangedCopyWith<_$_PhoneChanged> get copyWith =>
+      __$$_PhoneChangedCopyWithImpl<_$_PhoneChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -7444,54 +6629,47 @@ class _$_PhoneChanged with DiagnosticableTreeMixin implements _PhoneChanged {
 }
 
 abstract class _PhoneChanged implements SignInPhoneEvent {
-  const factory _PhoneChanged(String input) = _$_PhoneChanged;
+  const factory _PhoneChanged(final String input) = _$_PhoneChanged;
 
   String get input;
   @JsonKey(ignore: true)
-  _$PhoneChangedCopyWith<_PhoneChanged> get copyWith =>
+  _$$_PhoneChangedCopyWith<_$_PhoneChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$VerifyPhoneCopyWith<$Res> {
-  factory _$VerifyPhoneCopyWith(
-          _VerifyPhone value, $Res Function(_VerifyPhone) then) =
-      __$VerifyPhoneCopyWithImpl<$Res>;
+abstract class _$$_VerifyPhoneCopyWith<$Res> {
+  factory _$$_VerifyPhoneCopyWith(
+          _$_VerifyPhone value, $Res Function(_$_VerifyPhone) then) =
+      __$$_VerifyPhoneCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$VerifyPhoneCopyWithImpl<$Res>
+class __$$_VerifyPhoneCopyWithImpl<$Res>
     extends _$SignInPhoneEventCopyWithImpl<$Res>
-    implements _$VerifyPhoneCopyWith<$Res> {
-  __$VerifyPhoneCopyWithImpl(
-      _VerifyPhone _value, $Res Function(_VerifyPhone) _then)
-      : super(_value, (v) => _then(v as _VerifyPhone));
+    implements _$$_VerifyPhoneCopyWith<$Res> {
+  __$$_VerifyPhoneCopyWithImpl(
+      _$_VerifyPhone _value, $Res Function(_$_VerifyPhone) _then)
+      : super(_value, (v) => _then(v as _$_VerifyPhone));
 
   @override
-  _VerifyPhone get _value => super._value as _VerifyPhone;
+  _$_VerifyPhone get _value => super._value as _$_VerifyPhone;
 }
 
 /// @nodoc
 
-class _$_VerifyPhone with DiagnosticableTreeMixin implements _VerifyPhone {
+class _$_VerifyPhone implements _VerifyPhone {
   const _$_VerifyPhone();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInPhoneEvent.verifyPhone()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInPhoneEvent.verifyPhone'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _VerifyPhone);
+        (other.runtimeType == runtimeType && other is _$_VerifyPhone);
   }
 
   @override
@@ -7569,33 +6747,6 @@ class _$_VerifyPhone with DiagnosticableTreeMixin implements _VerifyPhone {
 abstract class _VerifyPhone implements SignInPhoneEvent {
   const factory _VerifyPhone() = _$_VerifyPhone;
 }
-
-/// @nodoc
-class _$SignInPhoneStateTearOff {
-  const _$SignInPhoneStateTearOff();
-
-  _SignInPhoneState call(
-      {required CountryWithPhoneCode country,
-      Map<String, dynamic>? phoneNumber,
-      String? verificationId,
-      bool canSubmit = false,
-      bool isLoading = false,
-      bool isSuccess = false,
-      String? errorText}) {
-    return _SignInPhoneState(
-      country: country,
-      phoneNumber: phoneNumber,
-      verificationId: verificationId,
-      canSubmit: canSubmit,
-      isLoading: isLoading,
-      isSuccess: isSuccess,
-      errorText: errorText,
-    );
-  }
-}
-
-/// @nodoc
-const $SignInPhoneState = _$SignInPhoneStateTearOff();
 
 /// @nodoc
 mixin _$SignInPhoneState {
@@ -7680,11 +6831,11 @@ class _$SignInPhoneStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SignInPhoneStateCopyWith<$Res>
+abstract class _$$_SignInPhoneStateCopyWith<$Res>
     implements $SignInPhoneStateCopyWith<$Res> {
-  factory _$SignInPhoneStateCopyWith(
-          _SignInPhoneState value, $Res Function(_SignInPhoneState) then) =
-      __$SignInPhoneStateCopyWithImpl<$Res>;
+  factory _$$_SignInPhoneStateCopyWith(
+          _$_SignInPhoneState value, $Res Function(_$_SignInPhoneState) then) =
+      __$$_SignInPhoneStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {CountryWithPhoneCode country,
@@ -7697,15 +6848,15 @@ abstract class _$SignInPhoneStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SignInPhoneStateCopyWithImpl<$Res>
+class __$$_SignInPhoneStateCopyWithImpl<$Res>
     extends _$SignInPhoneStateCopyWithImpl<$Res>
-    implements _$SignInPhoneStateCopyWith<$Res> {
-  __$SignInPhoneStateCopyWithImpl(
-      _SignInPhoneState _value, $Res Function(_SignInPhoneState) _then)
-      : super(_value, (v) => _then(v as _SignInPhoneState));
+    implements _$$_SignInPhoneStateCopyWith<$Res> {
+  __$$_SignInPhoneStateCopyWithImpl(
+      _$_SignInPhoneState _value, $Res Function(_$_SignInPhoneState) _then)
+      : super(_value, (v) => _then(v as _$_SignInPhoneState));
 
   @override
-  _SignInPhoneState get _value => super._value as _SignInPhoneState;
+  _$_SignInPhoneState get _value => super._value as _$_SignInPhoneState;
 
   @override
   $Res call({
@@ -7717,13 +6868,13 @@ class __$SignInPhoneStateCopyWithImpl<$Res>
     Object? isSuccess = freezed,
     Object? errorText = freezed,
   }) {
-    return _then(_SignInPhoneState(
+    return _then(_$_SignInPhoneState(
       country: country == freezed
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
               as CountryWithPhoneCode,
       phoneNumber: phoneNumber == freezed
-          ? _value.phoneNumber
+          ? _value._phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>?,
       verificationId: verificationId == freezed
@@ -7752,63 +6903,55 @@ class __$SignInPhoneStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInPhoneState
-    with DiagnosticableTreeMixin
-    implements _SignInPhoneState {
+class _$_SignInPhoneState implements _SignInPhoneState {
   const _$_SignInPhoneState(
       {required this.country,
-      this.phoneNumber,
+      final Map<String, dynamic>? phoneNumber,
       this.verificationId,
       this.canSubmit = false,
       this.isLoading = false,
       this.isSuccess = false,
-      this.errorText});
+      this.errorText})
+      : _phoneNumber = phoneNumber;
 
   @override
   final CountryWithPhoneCode country;
+  final Map<String, dynamic>? _phoneNumber;
   @override
-  final Map<String, dynamic>? phoneNumber;
+  Map<String, dynamic>? get phoneNumber {
+    final value = _phoneNumber;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(value);
+  }
+
   @override
   final String? verificationId;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool canSubmit;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isLoading;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isSuccess;
   @override
   final String? errorText;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInPhoneState(country: $country, phoneNumber: $phoneNumber, verificationId: $verificationId, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInPhoneState'))
-      ..add(DiagnosticsProperty('country', country))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('verificationId', verificationId))
-      ..add(DiagnosticsProperty('canSubmit', canSubmit))
-      ..add(DiagnosticsProperty('isLoading', isLoading))
-      ..add(DiagnosticsProperty('isSuccess', isSuccess))
-      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SignInPhoneState &&
+            other is _$_SignInPhoneState &&
             const DeepCollectionEquality().equals(other.country, country) &&
             const DeepCollectionEquality()
-                .equals(other.phoneNumber, phoneNumber) &&
+                .equals(other._phoneNumber, _phoneNumber) &&
             const DeepCollectionEquality()
                 .equals(other.verificationId, verificationId) &&
             const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
@@ -7821,7 +6964,7 @@ class _$_SignInPhoneState
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(country),
-      const DeepCollectionEquality().hash(phoneNumber),
+      const DeepCollectionEquality().hash(_phoneNumber),
       const DeepCollectionEquality().hash(verificationId),
       const DeepCollectionEquality().hash(canSubmit),
       const DeepCollectionEquality().hash(isLoading),
@@ -7830,19 +6973,19 @@ class _$_SignInPhoneState
 
   @JsonKey(ignore: true)
   @override
-  _$SignInPhoneStateCopyWith<_SignInPhoneState> get copyWith =>
-      __$SignInPhoneStateCopyWithImpl<_SignInPhoneState>(this, _$identity);
+  _$$_SignInPhoneStateCopyWith<_$_SignInPhoneState> get copyWith =>
+      __$$_SignInPhoneStateCopyWithImpl<_$_SignInPhoneState>(this, _$identity);
 }
 
 abstract class _SignInPhoneState implements SignInPhoneState {
   const factory _SignInPhoneState(
-      {required CountryWithPhoneCode country,
-      Map<String, dynamic>? phoneNumber,
-      String? verificationId,
-      bool canSubmit,
-      bool isLoading,
-      bool isSuccess,
-      String? errorText}) = _$_SignInPhoneState;
+      {required final CountryWithPhoneCode country,
+      final Map<String, dynamic>? phoneNumber,
+      final String? verificationId,
+      final bool canSubmit,
+      final bool isLoading,
+      final bool isSuccess,
+      final String? errorText}) = _$_SignInPhoneState;
 
   @override
   CountryWithPhoneCode get country;
@@ -7860,31 +7003,9 @@ abstract class _SignInPhoneState implements SignInPhoneState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$SignInPhoneStateCopyWith<_SignInPhoneState> get copyWith =>
+  _$$_SignInPhoneStateCopyWith<_$_SignInPhoneState> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SignInPhoneVerificationEventTearOff {
-  const _$SignInPhoneVerificationEventTearOff();
-
-  _ResendCode resendCode() {
-    return const _ResendCode();
-  }
-
-  _CodeChanged codeChanged(String input) {
-    return _CodeChanged(
-      input,
-    );
-  }
-
-  _VerifyCode verifyCode() {
-    return const _VerifyCode();
-  }
-}
-
-/// @nodoc
-const $SignInPhoneVerificationEvent = _$SignInPhoneVerificationEventTearOff();
 
 /// @nodoc
 mixin _$SignInPhoneVerificationEvent {
@@ -7953,46 +7074,38 @@ class _$SignInPhoneVerificationEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ResendCodeCopyWith<$Res> {
-  factory _$ResendCodeCopyWith(
-          _ResendCode value, $Res Function(_ResendCode) then) =
-      __$ResendCodeCopyWithImpl<$Res>;
+abstract class _$$_ResendCodeCopyWith<$Res> {
+  factory _$$_ResendCodeCopyWith(
+          _$_ResendCode value, $Res Function(_$_ResendCode) then) =
+      __$$_ResendCodeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ResendCodeCopyWithImpl<$Res>
+class __$$_ResendCodeCopyWithImpl<$Res>
     extends _$SignInPhoneVerificationEventCopyWithImpl<$Res>
-    implements _$ResendCodeCopyWith<$Res> {
-  __$ResendCodeCopyWithImpl(
-      _ResendCode _value, $Res Function(_ResendCode) _then)
-      : super(_value, (v) => _then(v as _ResendCode));
+    implements _$$_ResendCodeCopyWith<$Res> {
+  __$$_ResendCodeCopyWithImpl(
+      _$_ResendCode _value, $Res Function(_$_ResendCode) _then)
+      : super(_value, (v) => _then(v as _$_ResendCode));
 
   @override
-  _ResendCode get _value => super._value as _ResendCode;
+  _$_ResendCode get _value => super._value as _$_ResendCode;
 }
 
 /// @nodoc
 
-class _$_ResendCode with DiagnosticableTreeMixin implements _ResendCode {
+class _$_ResendCode implements _ResendCode {
   const _$_ResendCode();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInPhoneVerificationEvent.resendCode()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SignInPhoneVerificationEvent.resendCode'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ResendCode);
+        (other.runtimeType == runtimeType && other is _$_ResendCode);
   }
 
   @override
@@ -8072,29 +7185,29 @@ abstract class _ResendCode implements SignInPhoneVerificationEvent {
 }
 
 /// @nodoc
-abstract class _$CodeChangedCopyWith<$Res> {
-  factory _$CodeChangedCopyWith(
-          _CodeChanged value, $Res Function(_CodeChanged) then) =
-      __$CodeChangedCopyWithImpl<$Res>;
+abstract class _$$_CodeChangedCopyWith<$Res> {
+  factory _$$_CodeChangedCopyWith(
+          _$_CodeChanged value, $Res Function(_$_CodeChanged) then) =
+      __$$_CodeChangedCopyWithImpl<$Res>;
   $Res call({String input});
 }
 
 /// @nodoc
-class __$CodeChangedCopyWithImpl<$Res>
+class __$$_CodeChangedCopyWithImpl<$Res>
     extends _$SignInPhoneVerificationEventCopyWithImpl<$Res>
-    implements _$CodeChangedCopyWith<$Res> {
-  __$CodeChangedCopyWithImpl(
-      _CodeChanged _value, $Res Function(_CodeChanged) _then)
-      : super(_value, (v) => _then(v as _CodeChanged));
+    implements _$$_CodeChangedCopyWith<$Res> {
+  __$$_CodeChangedCopyWithImpl(
+      _$_CodeChanged _value, $Res Function(_$_CodeChanged) _then)
+      : super(_value, (v) => _then(v as _$_CodeChanged));
 
   @override
-  _CodeChanged get _value => super._value as _CodeChanged;
+  _$_CodeChanged get _value => super._value as _$_CodeChanged;
 
   @override
   $Res call({
     Object? input = freezed,
   }) {
-    return _then(_CodeChanged(
+    return _then(_$_CodeChanged(
       input == freezed
           ? _value.input
           : input // ignore: cast_nullable_to_non_nullable
@@ -8105,31 +7218,22 @@ class __$CodeChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CodeChanged with DiagnosticableTreeMixin implements _CodeChanged {
+class _$_CodeChanged implements _CodeChanged {
   const _$_CodeChanged(this.input);
 
   @override
   final String input;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInPhoneVerificationEvent.codeChanged(input: $input)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SignInPhoneVerificationEvent.codeChanged'))
-      ..add(DiagnosticsProperty('input', input));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CodeChanged &&
+            other is _$_CodeChanged &&
             const DeepCollectionEquality().equals(other.input, input));
   }
 
@@ -8139,8 +7243,8 @@ class _$_CodeChanged with DiagnosticableTreeMixin implements _CodeChanged {
 
   @JsonKey(ignore: true)
   @override
-  _$CodeChangedCopyWith<_CodeChanged> get copyWith =>
-      __$CodeChangedCopyWithImpl<_CodeChanged>(this, _$identity);
+  _$$_CodeChangedCopyWith<_$_CodeChanged> get copyWith =>
+      __$$_CodeChangedCopyWithImpl<_$_CodeChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -8212,55 +7316,47 @@ class _$_CodeChanged with DiagnosticableTreeMixin implements _CodeChanged {
 }
 
 abstract class _CodeChanged implements SignInPhoneVerificationEvent {
-  const factory _CodeChanged(String input) = _$_CodeChanged;
+  const factory _CodeChanged(final String input) = _$_CodeChanged;
 
   String get input;
   @JsonKey(ignore: true)
-  _$CodeChangedCopyWith<_CodeChanged> get copyWith =>
+  _$$_CodeChangedCopyWith<_$_CodeChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$VerifyCodeCopyWith<$Res> {
-  factory _$VerifyCodeCopyWith(
-          _VerifyCode value, $Res Function(_VerifyCode) then) =
-      __$VerifyCodeCopyWithImpl<$Res>;
+abstract class _$$_VerifyCodeCopyWith<$Res> {
+  factory _$$_VerifyCodeCopyWith(
+          _$_VerifyCode value, $Res Function(_$_VerifyCode) then) =
+      __$$_VerifyCodeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$VerifyCodeCopyWithImpl<$Res>
+class __$$_VerifyCodeCopyWithImpl<$Res>
     extends _$SignInPhoneVerificationEventCopyWithImpl<$Res>
-    implements _$VerifyCodeCopyWith<$Res> {
-  __$VerifyCodeCopyWithImpl(
-      _VerifyCode _value, $Res Function(_VerifyCode) _then)
-      : super(_value, (v) => _then(v as _VerifyCode));
+    implements _$$_VerifyCodeCopyWith<$Res> {
+  __$$_VerifyCodeCopyWithImpl(
+      _$_VerifyCode _value, $Res Function(_$_VerifyCode) _then)
+      : super(_value, (v) => _then(v as _$_VerifyCode));
 
   @override
-  _VerifyCode get _value => super._value as _VerifyCode;
+  _$_VerifyCode get _value => super._value as _$_VerifyCode;
 }
 
 /// @nodoc
 
-class _$_VerifyCode with DiagnosticableTreeMixin implements _VerifyCode {
+class _$_VerifyCode implements _VerifyCode {
   const _$_VerifyCode();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInPhoneVerificationEvent.verifyCode()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SignInPhoneVerificationEvent.verifyCode'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _VerifyCode);
+        (other.runtimeType == runtimeType && other is _$_VerifyCode);
   }
 
   @override
@@ -8338,37 +7434,6 @@ class _$_VerifyCode with DiagnosticableTreeMixin implements _VerifyCode {
 abstract class _VerifyCode implements SignInPhoneVerificationEvent {
   const factory _VerifyCode() = _$_VerifyCode;
 }
-
-/// @nodoc
-class _$SignInPhoneVerificationStateTearOff {
-  const _$SignInPhoneVerificationStateTearOff();
-
-  _SignInPhoneVerificationState call(
-      {int? countdown = delayBeforeUserCanRequestNewCode,
-      required Map<String, dynamic> phoneNumber,
-      required String nationalPhoneNumber,
-      required String verificationId,
-      String verificationCode = "",
-      bool canSubmit = false,
-      bool isLoading = false,
-      bool isSuccess = false,
-      String? errorText}) {
-    return _SignInPhoneVerificationState(
-      countdown: countdown,
-      phoneNumber: phoneNumber,
-      nationalPhoneNumber: nationalPhoneNumber,
-      verificationId: verificationId,
-      verificationCode: verificationCode,
-      canSubmit: canSubmit,
-      isLoading: isLoading,
-      isSuccess: isSuccess,
-      errorText: errorText,
-    );
-  }
-}
-
-/// @nodoc
-const $SignInPhoneVerificationState = _$SignInPhoneVerificationStateTearOff();
 
 /// @nodoc
 mixin _$SignInPhoneVerificationState {
@@ -8468,12 +7533,12 @@ class _$SignInPhoneVerificationStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SignInPhoneVerificationStateCopyWith<$Res>
+abstract class _$$_SignInPhoneVerificationStateCopyWith<$Res>
     implements $SignInPhoneVerificationStateCopyWith<$Res> {
-  factory _$SignInPhoneVerificationStateCopyWith(
-          _SignInPhoneVerificationState value,
-          $Res Function(_SignInPhoneVerificationState) then) =
-      __$SignInPhoneVerificationStateCopyWithImpl<$Res>;
+  factory _$$_SignInPhoneVerificationStateCopyWith(
+          _$_SignInPhoneVerificationState value,
+          $Res Function(_$_SignInPhoneVerificationState) then) =
+      __$$_SignInPhoneVerificationStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {int? countdown,
@@ -8488,17 +7553,17 @@ abstract class _$SignInPhoneVerificationStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SignInPhoneVerificationStateCopyWithImpl<$Res>
+class __$$_SignInPhoneVerificationStateCopyWithImpl<$Res>
     extends _$SignInPhoneVerificationStateCopyWithImpl<$Res>
-    implements _$SignInPhoneVerificationStateCopyWith<$Res> {
-  __$SignInPhoneVerificationStateCopyWithImpl(
-      _SignInPhoneVerificationState _value,
-      $Res Function(_SignInPhoneVerificationState) _then)
-      : super(_value, (v) => _then(v as _SignInPhoneVerificationState));
+    implements _$$_SignInPhoneVerificationStateCopyWith<$Res> {
+  __$$_SignInPhoneVerificationStateCopyWithImpl(
+      _$_SignInPhoneVerificationState _value,
+      $Res Function(_$_SignInPhoneVerificationState) _then)
+      : super(_value, (v) => _then(v as _$_SignInPhoneVerificationState));
 
   @override
-  _SignInPhoneVerificationState get _value =>
-      super._value as _SignInPhoneVerificationState;
+  _$_SignInPhoneVerificationState get _value =>
+      super._value as _$_SignInPhoneVerificationState;
 
   @override
   $Res call({
@@ -8512,13 +7577,13 @@ class __$SignInPhoneVerificationStateCopyWithImpl<$Res>
     Object? isSuccess = freezed,
     Object? errorText = freezed,
   }) {
-    return _then(_SignInPhoneVerificationState(
+    return _then(_$_SignInPhoneVerificationState(
       countdown: countdown == freezed
           ? _value.countdown
           : countdown // ignore: cast_nullable_to_non_nullable
               as int?,
       phoneNumber: phoneNumber == freezed
-          ? _value.phoneNumber
+          ? _value._phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
               as Map<String, dynamic>,
       nationalPhoneNumber: nationalPhoneNumber == freezed
@@ -8555,73 +7620,61 @@ class __$SignInPhoneVerificationStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInPhoneVerificationState
-    with DiagnosticableTreeMixin
-    implements _SignInPhoneVerificationState {
+class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
   const _$_SignInPhoneVerificationState(
       {this.countdown = delayBeforeUserCanRequestNewCode,
-      required this.phoneNumber,
+      required final Map<String, dynamic> phoneNumber,
       required this.nationalPhoneNumber,
       required this.verificationId,
       this.verificationCode = "",
       this.canSubmit = false,
       this.isLoading = false,
       this.isSuccess = false,
-      this.errorText});
+      this.errorText})
+      : _phoneNumber = phoneNumber;
 
+  @override
   @JsonKey()
-  @override
   final int? countdown;
+  final Map<String, dynamic> _phoneNumber;
   @override
-  final Map<String, dynamic> phoneNumber;
+  Map<String, dynamic> get phoneNumber {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableMapView(_phoneNumber);
+  }
+
   @override
   final String nationalPhoneNumber;
   @override
   final String verificationId;
-  @JsonKey()
   @override
+  @JsonKey()
   final String verificationCode;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool canSubmit;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isLoading;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isSuccess;
   @override
   final String? errorText;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInPhoneVerificationState(countdown: $countdown, phoneNumber: $phoneNumber, nationalPhoneNumber: $nationalPhoneNumber, verificationId: $verificationId, verificationCode: $verificationCode, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInPhoneVerificationState'))
-      ..add(DiagnosticsProperty('countdown', countdown))
-      ..add(DiagnosticsProperty('phoneNumber', phoneNumber))
-      ..add(DiagnosticsProperty('nationalPhoneNumber', nationalPhoneNumber))
-      ..add(DiagnosticsProperty('verificationId', verificationId))
-      ..add(DiagnosticsProperty('verificationCode', verificationCode))
-      ..add(DiagnosticsProperty('canSubmit', canSubmit))
-      ..add(DiagnosticsProperty('isLoading', isLoading))
-      ..add(DiagnosticsProperty('isSuccess', isSuccess))
-      ..add(DiagnosticsProperty('errorText', errorText));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SignInPhoneVerificationState &&
+            other is _$_SignInPhoneVerificationState &&
             const DeepCollectionEquality().equals(other.countdown, countdown) &&
             const DeepCollectionEquality()
-                .equals(other.phoneNumber, phoneNumber) &&
+                .equals(other._phoneNumber, _phoneNumber) &&
             const DeepCollectionEquality()
                 .equals(other.nationalPhoneNumber, nationalPhoneNumber) &&
             const DeepCollectionEquality()
@@ -8638,7 +7691,7 @@ class _$_SignInPhoneVerificationState
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(countdown),
-      const DeepCollectionEquality().hash(phoneNumber),
+      const DeepCollectionEquality().hash(_phoneNumber),
       const DeepCollectionEquality().hash(nationalPhoneNumber),
       const DeepCollectionEquality().hash(verificationId),
       const DeepCollectionEquality().hash(verificationCode),
@@ -8649,23 +7702,23 @@ class _$_SignInPhoneVerificationState
 
   @JsonKey(ignore: true)
   @override
-  _$SignInPhoneVerificationStateCopyWith<_SignInPhoneVerificationState>
-      get copyWith => __$SignInPhoneVerificationStateCopyWithImpl<
-          _SignInPhoneVerificationState>(this, _$identity);
+  _$$_SignInPhoneVerificationStateCopyWith<_$_SignInPhoneVerificationState>
+      get copyWith => __$$_SignInPhoneVerificationStateCopyWithImpl<
+          _$_SignInPhoneVerificationState>(this, _$identity);
 }
 
 abstract class _SignInPhoneVerificationState
     implements SignInPhoneVerificationState {
   const factory _SignInPhoneVerificationState(
-      {int? countdown,
-      required Map<String, dynamic> phoneNumber,
-      required String nationalPhoneNumber,
-      required String verificationId,
-      String verificationCode,
-      bool canSubmit,
-      bool isLoading,
-      bool isSuccess,
-      String? errorText}) = _$_SignInPhoneVerificationState;
+      {final int? countdown,
+      required final Map<String, dynamic> phoneNumber,
+      required final String nationalPhoneNumber,
+      required final String verificationId,
+      final String verificationCode,
+      final bool canSubmit,
+      final bool isLoading,
+      final bool isSuccess,
+      final String? errorText}) = _$_SignInPhoneVerificationState;
 
   @override
   int? get countdown;
@@ -8687,35 +7740,9 @@ abstract class _SignInPhoneVerificationState
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$SignInPhoneVerificationStateCopyWith<_SignInPhoneVerificationState>
+  _$$_SignInPhoneVerificationStateCopyWith<_$_SignInPhoneVerificationState>
       get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$AuthSplashStateTearOff {
-  const _$AuthSplashStateTearOff();
-
-  _SplashInitializingAuth initializing() {
-    return const _SplashInitializingAuth();
-  }
-
-  _SplashNotAuthed notAuthed() {
-    return const _SplashNotAuthed();
-  }
-
-  _SplashAuthed authed() {
-    return const _SplashAuthed();
-  }
-
-  _SplashAuthError error(String error) {
-    return _SplashAuthError(
-      error,
-    );
-  }
-}
-
-/// @nodoc
-const $AuthSplashState = _$AuthSplashStateTearOff();
 
 /// @nodoc
 mixin _$AuthSplashState {
@@ -8789,47 +7816,40 @@ class _$AuthSplashStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SplashInitializingAuthCopyWith<$Res> {
-  factory _$SplashInitializingAuthCopyWith(_SplashInitializingAuth value,
-          $Res Function(_SplashInitializingAuth) then) =
-      __$SplashInitializingAuthCopyWithImpl<$Res>;
+abstract class _$$_SplashInitializingAuthCopyWith<$Res> {
+  factory _$$_SplashInitializingAuthCopyWith(_$_SplashInitializingAuth value,
+          $Res Function(_$_SplashInitializingAuth) then) =
+      __$$_SplashInitializingAuthCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SplashInitializingAuthCopyWithImpl<$Res>
+class __$$_SplashInitializingAuthCopyWithImpl<$Res>
     extends _$AuthSplashStateCopyWithImpl<$Res>
-    implements _$SplashInitializingAuthCopyWith<$Res> {
-  __$SplashInitializingAuthCopyWithImpl(_SplashInitializingAuth _value,
-      $Res Function(_SplashInitializingAuth) _then)
-      : super(_value, (v) => _then(v as _SplashInitializingAuth));
+    implements _$$_SplashInitializingAuthCopyWith<$Res> {
+  __$$_SplashInitializingAuthCopyWithImpl(_$_SplashInitializingAuth _value,
+      $Res Function(_$_SplashInitializingAuth) _then)
+      : super(_value, (v) => _then(v as _$_SplashInitializingAuth));
 
   @override
-  _SplashInitializingAuth get _value => super._value as _SplashInitializingAuth;
+  _$_SplashInitializingAuth get _value =>
+      super._value as _$_SplashInitializingAuth;
 }
 
 /// @nodoc
 
-class _$_SplashInitializingAuth
-    with DiagnosticableTreeMixin
-    implements _SplashInitializingAuth {
+class _$_SplashInitializingAuth implements _SplashInitializingAuth {
   const _$_SplashInitializingAuth();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthSplashState.initializing()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AuthSplashState.initializing'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SplashInitializingAuth);
+        (other.runtimeType == runtimeType &&
+            other is _$_SplashInitializingAuth);
   }
 
   @override
@@ -8915,46 +7935,38 @@ abstract class _SplashInitializingAuth implements AuthSplashState {
 }
 
 /// @nodoc
-abstract class _$SplashNotAuthedCopyWith<$Res> {
-  factory _$SplashNotAuthedCopyWith(
-          _SplashNotAuthed value, $Res Function(_SplashNotAuthed) then) =
-      __$SplashNotAuthedCopyWithImpl<$Res>;
+abstract class _$$_SplashNotAuthedCopyWith<$Res> {
+  factory _$$_SplashNotAuthedCopyWith(
+          _$_SplashNotAuthed value, $Res Function(_$_SplashNotAuthed) then) =
+      __$$_SplashNotAuthedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SplashNotAuthedCopyWithImpl<$Res>
+class __$$_SplashNotAuthedCopyWithImpl<$Res>
     extends _$AuthSplashStateCopyWithImpl<$Res>
-    implements _$SplashNotAuthedCopyWith<$Res> {
-  __$SplashNotAuthedCopyWithImpl(
-      _SplashNotAuthed _value, $Res Function(_SplashNotAuthed) _then)
-      : super(_value, (v) => _then(v as _SplashNotAuthed));
+    implements _$$_SplashNotAuthedCopyWith<$Res> {
+  __$$_SplashNotAuthedCopyWithImpl(
+      _$_SplashNotAuthed _value, $Res Function(_$_SplashNotAuthed) _then)
+      : super(_value, (v) => _then(v as _$_SplashNotAuthed));
 
   @override
-  _SplashNotAuthed get _value => super._value as _SplashNotAuthed;
+  _$_SplashNotAuthed get _value => super._value as _$_SplashNotAuthed;
 }
 
 /// @nodoc
 
-class _$_SplashNotAuthed
-    with DiagnosticableTreeMixin
-    implements _SplashNotAuthed {
+class _$_SplashNotAuthed implements _SplashNotAuthed {
   const _$_SplashNotAuthed();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthSplashState.notAuthed()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'AuthSplashState.notAuthed'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SplashNotAuthed);
+        (other.runtimeType == runtimeType && other is _$_SplashNotAuthed);
   }
 
   @override
@@ -9040,44 +8052,38 @@ abstract class _SplashNotAuthed implements AuthSplashState {
 }
 
 /// @nodoc
-abstract class _$SplashAuthedCopyWith<$Res> {
-  factory _$SplashAuthedCopyWith(
-          _SplashAuthed value, $Res Function(_SplashAuthed) then) =
-      __$SplashAuthedCopyWithImpl<$Res>;
+abstract class _$$_SplashAuthedCopyWith<$Res> {
+  factory _$$_SplashAuthedCopyWith(
+          _$_SplashAuthed value, $Res Function(_$_SplashAuthed) then) =
+      __$$_SplashAuthedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SplashAuthedCopyWithImpl<$Res>
+class __$$_SplashAuthedCopyWithImpl<$Res>
     extends _$AuthSplashStateCopyWithImpl<$Res>
-    implements _$SplashAuthedCopyWith<$Res> {
-  __$SplashAuthedCopyWithImpl(
-      _SplashAuthed _value, $Res Function(_SplashAuthed) _then)
-      : super(_value, (v) => _then(v as _SplashAuthed));
+    implements _$$_SplashAuthedCopyWith<$Res> {
+  __$$_SplashAuthedCopyWithImpl(
+      _$_SplashAuthed _value, $Res Function(_$_SplashAuthed) _then)
+      : super(_value, (v) => _then(v as _$_SplashAuthed));
 
   @override
-  _SplashAuthed get _value => super._value as _SplashAuthed;
+  _$_SplashAuthed get _value => super._value as _$_SplashAuthed;
 }
 
 /// @nodoc
 
-class _$_SplashAuthed with DiagnosticableTreeMixin implements _SplashAuthed {
+class _$_SplashAuthed implements _SplashAuthed {
   const _$_SplashAuthed();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthSplashState.authed()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'AuthSplashState.authed'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SplashAuthed);
+        (other.runtimeType == runtimeType && other is _$_SplashAuthed);
   }
 
   @override
@@ -9163,29 +8169,29 @@ abstract class _SplashAuthed implements AuthSplashState {
 }
 
 /// @nodoc
-abstract class _$SplashAuthErrorCopyWith<$Res> {
-  factory _$SplashAuthErrorCopyWith(
-          _SplashAuthError value, $Res Function(_SplashAuthError) then) =
-      __$SplashAuthErrorCopyWithImpl<$Res>;
+abstract class _$$_SplashAuthErrorCopyWith<$Res> {
+  factory _$$_SplashAuthErrorCopyWith(
+          _$_SplashAuthError value, $Res Function(_$_SplashAuthError) then) =
+      __$$_SplashAuthErrorCopyWithImpl<$Res>;
   $Res call({String error});
 }
 
 /// @nodoc
-class __$SplashAuthErrorCopyWithImpl<$Res>
+class __$$_SplashAuthErrorCopyWithImpl<$Res>
     extends _$AuthSplashStateCopyWithImpl<$Res>
-    implements _$SplashAuthErrorCopyWith<$Res> {
-  __$SplashAuthErrorCopyWithImpl(
-      _SplashAuthError _value, $Res Function(_SplashAuthError) _then)
-      : super(_value, (v) => _then(v as _SplashAuthError));
+    implements _$$_SplashAuthErrorCopyWith<$Res> {
+  __$$_SplashAuthErrorCopyWithImpl(
+      _$_SplashAuthError _value, $Res Function(_$_SplashAuthError) _then)
+      : super(_value, (v) => _then(v as _$_SplashAuthError));
 
   @override
-  _SplashAuthError get _value => super._value as _SplashAuthError;
+  _$_SplashAuthError get _value => super._value as _$_SplashAuthError;
 
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_SplashAuthError(
+    return _then(_$_SplashAuthError(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -9196,32 +8202,22 @@ class __$SplashAuthErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SplashAuthError
-    with DiagnosticableTreeMixin
-    implements _SplashAuthError {
+class _$_SplashAuthError implements _SplashAuthError {
   const _$_SplashAuthError(this.error);
 
   @override
   final String error;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthSplashState.error(error: $error)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AuthSplashState.error'))
-      ..add(DiagnosticsProperty('error', error));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SplashAuthError &&
+            other is _$_SplashAuthError &&
             const DeepCollectionEquality().equals(other.error, error));
   }
 
@@ -9231,8 +8227,8 @@ class _$_SplashAuthError
 
   @JsonKey(ignore: true)
   @override
-  _$SplashAuthErrorCopyWith<_SplashAuthError> get copyWith =>
-      __$SplashAuthErrorCopyWithImpl<_SplashAuthError>(this, _$identity);
+  _$$_SplashAuthErrorCopyWith<_$_SplashAuthError> get copyWith =>
+      __$$_SplashAuthErrorCopyWithImpl<_$_SplashAuthError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -9310,49 +8306,13 @@ class _$_SplashAuthError
 }
 
 abstract class _SplashAuthError implements AuthSplashState {
-  const factory _SplashAuthError(String error) = _$_SplashAuthError;
+  const factory _SplashAuthError(final String error) = _$_SplashAuthError;
 
   String get error;
   @JsonKey(ignore: true)
-  _$SplashAuthErrorCopyWith<_SplashAuthError> get copyWith =>
+  _$$_SplashAuthErrorCopyWith<_$_SplashAuthError> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$AuthStateTearOff {
-  const _$AuthStateTearOff();
-
-  _InitializingAuth initializing() {
-    return const _InitializingAuth();
-  }
-
-  _NotAuthed notAuthed() {
-    return const _NotAuthed();
-  }
-
-  _WaitingUserCreation waitingUserCreation() {
-    return const _WaitingUserCreation();
-  }
-
-  _NeedUserInformation needUserInformation() {
-    return const _NeedUserInformation();
-  }
-
-  _Authed authed(dynamic user) {
-    return _Authed(
-      user,
-    );
-  }
-
-  _AuthError error(String error) {
-    return _AuthError(
-      error,
-    );
-  }
-}
-
-/// @nodoc
-const $AuthState = _$AuthStateTearOff();
 
 /// @nodoc
 mixin _$AuthState {
@@ -9436,46 +8396,38 @@ class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$InitializingAuthCopyWith<$Res> {
-  factory _$InitializingAuthCopyWith(
-          _InitializingAuth value, $Res Function(_InitializingAuth) then) =
-      __$InitializingAuthCopyWithImpl<$Res>;
+abstract class _$$_InitializingAuthCopyWith<$Res> {
+  factory _$$_InitializingAuthCopyWith(
+          _$_InitializingAuth value, $Res Function(_$_InitializingAuth) then) =
+      __$$_InitializingAuthCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializingAuthCopyWithImpl<$Res>
+class __$$_InitializingAuthCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res>
-    implements _$InitializingAuthCopyWith<$Res> {
-  __$InitializingAuthCopyWithImpl(
-      _InitializingAuth _value, $Res Function(_InitializingAuth) _then)
-      : super(_value, (v) => _then(v as _InitializingAuth));
+    implements _$$_InitializingAuthCopyWith<$Res> {
+  __$$_InitializingAuthCopyWithImpl(
+      _$_InitializingAuth _value, $Res Function(_$_InitializingAuth) _then)
+      : super(_value, (v) => _then(v as _$_InitializingAuth));
 
   @override
-  _InitializingAuth get _value => super._value as _InitializingAuth;
+  _$_InitializingAuth get _value => super._value as _$_InitializingAuth;
 }
 
 /// @nodoc
 
-class _$_InitializingAuth
-    with DiagnosticableTreeMixin
-    implements _InitializingAuth {
+class _$_InitializingAuth implements _InitializingAuth {
   const _$_InitializingAuth();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthState.initializing()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'AuthState.initializing'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _InitializingAuth);
+        (other.runtimeType == runtimeType && other is _$_InitializingAuth);
   }
 
   @override
@@ -9573,42 +8525,37 @@ abstract class _InitializingAuth implements AuthState {
 }
 
 /// @nodoc
-abstract class _$NotAuthedCopyWith<$Res> {
-  factory _$NotAuthedCopyWith(
-          _NotAuthed value, $Res Function(_NotAuthed) then) =
-      __$NotAuthedCopyWithImpl<$Res>;
+abstract class _$$_NotAuthedCopyWith<$Res> {
+  factory _$$_NotAuthedCopyWith(
+          _$_NotAuthed value, $Res Function(_$_NotAuthed) then) =
+      __$$_NotAuthedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NotAuthedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$NotAuthedCopyWith<$Res> {
-  __$NotAuthedCopyWithImpl(_NotAuthed _value, $Res Function(_NotAuthed) _then)
-      : super(_value, (v) => _then(v as _NotAuthed));
+class __$$_NotAuthedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$_NotAuthedCopyWith<$Res> {
+  __$$_NotAuthedCopyWithImpl(
+      _$_NotAuthed _value, $Res Function(_$_NotAuthed) _then)
+      : super(_value, (v) => _then(v as _$_NotAuthed));
 
   @override
-  _NotAuthed get _value => super._value as _NotAuthed;
+  _$_NotAuthed get _value => super._value as _$_NotAuthed;
 }
 
 /// @nodoc
 
-class _$_NotAuthed with DiagnosticableTreeMixin implements _NotAuthed {
+class _$_NotAuthed implements _NotAuthed {
   const _$_NotAuthed();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthState.notAuthed()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'AuthState.notAuthed'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _NotAuthed);
+        (other.runtimeType == runtimeType && other is _$_NotAuthed);
   }
 
   @override
@@ -9706,47 +8653,38 @@ abstract class _NotAuthed implements AuthState {
 }
 
 /// @nodoc
-abstract class _$WaitingUserCreationCopyWith<$Res> {
-  factory _$WaitingUserCreationCopyWith(_WaitingUserCreation value,
-          $Res Function(_WaitingUserCreation) then) =
-      __$WaitingUserCreationCopyWithImpl<$Res>;
+abstract class _$$_WaitingUserCreationCopyWith<$Res> {
+  factory _$$_WaitingUserCreationCopyWith(_$_WaitingUserCreation value,
+          $Res Function(_$_WaitingUserCreation) then) =
+      __$$_WaitingUserCreationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$WaitingUserCreationCopyWithImpl<$Res>
+class __$$_WaitingUserCreationCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res>
-    implements _$WaitingUserCreationCopyWith<$Res> {
-  __$WaitingUserCreationCopyWithImpl(
-      _WaitingUserCreation _value, $Res Function(_WaitingUserCreation) _then)
-      : super(_value, (v) => _then(v as _WaitingUserCreation));
+    implements _$$_WaitingUserCreationCopyWith<$Res> {
+  __$$_WaitingUserCreationCopyWithImpl(_$_WaitingUserCreation _value,
+      $Res Function(_$_WaitingUserCreation) _then)
+      : super(_value, (v) => _then(v as _$_WaitingUserCreation));
 
   @override
-  _WaitingUserCreation get _value => super._value as _WaitingUserCreation;
+  _$_WaitingUserCreation get _value => super._value as _$_WaitingUserCreation;
 }
 
 /// @nodoc
 
-class _$_WaitingUserCreation
-    with DiagnosticableTreeMixin
-    implements _WaitingUserCreation {
+class _$_WaitingUserCreation implements _WaitingUserCreation {
   const _$_WaitingUserCreation();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthState.waitingUserCreation()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AuthState.waitingUserCreation'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _WaitingUserCreation);
+        (other.runtimeType == runtimeType && other is _$_WaitingUserCreation);
   }
 
   @override
@@ -9844,47 +8782,38 @@ abstract class _WaitingUserCreation implements AuthState {
 }
 
 /// @nodoc
-abstract class _$NeedUserInformationCopyWith<$Res> {
-  factory _$NeedUserInformationCopyWith(_NeedUserInformation value,
-          $Res Function(_NeedUserInformation) then) =
-      __$NeedUserInformationCopyWithImpl<$Res>;
+abstract class _$$_NeedUserInformationCopyWith<$Res> {
+  factory _$$_NeedUserInformationCopyWith(_$_NeedUserInformation value,
+          $Res Function(_$_NeedUserInformation) then) =
+      __$$_NeedUserInformationCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NeedUserInformationCopyWithImpl<$Res>
+class __$$_NeedUserInformationCopyWithImpl<$Res>
     extends _$AuthStateCopyWithImpl<$Res>
-    implements _$NeedUserInformationCopyWith<$Res> {
-  __$NeedUserInformationCopyWithImpl(
-      _NeedUserInformation _value, $Res Function(_NeedUserInformation) _then)
-      : super(_value, (v) => _then(v as _NeedUserInformation));
+    implements _$$_NeedUserInformationCopyWith<$Res> {
+  __$$_NeedUserInformationCopyWithImpl(_$_NeedUserInformation _value,
+      $Res Function(_$_NeedUserInformation) _then)
+      : super(_value, (v) => _then(v as _$_NeedUserInformation));
 
   @override
-  _NeedUserInformation get _value => super._value as _NeedUserInformation;
+  _$_NeedUserInformation get _value => super._value as _$_NeedUserInformation;
 }
 
 /// @nodoc
 
-class _$_NeedUserInformation
-    with DiagnosticableTreeMixin
-    implements _NeedUserInformation {
+class _$_NeedUserInformation implements _NeedUserInformation {
   const _$_NeedUserInformation();
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthState.needUserInformation()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AuthState.needUserInformation'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _NeedUserInformation);
+        (other.runtimeType == runtimeType && other is _$_NeedUserInformation);
   }
 
   @override
@@ -9982,26 +8911,26 @@ abstract class _NeedUserInformation implements AuthState {
 }
 
 /// @nodoc
-abstract class _$AuthedCopyWith<$Res> {
-  factory _$AuthedCopyWith(_Authed value, $Res Function(_Authed) then) =
-      __$AuthedCopyWithImpl<$Res>;
+abstract class _$$_AuthedCopyWith<$Res> {
+  factory _$$_AuthedCopyWith(_$_Authed value, $Res Function(_$_Authed) then) =
+      __$$_AuthedCopyWithImpl<$Res>;
   $Res call({dynamic user});
 }
 
 /// @nodoc
-class __$AuthedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$AuthedCopyWith<$Res> {
-  __$AuthedCopyWithImpl(_Authed _value, $Res Function(_Authed) _then)
-      : super(_value, (v) => _then(v as _Authed));
+class __$$_AuthedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$_AuthedCopyWith<$Res> {
+  __$$_AuthedCopyWithImpl(_$_Authed _value, $Res Function(_$_Authed) _then)
+      : super(_value, (v) => _then(v as _$_Authed));
 
   @override
-  _Authed get _value => super._value as _Authed;
+  _$_Authed get _value => super._value as _$_Authed;
 
   @override
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(_Authed(
+    return _then(_$_Authed(
       user == freezed
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
@@ -10012,30 +8941,22 @@ class __$AuthedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Authed with DiagnosticableTreeMixin implements _Authed {
+class _$_Authed implements _Authed {
   const _$_Authed(this.user);
 
   @override
   final dynamic user;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthState.authed(user: $user)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AuthState.authed'))
-      ..add(DiagnosticsProperty('user', user));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Authed &&
+            other is _$_Authed &&
             const DeepCollectionEquality().equals(other.user, user));
   }
 
@@ -10045,8 +8966,8 @@ class _$_Authed with DiagnosticableTreeMixin implements _Authed {
 
   @JsonKey(ignore: true)
   @override
-  _$AuthedCopyWith<_Authed> get copyWith =>
-      __$AuthedCopyWithImpl<_Authed>(this, _$identity);
+  _$$_AuthedCopyWith<_$_Authed> get copyWith =>
+      __$$_AuthedCopyWithImpl<_$_Authed>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -10136,35 +9057,37 @@ class _$_Authed with DiagnosticableTreeMixin implements _Authed {
 }
 
 abstract class _Authed implements AuthState {
-  const factory _Authed(dynamic user) = _$_Authed;
+  const factory _Authed(final dynamic user) = _$_Authed;
 
   dynamic get user;
   @JsonKey(ignore: true)
-  _$AuthedCopyWith<_Authed> get copyWith => throw _privateConstructorUsedError;
+  _$$_AuthedCopyWith<_$_Authed> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$AuthErrorCopyWith<$Res> {
-  factory _$AuthErrorCopyWith(
-          _AuthError value, $Res Function(_AuthError) then) =
-      __$AuthErrorCopyWithImpl<$Res>;
+abstract class _$$_AuthErrorCopyWith<$Res> {
+  factory _$$_AuthErrorCopyWith(
+          _$_AuthError value, $Res Function(_$_AuthError) then) =
+      __$$_AuthErrorCopyWithImpl<$Res>;
   $Res call({String error});
 }
 
 /// @nodoc
-class __$AuthErrorCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$AuthErrorCopyWith<$Res> {
-  __$AuthErrorCopyWithImpl(_AuthError _value, $Res Function(_AuthError) _then)
-      : super(_value, (v) => _then(v as _AuthError));
+class __$$_AuthErrorCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
+    implements _$$_AuthErrorCopyWith<$Res> {
+  __$$_AuthErrorCopyWithImpl(
+      _$_AuthError _value, $Res Function(_$_AuthError) _then)
+      : super(_value, (v) => _then(v as _$_AuthError));
 
   @override
-  _AuthError get _value => super._value as _AuthError;
+  _$_AuthError get _value => super._value as _$_AuthError;
 
   @override
   $Res call({
     Object? error = freezed,
   }) {
-    return _then(_AuthError(
+    return _then(_$_AuthError(
       error == freezed
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -10175,30 +9098,22 @@ class __$AuthErrorCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AuthError with DiagnosticableTreeMixin implements _AuthError {
+class _$_AuthError implements _AuthError {
   const _$_AuthError(this.error);
 
   @override
   final String error;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'AuthState.error(error: $error)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'AuthState.error'))
-      ..add(DiagnosticsProperty('error', error));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AuthError &&
+            other is _$_AuthError &&
             const DeepCollectionEquality().equals(other.error, error));
   }
 
@@ -10208,8 +9123,8 @@ class _$_AuthError with DiagnosticableTreeMixin implements _AuthError {
 
   @JsonKey(ignore: true)
   @override
-  _$AuthErrorCopyWith<_AuthError> get copyWith =>
-      __$AuthErrorCopyWithImpl<_AuthError>(this, _$identity);
+  _$$_AuthErrorCopyWith<_$_AuthError> get copyWith =>
+      __$$_AuthErrorCopyWithImpl<_$_AuthError>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -10299,52 +9214,13 @@ class _$_AuthError with DiagnosticableTreeMixin implements _AuthError {
 }
 
 abstract class _AuthError implements AuthState {
-  const factory _AuthError(String error) = _$_AuthError;
+  const factory _AuthError(final String error) = _$_AuthError;
 
   String get error;
   @JsonKey(ignore: true)
-  _$AuthErrorCopyWith<_AuthError> get copyWith =>
+  _$$_AuthErrorCopyWith<_$_AuthError> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SignInThemeTearOff {
-  const _$SignInThemeTearOff();
-
-  _SignInTheme call(
-      {double maxWidth = 400,
-      double buttonRadius = 8.0,
-      double buttonPadding = 16.0,
-      String? backgroundImage,
-      required ui.Color primaryColor,
-      required ui.Color scaffoldBackgroundColor,
-      required ui.Color textColor,
-      required ui.Color buttonBackgroundColor,
-      required ui.Color buttonTextColor,
-      required ui.Color borderColor,
-      required ui.Color dividerColor,
-      double buttonFontSize = 18.0,
-      double spaceBetweenButtons = 15.0}) {
-    return _SignInTheme(
-      maxWidth: maxWidth,
-      buttonRadius: buttonRadius,
-      buttonPadding: buttonPadding,
-      backgroundImage: backgroundImage,
-      primaryColor: primaryColor,
-      scaffoldBackgroundColor: scaffoldBackgroundColor,
-      textColor: textColor,
-      buttonBackgroundColor: buttonBackgroundColor,
-      buttonTextColor: buttonTextColor,
-      borderColor: borderColor,
-      dividerColor: dividerColor,
-      buttonFontSize: buttonFontSize,
-      spaceBetweenButtons: spaceBetweenButtons,
-    );
-  }
-}
-
-/// @nodoc
-const $SignInTheme = _$SignInThemeTearOff();
 
 /// @nodoc
 mixin _$SignInTheme {
@@ -10470,11 +9346,11 @@ class _$SignInThemeCopyWithImpl<$Res> implements $SignInThemeCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$SignInThemeCopyWith<$Res>
+abstract class _$$_SignInThemeCopyWith<$Res>
     implements $SignInThemeCopyWith<$Res> {
-  factory _$SignInThemeCopyWith(
-          _SignInTheme value, $Res Function(_SignInTheme) then) =
-      __$SignInThemeCopyWithImpl<$Res>;
+  factory _$$_SignInThemeCopyWith(
+          _$_SignInTheme value, $Res Function(_$_SignInTheme) then) =
+      __$$_SignInThemeCopyWithImpl<$Res>;
   @override
   $Res call(
       {double maxWidth,
@@ -10493,14 +9369,14 @@ abstract class _$SignInThemeCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
-    implements _$SignInThemeCopyWith<$Res> {
-  __$SignInThemeCopyWithImpl(
-      _SignInTheme _value, $Res Function(_SignInTheme) _then)
-      : super(_value, (v) => _then(v as _SignInTheme));
+class __$$_SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
+    implements _$$_SignInThemeCopyWith<$Res> {
+  __$$_SignInThemeCopyWithImpl(
+      _$_SignInTheme _value, $Res Function(_$_SignInTheme) _then)
+      : super(_value, (v) => _then(v as _$_SignInTheme));
 
   @override
-  _SignInTheme get _value => super._value as _SignInTheme;
+  _$_SignInTheme get _value => super._value as _$_SignInTheme;
 
   @override
   $Res call({
@@ -10518,7 +9394,7 @@ class __$SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
     Object? buttonFontSize = freezed,
     Object? spaceBetweenButtons = freezed,
   }) {
-    return _then(_SignInTheme(
+    return _then(_$_SignInTheme(
       maxWidth: maxWidth == freezed
           ? _value.maxWidth
           : maxWidth // ignore: cast_nullable_to_non_nullable
@@ -10577,7 +9453,7 @@ class __$SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInTheme with DiagnosticableTreeMixin implements _SignInTheme {
+class _$_SignInTheme implements _SignInTheme {
   const _$_SignInTheme(
       {this.maxWidth = 400,
       this.buttonRadius = 8.0,
@@ -10593,14 +9469,14 @@ class _$_SignInTheme with DiagnosticableTreeMixin implements _SignInTheme {
       this.buttonFontSize = 18.0,
       this.spaceBetweenButtons = 15.0});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final double maxWidth;
-  @JsonKey()
   @override
+  @JsonKey()
   final double buttonRadius;
-  @JsonKey()
   @override
+  @JsonKey()
   final double buttonPadding;
   @override
   final String? backgroundImage;
@@ -10618,44 +9494,23 @@ class _$_SignInTheme with DiagnosticableTreeMixin implements _SignInTheme {
   final ui.Color borderColor;
   @override
   final ui.Color dividerColor;
-  @JsonKey()
   @override
+  @JsonKey()
   final double buttonFontSize;
-  @JsonKey()
   @override
+  @JsonKey()
   final double spaceBetweenButtons;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignInTheme(maxWidth: $maxWidth, buttonRadius: $buttonRadius, buttonPadding: $buttonPadding, backgroundImage: $backgroundImage, primaryColor: $primaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, textColor: $textColor, buttonBackgroundColor: $buttonBackgroundColor, buttonTextColor: $buttonTextColor, borderColor: $borderColor, dividerColor: $dividerColor, buttonFontSize: $buttonFontSize, spaceBetweenButtons: $spaceBetweenButtons)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignInTheme'))
-      ..add(DiagnosticsProperty('maxWidth', maxWidth))
-      ..add(DiagnosticsProperty('buttonRadius', buttonRadius))
-      ..add(DiagnosticsProperty('buttonPadding', buttonPadding))
-      ..add(DiagnosticsProperty('backgroundImage', backgroundImage))
-      ..add(DiagnosticsProperty('primaryColor', primaryColor))
-      ..add(DiagnosticsProperty(
-          'scaffoldBackgroundColor', scaffoldBackgroundColor))
-      ..add(DiagnosticsProperty('textColor', textColor))
-      ..add(DiagnosticsProperty('buttonBackgroundColor', buttonBackgroundColor))
-      ..add(DiagnosticsProperty('buttonTextColor', buttonTextColor))
-      ..add(DiagnosticsProperty('borderColor', borderColor))
-      ..add(DiagnosticsProperty('dividerColor', dividerColor))
-      ..add(DiagnosticsProperty('buttonFontSize', buttonFontSize))
-      ..add(DiagnosticsProperty('spaceBetweenButtons', spaceBetweenButtons));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SignInTheme &&
+            other is _$_SignInTheme &&
             const DeepCollectionEquality().equals(other.maxWidth, maxWidth) &&
             const DeepCollectionEquality()
                 .equals(other.buttonRadius, buttonRadius) &&
@@ -10701,25 +9556,25 @@ class _$_SignInTheme with DiagnosticableTreeMixin implements _SignInTheme {
 
   @JsonKey(ignore: true)
   @override
-  _$SignInThemeCopyWith<_SignInTheme> get copyWith =>
-      __$SignInThemeCopyWithImpl<_SignInTheme>(this, _$identity);
+  _$$_SignInThemeCopyWith<_$_SignInTheme> get copyWith =>
+      __$$_SignInThemeCopyWithImpl<_$_SignInTheme>(this, _$identity);
 }
 
 abstract class _SignInTheme implements SignInTheme {
   const factory _SignInTheme(
-      {double maxWidth,
-      double buttonRadius,
-      double buttonPadding,
-      String? backgroundImage,
-      required ui.Color primaryColor,
-      required ui.Color scaffoldBackgroundColor,
-      required ui.Color textColor,
-      required ui.Color buttonBackgroundColor,
-      required ui.Color buttonTextColor,
-      required ui.Color borderColor,
-      required ui.Color dividerColor,
-      double buttonFontSize,
-      double spaceBetweenButtons}) = _$_SignInTheme;
+      {final double maxWidth,
+      final double buttonRadius,
+      final double buttonPadding,
+      final String? backgroundImage,
+      required final ui.Color primaryColor,
+      required final ui.Color scaffoldBackgroundColor,
+      required final ui.Color textColor,
+      required final ui.Color buttonBackgroundColor,
+      required final ui.Color buttonTextColor,
+      required final ui.Color borderColor,
+      required final ui.Color dividerColor,
+      final double buttonFontSize,
+      final double spaceBetweenButtons}) = _$_SignInTheme;
 
   @override
   double get maxWidth;
@@ -10749,6 +9604,6 @@ abstract class _SignInTheme implements SignInTheme {
   double get spaceBetweenButtons;
   @override
   @JsonKey(ignore: true)
-  _$SignInThemeCopyWith<_SignInTheme> get copyWith =>
+  _$$_SignInThemeCopyWith<_$_SignInTheme> get copyWith =>
       throw _privateConstructorUsedError;
 }

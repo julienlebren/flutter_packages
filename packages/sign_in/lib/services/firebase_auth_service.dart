@@ -260,12 +260,10 @@ class FirebaseAuthService {
   }
 
   Future<void> signOut() async {
-    print("service signOut ok 1");
     final googleSignIn = GoogleSignIn();
     await googleSignIn.signOut();
     //final facebookLogin = FacebookLogin();
     //await facebookLogin.logOut();
-    print("service signOut ok 2");
     await _firebaseAuth.signOut();
   }
 }

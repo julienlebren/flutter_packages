@@ -229,20 +229,8 @@ class ListTileContents extends ConsumerWidget {
                                   if (caption is Widget) {
                                     return caption;
                                   } else if (caption is String) {
-                                    return Text(
-                                      caption!,
-                                      style: TextStyle(
-                                        color: listTheme.captionColor,
-                                        fontSize: listTheme.captionFontSize,
-                                        letterSpacing: isCupertino() ? -0.5 : 0,
-                                      ),
-                                      textAlign: TextAlign.left,
-                                      maxLines: listTheme.captionMaxLines,
-                                      overflow:
-                                          listTheme.captionMaxLines != null
-                                              ? TextOverflow.ellipsis
-                                              : null,
-                                    );
+                                    return PlatformListTileCaption(
+                                        value: caption!);
                                   }
                                 })(),
                               ),
@@ -276,6 +264,33 @@ class ListTileContents extends ConsumerWidget {
                 ],
               ),
       ),
+    );
+  }
+}
+
+class PlatformListTileCaption extends ConsumerWidget {
+  const PlatformListTileCaption({
+    required this.value,
+    Key? key,
+  }) : super(key: key);
+
+  final String value;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final listTheme = ref.watch(listViewThemeProvider);
+
+    return Text(
+      value,
+      style: TextStyle(
+        color: listTheme.captionColor,
+        fontSize: listTheme.captionFontSize,
+        letterSpacing: isCupertino() ? -0.5 : 0,
+      ),
+      textAlign: TextAlign.left,
+      maxLines: listTheme.captionMaxLines,
+      overflow:
+          listTheme.captionMaxLines != null ? TextOverflow.ellipsis : null,
     );
   }
 }
