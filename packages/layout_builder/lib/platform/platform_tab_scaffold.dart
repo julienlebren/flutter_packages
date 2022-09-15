@@ -27,7 +27,7 @@ class PlatformTabScaffold
       final navigator = router.navigatorKey.currentState!;
 
       final tab = tabs[index];
-      //print("offset: ${ref.read(tab.scrollControllerProvider!).offset}");
+      print("offset: ${ref.read(tab.scrollControllerProvider!).offset}");
       if (tab.scrollControllerProvider != null &&
           ref.read(tab.scrollControllerProvider!).offset > 0) {
         ref.read(tab.scrollControllerProvider!).animateTo(0,
