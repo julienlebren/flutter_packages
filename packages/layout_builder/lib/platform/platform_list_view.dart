@@ -76,6 +76,7 @@ class ListVisibilityDetector extends ConsumerWidget {
         if (controller != null) {
           if (visibilityInfo.visibleFraction == 1) {
             ref.read(scrollControllerProvider.state).state = controller;
+            print("Controller set to $controller");
           }
         }
       },
