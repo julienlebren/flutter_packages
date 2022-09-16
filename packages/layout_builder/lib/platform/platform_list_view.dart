@@ -56,35 +56,6 @@ class PlatformListView extends PlatformWidgetBase<ScrollViewVisibilityDetector,
   }
 }
 
-class ScrollViewVisibilityDetector extends ConsumerWidget {
-  const ScrollViewVisibilityDetector({
-    this.controller,
-    required this.child,
-    Key? key,
-  }) : super(key: key);
-
-  final ScrollController? controller;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return VisibilityDetector(
-      key: key ?? UniqueKey(),
-      onVisibilityChanged: (visibilityInfo) {
-        print(
-            'Widget ${visibilityInfo.key} is ${visibilityInfo.visibleFraction}% visible');
-        if (controller != null) {
-          if (visibilityInfo.visibleFraction == 1) {
-            ref.read(scrollControllerProvider.state).state = controller;
-            print("Controller set to $controller");
-          }
-        }
-      },
-      child: child,
-    );
-  }
-}
-
 class ListDivider extends ConsumerWidget {
   const ListDivider({Key? key}) : super(key: key);
 

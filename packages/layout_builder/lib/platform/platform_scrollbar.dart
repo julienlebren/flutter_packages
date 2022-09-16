@@ -1,32 +1,72 @@
 part of platform;
 
-class PlatformScrollbar
-    extends PlatformWidgetBase<Scrollbar, CupertinoScrollbar> {
+class PlatformScrollbar extends PlatformWidgetBase<ScrollViewVisibilityDetector,
+    ScrollViewVisibilityDetector> {
   PlatformScrollbar({
     this.thumbVisibility = false,
     this.controller,
     required this.child,
+    this.key,
   });
 
   final ScrollController? controller;
   final bool thumbVisibility;
   final Widget child;
+  final Key? key;
 
   @override
-  Scrollbar createMaterialWidget(BuildContext context, WidgetRef ref) {
-    return Scrollbar(
+  ScrollViewVisibilityDetector createMaterialWidget(
+      BuildContext context, WidgetRef ref) {
+    return ScrollViewVisibilityDetector(
+      key: key,
       controller: controller,
-      thumbVisibility: thumbVisibility,
-      child: child,
+      child: Scrollbar(
+        controller: controller,
+        thumbVisibility: thumbVisibility,
+        child: child,
+      ),
     );
   }
 
   @override
-  CupertinoScrollbar createCupertinoWidget(
+  ScrollViewVisibilityDetector createCupertinoWidget(
       BuildContext context, WidgetRef ref) {
-    return CupertinoScrollbar(
+    return ScrollViewVisibilityDetector(
+      key: key,
       controller: controller,
-      thumbVisibility: thumbVisibility,
+      child: CupertinoScrollbar(
+        controller: controller,
+        thumbVisibility: thumbVisibility,
+        child: child,
+      ),
+    );
+  }
+}
+
+class ScrollViewVisibilityDetector extends ConsumerWidget {
+  const ScrollViewVisibilityDetector({
+    this.controller,
+    required this.child,
+    Key? key,
+  }) : super(key: key);
+
+  final ScrollController? controller;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return VisibilityDetector(
+      key: key ?? UniqueKey(),
+      onVisibilityChanged: (visibilityInfo) {
+        print(
+            'Widget ${visibilityInfo.key} is ${visibilityInfo.visibleFraction}% visible');
+        if (controller != null) {
+          if (visibilityInfo.visibleFraction == 1) {
+            ref.read(scrollControllerProvider.state).state = controller;
+            print("Controller set to $controller");
+          }
+        }
+      },
       child: child,
     );
   }
