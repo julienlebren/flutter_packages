@@ -9,6 +9,7 @@ class PlatformListView
     this.shrinkWrap = false,
     this.scrollPhysics = const AlwaysScrollableScrollPhysics(),
     this.isModal = false,
+    this.key,
   }) : super();
 
   final int itemCount;
@@ -17,11 +18,13 @@ class PlatformListView
   final bool shrinkWrap;
   final ScrollPhysics scrollPhysics;
   final bool isModal;
+  final Key? key;
 
   @override
   ListVisibilityDetector createMaterialWidget(
       BuildContext context, WidgetRef ref) {
     return ListVisibilityDetector(
+      key: key,
       controller: controller,
       child: ListView.builder(
         itemCount: itemCount,
@@ -38,6 +41,7 @@ class PlatformListView
     final safePadding = isModal ? MediaQuery.of(context).padding.bottom : 0.0;
 
     return ListVisibilityDetector(
+      key: key,
       controller: controller,
       child: ListView.separated(
         physics: scrollPhysics,
@@ -65,7 +69,7 @@ class ListVisibilityDetector extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return VisibilityDetector(
-      key: UniqueKey(),
+      key: key ?? UniqueKey(),
       onVisibilityChanged: (visibilityInfo) {
         print(
             'Widget ${visibilityInfo.key} is ${visibilityInfo.visibleFraction}% visible');
