@@ -1,7 +1,7 @@
 part of platform;
 
-class PlatformListView
-    extends PlatformWidgetBase<ListVisibilityDetector, ListVisibilityDetector> {
+class PlatformListView extends PlatformWidgetBase<ScrollViewVisibilityDetector,
+    ScrollViewVisibilityDetector> {
   const PlatformListView({
     required this.itemCount,
     required this.itemBuilder,
@@ -21,9 +21,9 @@ class PlatformListView
   final Key? key;
 
   @override
-  ListVisibilityDetector createMaterialWidget(
+  ScrollViewVisibilityDetector createMaterialWidget(
       BuildContext context, WidgetRef ref) {
-    return ListVisibilityDetector(
+    return ScrollViewVisibilityDetector(
       key: key,
       controller: controller,
       child: ListView.builder(
@@ -36,11 +36,11 @@ class PlatformListView
   }
 
   @override
-  ListVisibilityDetector createCupertinoWidget(
+  ScrollViewVisibilityDetector createCupertinoWidget(
       BuildContext context, WidgetRef ref) {
     final safePadding = isModal ? MediaQuery.of(context).padding.bottom : 0.0;
 
-    return ListVisibilityDetector(
+    return ScrollViewVisibilityDetector(
       key: key,
       controller: controller,
       child: ListView.separated(
@@ -56,8 +56,8 @@ class PlatformListView
   }
 }
 
-class ListVisibilityDetector extends ConsumerWidget {
-  const ListVisibilityDetector({
+class ScrollViewVisibilityDetector extends ConsumerWidget {
+  const ScrollViewVisibilityDetector({
     this.controller,
     required this.child,
     Key? key,
