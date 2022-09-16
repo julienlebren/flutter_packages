@@ -69,8 +69,10 @@ class ListVisibilityDetector extends ConsumerWidget {
       onVisibilityChanged: (visibilityInfo) {
         print(
             'Widget ${visibilityInfo.key} is ${visibilityInfo.visibleFraction}% visible');
-        if (controller != null && visibilityInfo.visibleFraction > 0) {
-          ref.read(scrollControllerProvider.state).state = controller;
+        if (controller != null) {
+          if (visibilityInfo.visibleFraction == 1) {
+            ref.read(scrollControllerProvider.state).state = controller;
+          }
         }
       },
       child: child,
