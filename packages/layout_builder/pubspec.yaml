@@ -1,6 +1,6 @@
 name: layout_builder
 description: Layout building templates for apps built by https://github.com/julienlebren 
-version: 2.7.3
+version: 2.7.4
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -34,6 +34,7 @@ dependencies:
   freezed_annotation: ^2.1.0
   numberpicker: ^2.0.1
   page_transition: ^2.0.5
+  visibility_detector: ^0.3.3
 
 dev_dependencies:
   flutter_test:

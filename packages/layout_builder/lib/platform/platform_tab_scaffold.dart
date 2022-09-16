@@ -14,6 +14,10 @@ class TabItem with _$TabItem {
 
 final tabsProvider = Provider<List<TabItem>>((_) => throw UnimplementedError());
 
+final scrollControllerProvider = StateProvider<ScrollController?>((_) {
+  return null;
+});
+
 final currentTabIndexProvider = StateProvider<int>((_) => 0);
 
 class PlatformTabScaffold
@@ -27,11 +31,13 @@ class PlatformTabScaffold
       final navigator = router.navigatorKey.currentState!;
 
       final tab = tabs[index];
-      print("offset: ${ref.read(tab.scrollControllerProvider!).offset}");
-      if (tab.scrollControllerProvider != null &&
-          ref.read(tab.scrollControllerProvider!).offset > 0) {
-        ref.read(tab.scrollControllerProvider!).animateTo(0,
-            duration: Duration(milliseconds: 1000), curve: Curves.ease);
+      final scrollController = ref.read(scrollControllerProvider);
+      if (scrollController != null && scrollController.offset > 0) {
+        scrollController.animateTo(
+          0,
+          duration: Duration(milliseconds: 1000),
+          curve: Curves.ease,
+        );
       } else if (tab.popToFirstRoute == true) {
         navigator.popUntil((route) => route.isFirst);
       } else {

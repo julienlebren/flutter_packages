@@ -1,6 +1,7 @@
 part of platform;
 
-class PlatformListView extends PlatformWidgetBase<ListView, ListView> {
+class PlatformListView
+    extends PlatformWidgetBase<ListVisibilityDetector, ListVisibilityDetector> {
   const PlatformListView({
     required this.itemCount,
     required this.itemBuilder,
@@ -18,27 +19,59 @@ class PlatformListView extends PlatformWidgetBase<ListView, ListView> {
   final bool isModal;
 
   @override
-  ListView createMaterialWidget(BuildContext context, WidgetRef ref) {
-    return ListView.builder(
-      itemCount: itemCount,
-      itemBuilder: itemBuilder,
+  ListVisibilityDetector createMaterialWidget(
+      BuildContext context, WidgetRef ref) {
+    return ListVisibilityDetector(
       controller: controller,
-      shrinkWrap: shrinkWrap,
+      child: ListView.builder(
+        itemCount: itemCount,
+        itemBuilder: itemBuilder,
+        controller: controller,
+        shrinkWrap: shrinkWrap,
+      ),
     );
   }
 
   @override
-  ListView createCupertinoWidget(BuildContext context, WidgetRef ref) {
+  ListVisibilityDetector createCupertinoWidget(
+      BuildContext context, WidgetRef ref) {
     final safePadding = isModal ? MediaQuery.of(context).padding.bottom : 0.0;
 
-    return ListView.separated(
-      physics: scrollPhysics,
-      padding: EdgeInsets.only(bottom: safePadding),
-      itemCount: itemCount,
-      itemBuilder: itemBuilder,
+    return ListVisibilityDetector(
       controller: controller,
-      shrinkWrap: shrinkWrap,
-      separatorBuilder: (_, __) => const ListDivider(),
+      child: ListView.separated(
+        physics: scrollPhysics,
+        padding: EdgeInsets.only(bottom: safePadding),
+        itemCount: itemCount,
+        itemBuilder: itemBuilder,
+        controller: controller,
+        shrinkWrap: shrinkWrap,
+        separatorBuilder: (_, __) => const ListDivider(),
+      ),
+    );
+  }
+}
+
+class ListVisibilityDetector extends ConsumerWidget {
+  const ListVisibilityDetector({
+    this.controller,
+    required this.child,
+    Key? key,
+  }) : super(key: key);
+
+  final ScrollController? controller;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return VisibilityDetector(
+      key: UniqueKey(),
+      onVisibilityChanged: (visibilityInfo) {
+        if (controller != null && visibilityInfo.visibleFraction > 0) {
+          ref.read(scrollControllerProvider.state).state = controller;
+        }
+      },
+      child: child,
     );
   }
 }
