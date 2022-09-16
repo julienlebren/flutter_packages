@@ -35,7 +35,7 @@ class PlatformTabScaffold
       if (scrollController != null && scrollController.offset > 0) {
         scrollController.animateTo(
           0,
-          duration: Duration(milliseconds: 1000),
+          duration: Duration(milliseconds: 200),
           curve: Curves.ease,
         );
       } else if (tab.popToFirstRoute == true) {

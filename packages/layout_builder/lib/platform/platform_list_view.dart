@@ -25,7 +25,7 @@ class PlatformListView
       BuildContext context, WidgetRef ref) {
     return ListVisibilityDetector(
       key: key,
-      controller: controller ?? ScrollController(),
+      controller: controller,
       child: ListView.builder(
         itemCount: itemCount,
         itemBuilder: itemBuilder,
@@ -42,7 +42,7 @@ class PlatformListView
 
     return ListVisibilityDetector(
       key: key,
-      controller: controller ?? ScrollController(),
+      controller: controller,
       child: ListView.separated(
         physics: scrollPhysics,
         padding: EdgeInsets.only(bottom: safePadding),
