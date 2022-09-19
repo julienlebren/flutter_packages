@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -9,14 +8,14 @@ import 'package:intl/intl.dart' as intl;
 import 'purchases_localizations_en.dart';
 import 'purchases_localizations_fr.dart';
 
-/// Callers can lookup localized strings with an instance of PurchasesLocalizations returned
-/// by `PurchasesLocalizations.of(context)`.
+/// Callers can lookup localized strings with an instance of PurchasesLocalizations
+/// returned by `PurchasesLocalizations.of(context)`.
 ///
 /// Applications need to include `PurchasesLocalizations.delegate()` in their app's
-/// localizationDelegates list, and the locales they support in the app's
-/// supportedLocales list. For example:
+/// `localizationDelegates` list, and the locales they support in the app's
+/// `supportedLocales` list. For example:
 ///
-/// ```
+/// ```dart
 /// import 'l10n/purchases_localizations.dart';
 ///
 /// return MaterialApp(
@@ -31,14 +30,14 @@ import 'purchases_localizations_fr.dart';
 /// Please make sure to update your pubspec.yaml to include the following
 /// packages:
 ///
-/// ```
+/// ```yaml
 /// dependencies:
 ///   # Internationalization support.
 ///   flutter_localizations:
 ///     sdk: flutter
 ///   intl: any # Use the pinned version from flutter_localizations
 ///
-///   # rest of dependencies
+///   # Rest of dependencies
 /// ```
 ///
 /// ## iOS Applications
@@ -106,6 +105,12 @@ abstract class PurchasesLocalizations {
   /// **'Oops! Something went wrong...'**
   String get errorTitle;
 
+  /// No description provided for @monthPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'{price}/month'**
+  String monthPrice(String price);
+
   /// No description provided for @priceNotLoaded.
   ///
   /// In en, this message translates to:
@@ -135,6 +140,30 @@ abstract class PurchasesLocalizations {
   /// In en, this message translates to:
   /// **'Terms of Use'**
   String get termsButton;
+
+  /// No description provided for @sixMonthPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'{price}/6 months'**
+  String sixMonthPrice(String price);
+
+  /// No description provided for @threeMonthPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'{price}/3 months'**
+  String threeMonthPrice(String price);
+
+  /// No description provided for @twoMonthPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'{price}/2 months'**
+  String twoMonthPrice(String price);
+
+  /// No description provided for @weekPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'{price}/week'**
+  String weekPrice(String price);
 
   /// No description provided for @yearPrice.
   ///

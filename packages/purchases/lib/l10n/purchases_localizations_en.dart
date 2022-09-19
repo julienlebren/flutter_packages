@@ -1,6 +1,3 @@
-
-
-
 import 'purchases_localizations.dart';
 
 /// The translations for English (`en`).
@@ -12,6 +9,11 @@ class PurchasesLocalizationsEn extends PurchasesLocalizations {
 
   @override
   String get errorTitle => 'Oops! Something went wrong...';
+
+  @override
+  String monthPrice(String price) {
+    return '$price/month';
+  }
 
   @override
   String get priceNotLoaded => 'Unable to contact Store at the moment.';
@@ -27,6 +29,26 @@ class PurchasesLocalizationsEn extends PurchasesLocalizations {
 
   @override
   String get termsButton => 'Terms of Use';
+
+  @override
+  String sixMonthPrice(String price) {
+    return '$price/6 months';
+  }
+
+  @override
+  String threeMonthPrice(String price) {
+    return '$price/3 months';
+  }
+
+  @override
+  String twoMonthPrice(String price) {
+    return '$price/2 months';
+  }
+
+  @override
+  String weekPrice(String price) {
+    return '$price/week';
+  }
 
   @override
   String yearPrice(String price) {

@@ -12,31 +12,7 @@ part of subscription_service;
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$PurchasesEventTearOff {
-  const _$PurchasesEventTearOff();
-
-  _FetchOfferings fetchOfferings() {
-    return const _FetchOfferings();
-  }
-
-  _Purchase purchase() {
-    return const _Purchase();
-  }
-
-  _RestorePurchases restorePurchases() {
-    return const _RestorePurchases();
-  }
-
-  _OpenOffers openOffers() {
-    return const _OpenOffers();
-  }
-}
-
-/// @nodoc
-const $PurchasesEvent = _$PurchasesEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$PurchasesEvent {
@@ -110,22 +86,22 @@ class _$PurchasesEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$FetchOfferingsCopyWith<$Res> {
-  factory _$FetchOfferingsCopyWith(
-          _FetchOfferings value, $Res Function(_FetchOfferings) then) =
-      __$FetchOfferingsCopyWithImpl<$Res>;
+abstract class _$$_FetchOfferingsCopyWith<$Res> {
+  factory _$$_FetchOfferingsCopyWith(
+          _$_FetchOfferings value, $Res Function(_$_FetchOfferings) then) =
+      __$$_FetchOfferingsCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$FetchOfferingsCopyWithImpl<$Res>
+class __$$_FetchOfferingsCopyWithImpl<$Res>
     extends _$PurchasesEventCopyWithImpl<$Res>
-    implements _$FetchOfferingsCopyWith<$Res> {
-  __$FetchOfferingsCopyWithImpl(
-      _FetchOfferings _value, $Res Function(_FetchOfferings) _then)
-      : super(_value, (v) => _then(v as _FetchOfferings));
+    implements _$$_FetchOfferingsCopyWith<$Res> {
+  __$$_FetchOfferingsCopyWithImpl(
+      _$_FetchOfferings _value, $Res Function(_$_FetchOfferings) _then)
+      : super(_value, (v) => _then(v as _$_FetchOfferings));
 
   @override
-  _FetchOfferings get _value => super._value as _FetchOfferings;
+  _$_FetchOfferings get _value => super._value as _$_FetchOfferings;
 }
 
 /// @nodoc
@@ -141,7 +117,7 @@ class _$_FetchOfferings implements _FetchOfferings {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _FetchOfferings);
+        (other.runtimeType == runtimeType && other is _$_FetchOfferings);
   }
 
   @override
@@ -227,19 +203,21 @@ abstract class _FetchOfferings implements PurchasesEvent {
 }
 
 /// @nodoc
-abstract class _$PurchaseCopyWith<$Res> {
-  factory _$PurchaseCopyWith(_Purchase value, $Res Function(_Purchase) then) =
-      __$PurchaseCopyWithImpl<$Res>;
+abstract class _$$_PurchaseCopyWith<$Res> {
+  factory _$$_PurchaseCopyWith(
+          _$_Purchase value, $Res Function(_$_Purchase) then) =
+      __$$_PurchaseCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$PurchaseCopyWithImpl<$Res> extends _$PurchasesEventCopyWithImpl<$Res>
-    implements _$PurchaseCopyWith<$Res> {
-  __$PurchaseCopyWithImpl(_Purchase _value, $Res Function(_Purchase) _then)
-      : super(_value, (v) => _then(v as _Purchase));
+class __$$_PurchaseCopyWithImpl<$Res> extends _$PurchasesEventCopyWithImpl<$Res>
+    implements _$$_PurchaseCopyWith<$Res> {
+  __$$_PurchaseCopyWithImpl(
+      _$_Purchase _value, $Res Function(_$_Purchase) _then)
+      : super(_value, (v) => _then(v as _$_Purchase));
 
   @override
-  _Purchase get _value => super._value as _Purchase;
+  _$_Purchase get _value => super._value as _$_Purchase;
 }
 
 /// @nodoc
@@ -255,7 +233,7 @@ class _$_Purchase implements _Purchase {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Purchase);
+        (other.runtimeType == runtimeType && other is _$_Purchase);
   }
 
   @override
@@ -341,22 +319,22 @@ abstract class _Purchase implements PurchasesEvent {
 }
 
 /// @nodoc
-abstract class _$RestorePurchasesCopyWith<$Res> {
-  factory _$RestorePurchasesCopyWith(
-          _RestorePurchases value, $Res Function(_RestorePurchases) then) =
-      __$RestorePurchasesCopyWithImpl<$Res>;
+abstract class _$$_RestorePurchasesCopyWith<$Res> {
+  factory _$$_RestorePurchasesCopyWith(
+          _$_RestorePurchases value, $Res Function(_$_RestorePurchases) then) =
+      __$$_RestorePurchasesCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$RestorePurchasesCopyWithImpl<$Res>
+class __$$_RestorePurchasesCopyWithImpl<$Res>
     extends _$PurchasesEventCopyWithImpl<$Res>
-    implements _$RestorePurchasesCopyWith<$Res> {
-  __$RestorePurchasesCopyWithImpl(
-      _RestorePurchases _value, $Res Function(_RestorePurchases) _then)
-      : super(_value, (v) => _then(v as _RestorePurchases));
+    implements _$$_RestorePurchasesCopyWith<$Res> {
+  __$$_RestorePurchasesCopyWithImpl(
+      _$_RestorePurchases _value, $Res Function(_$_RestorePurchases) _then)
+      : super(_value, (v) => _then(v as _$_RestorePurchases));
 
   @override
-  _RestorePurchases get _value => super._value as _RestorePurchases;
+  _$_RestorePurchases get _value => super._value as _$_RestorePurchases;
 }
 
 /// @nodoc
@@ -372,7 +350,7 @@ class _$_RestorePurchases implements _RestorePurchases {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _RestorePurchases);
+        (other.runtimeType == runtimeType && other is _$_RestorePurchases);
   }
 
   @override
@@ -458,21 +436,22 @@ abstract class _RestorePurchases implements PurchasesEvent {
 }
 
 /// @nodoc
-abstract class _$OpenOffersCopyWith<$Res> {
-  factory _$OpenOffersCopyWith(
-          _OpenOffers value, $Res Function(_OpenOffers) then) =
-      __$OpenOffersCopyWithImpl<$Res>;
+abstract class _$$_OpenOffersCopyWith<$Res> {
+  factory _$$_OpenOffersCopyWith(
+          _$_OpenOffers value, $Res Function(_$_OpenOffers) then) =
+      __$$_OpenOffersCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$OpenOffersCopyWithImpl<$Res> extends _$PurchasesEventCopyWithImpl<$Res>
-    implements _$OpenOffersCopyWith<$Res> {
-  __$OpenOffersCopyWithImpl(
-      _OpenOffers _value, $Res Function(_OpenOffers) _then)
-      : super(_value, (v) => _then(v as _OpenOffers));
+class __$$_OpenOffersCopyWithImpl<$Res>
+    extends _$PurchasesEventCopyWithImpl<$Res>
+    implements _$$_OpenOffersCopyWith<$Res> {
+  __$$_OpenOffersCopyWithImpl(
+      _$_OpenOffers _value, $Res Function(_$_OpenOffers) _then)
+      : super(_value, (v) => _then(v as _$_OpenOffers));
 
   @override
-  _OpenOffers get _value => super._value as _OpenOffers;
+  _$_OpenOffers get _value => super._value as _$_OpenOffers;
 }
 
 /// @nodoc
@@ -488,7 +467,7 @@ class _$_OpenOffers implements _OpenOffers {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _OpenOffers);
+        (other.runtimeType == runtimeType && other is _$_OpenOffers);
   }
 
   @override
@@ -574,33 +553,6 @@ abstract class _OpenOffers implements PurchasesEvent {
 }
 
 /// @nodoc
-class _$PurchasesSettingsTearOff {
-  const _$PurchasesSettingsTearOff();
-
-  _PurchasesSettings call(
-      {String? publicGoogleKey,
-      String? publicAppleKey,
-      required String entitlementId,
-      required String userId,
-      required String privacyPolicyUrl,
-      required String termsUrl,
-      required dynamic Function(bool, DateTime?) processHandler}) {
-    return _PurchasesSettings(
-      publicGoogleKey: publicGoogleKey,
-      publicAppleKey: publicAppleKey,
-      entitlementId: entitlementId,
-      userId: userId,
-      privacyPolicyUrl: privacyPolicyUrl,
-      termsUrl: termsUrl,
-      processHandler: processHandler,
-    );
-  }
-}
-
-/// @nodoc
-const $PurchasesSettings = _$PurchasesSettingsTearOff();
-
-/// @nodoc
 mixin _$PurchasesSettings {
   String? get publicGoogleKey => throw _privateConstructorUsedError;
   String? get publicAppleKey => throw _privateConstructorUsedError;
@@ -684,11 +636,11 @@ class _$PurchasesSettingsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PurchasesSettingsCopyWith<$Res>
+abstract class _$$_PurchasesSettingsCopyWith<$Res>
     implements $PurchasesSettingsCopyWith<$Res> {
-  factory _$PurchasesSettingsCopyWith(
-          _PurchasesSettings value, $Res Function(_PurchasesSettings) then) =
-      __$PurchasesSettingsCopyWithImpl<$Res>;
+  factory _$$_PurchasesSettingsCopyWith(_$_PurchasesSettings value,
+          $Res Function(_$_PurchasesSettings) then) =
+      __$$_PurchasesSettingsCopyWithImpl<$Res>;
   @override
   $Res call(
       {String? publicGoogleKey,
@@ -701,15 +653,15 @@ abstract class _$PurchasesSettingsCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PurchasesSettingsCopyWithImpl<$Res>
+class __$$_PurchasesSettingsCopyWithImpl<$Res>
     extends _$PurchasesSettingsCopyWithImpl<$Res>
-    implements _$PurchasesSettingsCopyWith<$Res> {
-  __$PurchasesSettingsCopyWithImpl(
-      _PurchasesSettings _value, $Res Function(_PurchasesSettings) _then)
-      : super(_value, (v) => _then(v as _PurchasesSettings));
+    implements _$$_PurchasesSettingsCopyWith<$Res> {
+  __$$_PurchasesSettingsCopyWithImpl(
+      _$_PurchasesSettings _value, $Res Function(_$_PurchasesSettings) _then)
+      : super(_value, (v) => _then(v as _$_PurchasesSettings));
 
   @override
-  _PurchasesSettings get _value => super._value as _PurchasesSettings;
+  _$_PurchasesSettings get _value => super._value as _$_PurchasesSettings;
 
   @override
   $Res call({
@@ -721,7 +673,7 @@ class __$PurchasesSettingsCopyWithImpl<$Res>
     Object? termsUrl = freezed,
     Object? processHandler = freezed,
   }) {
-    return _then(_PurchasesSettings(
+    return _then(_$_PurchasesSettings(
       publicGoogleKey: publicGoogleKey == freezed
           ? _value.publicGoogleKey
           : publicGoogleKey // ignore: cast_nullable_to_non_nullable
@@ -792,7 +744,7 @@ class _$_PurchasesSettings implements _PurchasesSettings {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PurchasesSettings &&
+            other is _$_PurchasesSettings &&
             const DeepCollectionEquality()
                 .equals(other.publicGoogleKey, publicGoogleKey) &&
             const DeepCollectionEquality()
@@ -820,19 +772,20 @@ class _$_PurchasesSettings implements _PurchasesSettings {
 
   @JsonKey(ignore: true)
   @override
-  _$PurchasesSettingsCopyWith<_PurchasesSettings> get copyWith =>
-      __$PurchasesSettingsCopyWithImpl<_PurchasesSettings>(this, _$identity);
+  _$$_PurchasesSettingsCopyWith<_$_PurchasesSettings> get copyWith =>
+      __$$_PurchasesSettingsCopyWithImpl<_$_PurchasesSettings>(
+          this, _$identity);
 }
 
 abstract class _PurchasesSettings implements PurchasesSettings {
   factory _PurchasesSettings(
-          {String? publicGoogleKey,
-          String? publicAppleKey,
-          required String entitlementId,
-          required String userId,
-          required String privacyPolicyUrl,
-          required String termsUrl,
-          required dynamic Function(bool, DateTime?) processHandler}) =
+          {final String? publicGoogleKey,
+          final String? publicAppleKey,
+          required final String entitlementId,
+          required final String userId,
+          required final String privacyPolicyUrl,
+          required final String termsUrl,
+          required final dynamic Function(bool, DateTime?) processHandler}) =
       _$_PurchasesSettings;
 
   @override
@@ -851,38 +804,15 @@ abstract class _PurchasesSettings implements PurchasesSettings {
   dynamic Function(bool, DateTime?) get processHandler;
   @override
   @JsonKey(ignore: true)
-  _$PurchasesSettingsCopyWith<_PurchasesSettings> get copyWith =>
+  _$$_PurchasesSettingsCopyWith<_$_PurchasesSettings> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$PurchasesStateTearOff {
-  const _$PurchasesStateTearOff();
-
-  _PurchasesState call(
-      {String? price,
-      bool isReady = false,
-      bool isLoading = false,
-      bool isSuccess = false,
-      String? errorText}) {
-    return _PurchasesState(
-      price: price,
-      isReady: isReady,
-      isLoading: isLoading,
-      isSuccess: isSuccess,
-      errorText: errorText,
-    );
-  }
-}
-
-/// @nodoc
-const $PurchasesState = _$PurchasesStateTearOff();
 
 /// @nodoc
 mixin _$PurchasesState {
   String? get price => throw _privateConstructorUsedError;
   bool get isReady => throw _privateConstructorUsedError;
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isPurchasing => throw _privateConstructorUsedError;
   bool get isSuccess => throw _privateConstructorUsedError;
   String? get errorText => throw _privateConstructorUsedError;
 
@@ -899,7 +829,7 @@ abstract class $PurchasesStateCopyWith<$Res> {
   $Res call(
       {String? price,
       bool isReady,
-      bool isLoading,
+      bool isPurchasing,
       bool isSuccess,
       String? errorText});
 }
@@ -917,7 +847,7 @@ class _$PurchasesStateCopyWithImpl<$Res>
   $Res call({
     Object? price = freezed,
     Object? isReady = freezed,
-    Object? isLoading = freezed,
+    Object? isPurchasing = freezed,
     Object? isSuccess = freezed,
     Object? errorText = freezed,
   }) {
@@ -930,9 +860,9 @@ class _$PurchasesStateCopyWithImpl<$Res>
           ? _value.isReady
           : isReady // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
+      isPurchasing: isPurchasing == freezed
+          ? _value.isPurchasing
+          : isPurchasing // ignore: cast_nullable_to_non_nullable
               as bool,
       isSuccess: isSuccess == freezed
           ? _value.isSuccess
@@ -947,40 +877,40 @@ class _$PurchasesStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PurchasesStateCopyWith<$Res>
+abstract class _$$_PurchasesStateCopyWith<$Res>
     implements $PurchasesStateCopyWith<$Res> {
-  factory _$PurchasesStateCopyWith(
-          _PurchasesState value, $Res Function(_PurchasesState) then) =
-      __$PurchasesStateCopyWithImpl<$Res>;
+  factory _$$_PurchasesStateCopyWith(
+          _$_PurchasesState value, $Res Function(_$_PurchasesState) then) =
+      __$$_PurchasesStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {String? price,
       bool isReady,
-      bool isLoading,
+      bool isPurchasing,
       bool isSuccess,
       String? errorText});
 }
 
 /// @nodoc
-class __$PurchasesStateCopyWithImpl<$Res>
+class __$$_PurchasesStateCopyWithImpl<$Res>
     extends _$PurchasesStateCopyWithImpl<$Res>
-    implements _$PurchasesStateCopyWith<$Res> {
-  __$PurchasesStateCopyWithImpl(
-      _PurchasesState _value, $Res Function(_PurchasesState) _then)
-      : super(_value, (v) => _then(v as _PurchasesState));
+    implements _$$_PurchasesStateCopyWith<$Res> {
+  __$$_PurchasesStateCopyWithImpl(
+      _$_PurchasesState _value, $Res Function(_$_PurchasesState) _then)
+      : super(_value, (v) => _then(v as _$_PurchasesState));
 
   @override
-  _PurchasesState get _value => super._value as _PurchasesState;
+  _$_PurchasesState get _value => super._value as _$_PurchasesState;
 
   @override
   $Res call({
     Object? price = freezed,
     Object? isReady = freezed,
-    Object? isLoading = freezed,
+    Object? isPurchasing = freezed,
     Object? isSuccess = freezed,
     Object? errorText = freezed,
   }) {
-    return _then(_PurchasesState(
+    return _then(_$_PurchasesState(
       price: price == freezed
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -989,9 +919,9 @@ class __$PurchasesStateCopyWithImpl<$Res>
           ? _value.isReady
           : isReady // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
+      isPurchasing: isPurchasing == freezed
+          ? _value.isPurchasing
+          : isPurchasing // ignore: cast_nullable_to_non_nullable
               as bool,
       isSuccess: isSuccess == freezed
           ? _value.isSuccess
@@ -1011,37 +941,38 @@ class _$_PurchasesState implements _PurchasesState {
   const _$_PurchasesState(
       {this.price,
       this.isReady = false,
-      this.isLoading = false,
+      this.isPurchasing = false,
       this.isSuccess = false,
       this.errorText});
 
   @override
   final String? price;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool isReady;
-  @JsonKey()
   @override
-  final bool isLoading;
   @JsonKey()
+  final bool isPurchasing;
   @override
+  @JsonKey()
   final bool isSuccess;
   @override
   final String? errorText;
 
   @override
   String toString() {
-    return 'PurchasesState(price: $price, isReady: $isReady, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
+    return 'PurchasesState(price: $price, isReady: $isReady, isPurchasing: $isPurchasing, isSuccess: $isSuccess, errorText: $errorText)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PurchasesState &&
+            other is _$_PurchasesState &&
             const DeepCollectionEquality().equals(other.price, price) &&
             const DeepCollectionEquality().equals(other.isReady, isReady) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality()
+                .equals(other.isPurchasing, isPurchasing) &&
             const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
             const DeepCollectionEquality().equals(other.errorText, errorText));
   }
@@ -1051,76 +982,39 @@ class _$_PurchasesState implements _PurchasesState {
       runtimeType,
       const DeepCollectionEquality().hash(price),
       const DeepCollectionEquality().hash(isReady),
-      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(isPurchasing),
       const DeepCollectionEquality().hash(isSuccess),
       const DeepCollectionEquality().hash(errorText));
 
   @JsonKey(ignore: true)
   @override
-  _$PurchasesStateCopyWith<_PurchasesState> get copyWith =>
-      __$PurchasesStateCopyWithImpl<_PurchasesState>(this, _$identity);
+  _$$_PurchasesStateCopyWith<_$_PurchasesState> get copyWith =>
+      __$$_PurchasesStateCopyWithImpl<_$_PurchasesState>(this, _$identity);
 }
 
 abstract class _PurchasesState implements PurchasesState {
   const factory _PurchasesState(
-      {String? price,
-      bool isReady,
-      bool isLoading,
-      bool isSuccess,
-      String? errorText}) = _$_PurchasesState;
+      {final String? price,
+      final bool isReady,
+      final bool isPurchasing,
+      final bool isSuccess,
+      final String? errorText}) = _$_PurchasesState;
 
   @override
   String? get price;
   @override
   bool get isReady;
   @override
-  bool get isLoading;
+  bool get isPurchasing;
   @override
   bool get isSuccess;
   @override
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$PurchasesStateCopyWith<_PurchasesState> get copyWith =>
+  _$$_PurchasesStateCopyWith<_$_PurchasesState> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$PurchasesThemeTearOff {
-  const _$PurchasesThemeTearOff();
-
-  _PurchasesTheme call(
-      {String? backgroundImage,
-      Color? backgroundColor,
-      required Color primaryColor,
-      required Color textColor,
-      Color? appBarButtonColor,
-      required Color textButtonColor,
-      required Color cupertinoDisclaimerColor,
-      required Color featureBackgroundColor,
-      required Color featureIconColor,
-      required Color featureTitleColor,
-      required Color featureCaptionColor,
-      double spaceBetweenButtons = 15.0}) {
-    return _PurchasesTheme(
-      backgroundImage: backgroundImage,
-      backgroundColor: backgroundColor,
-      primaryColor: primaryColor,
-      textColor: textColor,
-      appBarButtonColor: appBarButtonColor,
-      textButtonColor: textButtonColor,
-      cupertinoDisclaimerColor: cupertinoDisclaimerColor,
-      featureBackgroundColor: featureBackgroundColor,
-      featureIconColor: featureIconColor,
-      featureTitleColor: featureTitleColor,
-      featureCaptionColor: featureCaptionColor,
-      spaceBetweenButtons: spaceBetweenButtons,
-    );
-  }
-}
-
-/// @nodoc
-const $PurchasesTheme = _$PurchasesThemeTearOff();
 
 /// @nodoc
 mixin _$PurchasesTheme {
@@ -1240,11 +1134,11 @@ class _$PurchasesThemeCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$PurchasesThemeCopyWith<$Res>
+abstract class _$$_PurchasesThemeCopyWith<$Res>
     implements $PurchasesThemeCopyWith<$Res> {
-  factory _$PurchasesThemeCopyWith(
-          _PurchasesTheme value, $Res Function(_PurchasesTheme) then) =
-      __$PurchasesThemeCopyWithImpl<$Res>;
+  factory _$$_PurchasesThemeCopyWith(
+          _$_PurchasesTheme value, $Res Function(_$_PurchasesTheme) then) =
+      __$$_PurchasesThemeCopyWithImpl<$Res>;
   @override
   $Res call(
       {String? backgroundImage,
@@ -1262,15 +1156,15 @@ abstract class _$PurchasesThemeCopyWith<$Res>
 }
 
 /// @nodoc
-class __$PurchasesThemeCopyWithImpl<$Res>
+class __$$_PurchasesThemeCopyWithImpl<$Res>
     extends _$PurchasesThemeCopyWithImpl<$Res>
-    implements _$PurchasesThemeCopyWith<$Res> {
-  __$PurchasesThemeCopyWithImpl(
-      _PurchasesTheme _value, $Res Function(_PurchasesTheme) _then)
-      : super(_value, (v) => _then(v as _PurchasesTheme));
+    implements _$$_PurchasesThemeCopyWith<$Res> {
+  __$$_PurchasesThemeCopyWithImpl(
+      _$_PurchasesTheme _value, $Res Function(_$_PurchasesTheme) _then)
+      : super(_value, (v) => _then(v as _$_PurchasesTheme));
 
   @override
-  _PurchasesTheme get _value => super._value as _PurchasesTheme;
+  _$_PurchasesTheme get _value => super._value as _$_PurchasesTheme;
 
   @override
   $Res call({
@@ -1287,7 +1181,7 @@ class __$PurchasesThemeCopyWithImpl<$Res>
     Object? featureCaptionColor = freezed,
     Object? spaceBetweenButtons = freezed,
   }) {
-    return _then(_PurchasesTheme(
+    return _then(_$_PurchasesTheme(
       backgroundImage: backgroundImage == freezed
           ? _value.backgroundImage
           : backgroundImage // ignore: cast_nullable_to_non_nullable
@@ -1379,8 +1273,8 @@ class _$_PurchasesTheme implements _PurchasesTheme {
   final Color featureTitleColor;
   @override
   final Color featureCaptionColor;
-  @JsonKey()
   @override
+  @JsonKey()
   final double spaceBetweenButtons;
 
   @override
@@ -1392,7 +1286,7 @@ class _$_PurchasesTheme implements _PurchasesTheme {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PurchasesTheme &&
+            other is _$_PurchasesTheme &&
             const DeepCollectionEquality()
                 .equals(other.backgroundImage, backgroundImage) &&
             const DeepCollectionEquality()
@@ -1436,24 +1330,24 @@ class _$_PurchasesTheme implements _PurchasesTheme {
 
   @JsonKey(ignore: true)
   @override
-  _$PurchasesThemeCopyWith<_PurchasesTheme> get copyWith =>
-      __$PurchasesThemeCopyWithImpl<_PurchasesTheme>(this, _$identity);
+  _$$_PurchasesThemeCopyWith<_$_PurchasesTheme> get copyWith =>
+      __$$_PurchasesThemeCopyWithImpl<_$_PurchasesTheme>(this, _$identity);
 }
 
 abstract class _PurchasesTheme implements PurchasesTheme {
   const factory _PurchasesTheme(
-      {String? backgroundImage,
-      Color? backgroundColor,
-      required Color primaryColor,
-      required Color textColor,
-      Color? appBarButtonColor,
-      required Color textButtonColor,
-      required Color cupertinoDisclaimerColor,
-      required Color featureBackgroundColor,
-      required Color featureIconColor,
-      required Color featureTitleColor,
-      required Color featureCaptionColor,
-      double spaceBetweenButtons}) = _$_PurchasesTheme;
+      {final String? backgroundImage,
+      final Color? backgroundColor,
+      required final Color primaryColor,
+      required final Color textColor,
+      final Color? appBarButtonColor,
+      required final Color textButtonColor,
+      required final Color cupertinoDisclaimerColor,
+      required final Color featureBackgroundColor,
+      required final Color featureIconColor,
+      required final Color featureTitleColor,
+      required final Color featureCaptionColor,
+      final double spaceBetweenButtons}) = _$_PurchasesTheme;
 
   @override
   String? get backgroundImage;
@@ -1481,6 +1375,6 @@ abstract class _PurchasesTheme implements PurchasesTheme {
   double get spaceBetweenButtons;
   @override
   @JsonKey(ignore: true)
-  _$PurchasesThemeCopyWith<_PurchasesTheme> get copyWith =>
+  _$$_PurchasesThemeCopyWith<_$_PurchasesTheme> get copyWith =>
       throw _privateConstructorUsedError;
 }

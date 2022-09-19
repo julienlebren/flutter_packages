@@ -33,7 +33,7 @@ class PurchasesController extends StateNotifier<PurchasesState> {
   Future<void> _purchase({
     bool restore = false,
   }) async {
-    state = state.copyWith(isLoading: true);
+    state = state.copyWith(isPurchasing: true);
     try {
       if (restore) {
         await _service.restorePurchase();
@@ -45,17 +45,17 @@ class PurchasesController extends StateNotifier<PurchasesState> {
       if (PurchasesErrorHelper.getErrorCode(e) ==
           PurchasesErrorCode.purchaseCancelledError) {
         state = state.copyWith(
-          isLoading: false,
+          isPurchasing: false,
         );
       } else {
         state = state.copyWith(
-          isLoading: false,
+          isPurchasing: false,
           errorText: e.message,
         );
       }
     } catch (e) {
       state = state.copyWith(
-        isLoading: false,
+        isPurchasing: false,
         errorText: e.toString(),
       );
     }

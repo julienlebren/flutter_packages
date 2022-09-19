@@ -1,7 +1,5 @@
 part of '../purchases.dart';
 
-enum SubscriptionDuration { monthly, annual }
-
 class PurchasesService {
   PurchasesService({
     required this.settings,
@@ -9,8 +7,7 @@ class PurchasesService {
 
   final PurchasesSettings settings;
 
-  Package? monthlySubscription;
-  Package? annualSubscription;
+  Offering? subscription;
 
   Future<void> setup() async {
     if (Platform.isAndroid) {
@@ -32,18 +29,15 @@ class PurchasesService {
   }
 
   Future<void> fetchOfferings() async {
-    //if (subscription != null) return;
+    if (subscription != null) return;
     Offerings offerings = await Purchases.getOfferings();
     final offering = offerings.current;
-    print(offering);
-    /*if (offering != null) {
-      if (offering.annual != null) {
-        subscription = offering.annual!;
-      }
-    }*/
+    if (offering != null) {
+      subscription = offering;
+    }
   }
 
-  Future<void> purchase(SubscriptionDuration duration) async {
+  Future<void> purchase(PackageType type) async {
     /*if (subscription == null) return;
     CustomerInfo purchaserInfo = await Purchases.purchasePackage(subscription!);
     _processInfo(purchaserInfo);*/
