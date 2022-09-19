@@ -23,7 +23,7 @@ class PurchasesController extends StateNotifier<PurchasesState> {
       await _service.fetchOfferings();
       state = state.copyWith(
         isReady: true, //_service.subscription != null,
-        price: _service.subscription?.storeProduct.priceString,
+        //price: _service.subscription?.storeProduct.priceString,
       );
     } catch (e) {
       state = state.copyWith(errorText: e.toString());
@@ -38,7 +38,7 @@ class PurchasesController extends StateNotifier<PurchasesState> {
       if (restore) {
         await _service.restorePurchase();
       } else {
-        await _service.purchase();
+        //await _service.purchase();
       }
       state = state.copyWith(isSuccess: true);
     } on PlatformException catch (e) {

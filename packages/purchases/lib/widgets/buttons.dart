@@ -24,13 +24,13 @@ class PurchasesTermsButtons extends ConsumerWidget {
         PlatformTextButton(
           title: l10n.termsButton,
           onPressed: () => _openUrl(settings.termsUrl),
-          fontSize: 12,
+          fontSize: 11,
           color: theme.textButtonColor,
         ),
         PlatformTextButton(
           title: l10n.privacyPolicyButton,
           onPressed: () => _openUrl(settings.privacyPolicyUrl),
-          fontSize: 12,
+          fontSize: 11,
           color: theme.textButtonColor,
         ),
       ],

@@ -9,3 +9,8 @@ import 'package:flutter/cupertino.dart';
 
 part 'src/custom_text_selection.dart';
 part 'src/selectable_text_highlighter.dart';
+
+typedef TextSelectionToolbarItemBuilder = Widget Function(
+  String text,
+  VoidCallback onPressed,
+);
