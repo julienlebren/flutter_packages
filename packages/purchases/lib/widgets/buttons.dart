@@ -206,14 +206,17 @@ class _PurchasesPurchaseButton extends ConsumerWidget {
     final isPurchasing = ref.watch(purchasesControllerProvider.select(
       (value) => value.isPurchasing,
     ));
+    final color = ref.watch(purchasesThemeProvider.select(
+      (value) => value.purchaseButtonBackgroundColor,
+    ));
 
     return SizedBox(
       width: double.infinity,
       child: PlatformElevatedButton(
         onPressed: isPurchasing ? null : () => _purchase(ref),
         title: title,
+        color: color,
         child: child,
-        color: Colors.blue,
       ),
     );
   }
