@@ -64,15 +64,115 @@ class PurchasesRestoreButton extends ConsumerWidget {
   }
 }
 
-class PurchasesPurchaseButton extends ConsumerWidget {
-  const PurchasesPurchaseButton({
+class PurchasesWeeklyButton extends ConsumerWidget {
+  const PurchasesWeeklyButton({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return _PurchasesPurchaseButton(
+      title: title,
+      type: PackageType.weekly,
+    );
+  }
+}
+
+class PurchasesMonthlyButton extends ConsumerWidget {
+  const PurchasesMonthlyButton({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return _PurchasesPurchaseButton(
+      title: title,
+      type: PackageType.monthly,
+    );
+  }
+}
+
+class PurchasesTwoMonthButton extends ConsumerWidget {
+  const PurchasesTwoMonthButton({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return _PurchasesPurchaseButton(
+      title: title,
+      type: PackageType.twoMonth,
+    );
+  }
+}
+
+class PurchasesThreeMonthButton extends ConsumerWidget {
+  const PurchasesThreeMonthButton({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return _PurchasesPurchaseButton(
+      title: title,
+      type: PackageType.threeMonth,
+    );
+  }
+}
+
+class PurchasesSixMonthButton extends ConsumerWidget {
+  const PurchasesSixMonthButton({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return _PurchasesPurchaseButton(
+      title: title,
+      type: PackageType.sixMonth,
+    );
+  }
+}
+
+class PurchasesAnnualButton extends ConsumerWidget {
+  const PurchasesAnnualButton({
+    Key? key,
+    required this.title,
+  }) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return _PurchasesPurchaseButton(
+      title: title,
+      type: PackageType.annual,
+    );
+  }
+}
+
+class _PurchasesPurchaseButton extends ConsumerWidget {
+  const _PurchasesPurchaseButton({
     Key? key,
     required this.title,
     required this.type,
-    this.isPurchasing = false,
   }) : super(key: key);
 
-  final bool isPurchasing;
   final String title;
   final PackageType type;
 
@@ -83,6 +183,10 @@ class PurchasesPurchaseButton extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final isPurchasing = ref.watch(purchasesControllerProvider.select(
+      (value) => value.isPurchasing,
+    ));
+
     return SizedBox(
       width: double.infinity,
       child: PlatformElevatedButton(
