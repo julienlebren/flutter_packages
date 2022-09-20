@@ -213,6 +213,7 @@ class _PurchasesPurchaseButton extends ConsumerWidget {
         onPressed: isPurchasing ? null : () => _purchase(ref),
         title: title,
         child: child,
+        color: Colors.blue,
       ),
     );
   }
