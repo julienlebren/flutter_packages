@@ -194,6 +194,9 @@ class SubscriptionStoreIssue extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(purchasesLocalizationsProvider);
+    final textColor = ref.watch(
+      purchasesThemeProvider.select((theme) => theme.textColor),
+    );
 
     return SliverToBoxAdapter(
       child: Padding(
@@ -201,8 +204,12 @@ class SubscriptionStoreIssue extends ConsumerWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(l10n.priceNotLoaded),
-            const SizedBox(height: 10),
+            Text(
+              l10n.priceNotLoaded,
+              textAlign: TextAlign.center,
+              style: TextStyle(color: textColor),
+            ),
+            const SizedBox(height: 15),
             SizedBox(
               width: double.infinity,
               child: PlatformElevatedButton(
