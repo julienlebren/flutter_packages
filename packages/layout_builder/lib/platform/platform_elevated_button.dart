@@ -3,10 +3,15 @@ part of platform;
 class PlatformElevatedButton
     extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
   PlatformElevatedButton({
-    required this.title,
+    this.title,
+    this.child,
     this.onPressed,
-  }) : super();
-  final String title;
+  })  : assert(child != null || title != null,
+            'You must provide a title or a child.'),
+        super();
+
+  final String? title;
+  final Widget? child;
   final VoidCallback? onPressed;
 
   @override
@@ -25,13 +30,15 @@ class PlatformElevatedButton
       ),
       child: Padding(
         padding: EdgeInsets.all(elevatedButtonPadding),
-        child: Text(
-          title,
-          style: TextStyle(
-            fontSize: 17.0,
-            fontWeight: FontWeight.w400,
-          ),
-        ),
+        child: child != null
+            ? child
+            : Text(
+                title!,
+                style: TextStyle(
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
       ),
       onPressed: onPressed,
     );
@@ -49,14 +56,16 @@ class PlatformElevatedButton
       padding: EdgeInsets.all(elevatedButtonPadding),
       onPressed: onPressed,
       borderRadius: BorderRadius.circular(elevatedButtonRadius),
-      child: Text(
-        title,
-        style: TextStyle(
-          fontSize: 20.0,
-          fontWeight: FontWeight.w400,
-          letterSpacing: -0.5,
-        ),
-      ),
+      child: child != null
+          ? child!
+          : Text(
+              title!,
+              style: TextStyle(
+                fontSize: 20.0,
+                fontWeight: FontWeight.w400,
+                letterSpacing: -0.5,
+              ),
+            ),
     );
   }
 }

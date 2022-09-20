@@ -22,6 +22,7 @@ part 'services/purchases_service.dart';
 part 'widgets/cupertino_disclaimer.dart';
 part 'widgets/buttons.dart';
 part 'widgets/feature_tile.dart';
+part 'widgets/price.dart';
 part 'widgets/subscription_page_builder.dart';
 part 'purchases.freezed.dart';
 
