@@ -55,8 +55,11 @@ class PlatformElevatedButton
     final elevatedButtonPadding = ref.watch(
       appThemeProvider.select((appTheme) => appTheme.elevatedButtonPadding),
     );
+    final primaryColor = ref.watch(
+      appThemeProvider.select((appTheme) => appTheme.primaryColor),
+    );
     return CupertinoButton(
-      color: color,
+      color: color ?? primaryColor,
       padding: EdgeInsets.all(elevatedButtonPadding),
       onPressed: onPressed,
       borderRadius: BorderRadius.circular(elevatedButtonRadius),
