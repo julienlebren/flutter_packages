@@ -72,6 +72,7 @@ final purchasesThemeProvider = Provider<PurchasesTheme>(
       featureTitleColor: appTheme.textColor,
       featureCaptionColor: Colors.grey,
       featureIconColor: appTheme.primaryColor,
+      purchaseButtonBackgroundColor: appTheme.primaryColor,
     );
   },
   dependencies: [

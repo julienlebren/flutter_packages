@@ -14,6 +14,7 @@ class PurchasesTheme with _$PurchasesTheme {
     required Color featureIconColor,
     required Color featureTitleColor,
     required Color featureCaptionColor,
+    required Color purchaseButtonBackgroundColor,
     @Default(15.0) double spaceBetweenButtons,
   }) = _PurchasesTheme;
 }

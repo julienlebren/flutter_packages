@@ -1192,6 +1192,7 @@ mixin _$PurchasesTheme {
   Color get featureIconColor => throw _privateConstructorUsedError;
   Color get featureTitleColor => throw _privateConstructorUsedError;
   Color get featureCaptionColor => throw _privateConstructorUsedError;
+  Color get purchaseButtonBackgroundColor => throw _privateConstructorUsedError;
   double get spaceBetweenButtons => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -1216,6 +1217,7 @@ abstract class $PurchasesThemeCopyWith<$Res> {
       Color featureIconColor,
       Color featureTitleColor,
       Color featureCaptionColor,
+      Color purchaseButtonBackgroundColor,
       double spaceBetweenButtons});
 }
 
@@ -1241,6 +1243,7 @@ class _$PurchasesThemeCopyWithImpl<$Res>
     Object? featureIconColor = freezed,
     Object? featureTitleColor = freezed,
     Object? featureCaptionColor = freezed,
+    Object? purchaseButtonBackgroundColor = freezed,
     Object? spaceBetweenButtons = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1288,6 +1291,10 @@ class _$PurchasesThemeCopyWithImpl<$Res>
           ? _value.featureCaptionColor
           : featureCaptionColor // ignore: cast_nullable_to_non_nullable
               as Color,
+      purchaseButtonBackgroundColor: purchaseButtonBackgroundColor == freezed
+          ? _value.purchaseButtonBackgroundColor
+          : purchaseButtonBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
       spaceBetweenButtons: spaceBetweenButtons == freezed
           ? _value.spaceBetweenButtons
           : spaceBetweenButtons // ignore: cast_nullable_to_non_nullable
@@ -1315,6 +1322,7 @@ abstract class _$$_PurchasesThemeCopyWith<$Res>
       Color featureIconColor,
       Color featureTitleColor,
       Color featureCaptionColor,
+      Color purchaseButtonBackgroundColor,
       double spaceBetweenButtons});
 }
 
@@ -1342,6 +1350,7 @@ class __$$_PurchasesThemeCopyWithImpl<$Res>
     Object? featureIconColor = freezed,
     Object? featureTitleColor = freezed,
     Object? featureCaptionColor = freezed,
+    Object? purchaseButtonBackgroundColor = freezed,
     Object? spaceBetweenButtons = freezed,
   }) {
     return _then(_$_PurchasesTheme(
@@ -1389,6 +1398,10 @@ class __$$_PurchasesThemeCopyWithImpl<$Res>
           ? _value.featureCaptionColor
           : featureCaptionColor // ignore: cast_nullable_to_non_nullable
               as Color,
+      purchaseButtonBackgroundColor: purchaseButtonBackgroundColor == freezed
+          ? _value.purchaseButtonBackgroundColor
+          : purchaseButtonBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color,
       spaceBetweenButtons: spaceBetweenButtons == freezed
           ? _value.spaceBetweenButtons
           : spaceBetweenButtons // ignore: cast_nullable_to_non_nullable
@@ -1412,6 +1425,7 @@ class _$_PurchasesTheme implements _PurchasesTheme {
       required this.featureIconColor,
       required this.featureTitleColor,
       required this.featureCaptionColor,
+      required this.purchaseButtonBackgroundColor,
       this.spaceBetweenButtons = 15.0});
 
   @override
@@ -1437,12 +1451,14 @@ class _$_PurchasesTheme implements _PurchasesTheme {
   @override
   final Color featureCaptionColor;
   @override
+  final Color purchaseButtonBackgroundColor;
+  @override
   @JsonKey()
   final double spaceBetweenButtons;
 
   @override
   String toString() {
-    return 'PurchasesTheme(backgroundImage: $backgroundImage, backgroundColor: $backgroundColor, primaryColor: $primaryColor, textColor: $textColor, appBarButtonColor: $appBarButtonColor, textButtonColor: $textButtonColor, cupertinoDisclaimerColor: $cupertinoDisclaimerColor, featureBackgroundColor: $featureBackgroundColor, featureIconColor: $featureIconColor, featureTitleColor: $featureTitleColor, featureCaptionColor: $featureCaptionColor, spaceBetweenButtons: $spaceBetweenButtons)';
+    return 'PurchasesTheme(backgroundImage: $backgroundImage, backgroundColor: $backgroundColor, primaryColor: $primaryColor, textColor: $textColor, appBarButtonColor: $appBarButtonColor, textButtonColor: $textButtonColor, cupertinoDisclaimerColor: $cupertinoDisclaimerColor, featureBackgroundColor: $featureBackgroundColor, featureIconColor: $featureIconColor, featureTitleColor: $featureTitleColor, featureCaptionColor: $featureCaptionColor, purchaseButtonBackgroundColor: $purchaseButtonBackgroundColor, spaceBetweenButtons: $spaceBetweenButtons)';
   }
 
   @override
@@ -1471,6 +1487,9 @@ class _$_PurchasesTheme implements _PurchasesTheme {
                 .equals(other.featureTitleColor, featureTitleColor) &&
             const DeepCollectionEquality()
                 .equals(other.featureCaptionColor, featureCaptionColor) &&
+            const DeepCollectionEquality().equals(
+                other.purchaseButtonBackgroundColor,
+                purchaseButtonBackgroundColor) &&
             const DeepCollectionEquality()
                 .equals(other.spaceBetweenButtons, spaceBetweenButtons));
   }
@@ -1489,6 +1508,7 @@ class _$_PurchasesTheme implements _PurchasesTheme {
       const DeepCollectionEquality().hash(featureIconColor),
       const DeepCollectionEquality().hash(featureTitleColor),
       const DeepCollectionEquality().hash(featureCaptionColor),
+      const DeepCollectionEquality().hash(purchaseButtonBackgroundColor),
       const DeepCollectionEquality().hash(spaceBetweenButtons));
 
   @JsonKey(ignore: true)
@@ -1510,6 +1530,7 @@ abstract class _PurchasesTheme implements PurchasesTheme {
       required final Color featureIconColor,
       required final Color featureTitleColor,
       required final Color featureCaptionColor,
+      required final Color purchaseButtonBackgroundColor,
       final double spaceBetweenButtons}) = _$_PurchasesTheme;
 
   @override
@@ -1534,6 +1555,8 @@ abstract class _PurchasesTheme implements PurchasesTheme {
   Color get featureTitleColor;
   @override
   Color get featureCaptionColor;
+  @override
+  Color get purchaseButtonBackgroundColor;
   @override
   double get spaceBetweenButtons;
   @override
