@@ -68,15 +68,17 @@ class PurchasesPurchaseButton extends ConsumerWidget {
   const PurchasesPurchaseButton({
     Key? key,
     required this.title,
+    required this.type,
     this.isPurchasing = false,
   }) : super(key: key);
 
   final bool isPurchasing;
   final String title;
+  final PackageType type;
 
   void _purchase(WidgetRef ref) {
     final controller = ref.watch(purchasesControllerProvider.notifier);
-    controller.handleEvent(const PurchasesEvent.purchase());
+    controller.handleEvent(PurchasesEvent.purchase(type));
   }
 
   @override

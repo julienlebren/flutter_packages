@@ -19,7 +19,7 @@ mixin _$PurchasesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchOfferings,
-    required TResult Function() purchase,
+    required TResult Function(PackageType type) purchase,
     required TResult Function() restorePurchases,
     required TResult Function() openOffers,
   }) =>
@@ -27,7 +27,7 @@ mixin _$PurchasesEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? fetchOfferings,
-    TResult Function()? purchase,
+    TResult Function(PackageType type)? purchase,
     TResult Function()? restorePurchases,
     TResult Function()? openOffers,
   }) =>
@@ -35,7 +35,7 @@ mixin _$PurchasesEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchOfferings,
-    TResult Function()? purchase,
+    TResult Function(PackageType type)? purchase,
     TResult Function()? restorePurchases,
     TResult Function()? openOffers,
     required TResult orElse(),
@@ -127,7 +127,7 @@ class _$_FetchOfferings implements _FetchOfferings {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchOfferings,
-    required TResult Function() purchase,
+    required TResult Function(PackageType type) purchase,
     required TResult Function() restorePurchases,
     required TResult Function() openOffers,
   }) {
@@ -138,7 +138,7 @@ class _$_FetchOfferings implements _FetchOfferings {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? fetchOfferings,
-    TResult Function()? purchase,
+    TResult Function(PackageType type)? purchase,
     TResult Function()? restorePurchases,
     TResult Function()? openOffers,
   }) {
@@ -149,7 +149,7 @@ class _$_FetchOfferings implements _FetchOfferings {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchOfferings,
-    TResult Function()? purchase,
+    TResult Function(PackageType type)? purchase,
     TResult Function()? restorePurchases,
     TResult Function()? openOffers,
     required TResult orElse(),
@@ -207,6 +207,7 @@ abstract class _$$_PurchaseCopyWith<$Res> {
   factory _$$_PurchaseCopyWith(
           _$_Purchase value, $Res Function(_$_Purchase) then) =
       __$$_PurchaseCopyWithImpl<$Res>;
+  $Res call({PackageType type});
 }
 
 /// @nodoc
@@ -218,60 +219,83 @@ class __$$_PurchaseCopyWithImpl<$Res> extends _$PurchasesEventCopyWithImpl<$Res>
 
   @override
   _$_Purchase get _value => super._value as _$_Purchase;
+
+  @override
+  $Res call({
+    Object? type = freezed,
+  }) {
+    return _then(_$_Purchase(
+      type == freezed
+          ? _value.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as PackageType,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$_Purchase implements _Purchase {
-  const _$_Purchase();
+  const _$_Purchase(this.type);
+
+  @override
+  final PackageType type;
 
   @override
   String toString() {
-    return 'PurchasesEvent.purchase()';
+    return 'PurchasesEvent.purchase(type: $type)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Purchase);
+        (other.runtimeType == runtimeType &&
+            other is _$_Purchase &&
+            const DeepCollectionEquality().equals(other.type, type));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(type));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_PurchaseCopyWith<_$_Purchase> get copyWith =>
+      __$$_PurchaseCopyWithImpl<_$_Purchase>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchOfferings,
-    required TResult Function() purchase,
+    required TResult Function(PackageType type) purchase,
     required TResult Function() restorePurchases,
     required TResult Function() openOffers,
   }) {
-    return purchase();
+    return purchase(type);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? fetchOfferings,
-    TResult Function()? purchase,
+    TResult Function(PackageType type)? purchase,
     TResult Function()? restorePurchases,
     TResult Function()? openOffers,
   }) {
-    return purchase?.call();
+    return purchase?.call(type);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchOfferings,
-    TResult Function()? purchase,
+    TResult Function(PackageType type)? purchase,
     TResult Function()? restorePurchases,
     TResult Function()? openOffers,
     required TResult orElse(),
   }) {
     if (purchase != null) {
-      return purchase();
+      return purchase(type);
     }
     return orElse();
   }
@@ -315,7 +339,12 @@ class _$_Purchase implements _Purchase {
 }
 
 abstract class _Purchase implements PurchasesEvent {
-  const factory _Purchase() = _$_Purchase;
+  const factory _Purchase(final PackageType type) = _$_Purchase;
+
+  PackageType get type;
+  @JsonKey(ignore: true)
+  _$$_PurchaseCopyWith<_$_Purchase> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -360,7 +389,7 @@ class _$_RestorePurchases implements _RestorePurchases {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchOfferings,
-    required TResult Function() purchase,
+    required TResult Function(PackageType type) purchase,
     required TResult Function() restorePurchases,
     required TResult Function() openOffers,
   }) {
@@ -371,7 +400,7 @@ class _$_RestorePurchases implements _RestorePurchases {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? fetchOfferings,
-    TResult Function()? purchase,
+    TResult Function(PackageType type)? purchase,
     TResult Function()? restorePurchases,
     TResult Function()? openOffers,
   }) {
@@ -382,7 +411,7 @@ class _$_RestorePurchases implements _RestorePurchases {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchOfferings,
-    TResult Function()? purchase,
+    TResult Function(PackageType type)? purchase,
     TResult Function()? restorePurchases,
     TResult Function()? openOffers,
     required TResult orElse(),
@@ -477,7 +506,7 @@ class _$_OpenOffers implements _OpenOffers {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() fetchOfferings,
-    required TResult Function() purchase,
+    required TResult Function(PackageType type) purchase,
     required TResult Function() restorePurchases,
     required TResult Function() openOffers,
   }) {
@@ -488,7 +517,7 @@ class _$_OpenOffers implements _OpenOffers {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? fetchOfferings,
-    TResult Function()? purchase,
+    TResult Function(PackageType type)? purchase,
     TResult Function()? restorePurchases,
     TResult Function()? openOffers,
   }) {
@@ -499,7 +528,7 @@ class _$_OpenOffers implements _OpenOffers {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? fetchOfferings,
-    TResult Function()? purchase,
+    TResult Function(PackageType type)? purchase,
     TResult Function()? restorePurchases,
     TResult Function()? openOffers,
     required TResult orElse(),

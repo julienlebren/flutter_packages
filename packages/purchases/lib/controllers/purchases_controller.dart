@@ -12,9 +12,9 @@ class PurchasesController extends StateNotifier<PurchasesState> {
   void handleEvent(PurchasesEvent event) {
     event.when(
       fetchOfferings: _fetchOfferings,
-      purchase: _purchase,
       restorePurchases: _restorePurchases,
       openOffers: _openOffers,
+      purchase: _purchase,
     );
   }
 
@@ -38,15 +38,23 @@ class PurchasesController extends StateNotifier<PurchasesState> {
     }
   }
 
-  Future<void> _purchase({
-    bool restore = false,
-  }) async {
+  Future<void> _purchase([PackageType? type]) async {
     state = state.copyWith(isPurchasing: true);
     try {
-      if (restore) {
+      if (type == null) {
         await _service.restorePurchase();
-      } else {
-        //await _service.purchase();
+      } else if (type == PackageType.weekly) {
+        await _service.purchaseWeekly();
+      } else if (type == PackageType.monthly) {
+        await _service.purchaseMonthly();
+      } else if (type == PackageType.twoMonth) {
+        await _service.purchaseTwoMonth();
+      } else if (type == PackageType.threeMonth) {
+        await _service.purchaseThreeMonth();
+      } else if (type == PackageType.sixMonth) {
+        await _service.purchaseSixMonth();
+      } else if (type == PackageType.annual) {
+        await _service.purchaseAnnual();
       }
       state = state.copyWith(isSuccess: true);
     } on PlatformException catch (e) {
@@ -69,7 +77,7 @@ class PurchasesController extends StateNotifier<PurchasesState> {
     }
   }
 
-  Future<void> _restorePurchases() => _purchase(restore: true);
+  Future<void> _restorePurchases() => _purchase();
 
   Future<void> _openOffers() async {
     await _service.openOffers();
