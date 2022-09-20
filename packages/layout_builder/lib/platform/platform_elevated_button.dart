@@ -6,6 +6,7 @@ class PlatformElevatedButton
     this.title,
     this.child,
     this.onPressed,
+    this.color,
   })  : assert(child != null || title != null,
             'You must provide a title or a child.'),
         super();
@@ -13,6 +14,7 @@ class PlatformElevatedButton
   final String? title;
   final Widget? child;
   final VoidCallback? onPressed;
+  final Color? color;
 
   @override
   ElevatedButton createMaterialWidget(BuildContext context, WidgetRef ref) {
@@ -24,6 +26,7 @@ class PlatformElevatedButton
     );
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
+        backgroundColor: color,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(elevatedButtonRadius),
         ),
@@ -52,7 +55,8 @@ class PlatformElevatedButton
     final elevatedButtonPadding = ref.watch(
       appThemeProvider.select((appTheme) => appTheme.elevatedButtonPadding),
     );
-    return CupertinoButton.filled(
+    return CupertinoButton(
+      color: color,
       padding: EdgeInsets.all(elevatedButtonPadding),
       onPressed: onPressed,
       borderRadius: BorderRadius.circular(elevatedButtonRadius),
