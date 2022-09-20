@@ -22,9 +22,16 @@ class PurchasesController extends StateNotifier<PurchasesState> {
     try {
       await _service.fetchOfferings();
       state = state.copyWith(
-        isReady: true, //_service.subscription != null,
-        hasPackage: true,
-        //price: _service.subscription?.storeProduct.priceString,
+        isReady: true,
+        hasPackage: _service.subscription != null,
+        monthlyPrice: _service.subscription?.monthly?.storeProduct.priceString,
+        twoMonthPrice:
+            _service.subscription?.twoMonth?.storeProduct.priceString,
+        threeMonthPrice:
+            _service.subscription?.threeMonth?.storeProduct.priceString,
+        sixMonthPrice:
+            _service.subscription?.sixMonth?.storeProduct.priceString,
+        annualPrice: _service.subscription?.annual?.storeProduct.priceString,
       );
     } catch (e) {
       state = state.copyWith(errorText: e.toString());
