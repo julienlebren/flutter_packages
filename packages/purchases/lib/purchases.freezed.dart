@@ -810,8 +810,14 @@ abstract class _PurchasesSettings implements PurchasesSettings {
 
 /// @nodoc
 mixin _$PurchasesState {
-  String? get price => throw _privateConstructorUsedError;
+  String? get weeklyPrice => throw _privateConstructorUsedError;
+  String? get monthlyPrice => throw _privateConstructorUsedError;
+  String? get twoMonthPrice => throw _privateConstructorUsedError;
+  String? get threeMonthPrice => throw _privateConstructorUsedError;
+  String? get sixMonthPrice => throw _privateConstructorUsedError;
+  String? get annualPrice => throw _privateConstructorUsedError;
   bool get isReady => throw _privateConstructorUsedError;
+  bool get hasPackage => throw _privateConstructorUsedError;
   bool get isPurchasing => throw _privateConstructorUsedError;
   bool get isSuccess => throw _privateConstructorUsedError;
   String? get errorText => throw _privateConstructorUsedError;
@@ -827,8 +833,14 @@ abstract class $PurchasesStateCopyWith<$Res> {
           PurchasesState value, $Res Function(PurchasesState) then) =
       _$PurchasesStateCopyWithImpl<$Res>;
   $Res call(
-      {String? price,
+      {String? weeklyPrice,
+      String? monthlyPrice,
+      String? twoMonthPrice,
+      String? threeMonthPrice,
+      String? sixMonthPrice,
+      String? annualPrice,
       bool isReady,
+      bool hasPackage,
       bool isPurchasing,
       bool isSuccess,
       String? errorText});
@@ -845,20 +857,50 @@ class _$PurchasesStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? price = freezed,
+    Object? weeklyPrice = freezed,
+    Object? monthlyPrice = freezed,
+    Object? twoMonthPrice = freezed,
+    Object? threeMonthPrice = freezed,
+    Object? sixMonthPrice = freezed,
+    Object? annualPrice = freezed,
     Object? isReady = freezed,
+    Object? hasPackage = freezed,
     Object? isPurchasing = freezed,
     Object? isSuccess = freezed,
     Object? errorText = freezed,
   }) {
     return _then(_value.copyWith(
-      price: price == freezed
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
+      weeklyPrice: weeklyPrice == freezed
+          ? _value.weeklyPrice
+          : weeklyPrice // ignore: cast_nullable_to_non_nullable
+              as String?,
+      monthlyPrice: monthlyPrice == freezed
+          ? _value.monthlyPrice
+          : monthlyPrice // ignore: cast_nullable_to_non_nullable
+              as String?,
+      twoMonthPrice: twoMonthPrice == freezed
+          ? _value.twoMonthPrice
+          : twoMonthPrice // ignore: cast_nullable_to_non_nullable
+              as String?,
+      threeMonthPrice: threeMonthPrice == freezed
+          ? _value.threeMonthPrice
+          : threeMonthPrice // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sixMonthPrice: sixMonthPrice == freezed
+          ? _value.sixMonthPrice
+          : sixMonthPrice // ignore: cast_nullable_to_non_nullable
+              as String?,
+      annualPrice: annualPrice == freezed
+          ? _value.annualPrice
+          : annualPrice // ignore: cast_nullable_to_non_nullable
               as String?,
       isReady: isReady == freezed
           ? _value.isReady
           : isReady // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasPackage: hasPackage == freezed
+          ? _value.hasPackage
+          : hasPackage // ignore: cast_nullable_to_non_nullable
               as bool,
       isPurchasing: isPurchasing == freezed
           ? _value.isPurchasing
@@ -884,8 +926,14 @@ abstract class _$$_PurchasesStateCopyWith<$Res>
       __$$_PurchasesStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String? price,
+      {String? weeklyPrice,
+      String? monthlyPrice,
+      String? twoMonthPrice,
+      String? threeMonthPrice,
+      String? sixMonthPrice,
+      String? annualPrice,
       bool isReady,
+      bool hasPackage,
       bool isPurchasing,
       bool isSuccess,
       String? errorText});
@@ -904,20 +952,50 @@ class __$$_PurchasesStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? price = freezed,
+    Object? weeklyPrice = freezed,
+    Object? monthlyPrice = freezed,
+    Object? twoMonthPrice = freezed,
+    Object? threeMonthPrice = freezed,
+    Object? sixMonthPrice = freezed,
+    Object? annualPrice = freezed,
     Object? isReady = freezed,
+    Object? hasPackage = freezed,
     Object? isPurchasing = freezed,
     Object? isSuccess = freezed,
     Object? errorText = freezed,
   }) {
     return _then(_$_PurchasesState(
-      price: price == freezed
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
+      weeklyPrice: weeklyPrice == freezed
+          ? _value.weeklyPrice
+          : weeklyPrice // ignore: cast_nullable_to_non_nullable
+              as String?,
+      monthlyPrice: monthlyPrice == freezed
+          ? _value.monthlyPrice
+          : monthlyPrice // ignore: cast_nullable_to_non_nullable
+              as String?,
+      twoMonthPrice: twoMonthPrice == freezed
+          ? _value.twoMonthPrice
+          : twoMonthPrice // ignore: cast_nullable_to_non_nullable
+              as String?,
+      threeMonthPrice: threeMonthPrice == freezed
+          ? _value.threeMonthPrice
+          : threeMonthPrice // ignore: cast_nullable_to_non_nullable
+              as String?,
+      sixMonthPrice: sixMonthPrice == freezed
+          ? _value.sixMonthPrice
+          : sixMonthPrice // ignore: cast_nullable_to_non_nullable
+              as String?,
+      annualPrice: annualPrice == freezed
+          ? _value.annualPrice
+          : annualPrice // ignore: cast_nullable_to_non_nullable
               as String?,
       isReady: isReady == freezed
           ? _value.isReady
           : isReady // ignore: cast_nullable_to_non_nullable
+              as bool,
+      hasPackage: hasPackage == freezed
+          ? _value.hasPackage
+          : hasPackage // ignore: cast_nullable_to_non_nullable
               as bool,
       isPurchasing: isPurchasing == freezed
           ? _value.isPurchasing
@@ -939,17 +1017,36 @@ class __$$_PurchasesStateCopyWithImpl<$Res>
 
 class _$_PurchasesState implements _PurchasesState {
   const _$_PurchasesState(
-      {this.price,
+      {this.weeklyPrice,
+      this.monthlyPrice,
+      this.twoMonthPrice,
+      this.threeMonthPrice,
+      this.sixMonthPrice,
+      this.annualPrice,
       this.isReady = false,
+      this.hasPackage = false,
       this.isPurchasing = false,
       this.isSuccess = false,
       this.errorText});
 
   @override
-  final String? price;
+  final String? weeklyPrice;
+  @override
+  final String? monthlyPrice;
+  @override
+  final String? twoMonthPrice;
+  @override
+  final String? threeMonthPrice;
+  @override
+  final String? sixMonthPrice;
+  @override
+  final String? annualPrice;
   @override
   @JsonKey()
   final bool isReady;
+  @override
+  @JsonKey()
+  final bool hasPackage;
   @override
   @JsonKey()
   final bool isPurchasing;
@@ -961,7 +1058,7 @@ class _$_PurchasesState implements _PurchasesState {
 
   @override
   String toString() {
-    return 'PurchasesState(price: $price, isReady: $isReady, isPurchasing: $isPurchasing, isSuccess: $isSuccess, errorText: $errorText)';
+    return 'PurchasesState(weeklyPrice: $weeklyPrice, monthlyPrice: $monthlyPrice, twoMonthPrice: $twoMonthPrice, threeMonthPrice: $threeMonthPrice, sixMonthPrice: $sixMonthPrice, annualPrice: $annualPrice, isReady: $isReady, hasPackage: $hasPackage, isPurchasing: $isPurchasing, isSuccess: $isSuccess, errorText: $errorText)';
   }
 
   @override
@@ -969,8 +1066,21 @@ class _$_PurchasesState implements _PurchasesState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PurchasesState &&
-            const DeepCollectionEquality().equals(other.price, price) &&
+            const DeepCollectionEquality()
+                .equals(other.weeklyPrice, weeklyPrice) &&
+            const DeepCollectionEquality()
+                .equals(other.monthlyPrice, monthlyPrice) &&
+            const DeepCollectionEquality()
+                .equals(other.twoMonthPrice, twoMonthPrice) &&
+            const DeepCollectionEquality()
+                .equals(other.threeMonthPrice, threeMonthPrice) &&
+            const DeepCollectionEquality()
+                .equals(other.sixMonthPrice, sixMonthPrice) &&
+            const DeepCollectionEquality()
+                .equals(other.annualPrice, annualPrice) &&
             const DeepCollectionEquality().equals(other.isReady, isReady) &&
+            const DeepCollectionEquality()
+                .equals(other.hasPackage, hasPackage) &&
             const DeepCollectionEquality()
                 .equals(other.isPurchasing, isPurchasing) &&
             const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
@@ -980,8 +1090,14 @@ class _$_PurchasesState implements _PurchasesState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(price),
+      const DeepCollectionEquality().hash(weeklyPrice),
+      const DeepCollectionEquality().hash(monthlyPrice),
+      const DeepCollectionEquality().hash(twoMonthPrice),
+      const DeepCollectionEquality().hash(threeMonthPrice),
+      const DeepCollectionEquality().hash(sixMonthPrice),
+      const DeepCollectionEquality().hash(annualPrice),
       const DeepCollectionEquality().hash(isReady),
+      const DeepCollectionEquality().hash(hasPackage),
       const DeepCollectionEquality().hash(isPurchasing),
       const DeepCollectionEquality().hash(isSuccess),
       const DeepCollectionEquality().hash(errorText));
@@ -994,16 +1110,34 @@ class _$_PurchasesState implements _PurchasesState {
 
 abstract class _PurchasesState implements PurchasesState {
   const factory _PurchasesState(
-      {final String? price,
+      {final String? weeklyPrice,
+      final String? monthlyPrice,
+      final String? twoMonthPrice,
+      final String? threeMonthPrice,
+      final String? sixMonthPrice,
+      final String? annualPrice,
       final bool isReady,
+      final bool hasPackage,
       final bool isPurchasing,
       final bool isSuccess,
       final String? errorText}) = _$_PurchasesState;
 
   @override
-  String? get price;
+  String? get weeklyPrice;
+  @override
+  String? get monthlyPrice;
+  @override
+  String? get twoMonthPrice;
+  @override
+  String? get threeMonthPrice;
+  @override
+  String? get sixMonthPrice;
+  @override
+  String? get annualPrice;
   @override
   bool get isReady;
+  @override
+  bool get hasPackage;
   @override
   bool get isPurchasing;
   @override

@@ -1,8 +1,16 @@
 {
+  "annualPrice": "{price}/year",
+  "@annualPrice" : {
+      "placeholders": {
+      "price": { 
+          "type": "String"
+      }
+    }
+  },
   "cupertinoDisclaimer": "Payment will be charged to iTunes Account and subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period. Account will be charged for renewal within 24-hours prior to the end of the current period. Manage auto-renewal by going to the user's Account Settings.",
   "errorTitle": "Oops! Something went wrong...",
-  "monthPrice": "{price}/month",
-  "@monthPrice" : {
+  "monthlyPrice": "{price}/month",
+  "@monthlyPrice" : {
       "placeholders": {
       "price": { 
           "type": "String"
@@ -38,16 +46,8 @@
       }
     }
   },
-  "weekPrice": "{price}/week",
-  "@weekPrice" : {
-      "placeholders": {
-      "price": { 
-          "type": "String"
-      }
-    }
-  },
-  "yearPrice": "{price}/year",
-  "@yearPrice" : {
+  "weeklyPrice": "{price}/week",
+  "@weeklyPrice" : {
       "placeholders": {
       "price": { 
           "type": "String"

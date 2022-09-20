@@ -87,7 +87,7 @@ class SubscriptionPageBuilder extends ConsumerWidget {
                   header: header,
                   body: body,
                   footer: footer,
-                  hasStoreIssue: state.isReady && state.price == null,
+                  hasStoreIssue: state.isReady && !state.hasPackage,
                   isPurchasing: state.isPurchasing,
                 ),
               ),

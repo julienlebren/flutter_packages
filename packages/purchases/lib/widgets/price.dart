@@ -4,7 +4,7 @@ String priceString(
     PackageType type, String price, PurchasesLocalizations l10n) {
   switch (type) {
     case PackageType.annual:
-      return l10n.yearPrice(price);
+      return l10n.annualPrice(price);
     case PackageType.sixMonth:
       return l10n.sixMonthPrice(price);
     case PackageType.threeMonth:
@@ -12,81 +12,111 @@ String priceString(
     case PackageType.twoMonth:
       return l10n.twoMonthPrice(price);
     case PackageType.monthly:
-      return l10n.monthPrice(price);
+      return l10n.monthlyPrice(price);
     case PackageType.weekly:
-      return l10n.weekPrice(price);
+      return l10n.weeklyPrice(price);
     default:
       return "";
   }
 }
 
-class SubscriptionYearPrice extends StatelessWidget {
-  const SubscriptionYearPrice({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const SubscriptionPrice(type: PackageType.annual);
-  }
-}
-
-class SubscriptionMonthlyPrice extends StatelessWidget {
-  const SubscriptionMonthlyPrice({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const SubscriptionPrice(type: PackageType.monthly);
-  }
-}
-
-class SubscriptionThreeMonthPrice extends StatelessWidget {
-  const SubscriptionThreeMonthPrice({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const SubscriptionPrice(type: PackageType.threeMonth);
-  }
-}
-
-class SubscriptionTwoMonthPrice extends StatelessWidget {
-  const SubscriptionTwoMonthPrice({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const SubscriptionPrice(type: PackageType.twoMonth);
-  }
-}
-
-class SubscriptionSixMonthPrice extends StatelessWidget {
-  const SubscriptionSixMonthPrice({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return const SubscriptionPrice(type: PackageType.sixMonth);
-  }
-}
-
-class SubscriptionWeeklyPrice extends StatelessWidget {
+class SubscriptionWeeklyPrice extends ConsumerWidget {
   const SubscriptionWeeklyPrice({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return const SubscriptionPrice(type: PackageType.weekly);
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+    final price = ref.watch(purchasesControllerProvider.select(
+      (value) => value.weeklyPrice,
+    ));
+    return SubscriptionPrice(
+        price: price != null ? l10n.weeklyPrice(price) : null);
+  }
+}
+
+class SubscriptionMonthlyPrice extends ConsumerWidget {
+  const SubscriptionMonthlyPrice({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+    final price = ref.watch(purchasesControllerProvider.select(
+      (value) => value.monthlyPrice,
+    ));
+    return SubscriptionPrice(
+        price: price != null ? l10n.monthlyPrice(price) : null);
+  }
+}
+
+class SubscriptionTwoMonthPrice extends ConsumerWidget {
+  const SubscriptionTwoMonthPrice({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+    final price = ref.watch(purchasesControllerProvider.select(
+      (value) => value.twoMonthPrice,
+    ));
+    return SubscriptionPrice(
+        price: price != null ? l10n.twoMonthPrice(price) : null);
+  }
+}
+
+class SubscriptionThreeMonthPrice extends ConsumerWidget {
+  const SubscriptionThreeMonthPrice({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+    final price = ref.watch(purchasesControllerProvider.select(
+      (value) => value.threeMonthPrice,
+    ));
+    return SubscriptionPrice(
+        price: price != null ? l10n.threeMonthPrice(price) : null);
+  }
+}
+
+class SubscriptionSixMonthPrice extends ConsumerWidget {
+  const SubscriptionSixMonthPrice({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+    final price = ref.watch(purchasesControllerProvider.select(
+      (value) => value.sixMonthPrice,
+    ));
+    return SubscriptionPrice(
+        price: price != null ? l10n.sixMonthPrice(price) : null);
+  }
+}
+
+class SubscriptionAnnualPrice extends ConsumerWidget {
+  const SubscriptionAnnualPrice({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+    final price = ref.watch(purchasesControllerProvider.select(
+      (value) => value.annualPrice,
+    ));
+    return SubscriptionPrice(
+        price: price != null ? l10n.annualPrice(price) : null);
   }
 }
 
 class SubscriptionPrice extends ConsumerWidget {
   const SubscriptionPrice({
-    required this.type,
+    this.price,
     Key? key,
   }) : super(key: key);
 
-  final PackageType type;
+  final String? price;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.watch(purchasesLocalizationsProvider);
-    final price = ref.watch(purchasesControllerProvider).price;
-    final theme = ref.watch(purchasesThemeProvider);
+    final textColor = ref.watch(purchasesThemeProvider.select(
+      (theme) => theme.textColor,
+    ));
 
     return Container(
       height: 65,
@@ -96,12 +126,12 @@ class SubscriptionPrice extends ConsumerWidget {
       ),
       child: price != null
           ? Text(
-              priceString(type, price, l10n),
+              price!,
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w600,
                 letterSpacing: -1,
-                color: theme.textColor,
+                color: textColor,
               ),
               textAlign: TextAlign.center,
             )

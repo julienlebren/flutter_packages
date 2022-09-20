@@ -37,10 +37,22 @@ class PurchasesService {
     }
   }
 
-  Future<void> purchase(PackageType type) async {
-    /*if (subscription == null) return;
-    CustomerInfo purchaserInfo = await Purchases.purchasePackage(subscription!);
-    _processInfo(purchaserInfo);*/
+  Future<void> purchaseWeekly() => _purchase(subscription?.weekly);
+
+  Future<void> purchaseMonthly() => _purchase(subscription?.monthly);
+
+  Future<void> purchaseTwoMonth() => _purchase(subscription?.twoMonth);
+
+  Future<void> purchaseThreeMonth() => _purchase(subscription?.threeMonth);
+
+  Future<void> purchaseSixMonth() => _purchase(subscription?.sixMonth);
+
+  Future<void> purchaseAnnual() => _purchase(subscription?.annual);
+
+  Future<void> _purchase(Package? package) async {
+    if (package == null) return;
+    CustomerInfo purchaserInfo = await Purchases.purchasePackage(package);
+    _processInfo(purchaserInfo);
   }
 
   Future<void> refreshSubscription() async {

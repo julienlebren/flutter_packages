@@ -93,6 +93,12 @@ abstract class PurchasesLocalizations {
     Locale('fr')
   ];
 
+  /// No description provided for @annualPrice.
+  ///
+  /// In en, this message translates to:
+  /// **'{price}/year'**
+  String annualPrice(String price);
+
   /// No description provided for @cupertinoDisclaimer.
   ///
   /// In en, this message translates to:
@@ -105,11 +111,11 @@ abstract class PurchasesLocalizations {
   /// **'Oops! Something went wrong...'**
   String get errorTitle;
 
-  /// No description provided for @monthPrice.
+  /// No description provided for @monthlyPrice.
   ///
   /// In en, this message translates to:
   /// **'{price}/month'**
-  String monthPrice(String price);
+  String monthlyPrice(String price);
 
   /// No description provided for @priceNotLoaded.
   ///
@@ -159,17 +165,11 @@ abstract class PurchasesLocalizations {
   /// **'{price}/2 months'**
   String twoMonthPrice(String price);
 
-  /// No description provided for @weekPrice.
+  /// No description provided for @weeklyPrice.
   ///
   /// In en, this message translates to:
   /// **'{price}/week'**
-  String weekPrice(String price);
-
-  /// No description provided for @yearPrice.
-  ///
-  /// In en, this message translates to:
-  /// **'{price}/year'**
-  String yearPrice(String price);
+  String weeklyPrice(String price);
 
   /// No description provided for @noSubscriptionToRestore.
   ///

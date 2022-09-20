@@ -5,13 +5,18 @@ class PurchasesLocalizationsEn extends PurchasesLocalizations {
   PurchasesLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
+  String annualPrice(String price) {
+    return '$price/year';
+  }
+
+  @override
   String get cupertinoDisclaimer => 'Payment will be charged to iTunes Account and subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period. Account will be charged for renewal within 24-hours prior to the end of the current period. Manage auto-renewal by going to the user\'s Account Settings.';
 
   @override
   String get errorTitle => 'Oops! Something went wrong...';
 
   @override
-  String monthPrice(String price) {
+  String monthlyPrice(String price) {
     return '$price/month';
   }
 
@@ -46,13 +51,8 @@ class PurchasesLocalizationsEn extends PurchasesLocalizations {
   }
 
   @override
-  String weekPrice(String price) {
+  String weeklyPrice(String price) {
     return '$price/week';
-  }
-
-  @override
-  String yearPrice(String price) {
-    return '$price/year';
   }
 
   @override
