@@ -357,10 +357,10 @@ packages:
     description:
       path: "packages/layout_builder"
       ref: HEAD
-      resolved-ref: "9fbb7f1e11604007eecec26f80f26c5b6df926a5"
+      resolved-ref: "1fca510d2fc11f6d9a6a69f005287ac40b1fc1af"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "2.7.0"
+    version: "2.7.7"
   lints:
     dependency: transitive
     description:
@@ -762,6 +762,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
+  visibility_detector:
+    dependency: transitive
+    description:
+      name: visibility_detector
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.3"
   watcher:
     dependency: transitive
     description:
