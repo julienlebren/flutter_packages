@@ -67,16 +67,19 @@ class PurchasesRestoreButton extends ConsumerWidget {
 class PurchasesWeeklyButton extends ConsumerWidget {
   const PurchasesWeeklyButton({
     Key? key,
-    required this.title,
+    this.title,
+    this.child,
   }) : super(key: key);
 
-  final String title;
+  final String? title;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return _PurchasesPurchaseButton(
-      title: title,
       type: PackageType.weekly,
+      title: title,
+      child: child,
     );
   }
 }
@@ -84,16 +87,19 @@ class PurchasesWeeklyButton extends ConsumerWidget {
 class PurchasesMonthlyButton extends ConsumerWidget {
   const PurchasesMonthlyButton({
     Key? key,
-    required this.title,
+    this.title,
+    this.child,
   }) : super(key: key);
 
-  final String title;
+  final String? title;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return _PurchasesPurchaseButton(
-      title: title,
       type: PackageType.monthly,
+      title: title,
+      child: child,
     );
   }
 }
@@ -101,16 +107,19 @@ class PurchasesMonthlyButton extends ConsumerWidget {
 class PurchasesTwoMonthButton extends ConsumerWidget {
   const PurchasesTwoMonthButton({
     Key? key,
-    required this.title,
+    this.title,
+    this.child,
   }) : super(key: key);
 
-  final String title;
+  final String? title;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return _PurchasesPurchaseButton(
-      title: title,
       type: PackageType.twoMonth,
+      title: title,
+      child: child,
     );
   }
 }
@@ -118,16 +127,19 @@ class PurchasesTwoMonthButton extends ConsumerWidget {
 class PurchasesThreeMonthButton extends ConsumerWidget {
   const PurchasesThreeMonthButton({
     Key? key,
-    required this.title,
+    this.title,
+    this.child,
   }) : super(key: key);
 
-  final String title;
+  final String? title;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return _PurchasesPurchaseButton(
-      title: title,
       type: PackageType.threeMonth,
+      title: title,
+      child: child,
     );
   }
 }
@@ -135,16 +147,19 @@ class PurchasesThreeMonthButton extends ConsumerWidget {
 class PurchasesSixMonthButton extends ConsumerWidget {
   const PurchasesSixMonthButton({
     Key? key,
-    required this.title,
+    this.title,
+    this.child,
   }) : super(key: key);
 
-  final String title;
+  final String? title;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return _PurchasesPurchaseButton(
-      title: title,
       type: PackageType.sixMonth,
+      title: title,
+      child: child,
     );
   }
 }
@@ -152,16 +167,19 @@ class PurchasesSixMonthButton extends ConsumerWidget {
 class PurchasesAnnualButton extends ConsumerWidget {
   const PurchasesAnnualButton({
     Key? key,
-    required this.title,
+    this.title,
+    this.child,
   }) : super(key: key);
 
-  final String title;
+  final String? title;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return _PurchasesPurchaseButton(
-      title: title,
       type: PackageType.annual,
+      title: title,
+      child: child,
     );
   }
 }
@@ -169,11 +187,13 @@ class PurchasesAnnualButton extends ConsumerWidget {
 class _PurchasesPurchaseButton extends ConsumerWidget {
   const _PurchasesPurchaseButton({
     Key? key,
-    required this.title,
+    this.title,
+    this.child,
     required this.type,
   }) : super(key: key);
 
-  final String title;
+  final String? title;
+  final Widget? child;
   final PackageType type;
 
   void _purchase(WidgetRef ref) {
@@ -190,8 +210,9 @@ class _PurchasesPurchaseButton extends ConsumerWidget {
     return SizedBox(
       width: double.infinity,
       child: PlatformElevatedButton(
-        title: title,
         onPressed: isPurchasing ? null : () => _purchase(ref),
+        title: title,
+        child: child,
       ),
     );
   }
