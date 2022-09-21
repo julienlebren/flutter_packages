@@ -6,6 +6,7 @@ final signInButtonsControllerProvider =
   final localizations = ref.watch(signInLocalizationsProvider);
   return SignInButtonsController(service, localizations);
 }, dependencies: [
+  authServiceProvider,
   signInLocalizationsProvider,
 ]);
 
