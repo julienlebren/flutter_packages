@@ -222,14 +222,15 @@ class _PurchasesButton extends ConsumerWidget {
           ),
       ],
       child: Container(
-        decoration: purchasesTheme.purchaseButtonBorderColor != null
-            ? BoxDecoration(
-                borderRadius: BorderRadius.circular(
-                    purchasesTheme.purchaseButtonBorderRadius),
-                border: Border.all(
-                    color: purchasesTheme.purchaseButtonBorderColor!),
-              )
-            : null,
+        decoration:
+            !isPurchasing && purchasesTheme.purchaseButtonBorderColor != null
+                ? BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                        purchasesTheme.purchaseButtonBorderRadius),
+                    border: Border.all(
+                        color: purchasesTheme.purchaseButtonBorderColor!),
+                  )
+                : null,
         child: SizedBox(
           width: double.infinity,
           child: PlatformElevatedButton(
