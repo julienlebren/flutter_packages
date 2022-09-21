@@ -68,18 +68,18 @@ class PurchasesWeeklyButton extends ConsumerWidget {
   const PurchasesWeeklyButton({
     Key? key,
     this.title,
-    this.child,
   }) : super(key: key);
 
   final String? title;
-  final Widget? child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return _PurchasesPurchaseButton(
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+
+    return _PurchasesButton(
       type: PackageType.weekly,
       title: title,
-      child: child,
+      caption: l10n.weeklyCaption,
     );
   }
 }
@@ -88,18 +88,18 @@ class PurchasesMonthlyButton extends ConsumerWidget {
   const PurchasesMonthlyButton({
     Key? key,
     this.title,
-    this.child,
   }) : super(key: key);
 
   final String? title;
-  final Widget? child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return _PurchasesPurchaseButton(
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+
+    return _PurchasesButton(
       type: PackageType.monthly,
       title: title,
-      child: child,
+      caption: l10n.monthlyCaption,
     );
   }
 }
@@ -108,18 +108,18 @@ class PurchasesTwoMonthButton extends ConsumerWidget {
   const PurchasesTwoMonthButton({
     Key? key,
     this.title,
-    this.child,
   }) : super(key: key);
 
   final String? title;
-  final Widget? child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return _PurchasesPurchaseButton(
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+
+    return _PurchasesButton(
       type: PackageType.twoMonth,
       title: title,
-      child: child,
+      caption: l10n.twoMonthCaption,
     );
   }
 }
@@ -128,18 +128,18 @@ class PurchasesThreeMonthButton extends ConsumerWidget {
   const PurchasesThreeMonthButton({
     Key? key,
     this.title,
-    this.child,
   }) : super(key: key);
 
   final String? title;
-  final Widget? child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return _PurchasesPurchaseButton(
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+
+    return _PurchasesButton(
       type: PackageType.threeMonth,
       title: title,
-      child: child,
+      caption: l10n.threeMonthCaption,
     );
   }
 }
@@ -148,18 +148,18 @@ class PurchasesSixMonthButton extends ConsumerWidget {
   const PurchasesSixMonthButton({
     Key? key,
     this.title,
-    this.child,
   }) : super(key: key);
 
   final String? title;
-  final Widget? child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return _PurchasesPurchaseButton(
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+
+    return _PurchasesButton(
       type: PackageType.sixMonth,
       title: title,
-      child: child,
+      caption: l10n.sixMonthCaption,
     );
   }
 }
@@ -168,32 +168,32 @@ class PurchasesAnnualButton extends ConsumerWidget {
   const PurchasesAnnualButton({
     Key? key,
     this.title,
-    this.child,
   }) : super(key: key);
 
   final String? title;
-  final Widget? child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return _PurchasesPurchaseButton(
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+
+    return _PurchasesButton(
       type: PackageType.annual,
       title: title,
-      child: child,
+      caption: l10n.annualCaption,
     );
   }
 }
 
-class _PurchasesPurchaseButton extends ConsumerWidget {
-  const _PurchasesPurchaseButton({
+class _PurchasesButton extends ConsumerWidget {
+  const _PurchasesButton({
     Key? key,
     this.title,
-    this.child,
+    this.caption,
     required this.type,
   }) : super(key: key);
 
   final String? title;
-  final Widget? child;
+  final String? caption;
   final PackageType type;
 
   void _purchase(WidgetRef ref) {
@@ -214,7 +214,7 @@ class _PurchasesPurchaseButton extends ConsumerWidget {
 
     return ProviderScope(
       overrides: [
-        if (child != null)
+        if (caption != null)
           appThemeProvider.overrideWithValue(
             appTheme.copyWith(
               elevatedButtonPadding: 8,
@@ -236,10 +236,57 @@ class _PurchasesPurchaseButton extends ConsumerWidget {
             onPressed: isPurchasing ? null : () => _purchase(ref),
             title: title,
             color: color,
-            child: child,
+            child: title == null
+                ? _PurchaseButtonContents(
+                    type: type,
+                    caption: caption!,
+                  )
+                : null,
           ),
         ),
       ),
+    );
+  }
+}
+
+class _PurchaseButtonContents extends ConsumerWidget {
+  const _PurchaseButtonContents({
+    required this.type,
+    required this.caption,
+    Key? key,
+  }) : super(key: key);
+
+  final PackageType type;
+  final String caption;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final textColor = ref.watch(purchasesThemeProvider.select(
+      (theme) => theme.textColor,
+    ));
+    final price = priceString(type, ref);
+
+    return Column(
+      children: [
+        if (price != null) ...[
+          Text(
+            price,
+            style: TextStyle(
+              fontSize: 22,
+              color: textColor,
+            ),
+          ),
+          Text(
+            caption,
+            style: TextStyle(
+              fontSize: 13,
+              color: textColor,
+            ),
+          ),
+        ] else ...[
+          const PlatformActivityIndicator(),
+        ]
+      ],
     );
   }
 }

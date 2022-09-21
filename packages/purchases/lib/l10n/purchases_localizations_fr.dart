@@ -5,6 +5,9 @@ class PurchasesLocalizationsFr extends PurchasesLocalizations {
   PurchasesLocalizationsFr([String locale = 'fr']) : super(locale);
 
   @override
+  String get annualCaption => 'Annual subscription';
+
+  @override
   String annualPrice(String price) {
     return '$price/an';
   }
@@ -14,6 +17,9 @@ class PurchasesLocalizationsFr extends PurchasesLocalizations {
 
   @override
   String get errorTitle => 'Il y a eu un problème...';
+
+  @override
+  String get monthlyCaption => 'Monthly subscription';
 
   @override
   String monthlyPrice(String price) {
@@ -36,9 +42,15 @@ class PurchasesLocalizationsFr extends PurchasesLocalizations {
   String get termsButton => 'Conditions d\'utilisation';
 
   @override
+  String get sixMonthCaption => '6 months subscription';
+
+  @override
   String sixMonthPrice(String price) {
     return '$price/6 mois';
   }
+
+  @override
+  String get threeMonthCaption => '3 months subscription';
 
   @override
   String threeMonthPrice(String price) {
@@ -46,9 +58,15 @@ class PurchasesLocalizationsFr extends PurchasesLocalizations {
   }
 
   @override
+  String get twoMonthCaption => '2 months subscription';
+
+  @override
   String twoMonthPrice(String price) {
     return '$price/2 mois';
   }
+
+  @override
+  String get weeklyCaption => 'Weekly subscription';
 
   @override
   String weeklyPrice(String price) {

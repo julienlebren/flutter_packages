@@ -93,6 +93,12 @@ abstract class PurchasesLocalizations {
     Locale('fr')
   ];
 
+  /// No description provided for @annualCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Annual subscription'**
+  String get annualCaption;
+
   /// No description provided for @annualPrice.
   ///
   /// In en, this message translates to:
@@ -110,6 +116,12 @@ abstract class PurchasesLocalizations {
   /// In en, this message translates to:
   /// **'Oops! Something went wrong...'**
   String get errorTitle;
+
+  /// No description provided for @monthlyCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Monthly subscription'**
+  String get monthlyCaption;
 
   /// No description provided for @monthlyPrice.
   ///
@@ -147,11 +159,23 @@ abstract class PurchasesLocalizations {
   /// **'Terms of Use'**
   String get termsButton;
 
+  /// No description provided for @sixMonthCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'6 months subscription'**
+  String get sixMonthCaption;
+
   /// No description provided for @sixMonthPrice.
   ///
   /// In en, this message translates to:
   /// **'{price}/6 months'**
   String sixMonthPrice(String price);
+
+  /// No description provided for @threeMonthCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'3 months subscription'**
+  String get threeMonthCaption;
 
   /// No description provided for @threeMonthPrice.
   ///
@@ -159,11 +183,23 @@ abstract class PurchasesLocalizations {
   /// **'{price}/3 months'**
   String threeMonthPrice(String price);
 
+  /// No description provided for @twoMonthCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'2 months subscription'**
+  String get twoMonthCaption;
+
   /// No description provided for @twoMonthPrice.
   ///
   /// In en, this message translates to:
   /// **'{price}/2 months'**
   String twoMonthPrice(String price);
+
+  /// No description provided for @weeklyCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Weekly subscription'**
+  String get weeklyCaption;
 
   /// No description provided for @weeklyPrice.
   ///
