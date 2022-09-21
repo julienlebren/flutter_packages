@@ -44,6 +44,7 @@ class SignInButtonsController extends StateNotifier<SignInButtonsState> {
       );
       state = const SignInButtonsState.success();
     } on FirebaseAuthException catch (e) {
+      print('erreur: ${e.code}');
       print(e.toString());
       if (e.code == "ERROR_AUTHORIZATION_DENIED") {
         state = const SignInButtonsState.initial();
@@ -59,7 +60,6 @@ class SignInButtonsController extends StateNotifier<SignInButtonsState> {
   }
 
   Future<void> signOut() async {
-    print("signOut ok");
     try {
       _service.signOut();
       state = const SignInButtonsState.initial();
