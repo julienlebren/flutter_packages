@@ -16,6 +16,7 @@ class SignInLandingPageBuilder extends ConsumerWidget {
       value: SystemUiMode.edgeToEdge,
       child: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
+          statusBarBrightness: Brightness.dark,
           statusBarColor: Colors.transparent,
           statusBarIconBrightness:
               signInTheme.scaffoldBackgroundColor.brightness,
