@@ -14,6 +14,148 @@ const double _kSelectionHandleRadius = 6;
 // screen. Eyeballed value.
 const double _kArrowScreenPadding = 26.0;
 
+@immutable
+class TextSelectionToolbarButton {
+  const TextSelectionToolbarButton({
+    required this.title,
+    required this.onPressed,
+  });
+  final String title;
+  final VoidCallback onPressed;
+}
+
+/// iOS Cupertino styled text selection controls.
+class CupertinoTextSelectionControls extends TextSelectionControls {
+  CupertinoTextSelectionControls({
+    this.buttons = const [],
+  });
+
+  List<TextSelectionToolbarButton> buttons;
+
+  /// Returns the size of the Cupertino handle.
+  @override
+  Size getHandleSize(double textLineHeight) {
+    return Size(
+      _kSelectionHandleRadius * 2,
+      textLineHeight + _kSelectionHandleRadius * 2 - _kSelectionHandleOverlap,
+    );
+  }
+
+  @override
+  bool canSelectAll(TextSelectionDelegate delegate) {
+    // Android allows SelectAll when selection is not collapsed, unless
+    // everything has already been selected.
+    final TextEditingValue value = delegate.textEditingValue;
+    return delegate.selectAllEnabled &&
+        value.text.isNotEmpty &&
+        !(value.selection.start == 0 &&
+            value.selection.end == value.text.length);
+  }
+
+  /// Builder for iOS-style copy/paste text selection toolbar.
+  @override
+  Widget buildToolbar(
+    BuildContext context,
+    Rect globalEditableRegion,
+    double textLineHeight,
+    Offset position,
+    List<TextSelectionPoint> endpoints,
+    TextSelectionDelegate delegate,
+    ClipboardStatusNotifier? clipboardStatus,
+    Offset? lastSecondaryTapDownPosition,
+  ) {
+    return _CupertinoTextSelectionControlsToolbar(
+      clipboardStatus: clipboardStatus,
+      endpoints: endpoints,
+      globalEditableRegion: globalEditableRegion,
+      handleCut: canCut(delegate) ? () => handleCut(delegate) : null,
+      handleCopy: canCopy(delegate)
+          ? () => handleCopy(delegate, clipboardStatus)
+          : null,
+      handlePaste: canPaste(delegate) ? () => handlePaste(delegate) : null,
+      handleSelectAll:
+          canSelectAll(delegate) ? () => handleSelectAll(delegate) : null,
+      selectionMidpoint: position,
+      buttons: buttons,
+      delegate: delegate,
+      textLineHeight: textLineHeight,
+    );
+  }
+
+  /// Builder for iOS text selection edges.
+  @override
+  Widget buildHandle(
+    BuildContext context,
+    TextSelectionHandleType type,
+    double textLineHeight, [
+    VoidCallback? onTap,
+  ]) {
+    // We want a size that's a vertical line the height of the text plus a 18.0
+    // padding in every direction that will constitute the selection drag area.
+    final Size desiredSize = getHandleSize(textLineHeight);
+
+    final Widget handle = SizedBox.fromSize(
+      size: desiredSize,
+      child: CustomPaint(
+        painter: _TextSelectionHandlePainter(
+            CupertinoTheme.of(context).primaryColor),
+      ),
+    );
+
+    // [buildHandle]'s widget is positioned at the selection cursor's bottom
+    // baseline. We transform the handle such that the SizedBox is superimposed
+    // on top of the text selection endpoints.
+    switch (type) {
+      case TextSelectionHandleType.left:
+        return handle;
+      case TextSelectionHandleType.right:
+        // Right handle is a vertical mirror of the left.
+        return Transform(
+          transform: Matrix4.identity()
+            ..translate(desiredSize.width / 2, desiredSize.height / 2)
+            ..rotateZ(math.pi)
+            ..translate(-desiredSize.width / 2, -desiredSize.height / 2),
+          child: handle,
+        );
+      // iOS doesn't draw anything for collapsed selections.
+      case TextSelectionHandleType.collapsed:
+        return const SizedBox();
+    }
+  }
+
+  /// Gets anchor for cupertino-style text selection handles.
+  ///
+  /// See [TextSelectionControls.getHandleAnchor].
+  @override
+  Offset getHandleAnchor(TextSelectionHandleType type, double textLineHeight) {
+    final Size handleSize = getHandleSize(textLineHeight);
+    switch (type) {
+      // The circle is at the top for the left handle, and the anchor point is
+      // all the way at the bottom of the line.
+      case TextSelectionHandleType.left:
+        return Offset(
+          handleSize.width / 2,
+          handleSize.height,
+        );
+      // The right handle is vertically flipped, and the anchor point is near
+      // the top of the circle to give slight overlap.
+      case TextSelectionHandleType.right:
+        return Offset(
+          handleSize.width / 2,
+          handleSize.height -
+              2 * _kSelectionHandleRadius +
+              _kSelectionHandleOverlap,
+        );
+      // A collapsed handle anchors itself so that it's centered.
+      case TextSelectionHandleType.collapsed:
+        return Offset(
+          handleSize.width / 2,
+          textLineHeight + (handleSize.height - textLineHeight) / 2,
+        );
+    }
+  }
+}
+
 // Generates the child that's passed into CupertinoTextSelectionToolbar.
 class _CupertinoTextSelectionControlsToolbar extends StatefulWidget {
   const _CupertinoTextSelectionControlsToolbar(
@@ -27,7 +169,7 @@ class _CupertinoTextSelectionControlsToolbar extends StatefulWidget {
       required this.handleSelectAll,
       required this.selectionMidpoint,
       required this.textLineHeight,
-      this.onHighlight,
+      this.buttons = const [],
       required this.delegate})
       : super(key: key);
 
@@ -38,7 +180,7 @@ class _CupertinoTextSelectionControlsToolbar extends StatefulWidget {
   final VoidCallback? handleCut;
   final VoidCallback? handlePaste;
   final VoidCallback? handleSelectAll;
-  final VoidCallback? onHighlight;
+  final List<TextSelectionToolbarButton> buttons;
   final Offset selectionMidpoint;
   final double textLineHeight;
   final TextSelectionDelegate delegate;
@@ -166,9 +308,10 @@ class _CupertinoTextSelectionControlsToolbarState
       addToolbarButton(
           localizations.selectAllButtonLabel, widget.handleSelectAll!);
     }
-    if (widget.onHighlight != null) {
-      addToolbarButton('Highlight', () {
-        widget.onHighlight!();
+
+    for (final button in widget.buttons) {
+      addToolbarButton(button.title, () {
+        button.onPressed();
         widget.delegate.hideToolbar();
       });
     }
@@ -218,125 +361,3 @@ class _TextSelectionHandlePainter extends CustomPainter {
   bool shouldRepaint(_TextSelectionHandlePainter oldPainter) =>
       color != oldPainter.color;
 }
-
-/// iOS Cupertino styled text selection controls.
-class CupertinoTextSelectionControls extends TextSelectionControls {
-  VoidCallback? onHighlight;
-  CupertinoTextSelectionControls({this.onHighlight});
-
-  /// Returns the size of the Cupertino handle.
-  @override
-  Size getHandleSize(double textLineHeight) {
-    return Size(
-      _kSelectionHandleRadius * 2,
-      textLineHeight + _kSelectionHandleRadius * 2 - _kSelectionHandleOverlap,
-    );
-  }
-
-  /// Builder for iOS-style copy/paste text selection toolbar.
-  @override
-  Widget buildToolbar(
-    BuildContext context,
-    Rect globalEditableRegion,
-    double textLineHeight,
-    Offset position,
-    List<TextSelectionPoint> endpoints,
-    TextSelectionDelegate delegate,
-    ClipboardStatusNotifier? clipboardStatus,
-    Offset? lastSecondaryTapDownPosition,
-  ) {
-    return _CupertinoTextSelectionControlsToolbar(
-      clipboardStatus: clipboardStatus,
-      endpoints: endpoints,
-      globalEditableRegion: globalEditableRegion,
-      handleCut: canCut(delegate) ? () => handleCut(delegate) : null,
-      handleCopy: canCopy(delegate)
-          ? () => handleCopy(delegate, clipboardStatus)
-          : null,
-      handlePaste: canPaste(delegate) ? () => handlePaste(delegate) : null,
-      handleSelectAll:
-          canSelectAll(delegate) ? () => handleSelectAll(delegate) : null,
-      selectionMidpoint: position,
-      onHighlight: onHighlight,
-      delegate: delegate,
-      textLineHeight: textLineHeight,
-    );
-  }
-
-  /// Builder for iOS text selection edges.
-  @override
-  Widget buildHandle(
-    BuildContext context,
-    TextSelectionHandleType type,
-    double textLineHeight, [
-    VoidCallback? onTap,
-  ]) {
-    // We want a size that's a vertical line the height of the text plus a 18.0
-    // padding in every direction that will constitute the selection drag area.
-    final Size desiredSize = getHandleSize(textLineHeight);
-
-    final Widget handle = SizedBox.fromSize(
-      size: desiredSize,
-      child: CustomPaint(
-        painter: _TextSelectionHandlePainter(
-            CupertinoTheme.of(context).primaryColor),
-      ),
-    );
-
-    // [buildHandle]'s widget is positioned at the selection cursor's bottom
-    // baseline. We transform the handle such that the SizedBox is superimposed
-    // on top of the text selection endpoints.
-    switch (type) {
-      case TextSelectionHandleType.left:
-        return handle;
-      case TextSelectionHandleType.right:
-        // Right handle is a vertical mirror of the left.
-        return Transform(
-          transform: Matrix4.identity()
-            ..translate(desiredSize.width / 2, desiredSize.height / 2)
-            ..rotateZ(math.pi)
-            ..translate(-desiredSize.width / 2, -desiredSize.height / 2),
-          child: handle,
-        );
-      // iOS doesn't draw anything for collapsed selections.
-      case TextSelectionHandleType.collapsed:
-        return const SizedBox();
-    }
-  }
-
-  /// Gets anchor for cupertino-style text selection handles.
-  ///
-  /// See [TextSelectionControls.getHandleAnchor].
-  @override
-  Offset getHandleAnchor(TextSelectionHandleType type, double textLineHeight) {
-    final Size handleSize = getHandleSize(textLineHeight);
-    switch (type) {
-      // The circle is at the top for the left handle, and the anchor point is
-      // all the way at the bottom of the line.
-      case TextSelectionHandleType.left:
-        return Offset(
-          handleSize.width / 2,
-          handleSize.height,
-        );
-      // The right handle is vertically flipped, and the anchor point is near
-      // the top of the circle to give slight overlap.
-      case TextSelectionHandleType.right:
-        return Offset(
-          handleSize.width / 2,
-          handleSize.height -
-              2 * _kSelectionHandleRadius +
-              _kSelectionHandleOverlap,
-        );
-      // A collapsed handle anchors itself so that it's centered.
-      case TextSelectionHandleType.collapsed:
-        return Offset(
-          handleSize.width / 2,
-          textLineHeight + (handleSize.height - textLineHeight) / 2,
-        );
-    }
-  }
-}
-
-/// Text selection controls that follows iOS design conventions.
-final TextSelectionControls cupertinoTextSelectionControls =
-    CupertinoTextSelectionControls();

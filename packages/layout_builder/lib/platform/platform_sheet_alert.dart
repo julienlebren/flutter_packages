@@ -19,7 +19,7 @@ class AlertAction {
 void showPlatformSheetAlert({
   required BuildContext context,
   required WidgetRef ref,
-  required String title,
+  String? title,
   required List<AlertAction> actions,
   bool displayCancelButton = true,
 }) {

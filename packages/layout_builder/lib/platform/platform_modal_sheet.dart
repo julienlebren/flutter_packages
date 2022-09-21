@@ -3,7 +3,7 @@ part of platform;
 void showPlatformModalSheet({
   required BuildContext context,
   required WidgetRef ref,
-  required String title,
+  String? title,
   required List<PlatformModalSheetAction> actions,
 }) {
   if (isCupertino()) {
@@ -12,7 +12,7 @@ void showPlatformModalSheet({
       useRootNavigator: true,
       builder: (BuildContext context) {
         return CupertinoActionSheet(
-          title: Text(title),
+          title: title != null ? Text(title) : null,
           actions: actions,
           cancelButton: CupertinoActionSheetAction(
             child: Text(
@@ -42,17 +42,18 @@ void showPlatformModalSheet({
           //color: appTheme.scaffoldBackgroundColor,
           child: Wrap(
             children: <Widget>[
-              Padding(
-                padding:
-                    EdgeInsets.only(top: 16, left: 20, right: 20, bottom: 10),
-                child: Text(
-                  title,
-                  style: TextStyle(
-                    fontSize: 22.0,
-                    fontWeight: FontWeight.w700,
+              if (title != null)
+                Padding(
+                  padding:
+                      EdgeInsets.only(top: 16, left: 20, right: 20, bottom: 10),
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
                 ),
-              ),
               for (Widget widget in actions) widget,
               Container(height: 20),
             ],

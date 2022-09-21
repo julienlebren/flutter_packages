@@ -3,7 +3,7 @@ part of platform;
 Future<bool?> showAlertDialog(
   BuildContext context,
   WidgetRef ref, {
-  required String title,
+  String? title,
   Widget? child,
   String? content,
   List<PlatformDialogAction>? actions,
@@ -13,7 +13,7 @@ Future<bool?> showAlertDialog(
     return showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(title),
+        title: title != null ? Text(title) : null,
         content: child ?? (content != null ? Text(content) : null),
         actions: <Widget>[
           if (displayCancelButton)
@@ -31,7 +31,7 @@ Future<bool?> showAlertDialog(
   return showCupertinoDialog(
     context: context,
     builder: (context) => CupertinoAlertDialog(
-      title: Text(title),
+      title: title != null ? Text(title) : null,
       content: child != null
           ? Padding(padding: EdgeInsets.only(top: 6), child: child)
           : (content != null ? Text(content) : null),
