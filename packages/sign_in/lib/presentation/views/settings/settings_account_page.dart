@@ -66,6 +66,7 @@ class _ButtonsSection extends ConsumerWidget {
     final backgroundColor = ref.watch(
       appThemeProvider.select((theme) => theme.listTileBackground),
     );
+    final l10n = ref.watch(signInLocalizationsProvider);
     final signInTheme = ref.watch(signInThemeProvider);
     final suppliers = ref
         .watch(authSettingsProvider.select(
@@ -73,6 +74,23 @@ class _ButtonsSection extends ConsumerWidget {
         ))
         .where((supplier) => supplier != SignInSupplier.anonymous)
         .toList();
+
+    ref.listen<SignInButtonsState>(signInButtonsControllerProvider, (_, state) {
+      state.maybeWhen(
+        initial: () {
+          ref.read(signInSupplierProvider.state).state = null;
+        },
+        error: (errorText) {
+          showErrorDialog(
+            context,
+            ref,
+            title: l10n.errorTitle,
+            content: errorText,
+          );
+        },
+        orElse: () => null,
+      );
+    });
 
     return ProviderScope(
       overrides: [
