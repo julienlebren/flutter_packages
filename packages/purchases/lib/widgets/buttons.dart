@@ -209,19 +209,35 @@ class _PurchasesPurchaseButton extends ConsumerWidget {
     final color = ref.watch(purchasesThemeProvider.select(
       (value) => value.purchaseButtonBackgroundColor,
     ));
+    final appTheme = ref.watch(appThemeProvider);
+    final purchasesTheme = ref.watch(purchasesThemeProvider);
 
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white60),
-      ),
-      child: SizedBox(
-        width: double.infinity,
-        child: PlatformElevatedButton(
-          onPressed: isPurchasing ? null : () => _purchase(ref),
-          title: title,
-          color: color,
-          child: child,
+    return ProviderScope(
+      overrides: [
+        if (child != null)
+          appThemeProvider.overrideWithValue(
+            appTheme.copyWith(
+              elevatedButtonPadding: 8,
+            ),
+          ),
+      ],
+      child: Container(
+        decoration: purchasesTheme.purchaseButtonBorderColor != null
+            ? BoxDecoration(
+                borderRadius: BorderRadius.circular(
+                    purchasesTheme.purchaseButtonBorderRadius),
+                border: Border.all(
+                    color: purchasesTheme.purchaseButtonBorderColor!),
+              )
+            : null,
+        child: SizedBox(
+          width: double.infinity,
+          child: PlatformElevatedButton(
+            onPressed: isPurchasing ? null : () => _purchase(ref),
+            title: title,
+            color: color,
+            child: child,
+          ),
         ),
       ),
     );
