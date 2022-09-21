@@ -1,6 +1,3 @@
-
-
-
 import 'sign_in_localizations.dart';
 
 /// The translations for French (`fr`).
@@ -243,6 +240,11 @@ class SignInLocalizationsFr extends SignInLocalizations {
 
   @override
   String get errorEmailAlreadyInUse => 'Un compte existe déjà avec cette adresse e-mail.';
+
+  @override
+  String errorCredentialAlreadyInUse(String provider) {
+    return 'Un compte est déjà lié à ce compte $provider.';
+  }
 
   @override
   String get errorWeakPassword => 'Le mot de passe n\'est pas assez complexe.';

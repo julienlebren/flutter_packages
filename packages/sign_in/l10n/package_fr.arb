@@ -74,6 +74,7 @@
     "errorUserNotFound": "Nous n'avons trouvé aucun compte enregistré avec cette adresse e-mail.",
     "errorWrongPassword": "Le mot de passe est incorrect.",
     "errorEmailAlreadyInUse": "Un compte existe déjà avec cette adresse e-mail.",
+    "errorCredentialAlreadyInUse": "Un compte est déjà lié à ce compte {provider}.",
     "errorWeakPassword": "Le mot de passe n'est pas assez complexe.",
     "errorOperationNotAllowed": "Cette opération n'est pas autorisée.",
     "errorPhoneNotMobile": "Vous devez saisir un numéro de téléphone mobile.",

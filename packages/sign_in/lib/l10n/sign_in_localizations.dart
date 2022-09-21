@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -9,14 +8,14 @@ import 'package:intl/intl.dart' as intl;
 import 'sign_in_localizations_en.dart';
 import 'sign_in_localizations_fr.dart';
 
-/// Callers can lookup localized strings with an instance of SignInLocalizations returned
-/// by `SignInLocalizations.of(context)`.
+/// Callers can lookup localized strings with an instance of SignInLocalizations
+/// returned by `SignInLocalizations.of(context)`.
 ///
 /// Applications need to include `SignInLocalizations.delegate()` in their app's
-/// localizationDelegates list, and the locales they support in the app's
-/// supportedLocales list. For example:
+/// `localizationDelegates` list, and the locales they support in the app's
+/// `supportedLocales` list. For example:
 ///
-/// ```
+/// ```dart
 /// import 'l10n/sign_in_localizations.dart';
 ///
 /// return MaterialApp(
@@ -31,14 +30,14 @@ import 'sign_in_localizations_fr.dart';
 /// Please make sure to update your pubspec.yaml to include the following
 /// packages:
 ///
-/// ```
+/// ```yaml
 /// dependencies:
 ///   # Internationalization support.
 ///   flutter_localizations:
 ///     sdk: flutter
 ///   intl: any # Use the pinned version from flutter_localizations
 ///
-///   # rest of dependencies
+///   # Rest of dependencies
 /// ```
 ///
 /// ## iOS Applications
@@ -543,6 +542,12 @@ abstract class SignInLocalizations {
   /// In en, this message translates to:
   /// **'An account is already registered with this email address.'**
   String get errorEmailAlreadyInUse;
+
+  /// No description provided for @errorCredentialAlreadyInUse.
+  ///
+  /// In en, this message translates to:
+  /// **'An account is already linked to this {provider} account.'**
+  String errorCredentialAlreadyInUse(String provider);
 
   /// No description provided for @errorWeakPassword.
   ///

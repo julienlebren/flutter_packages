@@ -52,6 +52,18 @@ class SignInButtonsController extends StateNotifier<SignInButtonsState> {
       print('erreur: ${e.code}');
       if (e.code == "ERROR_AUTHORIZATION_DENIED") {
         state = const SignInButtonsState.initial();
+      } else if (e.code == "credential-already-in-use") {
+        state = SignInButtonsState.error(
+          e.description(
+            _localizations,
+            event.maybeWhen(
+              signInWithApple: () => "Apple",
+              signInWithFacebook: () => "Facebook",
+              signInWithGoogle: () => "Google",
+              orElse: () => "",
+            ),
+          ),
+        );
       } else if (e.code != "ERROR_ABORTED_BY_USER") {
         state = SignInButtonsState.error(e.description(_localizations));
       } else {
