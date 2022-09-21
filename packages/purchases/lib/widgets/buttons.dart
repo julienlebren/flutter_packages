@@ -210,13 +210,19 @@ class _PurchasesPurchaseButton extends ConsumerWidget {
       (value) => value.purchaseButtonBackgroundColor,
     ));
 
-    return SizedBox(
-      width: double.infinity,
-      child: PlatformElevatedButton(
-        onPressed: isPurchasing ? null : () => _purchase(ref),
-        title: title,
-        color: color,
-        child: child,
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.white60),
+      ),
+      child: SizedBox(
+        width: double.infinity,
+        child: PlatformElevatedButton(
+          onPressed: isPurchasing ? null : () => _purchase(ref),
+          title: title,
+          color: color,
+          child: child,
+        ),
       ),
     );
   }

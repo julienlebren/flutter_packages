@@ -1192,7 +1192,10 @@ mixin _$PurchasesTheme {
   Color get featureIconColor => throw _privateConstructorUsedError;
   Color get featureTitleColor => throw _privateConstructorUsedError;
   Color get featureCaptionColor => throw _privateConstructorUsedError;
-  Color get purchaseButtonBackgroundColor => throw _privateConstructorUsedError;
+  Color? get purchaseButtonBackgroundColor =>
+      throw _privateConstructorUsedError;
+  double get purchaseButtonBorderRadius => throw _privateConstructorUsedError;
+  Color? get purchaseButtonBorderColor => throw _privateConstructorUsedError;
   double get spaceBetweenButtons => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -1217,7 +1220,9 @@ abstract class $PurchasesThemeCopyWith<$Res> {
       Color featureIconColor,
       Color featureTitleColor,
       Color featureCaptionColor,
-      Color purchaseButtonBackgroundColor,
+      Color? purchaseButtonBackgroundColor,
+      double purchaseButtonBorderRadius,
+      Color? purchaseButtonBorderColor,
       double spaceBetweenButtons});
 }
 
@@ -1244,6 +1249,8 @@ class _$PurchasesThemeCopyWithImpl<$Res>
     Object? featureTitleColor = freezed,
     Object? featureCaptionColor = freezed,
     Object? purchaseButtonBackgroundColor = freezed,
+    Object? purchaseButtonBorderRadius = freezed,
+    Object? purchaseButtonBorderColor = freezed,
     Object? spaceBetweenButtons = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1294,7 +1301,15 @@ class _$PurchasesThemeCopyWithImpl<$Res>
       purchaseButtonBackgroundColor: purchaseButtonBackgroundColor == freezed
           ? _value.purchaseButtonBackgroundColor
           : purchaseButtonBackgroundColor // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as Color?,
+      purchaseButtonBorderRadius: purchaseButtonBorderRadius == freezed
+          ? _value.purchaseButtonBorderRadius
+          : purchaseButtonBorderRadius // ignore: cast_nullable_to_non_nullable
+              as double,
+      purchaseButtonBorderColor: purchaseButtonBorderColor == freezed
+          ? _value.purchaseButtonBorderColor
+          : purchaseButtonBorderColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
       spaceBetweenButtons: spaceBetweenButtons == freezed
           ? _value.spaceBetweenButtons
           : spaceBetweenButtons // ignore: cast_nullable_to_non_nullable
@@ -1322,7 +1337,9 @@ abstract class _$$_PurchasesThemeCopyWith<$Res>
       Color featureIconColor,
       Color featureTitleColor,
       Color featureCaptionColor,
-      Color purchaseButtonBackgroundColor,
+      Color? purchaseButtonBackgroundColor,
+      double purchaseButtonBorderRadius,
+      Color? purchaseButtonBorderColor,
       double spaceBetweenButtons});
 }
 
@@ -1351,6 +1368,8 @@ class __$$_PurchasesThemeCopyWithImpl<$Res>
     Object? featureTitleColor = freezed,
     Object? featureCaptionColor = freezed,
     Object? purchaseButtonBackgroundColor = freezed,
+    Object? purchaseButtonBorderRadius = freezed,
+    Object? purchaseButtonBorderColor = freezed,
     Object? spaceBetweenButtons = freezed,
   }) {
     return _then(_$_PurchasesTheme(
@@ -1401,7 +1420,15 @@ class __$$_PurchasesThemeCopyWithImpl<$Res>
       purchaseButtonBackgroundColor: purchaseButtonBackgroundColor == freezed
           ? _value.purchaseButtonBackgroundColor
           : purchaseButtonBackgroundColor // ignore: cast_nullable_to_non_nullable
-              as Color,
+              as Color?,
+      purchaseButtonBorderRadius: purchaseButtonBorderRadius == freezed
+          ? _value.purchaseButtonBorderRadius
+          : purchaseButtonBorderRadius // ignore: cast_nullable_to_non_nullable
+              as double,
+      purchaseButtonBorderColor: purchaseButtonBorderColor == freezed
+          ? _value.purchaseButtonBorderColor
+          : purchaseButtonBorderColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
       spaceBetweenButtons: spaceBetweenButtons == freezed
           ? _value.spaceBetweenButtons
           : spaceBetweenButtons // ignore: cast_nullable_to_non_nullable
@@ -1425,7 +1452,9 @@ class _$_PurchasesTheme implements _PurchasesTheme {
       required this.featureIconColor,
       required this.featureTitleColor,
       required this.featureCaptionColor,
-      required this.purchaseButtonBackgroundColor,
+      this.purchaseButtonBackgroundColor,
+      this.purchaseButtonBorderRadius = 5.0,
+      this.purchaseButtonBorderColor,
       this.spaceBetweenButtons = 15.0});
 
   @override
@@ -1451,14 +1480,19 @@ class _$_PurchasesTheme implements _PurchasesTheme {
   @override
   final Color featureCaptionColor;
   @override
-  final Color purchaseButtonBackgroundColor;
+  final Color? purchaseButtonBackgroundColor;
+  @override
+  @JsonKey()
+  final double purchaseButtonBorderRadius;
+  @override
+  final Color? purchaseButtonBorderColor;
   @override
   @JsonKey()
   final double spaceBetweenButtons;
 
   @override
   String toString() {
-    return 'PurchasesTheme(backgroundImage: $backgroundImage, backgroundColor: $backgroundColor, primaryColor: $primaryColor, textColor: $textColor, appBarButtonColor: $appBarButtonColor, textButtonColor: $textButtonColor, cupertinoDisclaimerColor: $cupertinoDisclaimerColor, featureBackgroundColor: $featureBackgroundColor, featureIconColor: $featureIconColor, featureTitleColor: $featureTitleColor, featureCaptionColor: $featureCaptionColor, purchaseButtonBackgroundColor: $purchaseButtonBackgroundColor, spaceBetweenButtons: $spaceBetweenButtons)';
+    return 'PurchasesTheme(backgroundImage: $backgroundImage, backgroundColor: $backgroundColor, primaryColor: $primaryColor, textColor: $textColor, appBarButtonColor: $appBarButtonColor, textButtonColor: $textButtonColor, cupertinoDisclaimerColor: $cupertinoDisclaimerColor, featureBackgroundColor: $featureBackgroundColor, featureIconColor: $featureIconColor, featureTitleColor: $featureTitleColor, featureCaptionColor: $featureCaptionColor, purchaseButtonBackgroundColor: $purchaseButtonBackgroundColor, purchaseButtonBorderRadius: $purchaseButtonBorderRadius, purchaseButtonBorderColor: $purchaseButtonBorderColor, spaceBetweenButtons: $spaceBetweenButtons)';
   }
 
   @override
@@ -1490,6 +1524,10 @@ class _$_PurchasesTheme implements _PurchasesTheme {
             const DeepCollectionEquality().equals(
                 other.purchaseButtonBackgroundColor,
                 purchaseButtonBackgroundColor) &&
+            const DeepCollectionEquality().equals(
+                other.purchaseButtonBorderRadius, purchaseButtonBorderRadius) &&
+            const DeepCollectionEquality().equals(
+                other.purchaseButtonBorderColor, purchaseButtonBorderColor) &&
             const DeepCollectionEquality()
                 .equals(other.spaceBetweenButtons, spaceBetweenButtons));
   }
@@ -1509,6 +1547,8 @@ class _$_PurchasesTheme implements _PurchasesTheme {
       const DeepCollectionEquality().hash(featureTitleColor),
       const DeepCollectionEquality().hash(featureCaptionColor),
       const DeepCollectionEquality().hash(purchaseButtonBackgroundColor),
+      const DeepCollectionEquality().hash(purchaseButtonBorderRadius),
+      const DeepCollectionEquality().hash(purchaseButtonBorderColor),
       const DeepCollectionEquality().hash(spaceBetweenButtons));
 
   @JsonKey(ignore: true)
@@ -1530,7 +1570,9 @@ abstract class _PurchasesTheme implements PurchasesTheme {
       required final Color featureIconColor,
       required final Color featureTitleColor,
       required final Color featureCaptionColor,
-      required final Color purchaseButtonBackgroundColor,
+      final Color? purchaseButtonBackgroundColor,
+      final double purchaseButtonBorderRadius,
+      final Color? purchaseButtonBorderColor,
       final double spaceBetweenButtons}) = _$_PurchasesTheme;
 
   @override
@@ -1556,7 +1598,11 @@ abstract class _PurchasesTheme implements PurchasesTheme {
   @override
   Color get featureCaptionColor;
   @override
-  Color get purchaseButtonBackgroundColor;
+  Color? get purchaseButtonBackgroundColor;
+  @override
+  double get purchaseButtonBorderRadius;
+  @override
+  Color? get purchaseButtonBorderColor;
   @override
   double get spaceBetweenButtons;
   @override
