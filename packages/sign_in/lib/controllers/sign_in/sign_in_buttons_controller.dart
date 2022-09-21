@@ -3,8 +3,11 @@ part of '../../sign_in.dart';
 final signInButtonsControllerProvider =
     StateNotifierProvider<SignInButtonsController, SignInButtonsState>((ref) {
   final service = ref.watch(authServiceProvider);
-  return SignInButtonsController(service);
-});
+  final localizations = ref.watch(signInLocalizationsProvider);
+  return SignInButtonsController(service, localizations);
+}, dependencies: [
+  signInLocalizationsProvider,
+]);
 
 @freezed
 class SignInButtonsEvent with _$SignInButtonsEvent {
@@ -27,10 +30,11 @@ class SignInButtonsState with _$SignInButtonsState {
 }
 
 class SignInButtonsController extends StateNotifier<SignInButtonsState> {
-  SignInButtonsController(this._service)
+  SignInButtonsController(this._service, this._localizations)
       : super(const SignInButtonsState.initial());
 
   final FirebaseAuthService _service;
+  final SignInLocalizations _localizations;
 
   Future<void> handleEvent(SignInButtonsEvent event) async {
     state = const SignInButtonsState.loading();
@@ -45,13 +49,12 @@ class SignInButtonsController extends StateNotifier<SignInButtonsState> {
       state = const SignInButtonsState.success();
     } on FirebaseAuthException catch (e) {
       print('erreur: ${e.code}');
-      print(e.toString());
       if (e.code == "ERROR_AUTHORIZATION_DENIED") {
         state = const SignInButtonsState.initial();
       } else if (e.code != "ERROR_ABORTED_BY_USER") {
         state = SignInButtonsState.error(e.toString());
       } else {
-        state = const SignInButtonsState.initial();
+        state = SignInButtonsState.error(e.description(_localizations));
       }
     } on Exception catch (e) {
       print(e.toString());
