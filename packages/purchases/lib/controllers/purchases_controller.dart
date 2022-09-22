@@ -34,7 +34,10 @@ class PurchasesController extends StateNotifier<PurchasesState> {
         annualPrice: _service.subscription?.annual?.storeProduct.priceString,
       );
     } catch (e) {
-      state = state.copyWith(errorText: e.toString());
+      state = state.copyWith(
+        isReady: true,
+        errorText: e.toString(),
+      );
     }
   }
 
