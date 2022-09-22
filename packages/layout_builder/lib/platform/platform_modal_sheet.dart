@@ -124,8 +124,14 @@ class PlatformModalSheetAction
   @override
   ListTile createMaterialWidget(BuildContext context, WidgetRef ref) {
     return ListTile(
-      leading: Icon(icon),
-      title: Text(title),
+      leading: Icon(
+        icon,
+        color: isDestructiveAction ? Colors.red : null,
+      ),
+      title: Text(
+        title,
+        style: isDestructiveAction ? TextStyle(color: Colors.red) : null,
+      ),
       onTap: () {
         Navigator.of(context).pop();
         onPressed.call();
