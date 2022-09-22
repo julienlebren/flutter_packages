@@ -19,8 +19,8 @@ class SignInLandingPageBuilder extends ConsumerWidget {
           statusBarBrightness: signInTheme.scaffoldBackgroundColor.brightness,
           statusBarColor: Colors.transparent,
           statusBarIconBrightness:
-              signInTheme.scaffoldBackgroundColor.brightness,
-          systemNavigationBarColor: signInTheme.scaffoldBackgroundColor,
+              signInTheme.scaffoldBackgroundColor.invertedBrightness,
+          systemNavigationBarColor: Colors.transparent,
           systemNavigationBarIconBrightness:
               signInTheme.scaffoldBackgroundColor.invertedBrightness,
         ),
