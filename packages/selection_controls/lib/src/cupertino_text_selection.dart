@@ -1,8 +1,12 @@
-part of selection_controls;
-
 // Copyright 2014 The Flutter Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
+
+import 'dart:math' as math;
+
+import 'package:flutter/rendering.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:selection_controls/selection_controls.dart';
 
 // Read off from the output on iOS 12. This color does not vary with the
 // application's theme color.
@@ -13,16 +17,6 @@ const double _kSelectionHandleRadius = 6;
 // Minimal padding from tip of the selection toolbar arrow to horizontal edges of the
 // screen. Eyeballed value.
 const double _kArrowScreenPadding = 26.0;
-
-@immutable
-class TextSelectionToolbarButton {
-  const TextSelectionToolbarButton({
-    required this.title,
-    required this.onPressed,
-  });
-  final String title;
-  final VoidCallback onPressed;
-}
 
 /// iOS Cupertino styled text selection controls.
 class CupertinoTextSelectionControls extends TextSelectionControls {
@@ -39,17 +33,6 @@ class CupertinoTextSelectionControls extends TextSelectionControls {
       _kSelectionHandleRadius * 2,
       textLineHeight + _kSelectionHandleRadius * 2 - _kSelectionHandleOverlap,
     );
-  }
-
-  @override
-  bool canSelectAll(TextSelectionDelegate delegate) {
-    // Android allows SelectAll when selection is not collapsed, unless
-    // everything has already been selected.
-    final TextEditingValue value = delegate.textEditingValue;
-    return delegate.selectAllEnabled &&
-        value.text.isNotEmpty &&
-        !(value.selection.start == 0 &&
-            value.selection.end == value.text.length);
   }
 
   /// Builder for iOS-style copy/paste text selection toolbar.
@@ -361,3 +344,7 @@ class _TextSelectionHandlePainter extends CustomPainter {
   bool shouldRepaint(_TextSelectionHandlePainter oldPainter) =>
       color != oldPainter.color;
 }
+
+/// Text selection controls that follows iOS design conventions.
+final TextSelectionControls cupertinoTextSelectionControls =
+    CupertinoTextSelectionControls();
