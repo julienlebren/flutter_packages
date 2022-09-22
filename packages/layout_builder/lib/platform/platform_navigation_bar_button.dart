@@ -8,6 +8,7 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
     this.buttonText,
     this.icon = Icons.check,
     this.position = NavigationBarButtonPosition.right,
+    this.color,
   });
 
   factory PlatformNavigationBarButton.left({
@@ -37,6 +38,7 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
   final VoidCallback? onPressed;
   final String? buttonText;
   final dynamic icon;
+  final Color? color;
   final NavigationBarButtonPosition position;
 
   Widget get iconBuilder {
@@ -60,6 +62,7 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
         child: IconButton(
           icon: iconBuilder,
           onPressed: onPressed,
+          color: color,
         ),
       );
     }
@@ -79,6 +82,7 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
         padding: EdgeInsets.zero,
         child: buttonText != null ? Text(buttonText!) : iconBuilder,
         onPressed: onPressed,
+        color: color,
       ),
     );
   }
