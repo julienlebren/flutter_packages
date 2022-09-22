@@ -221,9 +221,9 @@ class ListTileContents extends ConsumerWidget {
                                 } else {
                                   return Row(
                                     children: [
-                                      extraLabel!,
-                                      const SizedBox(width: 8),
                                       PlatformListTileLabel(value: label!),
+                                      const SizedBox(width: 8),
+                                      extraLabel!,
                                     ],
                                   );
                                 }
