@@ -51,7 +51,7 @@ class PurchasesFeature extends ConsumerWidget {
                       color: theme.featureCaptionColor,
                       letterSpacing: -0.3,
                     ),
-                    maxLines: 2,
+                    maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                   ),
                 ],
