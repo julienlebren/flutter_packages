@@ -5,6 +5,7 @@ class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
     this.child,
     this.leading,
     this.label,
+    this.extraLabel,
     this.caption,
     this.value,
     this.trailing,
@@ -16,6 +17,7 @@ class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
   final Widget? leading;
   final Widget? trailing;
   final String? label;
+  final Widget? extraLabel;
   final dynamic caption;
   final String? value;
   final VoidCallback? onTap;
@@ -34,6 +36,7 @@ class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
           child: child,
           leading: leading,
           label: label,
+          extraLabel: extraLabel,
           caption: caption,
           value: value,
           trailing: trailing,
@@ -50,6 +53,7 @@ class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
         child: child,
         leading: leading,
         label: label,
+        extraLabel: extraLabel,
         caption: caption,
         value: value,
         trailing: trailing,
@@ -151,6 +155,7 @@ class ListTileContents extends ConsumerWidget {
     this.child,
     this.leading,
     this.label,
+    this.extraLabel,
     this.caption,
     this.value,
     this.trailing,
@@ -161,6 +166,7 @@ class ListTileContents extends ConsumerWidget {
   final Widget? leading;
   final Widget? trailing;
   final String? label;
+  final Widget? extraLabel;
   final dynamic caption;
   final String? value;
   final VoidCallback? onTap;
@@ -209,18 +215,19 @@ class ListTileContents extends ConsumerWidget {
                           children: [
                             Padding(
                               padding: EdgeInsets.only(top: 3, right: 5),
-                              child: Text(
-                                label!,
-                                style: TextStyle(
-                                  color: listTheme.labelColor,
-                                  fontSize: listTheme.labelFontSize,
-                                  letterSpacing: isCupertino() ? -0.5 : 0,
-                                ),
-                                maxLines: listTheme.labelMaxLines,
-                                overflow: listTheme.labelMaxLines != null
-                                    ? TextOverflow.ellipsis
-                                    : null,
-                              ),
+                              child: (() {
+                                if (extraLabel == null) {
+                                  return PlatformListTileLabel(value: label!);
+                                } else {
+                                  return Row(
+                                    children: [
+                                      extraLabel!,
+                                      const SizedBox(width: 8),
+                                      PlatformListTileLabel(value: label!),
+                                    ],
+                                  );
+                                }
+                              })(),
                             ),
                             if (caption != null)
                               Padding(
@@ -264,6 +271,31 @@ class ListTileContents extends ConsumerWidget {
                 ],
               ),
       ),
+    );
+  }
+}
+
+class PlatformListTileLabel extends ConsumerWidget {
+  const PlatformListTileLabel({
+    required this.value,
+    Key? key,
+  }) : super(key: key);
+
+  final String value;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final listTheme = ref.watch(listViewThemeProvider);
+
+    return Text(
+      value,
+      style: TextStyle(
+        color: listTheme.labelColor,
+        fontSize: listTheme.labelFontSize,
+        letterSpacing: isCupertino() ? -0.5 : 0,
+      ),
+      maxLines: listTheme.labelMaxLines,
+      overflow: listTheme.labelMaxLines != null ? TextOverflow.ellipsis : null,
     );
   }
 }
