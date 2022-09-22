@@ -44,9 +44,9 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
   Widget get iconBuilder {
     if (icon != null) {
       if (icon is IconData) {
-        return Icon(icon, size: 28);
+        return Icon(icon, size: 28, color: color);
       } else if (icon is AssetImage) {
-        return ImageIcon(icon);
+        return ImageIcon(icon, color: color);
       }
     }
     return SizedBox.shrink();
@@ -80,9 +80,15 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
       ),
       child: CupertinoButton(
         padding: EdgeInsets.zero,
-        child: buttonText != null ? Text(buttonText!) : iconBuilder,
+        child: buttonText != null
+            ? Text(
+                buttonText!,
+                style: TextStyle(
+                  color: color,
+                ),
+              )
+            : iconBuilder,
         onPressed: onPressed,
-        color: color,
       ),
     );
   }
