@@ -54,6 +54,7 @@ class MaterialTextSelectionControls extends TextSelectionControls {
       handlePaste: canPaste(delegate) ? () => handlePaste(delegate) : null,
       handleSelectAll:
           canSelectAll(delegate) ? () => handleSelectAll(delegate) : null,
+      buttons: buttons,
     );
   }
 
@@ -150,6 +151,7 @@ class _TextSelectionControlsToolbar extends StatefulWidget {
     required this.handleSelectAll,
     required this.selectionMidpoint,
     required this.textLineHeight,
+    this.buttons = const [],
   });
 
   final ClipboardStatusNotifier? clipboardStatus;
@@ -162,6 +164,7 @@ class _TextSelectionControlsToolbar extends StatefulWidget {
   final VoidCallback? handleSelectAll;
   final Offset selectionMidpoint;
   final double textLineHeight;
+  final List<TextSelectionToolbarButton> buttons;
 
   @override
   _TextSelectionControlsToolbarState createState() =>
@@ -264,6 +267,14 @@ class _TextSelectionControlsToolbarState
           label: localizations.selectAllButtonLabel,
           onPressed: widget.handleSelectAll!,
         ),
+      for (final button in widget.buttons) ...[
+        _TextSelectionToolbarItemData(
+            label: button.title,
+            onPressed: () {
+              button.onPressed();
+              widget.delegate.hideToolbar();
+            }),
+      ],
     ];
 
     // If there is no option available, build an empty widget.

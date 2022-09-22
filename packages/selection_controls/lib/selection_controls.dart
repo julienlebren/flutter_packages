@@ -2,7 +2,7 @@ library selection_controls;
 
 import 'dart:io' show Platform;
 
-import 'package:flutter/rendering.dart';
+import 'package:flutter/src/rendering/editable.dart';
 import 'package:flutter/widgets.dart';
 
 import 'src/cupertino_text_selection.dart';
@@ -18,78 +18,78 @@ class TextSelectionToolbarButton {
   final VoidCallback onPressed;
 }
 
-class CustomTextSelectionControls extends TextSelectionControls {
-  CustomTextSelectionControls({
-    this.buttons = const [],
-  }) : handle = defaultHandle;
-
-  final TextSelectionControls handle;
-  List<TextSelectionToolbarButton> buttons;
-
-  static TextSelectionControls get defaultHandle {
+class CustomSelectionControls implements TextSelectionControls {
+  static TextSelectionControls withButtons(
+    List<TextSelectionToolbarButton> buttons,
+  ) {
     if (Platform.isIOS || Platform.isMacOS) {
-      return CupertinoTextSelectionControls();
+      return CupertinoTextSelectionControls(buttons: buttons);
     } else if (Platform.isAndroid || Platform.isFuchsia) {
-      return MaterialTextSelectionControls();
+      return MaterialTextSelectionControls(buttons: buttons);
     }
     throw UnimplementedError();
   }
 
   @override
-  bool canSelectAll(TextSelectionDelegate delegate) {
-    // Android allows SelectAll when selection is not collapsed, unless
-    // everything has already been selected.
-    final TextEditingValue value = delegate.textEditingValue;
-    return delegate.selectAllEnabled &&
-        value.text.isNotEmpty &&
-        !(value.selection.start == 0 &&
-            value.selection.end == value.text.length);
-  }
-
-  /// Returns the size of the Material handle.
-  @override
-  Size getHandleSize(double textLineHeight) =>
-      handle.getHandleSize(textLineHeight);
-
-  /// Builder for material-style text selection handles.
-  @override
-  Widget buildHandle(
-    BuildContext context,
-    TextSelectionHandleType type,
-    double textLineHeight, [
-    VoidCallback? onTap,
-  ]) {
-    return handle.buildHandle(context, type, textLineHeight, onTap);
-  }
-
-  /// Gets anchor for material-style text selection handles.
-  ///
-  /// See [TextSelectionControls.getHandleAnchor].
-  @override
-  Offset getHandleAnchor(TextSelectionHandleType type, double textLineHeight) {
-    return handle.getHandleAnchor(type, textLineHeight);
+  Widget buildHandle(BuildContext _, TextSelectionHandleType __, double ___,
+      [VoidCallback? ____]) {
+    throw UnimplementedError();
   }
 
   @override
   Widget buildToolbar(
-    BuildContext context,
-    Rect globalEditableRegion,
-    double textLineHeight,
-    Offset position,
-    List<TextSelectionPoint> endpoints,
-    TextSelectionDelegate delegate,
-    ClipboardStatusNotifier? clipboardStatus,
-    Offset? lastSecondaryTapDownPosition,
-  ) {
-    return handle.buildToolbar(
-      context,
-      globalEditableRegion,
-      textLineHeight,
-      position,
-      endpoints,
-      delegate,
-      clipboardStatus,
-      lastSecondaryTapDownPosition,
-    );
+      BuildContext _,
+      Rect __,
+      double ___,
+      Offset ____,
+      List<TextSelectionPoint> _____,
+      TextSelectionDelegate ______,
+      ClipboardStatusNotifier? _______,
+      Offset? ________) {
+    throw UnimplementedError();
   }
+
+  @override
+  bool canCopy(TextSelectionDelegate _) {
+    throw UnimplementedError();
+  }
+
+  @override
+  bool canCut(TextSelectionDelegate _) {
+    throw UnimplementedError();
+  }
+
+  @override
+  bool canPaste(TextSelectionDelegate _) {
+    throw UnimplementedError();
+  }
+
+  @override
+  bool canSelectAll(TextSelectionDelegate _) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Offset getHandleAnchor(TextSelectionHandleType _, double __) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Size getHandleSize(double _) {
+    throw UnimplementedError();
+  }
+
+  @override
+  void handleCopy(TextSelectionDelegate _, [ClipboardStatusNotifier? __]) {}
+
+  @override
+  void handleCut(TextSelectionDelegate _, [ClipboardStatusNotifier? __]) {}
+
+  @override
+  Future<void> handlePaste(TextSelectionDelegate _) {
+    throw UnimplementedError();
+  }
+
+  @override
+  void handleSelectAll(TextSelectionDelegate _) {}
 }

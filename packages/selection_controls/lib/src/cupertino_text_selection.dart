@@ -35,6 +35,17 @@ class CupertinoTextSelectionControls extends TextSelectionControls {
     );
   }
 
+  @override
+  bool canSelectAll(TextSelectionDelegate delegate) {
+    // Android allows SelectAll when selection is not collapsed, unless
+    // everything has already been selected.
+    final TextEditingValue value = delegate.textEditingValue;
+    return delegate.selectAllEnabled &&
+        value.text.isNotEmpty &&
+        !(value.selection.start == 0 &&
+            value.selection.end == value.text.length);
+  }
+
   /// Builder for iOS-style copy/paste text selection toolbar.
   @override
   Widget buildToolbar(
