@@ -220,11 +220,9 @@ class ListTileContents extends ConsumerWidget {
                                   return PlatformListTileLabel(value: label!);
                                 } else {
                                   return Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       PlatformListTileLabel(value: label!),
-                                      //const SizedBox(width: 8),
+                                      const SizedBox(width: 8),
                                       extraLabel!,
                                     ],
                                   );
