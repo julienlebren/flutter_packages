@@ -22,7 +22,7 @@ class SignInLandingPageBuilder extends ConsumerWidget {
               signInTheme.scaffoldBackgroundColor.brightness,
           systemNavigationBarColor: signInTheme.scaffoldBackgroundColor,
           systemNavigationBarIconBrightness:
-              signInTheme.scaffoldBackgroundColor.brightness,
+              signInTheme.scaffoldBackgroundColor.invertedBrightness,
         ),
         child: SafeArea(
           top: false,
