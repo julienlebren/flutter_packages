@@ -21,6 +21,36 @@ class SubscriptionPageBuilder extends ConsumerWidget {
     controller.handleEvent(const PurchasesEvent.openOffers());
   }
 
+  _closePage(BuildContext context, WidgetRef ref) {
+    final isPurchasing = ref.watch(purchasesControllerProvider.select(
+      (state) => state.isPurchasing,
+    ));
+
+    if (isPurchasing) {
+      showAlertDialog(
+        context,
+        ref,
+        title:
+            'Un achat est actuellement en cours, êtes-vous sûr de vouloir quitter maintenant ?',
+        actions: [
+          PlatformDialogAction(
+            buttonText: "Oui, quitter cette vue",
+            onPressed: () {
+              Navigator.of(context, rootNavigator: true).pop();
+            },
+          ),
+          PlatformDialogAction(
+            buttonText: "Non, attendre la fin de l'achat",
+            isDefaultAction: true,
+          )
+        ],
+        displayCancelButton: false,
+      );
+    } else {
+      Navigator.of(context, rootNavigator: true).pop();
+    }
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final state = ref.watch(purchasesControllerProvider);
@@ -69,8 +99,7 @@ class SubscriptionPageBuilder extends ConsumerWidget {
             child: PlatformScaffold(
               appBar: PlatformNavigationBar(
                 leading: PlatformNavigationBarCloseButton(
-                  onPressed: () =>
-                      Navigator.of(context, rootNavigator: true).pop(),
+                  onPressed: () => _closePage(context, ref),
                 ),
                 trailing: isCupertino() && canDiscount
                     ? PlatformNavigationBarButton(
