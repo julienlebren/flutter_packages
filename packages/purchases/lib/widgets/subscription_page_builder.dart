@@ -223,27 +223,30 @@ class SubscriptionPurchaseOverlay extends ConsumerWidget {
       purchasesThemeProvider.select((theme) => theme.primaryColor),
     );
 
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(isCupertino() ? 10.0 : 0.0),
-      child: Container(
-        color: Colors.black12,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            CircularProgressIndicator(
-              color: primaryColor,
-            ),
-            const SizedBox(height: 8),
-            Text(
-              l10n.purchaseInProgress,
-              style: const TextStyle(
-                fontSize: 20,
-                color: Colors.white,
-              ),
-            ),
-          ],
+    return Container(
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.black,
+        borderRadius: const BorderRadius.all(
+          Radius.circular(10.0),
         ),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          CircularProgressIndicator(
+            color: primaryColor,
+          ),
+          const SizedBox(height: 8),
+          Text(
+            l10n.purchaseInProgress,
+            style: const TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+            ),
+          ),
+        ],
       ),
     );
   }
