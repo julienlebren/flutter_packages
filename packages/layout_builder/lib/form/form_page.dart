@@ -76,25 +76,27 @@ class FormPage extends ConsumerWidget {
         BoxConstraints viewportConstraints,
       ) {
         final formTheme = ref.watch(formThemeProvider);
-        return SingleChildScrollView(
-          physics: AlwaysScrollableScrollPhysics(),
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-              minHeight: viewportConstraints.maxHeight,
-            ),
-            child: Container(
-              color: formTheme.backgroundColor,
-              padding: EdgeInsets.symmetric(
-                horizontal: isCupertino() ? 18 : 0,
-                vertical: isCupertino() ? 18 : 0, // 14 si fond blanc
+        return PlatformScrollbar(
+          child: SingleChildScrollView(
+            physics: AlwaysScrollableScrollPhysics(),
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: viewportConstraints.maxHeight,
               ),
-              child: Column(children: [
-                for (var child in children) ...[
-                  child,
-                  if (child != children.last) FormSectionDivider(),
-                  //FormSectionDivider(),
-                ],
-              ]),
+              child: Container(
+                color: formTheme.backgroundColor,
+                padding: EdgeInsets.symmetric(
+                  horizontal: isCupertino() ? 18 : 0,
+                  vertical: isCupertino() ? 18 : 0, // 14 si fond blanc
+                ),
+                child: Column(children: [
+                  for (var child in children) ...[
+                    child,
+                    if (child != children.last) FormSectionDivider(),
+                    //FormSectionDivider(),
+                  ],
+                ]),
+              ),
             ),
           ),
         );
