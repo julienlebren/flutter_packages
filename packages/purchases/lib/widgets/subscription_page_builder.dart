@@ -190,9 +190,21 @@ class SubscriptionPageContents extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+    final primaryColor = ref.watch(
+      purchasesThemeProvider.select((theme) => theme.primaryColor),
+    );
+
     return FormWithOverlay(
       isSaving: isPurchasing,
-      overlay: const CircularProgressIndicator(),
+      overlay: Column(
+        children: [
+          CircularProgressIndicator(
+            color: primaryColor,
+          ),
+          Text(l10n.purchaseInProgress),
+        ],
+      ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 40),
         child: CustomScrollView(
