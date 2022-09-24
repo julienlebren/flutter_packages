@@ -71,6 +71,8 @@ class FormPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final formTheme = ref.watch(formThemeProvider);
     final appTheme = ref.watch(appThemeProvider);
+    final controller = ScrollController();
+
     return ProviderScope(
       overrides: [
         appThemeProvider.overrideWithValue(
@@ -84,8 +86,10 @@ class FormPage extends ConsumerWidget {
         BoxConstraints viewportConstraints,
       ) {
         final formTheme = ref.watch(formThemeProvider);
-        return PlatformScrollbar(
+        return ScrollViewVisibilityDetector(
+          controller: controller,
           child: SingleChildScrollView(
+            controller: controller,
             physics: AlwaysScrollableScrollPhysics(),
             child: ConstrainedBox(
               constraints: BoxConstraints(
