@@ -44,7 +44,7 @@ class PurchasesController extends StateNotifier<PurchasesState> {
   Future<void> _purchase([PackageType? type]) async {
     state = state.copyWith(isPurchasing: true);
     try {
-      /*if (type == null) {
+      if (type == null) {
         await _service.restorePurchase();
       } else if (type == PackageType.weekly) {
         await _service.purchaseWeekly();
@@ -59,7 +59,7 @@ class PurchasesController extends StateNotifier<PurchasesState> {
       } else if (type == PackageType.annual) {
         await _service.purchaseAnnual();
       }
-      state = state.copyWith(isSuccess: true);*/
+      state = state.copyWith(isSuccess: true);
     } on PlatformException catch (e) {
       if (PurchasesErrorHelper.getErrorCode(e) ==
           PurchasesErrorCode.purchaseCancelledError) {
