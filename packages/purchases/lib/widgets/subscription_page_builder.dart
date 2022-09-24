@@ -224,7 +224,7 @@ class SubscriptionPurchaseOverlay extends ConsumerWidget {
     );
 
     return Container(
-      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       decoration: BoxDecoration(
         color: Colors.black,
         borderRadius: const BorderRadius.all(
@@ -232,6 +232,7 @@ class SubscriptionPurchaseOverlay extends ConsumerWidget {
         ),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
