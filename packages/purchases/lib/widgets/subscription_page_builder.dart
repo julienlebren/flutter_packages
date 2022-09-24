@@ -172,7 +172,7 @@ class SubscriptionAppBar extends ConsumerWidget {
   }
 }
 
-class SubscriptionPageContents extends ConsumerWidget {
+class SubscriptionPageContents extends StatelessWidget {
   const SubscriptionPageContents({
     Key? key,
     required this.header,
@@ -189,22 +189,10 @@ class SubscriptionPageContents extends ConsumerWidget {
   final bool isPurchasing;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final l10n = ref.watch(purchasesLocalizationsProvider);
-    final primaryColor = ref.watch(
-      purchasesThemeProvider.select((theme) => theme.primaryColor),
-    );
-
+  Widget build(BuildContext context) {
     return FormWithOverlay(
       isSaving: isPurchasing,
-      overlay: Column(
-        children: [
-          CircularProgressIndicator(
-            color: primaryColor,
-          ),
-          Text(l10n.purchaseInProgress),
-        ],
-      ),
+      overlay: const SubscriptionPurchaseOverlay(),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 40),
         child: CustomScrollView(
@@ -218,6 +206,42 @@ class SubscriptionPageContents extends ConsumerWidget {
             hasStoreIssue
                 ? const SubscriptionStoreIssue()
                 : SliverToBoxAdapter(child: footer),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class SubscriptionPurchaseOverlay extends ConsumerWidget {
+  const SubscriptionPurchaseOverlay({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l10n = ref.watch(purchasesLocalizationsProvider);
+    final primaryColor = ref.watch(
+      purchasesThemeProvider.select((theme) => theme.primaryColor),
+    );
+
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(isCupertino() ? 10.0 : 0.0),
+      child: Container(
+        color: Colors.black12,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            CircularProgressIndicator(
+              color: primaryColor,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              l10n.purchaseInProgress,
+              style: const TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+              ),
+            ),
           ],
         ),
       ),
