@@ -13,6 +13,15 @@ class PurchasesLocalizationsFr extends PurchasesLocalizations {
   }
 
   @override
+  String get closeAlertTitle => 'Un achat est actuellement en cours, êtes-vous sûr de vouloir quitter maintenant ?';
+
+  @override
+  String get closeAlertCloseButton => 'Oui, quitter cette vue';
+
+  @override
+  String get closeAlertCancelButton => 'Non, attendre la fin de l\'achat';
+
+  @override
   String get cupertinoDisclaimer => 'Le paiement sera effectué sur le compte iTunes et l\'abonnement se renouvellera automatiquement à moins que le renouvellement automatique ne soit désactivé au moins 24 heures avant la fin de la période en cours. Le compte sera facturé pour le renouvellement dans les 24 heures précédant la fin de la période en cours. Gérez le renouvellement automatique en accédant à l\'application Paramètres de votre appareil.';
 
   @override

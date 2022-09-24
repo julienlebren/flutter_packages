@@ -13,6 +13,15 @@ class PurchasesLocalizationsEn extends PurchasesLocalizations {
   }
 
   @override
+  String get closeAlertTitle => 'A purchase is currently in progress, are you sure you want to leave now?';
+
+  @override
+  String get closeAlertCloseButton => 'Yes, leave this view';
+
+  @override
+  String get closeAlertCancelButton => 'No, wait for the end of the purchase';
+
+  @override
   String get cupertinoDisclaimer => 'Payment will be charged to iTunes Account and subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period. Account will be charged for renewal within 24-hours prior to the end of the current period. Manage auto-renewal by going to the user\'s Account Settings.';
 
   @override

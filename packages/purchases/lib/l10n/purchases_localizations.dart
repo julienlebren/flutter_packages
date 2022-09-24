@@ -105,6 +105,24 @@ abstract class PurchasesLocalizations {
   /// **'{price}/year'**
   String annualPrice(String price);
 
+  /// No description provided for @closeAlertTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'A purchase is currently in progress, are you sure you want to leave now?'**
+  String get closeAlertTitle;
+
+  /// No description provided for @closeAlertCloseButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Yes, leave this view'**
+  String get closeAlertCloseButton;
+
+  /// No description provided for @closeAlertCancelButton.
+  ///
+  /// In en, this message translates to:
+  /// **'No, wait for the end of the purchase'**
+  String get closeAlertCancelButton;
+
   /// No description provided for @cupertinoDisclaimer.
   ///
   /// In en, this message translates to:

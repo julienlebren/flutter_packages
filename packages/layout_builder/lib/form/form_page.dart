@@ -3,22 +3,29 @@ part of 'form.dart';
 class FormWithOverlay extends StatelessWidget {
   const FormWithOverlay({
     Key? key,
+    this.overlay,
     required this.child,
     this.isSaving = false,
   }) : super(key: key);
 
   final bool isSaving;
+  final Widget? overlay;
   final Widget child;
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedOpacity(
-      opacity: isSaving ? 0.5 : 1,
-      duration: Duration(milliseconds: 200),
-      child: AbsorbPointer(
-        absorbing: isSaving ? true : false,
-        child: child,
-      ),
+    return Stack(
+      children: <Widget>[
+        AnimatedOpacity(
+          opacity: isSaving ? 0.5 : 1,
+          duration: Duration(milliseconds: 200),
+          child: AbsorbPointer(
+            absorbing: isSaving ? true : false,
+            child: child,
+          ),
+        ),
+        if (overlay != null && isSaving) overlay!,
+      ],
     );
 
     /*Stack(
