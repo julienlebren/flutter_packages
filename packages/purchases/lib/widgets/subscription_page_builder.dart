@@ -219,13 +219,10 @@ class SubscriptionPurchaseOverlay extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(purchasesLocalizationsProvider);
-    final primaryColor = ref.watch(
-      purchasesThemeProvider.select((theme) => theme.primaryColor),
-    );
 
     return Container(
       padding: const EdgeInsets.all(30),
-      width: 200,
+      width: 220,
       decoration: const BoxDecoration(
         color: Colors.black87,
         borderRadius: BorderRadius.all(
@@ -240,7 +237,7 @@ class SubscriptionPurchaseOverlay extends ConsumerWidget {
           const PlatformActivityIndicator(
             color: Colors.white,
           ),
-          const SizedBox(height: 12),
+          const SizedBox(height: 16),
           Text(
             l10n.purchaseInProgress,
             textAlign: TextAlign.center,
