@@ -224,7 +224,7 @@ class SubscriptionPurchaseOverlay extends ConsumerWidget {
     );
 
     return Container(
-      padding: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(30),
       width: 200,
       decoration: const BoxDecoration(
         color: Colors.black87,
@@ -243,6 +243,7 @@ class SubscriptionPurchaseOverlay extends ConsumerWidget {
           const SizedBox(height: 12),
           Text(
             l10n.purchaseInProgress,
+            textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 18,
               color: Colors.white,
