@@ -224,10 +224,10 @@ class SubscriptionPurchaseOverlay extends ConsumerWidget {
     );
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-      decoration: BoxDecoration(
-        color: Colors.black,
-        borderRadius: const BorderRadius.all(
+      padding: const EdgeInsets.all(15),
+      decoration: const BoxDecoration(
+        color: Colors.black54,
+        borderRadius: BorderRadius.all(
           Radius.circular(10.0),
         ),
       ),
