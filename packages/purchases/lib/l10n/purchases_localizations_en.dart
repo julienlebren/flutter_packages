@@ -42,6 +42,9 @@ class PurchasesLocalizationsEn extends PurchasesLocalizations {
   String get privacyPolicyButton => 'Privacy policy';
 
   @override
+  String get purchaseInProgress => 'Purchase in progress, please wait...';
+
+  @override
   String get restoreButton => 'Restore purchases';
 
   @override

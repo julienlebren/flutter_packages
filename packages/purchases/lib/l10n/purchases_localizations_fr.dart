@@ -42,6 +42,9 @@ class PurchasesLocalizationsFr extends PurchasesLocalizations {
   String get privacyPolicyButton => 'Politique de confidentialité';
 
   @override
+  String get purchaseInProgress => 'Achat en cours, veuillez patienter...';
+
+  @override
   String get restoreButton => 'Restaurer les achats';
 
   @override

@@ -159,6 +159,12 @@ abstract class PurchasesLocalizations {
   /// **'Privacy policy'**
   String get privacyPolicyButton;
 
+  /// No description provided for @purchaseInProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Purchase in progress, please wait...'**
+  String get purchaseInProgress;
+
   /// No description provided for @restoreButton.
   ///
   /// In en, this message translates to:

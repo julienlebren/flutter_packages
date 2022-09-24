@@ -10,6 +10,7 @@
   "monthlyPrice": "{price}/mois",
   "priceNotLoaded": "Impossible d'accéder au Store pour le moment.",
   "privacyPolicyButton": "Politique de confidentialité",
+  "purchaseInProgress": "Achat en cours, veuillez patienter...",
   "restoreButton": "Restaurer les achats",
   "retryButton": "Réessayer",
   "termsButton": "Conditions d'utilisation",

@@ -24,6 +24,7 @@
   },
   "priceNotLoaded": "Unable to contact Store at the moment.",
   "privacyPolicyButton": "Privacy policy",
+  "purchaseInProgress": "Purchase in progress, please wait...",
   "restoreButton": "Restore purchases",
   "retryButton": "Retry",
   "termsButton": "Terms of Use",

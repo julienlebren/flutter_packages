@@ -192,6 +192,7 @@ class SubscriptionPageContents extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return FormWithOverlay(
       isSaving: isPurchasing,
+      overlay: const CircularProgressIndicator(),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 40),
         child: CustomScrollView(
