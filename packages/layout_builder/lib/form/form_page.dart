@@ -87,6 +87,7 @@ class FormPage extends ConsumerWidget {
       ) {
         final formTheme = ref.watch(formThemeProvider);
         return ScrollViewVisibilityDetector(
+          key: key,
           controller: controller,
           child: SingleChildScrollView(
             controller: controller,
