@@ -44,6 +44,7 @@ class PlatformTabScaffold
         navigator.maybePop();
       }
     } else {
+      ref.read(scrollControllerProvider.state).state = null;
       ref.read(currentTabIndexProvider.state).state = index;
     }
     return null;
