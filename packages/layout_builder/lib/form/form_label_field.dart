@@ -7,6 +7,7 @@ class FormLabelField extends StatelessWidget {
     this.label,
     this.value,
     this.caption,
+    this.trailing,
   })  : assert((label != null || caption != null)),
         super(key: key);
 
@@ -14,6 +15,7 @@ class FormLabelField extends StatelessWidget {
   final String? label;
   final String? caption;
   final String? value;
+  final Widget? trailing;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +23,7 @@ class FormLabelField extends StatelessWidget {
       leading: leading,
       label: label,
       value: value,
+      trailing: trailing,
       caption: isMaterial() ? caption : null,
     );
   }
