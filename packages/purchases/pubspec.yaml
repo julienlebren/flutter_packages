@@ -19,7 +19,7 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/layout_builder
-    version: ^2.8.6
+    version: ^2.10.0
   localization:
     path: ../localization
   purchases_flutter: ^4.2.1
