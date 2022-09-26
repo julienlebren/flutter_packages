@@ -106,7 +106,10 @@ final authStateProvider =
               return const AuthState.initializing();
             }
           },
-          error: (error, _) => AuthState.error(error.toString()),
+          error: (error, stack) {
+            print(stack);
+            return AuthState.error(error.toString());
+          },
           data: (user) {
             if (user == null) {
               return const AuthState.waitingUserCreation();
