@@ -60,7 +60,6 @@ class ScrollViewVisibilityDetector extends ConsumerWidget {
       onVisibilityChanged: (visibilityInfo) {
         if (controller != null) {
           if (visibilityInfo.visibleFraction == 1) {
-            print("Setting controller");
             ref.read(scrollControllerProvider.state).state = controller;
           }
         }
