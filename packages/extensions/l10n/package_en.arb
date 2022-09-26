@@ -1,0 +1,30 @@
+{
+  "daysAgo": "{days} days ago",
+  "@daysAgo" : {
+    "placeholders": {
+      "days": { 
+        "type": "String"
+        }
+    }
+  },
+  "yesterday": "yesterday",
+  "oneHourAgo": "1 hour ago",
+  "hoursAgo": "{hours} hours ago",
+  "@hoursAgo" : {
+    "placeholders": {
+      "hours": { 
+        "type": "String"
+        }
+    }
+  },
+  "minutesAgo": "{minutes} minutes ago",
+  "oneMinuteAgo": "1 minute ago",
+  "@minutesAgo" : {
+    "placeholders": {
+      "minutes": { 
+        "type": "String"
+        }
+    }
+  },
+  "justNow": "Just now"
+}

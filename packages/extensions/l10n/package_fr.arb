@@ -1,0 +1,7 @@
+{
+  "daysAgo": "il y a {days} jours",
+  "yesterday": "hier",
+  "hoursAgo": "il y a {hours} heures",
+  "minutesAgo": "il y a {minutes} minutes",
+  "justNow": "À l'instant"
+}

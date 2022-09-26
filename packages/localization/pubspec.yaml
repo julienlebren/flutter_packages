@@ -11,10 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
   extensions:
-    git:
-      url: https://github.com/julienlebren/flutter_packages
-      path: packages/extensions
-    version: ^0.2.0
+    path: ../extensions
   flutter_riverpod: ^1.0.0
 
 dev_dependencies:
