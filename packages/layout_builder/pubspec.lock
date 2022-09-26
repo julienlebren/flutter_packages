@@ -179,10 +179,12 @@ packages:
   extensions:
     dependency: "direct main"
     description:
-      path: "../extensions"
-      relative: true
-    source: path
-    version: "0.3.0"
+      path: "packages/extensions"
+      ref: HEAD
+      resolved-ref: "8c731d74f5135e1a9264f190b6e5c6877ef7d5f3"
+      url: "https://github.com/julienlebren/flutter_packages"
+    source: git
+    version: "0.3.2"
   fake_async:
     dependency: transitive
     description:
@@ -341,10 +343,12 @@ packages:
   localization:
     dependency: "direct main"
     description:
-      path: "../localization"
-      relative: true
-    source: path
-    version: "1.1.3"
+      path: "packages/localization"
+      ref: HEAD
+      resolved-ref: "8c731d74f5135e1a9264f190b6e5c6877ef7d5f3"
+      url: "https://github.com/julienlebren/flutter_packages"
+    source: git
+    version: "1.1.4"
   logging:
     dependency: transitive
     description:
@@ -383,9 +387,11 @@ packages:
   modal_bottom_sheet:
     dependency: "direct main"
     description:
-      path: "../modal_bottom_sheet"
-      relative: true
-    source: path
+      path: "packages/modal_bottom_sheet"
+      ref: HEAD
+      resolved-ref: "8c731d74f5135e1a9264f190b6e5c6877ef7d5f3"
+      url: "https://github.com/julienlebren/flutter_packages"
+    source: git
     version: "2.0.2"
   numberpicker:
     dependency: "direct main"

@@ -17,7 +17,7 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/extensions
-    version: ^0.3.0
+    version: ^0.3.2
   layout_builder:
     git:
       url: https://github.com/julienlebren/flutter_packages
