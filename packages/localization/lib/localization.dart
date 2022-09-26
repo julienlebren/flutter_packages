@@ -1,9 +1,14 @@
 library localization;
 
 import 'dart:ui';
-import 'package:extensions/extensions.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:localization/locale_names.dart';
+
+extension StringX on String {
+  String capitalize() {
+    return "${this[0].toUpperCase()}${toLowerCase().substring(1)}";
+  }
+}
 
 /// This extension provides the names of the available locales, in order to
 /// display it in their native localization in the user settings.
