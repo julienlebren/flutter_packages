@@ -383,12 +383,10 @@ packages:
   modal_bottom_sheet:
     dependency: "direct main"
     description:
-      path: "packages/modal_bottom_sheet"
-      ref: HEAD
-      resolved-ref: "16ab6f87220382a9e68e1dea2beddc97c1e8747a"
-      url: "https://github.com/julienlebren/flutter_packages"
-    source: git
-    version: "2.0.2-dev.1"
+      path: "../modal_bottom_sheet"
+      relative: true
+    source: path
+    version: "2.0.2"
   numberpicker:
     dependency: "direct main"
     description:
