@@ -6,11 +6,13 @@ class FormWithOverlay extends StatelessWidget {
     this.overlay,
     required this.child,
     this.isSaving = false,
+    this.opacity = 0.5,
   }) : super(key: key);
 
   final bool isSaving;
   final Widget? overlay;
   final Widget child;
+  final double opacity;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class FormWithOverlay extends StatelessWidget {
       alignment: Alignment.center,
       children: <Widget>[
         AnimatedOpacity(
-          opacity: isSaving ? 0.5 : 1,
+          opacity: isSaving ? opacity : 1,
           duration: Duration(milliseconds: 200),
           child: AbsorbPointer(
             absorbing: isSaving ? true : false,
