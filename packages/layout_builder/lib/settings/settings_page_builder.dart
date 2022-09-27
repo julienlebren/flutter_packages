@@ -79,6 +79,7 @@ class SettingsPageContents extends StatelessWidget {
       body: FormWithOverlay(
         child: child,
         isSaving: isSaving,
+        opacity: 1,
       ),
     );
   }
