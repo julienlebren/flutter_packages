@@ -21,21 +21,25 @@ class NotificationsService extends StateNotifier<bool> {
   final Function(String token) _fcmTokenHandler;
 
   void register() async {
-    NotificationSettings settings =
-        await FirebaseMessaging.instance.requestPermission(
-      alert: true,
-      badge: true,
-      provisional: false,
-      sound: true,
-    );
+    try {
+      NotificationSettings settings =
+          await FirebaseMessaging.instance.requestPermission(
+        alert: true,
+        badge: true,
+        provisional: false,
+        sound: true,
+      );
 
-    if (settings.authorizationStatus == AuthorizationStatus.authorized) {
-      final fcmToken = await FirebaseMessaging.instance.getToken();
-      if (fcmToken != null) {
-        _fcmTokenHandler(fcmToken);
+      if (settings.authorizationStatus == AuthorizationStatus.authorized) {
+        final fcmToken = await FirebaseMessaging.instance.getToken();
+        if (fcmToken != null) {
+          _fcmTokenHandler(fcmToken);
+        }
+        state = true;
+      } else {
+        state = false;
       }
-      state = true;
-    } else {
+    } catch (_) {
       state = false;
     }
   }

@@ -219,11 +219,17 @@ class ListTileContents extends ConsumerWidget {
                               padding: EdgeInsets.only(top: 3, right: 5),
                               child: (() {
                                 if (extraLabel == null) {
-                                  return PlatformListTileLabel(value: label!);
+                                  return PlatformListTileLabel(
+                                    value: label!,
+                                    listTheme: listTheme,
+                                  );
                                 } else {
                                   return Row(
                                     children: [
-                                      PlatformListTileLabel(value: label!),
+                                      PlatformListTileLabel(
+                                        value: label!,
+                                        listTheme: listTheme,
+                                      ),
                                       const SizedBox(width: 8),
                                       extraLabel!,
                                     ],
@@ -239,7 +245,9 @@ class ListTileContents extends ConsumerWidget {
                                     return caption;
                                   } else if (caption is String) {
                                     return PlatformListTileCaption(
-                                        value: caption!);
+                                      value: caption!,
+                                      listTheme: listTheme,
+                                    );
                                   }
                                 })(),
                               ),
@@ -277,18 +285,18 @@ class ListTileContents extends ConsumerWidget {
   }
 }
 
-class PlatformListTileLabel extends ConsumerWidget {
+class PlatformListTileLabel extends StatelessWidget {
   const PlatformListTileLabel({
     required this.value,
+    required this.listTheme,
     Key? key,
   }) : super(key: key);
 
   final String value;
+  final ListViewTheme listTheme;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final listTheme = ref.watch(listViewThemeProvider);
-
+  Widget build(BuildContext context) {
     return Text(
       value,
       style: TextStyle(
@@ -302,18 +310,18 @@ class PlatformListTileLabel extends ConsumerWidget {
   }
 }
 
-class PlatformListTileCaption extends ConsumerWidget {
+class PlatformListTileCaption extends StatelessWidget {
   const PlatformListTileCaption({
     required this.value,
+    required this.listTheme,
     Key? key,
   }) : super(key: key);
 
   final String value;
+  final ListViewTheme listTheme;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final listTheme = ref.watch(listViewThemeProvider);
-
+  Widget build(BuildContext context) {
     return Text(
       value,
       style: TextStyle(
