@@ -107,13 +107,13 @@ class _CupertinoListTileState extends ConsumerState<CupertinoListTile> {
   }
 
   void _updateHighlight(bool isPressed) {
-    try {
-      final appTheme = ref.watch(appThemeProvider);
-      setState(() {
-        _tileBackground =
-            (isPressed ? appTheme.selectedColor : appTheme.listTileBackground);
-      });
-    } catch (_) {}
+    //try {
+    final appTheme = ref.read(appThemeProvider);
+    setState(() {
+      _tileBackground =
+          (isPressed ? appTheme.selectedColor : appTheme.listTileBackground);
+    });
+    //} catch (_) {}
   }
 
   @override
