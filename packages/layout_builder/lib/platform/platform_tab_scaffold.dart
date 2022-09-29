@@ -32,7 +32,9 @@ class PlatformTabScaffold
 
       final tab = tabs[index];
       final scrollController = ref.read(scrollControllerProvider);
-      if (scrollController != null && scrollController.offset > 0) {
+      if (scrollController != null &&
+          scrollController.hasClients &&
+          scrollController.offset > 0) {
         scrollController.animateTo(
           0,
           duration: Duration(milliseconds: 200),
