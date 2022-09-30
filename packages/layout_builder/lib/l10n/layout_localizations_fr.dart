@@ -20,11 +20,11 @@ class LayoutLocalizationsFr extends LayoutLocalizations {
   String get errorDescription => 'Nous ne pouvons pas traiter votre requête pour le moment.';
 
   @override
-  String get networkErrorTitle => 'You are currently not connected to the internet';
+  String get networkErrorTitle => 'Vous n\'êtes actuellement pas connecté à internet';
 
   @override
-  String get networkErrorCaption => 'The app requires an internet connection to work, please check your connection settings';
+  String get networkErrorCaption => 'L\'app nécessite une connexion internet pour fonctionner, merci de vérifier vos paramètres de connexion';
 
   @override
-  String get networkErrorWaiting => 'Waiting for connection...';
+  String get networkErrorWaiting => 'En attente de connexion...';
 }
