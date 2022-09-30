@@ -496,6 +496,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
+  internet_connection_checker:
+    dependency: transitive
+    description:
+      name: internet_connection_checker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0+1"
   intl:
     dependency: "direct main"
     description:
@@ -536,10 +543,10 @@ packages:
     description:
       path: "packages/layout_builder"
       ref: HEAD
-      resolved-ref: f5c32df068eb91477a3a8aad2b11f682519fbb43
+      resolved-ref: "3deecd9c9a7b5607fee2ecfc6040be2283e7dfe5"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "2.10.5"
+    version: "3.0.0"
   lints:
     dependency: transitive
     description:

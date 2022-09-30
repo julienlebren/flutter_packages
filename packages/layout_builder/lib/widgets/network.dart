@@ -3,19 +3,14 @@ part of 'widgets.dart';
 @freezed
 class NetworkErrorSettings with _$NetworkErrorSettings {
   const factory NetworkErrorSettings({
-    required String title,
-    required String caption,
-    required String waiting,
+    String? title,
+    String? caption,
+    String? waiting,
   }) = _NetworkErrorSettings;
 }
 
 final networkSettingsProvider = Provider<NetworkErrorSettings>((ref) {
-  final l10n = ref.watch(layoutLocalizationsProvider);
-  return NetworkErrorSettings(
-    title: l10n.networkErrorTitle,
-    caption: l10n.networkErrorCaption,
-    waiting: l10n.networkErrorWaiting,
-  );
+  return const NetworkErrorSettings();
 });
 
 final connectionStreamProvider = StreamProvider<InternetConnectionStatus>(
@@ -40,6 +35,7 @@ class NetWorkError extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final settings = ref.watch(networkSettingsProvider);
+    final l10n = ref.watch(layoutLocalizationsProvider);
 
     return Container(
       width: double.infinity,
@@ -50,13 +46,13 @@ class NetWorkError extends ConsumerWidget {
         children: [
           const Icon(CupertinoIcons.wifi_exclamationmark, size: 80),
           Text(
-            settings.title,
+            settings.title ?? l10n.networkErrorTitle,
             style: PlatformTextStyle.mediumTitle,
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
           Text(
-            settings.caption,
+            settings.caption ?? l10n.networkErrorCaption,
             style: PlatformTextStyle.n18,
             textAlign: TextAlign.center,
           ),
@@ -67,7 +63,7 @@ class NetWorkError extends ConsumerWidget {
               const PlatformActivityIndicator(),
               const SizedBox(width: 10),
               Text(
-                settings.waiting,
+                settings.waiting ?? l10n.networkErrorWaiting,
                 style: const TextStyle(color: Colors.grey),
               ),
             ],

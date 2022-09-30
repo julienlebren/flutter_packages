@@ -16,9 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NetworkErrorSettings {
-  String get title => throw _privateConstructorUsedError;
-  String get caption => throw _privateConstructorUsedError;
-  String get waiting => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  String? get caption => throw _privateConstructorUsedError;
+  String? get waiting => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $NetworkErrorSettingsCopyWith<NetworkErrorSettings> get copyWith =>
@@ -30,7 +30,7 @@ abstract class $NetworkErrorSettingsCopyWith<$Res> {
   factory $NetworkErrorSettingsCopyWith(NetworkErrorSettings value,
           $Res Function(NetworkErrorSettings) then) =
       _$NetworkErrorSettingsCopyWithImpl<$Res>;
-  $Res call({String title, String caption, String waiting});
+  $Res call({String? title, String? caption, String? waiting});
 }
 
 /// @nodoc
@@ -52,15 +52,15 @@ class _$NetworkErrorSettingsCopyWithImpl<$Res>
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       caption: caption == freezed
           ? _value.caption
           : caption // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       waiting: waiting == freezed
           ? _value.waiting
           : waiting // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -72,7 +72,7 @@ abstract class _$$_NetworkErrorSettingsCopyWith<$Res>
           $Res Function(_$_NetworkErrorSettings) then) =
       __$$_NetworkErrorSettingsCopyWithImpl<$Res>;
   @override
-  $Res call({String title, String caption, String waiting});
+  $Res call({String? title, String? caption, String? waiting});
 }
 
 /// @nodoc
@@ -96,15 +96,15 @@ class __$$_NetworkErrorSettingsCopyWithImpl<$Res>
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       caption: caption == freezed
           ? _value.caption
           : caption // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       waiting: waiting == freezed
           ? _value.waiting
           : waiting // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -112,15 +112,14 @@ class __$$_NetworkErrorSettingsCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_NetworkErrorSettings implements _NetworkErrorSettings {
-  const _$_NetworkErrorSettings(
-      {required this.title, required this.caption, required this.waiting});
+  const _$_NetworkErrorSettings({this.title, this.caption, this.waiting});
 
   @override
-  final String title;
+  final String? title;
   @override
-  final String caption;
+  final String? caption;
   @override
-  final String waiting;
+  final String? waiting;
 
   @override
   String toString() {
@@ -153,16 +152,16 @@ class _$_NetworkErrorSettings implements _NetworkErrorSettings {
 
 abstract class _NetworkErrorSettings implements NetworkErrorSettings {
   const factory _NetworkErrorSettings(
-      {required final String title,
-      required final String caption,
-      required final String waiting}) = _$_NetworkErrorSettings;
+      {final String? title,
+      final String? caption,
+      final String? waiting}) = _$_NetworkErrorSettings;
 
   @override
-  String get title;
+  String? get title;
   @override
-  String get caption;
+  String? get caption;
   @override
-  String get waiting;
+  String? get waiting;
   @override
   @JsonKey(ignore: true)
   _$$_NetworkErrorSettingsCopyWith<_$_NetworkErrorSettings> get copyWith =>
