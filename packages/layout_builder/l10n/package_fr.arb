@@ -3,5 +3,8 @@
     "light": "Clair",
     "system": "Système",
     "errorTitle": "Il y a eu un problème...",
-    "errorDescription": "Nous ne pouvons pas traiter votre requête pour le moment."
+    "errorDescription": "Nous ne pouvons pas traiter votre requête pour le moment.",
+    "networkErrorTitle": "Vous n'êtes actuellement pas connecté à internet",
+    "networkErrorCaption": "L'app nécessite une connexion internet pour fonctionner, merci de vérifier vos paramètres de connexion",
+    "networkErrorWaiting": "En attente de connexion..."
 }
