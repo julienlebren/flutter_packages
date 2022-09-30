@@ -179,10 +179,12 @@ packages:
   extensions:
     dependency: "direct main"
     description:
-      path: "../extensions"
-      relative: true
-    source: path
-    version: "0.3.0"
+      path: "packages/extensions"
+      ref: HEAD
+      resolved-ref: db8813bcf02a7153bef9a7926ba6688b6eed4ce7
+      url: "https://github.com/julienlebren/flutter_packages"
+    source: git
+    version: "0.3.2"
   fake_async:
     dependency: transitive
     description:
@@ -322,6 +324,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
+  internet_connection_checker:
+    dependency: transitive
+    description:
+      name: internet_connection_checker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0+1"
   intl:
     dependency: "direct main"
     description:
@@ -353,10 +362,12 @@ packages:
   layout_builder:
     dependency: "direct main"
     description:
-      path: "../layout_builder"
-      relative: true
-    source: path
-    version: "2.10.0"
+      path: "packages/layout_builder"
+      ref: HEAD
+      resolved-ref: db8813bcf02a7153bef9a7926ba6688b6eed4ce7
+      url: "https://github.com/julienlebren/flutter_packages"
+    source: git
+    version: "3.0.0"
   lints:
     dependency: transitive
     description:
@@ -367,10 +378,12 @@ packages:
   localization:
     dependency: "direct main"
     description:
-      path: "../localization"
-      relative: true
-    source: path
-    version: "1.1.3"
+      path: "packages/localization"
+      ref: HEAD
+      resolved-ref: db8813bcf02a7153bef9a7926ba6688b6eed4ce7
+      url: "https://github.com/julienlebren/flutter_packages"
+    source: git
+    version: "1.1.4"
   logging:
     dependency: transitive
     description:
@@ -411,10 +424,10 @@ packages:
     description:
       path: "packages/modal_bottom_sheet"
       ref: HEAD
-      resolved-ref: ce551e6d7992f3384f5fcbcfb16bb7f29b7a2af6
+      resolved-ref: db8813bcf02a7153bef9a7926ba6688b6eed4ce7
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "2.0.2-dev.3"
+    version: "2.0.2"
   numberpicker:
     dependency: transitive
     description:
