@@ -3,5 +3,8 @@
     "light": "Light",
     "system": "System",
     "errorTitle": "Oops! Something went wrong...",
-    "errorDescription": "We are unable to handle your request at the moment."
+    "errorDescription": "We are unable to handle your request at the moment.",
+    "networkErrorTitle": "You are currently not connected to the internet",
+    "networkErrorCaption": "The app requires an internet connection to work, please check your connection settings",
+    "networkErrorWaiting": "Waiting for connection..."
 }

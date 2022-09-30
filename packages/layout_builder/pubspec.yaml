@@ -1,11 +1,11 @@
 name: layout_builder
 description: Layout building templates for apps built by https://github.com/julienlebren 
-version: 2.10.8
+version: 2.11.0
 homepage: https://twitter.com/hikeland
 publish_to: none
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -30,6 +30,7 @@ dependencies:
     version: ^2.0.2
   cached_network_image: ^3.2.2
   flutter_riverpod: ^1.0.4
+  internet_connection_checker: ^1.0.0+1
   intl: ^0.17.0
   freezed_annotation: ^2.1.0
   numberpicker: ^2.0.1

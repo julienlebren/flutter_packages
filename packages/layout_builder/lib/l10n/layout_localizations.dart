@@ -1,4 +1,3 @@
-
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -9,14 +8,14 @@ import 'package:intl/intl.dart' as intl;
 import 'layout_localizations_en.dart';
 import 'layout_localizations_fr.dart';
 
-/// Callers can lookup localized strings with an instance of LayoutLocalizations returned
-/// by `LayoutLocalizations.of(context)`.
+/// Callers can lookup localized strings with an instance of LayoutLocalizations
+/// returned by `LayoutLocalizations.of(context)`.
 ///
 /// Applications need to include `LayoutLocalizations.delegate()` in their app's
-/// localizationDelegates list, and the locales they support in the app's
-/// supportedLocales list. For example:
+/// `localizationDelegates` list, and the locales they support in the app's
+/// `supportedLocales` list. For example:
 ///
-/// ```
+/// ```dart
 /// import 'l10n/layout_localizations.dart';
 ///
 /// return MaterialApp(
@@ -31,14 +30,14 @@ import 'layout_localizations_fr.dart';
 /// Please make sure to update your pubspec.yaml to include the following
 /// packages:
 ///
-/// ```
+/// ```yaml
 /// dependencies:
 ///   # Internationalization support.
 ///   flutter_localizations:
 ///     sdk: flutter
 ///   intl: any # Use the pinned version from flutter_localizations
 ///
-///   # rest of dependencies
+///   # Rest of dependencies
 /// ```
 ///
 /// ## iOS Applications
@@ -123,6 +122,24 @@ abstract class LayoutLocalizations {
   /// In en, this message translates to:
   /// **'We are unable to handle your request at the moment.'**
   String get errorDescription;
+
+  /// No description provided for @networkErrorTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'You are currently not connected to the internet'**
+  String get networkErrorTitle;
+
+  /// No description provided for @networkErrorCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'The app requires an internet connection to work, please check your connection settings'**
+  String get networkErrorCaption;
+
+  /// No description provided for @networkErrorWaiting.
+  ///
+  /// In en, this message translates to:
+  /// **'Waiting for connection...'**
+  String get networkErrorWaiting;
 }
 
 class _LayoutLocalizationsDelegate extends LocalizationsDelegate<LayoutLocalizations> {

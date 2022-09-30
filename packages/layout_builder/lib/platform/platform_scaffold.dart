@@ -85,3 +85,41 @@ class PlatformModalScaffold extends PlatformScaffold {
     );
   }
 }
+
+class PlatformNetworkScaffold extends ConsumerWidget {
+  const PlatformNetworkScaffold({
+    this.appBar,
+    this.isModal = false,
+    this.floatingActionButton,
+    required this.body,
+    this.networkTitle,
+    this.networkCaption,
+  }) : super();
+
+  final bool isModal;
+  final PlatformNavigationBar? appBar;
+  final Widget? floatingActionButton;
+  final Widget body;
+  final String? networkTitle;
+  final String? networkCaption;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final hasConnection = ref.watch(connectionStatusProvider);
+
+    return PlatformScaffold(
+      appBar: PlatformNavigationBar(
+        title: appBar?.title,
+        trailing: (appBar?.trailing != null && hasConnection
+            ? appBar!.trailing
+            : null),
+      ),
+      body: hasConnection
+          ? body
+          : NetWorkError(
+              title: networkTitle,
+              caption: networkCaption,
+            ),
+    );
+  }
+}
