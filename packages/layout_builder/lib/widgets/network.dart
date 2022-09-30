@@ -36,7 +36,6 @@ class NetWorkError extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final settings = ref.watch(networkSettingsProvider);
     final l10n = ref.watch(layoutLocalizationsProvider);
-    print(l10n.toString());
 
     return Container(
       width: double.infinity,
