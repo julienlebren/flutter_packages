@@ -12,32 +12,7 @@ part of platform;
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$TabItemTearOff {
-  const _$TabItemTearOff();
-
-  _TabItem call(
-      {required String title,
-      required Widget icon,
-      Widget? selectedIcon,
-      required PlatformTabNavigator router,
-      bool? popToFirstRoute = false,
-      StateProvider<ScrollController>? scrollControllerProvider}) {
-    return _TabItem(
-      title: title,
-      icon: icon,
-      selectedIcon: selectedIcon,
-      router: router,
-      popToFirstRoute: popToFirstRoute,
-      scrollControllerProvider: scrollControllerProvider,
-    );
-  }
-}
-
-/// @nodoc
-const $TabItem = _$TabItemTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$TabItem {
@@ -113,9 +88,10 @@ class _$TabItemCopyWithImpl<$Res> implements $TabItemCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$TabItemCopyWith<$Res> implements $TabItemCopyWith<$Res> {
-  factory _$TabItemCopyWith(_TabItem value, $Res Function(_TabItem) then) =
-      __$TabItemCopyWithImpl<$Res>;
+abstract class _$$_TabItemCopyWith<$Res> implements $TabItemCopyWith<$Res> {
+  factory _$$_TabItemCopyWith(
+          _$_TabItem value, $Res Function(_$_TabItem) then) =
+      __$$_TabItemCopyWithImpl<$Res>;
   @override
   $Res call(
       {String title,
@@ -127,13 +103,13 @@ abstract class _$TabItemCopyWith<$Res> implements $TabItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$TabItemCopyWithImpl<$Res> extends _$TabItemCopyWithImpl<$Res>
-    implements _$TabItemCopyWith<$Res> {
-  __$TabItemCopyWithImpl(_TabItem _value, $Res Function(_TabItem) _then)
-      : super(_value, (v) => _then(v as _TabItem));
+class __$$_TabItemCopyWithImpl<$Res> extends _$TabItemCopyWithImpl<$Res>
+    implements _$$_TabItemCopyWith<$Res> {
+  __$$_TabItemCopyWithImpl(_$_TabItem _value, $Res Function(_$_TabItem) _then)
+      : super(_value, (v) => _then(v as _$_TabItem));
 
   @override
-  _TabItem get _value => super._value as _TabItem;
+  _$_TabItem get _value => super._value as _$_TabItem;
 
   @override
   $Res call({
@@ -144,7 +120,7 @@ class __$TabItemCopyWithImpl<$Res> extends _$TabItemCopyWithImpl<$Res>
     Object? popToFirstRoute = freezed,
     Object? scrollControllerProvider = freezed,
   }) {
-    return _then(_TabItem(
+    return _then(_$_TabItem(
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -175,7 +151,7 @@ class __$TabItemCopyWithImpl<$Res> extends _$TabItemCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_TabItem with DiagnosticableTreeMixin implements _TabItem {
+class _$_TabItem implements _TabItem {
   const _$_TabItem(
       {required this.title,
       required this.icon,
@@ -192,36 +168,22 @@ class _$_TabItem with DiagnosticableTreeMixin implements _TabItem {
   final Widget? selectedIcon;
   @override
   final PlatformTabNavigator router;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool? popToFirstRoute;
   @override
   final StateProvider<ScrollController>? scrollControllerProvider;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'TabItem(title: $title, icon: $icon, selectedIcon: $selectedIcon, router: $router, popToFirstRoute: $popToFirstRoute, scrollControllerProvider: $scrollControllerProvider)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TabItem'))
-      ..add(DiagnosticsProperty('title', title))
-      ..add(DiagnosticsProperty('icon', icon))
-      ..add(DiagnosticsProperty('selectedIcon', selectedIcon))
-      ..add(DiagnosticsProperty('router', router))
-      ..add(DiagnosticsProperty('popToFirstRoute', popToFirstRoute))
-      ..add(DiagnosticsProperty(
-          'scrollControllerProvider', scrollControllerProvider));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _TabItem &&
+            other is _$_TabItem &&
             const DeepCollectionEquality().equals(other.title, title) &&
             const DeepCollectionEquality().equals(other.icon, icon) &&
             const DeepCollectionEquality()
@@ -245,18 +207,19 @@ class _$_TabItem with DiagnosticableTreeMixin implements _TabItem {
 
   @JsonKey(ignore: true)
   @override
-  _$TabItemCopyWith<_TabItem> get copyWith =>
-      __$TabItemCopyWithImpl<_TabItem>(this, _$identity);
+  _$$_TabItemCopyWith<_$_TabItem> get copyWith =>
+      __$$_TabItemCopyWithImpl<_$_TabItem>(this, _$identity);
 }
 
 abstract class _TabItem implements TabItem {
   const factory _TabItem(
-      {required String title,
-      required Widget icon,
-      Widget? selectedIcon,
-      required PlatformTabNavigator router,
-      bool? popToFirstRoute,
-      StateProvider<ScrollController>? scrollControllerProvider}) = _$_TabItem;
+          {required final String title,
+          required final Widget icon,
+          final Widget? selectedIcon,
+          required final PlatformTabNavigator router,
+          final bool? popToFirstRoute,
+          final StateProvider<ScrollController>? scrollControllerProvider}) =
+      _$_TabItem;
 
   @override
   String get title;
@@ -272,6 +235,6 @@ abstract class _TabItem implements TabItem {
   StateProvider<ScrollController>? get scrollControllerProvider;
   @override
   @JsonKey(ignore: true)
-  _$TabItemCopyWith<_TabItem> get copyWith =>
+  _$$_TabItemCopyWith<_$_TabItem> get copyWith =>
       throw _privateConstructorUsedError;
 }

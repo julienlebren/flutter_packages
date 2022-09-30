@@ -92,16 +92,12 @@ class PlatformNetworkScaffold extends ConsumerWidget {
     this.isModal = false,
     this.floatingActionButton,
     required this.body,
-    this.networkTitle,
-    this.networkCaption,
   }) : super();
 
   final bool isModal;
   final PlatformNavigationBar? appBar;
   final Widget? floatingActionButton;
   final Widget body;
-  final String? networkTitle;
-  final String? networkCaption;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -114,12 +110,7 @@ class PlatformNetworkScaffold extends ConsumerWidget {
             ? appBar!.trailing
             : null),
       ),
-      body: hasConnection
-          ? body
-          : NetWorkError(
-              title: networkTitle,
-              caption: networkCaption,
-            ),
+      body: hasConnection ? body : const NetWorkError(),
     );
   }
 }

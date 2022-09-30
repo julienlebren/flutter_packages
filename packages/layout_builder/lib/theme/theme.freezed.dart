@@ -12,65 +12,7 @@ part of theme;
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AppThemeTearOff {
-  const _$AppThemeTearOff();
-
-  _AppTheme call(
-      {required Brightness brightness,
-      required Color primaryColor,
-      required Color secondaryColor,
-      required Color scaffoldBackgroundColor,
-      Color? statusBarColor,
-      Color? materialSystemBarColor,
-      required Color navigationBarBackgroundColor,
-      required Color navigationBarBorderColor,
-      Color? cupertinoNavigationBarBackgroundColor,
-      Color? tabBarBackgroundColor,
-      Color? cupertinoTabBarBackgroundColor,
-      required Color groupedListBackgroundColor,
-      required Color listTileBackground,
-      double elevatedButtonRadius = 5.0,
-      double elevatedButtonPadding = 16.0,
-      double searchBarRadius = 24.0,
-      required Color selectedColor,
-      required Color borderColor,
-      required Color textColor,
-      required Color dividerColor,
-      required Color shadowColor,
-      required Color disclosureIndicatorColor}) {
-    return _AppTheme(
-      brightness: brightness,
-      primaryColor: primaryColor,
-      secondaryColor: secondaryColor,
-      scaffoldBackgroundColor: scaffoldBackgroundColor,
-      statusBarColor: statusBarColor,
-      materialSystemBarColor: materialSystemBarColor,
-      navigationBarBackgroundColor: navigationBarBackgroundColor,
-      navigationBarBorderColor: navigationBarBorderColor,
-      cupertinoNavigationBarBackgroundColor:
-          cupertinoNavigationBarBackgroundColor,
-      tabBarBackgroundColor: tabBarBackgroundColor,
-      cupertinoTabBarBackgroundColor: cupertinoTabBarBackgroundColor,
-      groupedListBackgroundColor: groupedListBackgroundColor,
-      listTileBackground: listTileBackground,
-      elevatedButtonRadius: elevatedButtonRadius,
-      elevatedButtonPadding: elevatedButtonPadding,
-      searchBarRadius: searchBarRadius,
-      selectedColor: selectedColor,
-      borderColor: borderColor,
-      textColor: textColor,
-      dividerColor: dividerColor,
-      shadowColor: shadowColor,
-      disclosureIndicatorColor: disclosureIndicatorColor,
-    );
-  }
-}
-
-/// @nodoc
-const $AppTheme = _$AppThemeTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AppTheme {
@@ -261,9 +203,10 @@ class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
-  factory _$AppThemeCopyWith(_AppTheme value, $Res Function(_AppTheme) then) =
-      __$AppThemeCopyWithImpl<$Res>;
+abstract class _$$_AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
+  factory _$$_AppThemeCopyWith(
+          _$_AppTheme value, $Res Function(_$_AppTheme) then) =
+      __$$_AppThemeCopyWithImpl<$Res>;
   @override
   $Res call(
       {Brightness brightness,
@@ -291,13 +234,14 @@ abstract class _$AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
-    implements _$AppThemeCopyWith<$Res> {
-  __$AppThemeCopyWithImpl(_AppTheme _value, $Res Function(_AppTheme) _then)
-      : super(_value, (v) => _then(v as _AppTheme));
+class __$$_AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
+    implements _$$_AppThemeCopyWith<$Res> {
+  __$$_AppThemeCopyWithImpl(
+      _$_AppTheme _value, $Res Function(_$_AppTheme) _then)
+      : super(_value, (v) => _then(v as _$_AppTheme));
 
   @override
-  _AppTheme get _value => super._value as _AppTheme;
+  _$_AppTheme get _value => super._value as _$_AppTheme;
 
   @override
   $Res call({
@@ -324,7 +268,7 @@ class __$AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
     Object? shadowColor = freezed,
     Object? disclosureIndicatorColor = freezed,
   }) {
-    return _then(_AppTheme(
+    return _then(_$_AppTheme(
       brightness: brightness == freezed
           ? _value.brightness
           : brightness // ignore: cast_nullable_to_non_nullable
@@ -471,14 +415,14 @@ class _$_AppTheme implements _AppTheme {
   final Color groupedListBackgroundColor;
   @override
   final Color listTileBackground;
-  @JsonKey()
   @override
+  @JsonKey()
   final double elevatedButtonRadius;
-  @JsonKey()
   @override
+  @JsonKey()
   final double elevatedButtonPadding;
-  @JsonKey()
   @override
+  @JsonKey()
   final double searchBarRadius;
   @override
   final Color selectedColor;
@@ -502,7 +446,7 @@ class _$_AppTheme implements _AppTheme {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AppTheme &&
+            other is _$_AppTheme &&
             const DeepCollectionEquality()
                 .equals(other.brightness, brightness) &&
             const DeepCollectionEquality()
@@ -581,34 +525,34 @@ class _$_AppTheme implements _AppTheme {
 
   @JsonKey(ignore: true)
   @override
-  _$AppThemeCopyWith<_AppTheme> get copyWith =>
-      __$AppThemeCopyWithImpl<_AppTheme>(this, _$identity);
+  _$$_AppThemeCopyWith<_$_AppTheme> get copyWith =>
+      __$$_AppThemeCopyWithImpl<_$_AppTheme>(this, _$identity);
 }
 
 abstract class _AppTheme implements AppTheme {
   const factory _AppTheme(
-      {required Brightness brightness,
-      required Color primaryColor,
-      required Color secondaryColor,
-      required Color scaffoldBackgroundColor,
-      Color? statusBarColor,
-      Color? materialSystemBarColor,
-      required Color navigationBarBackgroundColor,
-      required Color navigationBarBorderColor,
-      Color? cupertinoNavigationBarBackgroundColor,
-      Color? tabBarBackgroundColor,
-      Color? cupertinoTabBarBackgroundColor,
-      required Color groupedListBackgroundColor,
-      required Color listTileBackground,
-      double elevatedButtonRadius,
-      double elevatedButtonPadding,
-      double searchBarRadius,
-      required Color selectedColor,
-      required Color borderColor,
-      required Color textColor,
-      required Color dividerColor,
-      required Color shadowColor,
-      required Color disclosureIndicatorColor}) = _$_AppTheme;
+      {required final Brightness brightness,
+      required final Color primaryColor,
+      required final Color secondaryColor,
+      required final Color scaffoldBackgroundColor,
+      final Color? statusBarColor,
+      final Color? materialSystemBarColor,
+      required final Color navigationBarBackgroundColor,
+      required final Color navigationBarBorderColor,
+      final Color? cupertinoNavigationBarBackgroundColor,
+      final Color? tabBarBackgroundColor,
+      final Color? cupertinoTabBarBackgroundColor,
+      required final Color groupedListBackgroundColor,
+      required final Color listTileBackground,
+      final double elevatedButtonRadius,
+      final double elevatedButtonPadding,
+      final double searchBarRadius,
+      required final Color selectedColor,
+      required final Color borderColor,
+      required final Color textColor,
+      required final Color dividerColor,
+      required final Color shadowColor,
+      required final Color disclosureIndicatorColor}) = _$_AppTheme;
 
   @override
   Brightness get brightness;
@@ -656,40 +600,9 @@ abstract class _AppTheme implements AppTheme {
   Color get disclosureIndicatorColor;
   @override
   @JsonKey(ignore: true)
-  _$AppThemeCopyWith<_AppTheme> get copyWith =>
+  _$$_AppThemeCopyWith<_$_AppTheme> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$ListViewThemeTearOff {
-  const _$ListViewThemeTearOff();
-
-  _ListViewTheme call(
-      {double separatorPadding = 15,
-      required Color labelColor,
-      required Color valueColor,
-      bool valueColorEnforced = false,
-      double labelFontSize = 17,
-      required Color captionColor,
-      double captionFontSize = 13,
-      int? labelMaxLines = 1,
-      int? captionMaxLines = 1}) {
-    return _ListViewTheme(
-      separatorPadding: separatorPadding,
-      labelColor: labelColor,
-      valueColor: valueColor,
-      valueColorEnforced: valueColorEnforced,
-      labelFontSize: labelFontSize,
-      captionColor: captionColor,
-      captionFontSize: captionFontSize,
-      labelMaxLines: labelMaxLines,
-      captionMaxLines: captionMaxLines,
-    );
-  }
-}
-
-/// @nodoc
-const $ListViewTheme = _$ListViewThemeTearOff();
 
 /// @nodoc
 mixin _$ListViewTheme {
@@ -788,11 +701,11 @@ class _$ListViewThemeCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ListViewThemeCopyWith<$Res>
+abstract class _$$_ListViewThemeCopyWith<$Res>
     implements $ListViewThemeCopyWith<$Res> {
-  factory _$ListViewThemeCopyWith(
-          _ListViewTheme value, $Res Function(_ListViewTheme) then) =
-      __$ListViewThemeCopyWithImpl<$Res>;
+  factory _$$_ListViewThemeCopyWith(
+          _$_ListViewTheme value, $Res Function(_$_ListViewTheme) then) =
+      __$$_ListViewThemeCopyWithImpl<$Res>;
   @override
   $Res call(
       {double separatorPadding,
@@ -807,15 +720,15 @@ abstract class _$ListViewThemeCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ListViewThemeCopyWithImpl<$Res>
+class __$$_ListViewThemeCopyWithImpl<$Res>
     extends _$ListViewThemeCopyWithImpl<$Res>
-    implements _$ListViewThemeCopyWith<$Res> {
-  __$ListViewThemeCopyWithImpl(
-      _ListViewTheme _value, $Res Function(_ListViewTheme) _then)
-      : super(_value, (v) => _then(v as _ListViewTheme));
+    implements _$$_ListViewThemeCopyWith<$Res> {
+  __$$_ListViewThemeCopyWithImpl(
+      _$_ListViewTheme _value, $Res Function(_$_ListViewTheme) _then)
+      : super(_value, (v) => _then(v as _$_ListViewTheme));
 
   @override
-  _ListViewTheme get _value => super._value as _ListViewTheme;
+  _$_ListViewTheme get _value => super._value as _$_ListViewTheme;
 
   @override
   $Res call({
@@ -829,7 +742,7 @@ class __$ListViewThemeCopyWithImpl<$Res>
     Object? labelMaxLines = freezed,
     Object? captionMaxLines = freezed,
   }) {
-    return _then(_ListViewTheme(
+    return _then(_$_ListViewTheme(
       separatorPadding: separatorPadding == freezed
           ? _value.separatorPadding
           : separatorPadding // ignore: cast_nullable_to_non_nullable
@@ -884,29 +797,29 @@ class _$_ListViewTheme implements _ListViewTheme {
       this.labelMaxLines = 1,
       this.captionMaxLines = 1});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final double separatorPadding;
   @override
   final Color labelColor;
   @override
   final Color valueColor;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool valueColorEnforced;
-  @JsonKey()
   @override
+  @JsonKey()
   final double labelFontSize;
   @override
   final Color captionColor;
-  @JsonKey()
   @override
+  @JsonKey()
   final double captionFontSize;
-  @JsonKey()
   @override
+  @JsonKey()
   final int? labelMaxLines;
-  @JsonKey()
   @override
+  @JsonKey()
   final int? captionMaxLines;
 
   @override
@@ -918,7 +831,7 @@ class _$_ListViewTheme implements _ListViewTheme {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ListViewTheme &&
+            other is _$_ListViewTheme &&
             const DeepCollectionEquality()
                 .equals(other.separatorPadding, separatorPadding) &&
             const DeepCollectionEquality()
@@ -954,21 +867,21 @@ class _$_ListViewTheme implements _ListViewTheme {
 
   @JsonKey(ignore: true)
   @override
-  _$ListViewThemeCopyWith<_ListViewTheme> get copyWith =>
-      __$ListViewThemeCopyWithImpl<_ListViewTheme>(this, _$identity);
+  _$$_ListViewThemeCopyWith<_$_ListViewTheme> get copyWith =>
+      __$$_ListViewThemeCopyWithImpl<_$_ListViewTheme>(this, _$identity);
 }
 
 abstract class _ListViewTheme implements ListViewTheme {
   const factory _ListViewTheme(
-      {double separatorPadding,
-      required Color labelColor,
-      required Color valueColor,
-      bool valueColorEnforced,
-      double labelFontSize,
-      required Color captionColor,
-      double captionFontSize,
-      int? labelMaxLines,
-      int? captionMaxLines}) = _$_ListViewTheme;
+      {final double separatorPadding,
+      required final Color labelColor,
+      required final Color valueColor,
+      final bool valueColorEnforced,
+      final double labelFontSize,
+      required final Color captionColor,
+      final double captionFontSize,
+      final int? labelMaxLines,
+      final int? captionMaxLines}) = _$_ListViewTheme;
 
   @override
   double get separatorPadding;
@@ -990,38 +903,9 @@ abstract class _ListViewTheme implements ListViewTheme {
   int? get captionMaxLines;
   @override
   @JsonKey(ignore: true)
-  _$ListViewThemeCopyWith<_ListViewTheme> get copyWith =>
+  _$$_ListViewThemeCopyWith<_$_ListViewTheme> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$FormThemeTearOff {
-  const _$FormThemeTearOff();
-
-  _FormTheme call(
-      {required Color backgroundColor,
-      required Color rowBackgroundColor,
-      required Color rowDividerColor,
-      required Color sectionDividerColor,
-      double rowDividerPadding = 15,
-      bool displayRowDivider = true,
-      double sectionDividerPadding = 10,
-      bool displaySectionDivider = true}) {
-    return _FormTheme(
-      backgroundColor: backgroundColor,
-      rowBackgroundColor: rowBackgroundColor,
-      rowDividerColor: rowDividerColor,
-      sectionDividerColor: sectionDividerColor,
-      rowDividerPadding: rowDividerPadding,
-      displayRowDivider: displayRowDivider,
-      sectionDividerPadding: sectionDividerPadding,
-      displaySectionDivider: displaySectionDivider,
-    );
-  }
-}
-
-/// @nodoc
-const $FormTheme = _$FormThemeTearOff();
 
 /// @nodoc
 mixin _$FormTheme {
@@ -1112,10 +996,10 @@ class _$FormThemeCopyWithImpl<$Res> implements $FormThemeCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$FormThemeCopyWith<$Res> implements $FormThemeCopyWith<$Res> {
-  factory _$FormThemeCopyWith(
-          _FormTheme value, $Res Function(_FormTheme) then) =
-      __$FormThemeCopyWithImpl<$Res>;
+abstract class _$$_FormThemeCopyWith<$Res> implements $FormThemeCopyWith<$Res> {
+  factory _$$_FormThemeCopyWith(
+          _$_FormTheme value, $Res Function(_$_FormTheme) then) =
+      __$$_FormThemeCopyWithImpl<$Res>;
   @override
   $Res call(
       {Color backgroundColor,
@@ -1129,13 +1013,14 @@ abstract class _$FormThemeCopyWith<$Res> implements $FormThemeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$FormThemeCopyWithImpl<$Res> extends _$FormThemeCopyWithImpl<$Res>
-    implements _$FormThemeCopyWith<$Res> {
-  __$FormThemeCopyWithImpl(_FormTheme _value, $Res Function(_FormTheme) _then)
-      : super(_value, (v) => _then(v as _FormTheme));
+class __$$_FormThemeCopyWithImpl<$Res> extends _$FormThemeCopyWithImpl<$Res>
+    implements _$$_FormThemeCopyWith<$Res> {
+  __$$_FormThemeCopyWithImpl(
+      _$_FormTheme _value, $Res Function(_$_FormTheme) _then)
+      : super(_value, (v) => _then(v as _$_FormTheme));
 
   @override
-  _FormTheme get _value => super._value as _FormTheme;
+  _$_FormTheme get _value => super._value as _$_FormTheme;
 
   @override
   $Res call({
@@ -1148,7 +1033,7 @@ class __$FormThemeCopyWithImpl<$Res> extends _$FormThemeCopyWithImpl<$Res>
     Object? sectionDividerPadding = freezed,
     Object? displaySectionDivider = freezed,
   }) {
-    return _then(_FormTheme(
+    return _then(_$_FormTheme(
       backgroundColor: backgroundColor == freezed
           ? _value.backgroundColor
           : backgroundColor // ignore: cast_nullable_to_non_nullable
@@ -1206,17 +1091,18 @@ class _$_FormTheme implements _FormTheme {
   final Color rowDividerColor;
   @override
   final Color sectionDividerColor;
-  @JsonKey()
   @override
+  @JsonKey()
   final double rowDividerPadding;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool displayRowDivider;
-  @JsonKey()
   @override
-  final double sectionDividerPadding;
   @JsonKey()
-  @override // 20 if gray background
+  final double sectionDividerPadding;
+// 20 if gray background
+  @override
+  @JsonKey()
   final bool displaySectionDivider;
 
   @override
@@ -1228,7 +1114,7 @@ class _$_FormTheme implements _FormTheme {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _FormTheme &&
+            other is _$_FormTheme &&
             const DeepCollectionEquality()
                 .equals(other.backgroundColor, backgroundColor) &&
             const DeepCollectionEquality()
@@ -1261,20 +1147,20 @@ class _$_FormTheme implements _FormTheme {
 
   @JsonKey(ignore: true)
   @override
-  _$FormThemeCopyWith<_FormTheme> get copyWith =>
-      __$FormThemeCopyWithImpl<_FormTheme>(this, _$identity);
+  _$$_FormThemeCopyWith<_$_FormTheme> get copyWith =>
+      __$$_FormThemeCopyWithImpl<_$_FormTheme>(this, _$identity);
 }
 
 abstract class _FormTheme implements FormTheme {
   const factory _FormTheme(
-      {required Color backgroundColor,
-      required Color rowBackgroundColor,
-      required Color rowDividerColor,
-      required Color sectionDividerColor,
-      double rowDividerPadding,
-      bool displayRowDivider,
-      double sectionDividerPadding,
-      bool displaySectionDivider}) = _$_FormTheme;
+      {required final Color backgroundColor,
+      required final Color rowBackgroundColor,
+      required final Color rowDividerColor,
+      required final Color sectionDividerColor,
+      final double rowDividerPadding,
+      final bool displayRowDivider,
+      final double sectionDividerPadding,
+      final bool displaySectionDivider}) = _$_FormTheme;
 
   @override
   Color get backgroundColor;
@@ -1294,6 +1180,6 @@ abstract class _FormTheme implements FormTheme {
   bool get displaySectionDivider;
   @override
   @JsonKey(ignore: true)
-  _$FormThemeCopyWith<_FormTheme> get copyWith =>
+  _$$_FormThemeCopyWith<_$_FormTheme> get copyWith =>
       throw _privateConstructorUsedError;
 }
