@@ -109,7 +109,8 @@ class _CupertinoListTileState extends ConsumerState<CupertinoListTile> {
   }
 
   void _updateHighlight(bool isPressed) {
-    print("_updateHighlight: $isPressed");
+    print(
+        "_updateHighlight: $isPressed / _selectedColor: $_selectedColor / _tileBackground: $_tileBackground");
     setState(() {
       _tileBackground = (isPressed ? _selectedColor : _tileBackground);
     });
