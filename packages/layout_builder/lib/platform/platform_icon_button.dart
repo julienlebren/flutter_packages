@@ -4,15 +4,22 @@ class PlatformIconButton
     extends PlatformWidgetBase<IconButton, CupertinoButton> {
   PlatformIconButton({
     required this.icon,
+    this.color,
+    this.size = 28,
     this.onPressed,
   }) : super();
+
   final IconData icon;
+  final double? size;
+  final Color? color;
   final VoidCallback? onPressed;
 
   @override
   IconButton createMaterialWidget(BuildContext context, WidgetRef ref) {
     return IconButton(
       icon: Icon(icon),
+      color: color,
+      iconSize: size,
       onPressed: onPressed,
     );
   }
@@ -23,7 +30,8 @@ class PlatformIconButton
       padding: EdgeInsets.zero,
       onPressed: onPressed,
       borderRadius: BorderRadius.circular(32.0),
-      child: Icon(icon, size: 28),
+      child: Icon(icon, size: size),
+      color: color,
     );
   }
 }
