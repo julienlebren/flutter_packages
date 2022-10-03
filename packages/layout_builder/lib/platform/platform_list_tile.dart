@@ -79,13 +79,11 @@ class CupertinoListTile extends ConsumerStatefulWidget {
 
 class _CupertinoListTileState extends ConsumerState<CupertinoListTile> {
   late Color _tileBackground;
-  late Color _selectedColor;
 
   @override
   void initState() {
     super.initState();
     _tileBackground = ref.read(appThemeProvider).listTileBackground;
-    _selectedColor = ref.read(appThemeProvider).selectedColor;
   }
 
   void _handleTapDown(TapDownDetails details) {
@@ -109,10 +107,10 @@ class _CupertinoListTileState extends ConsumerState<CupertinoListTile> {
   }
 
   void _updateHighlight(bool isPressed) {
-    print(
-        "_updateHighlight: $isPressed / _selectedColor: $_selectedColor / _tileBackground: $_tileBackground");
+    final appTheme = ref.watch(appThemeProvider);
     setState(() {
-      _tileBackground = (isPressed ? _selectedColor : _tileBackground);
+      _tileBackground =
+          (isPressed ? appTheme.selectedColor : appTheme.listTileBackground);
     });
   }
 
