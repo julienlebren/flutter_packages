@@ -30,8 +30,11 @@ class PlatformIconButton
       padding: EdgeInsets.zero,
       onPressed: onPressed,
       borderRadius: BorderRadius.circular(32.0),
-      child: Icon(icon, size: size),
-      color: color,
+      child: Icon(
+        icon,
+        size: size,
+        color: color,
+      ),
     );
   }
 }
