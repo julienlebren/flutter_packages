@@ -223,10 +223,10 @@ packages:
     description:
       path: "packages/extensions"
       ref: HEAD
-      resolved-ref: "5204b41a22f6a6710c2d4705e724794d2d0ba468"
+      resolved-ref: "9ebd4bb69eabb7cb949568968fd370328f0ee57d"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.3.2"
+    version: "0.4.0"
   fake_async:
     dependency: transitive
     description:
@@ -309,10 +309,10 @@ packages:
     description:
       path: "packages/firebase_storage_service"
       ref: HEAD
-      resolved-ref: f297d3f6992d41ec81566d803931a93afc376aa4
+      resolved-ref: "9ebd4bb69eabb7cb949568968fd370328f0ee57d"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.3.0"
+    version: "0.4.0"
   firebase_storage_web:
     dependency: transitive
     description:
@@ -325,10 +325,10 @@ packages:
     description:
       path: "packages/firestore_service"
       ref: HEAD
-      resolved-ref: "9aa825433e5f2ed31735f59a293bbe1c2b6603e7"
+      resolved-ref: "9ebd4bb69eabb7cb949568968fd370328f0ee57d"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.2.0"
+    version: "0.3.0"
   fixnum:
     dependency: transitive
     description:
@@ -387,7 +387,7 @@ packages:
       name: flutter_riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.4"
+    version: "2.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -543,10 +543,10 @@ packages:
     description:
       path: "packages/layout_builder"
       ref: HEAD
-      resolved-ref: "3deecd9c9a7b5607fee2ecfc6040be2283e7dfe5"
+      resolved-ref: "9ebd4bb69eabb7cb949568968fd370328f0ee57d"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "3.0.0"
+    version: "3.1.0"
   lints:
     dependency: transitive
     description:
@@ -566,10 +566,10 @@ packages:
     description:
       path: "packages/localization"
       ref: HEAD
-      resolved-ref: "5204b41a22f6a6710c2d4705e724794d2d0ba468"
+      resolved-ref: "9ebd4bb69eabb7cb949568968fd370328f0ee57d"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "1.1.4"
+    version: "1.2.0"
   logging:
     dependency: transitive
     description:
@@ -767,7 +767,7 @@ packages:
       name: riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.3"
+    version: "2.0.2"
   rxdart:
     dependency: transitive
     description:
