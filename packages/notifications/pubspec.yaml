@@ -1,6 +1,6 @@
 name: notifications
 description: Notifications service for apps built by https://github.com/julienlebren 
-version: 0.2.2
+version: 0.3.0
 homepage: https://twitter.com/hikeland
 publish_to: none
 
