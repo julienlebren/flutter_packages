@@ -17,7 +17,6 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$AdSettings {
   dynamic get maxFailedLoadAttempts => throw _privateConstructorUsedError;
-  dynamic get hoursBetweenTwoAds => throw _privateConstructorUsedError;
   String? get intersticialMaterial => throw _privateConstructorUsedError;
   String? get intersticialCupertino => throw _privateConstructorUsedError;
   String? get bannerMaterial => throw _privateConstructorUsedError;
@@ -38,7 +37,6 @@ abstract class $AdSettingsCopyWith<$Res> {
       _$AdSettingsCopyWithImpl<$Res>;
   $Res call(
       {dynamic maxFailedLoadAttempts,
-      dynamic hoursBetweenTwoAds,
       String? intersticialMaterial,
       String? intersticialCupertino,
       String? bannerMaterial,
@@ -59,7 +57,6 @@ class _$AdSettingsCopyWithImpl<$Res> implements $AdSettingsCopyWith<$Res> {
   @override
   $Res call({
     Object? maxFailedLoadAttempts = freezed,
-    Object? hoursBetweenTwoAds = freezed,
     Object? intersticialMaterial = freezed,
     Object? intersticialCupertino = freezed,
     Object? bannerMaterial = freezed,
@@ -72,10 +69,6 @@ class _$AdSettingsCopyWithImpl<$Res> implements $AdSettingsCopyWith<$Res> {
       maxFailedLoadAttempts: maxFailedLoadAttempts == freezed
           ? _value.maxFailedLoadAttempts
           : maxFailedLoadAttempts // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      hoursBetweenTwoAds: hoursBetweenTwoAds == freezed
-          ? _value.hoursBetweenTwoAds
-          : hoursBetweenTwoAds // ignore: cast_nullable_to_non_nullable
               as dynamic,
       intersticialMaterial: intersticialMaterial == freezed
           ? _value.intersticialMaterial
@@ -118,7 +111,6 @@ abstract class _$$_AdSettingsCopyWith<$Res>
   @override
   $Res call(
       {dynamic maxFailedLoadAttempts,
-      dynamic hoursBetweenTwoAds,
       String? intersticialMaterial,
       String? intersticialCupertino,
       String? bannerMaterial,
@@ -141,7 +133,6 @@ class __$$_AdSettingsCopyWithImpl<$Res> extends _$AdSettingsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? maxFailedLoadAttempts = freezed,
-    Object? hoursBetweenTwoAds = freezed,
     Object? intersticialMaterial = freezed,
     Object? intersticialCupertino = freezed,
     Object? bannerMaterial = freezed,
@@ -154,9 +145,6 @@ class __$$_AdSettingsCopyWithImpl<$Res> extends _$AdSettingsCopyWithImpl<$Res>
       maxFailedLoadAttempts: maxFailedLoadAttempts == freezed
           ? _value.maxFailedLoadAttempts
           : maxFailedLoadAttempts,
-      hoursBetweenTwoAds: hoursBetweenTwoAds == freezed
-          ? _value.hoursBetweenTwoAds
-          : hoursBetweenTwoAds,
       intersticialMaterial: intersticialMaterial == freezed
           ? _value.intersticialMaterial
           : intersticialMaterial // ignore: cast_nullable_to_non_nullable
@@ -194,7 +182,6 @@ class __$$_AdSettingsCopyWithImpl<$Res> extends _$AdSettingsCopyWithImpl<$Res>
 class _$_AdSettings implements _AdSettings {
   _$_AdSettings(
       {this.maxFailedLoadAttempts = 3,
-      this.hoursBetweenTwoAds = 2,
       this.intersticialMaterial,
       this.intersticialCupertino,
       this.bannerMaterial,
@@ -206,9 +193,6 @@ class _$_AdSettings implements _AdSettings {
   @override
   @JsonKey()
   final dynamic maxFailedLoadAttempts;
-  @override
-  @JsonKey()
-  final dynamic hoursBetweenTwoAds;
   @override
   final String? intersticialMaterial;
   @override
@@ -226,7 +210,7 @@ class _$_AdSettings implements _AdSettings {
 
   @override
   String toString() {
-    return 'AdSettings(maxFailedLoadAttempts: $maxFailedLoadAttempts, hoursBetweenTwoAds: $hoursBetweenTwoAds, intersticialMaterial: $intersticialMaterial, intersticialCupertino: $intersticialCupertino, bannerMaterial: $bannerMaterial, bannerCupertino: $bannerCupertino, nativeMaterial: $nativeMaterial, nativeCupertino: $nativeCupertino, updateLastAdsTime: $updateLastAdsTime)';
+    return 'AdSettings(maxFailedLoadAttempts: $maxFailedLoadAttempts, intersticialMaterial: $intersticialMaterial, intersticialCupertino: $intersticialCupertino, bannerMaterial: $bannerMaterial, bannerCupertino: $bannerCupertino, nativeMaterial: $nativeMaterial, nativeCupertino: $nativeCupertino, updateLastAdsTime: $updateLastAdsTime)';
   }
 
   @override
@@ -236,8 +220,6 @@ class _$_AdSettings implements _AdSettings {
             other is _$_AdSettings &&
             const DeepCollectionEquality()
                 .equals(other.maxFailedLoadAttempts, maxFailedLoadAttempts) &&
-            const DeepCollectionEquality()
-                .equals(other.hoursBetweenTwoAds, hoursBetweenTwoAds) &&
             const DeepCollectionEquality()
                 .equals(other.intersticialMaterial, intersticialMaterial) &&
             const DeepCollectionEquality()
@@ -258,7 +240,6 @@ class _$_AdSettings implements _AdSettings {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(maxFailedLoadAttempts),
-      const DeepCollectionEquality().hash(hoursBetweenTwoAds),
       const DeepCollectionEquality().hash(intersticialMaterial),
       const DeepCollectionEquality().hash(intersticialCupertino),
       const DeepCollectionEquality().hash(bannerMaterial),
@@ -276,7 +257,6 @@ class _$_AdSettings implements _AdSettings {
 abstract class _AdSettings implements AdSettings {
   factory _AdSettings(
       {final dynamic maxFailedLoadAttempts,
-      final dynamic hoursBetweenTwoAds,
       final String? intersticialMaterial,
       final String? intersticialCupertino,
       final String? bannerMaterial,
@@ -287,8 +267,6 @@ abstract class _AdSettings implements AdSettings {
 
   @override
   dynamic get maxFailedLoadAttempts;
-  @override
-  dynamic get hoursBetweenTwoAds;
   @override
   String? get intersticialMaterial;
   @override

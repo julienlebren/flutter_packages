@@ -4,7 +4,6 @@ part of ad_manager;
 class AdSettings with _$AdSettings {
   factory AdSettings({
     @Default(3) maxFailedLoadAttempts,
-    @Default(2) hoursBetweenTwoAds,
     String? intersticialMaterial,
     String? intersticialCupertino,
     String? bannerMaterial,
