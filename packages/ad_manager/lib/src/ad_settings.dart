@@ -5,10 +5,12 @@ class AdSettings with _$AdSettings {
   factory AdSettings({
     @Default(3) maxFailedLoadAttempts,
     @Default(2) hoursBetweenTwoAds,
-    required String intersticialMaterial,
-    required String intersticialCupertino,
-    required String bannerMaterial,
-    required String bannerCupertino,
+    String? intersticialMaterial,
+    String? intersticialCupertino,
+    String? bannerMaterial,
+    String? bannerCupertino,
+    String? nativeMaterial,
+    String? nativeCupertino,
     VoidCallback? updateLastAdsTime,
   }) = _AdSettings;
 }

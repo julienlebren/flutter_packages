@@ -35,10 +35,10 @@ class _InlineAdaptiveAdState extends ConsumerState<InlineAdaptiveAd> {
     final settings = ref.read(adSettingsProvider);
     String adUnitId;
 
-    if (Platform.isAndroid) {
-      adUnitId = settings.bannerMaterial;
-    } else if (Platform.isIOS) {
-      adUnitId = settings.bannerCupertino;
+    if (Platform.isAndroid && settings.bannerMaterial != null) {
+      adUnitId = settings.bannerMaterial!;
+    } else if (Platform.isIOS && settings.bannerCupertino != null) {
+      adUnitId = settings.bannerCupertino!;
     } else {
       return;
     }

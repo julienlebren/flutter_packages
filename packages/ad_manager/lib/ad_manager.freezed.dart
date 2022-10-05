@@ -18,10 +18,12 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AdSettings {
   dynamic get maxFailedLoadAttempts => throw _privateConstructorUsedError;
   dynamic get hoursBetweenTwoAds => throw _privateConstructorUsedError;
-  String get intersticialMaterial => throw _privateConstructorUsedError;
-  String get intersticialCupertino => throw _privateConstructorUsedError;
-  String get bannerMaterial => throw _privateConstructorUsedError;
-  String get bannerCupertino => throw _privateConstructorUsedError;
+  String? get intersticialMaterial => throw _privateConstructorUsedError;
+  String? get intersticialCupertino => throw _privateConstructorUsedError;
+  String? get bannerMaterial => throw _privateConstructorUsedError;
+  String? get bannerCupertino => throw _privateConstructorUsedError;
+  String? get nativeMaterial => throw _privateConstructorUsedError;
+  String? get nativeCupertino => throw _privateConstructorUsedError;
   VoidCallback? get updateLastAdsTime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -37,10 +39,12 @@ abstract class $AdSettingsCopyWith<$Res> {
   $Res call(
       {dynamic maxFailedLoadAttempts,
       dynamic hoursBetweenTwoAds,
-      String intersticialMaterial,
-      String intersticialCupertino,
-      String bannerMaterial,
-      String bannerCupertino,
+      String? intersticialMaterial,
+      String? intersticialCupertino,
+      String? bannerMaterial,
+      String? bannerCupertino,
+      String? nativeMaterial,
+      String? nativeCupertino,
       VoidCallback? updateLastAdsTime});
 }
 
@@ -60,6 +64,8 @@ class _$AdSettingsCopyWithImpl<$Res> implements $AdSettingsCopyWith<$Res> {
     Object? intersticialCupertino = freezed,
     Object? bannerMaterial = freezed,
     Object? bannerCupertino = freezed,
+    Object? nativeMaterial = freezed,
+    Object? nativeCupertino = freezed,
     Object? updateLastAdsTime = freezed,
   }) {
     return _then(_value.copyWith(
@@ -74,19 +80,27 @@ class _$AdSettingsCopyWithImpl<$Res> implements $AdSettingsCopyWith<$Res> {
       intersticialMaterial: intersticialMaterial == freezed
           ? _value.intersticialMaterial
           : intersticialMaterial // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       intersticialCupertino: intersticialCupertino == freezed
           ? _value.intersticialCupertino
           : intersticialCupertino // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       bannerMaterial: bannerMaterial == freezed
           ? _value.bannerMaterial
           : bannerMaterial // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       bannerCupertino: bannerCupertino == freezed
           ? _value.bannerCupertino
           : bannerCupertino // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      nativeMaterial: nativeMaterial == freezed
+          ? _value.nativeMaterial
+          : nativeMaterial // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nativeCupertino: nativeCupertino == freezed
+          ? _value.nativeCupertino
+          : nativeCupertino // ignore: cast_nullable_to_non_nullable
+              as String?,
       updateLastAdsTime: updateLastAdsTime == freezed
           ? _value.updateLastAdsTime
           : updateLastAdsTime // ignore: cast_nullable_to_non_nullable
@@ -105,10 +119,12 @@ abstract class _$$_AdSettingsCopyWith<$Res>
   $Res call(
       {dynamic maxFailedLoadAttempts,
       dynamic hoursBetweenTwoAds,
-      String intersticialMaterial,
-      String intersticialCupertino,
-      String bannerMaterial,
-      String bannerCupertino,
+      String? intersticialMaterial,
+      String? intersticialCupertino,
+      String? bannerMaterial,
+      String? bannerCupertino,
+      String? nativeMaterial,
+      String? nativeCupertino,
       VoidCallback? updateLastAdsTime});
 }
 
@@ -130,6 +146,8 @@ class __$$_AdSettingsCopyWithImpl<$Res> extends _$AdSettingsCopyWithImpl<$Res>
     Object? intersticialCupertino = freezed,
     Object? bannerMaterial = freezed,
     Object? bannerCupertino = freezed,
+    Object? nativeMaterial = freezed,
+    Object? nativeCupertino = freezed,
     Object? updateLastAdsTime = freezed,
   }) {
     return _then(_$_AdSettings(
@@ -142,19 +160,27 @@ class __$$_AdSettingsCopyWithImpl<$Res> extends _$AdSettingsCopyWithImpl<$Res>
       intersticialMaterial: intersticialMaterial == freezed
           ? _value.intersticialMaterial
           : intersticialMaterial // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       intersticialCupertino: intersticialCupertino == freezed
           ? _value.intersticialCupertino
           : intersticialCupertino // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       bannerMaterial: bannerMaterial == freezed
           ? _value.bannerMaterial
           : bannerMaterial // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       bannerCupertino: bannerCupertino == freezed
           ? _value.bannerCupertino
           : bannerCupertino // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
+      nativeMaterial: nativeMaterial == freezed
+          ? _value.nativeMaterial
+          : nativeMaterial // ignore: cast_nullable_to_non_nullable
+              as String?,
+      nativeCupertino: nativeCupertino == freezed
+          ? _value.nativeCupertino
+          : nativeCupertino // ignore: cast_nullable_to_non_nullable
+              as String?,
       updateLastAdsTime: updateLastAdsTime == freezed
           ? _value.updateLastAdsTime
           : updateLastAdsTime // ignore: cast_nullable_to_non_nullable
@@ -169,10 +195,12 @@ class _$_AdSettings implements _AdSettings {
   _$_AdSettings(
       {this.maxFailedLoadAttempts = 3,
       this.hoursBetweenTwoAds = 2,
-      required this.intersticialMaterial,
-      required this.intersticialCupertino,
-      required this.bannerMaterial,
-      required this.bannerCupertino,
+      this.intersticialMaterial,
+      this.intersticialCupertino,
+      this.bannerMaterial,
+      this.bannerCupertino,
+      this.nativeMaterial,
+      this.nativeCupertino,
       this.updateLastAdsTime});
 
   @override
@@ -182,19 +210,23 @@ class _$_AdSettings implements _AdSettings {
   @JsonKey()
   final dynamic hoursBetweenTwoAds;
   @override
-  final String intersticialMaterial;
+  final String? intersticialMaterial;
   @override
-  final String intersticialCupertino;
+  final String? intersticialCupertino;
   @override
-  final String bannerMaterial;
+  final String? bannerMaterial;
   @override
-  final String bannerCupertino;
+  final String? bannerCupertino;
+  @override
+  final String? nativeMaterial;
+  @override
+  final String? nativeCupertino;
   @override
   final VoidCallback? updateLastAdsTime;
 
   @override
   String toString() {
-    return 'AdSettings(maxFailedLoadAttempts: $maxFailedLoadAttempts, hoursBetweenTwoAds: $hoursBetweenTwoAds, intersticialMaterial: $intersticialMaterial, intersticialCupertino: $intersticialCupertino, bannerMaterial: $bannerMaterial, bannerCupertino: $bannerCupertino, updateLastAdsTime: $updateLastAdsTime)';
+    return 'AdSettings(maxFailedLoadAttempts: $maxFailedLoadAttempts, hoursBetweenTwoAds: $hoursBetweenTwoAds, intersticialMaterial: $intersticialMaterial, intersticialCupertino: $intersticialCupertino, bannerMaterial: $bannerMaterial, bannerCupertino: $bannerCupertino, nativeMaterial: $nativeMaterial, nativeCupertino: $nativeCupertino, updateLastAdsTime: $updateLastAdsTime)';
   }
 
   @override
@@ -214,6 +246,10 @@ class _$_AdSettings implements _AdSettings {
                 .equals(other.bannerMaterial, bannerMaterial) &&
             const DeepCollectionEquality()
                 .equals(other.bannerCupertino, bannerCupertino) &&
+            const DeepCollectionEquality()
+                .equals(other.nativeMaterial, nativeMaterial) &&
+            const DeepCollectionEquality()
+                .equals(other.nativeCupertino, nativeCupertino) &&
             (identical(other.updateLastAdsTime, updateLastAdsTime) ||
                 other.updateLastAdsTime == updateLastAdsTime));
   }
@@ -227,6 +263,8 @@ class _$_AdSettings implements _AdSettings {
       const DeepCollectionEquality().hash(intersticialCupertino),
       const DeepCollectionEquality().hash(bannerMaterial),
       const DeepCollectionEquality().hash(bannerCupertino),
+      const DeepCollectionEquality().hash(nativeMaterial),
+      const DeepCollectionEquality().hash(nativeCupertino),
       updateLastAdsTime);
 
   @JsonKey(ignore: true)
@@ -239,10 +277,12 @@ abstract class _AdSettings implements AdSettings {
   factory _AdSettings(
       {final dynamic maxFailedLoadAttempts,
       final dynamic hoursBetweenTwoAds,
-      required final String intersticialMaterial,
-      required final String intersticialCupertino,
-      required final String bannerMaterial,
-      required final String bannerCupertino,
+      final String? intersticialMaterial,
+      final String? intersticialCupertino,
+      final String? bannerMaterial,
+      final String? bannerCupertino,
+      final String? nativeMaterial,
+      final String? nativeCupertino,
       final VoidCallback? updateLastAdsTime}) = _$_AdSettings;
 
   @override
@@ -250,13 +290,17 @@ abstract class _AdSettings implements AdSettings {
   @override
   dynamic get hoursBetweenTwoAds;
   @override
-  String get intersticialMaterial;
+  String? get intersticialMaterial;
   @override
-  String get intersticialCupertino;
+  String? get intersticialCupertino;
   @override
-  String get bannerMaterial;
+  String? get bannerMaterial;
   @override
-  String get bannerCupertino;
+  String? get bannerCupertino;
+  @override
+  String? get nativeMaterial;
+  @override
+  String? get nativeCupertino;
   @override
   VoidCallback? get updateLastAdsTime;
   @override
