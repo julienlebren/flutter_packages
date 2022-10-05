@@ -17,7 +17,10 @@ final notificationsServiceProvider = Provider<NotificationsService>(
     final messageHandler = ref.watch(messageHandlerProvider);
     return NotificationsService(fcmTokenHandler, messageHandler);
   },
-  dependencies: [fcmTokenHandlerProvider],
+  dependencies: [
+    fcmTokenHandlerProvider,
+    messageHandlerProvider,
+  ],
 );
 
 class NotificationsService extends StateNotifier<bool> {
