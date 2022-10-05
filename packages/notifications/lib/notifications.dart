@@ -7,18 +7,27 @@ final fcmTokenHandlerProvider = Provider<Function(String)>(
   (_) => throw UnimplementedError(),
 );
 
+final messageHandlerProvider = Provider<Function(RemoteMessage)>(
+  (_) => throw UnimplementedError(),
+);
+
 final notificationsServiceProvider = Provider<NotificationsService>(
   (ref) {
-    final handler = ref.watch(fcmTokenHandlerProvider);
-    return NotificationsService(handler);
+    final fcmTokenHandler = ref.watch(fcmTokenHandlerProvider);
+    final messageHandler = ref.watch(messageHandlerProvider);
+    return NotificationsService(fcmTokenHandler, messageHandler);
   },
   dependencies: [fcmTokenHandlerProvider],
 );
 
 class NotificationsService extends StateNotifier<bool> {
-  NotificationsService(this._fcmTokenHandler) : super(false);
+  NotificationsService(
+    this._fcmTokenHandler,
+    this._messageHandler,
+  ) : super(false);
 
   final Function(String token) _fcmTokenHandler;
+  final Function(RemoteMessage initialMessage) _messageHandler;
 
   void register() async {
     try {
@@ -42,5 +51,16 @@ class NotificationsService extends StateNotifier<bool> {
     } catch (_) {
       state = false;
     }
+  }
+
+  Future<void> setupInteractedMessage() async {
+    RemoteMessage? initialMessage =
+        await FirebaseMessaging.instance.getInitialMessage();
+
+    if (initialMessage != null) {
+      _messageHandler(initialMessage);
+    }
+
+    FirebaseMessaging.onMessageOpenedApp.listen(_messageHandler);
   }
 }
