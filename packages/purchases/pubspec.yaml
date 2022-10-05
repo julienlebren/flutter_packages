@@ -1,6 +1,6 @@
 name: purchases
 description: A new Flutter package project.
-version: 2.6.0
+version: 2.7.0
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -17,20 +17,20 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/extensions
-    version: ^0.3.2
+    version: ^0.4.0
   layout_builder:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/layout_builder
-    version: ^3.0.0
+    version: ^3.1.0
   localization:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/localization
-    version: ^1.1.4
+    version: ^1.2.0
   purchases_flutter: ^4.2.1
   freezed_annotation: ^2.1.0
-  flutter_riverpod: ^1.0.4
+  flutter_riverpod: ^2.0.2
   intl: ^0.17.0
   url_launcher: ^6.1.0
 
