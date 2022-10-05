@@ -29,127 +29,114 @@ showPlatformMultiPicker<T>(
     Navigator.of(context).pop();
   }
 
+  ref.read(selectedValuesProvider.state).state = selectedValues;
+
   if (isMaterial()) {
     showDialog(
       context: context,
       builder: (context) {
-        return ProviderScope(
-          overrides: [
-            selectedValuesProvider.overrideWithValue(
-              StateController<List<T>>(selectedValues),
-            ),
-          ],
-          child: Consumer(builder: (context, ref, child) {
-            final _selectedValues =
-                ref.watch(selectedValuesProvider.state).state;
-            return AlertDialog(
-              title: Text(title),
-              content: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    if (subtitle != null)
-                      Text(
-                        subtitle,
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 15,
-                        ),
+        return Consumer(builder: (context, ref, child) {
+          final _selectedValues = ref.watch(selectedValuesProvider.state).state;
+          return AlertDialog(
+            title: Text(title),
+            content: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if (subtitle != null)
+                    Text(
+                      subtitle,
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 15,
                       ),
-                    for (T item in data)
-                      CheckboxListTile(
-                        contentPadding: EdgeInsets.zero,
-                        title: itemBuilder(item),
-                        value: _selectedValues.contains(item),
-                        onChanged: (_) => _onChanged(
-                          ref,
-                          item,
-                          _selectedValues.contains(item),
-                        ),
+                    ),
+                  for (T item in data)
+                    CheckboxListTile(
+                      contentPadding: EdgeInsets.zero,
+                      title: itemBuilder(item),
+                      value: _selectedValues.contains(item),
+                      onChanged: (_) => _onChanged(
+                        ref,
+                        item,
+                        _selectedValues.contains(item),
                       ),
-                  ],
-                ),
+                    ),
+                ],
               ),
-              actions: <Widget>[
-                PlatformDialogAction(
-                  buttonText: MaterialLocalizations.of(context)
-                      .cancelButtonLabel
-                      .toUpperCase(),
-                  onPressed: () => Navigator.of(context).pop(false),
-                ),
-                PlatformDialogAction(
-                  buttonText: MaterialLocalizations.of(context)
-                      .saveButtonLabel
-                      .toUpperCase(),
-                  onPressed: () => _onSave(context, ref),
-                  isDefaultAction: true,
-                ),
-              ],
-            );
-          }),
-        );
+            ),
+            actions: <Widget>[
+              PlatformDialogAction(
+                buttonText: MaterialLocalizations.of(context)
+                    .cancelButtonLabel
+                    .toUpperCase(),
+                onPressed: () => Navigator.of(context).pop(false),
+              ),
+              PlatformDialogAction(
+                buttonText: MaterialLocalizations.of(context)
+                    .saveButtonLabel
+                    .toUpperCase(),
+                onPressed: () => _onSave(context, ref),
+                isDefaultAction: true,
+              ),
+            ],
+          );
+        });
       },
     );
   } else {
     showCupertinoModalBottomSheet(
       context: context,
       duration: Duration(milliseconds: 300),
-      builder: (context) => ProviderScope(
-        overrides: [
-          selectedValuesProvider.overrideWithValue(
-            StateController<List<T>>(selectedValues),
-          ),
-        ],
-        child: Consumer(builder: (context, ref, child) {
-          final appTheme = ref.watch(appThemeProvider);
-          final _selectedValues = ref.watch(selectedValuesProvider.state).state;
+      builder: (context) => Consumer(builder: (context, ref, child) {
+        final appTheme = ref.watch(appThemeProvider);
+        final _selectedValues = ref.watch(selectedValuesProvider.state).state;
 
-          return PlatformModalScaffold(
-            appBar: PlatformNavigationBar(
-              title: title,
-              leading: PlatformNavigationBarCloseButton(
-                onPressed: () => Navigator.pop(context),
-              ),
-              trailing: PlatformNavigationBarButton(
-                onPressed: () => _onSave(context, ref),
-                buttonText: MaterialLocalizations.of(context).okButtonLabel,
-              ),
+        return PlatformModalScaffold(
+          appBar: PlatformNavigationBar(
+            title: title,
+            leading: PlatformNavigationBarCloseButton(
+              onPressed: () => Navigator.pop(context),
             ),
-            body: FormPage(
-              children: [
-                FormSection(
-                  children: data
-                      .map((item) => PlatformListTile(
-                            leading: itemBuilder(item),
-                            trailing: Padding(
-                              padding: EdgeInsets.only(right: 10),
-                              child: _selectedValues.contains(item)
-                                  ? Icon(
-                                      PlatformIcons.checkmarkFill,
-                                      size: 26,
-                                      color: appTheme.primaryColor,
-                                    )
-                                  : Icon(
-                                      CupertinoIcons.circle,
-                                      size: 26,
-                                      color: Colors.grey.shade300,
-                                    ),
-                            ),
-                            onTap: () => _onChanged(
-                              ref,
-                              item,
-                              _selectedValues.contains(item),
-                            ),
-                          ))
-                      .toList(),
-                  caption: subtitle,
-                ),
-              ],
+            trailing: PlatformNavigationBarButton(
+              onPressed: () => _onSave(context, ref),
+              buttonText: MaterialLocalizations.of(context).okButtonLabel,
             ),
-          );
-        }),
-      ),
+          ),
+          body: FormPage(
+            children: [
+              FormSection(
+                children: data
+                    .map((item) => PlatformListTile(
+                          leading: itemBuilder(item),
+                          trailing: Padding(
+                            padding: EdgeInsets.only(right: 10),
+                            child: _selectedValues.contains(item)
+                                ? Icon(
+                                    PlatformIcons.checkmarkFill,
+                                    size: 26,
+                                    color: appTheme.primaryColor,
+                                  )
+                                : Icon(
+                                    CupertinoIcons.circle,
+                                    size: 26,
+                                    color: Colors.grey.shade300,
+                                  ),
+                          ),
+                          onTap: () => _onChanged(
+                            ref,
+                            item,
+                            _selectedValues.contains(item),
+                          ),
+                        ))
+                    .toList(),
+                caption: subtitle,
+              ),
+            ],
+          ),
+        );
+      }),
       useRootNavigator: true,
     );
   }
