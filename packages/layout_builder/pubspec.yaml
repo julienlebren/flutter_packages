@@ -17,12 +17,12 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/extensions
-    version: ^0.3.2
+    version: ^0.4.0
   localization:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/localization
-    version: ^1.1.4
+    version: ^1.2.0
   modal_bottom_sheet:
     git:
       url: https://github.com/julienlebren/flutter_packages

@@ -181,10 +181,10 @@ packages:
     description:
       path: "packages/extensions"
       ref: HEAD
-      resolved-ref: "8c731d74f5135e1a9264f190b6e5c6877ef7d5f3"
+      resolved-ref: "83a006ab243f495aee0c8540a7ace51157070557"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.3.2"
+    version: "0.4.0"
   fake_async:
     dependency: transitive
     description:
@@ -243,7 +243,7 @@ packages:
       name: flutter_riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.4"
+    version: "2.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -352,10 +352,10 @@ packages:
     description:
       path: "packages/localization"
       ref: HEAD
-      resolved-ref: "8c731d74f5135e1a9264f190b6e5c6877ef7d5f3"
+      resolved-ref: "83a006ab243f495aee0c8540a7ace51157070557"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "1.1.4"
+    version: "1.2.0"
   logging:
     dependency: transitive
     description:
@@ -525,7 +525,7 @@ packages:
       name: riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.3"
+    version: "2.0.2"
   rxdart:
     dependency: transitive
     description:
