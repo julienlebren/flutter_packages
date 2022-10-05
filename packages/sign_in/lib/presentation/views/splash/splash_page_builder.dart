@@ -21,7 +21,10 @@ final authSplashProvider = Provider.family<AuthSplashState, AuthSettings>(
       orElse: () => const AuthSplashState.notAuthed(),
     );
   },
-  dependencies: [signInAreaProvider],
+  dependencies: [
+    signInAreaProvider,
+    authStateProvider,
+  ],
 );
 
 class SplashPageBuilder extends ConsumerWidget {
@@ -74,7 +77,7 @@ class SplashPageBuilder extends ConsumerWidget {
     });
 
     final authSplashState = ref.watch(authSplashProvider(settings));
-    print("authSplashState is $authSplashState");
+
     return authSplashState.maybeWhen(
       initializing: () => loader,
       authed: () => home,
