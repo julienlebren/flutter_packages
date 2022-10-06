@@ -2,26 +2,24 @@ library notifications;
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-final fcmTokenHandlerProvider = Provider<Function(String)>(
-  (_) => throw UnimplementedError(),
-);
+part 'notifications.g.dart';
 
-final messageHandlerProvider = Provider<Function(RemoteMessage)>(
-  (_) => throw UnimplementedError(),
-);
+@riverpod
+Function(String) fcmTokenHandler(FcmTokenHandlerRef ref) =>
+    throw UnimplementedError();
 
-final notificationsServiceProvider = Provider<NotificationsService>(
-  (ref) {
-    final fcmTokenHandler = ref.watch(fcmTokenHandlerProvider);
-    final messageHandler = ref.watch(messageHandlerProvider);
-    return NotificationsService(fcmTokenHandler, messageHandler);
-  },
-  dependencies: [
-    fcmTokenHandlerProvider,
-    messageHandlerProvider,
-  ],
-);
+@riverpod
+Function(RemoteMessage) messageHandler(MessageHandlerRef ref) =>
+    throw UnimplementedError();
+
+@riverpod
+NotificationsService notificationsService(NotificationsServiceRef ref) {
+  final fcmTokenHandler = ref.watch(fcmTokenHandlerProvider);
+  final messageHandler = ref.watch(messageHandlerProvider);
+  return NotificationsService(fcmTokenHandler, messageHandler);
+}
 
 class NotificationsService extends StateNotifier<bool> {
   NotificationsService(
