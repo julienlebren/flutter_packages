@@ -29,14 +29,14 @@ class _SystemHash {
   }
 }
 
-String $firestoreServiceHash() => r'd94e582fe97e3c6c5f0ebdd788f527a6f769814d';
+String $firestoreServiceHash() => r'667078d0ab66939fabe2f9b37b20961864226cc4';
 
 /// See also [firestoreService].
-final firestoreServiceProvider = AutoDisposeProvider<FirestoreService>(
+final firestoreServiceProvider = Provider<FirestoreService>(
   firestoreService,
   name: r'firestoreServiceProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : $firestoreServiceHash,
 );
-typedef FirestoreServiceRef = AutoDisposeProviderRef<FirestoreService>;
+typedef FirestoreServiceRef = ProviderRef<FirestoreService>;

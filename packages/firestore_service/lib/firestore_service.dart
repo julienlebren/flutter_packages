@@ -10,7 +10,7 @@ part 'firestore_errors.dart';
 
 part 'firestore_service.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 FirestoreService firestoreService(FirestoreServiceRef ref) =>
     FirestoreService.instance;
 
