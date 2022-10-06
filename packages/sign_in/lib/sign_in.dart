@@ -138,7 +138,7 @@ final authStateProvider =
   );
 });
 
-final signInLocalizationsProvider = Provider<SignInLocalizations>(
+final signInLocalizationsProvider = Provider.autoDispose<SignInLocalizations>(
   (ref) {
     final locale = ref.watch(localeProvider);
     return lookupSignInLocalizations(locale);
