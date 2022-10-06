@@ -107,7 +107,6 @@ final authStateProvider =
             }
           },
           error: (error, stack) {
-            print(stack);
             return AuthState.error(error.toString());
           },
           data: (user) {

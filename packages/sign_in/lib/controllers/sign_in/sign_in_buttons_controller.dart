@@ -1,7 +1,7 @@
 part of '../../sign_in.dart';
 
-final signInButtonsControllerProvider =
-    StateNotifierProvider<SignInButtonsController, SignInButtonsState>((ref) {
+final signInButtonsControllerProvider = StateNotifierProvider.autoDispose<
+    SignInButtonsController, SignInButtonsState>((ref) {
   final service = ref.watch(authServiceProvider);
   final localizations = ref.watch(signInLocalizationsProvider);
   return SignInButtonsController(service, localizations);
