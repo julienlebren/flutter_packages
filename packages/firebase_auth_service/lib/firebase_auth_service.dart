@@ -5,17 +5,22 @@ import 'package:flutter_libphonenumber/flutter_libphonenumber.dart';
 import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:the_apple_sign_in/the_apple_sign_in.dart';
+
+part 'firebase_auth_service.g.dart';
 
 /// A provider which returns the auth changes in Firebase
 /// We use a [StreamProvider] here to handle the status of the stream,
 /// it allows us to know when the stream is loading or when it has data.
-final authStateChangesProvider = StreamProvider<User?>(
-    (ref) => ref.watch(authServiceProvider).authStateChanges());
+@riverpod
+Stream<User?> authStateChanges(AuthStateChangesRef ref) =>
+    ref.watch(authServiceProvider).authStateChanges();
 
 /// A provider which returns an instance of [FirebaseAuthService]
-final authServiceProvider =
-    Provider<FirebaseAuthService>((ref) => FirebaseAuthService.instance);
+@riverpod
+FirebaseAuthService authService(AuthServiceRef ref) =>
+    FirebaseAuthService.instance;
 
 /// The service managing authentication with Firebase
 class FirebaseAuthService {
