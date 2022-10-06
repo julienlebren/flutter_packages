@@ -1,4 +1,4 @@
-part of 'extensions.dart';
+part of extensions;
 
 extension StringX on String {
   String get initials {

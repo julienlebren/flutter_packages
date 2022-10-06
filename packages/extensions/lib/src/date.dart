@@ -1,4 +1,4 @@
-part of 'extensions.dart';
+part of extensions;
 
 extension DateTimeX on DateTime {
   String get toHour => DateFormat('Hm').format(this);

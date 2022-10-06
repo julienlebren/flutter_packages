@@ -1,4 +1,4 @@
-part of 'extensions.dart';
+part of extensions;
 
 extension ColorX on Color {
   Color darken([double amount = .1]) {

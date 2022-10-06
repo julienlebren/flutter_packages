@@ -15,11 +15,5 @@ part 'src/intersticial_container.dart';
 part 'ad_manager.freezed.dart';
 part 'ad_manager.g.dart';
 
-/*
-final adSettingsProvider = Provider<AdSettings>(
-  (_) => throw UnimplementedError(),
-);
-*/
-
 @riverpod
 AdSettings adSettings(AdSettingsRef ref) => throw UnimplementedError();

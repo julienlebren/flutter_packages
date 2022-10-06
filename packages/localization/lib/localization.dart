@@ -3,6 +3,9 @@ library localization;
 import 'dart:ui';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:localization/locale_names.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+part 'localization.g.dart';
 
 extension StringX on String {
   String capitalize() {
@@ -27,20 +30,23 @@ extension LocaleName on Locale {
 /// I always develop my apps in english as native language and provide
 /// a french translation since I am french 🇫🇷🙈
 /// But it can be overridden in the main [ProviderScope] of the app if needed.
-final supportedLocalesProvider = Provider(
-  (_) => const [
+@riverpod
+List<Locale> supportedLocales(SupportedLocalesRef ref) {
+  return const [
     Locale('en'),
     Locale('fr'),
-  ],
-);
+  ];
+}
 
 /// The locale provided by the user settings (not the device locale, which
 /// is provided by window.locale, but the locale defined in the user settings)
-final userLocaleProvider = Provider<Locale?>((_) => null);
+@riverpod
+Locale? userLocale(UserLocaleRef ref) => null;
 
 /// The provider of the [Locale] which will be watched by the `localizationProvider`
 /// in the app and the packages which are using localization.
-final localeProvider = Provider<Locale>((ref) {
+@riverpod
+Locale locale(LocaleRef ref) {
   final availableLocales = ref.watch(supportedLocalesProvider);
   final deviceLocale = window.locale;
 
@@ -60,7 +66,4 @@ final localeProvider = Provider<Locale>((ref) {
   }
 
   return availableLocales.first;
-}, dependencies: [
-  supportedLocalesProvider,
-  userLocaleProvider,
-]);
+}
