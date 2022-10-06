@@ -11,6 +11,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'src/color.dart';
 part 'src/date.dart';
 part 'src/int.dart';
+part 'src/iterable.dart';
 part 'src/string.dart';
 
 part 'extensions.g.dart';
