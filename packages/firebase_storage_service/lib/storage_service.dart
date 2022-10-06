@@ -3,9 +3,12 @@ library firebase_storage_service;
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-final storageServiceProvider =
-    Provider<StorageService>((ref) => StorageService());
+part 'storage_service.g.dart';
+
+@riverpod
+StorageService storageService(StorageServiceRef ref) => StorageService();
 
 class StorageService {
   UploadTask _upload({

@@ -1,11 +1,11 @@
 name: firebase_storage_service
 description: Wrapper for Firebase Storage
-version: 0.4.0
+version: 0.5.0
 homepage: https://twitter.com/hikeland
 publish_to: none
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.18.0 <3.0.0"
   flutter: ">=1.17.0"
 
 dependencies:
@@ -13,9 +13,13 @@ dependencies:
     sdk: flutter
   firebase_storage: ^10.0.1
   flutter_riverpod: ^2.0.2
+  riverpod_annotation: ^1.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^2.2.1
+  flutter_lints: ^1.0.0
+  riverpod_generator: ^1.0.2
 
 flutter:
