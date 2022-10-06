@@ -2,7 +2,8 @@ part of theme;
 
 /// The provider of the [AppTheme]
 /// Needs to be overridden in the [ProviderScope] of the app.
-final appThemeProvider = Provider<AppTheme>((_) => throw UnimplementedError());
+@Riverpod(keepAlive: true)
+AppTheme appTheme(AppThemeRef ref) => throw UnimplementedError();
 
 /// This provider is used by [Scaafold] or other widgets that handle
 /// an [AnnotatedRegion] to specify the layout of status bars
@@ -127,7 +128,7 @@ final formThemeProvider = Provider<FormTheme>((ref) {
 }, dependencies: [appThemeProvider]);
 
 /// Provider for localize some words about the theme
-final layoutLocalizationsProvider = Provider<LayoutLocalizations>(
+final layoutLocalizationsProvider = Provider.autoDispose<LayoutLocalizations>(
   (ref) {
     final locale = ref.watch(localeProvider);
     return lookupLayoutLocalizations(locale);
