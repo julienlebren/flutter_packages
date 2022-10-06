@@ -3,12 +3,16 @@ library firestore_service;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'firestore_converters.dart';
 part 'firestore_errors.dart';
 
-final firestoreServiceProvider =
-    Provider<FirestoreService>((ref) => FirestoreService.instance);
+part 'firestore_service.g.dart';
+
+@riverpod
+FirestoreService firestoreService(FirestoreServiceRef ref) =>
+    FirestoreService.instance;
 
 class FirestoreService {
   FirestoreService._() {
