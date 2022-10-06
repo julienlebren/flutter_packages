@@ -10,10 +10,12 @@ import 'package:layout_builder/platform/platform.dart';
 import 'package:layout_builder/theme/material_color.dart';
 import 'package:layout_builder/l10n/layout_localizations.dart';
 import 'package:localization/localization.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'theme_providers.dart';
 part 'theme_type.dart';
 part 'theme.freezed.dart';
+part 'theme.g.dart';
 
 @freezed
 class AppTheme with _$AppTheme {
