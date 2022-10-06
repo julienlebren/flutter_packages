@@ -11,6 +11,7 @@ import 'package:layout_builder/layout_builder.dart';
 import 'package:localization/localization.dart';
 import 'package:purchases/l10n/purchases_localizations.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 part 'controllers/purchases_controller.dart';
@@ -25,15 +26,17 @@ part 'widgets/feature_tile.dart';
 part 'widgets/price.dart';
 part 'widgets/subscription_page_builder.dart';
 part 'purchases.freezed.dart';
+part 'purchases.g.dart';
 
 const googlePlayURL = "https://play.google.com/store/account/subscriptions";
 const appStoreURL = "https://apps.apple.com/account/subscriptions";
 
-final purchasesSettingsProvider = Provider<PurchasesSettings>(
-  (_) => throw UnimplementedError(
+@Riverpod(keepAlive: true)
+PurchasesSettings purchasesSettings(PurchasesSettingsRef ref) {
+  throw UnimplementedError(
     "You need to override purchasesSettingsProvider before calling purchasesServiceProvider!",
-  ),
-);
+  );
+}
 
 final purchasesServiceProvider = Provider<PurchasesService>(
   (ref) {
@@ -50,7 +53,8 @@ final purchasesControllerProvider =
   return PurchasesController(service);
 }, dependencies: [purchasesServiceProvider]);
 
-final purchasesLocalizationsProvider = Provider<PurchasesLocalizations>(
+final purchasesLocalizationsProvider =
+    Provider.autoDispose<PurchasesLocalizations>(
   (ref) {
     final locale = ref.watch(localeProvider);
     return lookupPurchasesLocalizations(locale);

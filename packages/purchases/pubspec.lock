@@ -70,7 +70,7 @@ packages:
       name: build_runner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.0"
+    version: "2.2.1"
   build_runner_core:
     dependency: transitive
     description:
@@ -168,7 +168,7 @@ packages:
       name: crypto
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.1"
+    version: "3.0.2"
   dart_style:
     dependency: transitive
     description:
@@ -181,10 +181,10 @@ packages:
     description:
       path: "packages/extensions"
       ref: HEAD
-      resolved-ref: "2fc48b8aeb6c7ee4684cfb90de8eefffcdd4ca93"
+      resolved-ref: "74fff46e7bc0c8c395a97a3c079236ea020a6f0e"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.4.0"
+    version: "0.6.0"
   fake_async:
     dependency: transitive
     description:
@@ -238,7 +238,7 @@ packages:
       name: flutter_lints
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "1.0.4"
   flutter_localizations:
     dependency: "direct main"
     description: flutter
@@ -364,26 +364,26 @@ packages:
     description:
       path: "packages/layout_builder"
       ref: HEAD
-      resolved-ref: "2fc48b8aeb6c7ee4684cfb90de8eefffcdd4ca93"
+      resolved-ref: "74fff46e7bc0c8c395a97a3c079236ea020a6f0e"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "3.1.0"
+    version: "3.2.0"
   lints:
     dependency: transitive
     description:
       name: lints
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0"
+    version: "1.0.1"
   localization:
     dependency: "direct main"
     description:
       path: "packages/localization"
       ref: HEAD
-      resolved-ref: "2fc48b8aeb6c7ee4684cfb90de8eefffcdd4ca93"
+      resolved-ref: "74fff46e7bc0c8c395a97a3c079236ea020a6f0e"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "1.2.0"
+    version: "1.3.0"
   logging:
     dependency: transitive
     description:
@@ -575,6 +575,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.2"
+  riverpod_annotation:
+    dependency: "direct main"
+    description:
+      name: riverpod_annotation
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.2"
+  riverpod_generator:
+    dependency: "direct dev"
+    description:
+      name: riverpod_generator
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.2"
   rxdart:
     dependency: transitive
     description:
