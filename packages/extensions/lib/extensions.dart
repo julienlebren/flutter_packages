@@ -21,13 +21,3 @@ ExtensionsLocalizations extensionsLocalizations(
   final locale = ref.watch(localeProvider);
   return lookupExtensionsLocalizations(locale);
 }
-
-/*
-final extensionsLocalizationsProvider = Provider<ExtensionsLocalizations>(
-  (ref) {
-    final locale = ref.watch(localeProvider);
-    return lookupExtensionsLocalizations(locale);
-  },
-  dependencies: [localeProvider],
-);
-*/

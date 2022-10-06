@@ -259,10 +259,10 @@ packages:
     description:
       path: "packages/localization"
       ref: HEAD
-      resolved-ref: ea8a11d3b7c2a3e667bc86cf83f9777474eff003
+      resolved-ref: b161b26a83cb6c26d04d68a88c734c35596f682d
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "1.2.0"
+    version: "1.3.0"
   logging:
     dependency: transitive
     description:
@@ -479,5 +479,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.17.0 <3.0.0"
+  dart: ">=2.18.0 <3.0.0"
   flutter: ">=3.0.0"
