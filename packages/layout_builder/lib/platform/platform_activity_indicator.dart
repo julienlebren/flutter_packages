@@ -2,14 +2,18 @@ part of platform;
 
 class PlatformActivityIndicator extends PlatformWidgetBase<
     CircularProgressIndicator, CupertinoActivityIndicator> {
-  const PlatformActivityIndicator({this.color}) : super();
+  const PlatformActivityIndicator({
+    this.color,
+    this.strokeWidth = 4.0,
+  }) : super();
 
   final Color? color;
+  final double strokeWidth;
 
   @override
   CircularProgressIndicator createMaterialWidget(
       BuildContext context, WidgetRef ref) {
-    return CircularProgressIndicator();
+    return CircularProgressIndicator(strokeWidth: strokeWidth);
   }
 
   @override
@@ -39,6 +43,21 @@ class DelayedPlatformActivityIndicator extends StatelessWidget {
           return SizedBox.shrink();
         }
       },
+    );
+  }
+}
+
+class PlatformNavigationBarActivityIndicator extends StatelessWidget {
+  const PlatformNavigationBarActivityIndicator({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        width: 24,
+        height: 24,
+        child: PlatformActivityIndicator(strokeWidth: 2),
+      ),
     );
   }
 }
