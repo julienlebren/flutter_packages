@@ -27,6 +27,7 @@ class PlatformElevatedButton
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: color,
+        foregroundColor: color?.textColorFromBackgroundColor(),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(elevatedButtonRadius),
         ),
