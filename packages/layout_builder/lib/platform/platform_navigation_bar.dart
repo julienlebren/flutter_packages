@@ -53,8 +53,7 @@ class PlatformNavigationBar
               )
             ]
           : null,
-      elevation: (hasBorder ? 2 : 10),
-      //shadowColor
+      elevation: (hasBorder ? 2 : 0),
     );
   }
 
