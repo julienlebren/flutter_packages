@@ -24,10 +24,14 @@ class PlatformElevatedButton
     final elevatedButtonPadding = ref.watch(
       appThemeProvider.select((appTheme) => appTheme.elevatedButtonPadding),
     );
+    final backgroundColor = color ??
+        ref.watch(
+          appThemeProvider.select((appTheme) => appTheme.primaryColor),
+        );
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: color,
-        foregroundColor: color?.textColorFromBackgroundColor(),
+        backgroundColor: backgroundColor,
+        foregroundColor: backgroundColor?.textColorFromBackgroundColor(),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(elevatedButtonRadius),
         ),
