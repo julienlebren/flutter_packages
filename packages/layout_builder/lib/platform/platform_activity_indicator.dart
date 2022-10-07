@@ -56,7 +56,7 @@ class PlatformNavigationBarActivityIndicator extends StatelessWidget {
       child: Container(
         width: 24,
         height: 24,
-        child: PlatformActivityIndicator(strokeWidth: 1),
+        child: PlatformActivityIndicator(strokeWidth: 2),
       ),
     );
   }
