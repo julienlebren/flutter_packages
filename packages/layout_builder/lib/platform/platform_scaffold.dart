@@ -109,6 +109,7 @@ class PlatformNetworkScaffold extends ConsumerWidget {
         trailing: (appBar?.trailing != null && hasConnection
             ? appBar!.trailing
             : null),
+        hasBorder: appBar?.hasBorder ?? false,
       ),
       body: hasConnection ? body : const NetWorkError(),
     );
