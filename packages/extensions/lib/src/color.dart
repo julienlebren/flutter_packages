@@ -33,4 +33,12 @@ extension ColorX on Color {
   Brightness get invertedBrightness {
     return computeLuminance() <= 0.5 ? Brightness.light : Brightness.dark;
   }
+
+  Color textColorFromBackgroundColor() {
+    if (brightness == Brightness.light) {
+      return Colors.black;
+    } else {
+      return Colors.white;
+    }
+  }
 }
