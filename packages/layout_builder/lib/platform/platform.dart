@@ -1,5 +1,7 @@
 library platform;
 
+import 'dart:async';
+
 import 'package:extensions/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
