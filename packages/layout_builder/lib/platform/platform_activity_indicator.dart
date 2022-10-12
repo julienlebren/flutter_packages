@@ -52,10 +52,10 @@ class PlatformNavigationBarActivityIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        width: 24,
-        height: 24,
+    return Container(
+      width: 24,
+      height: 24,
+      child: Center(
         child: PlatformActivityIndicator(strokeWidth: 2),
       ),
     );
