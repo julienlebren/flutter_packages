@@ -79,6 +79,7 @@ class CupertinoListTile extends ConsumerStatefulWidget {
 
 class _CupertinoListTileState extends ConsumerState<CupertinoListTile> {
   late Color _tileBackground;
+  Timer? timer;
 
   @override
   void initState() {
@@ -97,7 +98,7 @@ class _CupertinoListTileState extends ConsumerState<CupertinoListTile> {
   void _handleTap() {
     _updateHighlight(true);
     widget.onTap!();
-    Future.delayed(Duration(milliseconds: 200), () {
+    timer = Timer(Duration(milliseconds: 200), () {
       _updateHighlight(false);
     });
   }
@@ -147,6 +148,12 @@ class _CupertinoListTileState extends ConsumerState<CupertinoListTile> {
         child: widget.child,
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
   }
 }
 
