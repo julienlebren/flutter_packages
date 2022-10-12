@@ -14,12 +14,14 @@ Function(String) fcmTokenHandler(FcmTokenHandlerRef ref) =>
 Function(RemoteMessage) messageHandler(MessageHandlerRef ref) =>
     throw UnimplementedError();
 
-@riverpod
-NotificationsService notificationsService(NotificationsServiceRef ref) {
-  final fcmTokenHandler = ref.watch(fcmTokenHandlerProvider);
-  final messageHandler = ref.watch(messageHandlerProvider);
-  return NotificationsService(fcmTokenHandler, messageHandler);
-}
+final notificationsServiceProvider = Provider.autoDispose<NotificationsService>(
+  (ref) {
+    final fcmTokenHandler = ref.watch(fcmTokenHandlerProvider);
+    final messageHandler = ref.watch(messageHandlerProvider);
+    return NotificationsService(fcmTokenHandler, messageHandler);
+  },
+  dependencies: [fcmTokenHandlerProvider],
+);
 
 class NotificationsService extends StateNotifier<bool> {
   NotificationsService(
