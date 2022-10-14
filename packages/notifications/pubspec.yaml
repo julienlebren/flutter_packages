@@ -1,6 +1,6 @@
 name: notifications
 description: Notifications service for apps built by https://github.com/julienlebren 
-version: 0.4.3
+version: 0.4.4
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -13,6 +13,7 @@ dependencies:
     sdk: flutter
   flutter_riverpod: ^2.0.2
   firebase_messaging: ^13.0.1
+  flutter_app_badger: ^1.5.0
   riverpod_annotation: ^1.0.2
 
 dev_dependencies:

@@ -2,6 +2,7 @@ library notifications;
 
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_app_badger/flutter_app_badger.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'notifications.g.dart';
@@ -57,6 +58,10 @@ class NotificationsService extends StateNotifier<bool> {
     } catch (_) {
       state = false;
     }
+  }
+
+  void removeBadge() {
+    FlutterAppBadger.removeBadge();
   }
 
   Future<void> setupInteractedMessage() async {
