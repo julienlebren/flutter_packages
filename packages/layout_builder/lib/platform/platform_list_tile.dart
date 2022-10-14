@@ -98,9 +98,9 @@ class _CupertinoListTileState extends ConsumerState<CupertinoListTile> {
   void _handleTap() {
     _updateHighlight(true);
     widget.onTap!();
-    /*timer = Timer(Duration(milliseconds: 200), () {
+    timer = Timer(Duration(milliseconds: 200), () {
       _updateHighlight(false);
-    });*/
+    });
   }
 
   void _handleTapCancel() {
