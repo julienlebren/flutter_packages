@@ -117,7 +117,8 @@ class SubscriptionPageBuilder extends ConsumerWidget {
                       )
                     : null,
               ),
-              body: CupertinoTheme(
+              body: SizedBox
+                  .shrink(), /*CupertinoTheme(
                 data: cupertinoTheme.copyWith(
                   primaryColor: appTheme.primaryColor,
                 ),
@@ -128,7 +129,7 @@ class SubscriptionPageBuilder extends ConsumerWidget {
                   hasStoreIssue: state.isReady && !state.hasPackage,
                   isPurchasing: state.isPurchasing,
                 ),
-              ),
+              )*/
             ),
           ),
         ),
