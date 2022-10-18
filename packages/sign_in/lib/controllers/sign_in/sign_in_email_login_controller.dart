@@ -1,7 +1,8 @@
 part of '../../sign_in.dart';
 
-final signInEmailLoginControllerProvider = StateNotifierProvider.autoDispose<
-    SignInEmailLoginController, SignInEmailLoginState>((ref) {
+final signInEmailLoginControllerProvider =
+    StateNotifierProvider<SignInEmailLoginController, SignInEmailLoginState>(
+        (ref) {
   final service = ref.watch(authServiceProvider);
   final localizations = ref.watch(signInLocalizationsProvider);
   return SignInEmailLoginController(service, localizations);

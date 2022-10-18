@@ -50,6 +50,12 @@ class _SignInEmailLoginFormState extends ConsumerState<SignInEmailLoginForm> {
   }
 
   @override
+  void dispose() {
+    ref.invalidate(signInEmailLoginControllerProvider);
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final canSubmit = ref.watch(

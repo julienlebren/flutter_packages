@@ -30,7 +30,7 @@ extension LocaleName on Locale {
 /// I always develop my apps in english as native language and provide
 /// a french translation since I am french 🇫🇷🙈
 /// But it can be overridden in the main [ProviderScope] of the app if needed.
-@riverpod
+@Riverpod(keepAlive: true)
 List<Locale> supportedLocales(SupportedLocalesRef ref) {
   return const [
     Locale('en'),
@@ -40,12 +40,12 @@ List<Locale> supportedLocales(SupportedLocalesRef ref) {
 
 /// The locale provided by the user settings (not the device locale, which
 /// is provided by window.locale, but the locale defined in the user settings)
-@riverpod
+@Riverpod(keepAlive: true)
 Locale? userLocale(UserLocaleRef ref) => null;
 
 /// The provider of the [Locale] which will be watched by the `localizationProvider`
 /// in the app and the packages which are using localization.
-@riverpod
+@Riverpod(keepAlive: true)
 Locale locale(LocaleRef ref) {
   final availableLocales = ref.watch(supportedLocalesProvider);
   final deviceLocale = window.locale;

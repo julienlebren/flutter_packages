@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String $supportedLocalesHash() => r'59da7c9eb55fb6709ecc18a907440e2131bd06dc';
+String $supportedLocalesHash() => r'a74acd4948a2bfdfc1b3f7126d3cacbf156a16e5';
 
 /// The default locales available in the apps that are using this package
 /// I always develop my apps in english as native language and provide
@@ -37,37 +37,37 @@ String $supportedLocalesHash() => r'59da7c9eb55fb6709ecc18a907440e2131bd06dc';
 /// But it can be overridden in the main [ProviderScope] of the app if needed.
 ///
 /// Copied from [supportedLocales].
-final supportedLocalesProvider = AutoDisposeProvider<List<Locale>>(
+final supportedLocalesProvider = Provider<List<Locale>>(
   supportedLocales,
   name: r'supportedLocalesProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : $supportedLocalesHash,
 );
-typedef SupportedLocalesRef = AutoDisposeProviderRef<List<Locale>>;
-String $userLocaleHash() => r'3b499683572347e4fcf52a5ea8fdf631f2b5ca8e';
+typedef SupportedLocalesRef = ProviderRef<List<Locale>>;
+String $userLocaleHash() => r'd40a5373168f41e3ebde08af8e860fd90f2447e7';
 
 /// The locale provided by the user settings (not the device locale, which
 /// is provided by window.locale, but the locale defined in the user settings)
 ///
 /// Copied from [userLocale].
-final userLocaleProvider = AutoDisposeProvider<Locale?>(
+final userLocaleProvider = Provider<Locale?>(
   userLocale,
   name: r'userLocaleProvider',
   debugGetCreateSourceHash:
       const bool.fromEnvironment('dart.vm.product') ? null : $userLocaleHash,
 );
-typedef UserLocaleRef = AutoDisposeProviderRef<Locale?>;
-String $localeHash() => r'95e6e3ee5f37ce746f86b22bc9d9f30f31d9611f';
+typedef UserLocaleRef = ProviderRef<Locale?>;
+String $localeHash() => r'6d724633e11e812fa0dc912c73985d01a5c92a33';
 
 /// The provider of the [Locale] which will be watched by the `localizationProvider`
 /// in the app and the packages which are using localization.
 ///
 /// Copied from [locale].
-final localeProvider = AutoDisposeProvider<Locale>(
+final localeProvider = Provider<Locale>(
   locale,
   name: r'localeProvider',
   debugGetCreateSourceHash:
       const bool.fromEnvironment('dart.vm.product') ? null : $localeHash,
 );
-typedef LocaleRef = AutoDisposeProviderRef<Locale>;
+typedef LocaleRef = ProviderRef<Locale>;
