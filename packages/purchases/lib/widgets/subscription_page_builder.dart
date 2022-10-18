@@ -174,6 +174,10 @@ class SubscriptionPlatformBuilder
                 alignment: Alignment.topLeft,
                 children: [
                   Padding(
+                    padding: EdgeInsets.only(top: height),
+                    child: child,
+                  ),
+                  Padding(
                     padding: const EdgeInsets.only(left: 15, top: 50),
                     child: IconButton(
                       onPressed: () => _closePage(context, ref),
@@ -182,10 +186,6 @@ class SubscriptionPlatformBuilder
                       color:
                           theme.backgroundColor.textColorFromBackgroundColor(),
                     ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(top: height),
-                    child: child,
                   ),
                 ],
               ),
