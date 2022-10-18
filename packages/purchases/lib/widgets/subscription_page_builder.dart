@@ -170,8 +170,10 @@ class SubscriptionPlatformBuilder
             child: Scaffold(
               backgroundColor: Colors.transparent,
               appBar: AppBar(
-                backgroundColor: Colors.green,
-                leading: Text("Hello"),
+                backgroundColor: Colors.transparent,
+                leading: PlatformNavigationBarCloseButton(
+                  onPressed: () => _closePage(context, ref),
+                ),
               ),
               body: child,
             ),
@@ -195,7 +197,7 @@ class SubscriptionPlatformBuilder
           leading: PlatformNavigationBarCloseButton(
             onPressed: () => _closePage(context, ref),
           ),
-          trailing: isCupertino() && canDiscount
+          trailing: canDiscount
               ? PlatformNavigationBarButton(
                   onPressed: () => _openOffers(ref),
                   icon: Icons.redeem,
