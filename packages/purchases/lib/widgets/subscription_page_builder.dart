@@ -172,11 +172,17 @@ class SubscriptionPlatformBuilder
               body: Stack(
                 alignment: Alignment.topLeft,
                 children: [
-                  PlatformNavigationBarCloseButton(
-                    onPressed: () => _closePage(context, ref),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15, top: 50),
+                    child: InkWell(
+                      highlightColor: Colors.grey.shade200,
+                      splashColor: Colors.transparent,
+                      onTap: () => _closePage(context, ref),
+                      child: const Icon(Icons.close, size: 30),
+                    ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 50),
+                    padding: const EdgeInsets.only(top: 100),
                     child: child,
                   ),
                 ],
