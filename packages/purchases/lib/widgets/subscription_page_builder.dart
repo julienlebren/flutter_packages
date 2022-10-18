@@ -95,7 +95,7 @@ class SubscriptionPageBuilder extends ConsumerWidget {
         bottom: false,
         child: DecoratedBox(
           decoration: BoxDecoration(
-            color: theme.backgroundColor,
+            //color: theme.backgroundColor,
             image: theme.backgroundImage != null
                 ? DecorationImage(
                     image: AssetImage(theme.backgroundImage!),
