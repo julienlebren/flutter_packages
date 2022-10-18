@@ -169,12 +169,7 @@ class SubscriptionPlatformBuilder
             ),
             child: Scaffold(
               backgroundColor: Colors.transparent,
-              body: SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 40.0),
-                  child: child,
-                ),
-              ),
+              body: child,
             ),
           ),
         ),
@@ -274,21 +269,33 @@ class SubscriptionPageContents extends StatelessWidget {
     return FormWithOverlay(
       isSaving: isPurchasing,
       overlay: const SubscriptionPurchaseOverlay(),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40),
-        child: CustomScrollView(
-          clipBehavior: Clip.none,
-          physics: isCupertino()
-              ? const AlwaysScrollableScrollPhysics()
-              : const ClampingScrollPhysics(),
-          slivers: [
-            SliverToBoxAdapter(child: header),
-            SliverToBoxAdapter(child: body),
-            hasStoreIssue
-                ? const SubscriptionStoreIssue()
-                : SliverToBoxAdapter(child: footer),
-          ],
-        ),
+      child: CustomScrollView(
+        clipBehavior: Clip.none,
+        physics: isCupertino()
+            ? const AlwaysScrollableScrollPhysics()
+            : const ClampingScrollPhysics(),
+        slivers: [
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: header,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: body,
+            ),
+          ),
+          hasStoreIssue
+              ? const SubscriptionStoreIssue()
+              : SliverToBoxAdapter(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 40),
+                    child: footer,
+                  ),
+                ),
+        ],
       ),
     );
   }
