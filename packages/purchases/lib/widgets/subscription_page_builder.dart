@@ -90,35 +90,33 @@ class SubscriptionPageBuilder extends ConsumerWidget {
           ),
         ),
       ],
-      child: CupertinoTheme(
-        data: cupertinoTheme.copyWith(primaryColor: theme.textColor),
-        child: SafeArea(
-          top: false,
-          bottom: false,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              color: theme.backgroundColor,
-              image: theme.backgroundImage != null
-                  ? DecorationImage(
-                      image: AssetImage(theme.backgroundImage!),
-                      fit: BoxFit.cover,
+      child: SafeArea(
+        top: false,
+        bottom: false,
+        child: DecoratedBox(
+          decoration: BoxDecoration(
+            color: theme.backgroundColor,
+            image: theme.backgroundImage != null
+                ? DecorationImage(
+                    image: AssetImage(theme.backgroundImage!),
+                    fit: BoxFit.cover,
+                  )
+                : null,
+          ),
+          child: PlatformScaffold(
+            appBar: PlatformNavigationBar(
+              leading: PlatformNavigationBarCloseButton(
+                onPressed: () => _closePage(context, ref),
+              ),
+              trailing: isCupertino() && canDiscount
+                  ? PlatformNavigationBarButton(
+                      onPressed: () => _openOffers(ref),
+                      icon: Icons.redeem,
                     )
                   : null,
             ),
-            child: PlatformScaffold(
-              appBar: PlatformNavigationBar(
-                leading: PlatformNavigationBarCloseButton(
-                  onPressed: () => _closePage(context, ref),
-                ),
-                trailing: isCupertino() && canDiscount
-                    ? PlatformNavigationBarButton(
-                        onPressed: () => _openOffers(ref),
-                        icon: Icons.redeem,
-                      )
-                    : null,
-              ),
-              body: SizedBox
-                  .shrink(), /*CupertinoTheme(
+            body: SizedBox
+                .shrink(), /*CupertinoTheme(
                 data: cupertinoTheme.copyWith(
                   primaryColor: appTheme.primaryColor,
                 ),
@@ -130,7 +128,6 @@ class SubscriptionPageBuilder extends ConsumerWidget {
                   isPurchasing: state.isPurchasing,
                 ),
               )*/
-            ),
           ),
         ),
       ),
