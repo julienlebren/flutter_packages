@@ -168,7 +168,7 @@ class SubscriptionPlatformBuilder
                   : null,
             ),
             child: Scaffold(
-              backgroundColor: Colors.red,
+              backgroundColor: Colors.transparent,
               appBar: AppBar(
                 backgroundColor: Colors.green,
                 leading: Text("Hello"),
