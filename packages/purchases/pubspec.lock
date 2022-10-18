@@ -181,10 +181,10 @@ packages:
     description:
       path: "packages/extensions"
       ref: HEAD
-      resolved-ref: "74fff46e7bc0c8c395a97a3c079236ea020a6f0e"
+      resolved-ref: "4162f52fcfbde8a4134ae6b63cdd9e07403cad8b"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.6.0"
+    version: "0.6.2"
   fake_async:
     dependency: transitive
     description:
