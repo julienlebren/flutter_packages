@@ -175,15 +175,12 @@ class SubscriptionPlatformBuilder
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 15, top: 50),
-                    child: InkWell(
-                      splashColor: Colors.transparent,
-                      onTap: () => _closePage(context, ref),
-                      child: Icon(
-                        Icons.close,
-                        size: 30,
-                        color: theme.backgroundColor
-                            .textColorFromBackgroundColor(),
-                      ),
+                    child: IconButton(
+                      onPressed: () => _closePage(context, ref),
+                      icon: const Icon(Icons.close),
+                      iconSize: 30,
+                      color:
+                          theme.backgroundColor.textColorFromBackgroundColor(),
                     ),
                   ),
                   Padding(
