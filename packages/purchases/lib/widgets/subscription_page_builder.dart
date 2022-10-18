@@ -77,7 +77,8 @@ class SubscriptionPageBuilder extends ConsumerWidget {
       overrides: [
         appThemeProvider.overrideWithValue(
           appTheme.copyWith(
-            scaffoldBackgroundColor: Colors.transparent,
+            scaffoldBackgroundColor: Colors.green,
+            navigationBarBackgroundColor: Colors.red,
           ),
         ),
         systemOverlayStyleProvider.overrideWithValue(
@@ -259,21 +260,27 @@ class SubscriptionPageContents extends StatelessWidget {
     return FormWithOverlay(
       isSaving: isPurchasing,
       overlay: const SubscriptionPurchaseOverlay(),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40),
-        child: CustomScrollView(
-          clipBehavior: Clip.none,
-          physics: isCupertino()
-              ? const AlwaysScrollableScrollPhysics()
-              : const ClampingScrollPhysics(),
-          slivers: [
-            SliverToBoxAdapter(child: header),
-            SliverToBoxAdapter(child: body),
-            hasStoreIssue
-                ? const SubscriptionStoreIssue()
-                : SliverToBoxAdapter(child: footer),
-          ],
-        ),
+      child: CustomScrollView(
+        clipBehavior: Clip.none,
+        physics: isCupertino()
+            ? const AlwaysScrollableScrollPhysics()
+            : const ClampingScrollPhysics(),
+        slivers: [
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 40),
+            sliver: header,
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.symmetric(horizontal: 40),
+            sliver: body,
+          ),
+          hasStoreIssue
+              ? const SubscriptionStoreIssue()
+              : SliverPadding(
+                  padding: const EdgeInsets.symmetric(horizontal: 40),
+                  sliver: footer,
+                ),
+        ],
       ),
     );
   }
