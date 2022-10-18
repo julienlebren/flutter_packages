@@ -2,6 +2,7 @@ library subscription_service;
 
 import 'dart:io';
 
+import 'package:extensions/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
