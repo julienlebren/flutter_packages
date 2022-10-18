@@ -83,9 +83,11 @@ class SubscriptionPageBuilder extends ConsumerWidget {
       ],
       child: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle(
-            statusBarColor: Colors.transparent,
-            systemNavigationBarColor: Colors.transparent,
-            systemNavigationBarIconBrightness: Brightness.light),
+          statusBarColor: Colors.transparent,
+          statusBarIconBrightness: Brightness.light,
+          systemNavigationBarColor: Colors.black,
+          systemNavigationBarIconBrightness: Brightness.light,
+        ),
         child: CupertinoTheme(
           data: cupertinoTheme.copyWith(primaryColor: theme.textColor),
           child: SafeArea(
