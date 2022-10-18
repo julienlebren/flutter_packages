@@ -260,30 +260,33 @@ class SubscriptionPageContents extends StatelessWidget {
     return FormWithOverlay(
       isSaving: isPurchasing,
       overlay: const SubscriptionPurchaseOverlay(),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 40),
-        child: CustomScrollView(
-          clipBehavior: Clip.none,
-          physics: isCupertino()
-              ? const AlwaysScrollableScrollPhysics()
-              : const ClampingScrollPhysics(),
-          slivers: [
-            SliverPadding(
+      child: CustomScrollView(
+        clipBehavior: Clip.none,
+        physics: isCupertino()
+            ? const AlwaysScrollableScrollPhysics()
+            : const ClampingScrollPhysics(),
+        slivers: [
+          SliverToBoxAdapter(
+            child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
-              sliver: SliverToBoxAdapter(child: header),
+              child: header,
             ),
-            SliverPadding(
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40),
-              sliver: SliverToBoxAdapter(child: body),
+              child: body,
             ),
-            hasStoreIssue
-                ? const SubscriptionStoreIssue()
-                : SliverPadding(
+          ),
+          hasStoreIssue
+              ? const SubscriptionStoreIssue()
+              : SliverToBoxAdapter(
+                  child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 40),
-                    sliver: SliverToBoxAdapter(child: footer),
+                    child: footer,
                   ),
-          ],
-        ),
+                ),
+        ],
       ),
     );
   }
