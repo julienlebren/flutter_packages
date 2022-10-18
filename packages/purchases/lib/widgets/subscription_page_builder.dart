@@ -169,12 +169,6 @@ class SubscriptionPlatformBuilder
             ),
             child: Scaffold(
               backgroundColor: Colors.transparent,
-              appBar: AppBar(
-                backgroundColor: Colors.transparent,
-                leading: PlatformNavigationBarCloseButton(
-                  onPressed: () => _closePage(context, ref),
-                ),
-              ),
               body: child,
             ),
           ),
