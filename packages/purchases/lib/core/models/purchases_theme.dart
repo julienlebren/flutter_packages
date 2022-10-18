@@ -4,7 +4,7 @@ part of '../../purchases.dart';
 class PurchasesTheme with _$PurchasesTheme {
   const factory PurchasesTheme({
     String? backgroundImage,
-    Color? backgroundColor,
+    required Color backgroundColor,
     required Color primaryColor,
     required Color textColor,
     Color? appBarButtonColor,

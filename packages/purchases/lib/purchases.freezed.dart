@@ -1182,7 +1182,7 @@ abstract class _PurchasesState implements PurchasesState {
 /// @nodoc
 mixin _$PurchasesTheme {
   String? get backgroundImage => throw _privateConstructorUsedError;
-  Color? get backgroundColor => throw _privateConstructorUsedError;
+  Color get backgroundColor => throw _privateConstructorUsedError;
   Color get primaryColor => throw _privateConstructorUsedError;
   Color get textColor => throw _privateConstructorUsedError;
   Color? get appBarButtonColor => throw _privateConstructorUsedError;
@@ -1210,7 +1210,7 @@ abstract class $PurchasesThemeCopyWith<$Res> {
       _$PurchasesThemeCopyWithImpl<$Res>;
   $Res call(
       {String? backgroundImage,
-      Color? backgroundColor,
+      Color backgroundColor,
       Color primaryColor,
       Color textColor,
       Color? appBarButtonColor,
@@ -1261,7 +1261,7 @@ class _$PurchasesThemeCopyWithImpl<$Res>
       backgroundColor: backgroundColor == freezed
           ? _value.backgroundColor
           : backgroundColor // ignore: cast_nullable_to_non_nullable
-              as Color?,
+              as Color,
       primaryColor: primaryColor == freezed
           ? _value.primaryColor
           : primaryColor // ignore: cast_nullable_to_non_nullable
@@ -1327,7 +1327,7 @@ abstract class _$$_PurchasesThemeCopyWith<$Res>
   @override
   $Res call(
       {String? backgroundImage,
-      Color? backgroundColor,
+      Color backgroundColor,
       Color primaryColor,
       Color textColor,
       Color? appBarButtonColor,
@@ -1380,7 +1380,7 @@ class __$$_PurchasesThemeCopyWithImpl<$Res>
       backgroundColor: backgroundColor == freezed
           ? _value.backgroundColor
           : backgroundColor // ignore: cast_nullable_to_non_nullable
-              as Color?,
+              as Color,
       primaryColor: primaryColor == freezed
           ? _value.primaryColor
           : primaryColor // ignore: cast_nullable_to_non_nullable
@@ -1442,7 +1442,7 @@ class __$$_PurchasesThemeCopyWithImpl<$Res>
 class _$_PurchasesTheme implements _PurchasesTheme {
   const _$_PurchasesTheme(
       {this.backgroundImage,
-      this.backgroundColor,
+      required this.backgroundColor,
       required this.primaryColor,
       required this.textColor,
       this.appBarButtonColor,
@@ -1460,7 +1460,7 @@ class _$_PurchasesTheme implements _PurchasesTheme {
   @override
   final String? backgroundImage;
   @override
-  final Color? backgroundColor;
+  final Color backgroundColor;
   @override
   final Color primaryColor;
   @override
@@ -1560,7 +1560,7 @@ class _$_PurchasesTheme implements _PurchasesTheme {
 abstract class _PurchasesTheme implements PurchasesTheme {
   const factory _PurchasesTheme(
       {final String? backgroundImage,
-      final Color? backgroundColor,
+      required final Color backgroundColor,
       required final Color primaryColor,
       required final Color textColor,
       final Color? appBarButtonColor,
@@ -1578,7 +1578,7 @@ abstract class _PurchasesTheme implements PurchasesTheme {
   @override
   String? get backgroundImage;
   @override
-  Color? get backgroundColor;
+  Color get backgroundColor;
   @override
   Color get primaryColor;
   @override
