@@ -17,30 +17,30 @@ class SubscriptionPageBuilder extends ConsumerWidget {
   final bool canDiscount;
 
   _openOffers(WidgetRef ref) {
-    final controller = ref.watch(purchasesControllerProvider.notifier);
+    final controller = ref.read(purchasesControllerProvider.notifier);
     controller.handleEvent(const PurchasesEvent.openOffers());
   }
 
   _closePage(BuildContext context, WidgetRef ref) {
-    final isPurchasing = ref.watch(purchasesControllerProvider.select(
+    final isPurchasing = ref.read(purchasesControllerProvider.select(
       (state) => state.isPurchasing,
     ));
 
     if (isPurchasing) {
+      final l10n = ref.watch(purchasesLocalizationsProvider);
       showAlertDialog(
         context,
         ref,
-        title:
-            'Un achat est actuellement en cours, êtes-vous sûr de vouloir quitter maintenant ?',
+        title: l10n.closeAlertTitle,
         actions: [
           PlatformDialogAction(
-            buttonText: "Oui, quitter cette vue",
+            buttonText: l10n.closeAlertCloseButton,
             onPressed: () {
               Navigator.of(context, rootNavigator: true).pop();
             },
           ),
           PlatformDialogAction(
-            buttonText: "Non, attendre la fin de l'achat",
+            buttonText: l10n.closeAlertCancelButton,
             isDefaultAction: true,
           )
         ],
@@ -96,7 +96,66 @@ class SubscriptionPageBuilder extends ConsumerWidget {
                     )
                   : null,
             ),
-            child: PlatformScaffold(
+            child: SizedBox.shrink(),
+
+            /*PlatformScaffold(
+              appBar: PlatformNavigationBar(
+                leading: PlatformNavigationBarCloseButton(
+                  onPressed: () => _closePage(context, ref),
+                ),
+                trailing: isCupertino() && canDiscount
+                    ? PlatformNavigationBarButton(
+                        onPressed: () => _openOffers(ref),
+                        icon: Icons.redeem,
+                      )
+                    : null,
+              ),
+              body: CupertinoTheme(
+                data: cupertinoTheme.copyWith(
+                  primaryColor: appTheme.primaryColor,
+                ),
+                child: SubscriptionPageContents(
+                  header: header,
+                  body: body,
+                  footer: footer,
+                  hasStoreIssue: state.isReady && !state.hasPackage,
+                  isPurchasing: state.isPurchasing,
+                ),
+              ),
+            ),*/
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/*
+class SubscriptionScaffold extends ConsumerWidget {
+  const SubscriptionScaffold({
+    Key? key,
+    this.title,
+    required this.header,
+    required this.body,
+    required this.footer,
+    this.canDiscount = false,
+  }) : super(key: key);
+
+  final String? title;
+  final Widget header;
+  final Widget body;
+  final Widget footer;
+  final bool canDiscount;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final state = ref.watch(purchasesControllerProvider);
+    final appTheme = ref.watch(appThemeProvider);
+    final theme = ref.watch(purchasesThemeProvider);
+    final cupertinoTheme = ref.watch(cupertinoThemeProvider);
+
+
+    return PlatformScaffold(
               appBar: PlatformNavigationBar(
                 leading: PlatformNavigationBarCloseButton(
                   onPressed: () => _closePage(context, ref),
@@ -127,6 +186,7 @@ class SubscriptionPageBuilder extends ConsumerWidget {
     );
   }
 }
+*/
 
 class SubscriptionAppBar extends ConsumerWidget {
   const SubscriptionAppBar({
