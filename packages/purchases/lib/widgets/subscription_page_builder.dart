@@ -96,7 +96,13 @@ class SubscriptionPageBuilder extends ConsumerWidget {
                     )
                   : null,
             ),
-            child: SizedBox.shrink(),
+            child: AnnotatedRegion<SystemUiOverlayStyle>(
+              value: SystemUiOverlayStyle(
+                  statusBarColor: Colors.transparent,
+                  systemNavigationBarColor: Colors.transparent,
+                  systemNavigationBarIconBrightness: Brightness.light),
+              child: SizedBox.shrink(),
+            ),
 
             /*PlatformScaffold(
               appBar: PlatformNavigationBar(
