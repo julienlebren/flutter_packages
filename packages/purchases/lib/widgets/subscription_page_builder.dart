@@ -81,26 +81,26 @@ class SubscriptionPageBuilder extends ConsumerWidget {
           ),
         ),
       ],
-      child: CupertinoTheme(
-        data: cupertinoTheme.copyWith(primaryColor: theme.textColor),
-        child: SafeArea(
-          top: false,
-          bottom: false,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              color: theme.backgroundColor,
-              image: theme.backgroundImage != null
-                  ? DecorationImage(
-                      image: AssetImage(theme.backgroundImage!),
-                      fit: BoxFit.cover,
-                    )
-                  : null,
-            ),
-            child: AnnotatedRegion<SystemUiOverlayStyle>(
-              value: SystemUiOverlayStyle(
-                  statusBarColor: Colors.transparent,
-                  systemNavigationBarColor: Colors.transparent,
-                  systemNavigationBarIconBrightness: Brightness.light),
+      child: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle(
+            statusBarColor: Colors.transparent,
+            systemNavigationBarColor: Colors.transparent,
+            systemNavigationBarIconBrightness: Brightness.light),
+        child: CupertinoTheme(
+          data: cupertinoTheme.copyWith(primaryColor: theme.textColor),
+          child: SafeArea(
+            top: false,
+            bottom: false,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color: theme.backgroundColor,
+                image: theme.backgroundImage != null
+                    ? DecorationImage(
+                        image: AssetImage(theme.backgroundImage!),
+                        fit: BoxFit.cover,
+                      )
+                    : null,
+              ),
               child: SizedBox.shrink(),
             ),
 
