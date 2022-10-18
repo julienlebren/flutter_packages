@@ -169,7 +169,18 @@ class SubscriptionPlatformBuilder
             ),
             child: Scaffold(
               backgroundColor: Colors.transparent,
-              body: child,
+              body: Stack(
+                alignment: Alignment.topLeft,
+                children: [
+                  PlatformNavigationBarCloseButton(
+                    onPressed: () => _closePage(context, ref),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 50),
+                    child: child,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
