@@ -53,10 +53,7 @@ class SubscriptionPageBuilder extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(purchasesControllerProvider);
     final appTheme = ref.watch(appThemeProvider);
-    final theme = ref.watch(purchasesThemeProvider);
-    final cupertinoTheme = ref.watch(cupertinoThemeProvider);
 
     ref.listen<PurchasesState>(purchasesControllerProvider, (_, state) {
       if (state.errorText != null) {
@@ -81,47 +78,102 @@ class SubscriptionPageBuilder extends ConsumerWidget {
           ),
         ),
       ],
-      child: CupertinoTheme(
-        data: cupertinoTheme.copyWith(primaryColor: theme.textColor),
-        child: SafeArea(
-          top: false,
-          bottom: false,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              color: theme.backgroundColor,
-              image: theme.backgroundImage != null
-                  ? DecorationImage(
-                      image: AssetImage(theme.backgroundImage!),
-                      fit: BoxFit.cover,
-                    )
-                  : null,
-            ),
-            child: PlatformScaffold(
-              appBar: PlatformNavigationBar(
-                leading: PlatformNavigationBarCloseButton(
-                  onPressed: () => _closePage(context, ref),
-                ),
-                trailing: isCupertino() && canDiscount
-                    ? PlatformNavigationBarButton(
-                        onPressed: () => _openOffers(ref),
-                        icon: Icons.redeem,
-                      )
-                    : null,
-              ),
-              body: CupertinoTheme(
-                data: cupertinoTheme.copyWith(
-                  primaryColor: appTheme.primaryColor,
-                ),
-                child: SubscriptionPageContents(
-                  header: header,
-                  body: body,
-                  footer: footer,
-                  hasStoreIssue: state.isReady && !state.hasPackage,
-                  isPurchasing: state.isPurchasing,
-                ),
-              ),
-            ),
+      child: SubscriptionPlatformBuilder(
+        title: title,
+        header: header,
+        body: body,
+        footer: footer,
+        canDiscount: canDiscount,
+      ),
+    );
+  }
+}
+
+class SubscriptionPlatformBuilder
+    extends PlatformWidgetBase<SizedBox, CupertinoTheme> {
+  const SubscriptionPlatformBuilder({
+    this.title,
+    required this.header,
+    required this.body,
+    required this.footer,
+    this.canDiscount = false,
+    Key? key,
+  }) : super(key: key);
+
+  final String? title;
+  final Widget header;
+  final Widget body;
+  final Widget footer;
+  final bool canDiscount;
+
+  _openOffers(WidgetRef ref) {
+    final controller = ref.watch(purchasesControllerProvider.notifier);
+    controller.handleEvent(const PurchasesEvent.openOffers());
+  }
+
+  _closePage(BuildContext context, WidgetRef ref) {
+    final isPurchasing = ref.watch(purchasesControllerProvider.select(
+      (state) => state.isPurchasing,
+    ));
+
+    if (isPurchasing) {
+      final l10n = ref.watch(purchasesLocalizationsProvider);
+      showAlertDialog(
+        context,
+        ref,
+        title: l10n.closeAlertTitle,
+        actions: [
+          PlatformDialogAction(
+            buttonText: l10n.closeAlertCloseButton,
+            onPressed: () {
+              Navigator.of(context, rootNavigator: true).pop();
+            },
           ),
+          PlatformDialogAction(
+            buttonText: l10n.closeAlertCancelButton,
+            isDefaultAction: true,
+          )
+        ],
+        displayCancelButton: false,
+      );
+    } else {
+      Navigator.of(context, rootNavigator: true).pop();
+    }
+  }
+
+  @override
+  SizedBox createMaterialWidget(BuildContext context, WidgetRef ref) {
+    return SizedBox.shrink();
+  }
+
+  @override
+  CupertinoTheme createCupertinoWidget(BuildContext context, WidgetRef ref) {
+    final cupertinoTheme = ref.watch(cupertinoThemeProvider);
+    final appTheme = ref.watch(appThemeProvider);
+    final state = ref.watch(purchasesControllerProvider);
+
+    return CupertinoTheme(
+      data: cupertinoTheme.copyWith(
+        primaryColor: appTheme.primaryColor,
+      ),
+      child: PlatformScaffold(
+        appBar: PlatformNavigationBar(
+          leading: PlatformNavigationBarCloseButton(
+            onPressed: () => _closePage(context, ref),
+          ),
+          trailing: isCupertino() && canDiscount
+              ? PlatformNavigationBarButton(
+                  onPressed: () => _openOffers(ref),
+                  icon: Icons.redeem,
+                )
+              : null,
+        ),
+        body: SubscriptionPageContents(
+          header: header,
+          body: body,
+          footer: footer,
+          hasStoreIssue: state.isReady && !state.hasPackage,
+          isPurchasing: state.isPurchasing,
         ),
       ),
     );
