@@ -80,52 +80,52 @@ class SubscriptionPageBuilder extends ConsumerWidget {
             scaffoldBackgroundColor: Colors.transparent,
           ),
         ),
-      ],
-      child: AnnotatedRegion<SystemUiOverlayStyle>(
-        value: SystemUiOverlayStyle(
-          statusBarColor: Colors.transparent,
-          statusBarIconBrightness: Brightness.light,
-          systemNavigationBarColor: Colors.black,
-          systemNavigationBarIconBrightness: Brightness.light,
+        systemOverlayStyleProvider.overrideWithValue(
+          SystemUiOverlayStyle(
+            statusBarColor: Colors.transparent,
+            statusBarIconBrightness: Brightness.light,
+            systemNavigationBarColor: Colors.black,
+            systemNavigationBarIconBrightness: Brightness.light,
+          ),
         ),
-        child: CupertinoTheme(
-          data: cupertinoTheme.copyWith(primaryColor: theme.textColor),
-          child: SafeArea(
-            top: false,
-            bottom: false,
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                color: theme.backgroundColor,
-                image: theme.backgroundImage != null
-                    ? DecorationImage(
-                        image: AssetImage(theme.backgroundImage!),
-                        fit: BoxFit.cover,
+      ],
+      child: CupertinoTheme(
+        data: cupertinoTheme.copyWith(primaryColor: theme.textColor),
+        child: SafeArea(
+          top: false,
+          bottom: false,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              color: theme.backgroundColor,
+              image: theme.backgroundImage != null
+                  ? DecorationImage(
+                      image: AssetImage(theme.backgroundImage!),
+                      fit: BoxFit.cover,
+                    )
+                  : null,
+            ),
+            child: PlatformScaffold(
+              appBar: PlatformNavigationBar(
+                leading: PlatformNavigationBarCloseButton(
+                  onPressed: () => _closePage(context, ref),
+                ),
+                trailing: isCupertino() && canDiscount
+                    ? PlatformNavigationBarButton(
+                        onPressed: () => _openOffers(ref),
+                        icon: Icons.redeem,
                       )
                     : null,
               ),
-              child: PlatformScaffold(
-                appBar: PlatformNavigationBar(
-                  leading: PlatformNavigationBarCloseButton(
-                    onPressed: () => _closePage(context, ref),
-                  ),
-                  trailing: isCupertino() && canDiscount
-                      ? PlatformNavigationBarButton(
-                          onPressed: () => _openOffers(ref),
-                          icon: Icons.redeem,
-                        )
-                      : null,
+              body: CupertinoTheme(
+                data: cupertinoTheme.copyWith(
+                  primaryColor: appTheme.primaryColor,
                 ),
-                body: CupertinoTheme(
-                  data: cupertinoTheme.copyWith(
-                    primaryColor: appTheme.primaryColor,
-                  ),
-                  child: SubscriptionPageContents(
-                    header: header,
-                    body: body,
-                    footer: footer,
-                    hasStoreIssue: state.isReady && !state.hasPackage,
-                    isPurchasing: state.isPurchasing,
-                  ),
+                child: SubscriptionPageContents(
+                  header: header,
+                  body: body,
+                  footer: footer,
+                  hasStoreIssue: state.isReady && !state.hasPackage,
+                  isPurchasing: state.isPurchasing,
                 ),
               ),
             ),
