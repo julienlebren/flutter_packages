@@ -176,7 +176,6 @@ class SubscriptionPlatformBuilder
                   Padding(
                     padding: const EdgeInsets.only(left: 15, top: 50),
                     child: InkWell(
-                      highlightColor: Colors.transparent,
                       splashColor: Colors.transparent,
                       onTap: () => _closePage(context, ref),
                       child: Icon(
