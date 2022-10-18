@@ -142,6 +142,7 @@ class SubscriptionPlatformBuilder
   @override
   AnnotatedRegion createMaterialWidget(BuildContext context, WidgetRef ref) {
     final theme = ref.watch(purchasesThemeProvider);
+    final height = MediaQuery.of(context).viewPadding.top;
 
     return AnnotatedRegion<SystemUiMode>(
       value: SystemUiMode.edgeToEdge,
@@ -186,7 +187,10 @@ class SubscriptionPlatformBuilder
                       ),
                     ),
                   ),
-                  child,
+                  Padding(
+                    padding: EdgeInsets.only(top: height),
+                    child: child,
+                  ),
                 ],
               ),
             ),
