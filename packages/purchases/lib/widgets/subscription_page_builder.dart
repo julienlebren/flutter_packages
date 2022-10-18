@@ -103,34 +103,32 @@ class SubscriptionPageBuilder extends ConsumerWidget {
                       )
                     : null,
               ),
-              child: SizedBox.shrink(),
+              child: PlatformScaffold(
+                appBar: PlatformNavigationBar(
+                  leading: PlatformNavigationBarCloseButton(
+                    onPressed: () => _closePage(context, ref),
+                  ),
+                  trailing: isCupertino() && canDiscount
+                      ? PlatformNavigationBarButton(
+                          onPressed: () => _openOffers(ref),
+                          icon: Icons.redeem,
+                        )
+                      : null,
+                ),
+                body: CupertinoTheme(
+                  data: cupertinoTheme.copyWith(
+                    primaryColor: appTheme.primaryColor,
+                  ),
+                  child: SubscriptionPageContents(
+                    header: header,
+                    body: body,
+                    footer: footer,
+                    hasStoreIssue: state.isReady && !state.hasPackage,
+                    isPurchasing: state.isPurchasing,
+                  ),
+                ),
+              ),
             ),
-
-            /*PlatformScaffold(
-              appBar: PlatformNavigationBar(
-                leading: PlatformNavigationBarCloseButton(
-                  onPressed: () => _closePage(context, ref),
-                ),
-                trailing: isCupertino() && canDiscount
-                    ? PlatformNavigationBarButton(
-                        onPressed: () => _openOffers(ref),
-                        icon: Icons.redeem,
-                      )
-                    : null,
-              ),
-              body: CupertinoTheme(
-                data: cupertinoTheme.copyWith(
-                  primaryColor: appTheme.primaryColor,
-                ),
-                child: SubscriptionPageContents(
-                  header: header,
-                  body: body,
-                  footer: footer,
-                  hasStoreIssue: state.isReady && !state.hasPackage,
-                  isPurchasing: state.isPurchasing,
-                ),
-              ),
-            ),*/
           ),
         ),
       ),
