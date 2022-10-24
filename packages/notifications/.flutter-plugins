@@ -1,6 +1,7 @@
 # This is a generated file; do not edit or check into version control.
-firebase_core=/Users/julienlebren/library/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.22.0/
-firebase_core_web=/Users/julienlebren/library/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-1.7.2/
-firebase_messaging=/Users/julienlebren/library/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging-13.0.1/
-firebase_messaging_web=/Users/julienlebren/library/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging_web-3.1.4/
+cloud_firestore_web=/Users/julienlebren/library/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-3.0.2/
+firebase_core=/Users/julienlebren/library/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-2.1.0/
+firebase_core_web=/Users/julienlebren/library/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-2.0.0/
+firebase_messaging=/Users/julienlebren/library/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging-14.0.2/
+firebase_messaging_web=/Users/julienlebren/library/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging_web-3.2.3/
 flutter_app_badger=/Users/julienlebren/library/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_app_badger-1.5.0/
