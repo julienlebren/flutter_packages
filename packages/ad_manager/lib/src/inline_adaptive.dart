@@ -24,8 +24,9 @@ class _InlineAdaptiveAdState extends ConsumerState<InlineAdaptiveAd> {
 
   void _loadAd() async {
     await _inlineAdaptiveAd?.dispose();
+
     setState(() {
-      _inlineAdaptiveAd = null;
+      //_inlineAdaptiveAd = null;
       _isLoaded = false;
     });
 
