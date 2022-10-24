@@ -1,6 +1,6 @@
 name: ad_manager
 description: A new Flutter package project.
-version: 0.3.2
+version: 0.3.3
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -13,7 +13,10 @@ dependencies:
     sdk: flutter
   flutter_riverpod: ^2.0.2
   freezed_annotation: ^2.1.0
-  google_mobile_ads: ^2.1.0
+  google_mobile_ads: 
+    git: 
+      url: https://github.com/jslattery26/googleads-mobile-flutter
+      path: packages/google_mobile_ads
   riverpod_annotation: ^1.0.2
 
 dev_dependencies:
