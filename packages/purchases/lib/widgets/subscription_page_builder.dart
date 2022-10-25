@@ -200,24 +200,36 @@ class SubscriptionPlatformBuilder
   CupertinoTheme createCupertinoWidget(BuildContext context, WidgetRef ref) {
     final cupertinoTheme = ref.watch(cupertinoThemeProvider);
     final appTheme = ref.watch(appThemeProvider);
+    final theme = ref.watch(purchasesThemeProvider);
 
     return CupertinoTheme(
       data: cupertinoTheme.copyWith(
         primaryColor: appTheme.primaryColor,
       ),
-      child: PlatformScaffold(
-        appBar: PlatformNavigationBar(
-          leading: PlatformNavigationBarCloseButton(
-            onPressed: () => _closePage(context, ref),
-          ),
-          trailing: canDiscount
-              ? PlatformNavigationBarButton(
-                  onPressed: () => _openOffers(ref),
-                  icon: Icons.redeem,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: theme.backgroundColor,
+          image: theme.backgroundImage != null
+              ? DecorationImage(
+                  image: AssetImage(theme.backgroundImage!),
+                  fit: BoxFit.cover,
                 )
               : null,
         ),
-        body: child,
+        child: PlatformScaffold(
+          appBar: PlatformNavigationBar(
+            leading: PlatformNavigationBarCloseButton(
+              onPressed: () => _closePage(context, ref),
+            ),
+            trailing: canDiscount
+                ? PlatformNavigationBarButton(
+                    onPressed: () => _openOffers(ref),
+                    icon: Icons.redeem,
+                  )
+                : null,
+          ),
+          body: child,
+        ),
       ),
     );
   }
