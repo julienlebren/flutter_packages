@@ -63,13 +63,13 @@ class SettingsPasswordController extends StateNotifier<SettingsPasswordState> {
 
   void _checkIfCanSubmit() {
     state = state.copyWith(
-      canSubmit: true, // state.password.isPasswordCompliant &&
-      //state.password == state.passwordConfirmation,
-      passwordHasMinLength: true, // state.password.hasMinLength,
-      passwordHasDigits: true, // state.password.hasDigits,
-      passwordHasLowercase: true, // state.password.hasLowercase,
-      passwordHasUppercase: true, // state.password.hasUppercase,
-      passwordHasSpecialChars: true, // state.password.hasSpecialChars,
+      canSubmit: state.password.isPasswordCompliant &&
+          state.password == state.passwordConfirmation,
+      passwordHasMinLength: state.password.hasMinLength,
+      passwordHasDigits: state.password.hasDigits,
+      passwordHasLowercase: state.password.hasLowercase,
+      passwordHasUppercase: state.password.hasUppercase,
+      passwordHasSpecialChars: state.password.hasSpecialChars,
       passwordsMatch:
           state.password != "" && state.password == state.passwordConfirmation,
     );
