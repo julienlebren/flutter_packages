@@ -25,11 +25,11 @@ class PurchasesController extends StateNotifier<PurchasesState> {
       int? annualDiscount;
       if (_service.subscription?.annual?.storeProduct.price != null &&
           _service.subscription?.monthly?.storeProduct.price != null) {
-        annualDiscount = (1 -
-                (_service.subscription!.annual!.storeProduct.price /
+        annualDiscount = ((1 -
+                    (_service.subscription!.annual!.storeProduct.price /
                         (_service.subscription!.monthly!.storeProduct.price *
-                            12)) *
-                    100)
+                            12))) *
+                100)
             .ceil();
       }
 
