@@ -39,6 +39,13 @@ class SplashPageBuilder extends ConsumerWidget {
   final Widget landing;
   final Widget home;
 
+  void _pop(BuildContext context) {
+    final navigator = Navigator.of(context, rootNavigator: true);
+    Future.delayed(const Duration(milliseconds: 300), () {
+      navigator.pop();
+    });
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final settings = ref.read(authSettingsProvider);
@@ -50,13 +57,13 @@ class SplashPageBuilder extends ConsumerWidget {
       authState.maybeWhen(
         authed: (_) {
           previousState?.maybeWhen(
-            needUserInformation: () {
-              final navigator = Navigator.of(context, rootNavigator: true);
-              Future.delayed(const Duration(milliseconds: 300), () {
-                navigator.pop();
-              });
+            needUserInformation: () => _pop(context),
+            orElse: () {
+              final supplier = ref.watch(signInSupplierProvider);
+              if (supplier != null && !supplier.isThirdParty) {
+                _pop(context);
+              }
             },
-            orElse: () => null,
           );
         },
         needUserInformation: () {
