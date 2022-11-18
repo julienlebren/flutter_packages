@@ -54,6 +54,7 @@ class SplashPageBuilder extends ConsumerWidget {
       previousState,
       authState,
     ) {
+      print("New state is $authState");
       authState.maybeWhen(
         authed: (_) {
           previousState?.maybeWhen(
