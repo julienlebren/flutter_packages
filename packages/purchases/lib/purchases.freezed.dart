@@ -26,10 +26,10 @@ mixin _$PurchasesEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchOfferings,
-    TResult Function(PackageType type)? purchase,
-    TResult Function()? restorePurchases,
-    TResult Function()? openOffers,
+    TResult? Function()? fetchOfferings,
+    TResult? Function(PackageType type)? purchase,
+    TResult? Function()? restorePurchases,
+    TResult? Function()? openOffers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$PurchasesEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FetchOfferings value)? fetchOfferings,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_RestorePurchases value)? restorePurchases,
-    TResult Function(_OpenOffers value)? openOffers,
+    TResult? Function(_FetchOfferings value)? fetchOfferings,
+    TResult? Function(_Purchase value)? purchase,
+    TResult? Function(_RestorePurchases value)? restorePurchases,
+    TResult? Function(_OpenOffers value)? openOffers,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,17 +72,18 @@ mixin _$PurchasesEvent {
 abstract class $PurchasesEventCopyWith<$Res> {
   factory $PurchasesEventCopyWith(
           PurchasesEvent value, $Res Function(PurchasesEvent) then) =
-      _$PurchasesEventCopyWithImpl<$Res>;
+      _$PurchasesEventCopyWithImpl<$Res, PurchasesEvent>;
 }
 
 /// @nodoc
-class _$PurchasesEventCopyWithImpl<$Res>
+class _$PurchasesEventCopyWithImpl<$Res, $Val extends PurchasesEvent>
     implements $PurchasesEventCopyWith<$Res> {
   _$PurchasesEventCopyWithImpl(this._value, this._then);
 
-  final PurchasesEvent _value;
   // ignore: unused_field
-  final $Res Function(PurchasesEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -94,14 +95,11 @@ abstract class _$$_FetchOfferingsCopyWith<$Res> {
 
 /// @nodoc
 class __$$_FetchOfferingsCopyWithImpl<$Res>
-    extends _$PurchasesEventCopyWithImpl<$Res>
+    extends _$PurchasesEventCopyWithImpl<$Res, _$_FetchOfferings>
     implements _$$_FetchOfferingsCopyWith<$Res> {
   __$$_FetchOfferingsCopyWithImpl(
       _$_FetchOfferings _value, $Res Function(_$_FetchOfferings) _then)
-      : super(_value, (v) => _then(v as _$_FetchOfferings));
-
-  @override
-  _$_FetchOfferings get _value => super._value as _$_FetchOfferings;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -137,10 +135,10 @@ class _$_FetchOfferings implements _FetchOfferings {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchOfferings,
-    TResult Function(PackageType type)? purchase,
-    TResult Function()? restorePurchases,
-    TResult Function()? openOffers,
+    TResult? Function()? fetchOfferings,
+    TResult? Function(PackageType type)? purchase,
+    TResult? Function()? restorePurchases,
+    TResult? Function()? openOffers,
   }) {
     return fetchOfferings?.call();
   }
@@ -174,10 +172,10 @@ class _$_FetchOfferings implements _FetchOfferings {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FetchOfferings value)? fetchOfferings,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_RestorePurchases value)? restorePurchases,
-    TResult Function(_OpenOffers value)? openOffers,
+    TResult? Function(_FetchOfferings value)? fetchOfferings,
+    TResult? Function(_Purchase value)? purchase,
+    TResult? Function(_RestorePurchases value)? restorePurchases,
+    TResult? Function(_OpenOffers value)? openOffers,
   }) {
     return fetchOfferings?.call(this);
   }
@@ -207,25 +205,25 @@ abstract class _$$_PurchaseCopyWith<$Res> {
   factory _$$_PurchaseCopyWith(
           _$_Purchase value, $Res Function(_$_Purchase) then) =
       __$$_PurchaseCopyWithImpl<$Res>;
+  @useResult
   $Res call({PackageType type});
 }
 
 /// @nodoc
-class __$$_PurchaseCopyWithImpl<$Res> extends _$PurchasesEventCopyWithImpl<$Res>
+class __$$_PurchaseCopyWithImpl<$Res>
+    extends _$PurchasesEventCopyWithImpl<$Res, _$_Purchase>
     implements _$$_PurchaseCopyWith<$Res> {
   __$$_PurchaseCopyWithImpl(
       _$_Purchase _value, $Res Function(_$_Purchase) _then)
-      : super(_value, (v) => _then(v as _$_Purchase));
+      : super(_value, _then);
 
-  @override
-  _$_Purchase get _value => super._value as _$_Purchase;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
+    Object? type = null,
   }) {
     return _then(_$_Purchase(
-      type == freezed
+      null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as PackageType,
@@ -251,15 +249,15 @@ class _$_Purchase implements _Purchase {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Purchase &&
-            const DeepCollectionEquality().equals(other.type, type));
+            (identical(other.type, type) || other.type == type));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(type));
+  int get hashCode => Object.hash(runtimeType, type);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PurchaseCopyWith<_$_Purchase> get copyWith =>
       __$$_PurchaseCopyWithImpl<_$_Purchase>(this, _$identity);
 
@@ -277,10 +275,10 @@ class _$_Purchase implements _Purchase {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchOfferings,
-    TResult Function(PackageType type)? purchase,
-    TResult Function()? restorePurchases,
-    TResult Function()? openOffers,
+    TResult? Function()? fetchOfferings,
+    TResult? Function(PackageType type)? purchase,
+    TResult? Function()? restorePurchases,
+    TResult? Function()? openOffers,
   }) {
     return purchase?.call(type);
   }
@@ -314,10 +312,10 @@ class _$_Purchase implements _Purchase {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FetchOfferings value)? fetchOfferings,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_RestorePurchases value)? restorePurchases,
-    TResult Function(_OpenOffers value)? openOffers,
+    TResult? Function(_FetchOfferings value)? fetchOfferings,
+    TResult? Function(_Purchase value)? purchase,
+    TResult? Function(_RestorePurchases value)? restorePurchases,
+    TResult? Function(_OpenOffers value)? openOffers,
   }) {
     return purchase?.call(this);
   }
@@ -356,14 +354,11 @@ abstract class _$$_RestorePurchasesCopyWith<$Res> {
 
 /// @nodoc
 class __$$_RestorePurchasesCopyWithImpl<$Res>
-    extends _$PurchasesEventCopyWithImpl<$Res>
+    extends _$PurchasesEventCopyWithImpl<$Res, _$_RestorePurchases>
     implements _$$_RestorePurchasesCopyWith<$Res> {
   __$$_RestorePurchasesCopyWithImpl(
       _$_RestorePurchases _value, $Res Function(_$_RestorePurchases) _then)
-      : super(_value, (v) => _then(v as _$_RestorePurchases));
-
-  @override
-  _$_RestorePurchases get _value => super._value as _$_RestorePurchases;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -399,10 +394,10 @@ class _$_RestorePurchases implements _RestorePurchases {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchOfferings,
-    TResult Function(PackageType type)? purchase,
-    TResult Function()? restorePurchases,
-    TResult Function()? openOffers,
+    TResult? Function()? fetchOfferings,
+    TResult? Function(PackageType type)? purchase,
+    TResult? Function()? restorePurchases,
+    TResult? Function()? openOffers,
   }) {
     return restorePurchases?.call();
   }
@@ -436,10 +431,10 @@ class _$_RestorePurchases implements _RestorePurchases {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FetchOfferings value)? fetchOfferings,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_RestorePurchases value)? restorePurchases,
-    TResult Function(_OpenOffers value)? openOffers,
+    TResult? Function(_FetchOfferings value)? fetchOfferings,
+    TResult? Function(_Purchase value)? purchase,
+    TResult? Function(_RestorePurchases value)? restorePurchases,
+    TResult? Function(_OpenOffers value)? openOffers,
   }) {
     return restorePurchases?.call(this);
   }
@@ -473,14 +468,11 @@ abstract class _$$_OpenOffersCopyWith<$Res> {
 
 /// @nodoc
 class __$$_OpenOffersCopyWithImpl<$Res>
-    extends _$PurchasesEventCopyWithImpl<$Res>
+    extends _$PurchasesEventCopyWithImpl<$Res, _$_OpenOffers>
     implements _$$_OpenOffersCopyWith<$Res> {
   __$$_OpenOffersCopyWithImpl(
       _$_OpenOffers _value, $Res Function(_$_OpenOffers) _then)
-      : super(_value, (v) => _then(v as _$_OpenOffers));
-
-  @override
-  _$_OpenOffers get _value => super._value as _$_OpenOffers;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -516,10 +508,10 @@ class _$_OpenOffers implements _OpenOffers {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? fetchOfferings,
-    TResult Function(PackageType type)? purchase,
-    TResult Function()? restorePurchases,
-    TResult Function()? openOffers,
+    TResult? Function()? fetchOfferings,
+    TResult? Function(PackageType type)? purchase,
+    TResult? Function()? restorePurchases,
+    TResult? Function()? openOffers,
   }) {
     return openOffers?.call();
   }
@@ -553,10 +545,10 @@ class _$_OpenOffers implements _OpenOffers {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_FetchOfferings value)? fetchOfferings,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_RestorePurchases value)? restorePurchases,
-    TResult Function(_OpenOffers value)? openOffers,
+    TResult? Function(_FetchOfferings value)? fetchOfferings,
+    TResult? Function(_Purchase value)? purchase,
+    TResult? Function(_RestorePurchases value)? restorePurchases,
+    TResult? Function(_OpenOffers value)? openOffers,
   }) {
     return openOffers?.call(this);
   }
@@ -601,7 +593,8 @@ mixin _$PurchasesSettings {
 abstract class $PurchasesSettingsCopyWith<$Res> {
   factory $PurchasesSettingsCopyWith(
           PurchasesSettings value, $Res Function(PurchasesSettings) then) =
-      _$PurchasesSettingsCopyWithImpl<$Res>;
+      _$PurchasesSettingsCopyWithImpl<$Res, PurchasesSettings>;
+  @useResult
   $Res call(
       {String? publicGoogleKey,
       String? publicAppleKey,
@@ -613,54 +606,56 @@ abstract class $PurchasesSettingsCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PurchasesSettingsCopyWithImpl<$Res>
+class _$PurchasesSettingsCopyWithImpl<$Res, $Val extends PurchasesSettings>
     implements $PurchasesSettingsCopyWith<$Res> {
   _$PurchasesSettingsCopyWithImpl(this._value, this._then);
 
-  final PurchasesSettings _value;
   // ignore: unused_field
-  final $Res Function(PurchasesSettings) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? publicGoogleKey = freezed,
     Object? publicAppleKey = freezed,
-    Object? entitlementId = freezed,
-    Object? userId = freezed,
-    Object? privacyPolicyUrl = freezed,
-    Object? termsUrl = freezed,
-    Object? processHandler = freezed,
+    Object? entitlementId = null,
+    Object? userId = null,
+    Object? privacyPolicyUrl = null,
+    Object? termsUrl = null,
+    Object? processHandler = null,
   }) {
     return _then(_value.copyWith(
-      publicGoogleKey: publicGoogleKey == freezed
+      publicGoogleKey: freezed == publicGoogleKey
           ? _value.publicGoogleKey
           : publicGoogleKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      publicAppleKey: publicAppleKey == freezed
+      publicAppleKey: freezed == publicAppleKey
           ? _value.publicAppleKey
           : publicAppleKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      entitlementId: entitlementId == freezed
+      entitlementId: null == entitlementId
           ? _value.entitlementId
           : entitlementId // ignore: cast_nullable_to_non_nullable
               as String,
-      userId: userId == freezed
+      userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      privacyPolicyUrl: privacyPolicyUrl == freezed
+      privacyPolicyUrl: null == privacyPolicyUrl
           ? _value.privacyPolicyUrl
           : privacyPolicyUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      termsUrl: termsUrl == freezed
+      termsUrl: null == termsUrl
           ? _value.termsUrl
           : termsUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      processHandler: processHandler == freezed
+      processHandler: null == processHandler
           ? _value.processHandler
           : processHandler // ignore: cast_nullable_to_non_nullable
               as dynamic Function(bool, DateTime?),
-    ));
+    ) as $Val);
   }
 }
 
@@ -671,6 +666,7 @@ abstract class _$$_PurchasesSettingsCopyWith<$Res>
           $Res Function(_$_PurchasesSettings) then) =
       __$$_PurchasesSettingsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? publicGoogleKey,
       String? publicAppleKey,
@@ -683,51 +679,49 @@ abstract class _$$_PurchasesSettingsCopyWith<$Res>
 
 /// @nodoc
 class __$$_PurchasesSettingsCopyWithImpl<$Res>
-    extends _$PurchasesSettingsCopyWithImpl<$Res>
+    extends _$PurchasesSettingsCopyWithImpl<$Res, _$_PurchasesSettings>
     implements _$$_PurchasesSettingsCopyWith<$Res> {
   __$$_PurchasesSettingsCopyWithImpl(
       _$_PurchasesSettings _value, $Res Function(_$_PurchasesSettings) _then)
-      : super(_value, (v) => _then(v as _$_PurchasesSettings));
+      : super(_value, _then);
 
-  @override
-  _$_PurchasesSettings get _value => super._value as _$_PurchasesSettings;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? publicGoogleKey = freezed,
     Object? publicAppleKey = freezed,
-    Object? entitlementId = freezed,
-    Object? userId = freezed,
-    Object? privacyPolicyUrl = freezed,
-    Object? termsUrl = freezed,
-    Object? processHandler = freezed,
+    Object? entitlementId = null,
+    Object? userId = null,
+    Object? privacyPolicyUrl = null,
+    Object? termsUrl = null,
+    Object? processHandler = null,
   }) {
     return _then(_$_PurchasesSettings(
-      publicGoogleKey: publicGoogleKey == freezed
+      publicGoogleKey: freezed == publicGoogleKey
           ? _value.publicGoogleKey
           : publicGoogleKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      publicAppleKey: publicAppleKey == freezed
+      publicAppleKey: freezed == publicAppleKey
           ? _value.publicAppleKey
           : publicAppleKey // ignore: cast_nullable_to_non_nullable
               as String?,
-      entitlementId: entitlementId == freezed
+      entitlementId: null == entitlementId
           ? _value.entitlementId
           : entitlementId // ignore: cast_nullable_to_non_nullable
               as String,
-      userId: userId == freezed
+      userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as String,
-      privacyPolicyUrl: privacyPolicyUrl == freezed
+      privacyPolicyUrl: null == privacyPolicyUrl
           ? _value.privacyPolicyUrl
           : privacyPolicyUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      termsUrl: termsUrl == freezed
+      termsUrl: null == termsUrl
           ? _value.termsUrl
           : termsUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      processHandler: processHandler == freezed
+      processHandler: null == processHandler
           ? _value.processHandler
           : processHandler // ignore: cast_nullable_to_non_nullable
               as dynamic Function(bool, DateTime?),
@@ -774,33 +768,28 @@ class _$_PurchasesSettings implements _PurchasesSettings {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PurchasesSettings &&
-            const DeepCollectionEquality()
-                .equals(other.publicGoogleKey, publicGoogleKey) &&
-            const DeepCollectionEquality()
-                .equals(other.publicAppleKey, publicAppleKey) &&
-            const DeepCollectionEquality()
-                .equals(other.entitlementId, entitlementId) &&
-            const DeepCollectionEquality().equals(other.userId, userId) &&
-            const DeepCollectionEquality()
-                .equals(other.privacyPolicyUrl, privacyPolicyUrl) &&
-            const DeepCollectionEquality().equals(other.termsUrl, termsUrl) &&
+            (identical(other.publicGoogleKey, publicGoogleKey) ||
+                other.publicGoogleKey == publicGoogleKey) &&
+            (identical(other.publicAppleKey, publicAppleKey) ||
+                other.publicAppleKey == publicAppleKey) &&
+            (identical(other.entitlementId, entitlementId) ||
+                other.entitlementId == entitlementId) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.privacyPolicyUrl, privacyPolicyUrl) ||
+                other.privacyPolicyUrl == privacyPolicyUrl) &&
+            (identical(other.termsUrl, termsUrl) ||
+                other.termsUrl == termsUrl) &&
             (identical(other.processHandler, processHandler) ||
                 other.processHandler == processHandler));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(publicGoogleKey),
-      const DeepCollectionEquality().hash(publicAppleKey),
-      const DeepCollectionEquality().hash(entitlementId),
-      const DeepCollectionEquality().hash(userId),
-      const DeepCollectionEquality().hash(privacyPolicyUrl),
-      const DeepCollectionEquality().hash(termsUrl),
-      processHandler);
+  int get hashCode => Object.hash(runtimeType, publicGoogleKey, publicAppleKey,
+      entitlementId, userId, privacyPolicyUrl, termsUrl, processHandler);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PurchasesSettingsCopyWith<_$_PurchasesSettings> get copyWith =>
       __$$_PurchasesSettingsCopyWithImpl<_$_PurchasesSettings>(
           this, _$identity);
@@ -845,6 +834,7 @@ mixin _$PurchasesState {
   String? get threeMonthPrice => throw _privateConstructorUsedError;
   String? get sixMonthPrice => throw _privateConstructorUsedError;
   String? get annualPrice => throw _privateConstructorUsedError;
+  double? get annualDiscount => throw _privateConstructorUsedError;
   bool get isReady => throw _privateConstructorUsedError;
   bool get hasPackage => throw _privateConstructorUsedError;
   bool get isPurchasing => throw _privateConstructorUsedError;
@@ -860,7 +850,8 @@ mixin _$PurchasesState {
 abstract class $PurchasesStateCopyWith<$Res> {
   factory $PurchasesStateCopyWith(
           PurchasesState value, $Res Function(PurchasesState) then) =
-      _$PurchasesStateCopyWithImpl<$Res>;
+      _$PurchasesStateCopyWithImpl<$Res, PurchasesState>;
+  @useResult
   $Res call(
       {String? weeklyPrice,
       String? monthlyPrice,
@@ -868,6 +859,7 @@ abstract class $PurchasesStateCopyWith<$Res> {
       String? threeMonthPrice,
       String? sixMonthPrice,
       String? annualPrice,
+      double? annualDiscount,
       bool isReady,
       bool hasPackage,
       bool isPurchasing,
@@ -876,14 +868,16 @@ abstract class $PurchasesStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PurchasesStateCopyWithImpl<$Res>
+class _$PurchasesStateCopyWithImpl<$Res, $Val extends PurchasesState>
     implements $PurchasesStateCopyWith<$Res> {
   _$PurchasesStateCopyWithImpl(this._value, this._then);
 
-  final PurchasesState _value;
   // ignore: unused_field
-  final $Res Function(PurchasesState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? weeklyPrice = freezed,
@@ -892,58 +886,63 @@ class _$PurchasesStateCopyWithImpl<$Res>
     Object? threeMonthPrice = freezed,
     Object? sixMonthPrice = freezed,
     Object? annualPrice = freezed,
-    Object? isReady = freezed,
-    Object? hasPackage = freezed,
-    Object? isPurchasing = freezed,
-    Object? isSuccess = freezed,
+    Object? annualDiscount = freezed,
+    Object? isReady = null,
+    Object? hasPackage = null,
+    Object? isPurchasing = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
     return _then(_value.copyWith(
-      weeklyPrice: weeklyPrice == freezed
+      weeklyPrice: freezed == weeklyPrice
           ? _value.weeklyPrice
           : weeklyPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      monthlyPrice: monthlyPrice == freezed
+      monthlyPrice: freezed == monthlyPrice
           ? _value.monthlyPrice
           : monthlyPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      twoMonthPrice: twoMonthPrice == freezed
+      twoMonthPrice: freezed == twoMonthPrice
           ? _value.twoMonthPrice
           : twoMonthPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      threeMonthPrice: threeMonthPrice == freezed
+      threeMonthPrice: freezed == threeMonthPrice
           ? _value.threeMonthPrice
           : threeMonthPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      sixMonthPrice: sixMonthPrice == freezed
+      sixMonthPrice: freezed == sixMonthPrice
           ? _value.sixMonthPrice
           : sixMonthPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      annualPrice: annualPrice == freezed
+      annualPrice: freezed == annualPrice
           ? _value.annualPrice
           : annualPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      isReady: isReady == freezed
+      annualDiscount: freezed == annualDiscount
+          ? _value.annualDiscount
+          : annualDiscount // ignore: cast_nullable_to_non_nullable
+              as double?,
+      isReady: null == isReady
           ? _value.isReady
           : isReady // ignore: cast_nullable_to_non_nullable
               as bool,
-      hasPackage: hasPackage == freezed
+      hasPackage: null == hasPackage
           ? _value.hasPackage
           : hasPackage // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPurchasing: isPurchasing == freezed
+      isPurchasing: null == isPurchasing
           ? _value.isPurchasing
           : isPurchasing // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -954,6 +953,7 @@ abstract class _$$_PurchasesStateCopyWith<$Res>
           _$_PurchasesState value, $Res Function(_$_PurchasesState) then) =
       __$$_PurchasesStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? weeklyPrice,
       String? monthlyPrice,
@@ -961,6 +961,7 @@ abstract class _$$_PurchasesStateCopyWith<$Res>
       String? threeMonthPrice,
       String? sixMonthPrice,
       String? annualPrice,
+      double? annualDiscount,
       bool isReady,
       bool hasPackage,
       bool isPurchasing,
@@ -970,15 +971,13 @@ abstract class _$$_PurchasesStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_PurchasesStateCopyWithImpl<$Res>
-    extends _$PurchasesStateCopyWithImpl<$Res>
+    extends _$PurchasesStateCopyWithImpl<$Res, _$_PurchasesState>
     implements _$$_PurchasesStateCopyWith<$Res> {
   __$$_PurchasesStateCopyWithImpl(
       _$_PurchasesState _value, $Res Function(_$_PurchasesState) _then)
-      : super(_value, (v) => _then(v as _$_PurchasesState));
+      : super(_value, _then);
 
-  @override
-  _$_PurchasesState get _value => super._value as _$_PurchasesState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? weeklyPrice = freezed,
@@ -987,54 +986,59 @@ class __$$_PurchasesStateCopyWithImpl<$Res>
     Object? threeMonthPrice = freezed,
     Object? sixMonthPrice = freezed,
     Object? annualPrice = freezed,
-    Object? isReady = freezed,
-    Object? hasPackage = freezed,
-    Object? isPurchasing = freezed,
-    Object? isSuccess = freezed,
+    Object? annualDiscount = freezed,
+    Object? isReady = null,
+    Object? hasPackage = null,
+    Object? isPurchasing = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
     return _then(_$_PurchasesState(
-      weeklyPrice: weeklyPrice == freezed
+      weeklyPrice: freezed == weeklyPrice
           ? _value.weeklyPrice
           : weeklyPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      monthlyPrice: monthlyPrice == freezed
+      monthlyPrice: freezed == monthlyPrice
           ? _value.monthlyPrice
           : monthlyPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      twoMonthPrice: twoMonthPrice == freezed
+      twoMonthPrice: freezed == twoMonthPrice
           ? _value.twoMonthPrice
           : twoMonthPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      threeMonthPrice: threeMonthPrice == freezed
+      threeMonthPrice: freezed == threeMonthPrice
           ? _value.threeMonthPrice
           : threeMonthPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      sixMonthPrice: sixMonthPrice == freezed
+      sixMonthPrice: freezed == sixMonthPrice
           ? _value.sixMonthPrice
           : sixMonthPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      annualPrice: annualPrice == freezed
+      annualPrice: freezed == annualPrice
           ? _value.annualPrice
           : annualPrice // ignore: cast_nullable_to_non_nullable
               as String?,
-      isReady: isReady == freezed
+      annualDiscount: freezed == annualDiscount
+          ? _value.annualDiscount
+          : annualDiscount // ignore: cast_nullable_to_non_nullable
+              as double?,
+      isReady: null == isReady
           ? _value.isReady
           : isReady // ignore: cast_nullable_to_non_nullable
               as bool,
-      hasPackage: hasPackage == freezed
+      hasPackage: null == hasPackage
           ? _value.hasPackage
           : hasPackage // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPurchasing: isPurchasing == freezed
+      isPurchasing: null == isPurchasing
           ? _value.isPurchasing
           : isPurchasing // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -1052,6 +1056,7 @@ class _$_PurchasesState implements _PurchasesState {
       this.threeMonthPrice,
       this.sixMonthPrice,
       this.annualPrice,
+      this.annualDiscount,
       this.isReady = false,
       this.hasPackage = false,
       this.isPurchasing = false,
@@ -1071,6 +1076,8 @@ class _$_PurchasesState implements _PurchasesState {
   @override
   final String? annualPrice;
   @override
+  final double? annualDiscount;
+  @override
   @JsonKey()
   final bool isReady;
   @override
@@ -1087,7 +1094,7 @@ class _$_PurchasesState implements _PurchasesState {
 
   @override
   String toString() {
-    return 'PurchasesState(weeklyPrice: $weeklyPrice, monthlyPrice: $monthlyPrice, twoMonthPrice: $twoMonthPrice, threeMonthPrice: $threeMonthPrice, sixMonthPrice: $sixMonthPrice, annualPrice: $annualPrice, isReady: $isReady, hasPackage: $hasPackage, isPurchasing: $isPurchasing, isSuccess: $isSuccess, errorText: $errorText)';
+    return 'PurchasesState(weeklyPrice: $weeklyPrice, monthlyPrice: $monthlyPrice, twoMonthPrice: $twoMonthPrice, threeMonthPrice: $threeMonthPrice, sixMonthPrice: $sixMonthPrice, annualPrice: $annualPrice, annualDiscount: $annualDiscount, isReady: $isReady, hasPackage: $hasPackage, isPurchasing: $isPurchasing, isSuccess: $isSuccess, errorText: $errorText)';
   }
 
   @override
@@ -1095,44 +1102,50 @@ class _$_PurchasesState implements _PurchasesState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PurchasesState &&
-            const DeepCollectionEquality()
-                .equals(other.weeklyPrice, weeklyPrice) &&
-            const DeepCollectionEquality()
-                .equals(other.monthlyPrice, monthlyPrice) &&
-            const DeepCollectionEquality()
-                .equals(other.twoMonthPrice, twoMonthPrice) &&
-            const DeepCollectionEquality()
-                .equals(other.threeMonthPrice, threeMonthPrice) &&
-            const DeepCollectionEquality()
-                .equals(other.sixMonthPrice, sixMonthPrice) &&
-            const DeepCollectionEquality()
-                .equals(other.annualPrice, annualPrice) &&
-            const DeepCollectionEquality().equals(other.isReady, isReady) &&
-            const DeepCollectionEquality()
-                .equals(other.hasPackage, hasPackage) &&
-            const DeepCollectionEquality()
-                .equals(other.isPurchasing, isPurchasing) &&
-            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
-            const DeepCollectionEquality().equals(other.errorText, errorText));
+            (identical(other.weeklyPrice, weeklyPrice) ||
+                other.weeklyPrice == weeklyPrice) &&
+            (identical(other.monthlyPrice, monthlyPrice) ||
+                other.monthlyPrice == monthlyPrice) &&
+            (identical(other.twoMonthPrice, twoMonthPrice) ||
+                other.twoMonthPrice == twoMonthPrice) &&
+            (identical(other.threeMonthPrice, threeMonthPrice) ||
+                other.threeMonthPrice == threeMonthPrice) &&
+            (identical(other.sixMonthPrice, sixMonthPrice) ||
+                other.sixMonthPrice == sixMonthPrice) &&
+            (identical(other.annualPrice, annualPrice) ||
+                other.annualPrice == annualPrice) &&
+            (identical(other.annualDiscount, annualDiscount) ||
+                other.annualDiscount == annualDiscount) &&
+            (identical(other.isReady, isReady) || other.isReady == isReady) &&
+            (identical(other.hasPackage, hasPackage) ||
+                other.hasPackage == hasPackage) &&
+            (identical(other.isPurchasing, isPurchasing) ||
+                other.isPurchasing == isPurchasing) &&
+            (identical(other.isSuccess, isSuccess) ||
+                other.isSuccess == isSuccess) &&
+            (identical(other.errorText, errorText) ||
+                other.errorText == errorText));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(weeklyPrice),
-      const DeepCollectionEquality().hash(monthlyPrice),
-      const DeepCollectionEquality().hash(twoMonthPrice),
-      const DeepCollectionEquality().hash(threeMonthPrice),
-      const DeepCollectionEquality().hash(sixMonthPrice),
-      const DeepCollectionEquality().hash(annualPrice),
-      const DeepCollectionEquality().hash(isReady),
-      const DeepCollectionEquality().hash(hasPackage),
-      const DeepCollectionEquality().hash(isPurchasing),
-      const DeepCollectionEquality().hash(isSuccess),
-      const DeepCollectionEquality().hash(errorText));
+      weeklyPrice,
+      monthlyPrice,
+      twoMonthPrice,
+      threeMonthPrice,
+      sixMonthPrice,
+      annualPrice,
+      annualDiscount,
+      isReady,
+      hasPackage,
+      isPurchasing,
+      isSuccess,
+      errorText);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PurchasesStateCopyWith<_$_PurchasesState> get copyWith =>
       __$$_PurchasesStateCopyWithImpl<_$_PurchasesState>(this, _$identity);
 }
@@ -1145,6 +1158,7 @@ abstract class _PurchasesState implements PurchasesState {
       final String? threeMonthPrice,
       final String? sixMonthPrice,
       final String? annualPrice,
+      final double? annualDiscount,
       final bool isReady,
       final bool hasPackage,
       final bool isPurchasing,
@@ -1163,6 +1177,8 @@ abstract class _PurchasesState implements PurchasesState {
   String? get sixMonthPrice;
   @override
   String? get annualPrice;
+  @override
+  double? get annualDiscount;
   @override
   bool get isReady;
   @override
@@ -1207,7 +1223,8 @@ mixin _$PurchasesTheme {
 abstract class $PurchasesThemeCopyWith<$Res> {
   factory $PurchasesThemeCopyWith(
           PurchasesTheme value, $Res Function(PurchasesTheme) then) =
-      _$PurchasesThemeCopyWithImpl<$Res>;
+      _$PurchasesThemeCopyWithImpl<$Res, PurchasesTheme>;
+  @useResult
   $Res call(
       {String? backgroundImage,
       Color backgroundColor,
@@ -1227,94 +1244,96 @@ abstract class $PurchasesThemeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PurchasesThemeCopyWithImpl<$Res>
+class _$PurchasesThemeCopyWithImpl<$Res, $Val extends PurchasesTheme>
     implements $PurchasesThemeCopyWith<$Res> {
   _$PurchasesThemeCopyWithImpl(this._value, this._then);
 
-  final PurchasesTheme _value;
   // ignore: unused_field
-  final $Res Function(PurchasesTheme) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? backgroundImage = freezed,
-    Object? backgroundColor = freezed,
-    Object? primaryColor = freezed,
-    Object? textColor = freezed,
+    Object? backgroundColor = null,
+    Object? primaryColor = null,
+    Object? textColor = null,
     Object? appBarButtonColor = freezed,
-    Object? textButtonColor = freezed,
-    Object? cupertinoDisclaimerColor = freezed,
-    Object? featureBackgroundColor = freezed,
-    Object? featureIconColor = freezed,
-    Object? featureTitleColor = freezed,
-    Object? featureCaptionColor = freezed,
+    Object? textButtonColor = null,
+    Object? cupertinoDisclaimerColor = null,
+    Object? featureBackgroundColor = null,
+    Object? featureIconColor = null,
+    Object? featureTitleColor = null,
+    Object? featureCaptionColor = null,
     Object? purchaseButtonBackgroundColor = freezed,
-    Object? purchaseButtonBorderRadius = freezed,
+    Object? purchaseButtonBorderRadius = null,
     Object? purchaseButtonBorderColor = freezed,
-    Object? spaceBetweenButtons = freezed,
+    Object? spaceBetweenButtons = null,
   }) {
     return _then(_value.copyWith(
-      backgroundImage: backgroundImage == freezed
+      backgroundImage: freezed == backgroundImage
           ? _value.backgroundImage
           : backgroundImage // ignore: cast_nullable_to_non_nullable
               as String?,
-      backgroundColor: backgroundColor == freezed
+      backgroundColor: null == backgroundColor
           ? _value.backgroundColor
           : backgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      primaryColor: primaryColor == freezed
+      primaryColor: null == primaryColor
           ? _value.primaryColor
           : primaryColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      textColor: textColor == freezed
+      textColor: null == textColor
           ? _value.textColor
           : textColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      appBarButtonColor: appBarButtonColor == freezed
+      appBarButtonColor: freezed == appBarButtonColor
           ? _value.appBarButtonColor
           : appBarButtonColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      textButtonColor: textButtonColor == freezed
+      textButtonColor: null == textButtonColor
           ? _value.textButtonColor
           : textButtonColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      cupertinoDisclaimerColor: cupertinoDisclaimerColor == freezed
+      cupertinoDisclaimerColor: null == cupertinoDisclaimerColor
           ? _value.cupertinoDisclaimerColor
           : cupertinoDisclaimerColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      featureBackgroundColor: featureBackgroundColor == freezed
+      featureBackgroundColor: null == featureBackgroundColor
           ? _value.featureBackgroundColor
           : featureBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      featureIconColor: featureIconColor == freezed
+      featureIconColor: null == featureIconColor
           ? _value.featureIconColor
           : featureIconColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      featureTitleColor: featureTitleColor == freezed
+      featureTitleColor: null == featureTitleColor
           ? _value.featureTitleColor
           : featureTitleColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      featureCaptionColor: featureCaptionColor == freezed
+      featureCaptionColor: null == featureCaptionColor
           ? _value.featureCaptionColor
           : featureCaptionColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      purchaseButtonBackgroundColor: purchaseButtonBackgroundColor == freezed
+      purchaseButtonBackgroundColor: freezed == purchaseButtonBackgroundColor
           ? _value.purchaseButtonBackgroundColor
           : purchaseButtonBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      purchaseButtonBorderRadius: purchaseButtonBorderRadius == freezed
+      purchaseButtonBorderRadius: null == purchaseButtonBorderRadius
           ? _value.purchaseButtonBorderRadius
           : purchaseButtonBorderRadius // ignore: cast_nullable_to_non_nullable
               as double,
-      purchaseButtonBorderColor: purchaseButtonBorderColor == freezed
+      purchaseButtonBorderColor: freezed == purchaseButtonBorderColor
           ? _value.purchaseButtonBorderColor
           : purchaseButtonBorderColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      spaceBetweenButtons: spaceBetweenButtons == freezed
+      spaceBetweenButtons: null == spaceBetweenButtons
           ? _value.spaceBetweenButtons
           : spaceBetweenButtons // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 }
 
@@ -1325,6 +1344,7 @@ abstract class _$$_PurchasesThemeCopyWith<$Res>
           _$_PurchasesTheme value, $Res Function(_$_PurchasesTheme) then) =
       __$$_PurchasesThemeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String? backgroundImage,
       Color backgroundColor,
@@ -1345,91 +1365,89 @@ abstract class _$$_PurchasesThemeCopyWith<$Res>
 
 /// @nodoc
 class __$$_PurchasesThemeCopyWithImpl<$Res>
-    extends _$PurchasesThemeCopyWithImpl<$Res>
+    extends _$PurchasesThemeCopyWithImpl<$Res, _$_PurchasesTheme>
     implements _$$_PurchasesThemeCopyWith<$Res> {
   __$$_PurchasesThemeCopyWithImpl(
       _$_PurchasesTheme _value, $Res Function(_$_PurchasesTheme) _then)
-      : super(_value, (v) => _then(v as _$_PurchasesTheme));
+      : super(_value, _then);
 
-  @override
-  _$_PurchasesTheme get _value => super._value as _$_PurchasesTheme;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? backgroundImage = freezed,
-    Object? backgroundColor = freezed,
-    Object? primaryColor = freezed,
-    Object? textColor = freezed,
+    Object? backgroundColor = null,
+    Object? primaryColor = null,
+    Object? textColor = null,
     Object? appBarButtonColor = freezed,
-    Object? textButtonColor = freezed,
-    Object? cupertinoDisclaimerColor = freezed,
-    Object? featureBackgroundColor = freezed,
-    Object? featureIconColor = freezed,
-    Object? featureTitleColor = freezed,
-    Object? featureCaptionColor = freezed,
+    Object? textButtonColor = null,
+    Object? cupertinoDisclaimerColor = null,
+    Object? featureBackgroundColor = null,
+    Object? featureIconColor = null,
+    Object? featureTitleColor = null,
+    Object? featureCaptionColor = null,
     Object? purchaseButtonBackgroundColor = freezed,
-    Object? purchaseButtonBorderRadius = freezed,
+    Object? purchaseButtonBorderRadius = null,
     Object? purchaseButtonBorderColor = freezed,
-    Object? spaceBetweenButtons = freezed,
+    Object? spaceBetweenButtons = null,
   }) {
     return _then(_$_PurchasesTheme(
-      backgroundImage: backgroundImage == freezed
+      backgroundImage: freezed == backgroundImage
           ? _value.backgroundImage
           : backgroundImage // ignore: cast_nullable_to_non_nullable
               as String?,
-      backgroundColor: backgroundColor == freezed
+      backgroundColor: null == backgroundColor
           ? _value.backgroundColor
           : backgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      primaryColor: primaryColor == freezed
+      primaryColor: null == primaryColor
           ? _value.primaryColor
           : primaryColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      textColor: textColor == freezed
+      textColor: null == textColor
           ? _value.textColor
           : textColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      appBarButtonColor: appBarButtonColor == freezed
+      appBarButtonColor: freezed == appBarButtonColor
           ? _value.appBarButtonColor
           : appBarButtonColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      textButtonColor: textButtonColor == freezed
+      textButtonColor: null == textButtonColor
           ? _value.textButtonColor
           : textButtonColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      cupertinoDisclaimerColor: cupertinoDisclaimerColor == freezed
+      cupertinoDisclaimerColor: null == cupertinoDisclaimerColor
           ? _value.cupertinoDisclaimerColor
           : cupertinoDisclaimerColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      featureBackgroundColor: featureBackgroundColor == freezed
+      featureBackgroundColor: null == featureBackgroundColor
           ? _value.featureBackgroundColor
           : featureBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      featureIconColor: featureIconColor == freezed
+      featureIconColor: null == featureIconColor
           ? _value.featureIconColor
           : featureIconColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      featureTitleColor: featureTitleColor == freezed
+      featureTitleColor: null == featureTitleColor
           ? _value.featureTitleColor
           : featureTitleColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      featureCaptionColor: featureCaptionColor == freezed
+      featureCaptionColor: null == featureCaptionColor
           ? _value.featureCaptionColor
           : featureCaptionColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      purchaseButtonBackgroundColor: purchaseButtonBackgroundColor == freezed
+      purchaseButtonBackgroundColor: freezed == purchaseButtonBackgroundColor
           ? _value.purchaseButtonBackgroundColor
           : purchaseButtonBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      purchaseButtonBorderRadius: purchaseButtonBorderRadius == freezed
+      purchaseButtonBorderRadius: null == purchaseButtonBorderRadius
           ? _value.purchaseButtonBorderRadius
           : purchaseButtonBorderRadius // ignore: cast_nullable_to_non_nullable
               as double,
-      purchaseButtonBorderColor: purchaseButtonBorderColor == freezed
+      purchaseButtonBorderColor: freezed == purchaseButtonBorderColor
           ? _value.purchaseButtonBorderColor
           : purchaseButtonBorderColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      spaceBetweenButtons: spaceBetweenButtons == freezed
+      spaceBetweenButtons: null == spaceBetweenButtons
           ? _value.spaceBetweenButtons
           : spaceBetweenButtons // ignore: cast_nullable_to_non_nullable
               as double,
@@ -1500,59 +1518,66 @@ class _$_PurchasesTheme implements _PurchasesTheme {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PurchasesTheme &&
-            const DeepCollectionEquality()
-                .equals(other.backgroundImage, backgroundImage) &&
-            const DeepCollectionEquality()
-                .equals(other.backgroundColor, backgroundColor) &&
-            const DeepCollectionEquality()
-                .equals(other.primaryColor, primaryColor) &&
-            const DeepCollectionEquality().equals(other.textColor, textColor) &&
-            const DeepCollectionEquality()
-                .equals(other.appBarButtonColor, appBarButtonColor) &&
-            const DeepCollectionEquality()
-                .equals(other.textButtonColor, textButtonColor) &&
-            const DeepCollectionEquality().equals(
-                other.cupertinoDisclaimerColor, cupertinoDisclaimerColor) &&
-            const DeepCollectionEquality()
-                .equals(other.featureBackgroundColor, featureBackgroundColor) &&
-            const DeepCollectionEquality()
-                .equals(other.featureIconColor, featureIconColor) &&
-            const DeepCollectionEquality()
-                .equals(other.featureTitleColor, featureTitleColor) &&
-            const DeepCollectionEquality()
-                .equals(other.featureCaptionColor, featureCaptionColor) &&
-            const DeepCollectionEquality().equals(
-                other.purchaseButtonBackgroundColor,
-                purchaseButtonBackgroundColor) &&
-            const DeepCollectionEquality().equals(
-                other.purchaseButtonBorderRadius, purchaseButtonBorderRadius) &&
-            const DeepCollectionEquality().equals(
-                other.purchaseButtonBorderColor, purchaseButtonBorderColor) &&
-            const DeepCollectionEquality()
-                .equals(other.spaceBetweenButtons, spaceBetweenButtons));
+            (identical(other.backgroundImage, backgroundImage) ||
+                other.backgroundImage == backgroundImage) &&
+            (identical(other.backgroundColor, backgroundColor) ||
+                other.backgroundColor == backgroundColor) &&
+            (identical(other.primaryColor, primaryColor) ||
+                other.primaryColor == primaryColor) &&
+            (identical(other.textColor, textColor) ||
+                other.textColor == textColor) &&
+            (identical(other.appBarButtonColor, appBarButtonColor) ||
+                other.appBarButtonColor == appBarButtonColor) &&
+            (identical(other.textButtonColor, textButtonColor) ||
+                other.textButtonColor == textButtonColor) &&
+            (identical(
+                    other.cupertinoDisclaimerColor, cupertinoDisclaimerColor) ||
+                other.cupertinoDisclaimerColor == cupertinoDisclaimerColor) &&
+            (identical(other.featureBackgroundColor, featureBackgroundColor) ||
+                other.featureBackgroundColor == featureBackgroundColor) &&
+            (identical(other.featureIconColor, featureIconColor) ||
+                other.featureIconColor == featureIconColor) &&
+            (identical(other.featureTitleColor, featureTitleColor) ||
+                other.featureTitleColor == featureTitleColor) &&
+            (identical(other.featureCaptionColor, featureCaptionColor) ||
+                other.featureCaptionColor == featureCaptionColor) &&
+            (identical(other.purchaseButtonBackgroundColor,
+                    purchaseButtonBackgroundColor) ||
+                other.purchaseButtonBackgroundColor ==
+                    purchaseButtonBackgroundColor) &&
+            (identical(other.purchaseButtonBorderRadius,
+                    purchaseButtonBorderRadius) ||
+                other.purchaseButtonBorderRadius ==
+                    purchaseButtonBorderRadius) &&
+            (identical(other.purchaseButtonBorderColor,
+                    purchaseButtonBorderColor) ||
+                other.purchaseButtonBorderColor == purchaseButtonBorderColor) &&
+            (identical(other.spaceBetweenButtons, spaceBetweenButtons) ||
+                other.spaceBetweenButtons == spaceBetweenButtons));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(backgroundImage),
-      const DeepCollectionEquality().hash(backgroundColor),
-      const DeepCollectionEquality().hash(primaryColor),
-      const DeepCollectionEquality().hash(textColor),
-      const DeepCollectionEquality().hash(appBarButtonColor),
-      const DeepCollectionEquality().hash(textButtonColor),
-      const DeepCollectionEquality().hash(cupertinoDisclaimerColor),
-      const DeepCollectionEquality().hash(featureBackgroundColor),
-      const DeepCollectionEquality().hash(featureIconColor),
-      const DeepCollectionEquality().hash(featureTitleColor),
-      const DeepCollectionEquality().hash(featureCaptionColor),
-      const DeepCollectionEquality().hash(purchaseButtonBackgroundColor),
-      const DeepCollectionEquality().hash(purchaseButtonBorderRadius),
-      const DeepCollectionEquality().hash(purchaseButtonBorderColor),
-      const DeepCollectionEquality().hash(spaceBetweenButtons));
+      backgroundImage,
+      backgroundColor,
+      primaryColor,
+      textColor,
+      appBarButtonColor,
+      textButtonColor,
+      cupertinoDisclaimerColor,
+      featureBackgroundColor,
+      featureIconColor,
+      featureTitleColor,
+      featureCaptionColor,
+      purchaseButtonBackgroundColor,
+      purchaseButtonBorderRadius,
+      purchaseButtonBorderColor,
+      spaceBetweenButtons);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_PurchasesThemeCopyWith<_$_PurchasesTheme> get copyWith =>
       __$$_PurchasesThemeCopyWithImpl<_$_PurchasesTheme>(this, _$identity);
 }

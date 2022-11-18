@@ -13,6 +13,11 @@ class PurchasesLocalizationsFr extends PurchasesLocalizations {
   }
 
   @override
+  String annualDiscount(String discount) {
+    return 'soit $discount% de réduction';
+  }
+
+  @override
   String get closeAlertTitle => 'Un achat est actuellement en cours, êtes-vous sûr de vouloir quitter maintenant ?';
 
   @override

@@ -21,6 +21,15 @@ class PurchasesController extends StateNotifier<PurchasesState> {
   Future<void> _fetchOfferings() async {
     try {
       await _service.fetchOfferings();
+
+      double? annualDiscount;
+      if (_service.subscription?.annual?.storeProduct.price != null &&
+          _service.subscription?.monthly?.storeProduct.price != null) {
+        annualDiscount = 1 -
+            (_service.subscription!.annual!.storeProduct.price /
+                (_service.subscription!.monthly!.storeProduct.price * 12));
+      }
+
       state = state.copyWith(
         isReady: true,
         hasPackage: _service.subscription != null,
@@ -32,6 +41,7 @@ class PurchasesController extends StateNotifier<PurchasesState> {
         sixMonthPrice:
             _service.subscription?.sixMonth?.storeProduct.priceString,
         annualPrice: _service.subscription?.annual?.storeProduct.priceString,
+        annualDiscount: annualDiscount,
       );
     } catch (e) {
       state = state.copyWith(

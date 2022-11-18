@@ -9,6 +9,7 @@ class PurchasesState with _$PurchasesState {
     String? threeMonthPrice,
     String? sixMonthPrice,
     String? annualPrice,
+    double? annualDiscount,
     @Default(false) bool isReady,
     @Default(false) bool hasPackage,
     @Default(false) bool isPurchasing,

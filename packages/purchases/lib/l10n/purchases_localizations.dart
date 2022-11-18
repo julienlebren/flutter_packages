@@ -105,6 +105,12 @@ abstract class PurchasesLocalizations {
   /// **'{price}/year'**
   String annualPrice(String price);
 
+  /// No description provided for @annualDiscount.
+  ///
+  /// In en, this message translates to:
+  /// **'i.e. {discount}% off'**
+  String annualDiscount(String discount);
+
   /// No description provided for @closeAlertTitle.
   ///
   /// In en, this message translates to:

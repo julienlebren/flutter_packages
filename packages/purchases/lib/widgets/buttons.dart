@@ -168,18 +168,25 @@ class PurchasesAnnualButton extends ConsumerWidget {
   const PurchasesAnnualButton({
     Key? key,
     this.title,
+    this.displayDiscount = false,
   }) : super(key: key);
 
   final String? title;
+  final bool displayDiscount;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final l10n = ref.watch(purchasesLocalizationsProvider);
+    final discount = ref.watch(purchasesControllerProvider.select(
+      (state) => state.annualDiscount,
+    ));
 
     return _PurchasesButton(
       type: PackageType.annual,
       title: title,
-      caption: l10n.annualCaption,
+      caption: displayDiscount
+          ? l10n.annualDiscount(discount.toString())
+          : l10n.annualCaption,
     );
   }
 }

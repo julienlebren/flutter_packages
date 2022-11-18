@@ -8,6 +8,14 @@
       }
     }
   },
+  "annualDiscount": "i.e. {discount}% off",
+  "@annualDiscount" : {
+      "placeholders": {
+      "discount": { 
+          "type": "String"
+      }
+    }
+  },
   "closeAlertTitle": "A purchase is currently in progress, are you sure you want to leave now?",
   "closeAlertCloseButton": "Yes, leave this view",
   "closeAlertCancelButton": "No, wait for the end of the purchase",

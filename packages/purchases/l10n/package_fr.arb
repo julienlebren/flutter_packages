@@ -1,6 +1,7 @@
 {
   "annualCaption": "Abonnement annuel",
   "annualPrice": "{price}/an",
+  "annualDiscount": "soit {discount}% de réduction",
   "closeAlertTitle": "Un achat est actuellement en cours, êtes-vous sûr de vouloir quitter maintenant ?",
   "closeAlertCloseButton": "Oui, quitter cette vue",
   "closeAlertCancelButton": "Non, attendre la fin de l'achat",
