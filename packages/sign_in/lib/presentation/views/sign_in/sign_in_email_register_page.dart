@@ -62,6 +62,7 @@ class _SignInEmailRegisterPageFormState
           controller: emailTextController,
           keyboardType: TextInputType.emailAddress,
           textInputAction: TextInputAction.next,
+          textCapitalization: TextCapitalization.none,
           placeholder: l10n.signInWithEmailPlaceholder,
           autocorrect: false,
           focusNode: emailFocusNode,

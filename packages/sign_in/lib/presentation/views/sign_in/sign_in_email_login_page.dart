@@ -69,6 +69,7 @@ class _SignInEmailLoginFormState extends ConsumerState<SignInEmailLoginForm> {
           keyboardType: TextInputType.emailAddress,
           placeholder: l10n.signInWithEmailPlaceholder,
           textInputAction: TextInputAction.next,
+          textCapitalization: TextCapitalization.none,
           autocorrect: false,
           focusNode: emailFocusNode,
           onChanged: (String value) {
