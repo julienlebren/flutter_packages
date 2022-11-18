@@ -62,6 +62,7 @@ class _SignInEmailLinkPageFormState
           controller: textController,
           keyboardType: TextInputType.emailAddress,
           placeholder: l10n.signInWithEmailPlaceholder,
+          textCapitalization: TextCapitalization.none,
           autocorrect: false,
           focusNode: focusNode,
           onChanged: (String value) {
