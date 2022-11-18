@@ -834,7 +834,7 @@ mixin _$PurchasesState {
   String? get threeMonthPrice => throw _privateConstructorUsedError;
   String? get sixMonthPrice => throw _privateConstructorUsedError;
   String? get annualPrice => throw _privateConstructorUsedError;
-  double? get annualDiscount => throw _privateConstructorUsedError;
+  int? get annualDiscount => throw _privateConstructorUsedError;
   bool get isReady => throw _privateConstructorUsedError;
   bool get hasPackage => throw _privateConstructorUsedError;
   bool get isPurchasing => throw _privateConstructorUsedError;
@@ -859,7 +859,7 @@ abstract class $PurchasesStateCopyWith<$Res> {
       String? threeMonthPrice,
       String? sixMonthPrice,
       String? annualPrice,
-      double? annualDiscount,
+      int? annualDiscount,
       bool isReady,
       bool hasPackage,
       bool isPurchasing,
@@ -921,7 +921,7 @@ class _$PurchasesStateCopyWithImpl<$Res, $Val extends PurchasesState>
       annualDiscount: freezed == annualDiscount
           ? _value.annualDiscount
           : annualDiscount // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as int?,
       isReady: null == isReady
           ? _value.isReady
           : isReady // ignore: cast_nullable_to_non_nullable
@@ -961,7 +961,7 @@ abstract class _$$_PurchasesStateCopyWith<$Res>
       String? threeMonthPrice,
       String? sixMonthPrice,
       String? annualPrice,
-      double? annualDiscount,
+      int? annualDiscount,
       bool isReady,
       bool hasPackage,
       bool isPurchasing,
@@ -1021,7 +1021,7 @@ class __$$_PurchasesStateCopyWithImpl<$Res>
       annualDiscount: freezed == annualDiscount
           ? _value.annualDiscount
           : annualDiscount // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as int?,
       isReady: null == isReady
           ? _value.isReady
           : isReady // ignore: cast_nullable_to_non_nullable
@@ -1076,7 +1076,7 @@ class _$_PurchasesState implements _PurchasesState {
   @override
   final String? annualPrice;
   @override
-  final double? annualDiscount;
+  final int? annualDiscount;
   @override
   @JsonKey()
   final bool isReady;
@@ -1158,7 +1158,7 @@ abstract class _PurchasesState implements PurchasesState {
       final String? threeMonthPrice,
       final String? sixMonthPrice,
       final String? annualPrice,
-      final double? annualDiscount,
+      final int? annualDiscount,
       final bool isReady,
       final bool hasPackage,
       final bool isPurchasing,
@@ -1178,7 +1178,7 @@ abstract class _PurchasesState implements PurchasesState {
   @override
   String? get annualPrice;
   @override
-  double? get annualDiscount;
+  int? get annualDiscount;
   @override
   bool get isReady;
   @override
