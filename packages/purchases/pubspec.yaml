@@ -1,6 +1,6 @@
 name: purchases
 description: A package to handle purchases with RevenueCat and provide some layout stuff to build purchase pages.
-version: 2.10.3
+version: 2.10.4
 homepage: https://twitter.com/hikeland
 publish_to: none
 
