@@ -16,41 +16,6 @@ class SubscriptionPageBuilder extends ConsumerWidget {
   final Widget footer;
   final bool canDiscount;
 
-  _openOffers(WidgetRef ref) {
-    final controller = ref.watch(purchasesControllerProvider.notifier);
-    controller.handleEvent(const PurchasesEvent.openOffers());
-  }
-
-  _closePage(BuildContext context, WidgetRef ref) {
-    final isPurchasing = ref.watch(purchasesControllerProvider.select(
-      (state) => state.isPurchasing,
-    ));
-
-    if (isPurchasing) {
-      final l10n = ref.watch(purchasesLocalizationsProvider);
-      showAlertDialog(
-        context,
-        ref,
-        title: l10n.closeAlertTitle,
-        actions: [
-          PlatformDialogAction(
-            buttonText: l10n.closeAlertCloseButton,
-            onPressed: () {
-              Navigator.of(context, rootNavigator: true).pop();
-            },
-          ),
-          PlatformDialogAction(
-            buttonText: l10n.closeAlertCancelButton,
-            isDefaultAction: true,
-          )
-        ],
-        displayCancelButton: false,
-      );
-    } else {
-      Navigator.of(context, rootNavigator: true).pop();
-    }
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
