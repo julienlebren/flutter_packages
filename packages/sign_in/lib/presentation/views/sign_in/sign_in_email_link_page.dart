@@ -22,9 +22,9 @@ class SignInEmailLinkPage extends ConsumerWidget {
       title: l10n.signInWithEmailLinkTitle,
       subtitle: l10n.signInWithEmailLinkSubtitle,
       leadingButton: const SignInCloseButton(),
-      child: const SignInEmailLinkPageForm(),
       errorText: errorText,
       isLoading: isLoading,
+      child: const SignInEmailLinkPageForm(),
     );
   }
 }

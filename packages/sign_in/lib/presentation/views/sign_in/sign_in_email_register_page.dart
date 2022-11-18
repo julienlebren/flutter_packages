@@ -21,9 +21,9 @@ class SignInEmailRegisterPage extends ConsumerWidget {
     return SignInPageBuilder(
       title: l10n.signInWithEmailRegisterTitle,
       leadingButton: const SignInCloseButton(),
-      child: const SignInEmailRegisterPageForm(),
       errorText: errorText,
       isLoading: isLoading,
+      child: const SignInEmailRegisterPageForm(),
     );
   }
 }

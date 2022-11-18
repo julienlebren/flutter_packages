@@ -3,10 +3,9 @@ part of '../../sign_in.dart';
 final settingsEmailControllerProvider = StateNotifierProvider.autoDispose<
     SettingsEmailController, SettingsEmailState>((ref) {
   final service = ref.watch(authServiceProvider);
-  final settings = ref.watch(authSettingsProvider);
   final localizations = ref.watch(signInLocalizationsProvider);
 
-  return SettingsEmailController(service, settings.userRef, localizations);
+  return SettingsEmailController(service, localizations);
 }, dependencies: [
   authServiceProvider,
   authSettingsProvider,
@@ -34,12 +33,10 @@ class SettingsEmailState with _$SettingsEmailState {
 class SettingsEmailController extends StateNotifier<SettingsEmailState> {
   SettingsEmailController(
     this._service,
-    this._userRef,
     this._localizations,
   ) : super(SettingsEmailState(email: _service.currentUser!.email ?? ""));
 
   final FirebaseAuthService _service;
-  final CollectionReference? _userRef;
   final SignInLocalizations _localizations;
 
   void handleEvent(SettingsEmailEvent event) {

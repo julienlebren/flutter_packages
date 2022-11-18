@@ -34,7 +34,7 @@ class SettingsAccountPage extends ConsumerWidget {
     ref.listen<AuthState>(authStateProvider(authSettings), (_, state) {
       state.maybeWhen(
         notAuthed: () {
-          ref.read(currentTabIndexProvider.state).state = 0;
+          ref.read(currentTabIndexProvider.notifier).state = 0;
         },
         orElse: () => null,
       );
@@ -78,7 +78,7 @@ class _ButtonsSection extends ConsumerWidget {
     ref.listen<SignInButtonsState>(signInButtonsControllerProvider, (_, state) {
       state.maybeWhen(
         initial: () {
-          ref.read(signInSupplierProvider.state).state = null;
+          ref.read(signInSupplierProvider.notifier).state = null;
         },
         error: (errorText) {
           showErrorDialog(
@@ -129,6 +129,9 @@ class _EmailSection extends ConsumerWidget {
 
     return FormSection(
       title: l10n.settingsEmailSectionTitle,
+      caption: isAnonymous || hasPassword
+          ? null
+          : l10n.settingsPasswordUndefinedCaption,
       children: [
         FormTappableField(
           label: l10n.settingsEmailLabel,
@@ -150,9 +153,6 @@ class _EmailSection extends ConsumerWidget {
             },
           ),
       ],
-      caption: isAnonymous || hasPassword
-          ? null
-          : l10n.settingsPasswordUndefinedCaption,
     );
   }
 }
@@ -179,12 +179,12 @@ class _SocialSection extends ConsumerWidget {
       ],
       child: FormSection(
         title: l10n.settingsThirdPartySectionTitle,
+        caption: l10n.settingsThirdPartyCaption,
         children: [
           for (final supplier in suppliers) ...[
             _SocialRow(supplier: supplier),
           ],
         ],
-        caption: l10n.settingsThirdPartyCaption,
       ),
     );
   }

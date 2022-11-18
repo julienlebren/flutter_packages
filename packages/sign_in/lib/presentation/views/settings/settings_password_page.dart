@@ -29,7 +29,6 @@ class SettingsPasswordPage extends ConsumerWidget {
 
     return SettingsPageBuilder(
       title: l10n.settingsPasswordTitle,
-      child: const _SettingsPasswordContents(),
       isSaving: isSaving,
       canSubmit: canSubmit,
       onPressed: () {
@@ -37,6 +36,7 @@ class SettingsPasswordPage extends ConsumerWidget {
             ref.read(settingsPasswordControllerProvider.notifier);
         controller.handleEvent(const SettingsPasswordEvent.submit());
       },
+      child: const _SettingsPasswordContents(),
     );
   }
 }

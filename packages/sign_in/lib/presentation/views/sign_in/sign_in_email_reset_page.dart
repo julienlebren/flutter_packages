@@ -44,9 +44,9 @@ class SignInEmailResetPage extends ConsumerWidget {
     return SignInPageBuilder(
       title: l10n.emailResetTitle,
       subtitle: l10n.emailResetSubtitle,
-      child: const SignInEmailResetForm(),
       errorText: errorText,
       isLoading: isLoading,
+      child: const SignInEmailResetForm(),
     );
   }
 }

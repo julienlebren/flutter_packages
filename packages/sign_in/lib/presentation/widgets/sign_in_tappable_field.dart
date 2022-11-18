@@ -16,7 +16,6 @@ class SignInTappableField
   @override
   TextButton createMaterialWidget(BuildContext context, WidgetRef ref) {
     return TextButton(
-      child: _contents(ref),
       onPressed: onPressed,
       style: TextButton.styleFrom(
         padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 0),
@@ -25,6 +24,7 @@ class SignInTappableField
           fontWeight: FontWeight.normal,
         ),
       ),
+      child: _contents(ref),
     );
   }
 
@@ -32,8 +32,8 @@ class SignInTappableField
   CupertinoButton createCupertinoWidget(BuildContext context, WidgetRef ref) {
     return CupertinoButton(
       padding: const EdgeInsets.all(0),
-      child: _contents(ref),
       onPressed: onPressed,
+      child: _contents(ref),
     );
   }
 

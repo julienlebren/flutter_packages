@@ -21,9 +21,9 @@ class SignInEmailLoginPage extends ConsumerWidget {
     return SignInPageBuilder(
       title: l10n.signInWithEmailTitle,
       leadingButton: const SignInCloseButton(),
-      child: const SignInEmailLoginForm(),
       errorText: errorText,
       isLoading: isLoading,
+      child: const SignInEmailLoginForm(),
     );
   }
 }

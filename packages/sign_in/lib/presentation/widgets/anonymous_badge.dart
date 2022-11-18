@@ -24,7 +24,7 @@ class AnonymousBadge extends ConsumerWidget {
     return GestureDetector(
       onTap: () {
         if (redirectionSettings != null) {
-          ref.read(currentTabIndexProvider.state).state =
+          ref.read(currentTabIndexProvider.notifier).state =
               redirectionSettings.tabIndex;
           Future<void>.delayed(const Duration(milliseconds: 400), () {
             final navigator = redirectionSettings.navigatorKey.currentState!;

@@ -14,7 +14,7 @@ void _handleSignIn(
   WidgetRef ref,
   SignInButtonsEvent event,
 ) {
-  ref.read(signInSupplierProvider.state).state = event.when(
+  ref.read(signInSupplierProvider.notifier).state = event.when(
     signInWithFacebook: () => SignInSupplier.facebook,
     signInWithGoogle: () => SignInSupplier.google,
     signInWithApple: () => SignInSupplier.apple,
@@ -25,7 +25,7 @@ void _handleSignIn(
   );
 
   if (ref.read(signInAreaProvider) == null) {
-    ref.read(signInAreaProvider.state).state = SignInArea.signIn;
+    ref.read(signInAreaProvider.notifier).state = SignInArea.signIn;
   }
 
   final navigator = Navigator.of(context, rootNavigator: true);
@@ -88,7 +88,7 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
     ref.listen<SignInButtonsState>(signInButtonsControllerProvider, (_, state) {
       state.maybeWhen(
         initial: () {
-          ref.read(signInSupplierProvider.state).state = null;
+          ref.read(signInSupplierProvider.notifier).state = null;
         },
         error: (errorText) {
           showErrorDialog(
@@ -199,7 +199,7 @@ class SignInButton extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
 
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        primary: theme.buttonBackgroundColor,
+        backgroundColor: theme.buttonBackgroundColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(theme.buttonRadius),
         ),

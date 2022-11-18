@@ -37,11 +37,11 @@ class SignInPhoneVerificationPage extends ConsumerWidget {
     });
 
     return SignInPageBuilder(
+      isLoading: isLoading,
       title: l10n.signInVerificationTitle,
       subtitle: l10n.signInVerificationSubtitle(nationalPhoneNumber),
       leadingButton: const SignInCloseButton(),
       child: const SignInVerificationForm(),
-      isLoading: isLoading,
     );
   }
 }
@@ -67,7 +67,7 @@ class SignInPinCodeField extends ConsumerStatefulWidget {
   const SignInPinCodeField({Key? key}) : super(key: key);
 
   @override
-  _SignInPinCodeFieldState createState() => _SignInPinCodeFieldState();
+  createState() => _SignInPinCodeFieldState();
 }
 
 class _SignInPinCodeFieldState extends ConsumerState<SignInPinCodeField> {
@@ -96,50 +96,16 @@ class _SignInPinCodeFieldState extends ConsumerState<SignInPinCodeField> {
             focusNode: focusNode,
             pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
             showCursor: true,
-            onCompleted: (pin) => print(pin),
             onTap: () {
               if (controller.text.length == 6) {
                 controller.text = '';
               }
             },
           ),
-
-          /*PinPut(
-            fieldsCount: 6,
-            textStyle: const TextStyle(fontSize: 56),
-            controller: controller,
-            pinAnimationType: PinAnimationType.none,
-            submittedFieldDecoration: _pinPutBorder(signInTheme.textColor),
-            selectedFieldDecoration: _pinPutBorder(signInTheme.primaryColor),
-            followingFieldDecoration: _pinPutBorder(signInTheme.borderColor),
-            autovalidateMode: AutovalidateMode.disabled,
-            validator: (input) {
-              _handlePhoneVerificationEvent(
-                  ref, SignInPhoneVerificationEvent.codeChanged(input));
-              if (input.length == 6) {
-                _handlePhoneVerificationEvent(
-                    ref, const SignInPhoneVerificationEvent.verifyCode());
-              }
-            },
-            onTap: () {
-              if (controller.text.length == 6) {
-                controller.text = '';
-              }
-            },
-          ),*/
         ),
       ),
     );
   }
-
-  BoxDecoration _pinPutBorder(Color borderColor) => BoxDecoration(
-        border: Border(
-          bottom: BorderSide(
-            color: borderColor,
-            width: 1.0,
-          ),
-        ),
-      );
 }
 
 /// Displays an error when the `SubmitState` says to do so

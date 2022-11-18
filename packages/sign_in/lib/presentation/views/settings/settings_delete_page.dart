@@ -14,7 +14,7 @@ class SettingsDeletePage extends ConsumerWidget {
     ref.listen<AuthState>(authStateProvider(authSettings), (_, state) {
       state.maybeWhen(
         notAuthed: () {
-          ref.read(currentTabIndexProvider.state).state = 0;
+          ref.read(currentTabIndexProvider.notifier).state = 0;
         },
         orElse: () => null,
       );
@@ -59,7 +59,7 @@ class _DeleteButton extends ConsumerWidget {
           onPressed: () {
             // Détermine la zone de SignIn dans laquelle on se situe (signIn ou settings),
             //ce qui influencera certains paramètres comme la couleur des boutons Apple/Google/etc
-            ref.read(signInAreaProvider.state).state = SignInArea.signIn;
+            ref.read(signInAreaProvider.notifier).state = SignInArea.signIn;
 
             final controller =
                 ref.read(settingsDeleteControllerProvider.notifier);
@@ -104,7 +104,7 @@ class _LogoutButton extends ConsumerWidget {
           onPressed: () {
             // Détermine la zone de SignIn dans laquelle on se situe (signIn ou settings),
             //ce qui influencera certains paramètres comme la couleur des boutons Apple/Google/etc
-            ref.read(signInAreaProvider.state).state = SignInArea.signIn;
+            ref.read(signInAreaProvider.notifier).state = SignInArea.signIn;
 
             final controller =
                 ref.read(signInButtonsControllerProvider.notifier);

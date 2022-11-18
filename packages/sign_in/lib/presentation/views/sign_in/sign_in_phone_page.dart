@@ -39,9 +39,9 @@ class SignInPhonePage extends ConsumerWidget {
       title: l10n.signInPhoneTitle,
       subtitle: l10n.signInPhoneSubtitle,
       leadingButton: const SignInCloseButton(),
-      child: const SignInPhoneForm(),
       errorText: errorText,
       isLoading: isLoading,
+      child: const SignInPhoneForm(),
     );
   }
 }
@@ -54,7 +54,7 @@ class SignInPhoneForm extends ConsumerStatefulWidget {
   const SignInPhoneForm({Key? key}) : super(key: key);
 
   @override
-  _SignInPhoneFormState createState() => _SignInPhoneFormState();
+  createState() => _SignInPhoneFormState();
 }
 
 class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {

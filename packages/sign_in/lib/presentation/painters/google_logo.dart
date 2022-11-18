@@ -16,8 +16,8 @@ class GoogleLogoPainter extends CustomPainter {
       ..strokeWidth = arcThickness;
 
     void drawArc(double startAngle, double sweepAngle, Color color) {
-      final _paint = paint..color = color;
-      canvas.drawArc(bounds, startAngle, sweepAngle, false, _paint);
+      final finalPaint = paint..color = color;
+      canvas.drawArc(bounds, startAngle, sweepAngle, false, finalPaint);
     }
 
     drawArc(3.5, 1.9, Colors.red);

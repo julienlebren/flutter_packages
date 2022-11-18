@@ -140,7 +140,7 @@ class SignInCloseButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return PlatformNavigationBarCloseButton(
       onPressed: () {
-        ref.read(signInSupplierProvider.state).state = null;
+        ref.read(signInSupplierProvider.notifier).state = null;
 
         //final navigator = SignInNavigatorKeys.main.currentState!;
         final navigator = Navigator.of(context, rootNavigator: true);

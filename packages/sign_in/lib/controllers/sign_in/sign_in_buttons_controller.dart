@@ -49,7 +49,6 @@ class SignInButtonsController extends StateNotifier<SignInButtonsState> {
       );
       state = const SignInButtonsState.success();
     } on FirebaseAuthException catch (e) {
-      print('erreur: ${e.code}');
       if (e.code == "ERROR_AUTHORIZATION_DENIED") {
         state = const SignInButtonsState.initial();
       } else if (e.code == "credential-already-in-use") {

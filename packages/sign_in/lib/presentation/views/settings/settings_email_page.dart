@@ -34,13 +34,13 @@ class SettingsEmailPage extends ConsumerWidget {
 
     return SettingsPageBuilder(
       title: l10n.settingsEmailTitle,
-      child: const _SettingsEmailContents(),
       isSaving: isSaving,
       canSubmit: canSubmit,
       onPressed: () {
         final controller = ref.read(settingsEmailControllerProvider.notifier);
         controller.handleEvent(const SettingsEmailEvent.submit());
       },
+      child: const _SettingsEmailContents(),
     );
   }
 }
