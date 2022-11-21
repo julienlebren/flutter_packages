@@ -21,8 +21,8 @@ mixin _$AdSettings {
   String? get intersticialCupertino => throw _privateConstructorUsedError;
   String? get bannerMaterial => throw _privateConstructorUsedError;
   String? get bannerCupertino => throw _privateConstructorUsedError;
-  String? get nativeMaterial => throw _privateConstructorUsedError;
-  String? get nativeCupertino => throw _privateConstructorUsedError;
+  String? get rewardMaterial => throw _privateConstructorUsedError;
+  String? get rewardCupertino => throw _privateConstructorUsedError;
   VoidCallback? get updateLastAdsTime => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -34,71 +34,75 @@ mixin _$AdSettings {
 abstract class $AdSettingsCopyWith<$Res> {
   factory $AdSettingsCopyWith(
           AdSettings value, $Res Function(AdSettings) then) =
-      _$AdSettingsCopyWithImpl<$Res>;
+      _$AdSettingsCopyWithImpl<$Res, AdSettings>;
+  @useResult
   $Res call(
       {dynamic maxFailedLoadAttempts,
       String? intersticialMaterial,
       String? intersticialCupertino,
       String? bannerMaterial,
       String? bannerCupertino,
-      String? nativeMaterial,
-      String? nativeCupertino,
+      String? rewardMaterial,
+      String? rewardCupertino,
       VoidCallback? updateLastAdsTime});
 }
 
 /// @nodoc
-class _$AdSettingsCopyWithImpl<$Res> implements $AdSettingsCopyWith<$Res> {
+class _$AdSettingsCopyWithImpl<$Res, $Val extends AdSettings>
+    implements $AdSettingsCopyWith<$Res> {
   _$AdSettingsCopyWithImpl(this._value, this._then);
 
-  final AdSettings _value;
   // ignore: unused_field
-  final $Res Function(AdSettings) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? maxFailedLoadAttempts = freezed,
+    Object? maxFailedLoadAttempts = null,
     Object? intersticialMaterial = freezed,
     Object? intersticialCupertino = freezed,
     Object? bannerMaterial = freezed,
     Object? bannerCupertino = freezed,
-    Object? nativeMaterial = freezed,
-    Object? nativeCupertino = freezed,
-    Object? updateLastAdsTime = freezed,
+    Object? rewardMaterial = freezed,
+    Object? rewardCupertino = freezed,
+    Object? updateLastAdsTime = null,
   }) {
     return _then(_value.copyWith(
-      maxFailedLoadAttempts: maxFailedLoadAttempts == freezed
+      maxFailedLoadAttempts: null == maxFailedLoadAttempts
           ? _value.maxFailedLoadAttempts
           : maxFailedLoadAttempts // ignore: cast_nullable_to_non_nullable
               as dynamic,
-      intersticialMaterial: intersticialMaterial == freezed
+      intersticialMaterial: freezed == intersticialMaterial
           ? _value.intersticialMaterial
           : intersticialMaterial // ignore: cast_nullable_to_non_nullable
               as String?,
-      intersticialCupertino: intersticialCupertino == freezed
+      intersticialCupertino: freezed == intersticialCupertino
           ? _value.intersticialCupertino
           : intersticialCupertino // ignore: cast_nullable_to_non_nullable
               as String?,
-      bannerMaterial: bannerMaterial == freezed
+      bannerMaterial: freezed == bannerMaterial
           ? _value.bannerMaterial
           : bannerMaterial // ignore: cast_nullable_to_non_nullable
               as String?,
-      bannerCupertino: bannerCupertino == freezed
+      bannerCupertino: freezed == bannerCupertino
           ? _value.bannerCupertino
           : bannerCupertino // ignore: cast_nullable_to_non_nullable
               as String?,
-      nativeMaterial: nativeMaterial == freezed
-          ? _value.nativeMaterial
-          : nativeMaterial // ignore: cast_nullable_to_non_nullable
+      rewardMaterial: freezed == rewardMaterial
+          ? _value.rewardMaterial
+          : rewardMaterial // ignore: cast_nullable_to_non_nullable
               as String?,
-      nativeCupertino: nativeCupertino == freezed
-          ? _value.nativeCupertino
-          : nativeCupertino // ignore: cast_nullable_to_non_nullable
+      rewardCupertino: freezed == rewardCupertino
+          ? _value.rewardCupertino
+          : rewardCupertino // ignore: cast_nullable_to_non_nullable
               as String?,
-      updateLastAdsTime: updateLastAdsTime == freezed
+      updateLastAdsTime: null == updateLastAdsTime
           ? _value.updateLastAdsTime
           : updateLastAdsTime // ignore: cast_nullable_to_non_nullable
               as VoidCallback?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -109,67 +113,67 @@ abstract class _$$_AdSettingsCopyWith<$Res>
           _$_AdSettings value, $Res Function(_$_AdSettings) then) =
       __$$_AdSettingsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {dynamic maxFailedLoadAttempts,
       String? intersticialMaterial,
       String? intersticialCupertino,
       String? bannerMaterial,
       String? bannerCupertino,
-      String? nativeMaterial,
-      String? nativeCupertino,
+      String? rewardMaterial,
+      String? rewardCupertino,
       VoidCallback? updateLastAdsTime});
 }
 
 /// @nodoc
-class __$$_AdSettingsCopyWithImpl<$Res> extends _$AdSettingsCopyWithImpl<$Res>
+class __$$_AdSettingsCopyWithImpl<$Res>
+    extends _$AdSettingsCopyWithImpl<$Res, _$_AdSettings>
     implements _$$_AdSettingsCopyWith<$Res> {
   __$$_AdSettingsCopyWithImpl(
       _$_AdSettings _value, $Res Function(_$_AdSettings) _then)
-      : super(_value, (v) => _then(v as _$_AdSettings));
+      : super(_value, _then);
 
-  @override
-  _$_AdSettings get _value => super._value as _$_AdSettings;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? maxFailedLoadAttempts = freezed,
+    Object? maxFailedLoadAttempts = null,
     Object? intersticialMaterial = freezed,
     Object? intersticialCupertino = freezed,
     Object? bannerMaterial = freezed,
     Object? bannerCupertino = freezed,
-    Object? nativeMaterial = freezed,
-    Object? nativeCupertino = freezed,
-    Object? updateLastAdsTime = freezed,
+    Object? rewardMaterial = freezed,
+    Object? rewardCupertino = freezed,
+    Object? updateLastAdsTime = null,
   }) {
     return _then(_$_AdSettings(
-      maxFailedLoadAttempts: maxFailedLoadAttempts == freezed
+      maxFailedLoadAttempts: null == maxFailedLoadAttempts
           ? _value.maxFailedLoadAttempts
           : maxFailedLoadAttempts,
-      intersticialMaterial: intersticialMaterial == freezed
+      intersticialMaterial: freezed == intersticialMaterial
           ? _value.intersticialMaterial
           : intersticialMaterial // ignore: cast_nullable_to_non_nullable
               as String?,
-      intersticialCupertino: intersticialCupertino == freezed
+      intersticialCupertino: freezed == intersticialCupertino
           ? _value.intersticialCupertino
           : intersticialCupertino // ignore: cast_nullable_to_non_nullable
               as String?,
-      bannerMaterial: bannerMaterial == freezed
+      bannerMaterial: freezed == bannerMaterial
           ? _value.bannerMaterial
           : bannerMaterial // ignore: cast_nullable_to_non_nullable
               as String?,
-      bannerCupertino: bannerCupertino == freezed
+      bannerCupertino: freezed == bannerCupertino
           ? _value.bannerCupertino
           : bannerCupertino // ignore: cast_nullable_to_non_nullable
               as String?,
-      nativeMaterial: nativeMaterial == freezed
-          ? _value.nativeMaterial
-          : nativeMaterial // ignore: cast_nullable_to_non_nullable
+      rewardMaterial: freezed == rewardMaterial
+          ? _value.rewardMaterial
+          : rewardMaterial // ignore: cast_nullable_to_non_nullable
               as String?,
-      nativeCupertino: nativeCupertino == freezed
-          ? _value.nativeCupertino
-          : nativeCupertino // ignore: cast_nullable_to_non_nullable
+      rewardCupertino: freezed == rewardCupertino
+          ? _value.rewardCupertino
+          : rewardCupertino // ignore: cast_nullable_to_non_nullable
               as String?,
-      updateLastAdsTime: updateLastAdsTime == freezed
+      updateLastAdsTime: null == updateLastAdsTime
           ? _value.updateLastAdsTime
           : updateLastAdsTime // ignore: cast_nullable_to_non_nullable
               as VoidCallback?,
@@ -186,8 +190,8 @@ class _$_AdSettings implements _AdSettings {
       this.intersticialCupertino,
       this.bannerMaterial,
       this.bannerCupertino,
-      this.nativeMaterial,
-      this.nativeCupertino,
+      this.rewardMaterial,
+      this.rewardCupertino,
       this.updateLastAdsTime});
 
   @override
@@ -202,15 +206,15 @@ class _$_AdSettings implements _AdSettings {
   @override
   final String? bannerCupertino;
   @override
-  final String? nativeMaterial;
+  final String? rewardMaterial;
   @override
-  final String? nativeCupertino;
+  final String? rewardCupertino;
   @override
   final VoidCallback? updateLastAdsTime;
 
   @override
   String toString() {
-    return 'AdSettings(maxFailedLoadAttempts: $maxFailedLoadAttempts, intersticialMaterial: $intersticialMaterial, intersticialCupertino: $intersticialCupertino, bannerMaterial: $bannerMaterial, bannerCupertino: $bannerCupertino, nativeMaterial: $nativeMaterial, nativeCupertino: $nativeCupertino, updateLastAdsTime: $updateLastAdsTime)';
+    return 'AdSettings(maxFailedLoadAttempts: $maxFailedLoadAttempts, intersticialMaterial: $intersticialMaterial, intersticialCupertino: $intersticialCupertino, bannerMaterial: $bannerMaterial, bannerCupertino: $bannerCupertino, rewardMaterial: $rewardMaterial, rewardCupertino: $rewardCupertino, updateLastAdsTime: $updateLastAdsTime)';
   }
 
   @override
@@ -220,36 +224,37 @@ class _$_AdSettings implements _AdSettings {
             other is _$_AdSettings &&
             const DeepCollectionEquality()
                 .equals(other.maxFailedLoadAttempts, maxFailedLoadAttempts) &&
+            (identical(other.intersticialMaterial, intersticialMaterial) ||
+                other.intersticialMaterial == intersticialMaterial) &&
+            (identical(other.intersticialCupertino, intersticialCupertino) ||
+                other.intersticialCupertino == intersticialCupertino) &&
+            (identical(other.bannerMaterial, bannerMaterial) ||
+                other.bannerMaterial == bannerMaterial) &&
+            (identical(other.bannerCupertino, bannerCupertino) ||
+                other.bannerCupertino == bannerCupertino) &&
+            (identical(other.rewardMaterial, rewardMaterial) ||
+                other.rewardMaterial == rewardMaterial) &&
+            (identical(other.rewardCupertino, rewardCupertino) ||
+                other.rewardCupertino == rewardCupertino) &&
             const DeepCollectionEquality()
-                .equals(other.intersticialMaterial, intersticialMaterial) &&
-            const DeepCollectionEquality()
-                .equals(other.intersticialCupertino, intersticialCupertino) &&
-            const DeepCollectionEquality()
-                .equals(other.bannerMaterial, bannerMaterial) &&
-            const DeepCollectionEquality()
-                .equals(other.bannerCupertino, bannerCupertino) &&
-            const DeepCollectionEquality()
-                .equals(other.nativeMaterial, nativeMaterial) &&
-            const DeepCollectionEquality()
-                .equals(other.nativeCupertino, nativeCupertino) &&
-            (identical(other.updateLastAdsTime, updateLastAdsTime) ||
-                other.updateLastAdsTime == updateLastAdsTime));
+                .equals(other.updateLastAdsTime, updateLastAdsTime));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(maxFailedLoadAttempts),
-      const DeepCollectionEquality().hash(intersticialMaterial),
-      const DeepCollectionEquality().hash(intersticialCupertino),
-      const DeepCollectionEquality().hash(bannerMaterial),
-      const DeepCollectionEquality().hash(bannerCupertino),
-      const DeepCollectionEquality().hash(nativeMaterial),
-      const DeepCollectionEquality().hash(nativeCupertino),
-      updateLastAdsTime);
+      intersticialMaterial,
+      intersticialCupertino,
+      bannerMaterial,
+      bannerCupertino,
+      rewardMaterial,
+      rewardCupertino,
+      const DeepCollectionEquality().hash(updateLastAdsTime));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AdSettingsCopyWith<_$_AdSettings> get copyWith =>
       __$$_AdSettingsCopyWithImpl<_$_AdSettings>(this, _$identity);
 }
@@ -261,8 +266,8 @@ abstract class _AdSettings implements AdSettings {
       final String? intersticialCupertino,
       final String? bannerMaterial,
       final String? bannerCupertino,
-      final String? nativeMaterial,
-      final String? nativeCupertino,
+      final String? rewardMaterial,
+      final String? rewardCupertino,
       final VoidCallback? updateLastAdsTime}) = _$_AdSettings;
 
   @override
@@ -276,9 +281,9 @@ abstract class _AdSettings implements AdSettings {
   @override
   String? get bannerCupertino;
   @override
-  String? get nativeMaterial;
+  String? get rewardMaterial;
   @override
-  String? get nativeCupertino;
+  String? get rewardCupertino;
   @override
   VoidCallback? get updateLastAdsTime;
   @override

@@ -8,8 +8,8 @@ class AdSettings with _$AdSettings {
     String? intersticialCupertino,
     String? bannerMaterial,
     String? bannerCupertino,
-    String? nativeMaterial,
-    String? nativeCupertino,
+    String? rewardMaterial,
+    String? rewardCupertino,
     VoidCallback? updateLastAdsTime,
   }) = _AdSettings;
 }
