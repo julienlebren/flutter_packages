@@ -8,6 +8,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+export 'package:google_mobile_ads/google_mobile_ads.dart' show MobileAds;
+
 part 'src/ad_settings.dart';
 part 'src/inline_adaptive.dart';
 part 'src/intersticial_container.dart';
