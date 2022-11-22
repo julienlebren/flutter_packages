@@ -58,3 +58,12 @@ bool isMaterial() {
 bool isCupertino() {
   return defaultTargetPlatform == TargetPlatform.iOS;
 }
+
+bool isMacOs() {
+  return defaultTargetPlatform == TargetPlatform.macOS;
+}
+
+bool isApple() {
+  return defaultTargetPlatform == TargetPlatform.iOS ||
+      defaultTargetPlatform == TargetPlatform.macOS;
+}
