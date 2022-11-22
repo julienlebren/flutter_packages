@@ -108,7 +108,7 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
         iconSize + (theme.buttonPadding * 2) + theme.spaceBetweenButtons + 1;
 
     double boxHeight = buttonHeight * suppliers.length;
-    if (suppliers.contains(SignInSupplier.apple) && !isCupertino()) {
+    if (suppliers.contains(SignInSupplier.apple) && !isApple()) {
       boxHeight -= buttonHeight;
     }
 
