@@ -145,7 +145,10 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
                           _handleSignIn(
                               context, ref, supplier.signInButtonsEvent);
                         },
-                        color: theme.buttonTextColor,
+                        color: (theme.scaffoldBackgroundColor.brightness ==
+                                Brightness.dark
+                            ? Colors.white
+                            : Colors.black),
                       ),
                     ),
                   ] else ...[
