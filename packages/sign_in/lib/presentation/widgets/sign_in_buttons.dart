@@ -152,8 +152,8 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
                       ),
                     ),
                   ] else ...[
-                    if (isCupertino() ||
-                        (!isCupertino() && supplier != SignInSupplier.apple))
+                    if (isApple() ||
+                        (!isApple() && supplier != SignInSupplier.apple))
                       ProviderScope(
                         overrides: [
                           _currentSupplier.overrideWithValue(supplier),
