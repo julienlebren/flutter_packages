@@ -59,6 +59,10 @@ bool isCupertino() {
   return defaultTargetPlatform == TargetPlatform.iOS;
 }
 
+bool isWeb() {
+  return kIsWeb;
+}
+
 bool isMacOs() {
   return defaultTargetPlatform == TargetPlatform.macOS;
 }
