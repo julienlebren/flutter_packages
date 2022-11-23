@@ -129,6 +129,7 @@ class FirebaseAuthService {
   }
 
   Future<User?> signInWithGoogle() async {
+    print("ici ou pas putain");
     final googleSignIn = GoogleSignIn();
     final googleUser = await googleSignIn.signIn();
     print("googleUser: $googleUser");
