@@ -131,6 +131,7 @@ class FirebaseAuthService {
   Future<User?> signInWithGoogle() async {
     final googleSignIn = GoogleSignIn();
     final googleUser = await googleSignIn.signIn();
+    print("googleUser: $googleUser");
     if (googleUser != null) {
       final googleAuth = await googleUser.authentication;
       if (googleAuth.idToken != null) {
@@ -141,9 +142,11 @@ class FirebaseAuthService {
         final userCredential = await _signInWithCredential(credential);
         return userCredential.user;
       } else {
+        print("caca1");
         throw FirebaseAuthException(code: 'ERROR_MISSING_GOOGLE_ID_TOKEN');
       }
     } else {
+      print("caca2");
       throw FirebaseAuthException(code: 'ERROR_ABORTED_BY_USER');
     }
   }
