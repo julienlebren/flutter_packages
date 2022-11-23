@@ -23,6 +23,8 @@ class _InterstitialAdContainerState
     final settings = ref.read(adSettingsProvider);
     String adUnitId;
 
+    if (kIsWeb) return;
+
     if (Platform.isAndroid && settings.intersticialMaterial != null) {
       adUnitId = settings.intersticialMaterial!;
     } else if (Platform.isIOS && settings.intersticialCupertino != null) {
