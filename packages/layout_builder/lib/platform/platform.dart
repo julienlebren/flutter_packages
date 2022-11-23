@@ -64,12 +64,11 @@ bool isWeb() {
 }
 
 bool isMacOs() {
-  return defaultTargetPlatform == TargetPlatform.macOS;
+  return !kIsWeb && defaultTargetPlatform == TargetPlatform.macOS;
 }
 
 bool isApple() {
-  return defaultTargetPlatform == TargetPlatform.iOS ||
-      defaultTargetPlatform == TargetPlatform.macOS;
+  return isCupertino() || isMacOs();
 }
 
 bool isMobile() {
