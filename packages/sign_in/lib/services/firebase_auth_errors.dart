@@ -29,7 +29,7 @@ extension Description on FirebaseAuthException {
       case "phone-not-mobile":
         return l10n.errorPhoneNotMobile;
       default:
-        return l10n.errorUnknown;
+        return code; //l10n.errorUnknown;
     }
   }
 }
