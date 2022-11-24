@@ -91,6 +91,7 @@ final cupertinoThemeProvider = Provider<CupertinoThemeData>((ref) {
     primaryColor: appTheme.primaryColor,
     scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
     barBackgroundColor: appTheme.cupertinoNavigationBarBackgroundColor,
+    textTheme: CupertinoTextThemeData(textStyle: GoogleFonts.poppins()),
   );
 }, dependencies: [appThemeProvider]);
 
