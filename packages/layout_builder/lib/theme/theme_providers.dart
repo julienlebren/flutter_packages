@@ -40,7 +40,7 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
     scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
     primarySwatch: createMaterialColor(appTheme.primaryColor),
     //accentColor: appTheme.primaryColor,
-    textTheme: GoogleFonts.poppinsTextTheme(),
+    //textTheme: GoogleFonts.poppinsTextTheme(),
     toggleableActiveColor: appTheme.primaryColor,
     appBarTheme: AppBarTheme(
       shadowColor: appTheme.scaffoldBackgroundColor,
@@ -91,7 +91,10 @@ final cupertinoThemeProvider = Provider<CupertinoThemeData>((ref) {
     primaryColor: appTheme.primaryColor,
     scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
     barBackgroundColor: appTheme.cupertinoNavigationBarBackgroundColor,
-    textTheme: CupertinoTextThemeData(textStyle: GoogleFonts.poppins()),
+    /*textTheme: CupertinoTextThemeData(
+      primaryColor: appTheme.primaryColor,
+      textStyle: GoogleFonts.poppins(),
+    ),*/
   );
 }, dependencies: [appThemeProvider]);
 
