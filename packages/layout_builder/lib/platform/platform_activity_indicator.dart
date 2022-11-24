@@ -21,6 +21,12 @@ class PlatformActivityIndicator extends PlatformWidgetBase<
       BuildContext context, WidgetRef ref) {
     return CupertinoActivityIndicator(color: color);
   }
+
+  @override
+  CircularProgressIndicator createWebWidget(
+      BuildContext context, WidgetRef ref) {
+    return CircularProgressIndicator(strokeWidth: strokeWidth);
+  }
 }
 
 class DelayedPlatformActivityIndicator extends StatelessWidget {
