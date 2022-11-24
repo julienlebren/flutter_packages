@@ -2,6 +2,7 @@ library selection_controls;
 
 import 'dart:io' show Platform;
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/src/rendering/editable.dart';
 import 'package:flutter/widgets.dart';
 
