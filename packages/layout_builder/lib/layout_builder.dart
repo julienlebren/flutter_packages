@@ -5,3 +5,5 @@ export 'settings/settings.dart';
 export 'theme/theme.dart';
 export 'platform/platform.dart';
 export 'widgets/widgets.dart';
+
+export 'constants/breakpoints.dart';
