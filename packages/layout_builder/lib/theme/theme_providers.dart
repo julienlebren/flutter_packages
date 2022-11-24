@@ -40,6 +40,7 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
     scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
     primarySwatch: createMaterialColor(appTheme.primaryColor),
     //accentColor: appTheme.primaryColor,
+    textTheme: GoogleFonts.poppinsTextTheme(),
     toggleableActiveColor: appTheme.primaryColor,
     appBarTheme: AppBarTheme(
       shadowColor: appTheme.scaffoldBackgroundColor,
