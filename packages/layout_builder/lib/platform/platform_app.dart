@@ -1,9 +1,9 @@
 part of platform;
 
-class PlatformApp extends PlatformWidgetBase<MaterialApp, CupertinoApp> {
+class PlatformApp extends PlatformWidgetBase<ProviderScope, ProviderScope> {
   PlatformApp({
     this.initialRoute,
-    this.onGenerateRoute,
+    required this.onGenerateRoute,
     this.localizationsDelegates,
     required this.supportedLocales,
     this.navigatorKey,
@@ -14,7 +14,7 @@ class PlatformApp extends PlatformWidgetBase<MaterialApp, CupertinoApp> {
             (initialRoute != null && onGenerateRoute != null) || home != null);
 
   final String? initialRoute;
-  final RouteFactory? onGenerateRoute;
+  final RouteFactory onGenerateRoute;
   final Iterable<LocalizationsDelegate<dynamic>>? localizationsDelegates;
   final Iterable<Locale> supportedLocales;
   final GlobalKey<NavigatorState>? navigatorKey;
@@ -23,36 +23,46 @@ class PlatformApp extends PlatformWidgetBase<MaterialApp, CupertinoApp> {
   final Widget? home;
 
   @override
-  MaterialApp createMaterialWidget(BuildContext context, WidgetRef ref) {
+  ProviderScope createMaterialWidget(BuildContext context, WidgetRef ref) {
     final materialTheme = ref.watch(materialThemeProvider);
-    return MaterialApp(
-      locale: locale,
-      navigatorKey: navigatorKey,
-      localizationsDelegates: localizationsDelegates,
-      supportedLocales: supportedLocales,
-      debugShowCheckedModeBanner: false,
-      theme: materialTheme,
-      builder: builder,
-      initialRoute: initialRoute,
-      onGenerateRoute: onGenerateRoute,
-      home: home,
+    return ProviderScope(
+      overrides: [
+        routeProvider.overrideWithValue(onGenerateRoute),
+      ],
+      child: MaterialApp(
+        locale: locale,
+        navigatorKey: navigatorKey,
+        localizationsDelegates: localizationsDelegates,
+        supportedLocales: supportedLocales,
+        debugShowCheckedModeBanner: false,
+        theme: materialTheme,
+        builder: builder,
+        initialRoute: initialRoute,
+        onGenerateRoute: onGenerateRoute,
+        home: home,
+      ),
     );
   }
 
   @override
-  CupertinoApp createCupertinoWidget(BuildContext context, WidgetRef ref) {
+  ProviderScope createCupertinoWidget(BuildContext context, WidgetRef ref) {
     final cupertinoTheme = ref.watch(cupertinoThemeProvider);
-    return CupertinoApp(
-      locale: locale,
-      navigatorKey: navigatorKey,
-      localizationsDelegates: localizationsDelegates,
-      supportedLocales: supportedLocales,
-      debugShowCheckedModeBanner: false,
-      theme: cupertinoTheme,
-      builder: builder,
-      initialRoute: initialRoute,
-      onGenerateRoute: onGenerateRoute,
-      home: home,
+    return ProviderScope(
+      overrides: [
+        routeProvider.overrideWithValue(onGenerateRoute),
+      ],
+      child: CupertinoApp(
+        locale: locale,
+        navigatorKey: navigatorKey,
+        localizationsDelegates: localizationsDelegates,
+        supportedLocales: supportedLocales,
+        debugShowCheckedModeBanner: false,
+        theme: cupertinoTheme,
+        builder: builder,
+        initialRoute: initialRoute,
+        onGenerateRoute: onGenerateRoute,
+        home: home,
+      ),
     );
   }
 }
