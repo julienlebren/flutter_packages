@@ -7,3 +7,7 @@ export 'platform/platform.dart';
 export 'widgets/widgets.dart';
 
 export 'constants/breakpoints.dart';
+
+class UnsupportedPlatformException implements Exception {
+  UnsupportedPlatformException();
+}
