@@ -8,27 +8,31 @@ class Breakpoints {
   static const twoColLayoutMinWidth = 640;
 }
 
-double horizontalPadding(double screenWidth) {
-  if (screenWidth > Breakpoints.desktop) {
-    return 0;
-  } else if (screenWidth > Breakpoints.mobile) {
-    return 28;
-  } else {
-    return 20;
+extension BuildContextWide on BuildContext {
+  bool isWide() {
+    final screenWidth = MediaQuery.of(this).size.width;
+    return screenWidth > Breakpoints.tablet;
   }
-}
 
-double sliverHorizontalPadding(double screenWidth) {
-  if (screenWidth > Breakpoints.desktop) {
-    return (screenWidth - Breakpoints.desktop) / 2;
-  } else if (screenWidth > Breakpoints.mobile) {
-    return 28;
-  } else {
-    return 20;
+  double horizontalPadding() {
+    final screenWidth = MediaQuery.of(this).size.width;
+    if (screenWidth > Breakpoints.desktop) {
+      return 0;
+    } else if (screenWidth > Breakpoints.mobile) {
+      return 28;
+    } else {
+      return 20;
+    }
   }
-}
 
-bool isWide(BuildContext context) {
-  final screenWidth = MediaQuery.of(context).size.width;
-  return screenWidth > Breakpoints.tablet;
+  double sliverHorizontalPadding() {
+    final screenWidth = MediaQuery.of(this).size.width;
+    if (screenWidth > Breakpoints.desktop) {
+      return (screenWidth - Breakpoints.desktop) / 2;
+    } else if (screenWidth > Breakpoints.mobile) {
+      return 28;
+    } else {
+      return 20;
+    }
+  }
 }
