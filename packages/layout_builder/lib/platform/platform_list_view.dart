@@ -26,14 +26,12 @@ class PlatformListView extends PlatformWidgetBase<ScrollViewVisibilityDetector,
     return ScrollViewVisibilityDetector(
       key: key,
       controller: controller,
-      child: Padding(
+      child: ListView.builder(
         padding: EdgeInsets.all(isWeb() ? 20 : 0),
-        child: ListView.builder(
-          itemCount: itemCount,
-          itemBuilder: itemBuilder,
-          controller: controller,
-          shrinkWrap: shrinkWrap,
-        ),
+        itemCount: itemCount,
+        itemBuilder: itemBuilder,
+        controller: controller,
+        shrinkWrap: shrinkWrap,
       ),
     );
   }

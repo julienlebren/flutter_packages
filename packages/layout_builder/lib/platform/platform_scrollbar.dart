@@ -60,7 +60,7 @@ class ScrollViewVisibilityDetector extends ConsumerWidget {
       onVisibilityChanged: (visibilityInfo) {
         if (controller != null) {
           if (visibilityInfo.visibleFraction == 1) {
-            ref.read(scrollControllerProvider.state).state = controller;
+            ref.read(scrollControllerProvider.notifier).state = controller;
           }
         }
       },
