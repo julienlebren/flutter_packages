@@ -129,10 +129,8 @@ class FirebaseAuthService {
   }
 
   Future<User?> signInWithGoogle() async {
-    print("ici ou pas putain");
     final googleSignIn = GoogleSignIn();
     final googleUser = await googleSignIn.signIn();
-    print("googleUser: $googleUser");
     if (googleUser != null) {
       final googleAuth = await googleUser.authentication;
       if (googleAuth.idToken != null) {
@@ -143,17 +141,15 @@ class FirebaseAuthService {
         final userCredential = await _signInWithCredential(credential);
         return userCredential.user;
       } else {
-        print("caca1");
         throw FirebaseAuthException(code: 'ERROR_MISSING_GOOGLE_ID_TOKEN');
       }
     } else {
-      print("caca2");
       throw FirebaseAuthException(code: 'ERROR_ABORTED_BY_USER');
     }
   }
 
   Future<User?> signInWithFacebook() async {
-    final fb = FacebookLogin();
+    /*final fb = FacebookLogin();
     final response = await fb.logIn(permissions: [
       FacebookPermission.publicProfile,
       FacebookPermission.email,
@@ -171,7 +167,7 @@ class FirebaseAuthService {
         throw FirebaseAuthException(code: 'ERROR_FACEBOOK_LOGIN_FAILED');
       default:
         throw UnimplementedError();
-    }
+    }*/
   }
 
   Future<void> sendSignInLinkToEmail({
