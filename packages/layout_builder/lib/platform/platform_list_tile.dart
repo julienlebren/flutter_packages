@@ -1,6 +1,7 @@
 part of platform;
 
-class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
+class PlatformListTile
+    extends PlatformWidgetBase<Material, _CupertinoListTile> {
   const PlatformListTile({
     this.child,
     this.leading,
@@ -47,8 +48,9 @@ class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
   }
 
   @override
-  CupertinoListTile createCupertinoWidget(BuildContext context, WidgetRef ref) {
-    return CupertinoListTile(
+  _CupertinoListTile createCupertinoWidget(
+      BuildContext context, WidgetRef ref) {
+    return _CupertinoListTile(
       child: ListTileContents(
         child: child,
         leading: leading,
@@ -64,8 +66,8 @@ class PlatformListTile extends PlatformWidgetBase<Material, CupertinoListTile> {
   }
 }
 
-class CupertinoListTile extends ConsumerStatefulWidget {
-  const CupertinoListTile({
+class _CupertinoListTile extends ConsumerStatefulWidget {
+  const _CupertinoListTile({
     required this.child,
     this.onTap,
   }) : super();
@@ -77,7 +79,7 @@ class CupertinoListTile extends ConsumerStatefulWidget {
   _CupertinoListTileState createState() => _CupertinoListTileState();
 }
 
-class _CupertinoListTileState extends ConsumerState<CupertinoListTile> {
+class _CupertinoListTileState extends ConsumerState<_CupertinoListTile> {
   late Color _tileBackground;
   Timer? timer;
 
