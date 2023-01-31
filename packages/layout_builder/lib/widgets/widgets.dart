@@ -9,5 +9,6 @@ import 'package:layout_builder/layout_builder.dart';
 
 part 'loader.dart';
 part 'network.dart';
+part 'split_view.dart';
 
 part 'widgets.freezed.dart';
