@@ -11,6 +11,8 @@ export 'widgets/widgets.dart';
 
 export 'constants/breakpoints.dart';
 
+export 'package:google_fonts/google_fonts.dart' show GoogleFonts;
+
 /// DEV - To put in other files
 
 class UnsupportedPlatformException implements Exception {

@@ -1,6 +1,6 @@
 name: layout_builder
 description: Layout building templates for apps built by https://github.com/julienlebren 
-version: 3.6.0-dev.5
+version: 3.6.0-dev.6
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -26,7 +26,7 @@ dependencies:
   modal_bottom_sheet: ^3.0.0-pre
   cached_network_image: ^3.2.2
   flutter_riverpod: ^2.1.1
-  google_fonts: ^3.0.1
+  google_fonts: ^4.0.1
   internet_connection_checker: ^1.0.0+1
   intl: ^0.17.0
   freezed_annotation: ^2.2.0
