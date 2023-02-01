@@ -183,8 +183,8 @@ class NavigationLink extends ConsumerWidget {
 
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: 15,
-        vertical: 20,
+        horizontal: 5,
+        vertical: 15,
       ),
       child: TextButton(
         style: ButtonStyle(
@@ -207,14 +207,17 @@ class NavigationLink extends ConsumerWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 10,
+            horizontal: 8,
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               item.icon,
-              const SizedBox(width: 5),
-              Text(item.title),
+              const SizedBox(width: 10),
+              Text(
+                item.title,
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+              ),
             ],
           ),
         ),
