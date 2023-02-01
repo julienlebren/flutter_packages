@@ -184,7 +184,7 @@ class NavigationLink extends ConsumerWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(
         horizontal: 5,
-        vertical: 15,
+        vertical: 14,
       ),
       child: TextButton(
         style: ButtonStyle(
@@ -196,14 +196,14 @@ class NavigationLink extends ConsumerWidget {
               return null; // Use the component's default.
             },
           ),
-          foregroundColor: MaterialStateProperty.resolveWith<Color?>(
+          /*foregroundColor: MaterialStateProperty.resolveWith<Color?>(
             (Set<MaterialState> states) {
               if (states.contains(MaterialState.hovered)) {
                 return Colors.white;
               }
               return appTheme.textColor; // Use the component's default.
             },
-          ),
+          ),*/
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -216,7 +216,7 @@ class NavigationLink extends ConsumerWidget {
               const SizedBox(width: 10),
               Text(
                 item.title,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                style: TextStyle(fontSize: 17, fontWeight: FontWeight.w500),
               ),
             ],
           ),
