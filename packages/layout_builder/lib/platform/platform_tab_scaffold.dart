@@ -137,14 +137,8 @@ class PlatformTabScaffold
       appBar: AppBar(
         leading: Padding(
           padding: EdgeInsets.only(left: padding),
-          child: Icon(
-            Icons.menu,
-          ),
-        ),
-        /*Padding(
-          padding: EdgeInsets.only(left: padding),
           child: appLogo,
-        ),*/
+        ),
         actions: [
           for (TabItem tab in tabs) ...[
             _navigationLink(tab),
