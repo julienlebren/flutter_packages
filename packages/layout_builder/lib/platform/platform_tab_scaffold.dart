@@ -125,10 +125,23 @@ class PlatformTabScaffold
     BuildContext context,
     WidgetRef ref,
   ) {
-    print("hahaha");
-    return Container(
-      height: 200,
-      color: Colors.red,
+    final tabs = ref.watch(tabsProvider);
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: context.sliverHorizontalPadding(),
+      ),
+      child: Container(
+        height: 64,
+        child: Row(
+          children: [
+            Text("MCJ"),
+            Spacer(),
+            for (TabItem tab in tabs) ...[
+              _navigationLink(tab),
+            ]
+          ],
+        ),
+      ),
     );
   }
 
@@ -139,6 +152,21 @@ class PlatformTabScaffold
         child: item.icon,
       ),
       label: item.title,
+    );
+  }
+
+  SizedBox _navigationLink(TabItem item) {
+    return SizedBox(
+      height: 48,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8),
+        child: TextButton(
+          child: Text(
+            item.title,
+          ),
+          onPressed: () {},
+        ),
+      ),
     );
   }
 }
