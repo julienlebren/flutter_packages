@@ -44,7 +44,9 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
     appBarTheme: AppBarTheme(
       toolbarHeight: kIsWeb ? 64 : null,
       shadowColor: appTheme.scaffoldBackgroundColor,
-      backgroundColor: appTheme.navigationBarBackgroundColor,
+      backgroundColor: kIsWeb
+          ? appTheme.webAppBarBackgroundColor
+          : appTheme.navigationBarBackgroundColor,
       foregroundColor:
           appTheme.navigationBarBackgroundColor.computeLuminance() > 0.5
               ? Colors.black
