@@ -190,21 +190,22 @@ class NavigationLink extends ConsumerWidget {
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.resolveWith<Color?>(
             (Set<MaterialState> states) {
-              if (states.contains(MaterialState.pressed)) {
-                return Colors.blue;
-              } else if (states.contains(MaterialState.hovered)) {
-                return Colors.green;
+              if (states.contains(MaterialState.hovered)) {
+                return Theme.of(context).colorScheme.primary.withOpacity(0.7);
               }
               return null; // Use the component's default.
             },
           ),
+          foregroundColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
+              if (states.contains(MaterialState.hovered)) {
+                return Colors.white;
+              }
+              return appTheme.textColor; // Use the component's default.
+            },
+          ),
         ),
-        child: Text(
-          item.title,
-          style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                color: appTheme.textColor,
-              ),
-        ),
+        child: Text(item.title),
         onPressed: () {},
       ),
     );
