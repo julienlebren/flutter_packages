@@ -9,7 +9,6 @@ abstract class PlatformWidgetBase<
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     if (kIsWeb) {
-      print("Ok ici");
       return createWebWidget(context, ref);
     } else {
       switch (defaultTargetPlatform) {
