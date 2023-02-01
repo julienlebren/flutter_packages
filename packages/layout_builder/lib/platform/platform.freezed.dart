@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of platform;
 
@@ -31,7 +31,8 @@ mixin _$TabItem {
 /// @nodoc
 abstract class $TabItemCopyWith<$Res> {
   factory $TabItemCopyWith(TabItem value, $Res Function(TabItem) then) =
-      _$TabItemCopyWithImpl<$Res>;
+      _$TabItemCopyWithImpl<$Res, TabItem>;
+  @useResult
   $Res call(
       {String title,
       Widget icon,
@@ -42,48 +43,51 @@ abstract class $TabItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TabItemCopyWithImpl<$Res> implements $TabItemCopyWith<$Res> {
+class _$TabItemCopyWithImpl<$Res, $Val extends TabItem>
+    implements $TabItemCopyWith<$Res> {
   _$TabItemCopyWithImpl(this._value, this._then);
 
-  final TabItem _value;
   // ignore: unused_field
-  final $Res Function(TabItem) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
-    Object? icon = freezed,
+    Object? title = null,
+    Object? icon = null,
     Object? selectedIcon = freezed,
-    Object? router = freezed,
+    Object? router = null,
     Object? popToFirstRoute = freezed,
     Object? scrollControllerProvider = freezed,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      icon: icon == freezed
+      icon: null == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as Widget,
-      selectedIcon: selectedIcon == freezed
+      selectedIcon: freezed == selectedIcon
           ? _value.selectedIcon
           : selectedIcon // ignore: cast_nullable_to_non_nullable
               as Widget?,
-      router: router == freezed
+      router: null == router
           ? _value.router
           : router // ignore: cast_nullable_to_non_nullable
               as PlatformTabNavigator,
-      popToFirstRoute: popToFirstRoute == freezed
+      popToFirstRoute: freezed == popToFirstRoute
           ? _value.popToFirstRoute
           : popToFirstRoute // ignore: cast_nullable_to_non_nullable
               as bool?,
-      scrollControllerProvider: scrollControllerProvider == freezed
+      scrollControllerProvider: freezed == scrollControllerProvider
           ? _value.scrollControllerProvider
           : scrollControllerProvider // ignore: cast_nullable_to_non_nullable
               as StateProvider<ScrollController>?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -93,6 +97,7 @@ abstract class _$$_TabItemCopyWith<$Res> implements $TabItemCopyWith<$Res> {
           _$_TabItem value, $Res Function(_$_TabItem) then) =
       __$$_TabItemCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String title,
       Widget icon,
@@ -103,45 +108,44 @@ abstract class _$$_TabItemCopyWith<$Res> implements $TabItemCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TabItemCopyWithImpl<$Res> extends _$TabItemCopyWithImpl<$Res>
+class __$$_TabItemCopyWithImpl<$Res>
+    extends _$TabItemCopyWithImpl<$Res, _$_TabItem>
     implements _$$_TabItemCopyWith<$Res> {
   __$$_TabItemCopyWithImpl(_$_TabItem _value, $Res Function(_$_TabItem) _then)
-      : super(_value, (v) => _then(v as _$_TabItem));
+      : super(_value, _then);
 
-  @override
-  _$_TabItem get _value => super._value as _$_TabItem;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? title = freezed,
-    Object? icon = freezed,
+    Object? title = null,
+    Object? icon = null,
     Object? selectedIcon = freezed,
-    Object? router = freezed,
+    Object? router = null,
     Object? popToFirstRoute = freezed,
     Object? scrollControllerProvider = freezed,
   }) {
     return _then(_$_TabItem(
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      icon: icon == freezed
+      icon: null == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
               as Widget,
-      selectedIcon: selectedIcon == freezed
+      selectedIcon: freezed == selectedIcon
           ? _value.selectedIcon
           : selectedIcon // ignore: cast_nullable_to_non_nullable
               as Widget?,
-      router: router == freezed
+      router: null == router
           ? _value.router
           : router // ignore: cast_nullable_to_non_nullable
               as PlatformTabNavigator,
-      popToFirstRoute: popToFirstRoute == freezed
+      popToFirstRoute: freezed == popToFirstRoute
           ? _value.popToFirstRoute
           : popToFirstRoute // ignore: cast_nullable_to_non_nullable
               as bool?,
-      scrollControllerProvider: scrollControllerProvider == freezed
+      scrollControllerProvider: freezed == scrollControllerProvider
           ? _value.scrollControllerProvider
           : scrollControllerProvider // ignore: cast_nullable_to_non_nullable
               as StateProvider<ScrollController>?,
@@ -184,29 +188,25 @@ class _$_TabItem implements _TabItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TabItem &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.icon, icon) &&
-            const DeepCollectionEquality()
-                .equals(other.selectedIcon, selectedIcon) &&
-            const DeepCollectionEquality().equals(other.router, router) &&
-            const DeepCollectionEquality()
-                .equals(other.popToFirstRoute, popToFirstRoute) &&
-            const DeepCollectionEquality().equals(
-                other.scrollControllerProvider, scrollControllerProvider));
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.icon, icon) || other.icon == icon) &&
+            (identical(other.selectedIcon, selectedIcon) ||
+                other.selectedIcon == selectedIcon) &&
+            (identical(other.router, router) || other.router == router) &&
+            (identical(other.popToFirstRoute, popToFirstRoute) ||
+                other.popToFirstRoute == popToFirstRoute) &&
+            (identical(
+                    other.scrollControllerProvider, scrollControllerProvider) ||
+                other.scrollControllerProvider == scrollControllerProvider));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(icon),
-      const DeepCollectionEquality().hash(selectedIcon),
-      const DeepCollectionEquality().hash(router),
-      const DeepCollectionEquality().hash(popToFirstRoute),
-      const DeepCollectionEquality().hash(scrollControllerProvider));
+  int get hashCode => Object.hash(runtimeType, title, icon, selectedIcon,
+      router, popToFirstRoute, scrollControllerProvider);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TabItemCopyWith<_$_TabItem> get copyWith =>
       __$$_TabItemCopyWithImpl<_$_TabItem>(this, _$identity);
 }

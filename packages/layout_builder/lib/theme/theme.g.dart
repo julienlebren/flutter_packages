@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String $appThemeHash() => r'4189b0877db3050070563cf1c2300b23ce580092';
+String _$appThemeHash() => r'4189b0877db3050070563cf1c2300b23ce580092';
 
 /// The provider of the [AppTheme]
 /// Needs to be overridden in the [ProviderScope] of the app.
@@ -39,6 +39,6 @@ final appThemeProvider = Provider<AppTheme>(
   appTheme,
   name: r'appThemeProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : $appThemeHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$appThemeHash,
 );
 typedef AppThemeRef = ProviderRef<AppTheme>;

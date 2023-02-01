@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of theme;
 
@@ -26,6 +26,8 @@ mixin _$AppTheme {
   Color get navigationBarBorderColor => throw _privateConstructorUsedError;
   Color? get cupertinoNavigationBarBackgroundColor =>
       throw _privateConstructorUsedError;
+  Color? get webNavigationBarBackgroundColor =>
+      throw _privateConstructorUsedError;
   Color? get tabBarBackgroundColor => throw _privateConstructorUsedError;
   Color? get cupertinoTabBarBackgroundColor =>
       throw _privateConstructorUsedError;
@@ -49,7 +51,8 @@ mixin _$AppTheme {
 /// @nodoc
 abstract class $AppThemeCopyWith<$Res> {
   factory $AppThemeCopyWith(AppTheme value, $Res Function(AppTheme) then) =
-      _$AppThemeCopyWithImpl<$Res>;
+      _$AppThemeCopyWithImpl<$Res, AppTheme>;
+  @useResult
   $Res call(
       {Brightness brightness,
       Color primaryColor,
@@ -60,6 +63,7 @@ abstract class $AppThemeCopyWith<$Res> {
       Color navigationBarBackgroundColor,
       Color navigationBarBorderColor,
       Color? cupertinoNavigationBarBackgroundColor,
+      Color? webNavigationBarBackgroundColor,
       Color? tabBarBackgroundColor,
       Color? cupertinoTabBarBackgroundColor,
       Color groupedListBackgroundColor,
@@ -76,129 +80,138 @@ abstract class $AppThemeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AppThemeCopyWithImpl<$Res> implements $AppThemeCopyWith<$Res> {
+class _$AppThemeCopyWithImpl<$Res, $Val extends AppTheme>
+    implements $AppThemeCopyWith<$Res> {
   _$AppThemeCopyWithImpl(this._value, this._then);
 
-  final AppTheme _value;
   // ignore: unused_field
-  final $Res Function(AppTheme) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? brightness = freezed,
-    Object? primaryColor = freezed,
-    Object? secondaryColor = freezed,
-    Object? scaffoldBackgroundColor = freezed,
+    Object? brightness = null,
+    Object? primaryColor = null,
+    Object? secondaryColor = null,
+    Object? scaffoldBackgroundColor = null,
     Object? statusBarColor = freezed,
     Object? materialSystemBarColor = freezed,
-    Object? navigationBarBackgroundColor = freezed,
-    Object? navigationBarBorderColor = freezed,
+    Object? navigationBarBackgroundColor = null,
+    Object? navigationBarBorderColor = null,
     Object? cupertinoNavigationBarBackgroundColor = freezed,
+    Object? webNavigationBarBackgroundColor = freezed,
     Object? tabBarBackgroundColor = freezed,
     Object? cupertinoTabBarBackgroundColor = freezed,
-    Object? groupedListBackgroundColor = freezed,
-    Object? listTileBackground = freezed,
-    Object? elevatedButtonRadius = freezed,
-    Object? elevatedButtonPadding = freezed,
-    Object? searchBarRadius = freezed,
-    Object? selectedColor = freezed,
-    Object? borderColor = freezed,
-    Object? textColor = freezed,
-    Object? dividerColor = freezed,
-    Object? shadowColor = freezed,
-    Object? disclosureIndicatorColor = freezed,
+    Object? groupedListBackgroundColor = null,
+    Object? listTileBackground = null,
+    Object? elevatedButtonRadius = null,
+    Object? elevatedButtonPadding = null,
+    Object? searchBarRadius = null,
+    Object? selectedColor = null,
+    Object? borderColor = null,
+    Object? textColor = null,
+    Object? dividerColor = null,
+    Object? shadowColor = null,
+    Object? disclosureIndicatorColor = null,
   }) {
     return _then(_value.copyWith(
-      brightness: brightness == freezed
+      brightness: null == brightness
           ? _value.brightness
           : brightness // ignore: cast_nullable_to_non_nullable
               as Brightness,
-      primaryColor: primaryColor == freezed
+      primaryColor: null == primaryColor
           ? _value.primaryColor
           : primaryColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      secondaryColor: secondaryColor == freezed
+      secondaryColor: null == secondaryColor
           ? _value.secondaryColor
           : secondaryColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      scaffoldBackgroundColor: scaffoldBackgroundColor == freezed
+      scaffoldBackgroundColor: null == scaffoldBackgroundColor
           ? _value.scaffoldBackgroundColor
           : scaffoldBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      statusBarColor: statusBarColor == freezed
+      statusBarColor: freezed == statusBarColor
           ? _value.statusBarColor
           : statusBarColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      materialSystemBarColor: materialSystemBarColor == freezed
+      materialSystemBarColor: freezed == materialSystemBarColor
           ? _value.materialSystemBarColor
           : materialSystemBarColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      navigationBarBackgroundColor: navigationBarBackgroundColor == freezed
+      navigationBarBackgroundColor: null == navigationBarBackgroundColor
           ? _value.navigationBarBackgroundColor
           : navigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      navigationBarBorderColor: navigationBarBorderColor == freezed
+      navigationBarBorderColor: null == navigationBarBorderColor
           ? _value.navigationBarBorderColor
           : navigationBarBorderColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      cupertinoNavigationBarBackgroundColor:
-          cupertinoNavigationBarBackgroundColor == freezed
-              ? _value.cupertinoNavigationBarBackgroundColor
-              : cupertinoNavigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
-                  as Color?,
-      tabBarBackgroundColor: tabBarBackgroundColor == freezed
+      cupertinoNavigationBarBackgroundColor: freezed ==
+              cupertinoNavigationBarBackgroundColor
+          ? _value.cupertinoNavigationBarBackgroundColor
+          : cupertinoNavigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      webNavigationBarBackgroundColor: freezed ==
+              webNavigationBarBackgroundColor
+          ? _value.webNavigationBarBackgroundColor
+          : webNavigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      tabBarBackgroundColor: freezed == tabBarBackgroundColor
           ? _value.tabBarBackgroundColor
           : tabBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      cupertinoTabBarBackgroundColor: cupertinoTabBarBackgroundColor == freezed
+      cupertinoTabBarBackgroundColor: freezed == cupertinoTabBarBackgroundColor
           ? _value.cupertinoTabBarBackgroundColor
           : cupertinoTabBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      groupedListBackgroundColor: groupedListBackgroundColor == freezed
+      groupedListBackgroundColor: null == groupedListBackgroundColor
           ? _value.groupedListBackgroundColor
           : groupedListBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      listTileBackground: listTileBackground == freezed
+      listTileBackground: null == listTileBackground
           ? _value.listTileBackground
           : listTileBackground // ignore: cast_nullable_to_non_nullable
               as Color,
-      elevatedButtonRadius: elevatedButtonRadius == freezed
+      elevatedButtonRadius: null == elevatedButtonRadius
           ? _value.elevatedButtonRadius
           : elevatedButtonRadius // ignore: cast_nullable_to_non_nullable
               as double,
-      elevatedButtonPadding: elevatedButtonPadding == freezed
+      elevatedButtonPadding: null == elevatedButtonPadding
           ? _value.elevatedButtonPadding
           : elevatedButtonPadding // ignore: cast_nullable_to_non_nullable
               as double,
-      searchBarRadius: searchBarRadius == freezed
+      searchBarRadius: null == searchBarRadius
           ? _value.searchBarRadius
           : searchBarRadius // ignore: cast_nullable_to_non_nullable
               as double,
-      selectedColor: selectedColor == freezed
+      selectedColor: null == selectedColor
           ? _value.selectedColor
           : selectedColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      borderColor: borderColor == freezed
+      borderColor: null == borderColor
           ? _value.borderColor
           : borderColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      textColor: textColor == freezed
+      textColor: null == textColor
           ? _value.textColor
           : textColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      dividerColor: dividerColor == freezed
+      dividerColor: null == dividerColor
           ? _value.dividerColor
           : dividerColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      shadowColor: shadowColor == freezed
+      shadowColor: null == shadowColor
           ? _value.shadowColor
           : shadowColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      disclosureIndicatorColor: disclosureIndicatorColor == freezed
+      disclosureIndicatorColor: null == disclosureIndicatorColor
           ? _value.disclosureIndicatorColor
           : disclosureIndicatorColor // ignore: cast_nullable_to_non_nullable
               as Color,
-    ));
+    ) as $Val);
   }
 }
 
@@ -208,6 +221,7 @@ abstract class _$$_AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
           _$_AppTheme value, $Res Function(_$_AppTheme) then) =
       __$$_AppThemeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {Brightness brightness,
       Color primaryColor,
@@ -218,6 +232,7 @@ abstract class _$$_AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
       Color navigationBarBackgroundColor,
       Color navigationBarBorderColor,
       Color? cupertinoNavigationBarBackgroundColor,
+      Color? webNavigationBarBackgroundColor,
       Color? tabBarBackgroundColor,
       Color? cupertinoTabBarBackgroundColor,
       Color groupedListBackgroundColor,
@@ -234,127 +249,132 @@ abstract class _$$_AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AppThemeCopyWithImpl<$Res> extends _$AppThemeCopyWithImpl<$Res>
+class __$$_AppThemeCopyWithImpl<$Res>
+    extends _$AppThemeCopyWithImpl<$Res, _$_AppTheme>
     implements _$$_AppThemeCopyWith<$Res> {
   __$$_AppThemeCopyWithImpl(
       _$_AppTheme _value, $Res Function(_$_AppTheme) _then)
-      : super(_value, (v) => _then(v as _$_AppTheme));
+      : super(_value, _then);
 
-  @override
-  _$_AppTheme get _value => super._value as _$_AppTheme;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? brightness = freezed,
-    Object? primaryColor = freezed,
-    Object? secondaryColor = freezed,
-    Object? scaffoldBackgroundColor = freezed,
+    Object? brightness = null,
+    Object? primaryColor = null,
+    Object? secondaryColor = null,
+    Object? scaffoldBackgroundColor = null,
     Object? statusBarColor = freezed,
     Object? materialSystemBarColor = freezed,
-    Object? navigationBarBackgroundColor = freezed,
-    Object? navigationBarBorderColor = freezed,
+    Object? navigationBarBackgroundColor = null,
+    Object? navigationBarBorderColor = null,
     Object? cupertinoNavigationBarBackgroundColor = freezed,
+    Object? webNavigationBarBackgroundColor = freezed,
     Object? tabBarBackgroundColor = freezed,
     Object? cupertinoTabBarBackgroundColor = freezed,
-    Object? groupedListBackgroundColor = freezed,
-    Object? listTileBackground = freezed,
-    Object? elevatedButtonRadius = freezed,
-    Object? elevatedButtonPadding = freezed,
-    Object? searchBarRadius = freezed,
-    Object? selectedColor = freezed,
-    Object? borderColor = freezed,
-    Object? textColor = freezed,
-    Object? dividerColor = freezed,
-    Object? shadowColor = freezed,
-    Object? disclosureIndicatorColor = freezed,
+    Object? groupedListBackgroundColor = null,
+    Object? listTileBackground = null,
+    Object? elevatedButtonRadius = null,
+    Object? elevatedButtonPadding = null,
+    Object? searchBarRadius = null,
+    Object? selectedColor = null,
+    Object? borderColor = null,
+    Object? textColor = null,
+    Object? dividerColor = null,
+    Object? shadowColor = null,
+    Object? disclosureIndicatorColor = null,
   }) {
     return _then(_$_AppTheme(
-      brightness: brightness == freezed
+      brightness: null == brightness
           ? _value.brightness
           : brightness // ignore: cast_nullable_to_non_nullable
               as Brightness,
-      primaryColor: primaryColor == freezed
+      primaryColor: null == primaryColor
           ? _value.primaryColor
           : primaryColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      secondaryColor: secondaryColor == freezed
+      secondaryColor: null == secondaryColor
           ? _value.secondaryColor
           : secondaryColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      scaffoldBackgroundColor: scaffoldBackgroundColor == freezed
+      scaffoldBackgroundColor: null == scaffoldBackgroundColor
           ? _value.scaffoldBackgroundColor
           : scaffoldBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      statusBarColor: statusBarColor == freezed
+      statusBarColor: freezed == statusBarColor
           ? _value.statusBarColor
           : statusBarColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      materialSystemBarColor: materialSystemBarColor == freezed
+      materialSystemBarColor: freezed == materialSystemBarColor
           ? _value.materialSystemBarColor
           : materialSystemBarColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      navigationBarBackgroundColor: navigationBarBackgroundColor == freezed
+      navigationBarBackgroundColor: null == navigationBarBackgroundColor
           ? _value.navigationBarBackgroundColor
           : navigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      navigationBarBorderColor: navigationBarBorderColor == freezed
+      navigationBarBorderColor: null == navigationBarBorderColor
           ? _value.navigationBarBorderColor
           : navigationBarBorderColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      cupertinoNavigationBarBackgroundColor:
-          cupertinoNavigationBarBackgroundColor == freezed
-              ? _value.cupertinoNavigationBarBackgroundColor
-              : cupertinoNavigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
-                  as Color?,
-      tabBarBackgroundColor: tabBarBackgroundColor == freezed
+      cupertinoNavigationBarBackgroundColor: freezed ==
+              cupertinoNavigationBarBackgroundColor
+          ? _value.cupertinoNavigationBarBackgroundColor
+          : cupertinoNavigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      webNavigationBarBackgroundColor: freezed ==
+              webNavigationBarBackgroundColor
+          ? _value.webNavigationBarBackgroundColor
+          : webNavigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
+              as Color?,
+      tabBarBackgroundColor: freezed == tabBarBackgroundColor
           ? _value.tabBarBackgroundColor
           : tabBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      cupertinoTabBarBackgroundColor: cupertinoTabBarBackgroundColor == freezed
+      cupertinoTabBarBackgroundColor: freezed == cupertinoTabBarBackgroundColor
           ? _value.cupertinoTabBarBackgroundColor
           : cupertinoTabBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      groupedListBackgroundColor: groupedListBackgroundColor == freezed
+      groupedListBackgroundColor: null == groupedListBackgroundColor
           ? _value.groupedListBackgroundColor
           : groupedListBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      listTileBackground: listTileBackground == freezed
+      listTileBackground: null == listTileBackground
           ? _value.listTileBackground
           : listTileBackground // ignore: cast_nullable_to_non_nullable
               as Color,
-      elevatedButtonRadius: elevatedButtonRadius == freezed
+      elevatedButtonRadius: null == elevatedButtonRadius
           ? _value.elevatedButtonRadius
           : elevatedButtonRadius // ignore: cast_nullable_to_non_nullable
               as double,
-      elevatedButtonPadding: elevatedButtonPadding == freezed
+      elevatedButtonPadding: null == elevatedButtonPadding
           ? _value.elevatedButtonPadding
           : elevatedButtonPadding // ignore: cast_nullable_to_non_nullable
               as double,
-      searchBarRadius: searchBarRadius == freezed
+      searchBarRadius: null == searchBarRadius
           ? _value.searchBarRadius
           : searchBarRadius // ignore: cast_nullable_to_non_nullable
               as double,
-      selectedColor: selectedColor == freezed
+      selectedColor: null == selectedColor
           ? _value.selectedColor
           : selectedColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      borderColor: borderColor == freezed
+      borderColor: null == borderColor
           ? _value.borderColor
           : borderColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      textColor: textColor == freezed
+      textColor: null == textColor
           ? _value.textColor
           : textColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      dividerColor: dividerColor == freezed
+      dividerColor: null == dividerColor
           ? _value.dividerColor
           : dividerColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      shadowColor: shadowColor == freezed
+      shadowColor: null == shadowColor
           ? _value.shadowColor
           : shadowColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      disclosureIndicatorColor: disclosureIndicatorColor == freezed
+      disclosureIndicatorColor: null == disclosureIndicatorColor
           ? _value.disclosureIndicatorColor
           : disclosureIndicatorColor // ignore: cast_nullable_to_non_nullable
               as Color,
@@ -375,6 +395,7 @@ class _$_AppTheme implements _AppTheme {
       required this.navigationBarBackgroundColor,
       required this.navigationBarBorderColor,
       this.cupertinoNavigationBarBackgroundColor,
+      this.webNavigationBarBackgroundColor,
       this.tabBarBackgroundColor,
       this.cupertinoTabBarBackgroundColor,
       required this.groupedListBackgroundColor,
@@ -408,6 +429,8 @@ class _$_AppTheme implements _AppTheme {
   @override
   final Color? cupertinoNavigationBarBackgroundColor;
   @override
+  final Color? webNavigationBarBackgroundColor;
+  @override
   final Color? tabBarBackgroundColor;
   @override
   final Color? cupertinoTabBarBackgroundColor;
@@ -439,7 +462,7 @@ class _$_AppTheme implements _AppTheme {
 
   @override
   String toString() {
-    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, cupertinoNavigationBarBackgroundColor: $cupertinoNavigationBarBackgroundColor, tabBarBackgroundColor: $tabBarBackgroundColor, cupertinoTabBarBackgroundColor: $cupertinoTabBarBackgroundColor, groupedListBackgroundColor: $groupedListBackgroundColor, listTileBackground: $listTileBackground, elevatedButtonRadius: $elevatedButtonRadius, elevatedButtonPadding: $elevatedButtonPadding, searchBarRadius: $searchBarRadius, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor, disclosureIndicatorColor: $disclosureIndicatorColor)';
+    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, cupertinoNavigationBarBackgroundColor: $cupertinoNavigationBarBackgroundColor, webNavigationBarBackgroundColor: $webNavigationBarBackgroundColor, tabBarBackgroundColor: $tabBarBackgroundColor, cupertinoTabBarBackgroundColor: $cupertinoTabBarBackgroundColor, groupedListBackgroundColor: $groupedListBackgroundColor, listTileBackground: $listTileBackground, elevatedButtonRadius: $elevatedButtonRadius, elevatedButtonPadding: $elevatedButtonPadding, searchBarRadius: $searchBarRadius, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor, disclosureIndicatorColor: $disclosureIndicatorColor)';
   }
 
   @override
@@ -447,84 +470,85 @@ class _$_AppTheme implements _AppTheme {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AppTheme &&
-            const DeepCollectionEquality()
-                .equals(other.brightness, brightness) &&
-            const DeepCollectionEquality()
-                .equals(other.primaryColor, primaryColor) &&
-            const DeepCollectionEquality()
-                .equals(other.secondaryColor, secondaryColor) &&
-            const DeepCollectionEquality().equals(
-                other.scaffoldBackgroundColor, scaffoldBackgroundColor) &&
-            const DeepCollectionEquality()
-                .equals(other.statusBarColor, statusBarColor) &&
-            const DeepCollectionEquality()
-                .equals(other.materialSystemBarColor, materialSystemBarColor) &&
-            const DeepCollectionEquality().equals(
-                other.navigationBarBackgroundColor,
-                navigationBarBackgroundColor) &&
-            const DeepCollectionEquality().equals(
-                other.navigationBarBorderColor, navigationBarBorderColor) &&
-            const DeepCollectionEquality().equals(
-                other.cupertinoNavigationBarBackgroundColor,
-                cupertinoNavigationBarBackgroundColor) &&
-            const DeepCollectionEquality()
-                .equals(other.tabBarBackgroundColor, tabBarBackgroundColor) &&
-            const DeepCollectionEquality().equals(
-                other.cupertinoTabBarBackgroundColor,
-                cupertinoTabBarBackgroundColor) &&
-            const DeepCollectionEquality().equals(
-                other.groupedListBackgroundColor, groupedListBackgroundColor) &&
-            const DeepCollectionEquality()
-                .equals(other.listTileBackground, listTileBackground) &&
-            const DeepCollectionEquality()
-                .equals(other.elevatedButtonRadius, elevatedButtonRadius) &&
-            const DeepCollectionEquality()
-                .equals(other.elevatedButtonPadding, elevatedButtonPadding) &&
-            const DeepCollectionEquality()
-                .equals(other.searchBarRadius, searchBarRadius) &&
-            const DeepCollectionEquality()
-                .equals(other.selectedColor, selectedColor) &&
-            const DeepCollectionEquality()
-                .equals(other.borderColor, borderColor) &&
-            const DeepCollectionEquality().equals(other.textColor, textColor) &&
-            const DeepCollectionEquality()
-                .equals(other.dividerColor, dividerColor) &&
-            const DeepCollectionEquality()
-                .equals(other.shadowColor, shadowColor) &&
-            const DeepCollectionEquality().equals(
-                other.disclosureIndicatorColor, disclosureIndicatorColor));
+            (identical(other.brightness, brightness) ||
+                other.brightness == brightness) &&
+            (identical(other.primaryColor, primaryColor) ||
+                other.primaryColor == primaryColor) &&
+            (identical(other.secondaryColor, secondaryColor) ||
+                other.secondaryColor == secondaryColor) &&
+            (identical(other.scaffoldBackgroundColor, scaffoldBackgroundColor) ||
+                other.scaffoldBackgroundColor == scaffoldBackgroundColor) &&
+            (identical(other.statusBarColor, statusBarColor) ||
+                other.statusBarColor == statusBarColor) &&
+            (identical(other.materialSystemBarColor, materialSystemBarColor) ||
+                other.materialSystemBarColor == materialSystemBarColor) &&
+            (identical(other.navigationBarBackgroundColor, navigationBarBackgroundColor) ||
+                other.navigationBarBackgroundColor ==
+                    navigationBarBackgroundColor) &&
+            (identical(other.navigationBarBorderColor, navigationBarBorderColor) ||
+                other.navigationBarBorderColor == navigationBarBorderColor) &&
+            (identical(other.cupertinoNavigationBarBackgroundColor, cupertinoNavigationBarBackgroundColor) ||
+                other.cupertinoNavigationBarBackgroundColor ==
+                    cupertinoNavigationBarBackgroundColor) &&
+            (identical(other.webNavigationBarBackgroundColor, webNavigationBarBackgroundColor) ||
+                other.webNavigationBarBackgroundColor ==
+                    webNavigationBarBackgroundColor) &&
+            (identical(other.tabBarBackgroundColor, tabBarBackgroundColor) ||
+                other.tabBarBackgroundColor == tabBarBackgroundColor) &&
+            (identical(other.cupertinoTabBarBackgroundColor, cupertinoTabBarBackgroundColor) ||
+                other.cupertinoTabBarBackgroundColor ==
+                    cupertinoTabBarBackgroundColor) &&
+            (identical(other.groupedListBackgroundColor, groupedListBackgroundColor) ||
+                other.groupedListBackgroundColor ==
+                    groupedListBackgroundColor) &&
+            (identical(other.listTileBackground, listTileBackground) ||
+                other.listTileBackground == listTileBackground) &&
+            (identical(other.elevatedButtonRadius, elevatedButtonRadius) ||
+                other.elevatedButtonRadius == elevatedButtonRadius) &&
+            (identical(other.elevatedButtonPadding, elevatedButtonPadding) ||
+                other.elevatedButtonPadding == elevatedButtonPadding) &&
+            (identical(other.searchBarRadius, searchBarRadius) ||
+                other.searchBarRadius == searchBarRadius) &&
+            (identical(other.selectedColor, selectedColor) ||
+                other.selectedColor == selectedColor) &&
+            (identical(other.borderColor, borderColor) || other.borderColor == borderColor) &&
+            (identical(other.textColor, textColor) || other.textColor == textColor) &&
+            (identical(other.dividerColor, dividerColor) || other.dividerColor == dividerColor) &&
+            (identical(other.shadowColor, shadowColor) || other.shadowColor == shadowColor) &&
+            (identical(other.disclosureIndicatorColor, disclosureIndicatorColor) || other.disclosureIndicatorColor == disclosureIndicatorColor));
   }
 
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(brightness),
-        const DeepCollectionEquality().hash(primaryColor),
-        const DeepCollectionEquality().hash(secondaryColor),
-        const DeepCollectionEquality().hash(scaffoldBackgroundColor),
-        const DeepCollectionEquality().hash(statusBarColor),
-        const DeepCollectionEquality().hash(materialSystemBarColor),
-        const DeepCollectionEquality().hash(navigationBarBackgroundColor),
-        const DeepCollectionEquality().hash(navigationBarBorderColor),
-        const DeepCollectionEquality()
-            .hash(cupertinoNavigationBarBackgroundColor),
-        const DeepCollectionEquality().hash(tabBarBackgroundColor),
-        const DeepCollectionEquality().hash(cupertinoTabBarBackgroundColor),
-        const DeepCollectionEquality().hash(groupedListBackgroundColor),
-        const DeepCollectionEquality().hash(listTileBackground),
-        const DeepCollectionEquality().hash(elevatedButtonRadius),
-        const DeepCollectionEquality().hash(elevatedButtonPadding),
-        const DeepCollectionEquality().hash(searchBarRadius),
-        const DeepCollectionEquality().hash(selectedColor),
-        const DeepCollectionEquality().hash(borderColor),
-        const DeepCollectionEquality().hash(textColor),
-        const DeepCollectionEquality().hash(dividerColor),
-        const DeepCollectionEquality().hash(shadowColor),
-        const DeepCollectionEquality().hash(disclosureIndicatorColor)
+        brightness,
+        primaryColor,
+        secondaryColor,
+        scaffoldBackgroundColor,
+        statusBarColor,
+        materialSystemBarColor,
+        navigationBarBackgroundColor,
+        navigationBarBorderColor,
+        cupertinoNavigationBarBackgroundColor,
+        webNavigationBarBackgroundColor,
+        tabBarBackgroundColor,
+        cupertinoTabBarBackgroundColor,
+        groupedListBackgroundColor,
+        listTileBackground,
+        elevatedButtonRadius,
+        elevatedButtonPadding,
+        searchBarRadius,
+        selectedColor,
+        borderColor,
+        textColor,
+        dividerColor,
+        shadowColor,
+        disclosureIndicatorColor
       ]);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AppThemeCopyWith<_$_AppTheme> get copyWith =>
       __$$_AppThemeCopyWithImpl<_$_AppTheme>(this, _$identity);
 }
@@ -540,6 +564,7 @@ abstract class _AppTheme implements AppTheme {
       required final Color navigationBarBackgroundColor,
       required final Color navigationBarBorderColor,
       final Color? cupertinoNavigationBarBackgroundColor,
+      final Color? webNavigationBarBackgroundColor,
       final Color? tabBarBackgroundColor,
       final Color? cupertinoTabBarBackgroundColor,
       required final Color groupedListBackgroundColor,
@@ -572,6 +597,8 @@ abstract class _AppTheme implements AppTheme {
   Color get navigationBarBorderColor;
   @override
   Color? get cupertinoNavigationBarBackgroundColor;
+  @override
+  Color? get webNavigationBarBackgroundColor;
   @override
   Color? get tabBarBackgroundColor;
   @override
@@ -625,7 +652,8 @@ mixin _$ListViewTheme {
 abstract class $ListViewThemeCopyWith<$Res> {
   factory $ListViewThemeCopyWith(
           ListViewTheme value, $Res Function(ListViewTheme) then) =
-      _$ListViewThemeCopyWithImpl<$Res>;
+      _$ListViewThemeCopyWithImpl<$Res, ListViewTheme>;
+  @useResult
   $Res call(
       {double separatorPadding,
       Color labelColor,
@@ -639,64 +667,66 @@ abstract class $ListViewThemeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ListViewThemeCopyWithImpl<$Res>
+class _$ListViewThemeCopyWithImpl<$Res, $Val extends ListViewTheme>
     implements $ListViewThemeCopyWith<$Res> {
   _$ListViewThemeCopyWithImpl(this._value, this._then);
 
-  final ListViewTheme _value;
   // ignore: unused_field
-  final $Res Function(ListViewTheme) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? separatorPadding = freezed,
-    Object? labelColor = freezed,
-    Object? valueColor = freezed,
-    Object? valueColorEnforced = freezed,
-    Object? labelFontSize = freezed,
-    Object? captionColor = freezed,
-    Object? captionFontSize = freezed,
+    Object? separatorPadding = null,
+    Object? labelColor = null,
+    Object? valueColor = null,
+    Object? valueColorEnforced = null,
+    Object? labelFontSize = null,
+    Object? captionColor = null,
+    Object? captionFontSize = null,
     Object? labelMaxLines = freezed,
     Object? captionMaxLines = freezed,
   }) {
     return _then(_value.copyWith(
-      separatorPadding: separatorPadding == freezed
+      separatorPadding: null == separatorPadding
           ? _value.separatorPadding
           : separatorPadding // ignore: cast_nullable_to_non_nullable
               as double,
-      labelColor: labelColor == freezed
+      labelColor: null == labelColor
           ? _value.labelColor
           : labelColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      valueColor: valueColor == freezed
+      valueColor: null == valueColor
           ? _value.valueColor
           : valueColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      valueColorEnforced: valueColorEnforced == freezed
+      valueColorEnforced: null == valueColorEnforced
           ? _value.valueColorEnforced
           : valueColorEnforced // ignore: cast_nullable_to_non_nullable
               as bool,
-      labelFontSize: labelFontSize == freezed
+      labelFontSize: null == labelFontSize
           ? _value.labelFontSize
           : labelFontSize // ignore: cast_nullable_to_non_nullable
               as double,
-      captionColor: captionColor == freezed
+      captionColor: null == captionColor
           ? _value.captionColor
           : captionColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      captionFontSize: captionFontSize == freezed
+      captionFontSize: null == captionFontSize
           ? _value.captionFontSize
           : captionFontSize // ignore: cast_nullable_to_non_nullable
               as double,
-      labelMaxLines: labelMaxLines == freezed
+      labelMaxLines: freezed == labelMaxLines
           ? _value.labelMaxLines
           : labelMaxLines // ignore: cast_nullable_to_non_nullable
               as int?,
-      captionMaxLines: captionMaxLines == freezed
+      captionMaxLines: freezed == captionMaxLines
           ? _value.captionMaxLines
           : captionMaxLines // ignore: cast_nullable_to_non_nullable
               as int?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -707,6 +737,7 @@ abstract class _$$_ListViewThemeCopyWith<$Res>
           _$_ListViewTheme value, $Res Function(_$_ListViewTheme) then) =
       __$$_ListViewThemeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {double separatorPadding,
       Color labelColor,
@@ -721,61 +752,59 @@ abstract class _$$_ListViewThemeCopyWith<$Res>
 
 /// @nodoc
 class __$$_ListViewThemeCopyWithImpl<$Res>
-    extends _$ListViewThemeCopyWithImpl<$Res>
+    extends _$ListViewThemeCopyWithImpl<$Res, _$_ListViewTheme>
     implements _$$_ListViewThemeCopyWith<$Res> {
   __$$_ListViewThemeCopyWithImpl(
       _$_ListViewTheme _value, $Res Function(_$_ListViewTheme) _then)
-      : super(_value, (v) => _then(v as _$_ListViewTheme));
+      : super(_value, _then);
 
-  @override
-  _$_ListViewTheme get _value => super._value as _$_ListViewTheme;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? separatorPadding = freezed,
-    Object? labelColor = freezed,
-    Object? valueColor = freezed,
-    Object? valueColorEnforced = freezed,
-    Object? labelFontSize = freezed,
-    Object? captionColor = freezed,
-    Object? captionFontSize = freezed,
+    Object? separatorPadding = null,
+    Object? labelColor = null,
+    Object? valueColor = null,
+    Object? valueColorEnforced = null,
+    Object? labelFontSize = null,
+    Object? captionColor = null,
+    Object? captionFontSize = null,
     Object? labelMaxLines = freezed,
     Object? captionMaxLines = freezed,
   }) {
     return _then(_$_ListViewTheme(
-      separatorPadding: separatorPadding == freezed
+      separatorPadding: null == separatorPadding
           ? _value.separatorPadding
           : separatorPadding // ignore: cast_nullable_to_non_nullable
               as double,
-      labelColor: labelColor == freezed
+      labelColor: null == labelColor
           ? _value.labelColor
           : labelColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      valueColor: valueColor == freezed
+      valueColor: null == valueColor
           ? _value.valueColor
           : valueColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      valueColorEnforced: valueColorEnforced == freezed
+      valueColorEnforced: null == valueColorEnforced
           ? _value.valueColorEnforced
           : valueColorEnforced // ignore: cast_nullable_to_non_nullable
               as bool,
-      labelFontSize: labelFontSize == freezed
+      labelFontSize: null == labelFontSize
           ? _value.labelFontSize
           : labelFontSize // ignore: cast_nullable_to_non_nullable
               as double,
-      captionColor: captionColor == freezed
+      captionColor: null == captionColor
           ? _value.captionColor
           : captionColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      captionFontSize: captionFontSize == freezed
+      captionFontSize: null == captionFontSize
           ? _value.captionFontSize
           : captionFontSize // ignore: cast_nullable_to_non_nullable
               as double,
-      labelMaxLines: labelMaxLines == freezed
+      labelMaxLines: freezed == labelMaxLines
           ? _value.labelMaxLines
           : labelMaxLines // ignore: cast_nullable_to_non_nullable
               as int?,
-      captionMaxLines: captionMaxLines == freezed
+      captionMaxLines: freezed == captionMaxLines
           ? _value.captionMaxLines
           : captionMaxLines // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -832,41 +861,42 @@ class _$_ListViewTheme implements _ListViewTheme {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ListViewTheme &&
-            const DeepCollectionEquality()
-                .equals(other.separatorPadding, separatorPadding) &&
-            const DeepCollectionEquality()
-                .equals(other.labelColor, labelColor) &&
-            const DeepCollectionEquality()
-                .equals(other.valueColor, valueColor) &&
-            const DeepCollectionEquality()
-                .equals(other.valueColorEnforced, valueColorEnforced) &&
-            const DeepCollectionEquality()
-                .equals(other.labelFontSize, labelFontSize) &&
-            const DeepCollectionEquality()
-                .equals(other.captionColor, captionColor) &&
-            const DeepCollectionEquality()
-                .equals(other.captionFontSize, captionFontSize) &&
-            const DeepCollectionEquality()
-                .equals(other.labelMaxLines, labelMaxLines) &&
-            const DeepCollectionEquality()
-                .equals(other.captionMaxLines, captionMaxLines));
+            (identical(other.separatorPadding, separatorPadding) ||
+                other.separatorPadding == separatorPadding) &&
+            (identical(other.labelColor, labelColor) ||
+                other.labelColor == labelColor) &&
+            (identical(other.valueColor, valueColor) ||
+                other.valueColor == valueColor) &&
+            (identical(other.valueColorEnforced, valueColorEnforced) ||
+                other.valueColorEnforced == valueColorEnforced) &&
+            (identical(other.labelFontSize, labelFontSize) ||
+                other.labelFontSize == labelFontSize) &&
+            (identical(other.captionColor, captionColor) ||
+                other.captionColor == captionColor) &&
+            (identical(other.captionFontSize, captionFontSize) ||
+                other.captionFontSize == captionFontSize) &&
+            (identical(other.labelMaxLines, labelMaxLines) ||
+                other.labelMaxLines == labelMaxLines) &&
+            (identical(other.captionMaxLines, captionMaxLines) ||
+                other.captionMaxLines == captionMaxLines));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(separatorPadding),
-      const DeepCollectionEquality().hash(labelColor),
-      const DeepCollectionEquality().hash(valueColor),
-      const DeepCollectionEquality().hash(valueColorEnforced),
-      const DeepCollectionEquality().hash(labelFontSize),
-      const DeepCollectionEquality().hash(captionColor),
-      const DeepCollectionEquality().hash(captionFontSize),
-      const DeepCollectionEquality().hash(labelMaxLines),
-      const DeepCollectionEquality().hash(captionMaxLines));
+      separatorPadding,
+      labelColor,
+      valueColor,
+      valueColorEnforced,
+      labelFontSize,
+      captionColor,
+      captionFontSize,
+      labelMaxLines,
+      captionMaxLines);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ListViewThemeCopyWith<_$_ListViewTheme> get copyWith =>
       __$$_ListViewThemeCopyWithImpl<_$_ListViewTheme>(this, _$identity);
 }
@@ -927,7 +957,8 @@ mixin _$FormTheme {
 /// @nodoc
 abstract class $FormThemeCopyWith<$Res> {
   factory $FormThemeCopyWith(FormTheme value, $Res Function(FormTheme) then) =
-      _$FormThemeCopyWithImpl<$Res>;
+      _$FormThemeCopyWithImpl<$Res, FormTheme>;
+  @useResult
   $Res call(
       {Color backgroundColor,
       Color rowBackgroundColor,
@@ -940,58 +971,61 @@ abstract class $FormThemeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FormThemeCopyWithImpl<$Res> implements $FormThemeCopyWith<$Res> {
+class _$FormThemeCopyWithImpl<$Res, $Val extends FormTheme>
+    implements $FormThemeCopyWith<$Res> {
   _$FormThemeCopyWithImpl(this._value, this._then);
 
-  final FormTheme _value;
   // ignore: unused_field
-  final $Res Function(FormTheme) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? backgroundColor = freezed,
-    Object? rowBackgroundColor = freezed,
-    Object? rowDividerColor = freezed,
-    Object? sectionDividerColor = freezed,
-    Object? rowDividerPadding = freezed,
-    Object? displayRowDivider = freezed,
-    Object? sectionDividerPadding = freezed,
-    Object? displaySectionDivider = freezed,
+    Object? backgroundColor = null,
+    Object? rowBackgroundColor = null,
+    Object? rowDividerColor = null,
+    Object? sectionDividerColor = null,
+    Object? rowDividerPadding = null,
+    Object? displayRowDivider = null,
+    Object? sectionDividerPadding = null,
+    Object? displaySectionDivider = null,
   }) {
     return _then(_value.copyWith(
-      backgroundColor: backgroundColor == freezed
+      backgroundColor: null == backgroundColor
           ? _value.backgroundColor
           : backgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      rowBackgroundColor: rowBackgroundColor == freezed
+      rowBackgroundColor: null == rowBackgroundColor
           ? _value.rowBackgroundColor
           : rowBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      rowDividerColor: rowDividerColor == freezed
+      rowDividerColor: null == rowDividerColor
           ? _value.rowDividerColor
           : rowDividerColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      sectionDividerColor: sectionDividerColor == freezed
+      sectionDividerColor: null == sectionDividerColor
           ? _value.sectionDividerColor
           : sectionDividerColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      rowDividerPadding: rowDividerPadding == freezed
+      rowDividerPadding: null == rowDividerPadding
           ? _value.rowDividerPadding
           : rowDividerPadding // ignore: cast_nullable_to_non_nullable
               as double,
-      displayRowDivider: displayRowDivider == freezed
+      displayRowDivider: null == displayRowDivider
           ? _value.displayRowDivider
           : displayRowDivider // ignore: cast_nullable_to_non_nullable
               as bool,
-      sectionDividerPadding: sectionDividerPadding == freezed
+      sectionDividerPadding: null == sectionDividerPadding
           ? _value.sectionDividerPadding
           : sectionDividerPadding // ignore: cast_nullable_to_non_nullable
               as double,
-      displaySectionDivider: displaySectionDivider == freezed
+      displaySectionDivider: null == displaySectionDivider
           ? _value.displaySectionDivider
           : displaySectionDivider // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -1001,6 +1035,7 @@ abstract class _$$_FormThemeCopyWith<$Res> implements $FormThemeCopyWith<$Res> {
           _$_FormTheme value, $Res Function(_$_FormTheme) then) =
       __$$_FormThemeCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {Color backgroundColor,
       Color rowBackgroundColor,
@@ -1013,56 +1048,55 @@ abstract class _$$_FormThemeCopyWith<$Res> implements $FormThemeCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_FormThemeCopyWithImpl<$Res> extends _$FormThemeCopyWithImpl<$Res>
+class __$$_FormThemeCopyWithImpl<$Res>
+    extends _$FormThemeCopyWithImpl<$Res, _$_FormTheme>
     implements _$$_FormThemeCopyWith<$Res> {
   __$$_FormThemeCopyWithImpl(
       _$_FormTheme _value, $Res Function(_$_FormTheme) _then)
-      : super(_value, (v) => _then(v as _$_FormTheme));
+      : super(_value, _then);
 
-  @override
-  _$_FormTheme get _value => super._value as _$_FormTheme;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? backgroundColor = freezed,
-    Object? rowBackgroundColor = freezed,
-    Object? rowDividerColor = freezed,
-    Object? sectionDividerColor = freezed,
-    Object? rowDividerPadding = freezed,
-    Object? displayRowDivider = freezed,
-    Object? sectionDividerPadding = freezed,
-    Object? displaySectionDivider = freezed,
+    Object? backgroundColor = null,
+    Object? rowBackgroundColor = null,
+    Object? rowDividerColor = null,
+    Object? sectionDividerColor = null,
+    Object? rowDividerPadding = null,
+    Object? displayRowDivider = null,
+    Object? sectionDividerPadding = null,
+    Object? displaySectionDivider = null,
   }) {
     return _then(_$_FormTheme(
-      backgroundColor: backgroundColor == freezed
+      backgroundColor: null == backgroundColor
           ? _value.backgroundColor
           : backgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      rowBackgroundColor: rowBackgroundColor == freezed
+      rowBackgroundColor: null == rowBackgroundColor
           ? _value.rowBackgroundColor
           : rowBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      rowDividerColor: rowDividerColor == freezed
+      rowDividerColor: null == rowDividerColor
           ? _value.rowDividerColor
           : rowDividerColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      sectionDividerColor: sectionDividerColor == freezed
+      sectionDividerColor: null == sectionDividerColor
           ? _value.sectionDividerColor
           : sectionDividerColor // ignore: cast_nullable_to_non_nullable
               as Color,
-      rowDividerPadding: rowDividerPadding == freezed
+      rowDividerPadding: null == rowDividerPadding
           ? _value.rowDividerPadding
           : rowDividerPadding // ignore: cast_nullable_to_non_nullable
               as double,
-      displayRowDivider: displayRowDivider == freezed
+      displayRowDivider: null == displayRowDivider
           ? _value.displayRowDivider
           : displayRowDivider // ignore: cast_nullable_to_non_nullable
               as bool,
-      sectionDividerPadding: sectionDividerPadding == freezed
+      sectionDividerPadding: null == sectionDividerPadding
           ? _value.sectionDividerPadding
           : sectionDividerPadding // ignore: cast_nullable_to_non_nullable
               as double,
-      displaySectionDivider: displaySectionDivider == freezed
+      displaySectionDivider: null == displaySectionDivider
           ? _value.displaySectionDivider
           : displaySectionDivider // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1115,38 +1149,39 @@ class _$_FormTheme implements _FormTheme {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_FormTheme &&
-            const DeepCollectionEquality()
-                .equals(other.backgroundColor, backgroundColor) &&
-            const DeepCollectionEquality()
-                .equals(other.rowBackgroundColor, rowBackgroundColor) &&
-            const DeepCollectionEquality()
-                .equals(other.rowDividerColor, rowDividerColor) &&
-            const DeepCollectionEquality()
-                .equals(other.sectionDividerColor, sectionDividerColor) &&
-            const DeepCollectionEquality()
-                .equals(other.rowDividerPadding, rowDividerPadding) &&
-            const DeepCollectionEquality()
-                .equals(other.displayRowDivider, displayRowDivider) &&
-            const DeepCollectionEquality()
-                .equals(other.sectionDividerPadding, sectionDividerPadding) &&
-            const DeepCollectionEquality()
-                .equals(other.displaySectionDivider, displaySectionDivider));
+            (identical(other.backgroundColor, backgroundColor) ||
+                other.backgroundColor == backgroundColor) &&
+            (identical(other.rowBackgroundColor, rowBackgroundColor) ||
+                other.rowBackgroundColor == rowBackgroundColor) &&
+            (identical(other.rowDividerColor, rowDividerColor) ||
+                other.rowDividerColor == rowDividerColor) &&
+            (identical(other.sectionDividerColor, sectionDividerColor) ||
+                other.sectionDividerColor == sectionDividerColor) &&
+            (identical(other.rowDividerPadding, rowDividerPadding) ||
+                other.rowDividerPadding == rowDividerPadding) &&
+            (identical(other.displayRowDivider, displayRowDivider) ||
+                other.displayRowDivider == displayRowDivider) &&
+            (identical(other.sectionDividerPadding, sectionDividerPadding) ||
+                other.sectionDividerPadding == sectionDividerPadding) &&
+            (identical(other.displaySectionDivider, displaySectionDivider) ||
+                other.displaySectionDivider == displaySectionDivider));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(backgroundColor),
-      const DeepCollectionEquality().hash(rowBackgroundColor),
-      const DeepCollectionEquality().hash(rowDividerColor),
-      const DeepCollectionEquality().hash(sectionDividerColor),
-      const DeepCollectionEquality().hash(rowDividerPadding),
-      const DeepCollectionEquality().hash(displayRowDivider),
-      const DeepCollectionEquality().hash(sectionDividerPadding),
-      const DeepCollectionEquality().hash(displaySectionDivider));
+      backgroundColor,
+      rowBackgroundColor,
+      rowDividerColor,
+      sectionDividerColor,
+      rowDividerPadding,
+      displayRowDivider,
+      sectionDividerPadding,
+      displaySectionDivider);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_FormThemeCopyWith<_$_FormTheme> get copyWith =>
       __$$_FormThemeCopyWithImpl<_$_FormTheme>(this, _$identity);
 }

@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of widgets;
 
@@ -29,19 +29,23 @@ mixin _$NetworkErrorSettings {
 abstract class $NetworkErrorSettingsCopyWith<$Res> {
   factory $NetworkErrorSettingsCopyWith(NetworkErrorSettings value,
           $Res Function(NetworkErrorSettings) then) =
-      _$NetworkErrorSettingsCopyWithImpl<$Res>;
+      _$NetworkErrorSettingsCopyWithImpl<$Res, NetworkErrorSettings>;
+  @useResult
   $Res call({String? title, String? caption, String? waiting});
 }
 
 /// @nodoc
-class _$NetworkErrorSettingsCopyWithImpl<$Res>
+class _$NetworkErrorSettingsCopyWithImpl<$Res,
+        $Val extends NetworkErrorSettings>
     implements $NetworkErrorSettingsCopyWith<$Res> {
   _$NetworkErrorSettingsCopyWithImpl(this._value, this._then);
 
-  final NetworkErrorSettings _value;
   // ignore: unused_field
-  final $Res Function(NetworkErrorSettings) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? title = freezed,
@@ -49,19 +53,19 @@ class _$NetworkErrorSettingsCopyWithImpl<$Res>
     Object? waiting = freezed,
   }) {
     return _then(_value.copyWith(
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      caption: caption == freezed
+      caption: freezed == caption
           ? _value.caption
           : caption // ignore: cast_nullable_to_non_nullable
               as String?,
-      waiting: waiting == freezed
+      waiting: freezed == waiting
           ? _value.waiting
           : waiting // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -72,20 +76,19 @@ abstract class _$$_NetworkErrorSettingsCopyWith<$Res>
           $Res Function(_$_NetworkErrorSettings) then) =
       __$$_NetworkErrorSettingsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String? title, String? caption, String? waiting});
 }
 
 /// @nodoc
 class __$$_NetworkErrorSettingsCopyWithImpl<$Res>
-    extends _$NetworkErrorSettingsCopyWithImpl<$Res>
+    extends _$NetworkErrorSettingsCopyWithImpl<$Res, _$_NetworkErrorSettings>
     implements _$$_NetworkErrorSettingsCopyWith<$Res> {
   __$$_NetworkErrorSettingsCopyWithImpl(_$_NetworkErrorSettings _value,
       $Res Function(_$_NetworkErrorSettings) _then)
-      : super(_value, (v) => _then(v as _$_NetworkErrorSettings));
+      : super(_value, _then);
 
-  @override
-  _$_NetworkErrorSettings get _value => super._value as _$_NetworkErrorSettings;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? title = freezed,
@@ -93,15 +96,15 @@ class __$$_NetworkErrorSettingsCopyWithImpl<$Res>
     Object? waiting = freezed,
   }) {
     return _then(_$_NetworkErrorSettings(
-      title: title == freezed
+      title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      caption: caption == freezed
+      caption: freezed == caption
           ? _value.caption
           : caption // ignore: cast_nullable_to_non_nullable
               as String?,
-      waiting: waiting == freezed
+      waiting: freezed == waiting
           ? _value.waiting
           : waiting // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -131,20 +134,17 @@ class _$_NetworkErrorSettings implements _NetworkErrorSettings {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NetworkErrorSettings &&
-            const DeepCollectionEquality().equals(other.title, title) &&
-            const DeepCollectionEquality().equals(other.caption, caption) &&
-            const DeepCollectionEquality().equals(other.waiting, waiting));
+            (identical(other.title, title) || other.title == title) &&
+            (identical(other.caption, caption) || other.caption == caption) &&
+            (identical(other.waiting, waiting) || other.waiting == waiting));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(title),
-      const DeepCollectionEquality().hash(caption),
-      const DeepCollectionEquality().hash(waiting));
+  int get hashCode => Object.hash(runtimeType, title, caption, waiting);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_NetworkErrorSettingsCopyWith<_$_NetworkErrorSettings> get copyWith =>
       __$$_NetworkErrorSettingsCopyWithImpl<_$_NetworkErrorSettings>(
           this, _$identity);

@@ -126,21 +126,30 @@ class PlatformTabScaffold
     WidgetRef ref,
   ) {
     final tabs = ref.watch(tabsProvider);
+    final navigationBarBackgroundColor = ref.watch(
+      appThemeProvider.select((theme) => theme.webNavigationBarBackgroundColor),
+    );
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: context.sliverHorizontalPadding(),
       ),
-      child: Container(
-        height: 64,
-        child: Row(
-          children: [
-            Text("MCJ"),
-            Spacer(),
-            for (TabItem tab in tabs) ...[
-              _navigationLink(tab),
-            ]
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Container(
+            color: navigationBarBackgroundColor,
+            height: 64,
+            child: Row(
+              children: [
+                Text("MCJ"),
+                Spacer(),
+                for (TabItem tab in tabs) ...[
+                  _navigationLink(tab),
+                ]
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
