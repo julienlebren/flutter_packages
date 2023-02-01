@@ -196,14 +196,14 @@ class NavigationLink extends ConsumerWidget {
               return null; // Use the component's default.
             },
           ),
-          /*foregroundColor: MaterialStateProperty.resolveWith<Color?>(
+          foregroundColor: MaterialStateProperty.resolveWith<Color?>(
             (Set<MaterialState> states) {
               if (states.contains(MaterialState.hovered)) {
                 return Colors.white;
               }
               return appTheme.textColor; // Use the component's default.
             },
-          ),*/
+          ),
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(
