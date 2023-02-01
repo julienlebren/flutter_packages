@@ -39,11 +39,10 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
     brightness: appTheme.brightness,
     scaffoldBackgroundColor: appTheme.scaffoldBackgroundColor,
     primarySwatch: createMaterialColor(appTheme.primaryColor),
-    //accentColor: appTheme.primaryColor,
-    //textTheme: GoogleFonts.poppinsTextTheme(),
+    textTheme: kIsWeb ? GoogleFonts.poppinsTextTheme() : null,
     appBarTheme: AppBarTheme(
       toolbarHeight: kIsWeb ? 64 : null,
-      shadowColor: appTheme.scaffoldBackgroundColor,
+      shadowColor: kIsWeb ? null : appTheme.scaffoldBackgroundColor,
       backgroundColor: kIsWeb
           ? appTheme.webAppBarBackgroundColor
           : appTheme.navigationBarBackgroundColor,
