@@ -1,7 +1,7 @@
 part of '../../sign_in.dart';
 
 class SignInTappableField
-    extends PlatformWidgetBase<TextButton, CupertinoButton> {
+    extends PlatformWidgetBase<TextButton, CupertinoButton, TextButton> {
   const SignInTappableField({
     Key? key,
     required this.label,
@@ -36,6 +36,10 @@ class SignInTappableField
       child: _contents(ref),
     );
   }
+
+  @override
+  TextButton createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 
   Widget _contents(WidgetRef ref) {
     final textColor = ref.watch(
