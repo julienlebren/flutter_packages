@@ -4,8 +4,8 @@ part of platform;
 /// when we use PlatformIconButton on the NavigationBar, to avoid a too bigger
 /// space between the icon and the border of the phone (which does not happens
 /// woth a text button).
-class PlatformNavigationBar
-    extends PlatformWidgetBase<PreferredSizeWidget, CupertinoNavigationBar> {
+class PlatformNavigationBar extends PlatformWidgetBase<PreferredSizeWidget,
+    CupertinoNavigationBar, Padding> {
   const PlatformNavigationBar({
     this.title,
     this.leading,
@@ -87,6 +87,22 @@ class PlatformNavigationBar
               child: trailing,
             )
           : trailing,
+    );
+  }
+
+  @override
+  Padding createWebWidget(
+    BuildContext context,
+    WidgetRef ref,
+  ) {
+    return Padding(
+      padding: EdgeInsets.symmetric(
+        horizontal: context.sliverHorizontalPadding(),
+      ),
+      child: Container(
+        height: 64,
+        color: Colors.red,
+      ),
     );
   }
 }

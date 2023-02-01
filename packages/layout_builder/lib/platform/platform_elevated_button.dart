@@ -1,7 +1,7 @@
 part of platform;
 
-class PlatformElevatedButton
-    extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
+class PlatformElevatedButton extends PlatformWidgetBase<ElevatedButton,
+    CupertinoButton, ElevatedButton> {
   PlatformElevatedButton({
     this.title,
     this.child,
@@ -80,6 +80,10 @@ class PlatformElevatedButton
             ),
     );
   }
+
+  @override
+  ElevatedButton createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 class PlatformFullSizedElevatedButton extends StatelessWidget {

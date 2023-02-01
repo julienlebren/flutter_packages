@@ -1,6 +1,7 @@
 part of platform;
 
-class PlatformScaffold extends PlatformWidgetBase<AnnotatedRegion, Widget> {
+class PlatformScaffold
+    extends PlatformWidgetBase<AnnotatedRegion, Widget, AnnotatedRegion> {
   const PlatformScaffold({
     this.appBar,
     this.isModal = false,
@@ -45,6 +46,10 @@ class PlatformScaffold extends PlatformWidgetBase<AnnotatedRegion, Widget> {
       ),
     );
   }
+
+  @override
+  AnnotatedRegion createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 class PlatformModalScaffold extends PlatformScaffold {

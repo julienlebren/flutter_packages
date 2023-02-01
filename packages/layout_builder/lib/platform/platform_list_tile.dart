@@ -1,7 +1,7 @@
 part of platform;
 
 class PlatformListTile
-    extends PlatformWidgetBase<Material, _CupertinoListTile> {
+    extends PlatformWidgetBase<Material, _CupertinoListTile, Material> {
   const PlatformListTile({
     this.child,
     this.leading,
@@ -64,6 +64,10 @@ class PlatformListTile
       onTap: onTap,
     );
   }
+
+  @override
+  Material createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 class _CupertinoListTile extends ConsumerStatefulWidget {
@@ -344,7 +348,8 @@ class PlatformListTileCaption extends StatelessWidget {
   }
 }
 
-class PlatformDisclosureIndicator extends PlatformWidgetBase<SizedBox, Icon> {
+class PlatformDisclosureIndicator
+    extends PlatformWidgetBase<SizedBox, Icon, SizedBox> {
   const PlatformDisclosureIndicator() : super();
 
   @override
@@ -363,6 +368,10 @@ class PlatformDisclosureIndicator extends PlatformWidgetBase<SizedBox, Icon> {
       color: color,
     );
   }
+
+  @override
+  SizedBox createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 class PlatformSelectedIndicator extends ConsumerWidget {

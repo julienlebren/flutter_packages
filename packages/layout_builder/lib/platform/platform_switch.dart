@@ -1,6 +1,7 @@
 part of platform;
 
-class PlatformSwitch extends PlatformWidgetBase<Switch, CupertinoSwitch> {
+class PlatformSwitch
+    extends PlatformWidgetBase<Switch, CupertinoSwitch, Switch> {
   const PlatformSwitch({
     required this.value,
     required this.onChanged,
@@ -24,4 +25,8 @@ class PlatformSwitch extends PlatformWidgetBase<Switch, CupertinoSwitch> {
       onChanged: onChanged,
     );
   }
+
+  @override
+  Switch createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }

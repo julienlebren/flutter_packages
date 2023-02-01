@@ -1,7 +1,7 @@
 part of platform;
 
 class PlatformListView extends PlatformWidgetBase<ScrollViewVisibilityDetector,
-    ScrollViewVisibilityDetector> {
+    ScrollViewVisibilityDetector, ScrollViewVisibilityDetector> {
   const PlatformListView({
     required this.itemCount,
     required this.itemBuilder,
@@ -55,6 +55,11 @@ class PlatformListView extends PlatformWidgetBase<ScrollViewVisibilityDetector,
       ),
     );
   }
+
+  @override
+  ScrollViewVisibilityDetector createWebWidget(
+          BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 class ListDivider extends ConsumerWidget {

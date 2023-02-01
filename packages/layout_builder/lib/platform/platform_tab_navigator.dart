@@ -1,7 +1,7 @@
 part of platform;
 
 class PlatformTabNavigator
-    extends PlatformWidgetBase<Navigator, CupertinoTabView> {
+    extends PlatformWidgetBase<Navigator, CupertinoTabView, Navigator> {
   const PlatformTabNavigator({
     required this.onGenerateRoute,
     required this.initialRoute,
@@ -33,4 +33,8 @@ class PlatformTabNavigator
       onUnknownRoute: (_) => onGenerateRoute(RouteSettings(name: initialRoute)),
     );
   }
+
+  @override
+  Navigator createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }

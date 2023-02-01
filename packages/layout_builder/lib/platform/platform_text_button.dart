@@ -1,7 +1,7 @@
 part of platform;
 
 class PlatformTextButton
-    extends PlatformWidgetBase<TextButton, CupertinoButton> {
+    extends PlatformWidgetBase<TextButton, CupertinoButton, TextButton> {
   const PlatformTextButton({
     required this.title,
     required this.onPressed,
@@ -52,4 +52,8 @@ class PlatformTextButton
       onPressed: onPressed,
     );
   }
+
+  @override
+  TextButton createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }

@@ -1,7 +1,7 @@
 part of platform;
 
 class PlatformScrollbar extends PlatformWidgetBase<ScrollViewVisibilityDetector,
-    ScrollViewVisibilityDetector> {
+    ScrollViewVisibilityDetector, ScrollViewVisibilityDetector> {
   PlatformScrollbar({
     this.thumbVisibility = false,
     this.controller,
@@ -41,6 +41,11 @@ class PlatformScrollbar extends PlatformWidgetBase<ScrollViewVisibilityDetector,
       ),
     );
   }
+
+  @override
+  ScrollViewVisibilityDetector createWebWidget(
+          BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 class ScrollViewVisibilityDetector extends ConsumerWidget {

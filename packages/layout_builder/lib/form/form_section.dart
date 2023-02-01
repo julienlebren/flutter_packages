@@ -69,7 +69,8 @@ class FormSection extends ConsumerWidget {
       isMaterial() && widget is FormRow && widget.child is PlatformTextField;
 }
 
-class FormSectionTitle extends PlatformWidgetBase<Container, Container> {
+class FormSectionTitle
+    extends PlatformWidgetBase<Container, Container, Container> {
   const FormSectionTitle({
     required this.title,
   }) : super();
@@ -119,6 +120,10 @@ class FormSectionTitle extends PlatformWidgetBase<Container, Container> {
       ),
     );
   }
+
+  @override
+  Container createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 class FormSectionCaption extends StatelessWidget {

@@ -1,7 +1,7 @@
 part of platform;
 
 class PlatformTextField
-    extends PlatformWidgetBase<TextField, CupertinoTextField> {
+    extends PlatformWidgetBase<TextField, CupertinoTextField, TextField> {
   PlatformTextField({
     this.controller,
     this.focusNode,
@@ -89,6 +89,10 @@ class PlatformTextField
       maxLines: maxLines,
     );
   }
+
+  @override
+  TextField createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 const BorderSide kDefaultRoundedBorderSide = BorderSide(

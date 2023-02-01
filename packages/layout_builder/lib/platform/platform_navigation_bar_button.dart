@@ -2,7 +2,8 @@ part of platform;
 
 enum NavigationBarButtonPosition { left, right }
 
-class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
+class PlatformNavigationBarButton
+    extends PlatformWidgetBase<Widget, Widget, Widget> {
   PlatformNavigationBarButton({
     required this.onPressed,
     this.buttonText,
@@ -92,6 +93,10 @@ class PlatformNavigationBarButton extends PlatformWidgetBase<Widget, Widget> {
       ),
     );
   }
+
+  @override
+  Widget createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 class PlatformNavigationBarSaveButton extends StatelessWidget {
@@ -115,7 +120,7 @@ class PlatformNavigationBarSaveButton extends StatelessWidget {
 }
 
 class PlatformNavigationBarCloseButton
-    extends PlatformWidgetBase<Widget, Widget> {
+    extends PlatformWidgetBase<Widget, Widget, Widget> {
   PlatformNavigationBarCloseButton({
     this.buttonText,
     required this.onPressed,
@@ -153,6 +158,10 @@ class PlatformNavigationBarCloseButton
       onPressed: onPressed,
     );
   }
+
+  @override
+  Widget createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 class PlatformNavigationBarBackButton extends StatelessWidget {

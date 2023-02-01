@@ -65,7 +65,7 @@ void showPlatformModalSheet({
 }
 
 class PlatformModalSheet
-    extends PlatformWidgetBase<Container, CupertinoActionSheet> {
+    extends PlatformWidgetBase<Container, CupertinoActionSheet, Container> {
   const PlatformModalSheet({
     required this.title,
     required this.actions,
@@ -103,10 +103,14 @@ class PlatformModalSheet
       actions: actions,
     );
   }
+
+  @override
+  Container createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 class PlatformModalSheetAction
-    extends PlatformWidgetBase<ListTile, CupertinoActionSheetAction> {
+    extends PlatformWidgetBase<ListTile, CupertinoActionSheetAction, ListTile> {
   const PlatformModalSheetAction({
     required this.title,
     this.icon,
@@ -158,6 +162,10 @@ class PlatformModalSheetAction
       isDestructiveAction: isDestructiveAction,
     );
   }
+
+  @override
+  ListTile createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 void showPlatformModalPopup({

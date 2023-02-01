@@ -51,7 +51,7 @@ Future<bool?> showAlertDialog(
 }
 
 class PlatformDialogAction
-    extends PlatformWidgetBase<TextButton, CupertinoDialogAction> {
+    extends PlatformWidgetBase<TextButton, CupertinoDialogAction, TextButton> {
   PlatformDialogAction({
     required this.buttonText,
     this.onPressed,
@@ -97,6 +97,10 @@ class PlatformDialogAction
       isDestructiveAction: isDestructiveAction,
     );
   }
+
+  @override
+  TextButton createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 Future<bool?> showErrorDialog(

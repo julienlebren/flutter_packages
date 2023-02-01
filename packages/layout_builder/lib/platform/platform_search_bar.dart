@@ -1,6 +1,7 @@
 part of platform;
 
-class PlatformSearchBar extends PlatformWidgetBase<TextField, Container> {
+class PlatformSearchBar
+    extends PlatformWidgetBase<TextField, Container, TextField> {
   PlatformSearchBar({
     required this.controller,
     this.focusNode,
@@ -53,4 +54,8 @@ class PlatformSearchBar extends PlatformWidgetBase<TextField, Container> {
       ),
     );
   }
+
+  @override
+  TextField createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }

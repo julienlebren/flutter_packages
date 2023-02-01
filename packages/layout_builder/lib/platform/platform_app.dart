@@ -1,6 +1,7 @@
 part of platform;
 
-class PlatformApp extends PlatformWidgetBase<ProviderScope, ProviderScope> {
+class PlatformApp
+    extends PlatformWidgetBase<ProviderScope, ProviderScope, ProviderScope> {
   PlatformApp({
     this.initialRoute,
     required this.onGenerateRoute,
@@ -64,4 +65,8 @@ class PlatformApp extends PlatformWidgetBase<ProviderScope, ProviderScope> {
       ),
     );
   }
+
+  @override
+  ProviderScope createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }

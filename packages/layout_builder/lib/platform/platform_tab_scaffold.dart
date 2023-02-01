@@ -20,8 +20,8 @@ final scrollControllerProvider = StateProvider<ScrollController?>((_) {
 
 final currentTabIndexProvider = StateProvider<int>((_) => 0);
 
-class PlatformTabScaffold
-    extends PlatformWidgetBase<AnnotatedRegion, CupertinoTabScaffold> {
+class PlatformTabScaffold extends PlatformWidgetBase<AnnotatedRegion,
+    CupertinoTabScaffold, AnnotatedRegion> {
   const PlatformTabScaffold() : super();
 
   ValueChanged<int>? onTap(int index, WidgetRef ref) {
@@ -91,16 +91,6 @@ class PlatformTabScaffold
     );
   }
 
-  BottomNavigationBarItem _tabItem(TabItem item) {
-    return BottomNavigationBarItem(
-      icon: Padding(
-        padding: EdgeInsets.symmetric(vertical: 3),
-        child: item.icon,
-      ),
-      label: item.title,
-    );
-  }
-
   @override
   CupertinoTabScaffold createCupertinoWidget(
       BuildContext context, WidgetRef ref) {
@@ -127,6 +117,20 @@ class PlatformTabScaffold
         ),
       ),
       tabBuilder: (_, index) => tabs[index].router,
+    );
+  }
+
+  @override
+  AnnotatedRegion createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
+
+  BottomNavigationBarItem _tabItem(TabItem item) {
+    return BottomNavigationBarItem(
+      icon: Padding(
+        padding: EdgeInsets.symmetric(vertical: 3),
+        child: item.icon,
+      ),
+      label: item.title,
     );
   }
 }

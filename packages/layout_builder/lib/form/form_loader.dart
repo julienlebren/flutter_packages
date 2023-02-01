@@ -2,7 +2,7 @@ part of 'form.dart';
 
 /// The button for submitting the action
 /// Returns a floating button for Android and a NavigationBar button for iOS.
-class FormLoader extends PlatformWidgetBase<Widget, Widget> {
+class FormLoader extends PlatformWidgetBase<Widget, Widget, Widget> {
   const FormLoader({
     Key? key,
     this.delayBeforeDisplay = 1,
@@ -40,4 +40,8 @@ class FormLoader extends PlatformWidgetBase<Widget, Widget> {
       },
     );
   }
+
+  @override
+  Widget createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }

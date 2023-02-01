@@ -78,7 +78,8 @@ class GroupedListSection extends ConsumerWidget {
   }
 }
 
-class GroupedListSectionTitle extends PlatformWidgetBase<Container, Container> {
+class GroupedListSectionTitle
+    extends PlatformWidgetBase<Container, Container, Container> {
   const GroupedListSectionTitle(this.title) : super();
 
   final String title;
@@ -126,6 +127,10 @@ class GroupedListSectionTitle extends PlatformWidgetBase<Container, Container> {
       ),
     );
   }
+
+  @override
+  Container createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 class GroupedListRow extends ConsumerWidget {

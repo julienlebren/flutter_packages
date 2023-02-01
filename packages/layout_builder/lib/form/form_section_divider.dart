@@ -1,6 +1,6 @@
 part of 'form.dart';
 
-class FormSectionDivider extends PlatformWidgetBase<Widget, SizedBox> {
+class FormSectionDivider extends PlatformWidgetBase<Widget, SizedBox, Widget> {
   const FormSectionDivider({Key? key}) : super(key: key);
 
   @override
@@ -36,4 +36,8 @@ class FormSectionDivider extends PlatformWidgetBase<Widget, SizedBox> {
   SizedBox createCupertinoWidget(BuildContext context, WidgetRef ref) {
     return SizedBox(height: 18);
   }
+
+  @override
+  Widget createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }

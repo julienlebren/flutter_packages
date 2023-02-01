@@ -82,8 +82,8 @@ Future<void> showPlatformPopupMenu({
   }
 }
 
-class PlatformPopupMenu<T>
-    extends PlatformWidgetBase<PopupMenuButton, CupertinoButton> {
+class PlatformPopupMenu<T> extends PlatformWidgetBase<PopupMenuButton,
+    CupertinoButton, PopupMenuButton> {
   PlatformPopupMenu({
     this.title,
     required this.items,
@@ -167,4 +167,8 @@ class PlatformPopupMenu<T>
       },
     );
   }
+
+  @override
+  PopupMenuButton createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }

@@ -2,15 +2,14 @@ part of platform;
 
 abstract class PlatformWidgetBase<
     MaterialWidget extends Widget,
-    CupertinoWidget extends Widget
-    //WebWidget extends Widget>
-    > extends ConsumerWidget {
+    CupertinoWidget extends Widget,
+    WebWidget extends Widget> extends ConsumerWidget {
   const PlatformWidgetBase({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     if (kIsWeb) {
-      return createMaterialWidget(context, ref);
+      return createWebWidget(context, ref);
     } else {
       switch (defaultTargetPlatform) {
         case TargetPlatform.iOS:
@@ -27,5 +26,5 @@ abstract class PlatformWidgetBase<
 
   MaterialWidget createMaterialWidget(BuildContext context, WidgetRef ref);
   CupertinoWidget createCupertinoWidget(BuildContext context, WidgetRef ref);
-  //WebWidget createWebWidget(BuildContext context, WidgetRef ref);
+  WebWidget createWebWidget(BuildContext context, WidgetRef ref);
 }

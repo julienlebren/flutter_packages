@@ -1,7 +1,9 @@
 part of platform;
 
 class PlatformActivityIndicator extends PlatformWidgetBase<
-    CircularProgressIndicator, CupertinoActivityIndicator> {
+    CircularProgressIndicator,
+    CupertinoActivityIndicator,
+    CircularProgressIndicator> {
   const PlatformActivityIndicator({
     this.color,
     this.strokeWidth = 4.0,
@@ -21,6 +23,11 @@ class PlatformActivityIndicator extends PlatformWidgetBase<
       BuildContext context, WidgetRef ref) {
     return CupertinoActivityIndicator(color: color);
   }
+
+  @override
+  CircularProgressIndicator createWebWidget(
+          BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 class DelayedPlatformActivityIndicator extends StatelessWidget {

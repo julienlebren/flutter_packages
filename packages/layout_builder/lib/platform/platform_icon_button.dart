@@ -1,7 +1,7 @@
 part of platform;
 
 class PlatformIconButton
-    extends PlatformWidgetBase<IconButton, CupertinoButton> {
+    extends PlatformWidgetBase<IconButton, CupertinoButton, IconButton> {
   PlatformIconButton({
     required this.icon,
     this.color,
@@ -37,10 +37,14 @@ class PlatformIconButton
       ),
     );
   }
+
+  @override
+  IconButton createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
-class PlatformIconPlainButton
-    extends PlatformWidgetBase<RawMaterialButton, CupertinoButton> {
+class PlatformIconPlainButton extends PlatformWidgetBase<RawMaterialButton,
+    CupertinoButton, RawMaterialButton> {
   PlatformIconPlainButton({
     required this.icon,
     this.onPressed,
@@ -76,4 +80,8 @@ class PlatformIconPlainButton
       minSize: 28,
     );
   }
+
+  @override
+  RawMaterialButton createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
