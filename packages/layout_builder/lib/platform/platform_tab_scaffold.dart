@@ -181,29 +181,31 @@ class NavigationLink extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final appTheme = ref.watch(appThemeProvider);
 
-    return SizedBox(
-      height: 48,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: TextButton(
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.resolveWith<Color?>(
-              (Set<MaterialState> states) {
-                if (states.contains(MaterialState.pressed)) {
-                  return Colors.blue;
-                }
-                return null; // Use the component's default.
-              },
-            ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 15,
+        vertical: 8,
+      ),
+      child: TextButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+            (Set<MaterialState> states) {
+              if (states.contains(MaterialState.pressed)) {
+                return Colors.blue;
+              } else if (states.contains(MaterialState.hovered)) {
+                return Colors.green;
+              }
+              return null; // Use the component's default.
+            },
           ),
-          child: Text(
-            item.title,
-            style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                  color: appTheme.textColor,
-                ),
-          ),
-          onPressed: () {},
         ),
+        child: Text(
+          item.title,
+          style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                color: appTheme.textColor,
+              ),
+        ),
+        onPressed: () {},
       ),
     );
   }
