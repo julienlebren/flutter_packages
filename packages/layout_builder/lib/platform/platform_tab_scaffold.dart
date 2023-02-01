@@ -135,8 +135,11 @@ class PlatformTabScaffold
 
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(
-          Icons.menu,
+        leading: Padding(
+          padding: EdgeInsets.only(left: padding),
+          child: Icon(
+            Icons.menu,
+          ),
         ),
         /*Padding(
           padding: EdgeInsets.only(left: padding),
