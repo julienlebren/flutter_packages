@@ -135,6 +135,7 @@ class PlatformTabScaffold
 
     return Scaffold(
       appBar: AppBar(
+        leadingWidth: padding + 200,
         leading: Padding(
           padding: EdgeInsets.only(left: padding),
           child: appLogo,
