@@ -142,7 +142,7 @@ class PlatformTabScaffold
         ),
         actions: [
           for (TabItem tab in tabs) ...[
-            _navigationLink(tab),
+            NavigationLink(item: tab),
           ],
           SizedBox(width: padding),
         ],
@@ -167,15 +167,40 @@ class PlatformTabScaffold
       label: item.title,
     );
   }
+}
 
-  SizedBox _navigationLink(TabItem item) {
+class NavigationLink extends ConsumerWidget {
+  const NavigationLink({
+    required this.item,
+    super.key,
+  });
+
+  final TabItem item;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final appTheme = ref.watch(appThemeProvider);
+
     return SizedBox(
       height: 48,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8),
         child: TextButton(
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.resolveWith<Color?>(
+              (Set<MaterialState> states) {
+                if (states.contains(MaterialState.pressed)) {
+                  return Colors.blue;
+                }
+                return null; // Use the component's default.
+              },
+            ),
+          ),
           child: Text(
             item.title,
+            style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                  color: appTheme.textColor,
+                ),
           ),
           onPressed: () {},
         ),
@@ -185,7 +210,9 @@ class PlatformTabScaffold
 }
 
 class WebAppBar extends ConsumerWidget implements PreferredSizeWidget {
-  const WebAppBar({Key? key}) : super(key: key);
+  const WebAppBar({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Size get preferredSize => Size(double.infinity, 64);
