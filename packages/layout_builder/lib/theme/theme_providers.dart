@@ -42,6 +42,7 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
     //accentColor: appTheme.primaryColor,
     //textTheme: GoogleFonts.poppinsTextTheme(),
     appBarTheme: AppBarTheme(
+      toolbarHeight: 150,
       shadowColor: appTheme.scaffoldBackgroundColor,
       backgroundColor: appTheme.navigationBarBackgroundColor,
       foregroundColor:
