@@ -192,7 +192,8 @@ final _currentSupplier = Provider<SignInSupplier>((ref) {
   throw UnimplementedError();
 });
 
-class SignInButton extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
+class SignInButton extends PlatformWidgetBase<ElevatedButton, CupertinoButton,
+    ElevatedButton> {
   const SignInButton({Key? key}) : super(key: key);
 
   @override
@@ -232,6 +233,10 @@ class SignInButton extends PlatformWidgetBase<ElevatedButton, CupertinoButton> {
       },
     );
   }
+
+  @override
+  ElevatedButton createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 class SignInButtonContents extends ConsumerWidget {
