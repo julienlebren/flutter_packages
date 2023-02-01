@@ -8,9 +8,10 @@ class TabItem with _$TabItem {
     Widget? selectedIcon,
     required PlatformTabNavigator router,
     @Default(false) bool? popToFirstRoute,
-    StateProvider<ScrollController>? scrollControllerProvider,
   }) = _TabItem;
 }
+
+final appLogoProvider = Provider<Widget>((_) => SizedBox.shrink());
 
 final tabsProvider = Provider<List<TabItem>>((_) => throw UnimplementedError());
 
@@ -22,7 +23,9 @@ final currentTabIndexProvider = StateProvider<int>((_) => 0);
 
 class PlatformTabScaffold
     extends PlatformWidgetBase<AnnotatedRegion, CupertinoTabScaffold, Widget> {
-  const PlatformTabScaffold() : super();
+  const PlatformTabScaffold({
+    Key? key,
+  }) : super(key: key);
 
   ValueChanged<int>? onTap(int index, WidgetRef ref) {
     if (ref.read(currentTabIndexProvider) == index) {
@@ -56,8 +59,8 @@ class PlatformTabScaffold
   AnnotatedRegion createMaterialWidget(BuildContext context, WidgetRef ref) {
     final systemOverlayStyle = ref.watch(systemOverlayStyleProvider);
     final appTheme = ref.watch(appThemeProvider);
-    final tabs = ref.watch(tabsProvider);
     final currentTabIndex = ref.watch(currentTabIndexProvider.notifier).state;
+    final tabs = ref.watch(tabsProvider);
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: systemOverlayStyle,
@@ -94,10 +97,10 @@ class PlatformTabScaffold
   @override
   CupertinoTabScaffold createCupertinoWidget(
       BuildContext context, WidgetRef ref) {
+    final tabs = ref.watch(tabsProvider);
     final appTheme = ref.watch(appThemeProvider);
     final currentTabIndex = ref.watch(currentTabIndexProvider);
     final _controller = CupertinoTabController(initialIndex: currentTabIndex);
-    final tabs = ref.watch(tabsProvider);
 
     ref.listen<int>(currentTabIndexProvider, (_, tabIndex) {
       _controller.index = tabIndex;
@@ -126,30 +129,17 @@ class PlatformTabScaffold
     WidgetRef ref,
   ) {
     final tabs = ref.watch(tabsProvider);
-    final navigationBarBackgroundColor = ref.watch(
-      appThemeProvider.select((theme) => theme.webNavigationBarBackgroundColor),
-    );
-    return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: context.sliverHorizontalPadding(),
-      ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Container(
-            color: navigationBarBackgroundColor,
-            height: 64,
-            child: Row(
-              children: [
-                Text("MCJ"),
-                Spacer(),
-                for (TabItem tab in tabs) ...[
-                  _navigationLink(tab),
-                ]
-              ],
-            ),
-          ),
-        ],
+    final currentTabIndex = ref.watch(currentTabIndexProvider);
+
+    return Scaffold(
+      appBar: const WebAppBar(),
+      body: Stack(
+        children: tabs.asMap().entries.map((entry) {
+          return Offstage(
+            offstage: currentTabIndex != entry.key,
+            child: entry.value.router,
+          );
+        }).toList(),
       ),
     );
   }
@@ -161,6 +151,40 @@ class PlatformTabScaffold
         child: item.icon,
       ),
       label: item.title,
+    );
+  }
+}
+
+class WebAppBar extends ConsumerWidget implements PreferredSizeWidget {
+  const WebAppBar({Key? key}) : super(key: key);
+
+  @override
+  Size get preferredSize => Size(double.infinity, 64);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final appLogo = ref.watch(appLogoProvider);
+    final tabs = ref.watch(tabsProvider);
+    final navigationBarBackgroundColor = ref.watch(
+      appThemeProvider.select((theme) => theme.webAppBarBackgroundColor),
+    );
+
+    return Container(
+      color: navigationBarBackgroundColor,
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: context.sliverHorizontalPadding(),
+        ),
+        child: Row(
+          children: [
+            appLogo,
+            Spacer(),
+            for (TabItem tab in tabs) ...[
+              _navigationLink(tab),
+            ]
+          ],
+        ),
+      ),
     );
   }
 

@@ -26,8 +26,7 @@ mixin _$AppTheme {
   Color get navigationBarBorderColor => throw _privateConstructorUsedError;
   Color? get cupertinoNavigationBarBackgroundColor =>
       throw _privateConstructorUsedError;
-  Color? get webNavigationBarBackgroundColor =>
-      throw _privateConstructorUsedError;
+  Color? get webAppBarBackgroundColor => throw _privateConstructorUsedError;
   Color? get tabBarBackgroundColor => throw _privateConstructorUsedError;
   Color? get cupertinoTabBarBackgroundColor =>
       throw _privateConstructorUsedError;
@@ -63,7 +62,7 @@ abstract class $AppThemeCopyWith<$Res> {
       Color navigationBarBackgroundColor,
       Color navigationBarBorderColor,
       Color? cupertinoNavigationBarBackgroundColor,
-      Color? webNavigationBarBackgroundColor,
+      Color? webAppBarBackgroundColor,
       Color? tabBarBackgroundColor,
       Color? cupertinoTabBarBackgroundColor,
       Color groupedListBackgroundColor,
@@ -101,7 +100,7 @@ class _$AppThemeCopyWithImpl<$Res, $Val extends AppTheme>
     Object? navigationBarBackgroundColor = null,
     Object? navigationBarBorderColor = null,
     Object? cupertinoNavigationBarBackgroundColor = freezed,
-    Object? webNavigationBarBackgroundColor = freezed,
+    Object? webAppBarBackgroundColor = freezed,
     Object? tabBarBackgroundColor = freezed,
     Object? cupertinoTabBarBackgroundColor = freezed,
     Object? groupedListBackgroundColor = null,
@@ -154,10 +153,9 @@ class _$AppThemeCopyWithImpl<$Res, $Val extends AppTheme>
           ? _value.cupertinoNavigationBarBackgroundColor
           : cupertinoNavigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      webNavigationBarBackgroundColor: freezed ==
-              webNavigationBarBackgroundColor
-          ? _value.webNavigationBarBackgroundColor
-          : webNavigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
+      webAppBarBackgroundColor: freezed == webAppBarBackgroundColor
+          ? _value.webAppBarBackgroundColor
+          : webAppBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color?,
       tabBarBackgroundColor: freezed == tabBarBackgroundColor
           ? _value.tabBarBackgroundColor
@@ -232,7 +230,7 @@ abstract class _$$_AppThemeCopyWith<$Res> implements $AppThemeCopyWith<$Res> {
       Color navigationBarBackgroundColor,
       Color navigationBarBorderColor,
       Color? cupertinoNavigationBarBackgroundColor,
-      Color? webNavigationBarBackgroundColor,
+      Color? webAppBarBackgroundColor,
       Color? tabBarBackgroundColor,
       Color? cupertinoTabBarBackgroundColor,
       Color groupedListBackgroundColor,
@@ -268,7 +266,7 @@ class __$$_AppThemeCopyWithImpl<$Res>
     Object? navigationBarBackgroundColor = null,
     Object? navigationBarBorderColor = null,
     Object? cupertinoNavigationBarBackgroundColor = freezed,
-    Object? webNavigationBarBackgroundColor = freezed,
+    Object? webAppBarBackgroundColor = freezed,
     Object? tabBarBackgroundColor = freezed,
     Object? cupertinoTabBarBackgroundColor = freezed,
     Object? groupedListBackgroundColor = null,
@@ -321,10 +319,9 @@ class __$$_AppThemeCopyWithImpl<$Res>
           ? _value.cupertinoNavigationBarBackgroundColor
           : cupertinoNavigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color?,
-      webNavigationBarBackgroundColor: freezed ==
-              webNavigationBarBackgroundColor
-          ? _value.webNavigationBarBackgroundColor
-          : webNavigationBarBackgroundColor // ignore: cast_nullable_to_non_nullable
+      webAppBarBackgroundColor: freezed == webAppBarBackgroundColor
+          ? _value.webAppBarBackgroundColor
+          : webAppBarBackgroundColor // ignore: cast_nullable_to_non_nullable
               as Color?,
       tabBarBackgroundColor: freezed == tabBarBackgroundColor
           ? _value.tabBarBackgroundColor
@@ -395,7 +392,7 @@ class _$_AppTheme implements _AppTheme {
       required this.navigationBarBackgroundColor,
       required this.navigationBarBorderColor,
       this.cupertinoNavigationBarBackgroundColor,
-      this.webNavigationBarBackgroundColor,
+      this.webAppBarBackgroundColor,
       this.tabBarBackgroundColor,
       this.cupertinoTabBarBackgroundColor,
       required this.groupedListBackgroundColor,
@@ -429,7 +426,7 @@ class _$_AppTheme implements _AppTheme {
   @override
   final Color? cupertinoNavigationBarBackgroundColor;
   @override
-  final Color? webNavigationBarBackgroundColor;
+  final Color? webAppBarBackgroundColor;
   @override
   final Color? tabBarBackgroundColor;
   @override
@@ -462,7 +459,7 @@ class _$_AppTheme implements _AppTheme {
 
   @override
   String toString() {
-    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, cupertinoNavigationBarBackgroundColor: $cupertinoNavigationBarBackgroundColor, webNavigationBarBackgroundColor: $webNavigationBarBackgroundColor, tabBarBackgroundColor: $tabBarBackgroundColor, cupertinoTabBarBackgroundColor: $cupertinoTabBarBackgroundColor, groupedListBackgroundColor: $groupedListBackgroundColor, listTileBackground: $listTileBackground, elevatedButtonRadius: $elevatedButtonRadius, elevatedButtonPadding: $elevatedButtonPadding, searchBarRadius: $searchBarRadius, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor, disclosureIndicatorColor: $disclosureIndicatorColor)';
+    return 'AppTheme(brightness: $brightness, primaryColor: $primaryColor, secondaryColor: $secondaryColor, scaffoldBackgroundColor: $scaffoldBackgroundColor, statusBarColor: $statusBarColor, materialSystemBarColor: $materialSystemBarColor, navigationBarBackgroundColor: $navigationBarBackgroundColor, navigationBarBorderColor: $navigationBarBorderColor, cupertinoNavigationBarBackgroundColor: $cupertinoNavigationBarBackgroundColor, webAppBarBackgroundColor: $webAppBarBackgroundColor, tabBarBackgroundColor: $tabBarBackgroundColor, cupertinoTabBarBackgroundColor: $cupertinoTabBarBackgroundColor, groupedListBackgroundColor: $groupedListBackgroundColor, listTileBackground: $listTileBackground, elevatedButtonRadius: $elevatedButtonRadius, elevatedButtonPadding: $elevatedButtonPadding, searchBarRadius: $searchBarRadius, selectedColor: $selectedColor, borderColor: $borderColor, textColor: $textColor, dividerColor: $dividerColor, shadowColor: $shadowColor, disclosureIndicatorColor: $disclosureIndicatorColor)';
   }
 
   @override
@@ -490,9 +487,8 @@ class _$_AppTheme implements _AppTheme {
             (identical(other.cupertinoNavigationBarBackgroundColor, cupertinoNavigationBarBackgroundColor) ||
                 other.cupertinoNavigationBarBackgroundColor ==
                     cupertinoNavigationBarBackgroundColor) &&
-            (identical(other.webNavigationBarBackgroundColor, webNavigationBarBackgroundColor) ||
-                other.webNavigationBarBackgroundColor ==
-                    webNavigationBarBackgroundColor) &&
+            (identical(other.webAppBarBackgroundColor, webAppBarBackgroundColor) ||
+                other.webAppBarBackgroundColor == webAppBarBackgroundColor) &&
             (identical(other.tabBarBackgroundColor, tabBarBackgroundColor) ||
                 other.tabBarBackgroundColor == tabBarBackgroundColor) &&
             (identical(other.cupertinoTabBarBackgroundColor, cupertinoTabBarBackgroundColor) ||
@@ -511,7 +507,8 @@ class _$_AppTheme implements _AppTheme {
                 other.searchBarRadius == searchBarRadius) &&
             (identical(other.selectedColor, selectedColor) ||
                 other.selectedColor == selectedColor) &&
-            (identical(other.borderColor, borderColor) || other.borderColor == borderColor) &&
+            (identical(other.borderColor, borderColor) ||
+                other.borderColor == borderColor) &&
             (identical(other.textColor, textColor) || other.textColor == textColor) &&
             (identical(other.dividerColor, dividerColor) || other.dividerColor == dividerColor) &&
             (identical(other.shadowColor, shadowColor) || other.shadowColor == shadowColor) &&
@@ -530,7 +527,7 @@ class _$_AppTheme implements _AppTheme {
         navigationBarBackgroundColor,
         navigationBarBorderColor,
         cupertinoNavigationBarBackgroundColor,
-        webNavigationBarBackgroundColor,
+        webAppBarBackgroundColor,
         tabBarBackgroundColor,
         cupertinoTabBarBackgroundColor,
         groupedListBackgroundColor,
@@ -564,7 +561,7 @@ abstract class _AppTheme implements AppTheme {
       required final Color navigationBarBackgroundColor,
       required final Color navigationBarBorderColor,
       final Color? cupertinoNavigationBarBackgroundColor,
-      final Color? webNavigationBarBackgroundColor,
+      final Color? webAppBarBackgroundColor,
       final Color? tabBarBackgroundColor,
       final Color? cupertinoTabBarBackgroundColor,
       required final Color groupedListBackgroundColor,
@@ -598,7 +595,7 @@ abstract class _AppTheme implements AppTheme {
   @override
   Color? get cupertinoNavigationBarBackgroundColor;
   @override
-  Color? get webNavigationBarBackgroundColor;
+  Color? get webAppBarBackgroundColor;
   @override
   Color? get tabBarBackgroundColor;
   @override

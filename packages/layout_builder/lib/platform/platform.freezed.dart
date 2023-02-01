@@ -21,8 +21,6 @@ mixin _$TabItem {
   Widget? get selectedIcon => throw _privateConstructorUsedError;
   PlatformTabNavigator get router => throw _privateConstructorUsedError;
   bool? get popToFirstRoute => throw _privateConstructorUsedError;
-  StateProvider<ScrollController>? get scrollControllerProvider =>
-      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TabItemCopyWith<TabItem> get copyWith => throw _privateConstructorUsedError;
@@ -38,8 +36,7 @@ abstract class $TabItemCopyWith<$Res> {
       Widget icon,
       Widget? selectedIcon,
       PlatformTabNavigator router,
-      bool? popToFirstRoute,
-      StateProvider<ScrollController>? scrollControllerProvider});
+      bool? popToFirstRoute});
 }
 
 /// @nodoc
@@ -60,7 +57,6 @@ class _$TabItemCopyWithImpl<$Res, $Val extends TabItem>
     Object? selectedIcon = freezed,
     Object? router = null,
     Object? popToFirstRoute = freezed,
-    Object? scrollControllerProvider = freezed,
   }) {
     return _then(_value.copyWith(
       title: null == title
@@ -83,10 +79,6 @@ class _$TabItemCopyWithImpl<$Res, $Val extends TabItem>
           ? _value.popToFirstRoute
           : popToFirstRoute // ignore: cast_nullable_to_non_nullable
               as bool?,
-      scrollControllerProvider: freezed == scrollControllerProvider
-          ? _value.scrollControllerProvider
-          : scrollControllerProvider // ignore: cast_nullable_to_non_nullable
-              as StateProvider<ScrollController>?,
     ) as $Val);
   }
 }
@@ -103,8 +95,7 @@ abstract class _$$_TabItemCopyWith<$Res> implements $TabItemCopyWith<$Res> {
       Widget icon,
       Widget? selectedIcon,
       PlatformTabNavigator router,
-      bool? popToFirstRoute,
-      StateProvider<ScrollController>? scrollControllerProvider});
+      bool? popToFirstRoute});
 }
 
 /// @nodoc
@@ -122,7 +113,6 @@ class __$$_TabItemCopyWithImpl<$Res>
     Object? selectedIcon = freezed,
     Object? router = null,
     Object? popToFirstRoute = freezed,
-    Object? scrollControllerProvider = freezed,
   }) {
     return _then(_$_TabItem(
       title: null == title
@@ -145,10 +135,6 @@ class __$$_TabItemCopyWithImpl<$Res>
           ? _value.popToFirstRoute
           : popToFirstRoute // ignore: cast_nullable_to_non_nullable
               as bool?,
-      scrollControllerProvider: freezed == scrollControllerProvider
-          ? _value.scrollControllerProvider
-          : scrollControllerProvider // ignore: cast_nullable_to_non_nullable
-              as StateProvider<ScrollController>?,
     ));
   }
 }
@@ -161,8 +147,7 @@ class _$_TabItem implements _TabItem {
       required this.icon,
       this.selectedIcon,
       required this.router,
-      this.popToFirstRoute = false,
-      this.scrollControllerProvider});
+      this.popToFirstRoute = false});
 
   @override
   final String title;
@@ -175,12 +160,10 @@ class _$_TabItem implements _TabItem {
   @override
   @JsonKey()
   final bool? popToFirstRoute;
-  @override
-  final StateProvider<ScrollController>? scrollControllerProvider;
 
   @override
   String toString() {
-    return 'TabItem(title: $title, icon: $icon, selectedIcon: $selectedIcon, router: $router, popToFirstRoute: $popToFirstRoute, scrollControllerProvider: $scrollControllerProvider)';
+    return 'TabItem(title: $title, icon: $icon, selectedIcon: $selectedIcon, router: $router, popToFirstRoute: $popToFirstRoute)';
   }
 
   @override
@@ -194,15 +177,12 @@ class _$_TabItem implements _TabItem {
                 other.selectedIcon == selectedIcon) &&
             (identical(other.router, router) || other.router == router) &&
             (identical(other.popToFirstRoute, popToFirstRoute) ||
-                other.popToFirstRoute == popToFirstRoute) &&
-            (identical(
-                    other.scrollControllerProvider, scrollControllerProvider) ||
-                other.scrollControllerProvider == scrollControllerProvider));
+                other.popToFirstRoute == popToFirstRoute));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, title, icon, selectedIcon,
-      router, popToFirstRoute, scrollControllerProvider);
+  int get hashCode => Object.hash(
+      runtimeType, title, icon, selectedIcon, router, popToFirstRoute);
 
   @JsonKey(ignore: true)
   @override
@@ -213,13 +193,11 @@ class _$_TabItem implements _TabItem {
 
 abstract class _TabItem implements TabItem {
   const factory _TabItem(
-          {required final String title,
-          required final Widget icon,
-          final Widget? selectedIcon,
-          required final PlatformTabNavigator router,
-          final bool? popToFirstRoute,
-          final StateProvider<ScrollController>? scrollControllerProvider}) =
-      _$_TabItem;
+      {required final String title,
+      required final Widget icon,
+      final Widget? selectedIcon,
+      required final PlatformTabNavigator router,
+      final bool? popToFirstRoute}) = _$_TabItem;
 
   @override
   String get title;
@@ -231,8 +209,6 @@ abstract class _TabItem implements TabItem {
   PlatformTabNavigator get router;
   @override
   bool? get popToFirstRoute;
-  @override
-  StateProvider<ScrollController>? get scrollControllerProvider;
   @override
   @JsonKey(ignore: true)
   _$$_TabItemCopyWith<_$_TabItem> get copyWith =>

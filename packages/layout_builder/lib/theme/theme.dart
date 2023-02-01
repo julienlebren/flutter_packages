@@ -32,7 +32,7 @@ class AppTheme with _$AppTheme {
     required Color navigationBarBackgroundColor,
     required Color navigationBarBorderColor,
     Color? cupertinoNavigationBarBackgroundColor,
-    Color? webNavigationBarBackgroundColor,
+    Color? webAppBarBackgroundColor,
     Color? tabBarBackgroundColor,
     Color? cupertinoTabBarBackgroundColor,
     required Color groupedListBackgroundColor,
