@@ -171,6 +171,7 @@ class WebAppBar extends ConsumerWidget implements PreferredSizeWidget {
 
     return Container(
       color: navigationBarBackgroundColor,
+      height: 150,
       child: Padding(
         padding: EdgeInsets.symmetric(
           horizontal: context.sliverHorizontalPadding(),
