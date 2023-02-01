@@ -10,8 +10,7 @@ class PlatformApp extends PlatformWidgetBase<ProviderScope, ProviderScope> {
     this.builder,
     this.locale,
     this.home,
-  }) : assert(
-            (initialRoute != null && onGenerateRoute != null) || home != null);
+  }) : assert(initialRoute != null || home != null);
 
   final String? initialRoute;
   final RouteFactory onGenerateRoute;

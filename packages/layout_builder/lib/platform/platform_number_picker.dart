@@ -11,7 +11,7 @@ showPlatformNumberPicker(
   required int selectedValue,
   required Function(int) onChanged,
 }) async {
-  ref.read(valueProvider.state).state = selectedValue;
+  ref.read(valueProvider.notifier).state = selectedValue;
 
   if (isMaterial()) {
     showDialog(
@@ -47,7 +47,7 @@ showPlatformNumberPicker(
       title: title,
       height: 200,
       onPressed: () {
-        onChanged(ref.read(valueProvider.state).state);
+        onChanged(ref.read(valueProvider.notifier).state);
         Navigator.of(context, rootNavigator: true).pop();
       },
       child: CupertinoPicker(
@@ -59,7 +59,7 @@ showPlatformNumberPicker(
         ),
         children: data.map((item) => Text(item.toString())).toList(),
         onSelectedItemChanged: (index) {
-          ref.read(valueProvider.state).state = data[index];
+          ref.read(valueProvider.notifier).state = data[index];
         },
       ),
     );
@@ -91,7 +91,7 @@ class _MaterialNumberPickerState extends ConsumerState<_MaterialNumberPicker> {
       minValue: 0,
       maxValue: 100,
       onChanged: (value) {
-        ref.read(valueProvider.state).state = value;
+        ref.read(valueProvider.notifier).state = value;
         setState(() => _currentValue = value);
       },
     );

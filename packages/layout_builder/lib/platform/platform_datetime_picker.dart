@@ -37,7 +37,7 @@ void showPlatformDatePicker(
         minimumDate: firstDate,
         initialDateTime: initialDate,
         onDateTimeChanged: (value) {
-          ref.read(dateProvider.state).state = value;
+          ref.read(dateProvider.notifier).state = value;
         },
       ),
     );
@@ -81,7 +81,7 @@ void showPlatformTimePicker(
         minimumYear: now.year - 15,
         initialDateTime: initialDate ?? now,
         onDateTimeChanged: (value) {
-          ref.read(timeProvider.state).state = value;
+          ref.read(timeProvider.notifier).state = value;
         },
       ),
     );

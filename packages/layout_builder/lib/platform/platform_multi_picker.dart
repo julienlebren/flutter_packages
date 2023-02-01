@@ -15,28 +15,32 @@ showPlatformMultiPicker<T>(
   });
 
   _onChanged(WidgetRef ref, T item, bool isSelected) {
-    final _selectedValues = ref.read(selectedValuesProvider.state).state;
+    final _selectedValues = ref.read(selectedValuesProvider.notifier).state;
     if (isSelected) {
-      ref.read(selectedValuesProvider.state).state = [..._selectedValues]
+      ref.read(selectedValuesProvider.notifier).state = [..._selectedValues]
         ..remove(item);
     } else {
-      ref.read(selectedValuesProvider.state).state = [..._selectedValues, item];
+      ref.read(selectedValuesProvider.notifier).state = [
+        ..._selectedValues,
+        item
+      ];
     }
   }
 
   _onSave(BuildContext context, WidgetRef ref) {
-    onSave(ref.read(selectedValuesProvider.state).state);
+    onSave(ref.read(selectedValuesProvider.notifier).state);
     Navigator.of(context).pop();
   }
 
-  ref.read(selectedValuesProvider.state).state = selectedValues;
+  ref.read(selectedValuesProvider.notifier).state = selectedValues;
 
   if (isMaterial()) {
     showDialog(
       context: context,
       builder: (context) {
         return Consumer(builder: (context, ref, child) {
-          final _selectedValues = ref.watch(selectedValuesProvider.state).state;
+          final _selectedValues =
+              ref.watch(selectedValuesProvider.notifier).state;
           return AlertDialog(
             title: Text(title),
             content: SingleChildScrollView(
@@ -91,7 +95,8 @@ showPlatformMultiPicker<T>(
       duration: Duration(milliseconds: 300),
       builder: (context) => Consumer(builder: (context, ref, child) {
         final appTheme = ref.watch(appThemeProvider);
-        final _selectedValues = ref.watch(selectedValuesProvider.state).state;
+        final _selectedValues =
+            ref.watch(selectedValuesProvider.notifier).state;
 
         return PlatformModalScaffold(
           appBar: PlatformNavigationBar(
