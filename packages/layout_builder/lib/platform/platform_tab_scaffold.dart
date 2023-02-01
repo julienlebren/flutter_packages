@@ -46,8 +46,8 @@ class PlatformTabScaffold
         navigator.maybePop();
       }
     } else {
-      ref.read(scrollControllerProvider.state).state = null;
-      ref.read(currentTabIndexProvider.state).state = index;
+      ref.read(scrollControllerProvider.notifier).state = null;
+      ref.read(currentTabIndexProvider.notifier).state = index;
     }
     return null;
   }
@@ -57,7 +57,7 @@ class PlatformTabScaffold
     final systemOverlayStyle = ref.watch(systemOverlayStyleProvider);
     final appTheme = ref.watch(appThemeProvider);
     final tabs = ref.watch(tabsProvider);
-    final currentTabIndex = ref.watch(currentTabIndexProvider.state).state;
+    final currentTabIndex = ref.watch(currentTabIndexProvider.notifier).state;
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: systemOverlayStyle,
