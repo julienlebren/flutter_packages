@@ -58,8 +58,8 @@ class SubscriptionPageBuilder extends ConsumerWidget {
   }
 }
 
-class SubscriptionPlatformBuilder
-    extends PlatformWidgetBase<AnnotatedRegion, CupertinoTheme> {
+class SubscriptionPlatformBuilder extends PlatformWidgetBase<AnnotatedRegion,
+    CupertinoTheme, AnnotatedRegion> {
   const SubscriptionPlatformBuilder({
     required this.child,
     this.canDiscount = false,
@@ -198,6 +198,10 @@ class SubscriptionPlatformBuilder
       ),
     );
   }
+
+  @override
+  AnnotatedRegion createWebWidget(BuildContext context, WidgetRef ref) =>
+      createMaterialWidget(context, ref);
 }
 
 class SubscriptionAppBar extends ConsumerWidget {
