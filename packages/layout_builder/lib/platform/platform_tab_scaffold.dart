@@ -130,13 +130,20 @@ class PlatformTabScaffold
   ) {
     final tabs = ref.watch(tabsProvider);
     final currentTabIndex = ref.watch(currentTabIndexProvider);
+    final appLogo = ref.watch(appLogoProvider);
+    final padding = context.sliverHorizontalPadding();
 
     return Scaffold(
       appBar: AppBar(
+        leading: Padding(
+          padding: EdgeInsets.only(left: padding),
+          child: appLogo,
+        ),
         actions: [
           for (TabItem tab in tabs) ...[
             _navigationLink(tab),
-          ]
+          ],
+          SizedBox(width: padding),
         ],
       ),
       body: Stack(
