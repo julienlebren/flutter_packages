@@ -47,7 +47,9 @@ class SplitView extends ConsumerWidget {
         const VerticalDivider(width: 1),
         AnimatedContainer(
           duration: Duration(milliseconds: 200),
-          width: isOpen ? (screenWidth - sideWidth - 1) : screenWidth,
+          width: isOpen
+              ? (screenWidth - sideWidth - 1)
+              : (screenWidth - sideWidth - 1),
           child: ClipRect(
             child: Navigator(
               key: mainNavigatorKey,
