@@ -33,12 +33,14 @@ class SplitView extends StatelessWidget {
           ),
         ),
         const VerticalDivider(width: 1),
-        Expanded(
-          child: Navigator(
-            key: mainNavigatorKey,
-            onGenerateRoute: onGenerateRoute,
-            initialRoute: initialMainRoute,
-            observers: observers,
+        ClipRect(
+          child: Expanded(
+            child: Navigator(
+              key: mainNavigatorKey,
+              onGenerateRoute: onGenerateRoute,
+              initialRoute: initialMainRoute,
+              observers: observers,
+            ),
           ),
         ),
       ],
