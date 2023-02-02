@@ -1,6 +1,9 @@
 part of 'widgets.dart';
 
-class SplitView extends StatelessWidget {
+final splitViewProvider =
+    StateProvider.family<bool, GlobalKey<NavigatorState>>((_, __) => true);
+
+class SplitView extends ConsumerWidget {
   const SplitView({
     required this.onGenerateRoute,
     required this.initialSideRoute,
@@ -8,6 +11,7 @@ class SplitView extends StatelessWidget {
     required this.sideNavigatorKey,
     required this.mainNavigatorKey,
     this.observers = const <NavigatorObserver>[],
+    this.sideWidth = 370,
     Key? key,
   }) : super(key: key);
 
@@ -17,14 +21,16 @@ class SplitView extends StatelessWidget {
   final List<NavigatorObserver> observers;
   final GlobalKey<NavigatorState> sideNavigatorKey;
   final GlobalKey<NavigatorState> mainNavigatorKey;
+  final double sideWidth;
 
   @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isOpen = ref.read(splitViewProvider(mainNavigatorKey));
+
+    return Stack(
       children: [
         SizedBox(
-          width: 370,
+          width: sideWidth,
           child: Navigator(
             key: sideNavigatorKey,
             onGenerateRoute: onGenerateRoute,
@@ -44,6 +50,52 @@ class SplitView extends StatelessWidget {
           ),
         ),
       ],
+    );
+
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          width: sideWidth,
+          child: Navigator(
+            key: sideNavigatorKey,
+            onGenerateRoute: onGenerateRoute,
+            initialRoute: initialSideRoute,
+            observers: observers,
+          ),
+        ),
+        const VerticalDivider(width: 1),
+        Expanded(
+          child: ClipRect(
+            child: Navigator(
+              key: mainNavigatorKey,
+              onGenerateRoute: onGenerateRoute,
+              initialRoute: initialMainRoute,
+              observers: observers,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class SplitViewToggleButton extends ConsumerWidget {
+  const SplitViewToggleButton({
+    required this.navigatorKey,
+    super.key,
+  });
+
+  final GlobalKey<NavigatorState> navigatorKey;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return PlatformNavigationBarButton(
+      icon: CupertinoIcons.sidebar_left,
+      onPressed: () {
+        ref.read(splitViewProvider(navigatorKey).notifier).state =
+            !ref.read(splitViewProvider(navigatorKey));
+      },
     );
   }
 }
