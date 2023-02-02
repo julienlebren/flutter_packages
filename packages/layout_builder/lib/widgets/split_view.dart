@@ -31,23 +31,23 @@ class SplitView extends ConsumerWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
-          width: sideWidth,
-          child: Navigator(
-            key: sideNavigatorKey,
-            onGenerateRoute: onGenerateRoute,
-            initialRoute: initialSideRoute,
-            observers: observers,
+        Container(
+          transform:
+              Matrix4.translationValues(isOpen ? -sideWidth : 0, 0.0, 0.0),
+          child: SizedBox(
+            width: sideWidth,
+            child: Navigator(
+              key: sideNavigatorKey,
+              onGenerateRoute: onGenerateRoute,
+              initialRoute: initialSideRoute,
+              observers: observers,
+            ),
           ),
         ),
         const VerticalDivider(width: 1),
         AnimatedContainer(
           duration: Duration(milliseconds: 200),
-          width: isOpen
-              ? screenWidth
-              : (screenWidth -
-                  sideWidth -
-                  1), //when currentIndex is not 2, it's size its zero
+          width: isOpen ? (screenWidth - sideWidth - 1) : screenWidth,
           child: ClipRect(
             child: Navigator(
               key: mainNavigatorKey,
