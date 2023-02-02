@@ -47,11 +47,13 @@ class SplitView extends ConsumerWidget {
           width: isOpen
               ? 400
               : 300, //when currentIndex is not 2, it's size its zero
-          child: Navigator(
-            key: mainNavigatorKey,
-            onGenerateRoute: onGenerateRoute,
-            initialRoute: initialMainRoute,
-            observers: observers,
+          child: ClipRect(
+            child: Navigator(
+              key: mainNavigatorKey,
+              onGenerateRoute: onGenerateRoute,
+              initialRoute: initialMainRoute,
+              observers: observers,
+            ),
           ),
         ),
         /*
