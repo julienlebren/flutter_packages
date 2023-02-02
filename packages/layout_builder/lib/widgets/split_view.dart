@@ -31,9 +31,9 @@ class SplitView extends ConsumerWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          transform:
-              Matrix4.translationValues(isOpen ? 0 : -sideWidth, 0.0, 0.0),
+        AnimatedContainer(
+          duration: Duration(milliseconds: 200),
+          width: isOpen ? sideWidth : 0,
           child: SizedBox(
             width: sideWidth,
             child: Navigator(
