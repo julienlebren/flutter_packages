@@ -21,7 +21,7 @@ class SplitView extends StatelessWidget {
             width: 370,
             child: sideView,
           ),
-          const VerticalDivider(),
+          const VerticalDivider(width: 1),
           Expanded(
             child: mainView,
           ),

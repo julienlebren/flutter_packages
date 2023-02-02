@@ -62,6 +62,7 @@ final materialThemeProvider = Provider<ThemeData>((ref) {
             : Colors.white,
       ),
     ),
+    dividerColor: appTheme.dividerColor,
     unselectedWidgetColor: Color(0xFF757575),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: appTheme.scaffoldBackgroundColor,
