@@ -26,11 +26,11 @@ class SplitView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isOpen = ref.watch(splitViewProvider(mainNavigatorKey));
+    final screenWidth = MediaQuery.of(context).size.width;
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        //if (isOpen) ...[
         SizedBox(
           width: sideWidth,
           child: Navigator(
@@ -41,12 +41,13 @@ class SplitView extends ConsumerWidget {
           ),
         ),
         const VerticalDivider(width: 1),
-        //],
         AnimatedContainer(
           duration: Duration(milliseconds: 200),
           width: isOpen
-              ? 400
-              : 300, //when currentIndex is not 2, it's size its zero
+              ? screenWidth
+              : (screenWidth -
+                  sideWidth -
+                  1), //when currentIndex is not 2, it's size its zero
           child: ClipRect(
             child: Navigator(
               key: mainNavigatorKey,
