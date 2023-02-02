@@ -32,6 +32,7 @@ class SplitView extends ConsumerWidget {
       children: [
         AnimatedContainer(
           duration: Duration(milliseconds: 200),
+          padding: isOpen ? EdgeInsets.only(left: sideWidth + 1) : null,
           width: isOpen ? (screenWidth - sideWidth - 1) : screenWidth,
           child: ClipRect(
             child: Navigator(
