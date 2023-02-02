@@ -5,7 +5,8 @@ class SplitView extends StatelessWidget {
     required this.onGenerateRoute,
     required this.initialSideRoute,
     required this.initialMainRoute,
-    required this.navigatorKey,
+    required this.sideNavigatorKey,
+    required this.mainNavigatorKey,
     this.observers = const <NavigatorObserver>[],
     Key? key,
   }) : super(key: key);
@@ -14,7 +15,8 @@ class SplitView extends StatelessWidget {
   final String initialSideRoute;
   final String initialMainRoute;
   final List<NavigatorObserver> observers;
-  final GlobalKey<NavigatorState> navigatorKey;
+  final GlobalKey<NavigatorState> sideNavigatorKey;
+  final GlobalKey<NavigatorState> mainNavigatorKey;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class SplitView extends StatelessWidget {
         SizedBox(
           width: 370,
           child: Navigator(
-            key: navigatorKey,
+            key: sideNavigatorKey,
             onGenerateRoute: onGenerateRoute,
             initialRoute: initialSideRoute,
             observers: observers,
@@ -33,7 +35,7 @@ class SplitView extends StatelessWidget {
         const VerticalDivider(width: 1),
         Expanded(
           child: Navigator(
-            key: navigatorKey,
+            key: mainNavigatorKey,
             onGenerateRoute: onGenerateRoute,
             initialRoute: initialMainRoute,
             observers: observers,
