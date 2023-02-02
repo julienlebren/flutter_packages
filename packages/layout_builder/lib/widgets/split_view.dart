@@ -43,6 +43,26 @@ class SplitView extends ConsumerWidget {
             ),
           ),
         ),
+        AnimatedContainer(
+          duration: Duration(milliseconds: 200),
+          transform:
+              Matrix4.translationValues(isOpen ? 0 : -(sideWidth + 1), 0, 0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: sideWidth,
+                child: Navigator(
+                  key: sideNavigatorKey,
+                  onGenerateRoute: onGenerateRoute,
+                  initialRoute: initialSideRoute,
+                  observers: observers,
+                ),
+              ),
+              const VerticalDivider(width: 1),
+            ],
+          ),
+        ),
       ],
     );
 
