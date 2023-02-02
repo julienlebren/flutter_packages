@@ -33,7 +33,7 @@ class SplitView extends ConsumerWidget {
       children: [
         Container(
           transform:
-              Matrix4.translationValues(isOpen ? -sideWidth : 0, 0.0, 0.0),
+              Matrix4.translationValues(isOpen ? 0 : -sideWidth, 0.0, 0.0),
           child: SizedBox(
             width: sideWidth,
             child: Navigator(
