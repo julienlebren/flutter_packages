@@ -42,13 +42,17 @@ class SplitView extends ConsumerWidget {
           ),
           const VerticalDivider(width: 1),
         ],
-        Expanded(
-          child: ClipRect(
-            child: Navigator(
-              key: mainNavigatorKey,
-              onGenerateRoute: onGenerateRoute,
-              initialRoute: initialMainRoute,
-              observers: observers,
+        AnimatedSize(
+          curve: Curves.easeIn,
+          duration: const Duration(seconds: 1),
+          child: Expanded(
+            child: ClipRect(
+              child: Navigator(
+                key: mainNavigatorKey,
+                onGenerateRoute: onGenerateRoute,
+                initialRoute: initialMainRoute,
+                observers: observers,
+              ),
             ),
           ),
         ),
