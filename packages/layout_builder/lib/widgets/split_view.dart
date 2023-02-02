@@ -28,6 +28,23 @@ class SplitView extends ConsumerWidget {
     final isOpen = ref.watch(splitViewProvider(mainNavigatorKey));
     final screenWidth = MediaQuery.of(context).size.width;
 
+    return Stack(
+      children: [
+        AnimatedContainer(
+          duration: Duration(milliseconds: 200),
+          width: isOpen ? (screenWidth - sideWidth - 1) : screenWidth,
+          child: ClipRect(
+            child: Navigator(
+              key: mainNavigatorKey,
+              onGenerateRoute: onGenerateRoute,
+              initialRoute: initialMainRoute,
+              observers: observers,
+            ),
+          ),
+        ),
+      ],
+    );
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
