@@ -2,33 +2,44 @@ part of 'widgets.dart';
 
 class SplitView extends StatelessWidget {
   const SplitView({
-    required this.sideView,
-    required this.mainView,
+    required this.onGenerateRoute,
+    required this.initialSideRoute,
+    required this.initialMainRoute,
+    required this.navigatorKey,
+    this.observers = const <NavigatorObserver>[],
     Key? key,
   }) : super(key: key);
 
-  final Widget sideView;
-  final Widget mainView;
+  final RouteFactory onGenerateRoute;
+  final String initialSideRoute;
+  final String initialMainRoute;
+  final List<NavigatorObserver> observers;
+  final GlobalKey<NavigatorState> navigatorKey;
 
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
-    if (screenWidth >= Breakpoints.tablet) {
-      return Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: 370,
-            child: sideView,
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          width: 370,
+          child: Navigator(
+            key: navigatorKey,
+            onGenerateRoute: onGenerateRoute,
+            initialRoute: initialSideRoute,
+            observers: observers,
           ),
-          const VerticalDivider(width: 1),
-          Expanded(
-            child: mainView,
+        ),
+        const VerticalDivider(width: 1),
+        Expanded(
+          child: Navigator(
+            key: navigatorKey,
+            onGenerateRoute: onGenerateRoute,
+            initialRoute: initialMainRoute,
+            observers: observers,
           ),
-        ],
-      );
-    } else {
-      return mainView;
-    }
+        ),
+      ],
+    );
   }
 }
