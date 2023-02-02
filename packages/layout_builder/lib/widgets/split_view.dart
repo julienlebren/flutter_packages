@@ -25,7 +25,7 @@ class SplitView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isOpen = ref.read(splitViewProvider(mainNavigatorKey));
+    final isOpen = ref.watch(splitViewProvider(mainNavigatorKey));
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
