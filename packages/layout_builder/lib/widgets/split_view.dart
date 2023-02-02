@@ -30,18 +30,31 @@ class SplitView extends ConsumerWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        if (isOpen) ...[
-          SizedBox(
-            width: sideWidth,
-            child: Navigator(
-              key: sideNavigatorKey,
-              onGenerateRoute: onGenerateRoute,
-              initialRoute: initialSideRoute,
-              observers: observers,
-            ),
+        //if (isOpen) ...[
+        SizedBox(
+          width: sideWidth,
+          child: Navigator(
+            key: sideNavigatorKey,
+            onGenerateRoute: onGenerateRoute,
+            initialRoute: initialSideRoute,
+            observers: observers,
           ),
-          const VerticalDivider(width: 1),
-        ],
+        ),
+        const VerticalDivider(width: 1),
+        //],
+        AnimatedContainer(
+          duration: Duration(milliseconds: 200),
+          width: isOpen
+              ? 400
+              : 300, //when currentIndex is not 2, it's size its zero
+          child: Navigator(
+            key: mainNavigatorKey,
+            onGenerateRoute: onGenerateRoute,
+            initialRoute: initialMainRoute,
+            observers: observers,
+          ),
+        ),
+        /*
         Expanded(
           child: ClipRect(
             child: AnimatedSize(
@@ -55,7 +68,7 @@ class SplitView extends ConsumerWidget {
               ),
             ),
           ),
-        ),
+        ),*/
       ],
     );
   }
