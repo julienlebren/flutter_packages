@@ -27,44 +27,21 @@ class SplitView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final isOpen = ref.read(splitViewProvider(mainNavigatorKey));
 
-    return Stack(
-      children: [
-        SizedBox(
-          width: sideWidth,
-          child: Navigator(
-            key: sideNavigatorKey,
-            onGenerateRoute: onGenerateRoute,
-            initialRoute: initialSideRoute,
-            observers: observers,
-          ),
-        ),
-        const VerticalDivider(width: 1),
-        Expanded(
-          child: ClipRect(
-            child: Navigator(
-              key: mainNavigatorKey,
-              onGenerateRoute: onGenerateRoute,
-              initialRoute: initialMainRoute,
-              observers: observers,
-            ),
-          ),
-        ),
-      ],
-    );
-
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
-          width: sideWidth,
-          child: Navigator(
-            key: sideNavigatorKey,
-            onGenerateRoute: onGenerateRoute,
-            initialRoute: initialSideRoute,
-            observers: observers,
+        if (isOpen) ...[
+          SizedBox(
+            width: sideWidth,
+            child: Navigator(
+              key: sideNavigatorKey,
+              onGenerateRoute: onGenerateRoute,
+              initialRoute: initialSideRoute,
+              observers: observers,
+            ),
           ),
-        ),
-        const VerticalDivider(width: 1),
+          const VerticalDivider(width: 1),
+        ],
         Expanded(
           child: ClipRect(
             child: Navigator(
