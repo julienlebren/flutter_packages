@@ -70,11 +70,13 @@ class SplitViewNavigationBar extends PlatformNavigationBar {
   const SplitViewNavigationBar({
     required this.navigatorKey,
     this.title,
+    this.middle,
     this.trailing,
   });
 
   final GlobalKey<NavigatorState> navigatorKey;
   final String? title;
+  final Widget? middle;
   final Widget? trailing;
 
   @override
@@ -83,8 +85,9 @@ class SplitViewNavigationBar extends PlatformNavigationBar {
     final canPop = Navigator.of(context).canPop();
 
     return PlatformNavigationBar(
-      title: title,
       leading: SplitViewToggleButton(navigatorKey: navigatorKey),
+      title: title,
+      middle: middle,
       trailing: trailing,
     );
   }
