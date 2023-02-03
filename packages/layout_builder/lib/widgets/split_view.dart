@@ -66,12 +66,11 @@ class SplitView extends ConsumerWidget {
   }
 }
 
-class SplitViewNavigationBar extends ConsumerWidget {
+class SplitViewNavigationBar extends PlatformNavigationBar {
   const SplitViewNavigationBar({
     required this.navigatorKey,
     this.title,
     this.trailing,
-    super.key,
   });
 
   final GlobalKey<NavigatorState> navigatorKey;
