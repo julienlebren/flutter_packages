@@ -110,6 +110,7 @@ class PlatformNetworkScaffold extends ConsumerWidget {
 
     return PlatformScaffold(
       appBar: PlatformNavigationBar(
+        navigatorKey: appBar?.navigatorKey,
         title: appBar?.title,
         leading:
             (appBar?.leading != null && hasConnection ? appBar!.leading : null),
