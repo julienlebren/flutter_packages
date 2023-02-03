@@ -86,14 +86,18 @@ class SplitViewNavigationBar extends PlatformNavigationBar {
     bool isCupertinoModal = false,
   }) {
     final isOpen = ref.watch(splitViewProvider(navigatorKey));
-    final canPop = Navigator.of(context).canPop();
+    final canPop = ModalRoute.of(context)?.canPop ?? false;
 
     return CupertinoNavigationBar(
-      leading: Row(
-        children: [
-          if (!isOpen) SplitViewToggleButton(navigatorKey: navigatorKey),
-          if (canPop) const CupertinoNavigationBarBackButton(),
-        ],
+      leading: Container(
+        transform: Matrix4.translationValues(isOpen && canPop ? -15 : 0, 0, 0),
+        child: Row(
+          children: [
+            if (!isOpen) SplitViewToggleButton(navigatorKey: navigatorKey),
+            if (!isOpen && canPop) const SizedBox(width: 10),
+            if (canPop) const CupertinoNavigationBarBackButton(),
+          ],
+        ),
       ),
       middle: super.middleWidget(ref),
       trailing: trailing,
