@@ -99,7 +99,7 @@ class SplitViewNavigationBar extends PlatformNavigationBar {
           ],
         ),
       ),
-      middle: middle ?? super.middleWidget(ref),
+      middle: Text("OK Super"), //middle ?? super.middleWidget(ref),
       trailing: trailing,
     );
   }
