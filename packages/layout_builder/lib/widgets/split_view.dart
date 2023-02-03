@@ -80,14 +80,17 @@ class SplitViewNavigationBar extends PlatformNavigationBar {
   final Widget? trailing;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  CupertinoNavigationBar createCupertinoWidget(
+    BuildContext context,
+    WidgetRef ref, {
+    bool isCupertinoModal = false,
+  }) {
     final isOpen = ref.watch(splitViewProvider(navigatorKey));
     final canPop = Navigator.of(context).canPop();
 
-    return PlatformNavigationBar(
+    return CupertinoNavigationBar(
       leading: SplitViewToggleButton(navigatorKey: navigatorKey),
-      title: title,
-      middle: middle,
+      middle: super.middleWidget(ref),
       trailing: trailing,
     );
   }
