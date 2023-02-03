@@ -4,28 +4,31 @@ final splitViewProvider =
     StateProvider.family<bool, GlobalKey<NavigatorState>>((_, __) => true);
 
 class SplitView extends ConsumerWidget {
-  const SplitView({
+  SplitView({
     required this.onGenerateRoute,
     required this.initialSideRoute,
     required this.initialMainRoute,
-    required this.sideNavigatorKey,
-    required this.mainNavigatorKey,
     this.observers = const <NavigatorObserver>[],
     this.sideWidth = 370,
+    GlobalKey<NavigatorState>? sideNavigatorKey,
+    GlobalKey<NavigatorState>? mainNavigatorKey,
     Key? key,
-  }) : super(key: key);
+  })  : _sideNavigatorKey = sideNavigatorKey ?? GlobalKey<NavigatorState>(),
+        _mainNavigatorKey = mainNavigatorKey ?? GlobalKey<NavigatorState>(),
+        super(key: key);
 
   final RouteFactory onGenerateRoute;
   final String initialSideRoute;
   final String initialMainRoute;
   final List<NavigatorObserver> observers;
-  final GlobalKey<NavigatorState> sideNavigatorKey;
-  final GlobalKey<NavigatorState> mainNavigatorKey;
   final double sideWidth;
+
+  final GlobalKey<NavigatorState> _sideNavigatorKey;
+  final GlobalKey<NavigatorState> _mainNavigatorKey;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final isOpen = ref.watch(splitViewProvider(mainNavigatorKey));
+    final isOpen = ref.watch(splitViewProvider(_mainNavigatorKey));
 
     return Stack(
       children: [
@@ -34,7 +37,7 @@ class SplitView extends ConsumerWidget {
           padding: EdgeInsets.only(left: isOpen ? sideWidth + 1 : 0),
           child: ClipRect(
             child: Navigator(
-              key: mainNavigatorKey,
+              key: _mainNavigatorKey,
               onGenerateRoute: onGenerateRoute,
               initialRoute: initialMainRoute,
               observers: observers,
@@ -51,7 +54,7 @@ class SplitView extends ConsumerWidget {
               SizedBox(
                 width: sideWidth,
                 child: Navigator(
-                  key: sideNavigatorKey,
+                  key: _sideNavigatorKey,
                   onGenerateRoute: onGenerateRoute,
                   initialRoute: initialSideRoute,
                   observers: observers,
