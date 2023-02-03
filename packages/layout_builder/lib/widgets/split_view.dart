@@ -66,45 +66,6 @@ class SplitView extends ConsumerWidget {
   }
 }
 
-class SplitViewNavigationBar extends PlatformNavigationBar {
-  const SplitViewNavigationBar({
-    required this.navigatorKey,
-    this.title,
-    this.middle,
-    this.trailing,
-  });
-
-  final GlobalKey<NavigatorState> navigatorKey;
-  final String? title;
-  final Widget? middle;
-  final Widget? trailing;
-
-  @override
-  CupertinoNavigationBar createCupertinoWidget(
-    BuildContext context,
-    WidgetRef ref, {
-    bool isCupertinoModal = false,
-  }) {
-    final isOpen = ref.watch(splitViewProvider(navigatorKey));
-    final canPop = ModalRoute.of(context)?.canPop ?? false;
-
-    return CupertinoNavigationBar(
-      leading: Container(
-        transform: Matrix4.translationValues(isOpen && canPop ? -15 : 0, 0, 0),
-        child: Row(
-          children: [
-            if (!isOpen) SplitViewToggleButton(navigatorKey: navigatorKey),
-            if (!isOpen && canPop) const SizedBox(width: 10),
-            if (canPop) const CupertinoNavigationBarBackButton(),
-          ],
-        ),
-      ),
-      middle: Text("OK Super"), //middle ?? super.middleWidget(ref),
-      trailing: trailing,
-    );
-  }
-}
-
 class SplitViewToggleButton extends ConsumerWidget {
   const SplitViewToggleButton({
     required this.navigatorKey,

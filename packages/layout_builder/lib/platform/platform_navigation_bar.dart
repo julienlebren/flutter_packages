@@ -14,6 +14,7 @@ class PlatformNavigationBar extends PlatformWidgetBase<PreferredSizeWidget,
     this.hasBorder = true,
     this.transitionBetweenRoutes = true,
     this.needsRightTransform = false,
+    this.navigatorKey,
   }) : super();
 
   final String? title;
@@ -23,6 +24,7 @@ class PlatformNavigationBar extends PlatformWidgetBase<PreferredSizeWidget,
   final bool hasBorder;
   final bool transitionBetweenRoutes;
   final bool needsRightTransform;
+  final GlobalKey<NavigatorState>? navigatorKey;
 
   Widget? middleWidget(WidgetRef ref) {
     if (middle != null) {
@@ -70,6 +72,12 @@ class PlatformNavigationBar extends PlatformWidgetBase<PreferredSizeWidget,
     final navigationBarBorderColor = ref.watch(
       appThemeProvider.select((appTheme) => appTheme.navigationBarBorderColor),
     );
+
+    final isOpen = navigatorKey != null
+        ? ref.watch(splitViewProvider(navigatorKey!))
+        : false;
+    final canPop = ModalRoute.of(context)?.canPop ?? false;
+
     return CupertinoNavigationBar(
       transitionBetweenRoutes: transitionBetweenRoutes,
       backgroundColor: navigationBarBackgroundColor,
@@ -80,7 +88,20 @@ class PlatformNavigationBar extends PlatformWidgetBase<PreferredSizeWidget,
           ? Border(bottom: BorderSide(color: navigationBarBorderColor))
           : null,
       middle: middleWidget(ref),
-      leading: leading,
+      leading: navigatorKey != null
+          ? Container(
+              transform:
+                  Matrix4.translationValues(isOpen && canPop ? -15 : 0, 0, 0),
+              child: Row(
+                children: [
+                  if (!isOpen)
+                    SplitViewToggleButton(navigatorKey: navigatorKey!),
+                  if (!isOpen && canPop) const SizedBox(width: 10),
+                  if (canPop) const CupertinoNavigationBarBackButton(),
+                ],
+              ),
+            )
+          : null,
       trailing: needsRightTransform
           ? Container(
               transform: Matrix4.translationValues(10.0, 0.0, 0.0),
