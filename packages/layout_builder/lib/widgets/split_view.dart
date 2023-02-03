@@ -84,14 +84,7 @@ class SplitViewNavigationBar extends PlatformNavigationBar {
 
     return PlatformNavigationBar(
       title: title,
-      leading: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          if (!isOpen) SplitViewToggleButton(navigatorKey: navigatorKey),
-          if (canPop) const CupertinoNavigationBarBackButton(),
-          Text('Hekl'),
-        ],
-      ),
+      leading: SplitViewToggleButton(navigatorKey: navigatorKey),
       trailing: trailing,
     );
   }
