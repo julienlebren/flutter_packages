@@ -77,6 +77,7 @@ class PlatformNavigationBar extends PlatformWidgetBase<PreferredSizeWidget,
         ? ref.watch(splitViewProvider(navigatorKey!))
         : false;
     final canPop = ModalRoute.of(context)?.canPop ?? false;
+    print("isOpen: $isOpen");
 
     return CupertinoNavigationBar(
       transitionBetweenRoutes: transitionBetweenRoutes,
@@ -93,6 +94,7 @@ class PlatformNavigationBar extends PlatformWidgetBase<PreferredSizeWidget,
               transform:
                   Matrix4.translationValues(isOpen && canPop ? -15 : 0, 0, 0),
               child: Row(
+                mainAxisSize: MainAxisSize.min,
                 children: [
                   if (!isOpen)
                     SplitViewToggleButton(navigatorKey: navigatorKey!),
