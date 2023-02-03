@@ -101,7 +101,7 @@ class PlatformNavigationBar extends PlatformWidgetBase<PreferredSizeWidget,
                 ],
               ),
             )
-          : null,
+          : leading,
       trailing: needsRightTransform
           ? Container(
               transform: Matrix4.translationValues(10.0, 0.0, 0.0),
