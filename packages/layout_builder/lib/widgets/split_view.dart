@@ -89,7 +89,12 @@ class SplitViewNavigationBar extends PlatformNavigationBar {
     final canPop = Navigator.of(context).canPop();
 
     return CupertinoNavigationBar(
-      leading: SplitViewToggleButton(navigatorKey: navigatorKey),
+      leading: Row(
+        children: [
+          if (!isOpen) SplitViewToggleButton(navigatorKey: navigatorKey),
+          if (canPop) const CupertinoNavigationBarBackButton(),
+        ],
+      ),
       middle: super.middleWidget(ref),
       trailing: trailing,
     );
