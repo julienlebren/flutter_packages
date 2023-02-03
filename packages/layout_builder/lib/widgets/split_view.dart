@@ -26,14 +26,12 @@ class SplitView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isOpen = ref.watch(splitViewProvider(mainNavigatorKey));
-    final screenWidth = MediaQuery.of(context).size.width;
 
     return Stack(
       children: [
         AnimatedContainer(
           duration: Duration(milliseconds: 200),
           padding: EdgeInsets.only(left: isOpen ? sideWidth + 1 : 0),
-          //width: isOpen ? (screenWidth - sideWidth - 1) : screenWidth,
           child: ClipRect(
             child: Navigator(
               key: mainNavigatorKey,
@@ -65,54 +63,35 @@ class SplitView extends ConsumerWidget {
         ),
       ],
     );
+  }
+}
 
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        AnimatedContainer(
-          duration: Duration(milliseconds: 200),
-          width: isOpen ? sideWidth : 0,
-          child: SizedBox(
-            width: sideWidth,
-            child: Navigator(
-              key: sideNavigatorKey,
-              onGenerateRoute: onGenerateRoute,
-              initialRoute: initialSideRoute,
-              observers: observers,
-            ),
-          ),
-        ),
-        const VerticalDivider(width: 1),
-        AnimatedContainer(
-          duration: Duration(milliseconds: 200),
-          width: isOpen
-              ? (screenWidth - sideWidth - 1)
-              : (screenWidth - sideWidth - 1),
-          child: ClipRect(
-            child: Navigator(
-              key: mainNavigatorKey,
-              onGenerateRoute: onGenerateRoute,
-              initialRoute: initialMainRoute,
-              observers: observers,
-            ),
-          ),
-        ),
-        /*
-        Expanded(
-          child: ClipRect(
-            child: AnimatedSize(
-              curve: Curves.easeIn,
-              duration: const Duration(seconds: 1),
-              child: Navigator(
-                key: mainNavigatorKey,
-                onGenerateRoute: onGenerateRoute,
-                initialRoute: initialMainRoute,
-                observers: observers,
-              ),
-            ),
-          ),
-        ),*/
-      ],
+class SplitViewNavigationBar extends ConsumerWidget {
+  const SplitViewNavigationBar({
+    required this.navigatorKey,
+    this.title,
+    this.trailing,
+    super.key,
+  });
+
+  final GlobalKey<NavigatorState> navigatorKey;
+  final String? title;
+  final Widget? trailing;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final isOpen = ref.watch(splitViewProvider(navigatorKey));
+    final canPop = Navigator.of(context).canPop();
+
+    return PlatformNavigationBar(
+      title: title,
+      leading: Row(
+        children: [
+          if (!isOpen) SplitViewToggleButton(navigatorKey: navigatorKey),
+          if (canPop) const CupertinoNavigationBarBackButton(),
+        ],
+      ),
+      trailing: trailing,
     );
   }
 }
