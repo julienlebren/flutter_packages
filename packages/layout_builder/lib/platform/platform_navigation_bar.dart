@@ -77,7 +77,7 @@ class PlatformNavigationBar extends PlatformWidgetBase<PreferredSizeWidget,
         ? ref.watch(splitViewProvider(navigatorKey!))
         : false;
     final canPop = ModalRoute.of(context)?.canPop ?? false;
-    print("isOpen: $isOpen");
+    print("$navigatorKey isOpen: $isOpen");
 
     return CupertinoNavigationBar(
       transitionBetweenRoutes: transitionBetweenRoutes,
