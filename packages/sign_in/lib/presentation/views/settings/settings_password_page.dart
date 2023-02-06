@@ -1,10 +1,17 @@
+// ignore_for_file: library_private_types_in_public_api
+
 part of '../../../sign_in.dart';
 
-class SettingsPasswordPage extends ConsumerWidget {
-  const SettingsPasswordPage({Key? key}) : super(key: key);
+class SettingsPasswordPage extends ConsumerStatefulWidget {
+  const SettingsPasswordPage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  _SettingsPasswordPageState createState() => _SettingsPasswordPageState();
+}
+
+class _SettingsPasswordPageState extends ConsumerState<SettingsPasswordPage> {
+  @override
+  Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final isSaving = ref.watch(
       settingsPasswordControllerProvider.select((state) => state.isLoading),
@@ -38,6 +45,12 @@ class SettingsPasswordPage extends ConsumerWidget {
       },
       child: const _SettingsPasswordContents(),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    ref.invalidate(settingsPasswordControllerProvider);
   }
 }
 

@@ -3,7 +3,7 @@
 part of '../../../sign_in.dart';
 
 class SettingsEmailPage extends ConsumerStatefulWidget {
-  const SettingsEmailPage({Key? key}) : super(key: key);
+  const SettingsEmailPage({super.key});
 
   @override
   _SettingsEmailPageState createState() => _SettingsEmailPageState();
