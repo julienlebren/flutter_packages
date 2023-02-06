@@ -21,6 +21,7 @@ class SettingsRouter {
       case SettingsRoutes.settingsAccountPage:
         return platformPageRoute(
           builder: (_) => const SettingsAccountPage(),
+          withoutTransition: ref.context.isWide(),
         );
       case SettingsRoutes.settingsEmailPage:
         return platformPageRoute(
