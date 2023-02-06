@@ -86,13 +86,12 @@ class FormPage extends ConsumerWidget {
           physics: AlwaysScrollableScrollPhysics(),
           child: ConstrainedBox(
             constraints: BoxConstraints(
-              maxWidth: Breakpoints.tablet.toDouble(),
               minHeight: viewportConstraints.maxHeight,
             ),
             child: Container(
               color: formTheme.backgroundColor,
               padding: EdgeInsets.symmetric(
-                horizontal: isCupertino() ? 18 : 0,
+                horizontal: context.formHorizontalPadding(),
                 vertical: isCupertino() ? 18 : 0, // 14 si fond blanc
               ),
               child: Column(children: [

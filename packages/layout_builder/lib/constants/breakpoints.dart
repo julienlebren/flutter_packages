@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout_builder/platform/platform.dart';
 
 class Breakpoints {
   static const desktop = 1060;
@@ -33,6 +34,17 @@ extension BuildContextWide on BuildContext {
       return 28;
     } else {
       return 20;
+    }
+  }
+
+  double formHorizontalPadding() {
+    final screenWidth = MediaQuery.of(this).size.width;
+    if (screenWidth > Breakpoints.tablet) {
+      return (screenWidth - Breakpoints.tablet) / 2;
+    } else if (isCupertino()) {
+      return 18;
+    } else {
+      return 0;
     }
   }
 }
