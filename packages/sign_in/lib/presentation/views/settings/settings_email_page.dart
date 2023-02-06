@@ -1,10 +1,17 @@
+// ignore_for_file: library_private_types_in_public_api
+
 part of '../../../sign_in.dart';
 
-class SettingsEmailPage extends ConsumerWidget {
+class SettingsEmailPage extends ConsumerStatefulWidget {
   const SettingsEmailPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  _SettingsEmailPageState createState() => _SettingsEmailPageState();
+}
+
+class _SettingsEmailPageState extends ConsumerState<SettingsEmailPage> {
+  @override
+  Widget build(BuildContext context) {
     final l10n = ref.watch(signInLocalizationsProvider);
     final isSaving = ref.watch(
       settingsEmailControllerProvider.select((state) => state.isLoading),
@@ -42,6 +49,12 @@ class SettingsEmailPage extends ConsumerWidget {
       },
       child: const _SettingsEmailContents(),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    ref.invalidate(settingsEmailControllerProvider);
   }
 }
 
