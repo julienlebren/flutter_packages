@@ -30,13 +30,6 @@ class FormWithOverlay extends StatelessWidget {
         if (overlay != null && isSaving) overlay!,
       ],
     );
-
-    /*Stack(
-      children: <Widget>[
-        child,
-        FormSavingOverlay(isSaving: isSaving),
-      ],
-    );*/
   }
 }
 
@@ -93,6 +86,7 @@ class FormPage extends ConsumerWidget {
           physics: AlwaysScrollableScrollPhysics(),
           child: ConstrainedBox(
             constraints: BoxConstraints(
+              maxWidth: Breakpoints.tablet.toDouble(),
               minHeight: viewportConstraints.maxHeight,
             ),
             child: Container(
