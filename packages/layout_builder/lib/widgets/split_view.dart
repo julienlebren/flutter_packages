@@ -3,6 +3,8 @@ part of 'widgets.dart';
 final splitViewProvider =
     StateProvider.family<bool, GlobalKey<NavigatorState>>((_, __) => true);
 
+final isInsideSplitViewProvider = Provider<bool>((_) => false);
+
 class SplitView extends ConsumerWidget {
   SplitView({
     required this.onGenerateRoute,
@@ -30,41 +32,46 @@ class SplitView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final isOpen = ref.watch(splitViewProvider(_mainNavigatorKey));
 
-    return Stack(
-      children: [
-        AnimatedContainer(
-          duration: Duration(milliseconds: 200),
-          padding: EdgeInsets.only(left: isOpen ? sideWidth + 1 : 0),
-          child: ClipRect(
-            child: Navigator(
-              key: _mainNavigatorKey,
-              onGenerateRoute: onGenerateRoute,
-              initialRoute: initialMainRoute,
-              observers: observers,
+    return ProviderScope(
+      overrides: [
+        isInsideSplitViewProvider.overrideWithValue(true),
+      ],
+      child: Stack(
+        children: [
+          AnimatedContainer(
+            duration: Duration(milliseconds: 200),
+            padding: EdgeInsets.only(left: isOpen ? sideWidth + 1 : 0),
+            child: ClipRect(
+              child: Navigator(
+                key: _mainNavigatorKey,
+                onGenerateRoute: onGenerateRoute,
+                initialRoute: initialMainRoute,
+                observers: observers,
+              ),
             ),
           ),
-        ),
-        AnimatedContainer(
-          duration: Duration(milliseconds: 200),
-          transform:
-              Matrix4.translationValues(isOpen ? 0 : -(sideWidth + 1), 0, 0),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: sideWidth,
-                child: Navigator(
-                  key: _sideNavigatorKey,
-                  onGenerateRoute: onGenerateRoute,
-                  initialRoute: initialSideRoute,
-                  observers: observers,
+          AnimatedContainer(
+            duration: Duration(milliseconds: 200),
+            transform:
+                Matrix4.translationValues(isOpen ? 0 : -(sideWidth + 1), 0, 0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: sideWidth,
+                  child: Navigator(
+                    key: _sideNavigatorKey,
+                    onGenerateRoute: onGenerateRoute,
+                    initialRoute: initialSideRoute,
+                    observers: observers,
+                  ),
                 ),
-              ),
-              const VerticalDivider(width: 1),
-            ],
+                const VerticalDivider(width: 1),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

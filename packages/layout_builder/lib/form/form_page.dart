@@ -81,6 +81,16 @@ class FormPage extends ConsumerWidget {
         BoxConstraints viewportConstraints,
       ) {
         final formTheme = ref.watch(formThemeProvider);
+        final screenWidth = MediaQuery.of(context).size.width;
+        final isInsideSplitView = ref.watch(isInsideSplitViewProvider);
+        double padding = 0;
+
+        if (screenWidth > Breakpoints.tablet && !isInsideSplitView) {
+          padding = (screenWidth - Breakpoints.tablet) / 2;
+        } else if (isCupertino()) {
+          padding = 18;
+        }
+
         return SingleChildScrollView(
           controller: controller,
           physics: AlwaysScrollableScrollPhysics(),
@@ -91,7 +101,7 @@ class FormPage extends ConsumerWidget {
             child: Container(
               color: formTheme.backgroundColor,
               padding: EdgeInsets.symmetric(
-                horizontal: context.formHorizontalPadding(),
+                horizontal: padding,
                 vertical: isCupertino() ? 18 : 0, // 14 si fond blanc
               ),
               child: Column(children: [

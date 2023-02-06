@@ -36,15 +36,4 @@ extension BuildContextWide on BuildContext {
       return 20;
     }
   }
-
-  double formHorizontalPadding() {
-    final screenWidth = MediaQuery.of(this).size.width;
-    if (screenWidth > Breakpoints.tablet) {
-      return (screenWidth - Breakpoints.tablet) / 2;
-    } else if (isCupertino()) {
-      return 18;
-    } else {
-      return 0;
-    }
-  }
 }
