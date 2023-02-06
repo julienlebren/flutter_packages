@@ -5,9 +5,16 @@ PageRoute<T> platformPageRoute<T>({
   RouteSettings? settings,
   bool maintainState = true,
   bool fullscreenDialog = false,
+  bool withoutTransition = false,
   String? iosTitle,
 }) {
-  if (isMaterial()) {
+  if (withoutTransition) {
+    return PageRouteBuilder(
+      pageBuilder: (context, _, __) => builder.call(context),
+      transitionDuration: Duration.zero,
+      reverseTransitionDuration: Duration.zero,
+    );
+  } else if (isMaterial()) {
     return MaterialPageRoute<T>(
       builder: builder,
       settings: settings,
