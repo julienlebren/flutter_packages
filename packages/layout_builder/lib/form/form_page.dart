@@ -80,6 +80,7 @@ class FormPage extends ConsumerWidget {
         BuildContext context,
         BoxConstraints viewportConstraints,
       ) {
+        print(">>> ${viewportConstraints.maxWidth}");
         final formTheme = ref.watch(formThemeProvider);
         final screenWidth = MediaQuery.of(context).size.width;
         final isInsideSplitView = ref.watch(isInsideSplitViewProvider);
