@@ -34,41 +34,41 @@ class SplitView extends ConsumerWidget {
 
     return Stack(
       children: [
+        AnimatedContainer(
+          duration: Duration(milliseconds: 200),
+          padding: EdgeInsets.only(left: isOpen ? sideWidth + 1 : 0),
+          child: ClipRect(
+            child: Navigator(
+              key: _mainNavigatorKey,
+              onGenerateRoute: onGenerateRoute,
+              initialRoute: initialMainRoute,
+              observers: observers,
+            ),
+          ),
+        ),
         ProviderScope(
           overrides: [
             isInsideSplitViewProvider.overrideWithValue(true),
           ],
           child: AnimatedContainer(
             duration: Duration(milliseconds: 200),
-            padding: EdgeInsets.only(left: isOpen ? sideWidth + 1 : 0),
-            child: ClipRect(
-              child: Navigator(
-                key: _mainNavigatorKey,
-                onGenerateRoute: onGenerateRoute,
-                initialRoute: initialMainRoute,
-                observers: observers,
-              ),
-            ),
-          ),
-        ),
-        AnimatedContainer(
-          duration: Duration(milliseconds: 200),
-          transform:
-              Matrix4.translationValues(isOpen ? 0 : -(sideWidth + 1), 0, 0),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: sideWidth,
-                child: Navigator(
-                  key: _sideNavigatorKey,
-                  onGenerateRoute: onGenerateRoute,
-                  initialRoute: initialSideRoute,
-                  observers: observers,
+            transform:
+                Matrix4.translationValues(isOpen ? 0 : -(sideWidth + 1), 0, 0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: sideWidth,
+                  child: Navigator(
+                    key: _sideNavigatorKey,
+                    onGenerateRoute: onGenerateRoute,
+                    initialRoute: initialSideRoute,
+                    observers: observers,
+                  ),
                 ),
-              ),
-              const VerticalDivider(width: 1),
-            ],
+                const VerticalDivider(width: 1),
+              ],
+            ),
           ),
         ),
       ],
