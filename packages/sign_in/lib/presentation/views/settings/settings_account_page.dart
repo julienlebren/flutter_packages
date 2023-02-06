@@ -137,8 +137,7 @@ class _EmailSection extends ConsumerWidget {
           label: l10n.settingsEmailLabel,
           value: user?.email ?? l10n.settingsUndefined,
           onPressed: () {
-            Navigator.of(context, rootNavigator: true)
-                .pushNamed(SettingsRoutes.settingsEmailPage);
+            Navigator.of(context).pushNamed(SettingsRoutes.settingsEmailPage);
           },
         ),
         if (!isAnonymous)
@@ -148,7 +147,7 @@ class _EmailSection extends ConsumerWidget {
                 ? l10n.settingsPasswordEdit
                 : l10n.settingsUndefined,
             onPressed: () {
-              Navigator.of(context, rootNavigator: true)
+              Navigator.of(context)
                   .pushNamed(SettingsRoutes.settingsPasswordPage);
             },
           ),
