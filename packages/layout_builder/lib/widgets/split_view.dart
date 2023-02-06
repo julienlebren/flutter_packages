@@ -32,13 +32,13 @@ class SplitView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final isOpen = ref.watch(splitViewProvider(_mainNavigatorKey));
 
-    return ProviderScope(
-      overrides: [
-        isInsideSplitViewProvider.overrideWithValue(true),
-      ],
-      child: Stack(
-        children: [
-          AnimatedContainer(
+    return Stack(
+      children: [
+        ProviderScope(
+          overrides: [
+            isInsideSplitViewProvider.overrideWithValue(true),
+          ],
+          child: AnimatedContainer(
             duration: Duration(milliseconds: 200),
             padding: EdgeInsets.only(left: isOpen ? sideWidth + 1 : 0),
             child: ClipRect(
@@ -50,28 +50,28 @@ class SplitView extends ConsumerWidget {
               ),
             ),
           ),
-          AnimatedContainer(
-            duration: Duration(milliseconds: 200),
-            transform:
-                Matrix4.translationValues(isOpen ? 0 : -(sideWidth + 1), 0, 0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: sideWidth,
-                  child: Navigator(
-                    key: _sideNavigatorKey,
-                    onGenerateRoute: onGenerateRoute,
-                    initialRoute: initialSideRoute,
-                    observers: observers,
-                  ),
+        ),
+        AnimatedContainer(
+          duration: Duration(milliseconds: 200),
+          transform:
+              Matrix4.translationValues(isOpen ? 0 : -(sideWidth + 1), 0, 0),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: sideWidth,
+                child: Navigator(
+                  key: _sideNavigatorKey,
+                  onGenerateRoute: onGenerateRoute,
+                  initialRoute: initialSideRoute,
+                  observers: observers,
                 ),
-                const VerticalDivider(width: 1),
-              ],
-            ),
+              ),
+              const VerticalDivider(width: 1),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
