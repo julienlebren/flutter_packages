@@ -13,7 +13,9 @@ class SettingsRouter {
     RouteSettings settings,
     WidgetRef ref,
   ) {
-    ref.read(signInAreaProvider.notifier).state = SignInArea.settings;
+    Future<void>.delayed(const Duration(milliseconds: 400), () {
+      ref.read(signInAreaProvider.notifier).state = SignInArea.settings;
+    });
 
     switch (settings.name) {
       case SettingsRoutes.settingsAccountPage:

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:layout_builder/platform/platform.dart';
 
 class Breakpoints {
   static const desktop = 1060;
