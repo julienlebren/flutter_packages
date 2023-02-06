@@ -32,25 +32,25 @@ class SplitView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final isOpen = ref.watch(splitViewProvider(_mainNavigatorKey));
 
-    return Stack(
-      children: [
-        AnimatedContainer(
-          duration: Duration(milliseconds: 200),
-          padding: EdgeInsets.only(left: isOpen ? sideWidth + 1 : 0),
-          child: ClipRect(
-            child: Navigator(
-              key: _mainNavigatorKey,
-              onGenerateRoute: onGenerateRoute,
-              initialRoute: initialMainRoute,
-              observers: observers,
+    return ProviderScope(
+      overrides: [
+        isInsideSplitViewProvider.overrideWithValue(true),
+      ],
+      child: Stack(
+        children: [
+          AnimatedContainer(
+            duration: Duration(milliseconds: 200),
+            padding: EdgeInsets.only(left: isOpen ? sideWidth + 1 : 0),
+            child: ClipRect(
+              child: Navigator(
+                key: _mainNavigatorKey,
+                onGenerateRoute: onGenerateRoute,
+                initialRoute: initialMainRoute,
+                observers: observers,
+              ),
             ),
           ),
-        ),
-        ProviderScope(
-          overrides: [
-            isInsideSplitViewProvider.overrideWithValue(true),
-          ],
-          child: AnimatedContainer(
+          AnimatedContainer(
             duration: Duration(milliseconds: 200),
             transform:
                 Matrix4.translationValues(isOpen ? 0 : -(sideWidth + 1), 0, 0),
@@ -70,8 +70,8 @@ class SplitView extends ConsumerWidget {
               ],
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
