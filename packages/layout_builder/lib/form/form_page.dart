@@ -80,14 +80,13 @@ class FormPage extends ConsumerWidget {
         BuildContext context,
         BoxConstraints viewportConstraints,
       ) {
-        print(">>> ${viewportConstraints.maxWidth}");
         final formTheme = ref.watch(formThemeProvider);
-        final screenWidth = MediaQuery.of(context).size.width;
         final isInsideSplitView = ref.watch(isInsideSplitViewProvider);
         double padding = 0;
 
-        if (screenWidth > Breakpoints.tablet && !isInsideSplitView) {
-          padding = (screenWidth - Breakpoints.tablet) / 2;
+        if (viewportConstraints.maxWidth > Breakpoints.tablet &&
+            !isInsideSplitView) {
+          padding = (viewportConstraints.maxWidth - Breakpoints.tablet) / 2;
         } else if (isCupertino()) {
           padding = 18;
         }
