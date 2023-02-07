@@ -202,7 +202,7 @@ class ListTileContents extends ConsumerWidget {
         minHeight: 48.0,
       ),
       child: Container(
-        padding: EdgeInsets.only(left: 15, right: 8),
+        padding: listTheme.cellPadding,
         child: child != null
             ? Padding(
                 padding: EdgeInsets.symmetric(vertical: 8),
