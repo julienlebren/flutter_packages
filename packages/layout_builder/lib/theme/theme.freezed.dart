@@ -639,6 +639,7 @@ mixin _$ListViewTheme {
   double get captionFontSize => throw _privateConstructorUsedError;
   int? get labelMaxLines => throw _privateConstructorUsedError;
   int? get captionMaxLines => throw _privateConstructorUsedError;
+  EdgeInsetsGeometry get cellPadding => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ListViewThemeCopyWith<ListViewTheme> get copyWith =>
@@ -660,7 +661,8 @@ abstract class $ListViewThemeCopyWith<$Res> {
       Color captionColor,
       double captionFontSize,
       int? labelMaxLines,
-      int? captionMaxLines});
+      int? captionMaxLines,
+      EdgeInsetsGeometry cellPadding});
 }
 
 /// @nodoc
@@ -685,6 +687,7 @@ class _$ListViewThemeCopyWithImpl<$Res, $Val extends ListViewTheme>
     Object? captionFontSize = null,
     Object? labelMaxLines = freezed,
     Object? captionMaxLines = freezed,
+    Object? cellPadding = null,
   }) {
     return _then(_value.copyWith(
       separatorPadding: null == separatorPadding
@@ -723,6 +726,10 @@ class _$ListViewThemeCopyWithImpl<$Res, $Val extends ListViewTheme>
           ? _value.captionMaxLines
           : captionMaxLines // ignore: cast_nullable_to_non_nullable
               as int?,
+      cellPadding: null == cellPadding
+          ? _value.cellPadding
+          : cellPadding // ignore: cast_nullable_to_non_nullable
+              as EdgeInsetsGeometry,
     ) as $Val);
   }
 }
@@ -744,7 +751,8 @@ abstract class _$$_ListViewThemeCopyWith<$Res>
       Color captionColor,
       double captionFontSize,
       int? labelMaxLines,
-      int? captionMaxLines});
+      int? captionMaxLines,
+      EdgeInsetsGeometry cellPadding});
 }
 
 /// @nodoc
@@ -767,6 +775,7 @@ class __$$_ListViewThemeCopyWithImpl<$Res>
     Object? captionFontSize = null,
     Object? labelMaxLines = freezed,
     Object? captionMaxLines = freezed,
+    Object? cellPadding = null,
   }) {
     return _then(_$_ListViewTheme(
       separatorPadding: null == separatorPadding
@@ -805,6 +814,10 @@ class __$$_ListViewThemeCopyWithImpl<$Res>
           ? _value.captionMaxLines
           : captionMaxLines // ignore: cast_nullable_to_non_nullable
               as int?,
+      cellPadding: null == cellPadding
+          ? _value.cellPadding
+          : cellPadding // ignore: cast_nullable_to_non_nullable
+              as EdgeInsetsGeometry,
     ));
   }
 }
@@ -821,7 +834,8 @@ class _$_ListViewTheme implements _ListViewTheme {
       required this.captionColor,
       this.captionFontSize = 13,
       this.labelMaxLines = 1,
-      this.captionMaxLines = 1});
+      this.captionMaxLines = 1,
+      this.cellPadding = const EdgeInsets.only(left: 15, right: 8)});
 
   @override
   @JsonKey()
@@ -847,10 +861,13 @@ class _$_ListViewTheme implements _ListViewTheme {
   @override
   @JsonKey()
   final int? captionMaxLines;
+  @override
+  @JsonKey()
+  final EdgeInsetsGeometry cellPadding;
 
   @override
   String toString() {
-    return 'ListViewTheme(separatorPadding: $separatorPadding, labelColor: $labelColor, valueColor: $valueColor, valueColorEnforced: $valueColorEnforced, labelFontSize: $labelFontSize, captionColor: $captionColor, captionFontSize: $captionFontSize, labelMaxLines: $labelMaxLines, captionMaxLines: $captionMaxLines)';
+    return 'ListViewTheme(separatorPadding: $separatorPadding, labelColor: $labelColor, valueColor: $valueColor, valueColorEnforced: $valueColorEnforced, labelFontSize: $labelFontSize, captionColor: $captionColor, captionFontSize: $captionFontSize, labelMaxLines: $labelMaxLines, captionMaxLines: $captionMaxLines, cellPadding: $cellPadding)';
   }
 
   @override
@@ -875,7 +892,9 @@ class _$_ListViewTheme implements _ListViewTheme {
             (identical(other.labelMaxLines, labelMaxLines) ||
                 other.labelMaxLines == labelMaxLines) &&
             (identical(other.captionMaxLines, captionMaxLines) ||
-                other.captionMaxLines == captionMaxLines));
+                other.captionMaxLines == captionMaxLines) &&
+            (identical(other.cellPadding, cellPadding) ||
+                other.cellPadding == cellPadding));
   }
 
   @override
@@ -889,7 +908,8 @@ class _$_ListViewTheme implements _ListViewTheme {
       captionColor,
       captionFontSize,
       labelMaxLines,
-      captionMaxLines);
+      captionMaxLines,
+      cellPadding);
 
   @JsonKey(ignore: true)
   @override
@@ -908,7 +928,8 @@ abstract class _ListViewTheme implements ListViewTheme {
       required final Color captionColor,
       final double captionFontSize,
       final int? labelMaxLines,
-      final int? captionMaxLines}) = _$_ListViewTheme;
+      final int? captionMaxLines,
+      final EdgeInsetsGeometry cellPadding}) = _$_ListViewTheme;
 
   @override
   double get separatorPadding;
@@ -928,6 +949,8 @@ abstract class _ListViewTheme implements ListViewTheme {
   int? get labelMaxLines;
   @override
   int? get captionMaxLines;
+  @override
+  EdgeInsetsGeometry get cellPadding;
   @override
   @JsonKey(ignore: true)
   _$$_ListViewThemeCopyWith<_$_ListViewTheme> get copyWith =>

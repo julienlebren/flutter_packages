@@ -62,6 +62,8 @@ class ListViewTheme with _$ListViewTheme {
     @Default(13) double captionFontSize,
     @Default(1) int? labelMaxLines,
     @Default(1) int? captionMaxLines,
+    @Default(EdgeInsets.only(left: 15, right: 8))
+        EdgeInsetsGeometry cellPadding,
   }) = _ListViewTheme;
 }
 
