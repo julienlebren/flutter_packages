@@ -50,7 +50,7 @@ part 'platform_widget_base.dart';
 part 'platform.freezed.dart';
 
 bool isMaterial() {
-  return defaultTargetPlatform == TargetPlatform.android;
+  return defaultTargetPlatform == TargetPlatform.iOS;
 }
 
 bool isCupertino() {
