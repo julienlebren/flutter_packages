@@ -14,7 +14,7 @@ abstract class PlatformWidgetBase<
       switch (defaultTargetPlatform) {
         case TargetPlatform.iOS:
         case TargetPlatform.macOS:
-          return createMaterialWidget(context, ref);
+          return createCupertinoWidget(context, ref);
         case TargetPlatform.android:
           return createMaterialWidget(context, ref);
         default:
