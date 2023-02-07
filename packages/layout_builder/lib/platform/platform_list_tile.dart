@@ -11,6 +11,7 @@ class PlatformListTile
     this.value,
     this.trailing,
     this.onTap,
+    this.onVisibilityChanged,
     Key? key,
   }) : super();
 
@@ -22,6 +23,7 @@ class PlatformListTile
   final dynamic caption;
   final String? value;
   final VoidCallback? onTap;
+  final VisibilityChangedCallback? onVisibilityChanged;
 
   @override
   Material createMaterialWidget(BuildContext context, WidgetRef ref) {
@@ -42,6 +44,7 @@ class PlatformListTile
           value: value,
           trailing: trailing,
           onTap: onTap,
+          onVisibilityChanged: onVisibilityChanged,
         ),
       ),
     );
@@ -60,6 +63,7 @@ class PlatformListTile
         value: value,
         trailing: trailing,
         onTap: onTap,
+        onVisibilityChanged: onVisibilityChanged,
       ),
       onTap: onTap,
     );
@@ -173,6 +177,7 @@ class ListTileContents extends ConsumerWidget {
     this.value,
     this.trailing,
     this.onTap,
+    this.onVisibilityChanged,
   }) : super();
 
   final Widget? child;
@@ -183,6 +188,7 @@ class ListTileContents extends ConsumerWidget {
   final dynamic caption;
   final String? value;
   final VoidCallback? onTap;
+  final VisibilityChangedCallback? onVisibilityChanged;
 
   CrossAxisAlignment get alignment {
     if (leading == null && label == null && trailing == null) {
@@ -197,100 +203,104 @@ class ListTileContents extends ConsumerWidget {
     final appTheme = ref.watch(appThemeProvider);
     final listTheme = ref.watch(listViewThemeProvider);
 
-    return ConstrainedBox(
-      constraints: BoxConstraints(
-        minHeight: 48.0,
-      ),
-      child: Container(
-        padding: listTheme.cellPadding,
-        child: child != null
-            ? Padding(
-                padding: EdgeInsets.symmetric(vertical: 8),
-                child: child!,
-              )
-            : Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  if (leading != null)
-                    Padding(
-                      padding: EdgeInsets.only(top: 8, bottom: 8, right: 10),
-                      child: leading!,
-                    ),
-                  if (label != null)
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 8),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: alignment,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(top: 3, right: 5),
-                              child: (() {
-                                if (extraLabel == null) {
-                                  return PlatformListTileLabel(
-                                    value: label!,
-                                    listTheme: listTheme,
-                                  );
-                                } else {
-                                  return Row(
-                                    children: [
-                                      PlatformListTileLabel(
-                                        value: label!,
-                                        listTheme: listTheme,
-                                      ),
-                                      const SizedBox(width: 8),
-                                      extraLabel!,
-                                    ],
-                                  );
-                                }
-                              })(),
-                            ),
-                            if (caption != null)
+    return VisibilityDetector(
+      key: UniqueKey(),
+      onVisibilityChanged: onVisibilityChanged,
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          minHeight: 48.0,
+        ),
+        child: Container(
+          padding: listTheme.cellPadding,
+          child: child != null
+              ? Padding(
+                  padding: EdgeInsets.symmetric(vertical: 8),
+                  child: child!,
+                )
+              : Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    if (leading != null)
+                      Padding(
+                        padding: EdgeInsets.only(top: 8, bottom: 8, right: 10),
+                        child: leading!,
+                      ),
+                    if (label != null)
+                      Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 8),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: alignment,
+                            children: [
                               Padding(
-                                padding: EdgeInsets.symmetric(vertical: 5),
+                                padding: EdgeInsets.only(top: 3, right: 5),
                                 child: (() {
-                                  if (caption is Widget) {
-                                    return caption;
-                                  } else if (caption is String) {
-                                    return PlatformListTileCaption(
-                                      value: caption!,
+                                  if (extraLabel == null) {
+                                    return PlatformListTileLabel(
+                                      value: label!,
                                       listTheme: listTheme,
+                                    );
+                                  } else {
+                                    return Row(
+                                      children: [
+                                        PlatformListTileLabel(
+                                          value: label!,
+                                          listTheme: listTheme,
+                                        ),
+                                        const SizedBox(width: 8),
+                                        extraLabel!,
+                                      ],
                                     );
                                   }
                                 })(),
                               ),
-                          ],
+                              if (caption != null)
+                                Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 5),
+                                  child: (() {
+                                    if (caption is Widget) {
+                                      return caption;
+                                    } else if (caption is String) {
+                                      return PlatformListTileCaption(
+                                        value: caption!,
+                                        listTheme: listTheme,
+                                      );
+                                    }
+                                  })(),
+                                ),
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  if (value !=
-                      null) // Removing Expanded for Settings view, dunno why I added Expanded
-                    Padding(
-                      padding: EdgeInsets.only(right: 7),
-                      child: Text(
-                        value!,
-                        style: TextStyle(
-                          fontSize: isCupertino() ? 17 : 16,
-                          letterSpacing: isCupertino() ? -0.5 : 0,
-                          color: isMaterial() && label != null
-                              ? (listTheme.valueColorEnforced
-                                  ? listTheme.valueColor
-                                  : appTheme.primaryColor)
-                              : (label != null
-                                  ? listTheme.valueColor
-                                  : listTheme.labelColor),
+                    if (value !=
+                        null) // Removing Expanded for Settings view, dunno why I added Expanded
+                      Padding(
+                        padding: EdgeInsets.only(right: 7),
+                        child: Text(
+                          value!,
+                          style: TextStyle(
+                            fontSize: isCupertino() ? 17 : 16,
+                            letterSpacing: isCupertino() ? -0.5 : 0,
+                            color: isMaterial() && label != null
+                                ? (listTheme.valueColorEnforced
+                                    ? listTheme.valueColor
+                                    : appTheme.primaryColor)
+                                : (label != null
+                                    ? listTheme.valueColor
+                                    : listTheme.labelColor),
+                          ),
+                          textAlign:
+                              label != null ? TextAlign.right : TextAlign.left,
+                          overflow: TextOverflow.ellipsis,
                         ),
-                        textAlign:
-                            label != null ? TextAlign.right : TextAlign.left,
-                        overflow: TextOverflow.ellipsis,
                       ),
-                    ),
-                  if (trailing != null) trailing!
-                ],
-              ),
+                    if (trailing != null) trailing!
+                  ],
+                ),
+        ),
       ),
     );
   }
