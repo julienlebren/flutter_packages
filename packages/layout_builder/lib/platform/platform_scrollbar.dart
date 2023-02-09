@@ -1,7 +1,7 @@
 part of platform;
 
-class PlatformScrollbar extends PlatformWidgetBase<ScrollViewVisibilityDetector,
-    ScrollViewVisibilityDetector, ScrollViewVisibilityDetector> {
+class PlatformScrollbar
+    extends PlatformWidgetBase<Scrollbar, CupertinoScrollbar, Scrollbar> {
   PlatformScrollbar({
     this.thumbVisibility = false,
     this.controller,
@@ -15,39 +15,30 @@ class PlatformScrollbar extends PlatformWidgetBase<ScrollViewVisibilityDetector,
   final Key? key;
 
   @override
-  ScrollViewVisibilityDetector createMaterialWidget(
-      BuildContext context, WidgetRef ref) {
-    return ScrollViewVisibilityDetector(
-      key: key,
+  Scrollbar createMaterialWidget(BuildContext context, WidgetRef ref) {
+    return Scrollbar(
       controller: controller,
-      child: Scrollbar(
-        controller: controller,
-        thumbVisibility: thumbVisibility,
-        child: child,
-      ),
+      thumbVisibility: thumbVisibility,
+      child: child,
     );
   }
 
   @override
-  ScrollViewVisibilityDetector createCupertinoWidget(
+  CupertinoScrollbar createCupertinoWidget(
       BuildContext context, WidgetRef ref) {
-    return ScrollViewVisibilityDetector(
-      key: key,
+    return CupertinoScrollbar(
       controller: controller,
-      child: CupertinoScrollbar(
-        controller: controller,
-        thumbVisibility: thumbVisibility,
-        child: child,
-      ),
+      thumbVisibility: thumbVisibility,
+      child: child,
     );
   }
 
   @override
-  ScrollViewVisibilityDetector createWebWidget(
-          BuildContext context, WidgetRef ref) =>
+  Scrollbar createWebWidget(BuildContext context, WidgetRef ref) =>
       createMaterialWidget(context, ref);
 }
 
+/*
 class ScrollViewVisibilityDetector extends ConsumerWidget {
   const ScrollViewVisibilityDetector({
     this.controller,
@@ -73,3 +64,4 @@ class ScrollViewVisibilityDetector extends ConsumerWidget {
     );
   }
 }
+*/
