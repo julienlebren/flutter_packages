@@ -1,7 +1,7 @@
 part of platform;
 
-class PlatformListView extends PlatformWidgetBase<ScrollViewVisibilityDetector,
-    ScrollViewVisibilityDetector, ScrollViewVisibilityDetector> {
+class PlatformListView
+    extends PlatformWidgetBase<ListView, ListView, ListView> {
   const PlatformListView({
     required this.itemCount,
     required this.itemBuilder,
@@ -21,44 +21,33 @@ class PlatformListView extends PlatformWidgetBase<ScrollViewVisibilityDetector,
   final Key? key;
 
   @override
-  ScrollViewVisibilityDetector createMaterialWidget(
-      BuildContext context, WidgetRef ref) {
-    return ScrollViewVisibilityDetector(
-      key: key,
+  ListView createMaterialWidget(BuildContext context, WidgetRef ref) {
+    return ListView.builder(
+      padding: EdgeInsets.all(isWeb() ? 20 : 0),
+      itemCount: itemCount,
+      itemBuilder: itemBuilder,
       controller: controller,
-      child: ListView.builder(
-        padding: EdgeInsets.all(isWeb() ? 20 : 0),
-        itemCount: itemCount,
-        itemBuilder: itemBuilder,
-        controller: controller,
-        shrinkWrap: shrinkWrap,
-      ),
+      shrinkWrap: shrinkWrap,
     );
   }
 
   @override
-  ScrollViewVisibilityDetector createCupertinoWidget(
-      BuildContext context, WidgetRef ref) {
+  ListView createCupertinoWidget(BuildContext context, WidgetRef ref) {
     final safePadding = isModal ? MediaQuery.of(context).padding.bottom : 0.0;
 
-    return ScrollViewVisibilityDetector(
-      key: key,
+    return ListView.separated(
+      physics: scrollPhysics,
+      padding: EdgeInsets.only(bottom: safePadding),
+      itemCount: itemCount,
+      itemBuilder: itemBuilder,
       controller: controller,
-      child: ListView.separated(
-        physics: scrollPhysics,
-        padding: EdgeInsets.only(bottom: safePadding),
-        itemCount: itemCount,
-        itemBuilder: itemBuilder,
-        controller: controller,
-        shrinkWrap: shrinkWrap,
-        separatorBuilder: (_, __) => const ListDivider(),
-      ),
+      shrinkWrap: shrinkWrap,
+      separatorBuilder: (_, __) => const ListDivider(),
     );
   }
 
   @override
-  ScrollViewVisibilityDetector createWebWidget(
-          BuildContext context, WidgetRef ref) =>
+  ListView createWebWidget(BuildContext context, WidgetRef ref) =>
       createMaterialWidget(context, ref);
 }
 
