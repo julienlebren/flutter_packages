@@ -49,7 +49,6 @@ class PlatformTabScaffold
         navigator.maybePop();
       }
     } else {
-      print("Go to index $index");
       ref.read(scrollControllerProvider.notifier).state = null;
       ref.read(currentTabIndexProvider.notifier).state = index;
     }
@@ -60,7 +59,7 @@ class PlatformTabScaffold
   AnnotatedRegion createMaterialWidget(BuildContext context, WidgetRef ref) {
     final systemOverlayStyle = ref.watch(systemOverlayStyleProvider);
     final appTheme = ref.watch(appThemeProvider);
-    final currentTabIndex = ref.watch(currentTabIndexProvider.notifier).state;
+    final currentTabIndex = ref.watch(currentTabIndexProvider);
     final tabs = ref.watch(tabsProvider);
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
