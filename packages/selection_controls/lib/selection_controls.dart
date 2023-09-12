@@ -45,7 +45,7 @@ class CustomSelectionControls implements TextSelectionControls {
       Offset ____,
       List<TextSelectionPoint> _____,
       TextSelectionDelegate ______,
-      ClipboardStatusNotifier? _______,
+      ValueListenable<ClipboardStatus>? _______,
       Offset? ________) {
     throw UnimplementedError();
   }
