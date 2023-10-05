@@ -15,10 +15,10 @@ FirestoreService firestoreService(FirestoreServiceRef ref) =>
 
 class FirestoreService {
   FirestoreService._() {
-    firestore.settings = const Settings(
+    /*firestore.settings = const Settings(
       persistenceEnabled: true,
       cacheSizeBytes: Settings.CACHE_SIZE_UNLIMITED,
-    );
+    );*/
   }
 
   static final instance = FirestoreService._();
