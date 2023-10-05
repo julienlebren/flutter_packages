@@ -1,6 +1,6 @@
 name: layout_builder
 description: Layout building templates for apps built by https://github.com/julienlebren 
-version: 3.8.0
+version: 3.8.1
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -30,7 +30,7 @@ dependencies:
   internet_connection_checker: ^1.0.0+1
   intl: ^0.18.1
   freezed_annotation: ^2.2.0
-  numberpicker: ^2.0.1
+  numberpicker: ^2.1.2
   page_transition: ^2.0.5
   riverpod_annotation: ^1.0.6
   visibility_detector: ^0.3.3
