@@ -27,7 +27,7 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/localization
-    version: ^1.4.0
+    version: ^1.5.0
   purchases_flutter: ^5.8.0
   freezed_annotation: ^2.4.1
   flutter_riverpod: ^2.4.2
