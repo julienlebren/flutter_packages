@@ -1,7 +1,7 @@
 name: sign_in
 description: Sign-in Flow Management for Flutter & Firebase
 publish_to: 'none'
-version: 6.11.2
+version: 6.12.0
 
 environment:
   sdk: '>=2.18.0 <3.0.0'
@@ -15,7 +15,7 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/extensions
-    version: ^0.8.0
+    version: ^0.9.0
   firestore_service:
     git: 
       url: https://github.com/julienlebren/flutter_packages
@@ -30,7 +30,7 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/layout_builder
-    version: ^3.8.0
+    version: ^3.9.0
   localization:
     git:
       url: https://github.com/julienlebren/flutter_packages
@@ -38,23 +38,23 @@ dependencies:
     version: ^1.4.0
   cloud_functions: ^4.0.5
   firebase_auth: ^4.10.1
-  freezed_annotation: ^2.2.0
+  freezed_annotation: ^2.4.1
   flutter_libphonenumber: 1.1.0
-  flutter_riverpod: ^2.1.1
+  flutter_riverpod: ^2.4.2
   google_sign_in: ^5.4.4
   intl: ^0.18.1
   pinput: ^3.0.1
-  riverpod_annotation: ^1.0.6
+  riverpod_annotation: ^2.1.6
   the_apple_sign_in: ^1.1.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.1 
-  build_runner: ^2.3.2
-  freezed: ^2.2.1
+  build_runner: ^2.4.6
+  freezed: ^2.4.3
   json_serializable: ^6.5.4
-  riverpod_generator: ^1.0.6
+  riverpod_generator: ^2.3.2
 
 flutter:
   generate: true
