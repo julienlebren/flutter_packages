@@ -3,7 +3,6 @@ library firestore_service;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'dart:developer';
 
 part 'firestore_converters.dart';
 part 'firestore_errors.dart';
@@ -41,10 +40,7 @@ class FirestoreService {
 
   Future<List<T>> getDocuments<T>(Query<T> query) {
     return query.get().then((snapshot) {
-      return snapshot.docs.map((snapshot) {
-        log("", error: snapshot.data());
-        return snapshot.data();
-      }).toList();
+      return snapshot.docs.map((snapshot) => snapshot.data()).toList();
     });
   }
 
