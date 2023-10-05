@@ -1,4 +1,4 @@
-part of '../../../sign_in.dart';
+part of sign_in;
 
 class SettingsDeletePage extends ConsumerWidget {
   const SettingsDeletePage({Key? key}) : super(key: key);
@@ -36,7 +36,7 @@ class SettingsDeletePage extends ConsumerWidget {
             textAlign: TextAlign.center,
           ),
           const _DeleteButton(),
-          if (kDebugMode) const _LogoutButton(),
+          const _LogoutButton(),
         ],
       ),
     );
