@@ -1,7 +1,7 @@
 name: sign_in
 description: Sign-in Flow Management for Flutter & Firebase
 publish_to: 'none'
-version: 6.11.0
+version: 6.11.1
 
 environment:
   sdk: '>=2.18.0 <3.0.0'
@@ -43,7 +43,7 @@ dependencies:
   flutter_riverpod: ^2.1.1
   google_sign_in: ^5.4.4
   intl: ^0.18.1
-  pinput: ^2.2.12
+  pinput: ^3.0.1
   riverpod_annotation: ^1.0.6
   the_apple_sign_in: ^1.1.1
 
