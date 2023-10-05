@@ -40,7 +40,10 @@ class FirestoreService {
 
   Future<List<T>> getDocuments<T>(Query<T> query) {
     return query.get().then((snapshot) {
-      return snapshot.docs.map((snapshot) => snapshot.data()).toList();
+      return snapshot.docs.map((snapshot) {
+        print(snapshot.data());
+        return snapshot.data();
+      }).toList();
     });
   }
 
