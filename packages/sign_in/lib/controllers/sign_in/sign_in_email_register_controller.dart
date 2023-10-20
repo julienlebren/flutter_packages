@@ -1,6 +1,6 @@
 part of '../../sign_in.dart';
 
-final signInEmailRegisterControllerProvider = StateNotifierProvider<
+final signInEmailRegisterControllerProvider = StateNotifierProvider.autoDispose<
     SignInEmailRegisterController, SignInEmailRegisterState>((ref) {
   final service = ref.watch(authServiceProvider);
   final localizations = ref.watch(signInLocalizationsProvider);
@@ -96,19 +96,22 @@ class SignInEmailRegisterController
 
       state = state.copyWith(
         isSuccess: true,
-        isLoading: false,
         errorText: null,
       );
     } on FirebaseAuthException catch (e) {
-      state = state.copyWith(
-        isLoading: false,
-        errorText: e.description(_localizations),
-      );
+      if (mounted) {
+        state = state.copyWith(
+          isLoading: false,
+          errorText: e.description(_localizations),
+        );
+      }
     } catch (e) {
-      state = state.copyWith(
-        isLoading: false,
-        errorText: e.toString(),
-      );
+      if (mounted) {
+        state = state.copyWith(
+          isLoading: false,
+          errorText: e.toString(),
+        );
+      }
     }
   }
 }
