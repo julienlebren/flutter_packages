@@ -78,7 +78,7 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
     final state = ref.watch(signInButtonsControllerProvider);
     final isLoading = state.maybeWhen(
       loading: () => true,
-      //success: () => true,
+      success: () => true,
       orElse: () => false,
     );
     final suppliers = ref.watch(authSettingsProvider.select(
