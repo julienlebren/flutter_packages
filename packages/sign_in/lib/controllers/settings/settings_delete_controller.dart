@@ -40,15 +40,19 @@ class SettingsDeleteController extends StateNotifier<SettingsDeleteState> {
       await _service.deleteAccount();
       state = state.copyWith(isSuccess: true);
     } on FirebaseFunctionsException catch (_) {
-      state = state.copyWith(
-        isLoading: false,
-        errorText: _localizations.errorUnknown,
-      );
+      if (mounted) {
+        state = state.copyWith(
+          isLoading: false,
+          errorText: _localizations.errorUnknown,
+        );
+      }
     } catch (e) {
-      state = state.copyWith(
-        isLoading: false,
-        errorText: e.toString(),
-      );
+      if (mounted) {
+        state = state.copyWith(
+          isLoading: false,
+          errorText: e.toString(),
+        );
+      }
     }
   }
 }
