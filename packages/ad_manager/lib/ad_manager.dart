@@ -10,7 +10,13 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 export 'package:google_mobile_ads/google_mobile_ads.dart'
-    show MobileAds, ConsentForm, ConsentInformation;
+    show
+        MobileAds,
+        ConsentForm,
+        ConsentInformation,
+        ConsentRequestParameters,
+        FormError,
+        ConsentStatus;
 
 part 'src/ad_settings.dart';
 part 'src/inline_adaptive.dart';
