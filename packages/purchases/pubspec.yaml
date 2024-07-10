@@ -1,6 +1,6 @@
 name: purchases
 description: A package to handle purchases with RevenueCat and provide some layout stuff to build purchase pages.
-version: 2.16.0
+version: 2.16.1
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -17,17 +17,17 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/extensions
-    version: ^0.11.0
+    version: ^0.11.1
   layout_builder:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/layout_builder
-    version: ^3.11.0
+    version: ^3.11.1
   localization:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/localization
-    version: ^1.6.0
+    version: ^1.6.1
   purchases_flutter: ^6.30.0
   freezed_annotation: ^2.4.3
   flutter_riverpod: ^2.5.1
