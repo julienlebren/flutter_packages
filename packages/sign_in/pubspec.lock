@@ -372,10 +372,10 @@ packages:
     description:
       path: "packages/firebase_storage_service"
       ref: HEAD
-      resolved-ref: d1320936b1011ebcadf3657ddcc51a35fce55e82
+      resolved-ref: "0ae5808470689b759be6a3a59c48042f57b0cb0d"
       url: "https://github.com/julienlebren/flutter_packages"
     source: git
-    version: "0.8.0"
+    version: "0.8.1"
   firebase_storage_web:
     dependency: transitive
     description:
