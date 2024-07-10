@@ -1,6 +1,6 @@
 name: firestore_service
 description: Wrapper for Cloud Firestore
-version: 0.7.4
+version: 0.8.0
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -11,14 +11,18 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  cloud_firestore: ^4.9.3
-  riverpod_annotation: ^2.1.6
+  cloud_firestore: ^5.1.0
+  riverpod_annotation: ^2.3.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^2.4.6
-  freezed: ^2.4.3
-  riverpod_generator: ^2.3.2
+  freezed: ^2.5.6
+  build_runner: ^2.4.11
+  riverpod_generator: ^2.4.2
+
+dependency_overrides:
+  meta: ">=1.11.0 <1.15.0"
+
 
 flutter:
