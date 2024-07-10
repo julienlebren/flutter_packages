@@ -4,7 +4,7 @@ part of '../../../sign_in.dart';
 /// This function avoids too much code repetition in this file
 void _handlePhoneEvent(WidgetRef ref, SignInPhoneEvent event) {
   final controller = ref.read(signInPhoneControllerProvider.notifier);
-  controller.handleEvent(event);
+  //controller.handleEvent(event);
 }
 
 /// Top level of the sign-in phone page

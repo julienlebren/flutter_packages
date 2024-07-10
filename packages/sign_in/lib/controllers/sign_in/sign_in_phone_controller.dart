@@ -56,7 +56,7 @@ class SignInPhoneController extends StateNotifier<SignInPhoneState> {
   final FirebaseAuthService _service;
   final SignInLocalizations _localizations;
 
-  void handleEvent(SignInPhoneEvent event) {
+  /*void handleEvent(SignInPhoneEvent event) {
     event.when(
       countryChanged: (country) {
         state = state.copyWith(country: country);
@@ -64,9 +64,9 @@ class SignInPhoneController extends StateNotifier<SignInPhoneState> {
       phoneChanged: _parsePhoneNumber,
       verifyPhone: _verifyPhone,
     );
-  }
+  }*/
 
-  Future<void> _parsePhoneNumber(
+  /*Future<void> _parsePhoneNumber(
     String input,
   ) async {
     try {
@@ -97,7 +97,7 @@ class SignInPhoneController extends StateNotifier<SignInPhoneState> {
         errorText: e.toString(),
       );
     }
-  }
+  }*/
 
   Future<void> _verifyPhone() async {
     if (!state.canSubmit) return;

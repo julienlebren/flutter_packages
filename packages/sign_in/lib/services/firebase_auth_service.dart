@@ -12,7 +12,7 @@ class FirebaseAuthService {
 
   User? get currentUser => _firebaseAuth.currentUser;
 
-  Future<Map<String, dynamic>> parsePhoneNumber(
+  /*Future<Map<String, dynamic>> parsePhoneNumber(
     CountryWithPhoneCode country,
     String inputText,
   ) async {
@@ -29,7 +29,7 @@ class FirebaseAuthService {
     }
 
     return phoneNumber;
-  }
+  }*/
 
   Future<void> verifyPhone(
     String phoneNumber,

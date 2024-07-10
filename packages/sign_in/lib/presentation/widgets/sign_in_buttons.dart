@@ -66,9 +66,9 @@ class _SignInButtonsState extends ConsumerState<SignInButtons> {
   void initState() {
     super.initState();
     final suppliers = ref.read(authSettingsProvider).suppliers;
-    if (suppliers.contains(SignInSupplier.phone)) {
+    /*if (suppliers.contains(SignInSupplier.phone)) {
       FlutterLibphonenumber().init();
-    }
+    }*/
   }
 
   @override
