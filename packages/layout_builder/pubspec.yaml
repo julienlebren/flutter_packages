@@ -1,6 +1,6 @@
 name: layout_builder
 description: Layout building templates for apps built by https://github.com/julienlebren 
-version: 3.11.0
+version: 3.11.1
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -17,12 +17,12 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/extensions
-    version: ^0.11.0 
+    version: ^0.11.1
   localization:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/localization
-    version: ^1.6.0
+    version: ^1.6.1
   modal_bottom_sheet: ^3.0.0-pre
   cached_network_image: ^3.3.1
   flutter_riverpod: ^2.5.1
@@ -41,10 +41,7 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   freezed: ^2.5.6
   build_runner: ^2.4.11
-  riverpod_generator: ^2.4.2
-
-dependency_overrides:
-  meta: ">=1.11.0 <1.15.0"
+  riverpod_generator: ^2.4.0
 
 flutter:
   generate: true

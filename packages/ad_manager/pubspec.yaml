@@ -1,6 +1,6 @@
 name: ad_manager
 description: A new Flutter package project.
-version: 0.9.0
+version: 0.9.1
 homepage: https://twitter.com/hikeland
 publish_to: none
 
@@ -22,9 +22,6 @@ dev_dependencies:
   flutter_lints: ^4.0.0
   build_runner: ^2.4.11
   freezed: ^2.5.2
-  riverpod_generator: ^2.4.2
-
-dependency_overrides: 
-  meta: ">=1.11.0 <1.15.0"
+  riverpod_generator: ^2.4.0
 
 flutter:
