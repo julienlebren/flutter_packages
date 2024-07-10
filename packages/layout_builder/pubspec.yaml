@@ -39,9 +39,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^4.0.0
-  freezed: ^2.5.6
+  freezed: ^2.5.2
   build_runner: ^2.4.11
-  riverpod_generator: ^2.4.0
+  riverpod_generator: ^2.4.0 
 
 flutter:
   generate: true
