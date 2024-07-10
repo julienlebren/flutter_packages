@@ -1,9 +1,9 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of sign_in;
+part of 'sign_in.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -12,7 +12,7 @@ part of sign_in;
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SettingsAccountEvent {
@@ -26,10 +26,10 @@ mixin _$SettingsAccountEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function(String providerId)? unlink,
+    TResult? Function()? signInWithFacebook,
+    TResult? Function()? signInWithGoogle,
+    TResult? Function()? signInWithApple,
+    TResult? Function(String providerId)? unlink,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,10 +52,10 @@ mixin _$SettingsAccountEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
-    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
-    TResult Function(_SettingsConnectApple value)? signInWithApple,
-    TResult Function(_SettingsUnlink value)? unlink,
+    TResult? Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult? Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult? Function(_SettingsConnectApple value)? signInWithApple,
+    TResult? Function(_SettingsUnlink value)? unlink,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,43 +73,44 @@ mixin _$SettingsAccountEvent {
 abstract class $SettingsAccountEventCopyWith<$Res> {
   factory $SettingsAccountEventCopyWith(SettingsAccountEvent value,
           $Res Function(SettingsAccountEvent) then) =
-      _$SettingsAccountEventCopyWithImpl<$Res>;
+      _$SettingsAccountEventCopyWithImpl<$Res, SettingsAccountEvent>;
 }
 
 /// @nodoc
-class _$SettingsAccountEventCopyWithImpl<$Res>
+class _$SettingsAccountEventCopyWithImpl<$Res,
+        $Val extends SettingsAccountEvent>
     implements $SettingsAccountEventCopyWith<$Res> {
   _$SettingsAccountEventCopyWithImpl(this._value, this._then);
 
-  final SettingsAccountEvent _value;
   // ignore: unused_field
-  final $Res Function(SettingsAccountEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_SettingsConnectFacebookCopyWith<$Res> {
-  factory _$$_SettingsConnectFacebookCopyWith(_$_SettingsConnectFacebook value,
-          $Res Function(_$_SettingsConnectFacebook) then) =
-      __$$_SettingsConnectFacebookCopyWithImpl<$Res>;
+abstract class _$$SettingsConnectFacebookImplCopyWith<$Res> {
+  factory _$$SettingsConnectFacebookImplCopyWith(
+          _$SettingsConnectFacebookImpl value,
+          $Res Function(_$SettingsConnectFacebookImpl) then) =
+      __$$SettingsConnectFacebookImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SettingsConnectFacebookCopyWithImpl<$Res>
-    extends _$SettingsAccountEventCopyWithImpl<$Res>
-    implements _$$_SettingsConnectFacebookCopyWith<$Res> {
-  __$$_SettingsConnectFacebookCopyWithImpl(_$_SettingsConnectFacebook _value,
-      $Res Function(_$_SettingsConnectFacebook) _then)
-      : super(_value, (v) => _then(v as _$_SettingsConnectFacebook));
-
-  @override
-  _$_SettingsConnectFacebook get _value =>
-      super._value as _$_SettingsConnectFacebook;
+class __$$SettingsConnectFacebookImplCopyWithImpl<$Res>
+    extends _$SettingsAccountEventCopyWithImpl<$Res,
+        _$SettingsConnectFacebookImpl>
+    implements _$$SettingsConnectFacebookImplCopyWith<$Res> {
+  __$$SettingsConnectFacebookImplCopyWithImpl(
+      _$SettingsConnectFacebookImpl _value,
+      $Res Function(_$SettingsConnectFacebookImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SettingsConnectFacebook implements _SettingsConnectFacebook {
-  const _$_SettingsConnectFacebook();
+class _$SettingsConnectFacebookImpl implements _SettingsConnectFacebook {
+  const _$SettingsConnectFacebookImpl();
 
   @override
   String toString() {
@@ -117,10 +118,10 @@ class _$_SettingsConnectFacebook implements _SettingsConnectFacebook {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SettingsConnectFacebook);
+            other is _$SettingsConnectFacebookImpl);
   }
 
   @override
@@ -140,10 +141,10 @@ class _$_SettingsConnectFacebook implements _SettingsConnectFacebook {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function(String providerId)? unlink,
+    TResult? Function()? signInWithFacebook,
+    TResult? Function()? signInWithGoogle,
+    TResult? Function()? signInWithApple,
+    TResult? Function(String providerId)? unlink,
   }) {
     return signInWithFacebook?.call();
   }
@@ -178,10 +179,10 @@ class _$_SettingsConnectFacebook implements _SettingsConnectFacebook {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
-    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
-    TResult Function(_SettingsConnectApple value)? signInWithApple,
-    TResult Function(_SettingsUnlink value)? unlink,
+    TResult? Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult? Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult? Function(_SettingsConnectApple value)? signInWithApple,
+    TResult? Function(_SettingsUnlink value)? unlink,
   }) {
     return signInWithFacebook?.call(this);
   }
@@ -203,33 +204,31 @@ class _$_SettingsConnectFacebook implements _SettingsConnectFacebook {
 }
 
 abstract class _SettingsConnectFacebook implements SettingsAccountEvent {
-  const factory _SettingsConnectFacebook() = _$_SettingsConnectFacebook;
+  const factory _SettingsConnectFacebook() = _$SettingsConnectFacebookImpl;
 }
 
 /// @nodoc
-abstract class _$$_SettingsConnectGoogleCopyWith<$Res> {
-  factory _$$_SettingsConnectGoogleCopyWith(_$_SettingsConnectGoogle value,
-          $Res Function(_$_SettingsConnectGoogle) then) =
-      __$$_SettingsConnectGoogleCopyWithImpl<$Res>;
+abstract class _$$SettingsConnectGoogleImplCopyWith<$Res> {
+  factory _$$SettingsConnectGoogleImplCopyWith(
+          _$SettingsConnectGoogleImpl value,
+          $Res Function(_$SettingsConnectGoogleImpl) then) =
+      __$$SettingsConnectGoogleImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SettingsConnectGoogleCopyWithImpl<$Res>
-    extends _$SettingsAccountEventCopyWithImpl<$Res>
-    implements _$$_SettingsConnectGoogleCopyWith<$Res> {
-  __$$_SettingsConnectGoogleCopyWithImpl(_$_SettingsConnectGoogle _value,
-      $Res Function(_$_SettingsConnectGoogle) _then)
-      : super(_value, (v) => _then(v as _$_SettingsConnectGoogle));
-
-  @override
-  _$_SettingsConnectGoogle get _value =>
-      super._value as _$_SettingsConnectGoogle;
+class __$$SettingsConnectGoogleImplCopyWithImpl<$Res>
+    extends _$SettingsAccountEventCopyWithImpl<$Res,
+        _$SettingsConnectGoogleImpl>
+    implements _$$SettingsConnectGoogleImplCopyWith<$Res> {
+  __$$SettingsConnectGoogleImplCopyWithImpl(_$SettingsConnectGoogleImpl _value,
+      $Res Function(_$SettingsConnectGoogleImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SettingsConnectGoogle implements _SettingsConnectGoogle {
-  const _$_SettingsConnectGoogle();
+class _$SettingsConnectGoogleImpl implements _SettingsConnectGoogle {
+  const _$SettingsConnectGoogleImpl();
 
   @override
   String toString() {
@@ -237,9 +236,10 @@ class _$_SettingsConnectGoogle implements _SettingsConnectGoogle {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SettingsConnectGoogle);
+        (other.runtimeType == runtimeType &&
+            other is _$SettingsConnectGoogleImpl);
   }
 
   @override
@@ -259,10 +259,10 @@ class _$_SettingsConnectGoogle implements _SettingsConnectGoogle {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function(String providerId)? unlink,
+    TResult? Function()? signInWithFacebook,
+    TResult? Function()? signInWithGoogle,
+    TResult? Function()? signInWithApple,
+    TResult? Function(String providerId)? unlink,
   }) {
     return signInWithGoogle?.call();
   }
@@ -297,10 +297,10 @@ class _$_SettingsConnectGoogle implements _SettingsConnectGoogle {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
-    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
-    TResult Function(_SettingsConnectApple value)? signInWithApple,
-    TResult Function(_SettingsUnlink value)? unlink,
+    TResult? Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult? Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult? Function(_SettingsConnectApple value)? signInWithApple,
+    TResult? Function(_SettingsUnlink value)? unlink,
   }) {
     return signInWithGoogle?.call(this);
   }
@@ -322,32 +322,29 @@ class _$_SettingsConnectGoogle implements _SettingsConnectGoogle {
 }
 
 abstract class _SettingsConnectGoogle implements SettingsAccountEvent {
-  const factory _SettingsConnectGoogle() = _$_SettingsConnectGoogle;
+  const factory _SettingsConnectGoogle() = _$SettingsConnectGoogleImpl;
 }
 
 /// @nodoc
-abstract class _$$_SettingsConnectAppleCopyWith<$Res> {
-  factory _$$_SettingsConnectAppleCopyWith(_$_SettingsConnectApple value,
-          $Res Function(_$_SettingsConnectApple) then) =
-      __$$_SettingsConnectAppleCopyWithImpl<$Res>;
+abstract class _$$SettingsConnectAppleImplCopyWith<$Res> {
+  factory _$$SettingsConnectAppleImplCopyWith(_$SettingsConnectAppleImpl value,
+          $Res Function(_$SettingsConnectAppleImpl) then) =
+      __$$SettingsConnectAppleImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SettingsConnectAppleCopyWithImpl<$Res>
-    extends _$SettingsAccountEventCopyWithImpl<$Res>
-    implements _$$_SettingsConnectAppleCopyWith<$Res> {
-  __$$_SettingsConnectAppleCopyWithImpl(_$_SettingsConnectApple _value,
-      $Res Function(_$_SettingsConnectApple) _then)
-      : super(_value, (v) => _then(v as _$_SettingsConnectApple));
-
-  @override
-  _$_SettingsConnectApple get _value => super._value as _$_SettingsConnectApple;
+class __$$SettingsConnectAppleImplCopyWithImpl<$Res>
+    extends _$SettingsAccountEventCopyWithImpl<$Res, _$SettingsConnectAppleImpl>
+    implements _$$SettingsConnectAppleImplCopyWith<$Res> {
+  __$$SettingsConnectAppleImplCopyWithImpl(_$SettingsConnectAppleImpl _value,
+      $Res Function(_$SettingsConnectAppleImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SettingsConnectApple implements _SettingsConnectApple {
-  const _$_SettingsConnectApple();
+class _$SettingsConnectAppleImpl implements _SettingsConnectApple {
+  const _$SettingsConnectAppleImpl();
 
   @override
   String toString() {
@@ -355,9 +352,10 @@ class _$_SettingsConnectApple implements _SettingsConnectApple {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SettingsConnectApple);
+        (other.runtimeType == runtimeType &&
+            other is _$SettingsConnectAppleImpl);
   }
 
   @override
@@ -377,10 +375,10 @@ class _$_SettingsConnectApple implements _SettingsConnectApple {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function(String providerId)? unlink,
+    TResult? Function()? signInWithFacebook,
+    TResult? Function()? signInWithGoogle,
+    TResult? Function()? signInWithApple,
+    TResult? Function(String providerId)? unlink,
   }) {
     return signInWithApple?.call();
   }
@@ -415,10 +413,10 @@ class _$_SettingsConnectApple implements _SettingsConnectApple {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
-    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
-    TResult Function(_SettingsConnectApple value)? signInWithApple,
-    TResult Function(_SettingsUnlink value)? unlink,
+    TResult? Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult? Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult? Function(_SettingsConnectApple value)? signInWithApple,
+    TResult? Function(_SettingsUnlink value)? unlink,
   }) {
     return signInWithApple?.call(this);
   }
@@ -440,34 +438,33 @@ class _$_SettingsConnectApple implements _SettingsConnectApple {
 }
 
 abstract class _SettingsConnectApple implements SettingsAccountEvent {
-  const factory _SettingsConnectApple() = _$_SettingsConnectApple;
+  const factory _SettingsConnectApple() = _$SettingsConnectAppleImpl;
 }
 
 /// @nodoc
-abstract class _$$_SettingsUnlinkCopyWith<$Res> {
-  factory _$$_SettingsUnlinkCopyWith(
-          _$_SettingsUnlink value, $Res Function(_$_SettingsUnlink) then) =
-      __$$_SettingsUnlinkCopyWithImpl<$Res>;
+abstract class _$$SettingsUnlinkImplCopyWith<$Res> {
+  factory _$$SettingsUnlinkImplCopyWith(_$SettingsUnlinkImpl value,
+          $Res Function(_$SettingsUnlinkImpl) then) =
+      __$$SettingsUnlinkImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String providerId});
 }
 
 /// @nodoc
-class __$$_SettingsUnlinkCopyWithImpl<$Res>
-    extends _$SettingsAccountEventCopyWithImpl<$Res>
-    implements _$$_SettingsUnlinkCopyWith<$Res> {
-  __$$_SettingsUnlinkCopyWithImpl(
-      _$_SettingsUnlink _value, $Res Function(_$_SettingsUnlink) _then)
-      : super(_value, (v) => _then(v as _$_SettingsUnlink));
+class __$$SettingsUnlinkImplCopyWithImpl<$Res>
+    extends _$SettingsAccountEventCopyWithImpl<$Res, _$SettingsUnlinkImpl>
+    implements _$$SettingsUnlinkImplCopyWith<$Res> {
+  __$$SettingsUnlinkImplCopyWithImpl(
+      _$SettingsUnlinkImpl _value, $Res Function(_$SettingsUnlinkImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SettingsUnlink get _value => super._value as _$_SettingsUnlink;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? providerId = freezed,
+    Object? providerId = null,
   }) {
-    return _then(_$_SettingsUnlink(
-      providerId == freezed
+    return _then(_$SettingsUnlinkImpl(
+      null == providerId
           ? _value.providerId
           : providerId // ignore: cast_nullable_to_non_nullable
               as String,
@@ -477,8 +474,8 @@ class __$$_SettingsUnlinkCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsUnlink implements _SettingsUnlink {
-  const _$_SettingsUnlink(this.providerId);
+class _$SettingsUnlinkImpl implements _SettingsUnlink {
+  const _$SettingsUnlinkImpl(this.providerId);
 
   @override
   final String providerId;
@@ -489,22 +486,23 @@ class _$_SettingsUnlink implements _SettingsUnlink {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SettingsUnlink &&
-            const DeepCollectionEquality()
-                .equals(other.providerId, providerId));
+            other is _$SettingsUnlinkImpl &&
+            (identical(other.providerId, providerId) ||
+                other.providerId == providerId));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(providerId));
+  int get hashCode => Object.hash(runtimeType, providerId);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SettingsUnlinkCopyWith<_$_SettingsUnlink> get copyWith =>
-      __$$_SettingsUnlinkCopyWithImpl<_$_SettingsUnlink>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SettingsUnlinkImplCopyWith<_$SettingsUnlinkImpl> get copyWith =>
+      __$$SettingsUnlinkImplCopyWithImpl<_$SettingsUnlinkImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -520,10 +518,10 @@ class _$_SettingsUnlink implements _SettingsUnlink {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function(String providerId)? unlink,
+    TResult? Function()? signInWithFacebook,
+    TResult? Function()? signInWithGoogle,
+    TResult? Function()? signInWithApple,
+    TResult? Function(String providerId)? unlink,
   }) {
     return unlink?.call(providerId);
   }
@@ -558,10 +556,10 @@ class _$_SettingsUnlink implements _SettingsUnlink {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SettingsConnectFacebook value)? signInWithFacebook,
-    TResult Function(_SettingsConnectGoogle value)? signInWithGoogle,
-    TResult Function(_SettingsConnectApple value)? signInWithApple,
-    TResult Function(_SettingsUnlink value)? unlink,
+    TResult? Function(_SettingsConnectFacebook value)? signInWithFacebook,
+    TResult? Function(_SettingsConnectGoogle value)? signInWithGoogle,
+    TResult? Function(_SettingsConnectApple value)? signInWithApple,
+    TResult? Function(_SettingsUnlink value)? unlink,
   }) {
     return unlink?.call(this);
   }
@@ -583,11 +581,11 @@ class _$_SettingsUnlink implements _SettingsUnlink {
 }
 
 abstract class _SettingsUnlink implements SettingsAccountEvent {
-  const factory _SettingsUnlink(final String providerId) = _$_SettingsUnlink;
+  const factory _SettingsUnlink(final String providerId) = _$SettingsUnlinkImpl;
 
   String get providerId;
   @JsonKey(ignore: true)
-  _$$_SettingsUnlinkCopyWith<_$_SettingsUnlink> get copyWith =>
+  _$$SettingsUnlinkImplCopyWith<_$SettingsUnlinkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -607,91 +605,93 @@ mixin _$SettingsDeleteState {
 abstract class $SettingsDeleteStateCopyWith<$Res> {
   factory $SettingsDeleteStateCopyWith(
           SettingsDeleteState value, $Res Function(SettingsDeleteState) then) =
-      _$SettingsDeleteStateCopyWithImpl<$Res>;
+      _$SettingsDeleteStateCopyWithImpl<$Res, SettingsDeleteState>;
+  @useResult
   $Res call(
       {bool canSubmit, bool isLoading, bool isSuccess, String? errorText});
 }
 
 /// @nodoc
-class _$SettingsDeleteStateCopyWithImpl<$Res>
+class _$SettingsDeleteStateCopyWithImpl<$Res, $Val extends SettingsDeleteState>
     implements $SettingsDeleteStateCopyWith<$Res> {
   _$SettingsDeleteStateCopyWithImpl(this._value, this._then);
 
-  final SettingsDeleteState _value;
   // ignore: unused_field
-  final $Res Function(SettingsDeleteState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
+    Object? canSubmit = null,
+    Object? isLoading = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
     return _then(_value.copyWith(
-      canSubmit: canSubmit == freezed
+      canSubmit: null == canSubmit
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_SettingsDeleteStateCopyWith<$Res>
+abstract class _$$SettingsDeleteStateImplCopyWith<$Res>
     implements $SettingsDeleteStateCopyWith<$Res> {
-  factory _$$_SettingsDeleteStateCopyWith(_$_SettingsDeleteState value,
-          $Res Function(_$_SettingsDeleteState) then) =
-      __$$_SettingsDeleteStateCopyWithImpl<$Res>;
+  factory _$$SettingsDeleteStateImplCopyWith(_$SettingsDeleteStateImpl value,
+          $Res Function(_$SettingsDeleteStateImpl) then) =
+      __$$SettingsDeleteStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {bool canSubmit, bool isLoading, bool isSuccess, String? errorText});
 }
 
 /// @nodoc
-class __$$_SettingsDeleteStateCopyWithImpl<$Res>
-    extends _$SettingsDeleteStateCopyWithImpl<$Res>
-    implements _$$_SettingsDeleteStateCopyWith<$Res> {
-  __$$_SettingsDeleteStateCopyWithImpl(_$_SettingsDeleteState _value,
-      $Res Function(_$_SettingsDeleteState) _then)
-      : super(_value, (v) => _then(v as _$_SettingsDeleteState));
+class __$$SettingsDeleteStateImplCopyWithImpl<$Res>
+    extends _$SettingsDeleteStateCopyWithImpl<$Res, _$SettingsDeleteStateImpl>
+    implements _$$SettingsDeleteStateImplCopyWith<$Res> {
+  __$$SettingsDeleteStateImplCopyWithImpl(_$SettingsDeleteStateImpl _value,
+      $Res Function(_$SettingsDeleteStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SettingsDeleteState get _value => super._value as _$_SettingsDeleteState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
+    Object? canSubmit = null,
+    Object? isLoading = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
-    return _then(_$_SettingsDeleteState(
-      canSubmit: canSubmit == freezed
+    return _then(_$SettingsDeleteStateImpl(
+      canSubmit: null == canSubmit
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -701,8 +701,8 @@ class __$$_SettingsDeleteStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsDeleteState implements _SettingsDeleteState {
-  const _$_SettingsDeleteState(
+class _$SettingsDeleteStateImpl implements _SettingsDeleteState {
+  const _$SettingsDeleteStateImpl(
       {this.canSubmit = false,
       this.isLoading = false,
       this.isSuccess = false,
@@ -726,28 +726,29 @@ class _$_SettingsDeleteState implements _SettingsDeleteState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SettingsDeleteState &&
-            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
-            const DeepCollectionEquality().equals(other.errorText, errorText));
+            other is _$SettingsDeleteStateImpl &&
+            (identical(other.canSubmit, canSubmit) ||
+                other.canSubmit == canSubmit) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.isSuccess, isSuccess) ||
+                other.isSuccess == isSuccess) &&
+            (identical(other.errorText, errorText) ||
+                other.errorText == errorText));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(canSubmit),
-      const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(isSuccess),
-      const DeepCollectionEquality().hash(errorText));
+  int get hashCode =>
+      Object.hash(runtimeType, canSubmit, isLoading, isSuccess, errorText);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SettingsDeleteStateCopyWith<_$_SettingsDeleteState> get copyWith =>
-      __$$_SettingsDeleteStateCopyWithImpl<_$_SettingsDeleteState>(
+  @pragma('vm:prefer-inline')
+  _$$SettingsDeleteStateImplCopyWith<_$SettingsDeleteStateImpl> get copyWith =>
+      __$$SettingsDeleteStateImplCopyWithImpl<_$SettingsDeleteStateImpl>(
           this, _$identity);
 }
 
@@ -756,7 +757,7 @@ abstract class _SettingsDeleteState implements SettingsDeleteState {
       {final bool canSubmit,
       final bool isLoading,
       final bool isSuccess,
-      final String? errorText}) = _$_SettingsDeleteState;
+      final String? errorText}) = _$SettingsDeleteStateImpl;
 
   @override
   bool get canSubmit;
@@ -768,7 +769,7 @@ abstract class _SettingsDeleteState implements SettingsDeleteState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$$_SettingsDeleteStateCopyWith<_$_SettingsDeleteState> get copyWith =>
+  _$$SettingsDeleteStateImplCopyWith<_$SettingsDeleteStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -782,8 +783,8 @@ mixin _$SettingsEmailEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function()? submit,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function()? submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -801,8 +802,8 @@ mixin _$SettingsEmailEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SettingsEmailChanged value)? emailChanged,
-    TResult Function(_SettingsEmailSubmit value)? submit,
+    TResult? Function(_SettingsEmailChanged value)? emailChanged,
+    TResult? Function(_SettingsEmailSubmit value)? submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -818,44 +819,44 @@ mixin _$SettingsEmailEvent {
 abstract class $SettingsEmailEventCopyWith<$Res> {
   factory $SettingsEmailEventCopyWith(
           SettingsEmailEvent value, $Res Function(SettingsEmailEvent) then) =
-      _$SettingsEmailEventCopyWithImpl<$Res>;
+      _$SettingsEmailEventCopyWithImpl<$Res, SettingsEmailEvent>;
 }
 
 /// @nodoc
-class _$SettingsEmailEventCopyWithImpl<$Res>
+class _$SettingsEmailEventCopyWithImpl<$Res, $Val extends SettingsEmailEvent>
     implements $SettingsEmailEventCopyWith<$Res> {
   _$SettingsEmailEventCopyWithImpl(this._value, this._then);
 
-  final SettingsEmailEvent _value;
   // ignore: unused_field
-  final $Res Function(SettingsEmailEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_SettingsEmailChangedCopyWith<$Res> {
-  factory _$$_SettingsEmailChangedCopyWith(_$_SettingsEmailChanged value,
-          $Res Function(_$_SettingsEmailChanged) then) =
-      __$$_SettingsEmailChangedCopyWithImpl<$Res>;
+abstract class _$$SettingsEmailChangedImplCopyWith<$Res> {
+  factory _$$SettingsEmailChangedImplCopyWith(_$SettingsEmailChangedImpl value,
+          $Res Function(_$SettingsEmailChangedImpl) then) =
+      __$$SettingsEmailChangedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$_SettingsEmailChangedCopyWithImpl<$Res>
-    extends _$SettingsEmailEventCopyWithImpl<$Res>
-    implements _$$_SettingsEmailChangedCopyWith<$Res> {
-  __$$_SettingsEmailChangedCopyWithImpl(_$_SettingsEmailChanged _value,
-      $Res Function(_$_SettingsEmailChanged) _then)
-      : super(_value, (v) => _then(v as _$_SettingsEmailChanged));
+class __$$SettingsEmailChangedImplCopyWithImpl<$Res>
+    extends _$SettingsEmailEventCopyWithImpl<$Res, _$SettingsEmailChangedImpl>
+    implements _$$SettingsEmailChangedImplCopyWith<$Res> {
+  __$$SettingsEmailChangedImplCopyWithImpl(_$SettingsEmailChangedImpl _value,
+      $Res Function(_$SettingsEmailChangedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SettingsEmailChanged get _value => super._value as _$_SettingsEmailChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
+    Object? email = null,
   }) {
-    return _then(_$_SettingsEmailChanged(
-      email == freezed
+    return _then(_$SettingsEmailChangedImpl(
+      null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
@@ -865,8 +866,8 @@ class __$$_SettingsEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsEmailChanged implements _SettingsEmailChanged {
-  const _$_SettingsEmailChanged(this.email);
+class _$SettingsEmailChangedImpl implements _SettingsEmailChanged {
+  const _$SettingsEmailChangedImpl(this.email);
 
   @override
   final String email;
@@ -877,22 +878,23 @@ class _$_SettingsEmailChanged implements _SettingsEmailChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SettingsEmailChanged &&
-            const DeepCollectionEquality().equals(other.email, email));
+            other is _$SettingsEmailChangedImpl &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
+  int get hashCode => Object.hash(runtimeType, email);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SettingsEmailChangedCopyWith<_$_SettingsEmailChanged> get copyWith =>
-      __$$_SettingsEmailChangedCopyWithImpl<_$_SettingsEmailChanged>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SettingsEmailChangedImplCopyWith<_$SettingsEmailChangedImpl>
+      get copyWith =>
+          __$$SettingsEmailChangedImplCopyWithImpl<_$SettingsEmailChangedImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -906,8 +908,8 @@ class _$_SettingsEmailChanged implements _SettingsEmailChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function()? submit,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function()? submit,
   }) {
     return emailChanged?.call(email);
   }
@@ -937,8 +939,8 @@ class _$_SettingsEmailChanged implements _SettingsEmailChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SettingsEmailChanged value)? emailChanged,
-    TResult Function(_SettingsEmailSubmit value)? submit,
+    TResult? Function(_SettingsEmailChanged value)? emailChanged,
+    TResult? Function(_SettingsEmailSubmit value)? submit,
   }) {
     return emailChanged?.call(this);
   }
@@ -959,37 +961,34 @@ class _$_SettingsEmailChanged implements _SettingsEmailChanged {
 
 abstract class _SettingsEmailChanged implements SettingsEmailEvent {
   const factory _SettingsEmailChanged(final String email) =
-      _$_SettingsEmailChanged;
+      _$SettingsEmailChangedImpl;
 
   String get email;
   @JsonKey(ignore: true)
-  _$$_SettingsEmailChangedCopyWith<_$_SettingsEmailChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SettingsEmailChangedImplCopyWith<_$SettingsEmailChangedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SettingsEmailSubmitCopyWith<$Res> {
-  factory _$$_SettingsEmailSubmitCopyWith(_$_SettingsEmailSubmit value,
-          $Res Function(_$_SettingsEmailSubmit) then) =
-      __$$_SettingsEmailSubmitCopyWithImpl<$Res>;
+abstract class _$$SettingsEmailSubmitImplCopyWith<$Res> {
+  factory _$$SettingsEmailSubmitImplCopyWith(_$SettingsEmailSubmitImpl value,
+          $Res Function(_$SettingsEmailSubmitImpl) then) =
+      __$$SettingsEmailSubmitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SettingsEmailSubmitCopyWithImpl<$Res>
-    extends _$SettingsEmailEventCopyWithImpl<$Res>
-    implements _$$_SettingsEmailSubmitCopyWith<$Res> {
-  __$$_SettingsEmailSubmitCopyWithImpl(_$_SettingsEmailSubmit _value,
-      $Res Function(_$_SettingsEmailSubmit) _then)
-      : super(_value, (v) => _then(v as _$_SettingsEmailSubmit));
-
-  @override
-  _$_SettingsEmailSubmit get _value => super._value as _$_SettingsEmailSubmit;
+class __$$SettingsEmailSubmitImplCopyWithImpl<$Res>
+    extends _$SettingsEmailEventCopyWithImpl<$Res, _$SettingsEmailSubmitImpl>
+    implements _$$SettingsEmailSubmitImplCopyWith<$Res> {
+  __$$SettingsEmailSubmitImplCopyWithImpl(_$SettingsEmailSubmitImpl _value,
+      $Res Function(_$SettingsEmailSubmitImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SettingsEmailSubmit implements _SettingsEmailSubmit {
-  const _$_SettingsEmailSubmit();
+class _$SettingsEmailSubmitImpl implements _SettingsEmailSubmit {
+  const _$SettingsEmailSubmitImpl();
 
   @override
   String toString() {
@@ -997,9 +996,10 @@ class _$_SettingsEmailSubmit implements _SettingsEmailSubmit {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SettingsEmailSubmit);
+        (other.runtimeType == runtimeType &&
+            other is _$SettingsEmailSubmitImpl);
   }
 
   @override
@@ -1017,8 +1017,8 @@ class _$_SettingsEmailSubmit implements _SettingsEmailSubmit {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function()? submit,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function()? submit,
   }) {
     return submit?.call();
   }
@@ -1048,8 +1048,8 @@ class _$_SettingsEmailSubmit implements _SettingsEmailSubmit {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SettingsEmailChanged value)? emailChanged,
-    TResult Function(_SettingsEmailSubmit value)? submit,
+    TResult? Function(_SettingsEmailChanged value)? emailChanged,
+    TResult? Function(_SettingsEmailSubmit value)? submit,
   }) {
     return submit?.call(this);
   }
@@ -1069,7 +1069,7 @@ class _$_SettingsEmailSubmit implements _SettingsEmailSubmit {
 }
 
 abstract class _SettingsEmailSubmit implements SettingsEmailEvent {
-  const factory _SettingsEmailSubmit() = _$_SettingsEmailSubmit;
+  const factory _SettingsEmailSubmit() = _$SettingsEmailSubmitImpl;
 }
 
 /// @nodoc
@@ -1089,7 +1089,8 @@ mixin _$SettingsEmailState {
 abstract class $SettingsEmailStateCopyWith<$Res> {
   factory $SettingsEmailStateCopyWith(
           SettingsEmailState value, $Res Function(SettingsEmailState) then) =
-      _$SettingsEmailStateCopyWithImpl<$Res>;
+      _$SettingsEmailStateCopyWithImpl<$Res, SettingsEmailState>;
+  @useResult
   $Res call(
       {String email,
       bool canSubmit,
@@ -1099,54 +1100,57 @@ abstract class $SettingsEmailStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SettingsEmailStateCopyWithImpl<$Res>
+class _$SettingsEmailStateCopyWithImpl<$Res, $Val extends SettingsEmailState>
     implements $SettingsEmailStateCopyWith<$Res> {
   _$SettingsEmailStateCopyWithImpl(this._value, this._then);
 
-  final SettingsEmailState _value;
   // ignore: unused_field
-  final $Res Function(SettingsEmailState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
+    Object? email = null,
+    Object? canSubmit = null,
+    Object? isLoading = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
     return _then(_value.copyWith(
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      canSubmit: canSubmit == freezed
+      canSubmit: null == canSubmit
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_SettingsEmailStateCopyWith<$Res>
+abstract class _$$SettingsEmailStateImplCopyWith<$Res>
     implements $SettingsEmailStateCopyWith<$Res> {
-  factory _$$_SettingsEmailStateCopyWith(_$_SettingsEmailState value,
-          $Res Function(_$_SettingsEmailState) then) =
-      __$$_SettingsEmailStateCopyWithImpl<$Res>;
+  factory _$$SettingsEmailStateImplCopyWith(_$SettingsEmailStateImpl value,
+          $Res Function(_$SettingsEmailStateImpl) then) =
+      __$$SettingsEmailStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String email,
       bool canSubmit,
@@ -1156,42 +1160,40 @@ abstract class _$$_SettingsEmailStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SettingsEmailStateCopyWithImpl<$Res>
-    extends _$SettingsEmailStateCopyWithImpl<$Res>
-    implements _$$_SettingsEmailStateCopyWith<$Res> {
-  __$$_SettingsEmailStateCopyWithImpl(
-      _$_SettingsEmailState _value, $Res Function(_$_SettingsEmailState) _then)
-      : super(_value, (v) => _then(v as _$_SettingsEmailState));
+class __$$SettingsEmailStateImplCopyWithImpl<$Res>
+    extends _$SettingsEmailStateCopyWithImpl<$Res, _$SettingsEmailStateImpl>
+    implements _$$SettingsEmailStateImplCopyWith<$Res> {
+  __$$SettingsEmailStateImplCopyWithImpl(_$SettingsEmailStateImpl _value,
+      $Res Function(_$SettingsEmailStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SettingsEmailState get _value => super._value as _$_SettingsEmailState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
+    Object? email = null,
+    Object? canSubmit = null,
+    Object? isLoading = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
-    return _then(_$_SettingsEmailState(
-      email: email == freezed
+    return _then(_$SettingsEmailStateImpl(
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      canSubmit: canSubmit == freezed
+      canSubmit: null == canSubmit
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -1201,8 +1203,8 @@ class __$$_SettingsEmailStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsEmailState implements _SettingsEmailState {
-  const _$_SettingsEmailState(
+class _$SettingsEmailStateImpl implements _SettingsEmailState {
+  const _$SettingsEmailStateImpl(
       {this.email = "",
       this.canSubmit = false,
       this.isLoading = false,
@@ -1230,30 +1232,30 @@ class _$_SettingsEmailState implements _SettingsEmailState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SettingsEmailState &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
-            const DeepCollectionEquality().equals(other.errorText, errorText));
+            other is _$SettingsEmailStateImpl &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.canSubmit, canSubmit) ||
+                other.canSubmit == canSubmit) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.isSuccess, isSuccess) ||
+                other.isSuccess == isSuccess) &&
+            (identical(other.errorText, errorText) ||
+                other.errorText == errorText));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(canSubmit),
-      const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(isSuccess),
-      const DeepCollectionEquality().hash(errorText));
+      runtimeType, email, canSubmit, isLoading, isSuccess, errorText);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SettingsEmailStateCopyWith<_$_SettingsEmailState> get copyWith =>
-      __$$_SettingsEmailStateCopyWithImpl<_$_SettingsEmailState>(
+  @pragma('vm:prefer-inline')
+  _$$SettingsEmailStateImplCopyWith<_$SettingsEmailStateImpl> get copyWith =>
+      __$$SettingsEmailStateImplCopyWithImpl<_$SettingsEmailStateImpl>(
           this, _$identity);
 }
 
@@ -1263,7 +1265,7 @@ abstract class _SettingsEmailState implements SettingsEmailState {
       final bool canSubmit,
       final bool isLoading,
       final bool isSuccess,
-      final String? errorText}) = _$_SettingsEmailState;
+      final String? errorText}) = _$SettingsEmailStateImpl;
 
   @override
   String get email;
@@ -1277,7 +1279,7 @@ abstract class _SettingsEmailState implements SettingsEmailState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$$_SettingsEmailStateCopyWith<_$_SettingsEmailState> get copyWith =>
+  _$$SettingsEmailStateImplCopyWith<_$SettingsEmailStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1292,9 +1294,9 @@ mixin _$SettingsPasswordEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String password)? passwordChanged,
-    TResult Function(String password)? passwordConfirmationChanged,
-    TResult Function()? submit,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? passwordConfirmationChanged,
+    TResult? Function()? submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1315,10 +1317,10 @@ mixin _$SettingsPasswordEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SettingsPasswordChanged value)? passwordChanged,
-    TResult Function(_SettingsPasswordConfirmationChanged value)?
+    TResult? Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult? Function(_SettingsPasswordConfirmationChanged value)?
         passwordConfirmationChanged,
-    TResult Function(_SettingsPasswordSubmit value)? submit,
+    TResult? Function(_SettingsPasswordSubmit value)? submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -1336,45 +1338,48 @@ mixin _$SettingsPasswordEvent {
 abstract class $SettingsPasswordEventCopyWith<$Res> {
   factory $SettingsPasswordEventCopyWith(SettingsPasswordEvent value,
           $Res Function(SettingsPasswordEvent) then) =
-      _$SettingsPasswordEventCopyWithImpl<$Res>;
+      _$SettingsPasswordEventCopyWithImpl<$Res, SettingsPasswordEvent>;
 }
 
 /// @nodoc
-class _$SettingsPasswordEventCopyWithImpl<$Res>
+class _$SettingsPasswordEventCopyWithImpl<$Res,
+        $Val extends SettingsPasswordEvent>
     implements $SettingsPasswordEventCopyWith<$Res> {
   _$SettingsPasswordEventCopyWithImpl(this._value, this._then);
 
-  final SettingsPasswordEvent _value;
   // ignore: unused_field
-  final $Res Function(SettingsPasswordEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_SettingsPasswordChangedCopyWith<$Res> {
-  factory _$$_SettingsPasswordChangedCopyWith(_$_SettingsPasswordChanged value,
-          $Res Function(_$_SettingsPasswordChanged) then) =
-      __$$_SettingsPasswordChangedCopyWithImpl<$Res>;
+abstract class _$$SettingsPasswordChangedImplCopyWith<$Res> {
+  factory _$$SettingsPasswordChangedImplCopyWith(
+          _$SettingsPasswordChangedImpl value,
+          $Res Function(_$SettingsPasswordChangedImpl) then) =
+      __$$SettingsPasswordChangedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String password});
 }
 
 /// @nodoc
-class __$$_SettingsPasswordChangedCopyWithImpl<$Res>
-    extends _$SettingsPasswordEventCopyWithImpl<$Res>
-    implements _$$_SettingsPasswordChangedCopyWith<$Res> {
-  __$$_SettingsPasswordChangedCopyWithImpl(_$_SettingsPasswordChanged _value,
-      $Res Function(_$_SettingsPasswordChanged) _then)
-      : super(_value, (v) => _then(v as _$_SettingsPasswordChanged));
+class __$$SettingsPasswordChangedImplCopyWithImpl<$Res>
+    extends _$SettingsPasswordEventCopyWithImpl<$Res,
+        _$SettingsPasswordChangedImpl>
+    implements _$$SettingsPasswordChangedImplCopyWith<$Res> {
+  __$$SettingsPasswordChangedImplCopyWithImpl(
+      _$SettingsPasswordChangedImpl _value,
+      $Res Function(_$SettingsPasswordChangedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SettingsPasswordChanged get _value =>
-      super._value as _$_SettingsPasswordChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? password = freezed,
+    Object? password = null,
   }) {
-    return _then(_$_SettingsPasswordChanged(
-      password == freezed
+    return _then(_$SettingsPasswordChangedImpl(
+      null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1384,8 +1389,8 @@ class __$$_SettingsPasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsPasswordChanged implements _SettingsPasswordChanged {
-  const _$_SettingsPasswordChanged(this.password);
+class _$SettingsPasswordChangedImpl implements _SettingsPasswordChanged {
+  const _$SettingsPasswordChangedImpl(this.password);
 
   @override
   final String password;
@@ -1396,23 +1401,23 @@ class _$_SettingsPasswordChanged implements _SettingsPasswordChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SettingsPasswordChanged &&
-            const DeepCollectionEquality().equals(other.password, password));
+            other is _$SettingsPasswordChangedImpl &&
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
+  int get hashCode => Object.hash(runtimeType, password);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SettingsPasswordChangedCopyWith<_$_SettingsPasswordChanged>
-      get copyWith =>
-          __$$_SettingsPasswordChangedCopyWithImpl<_$_SettingsPasswordChanged>(
-              this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SettingsPasswordChangedImplCopyWith<_$SettingsPasswordChangedImpl>
+      get copyWith => __$$SettingsPasswordChangedImplCopyWithImpl<
+          _$SettingsPasswordChangedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1427,9 +1432,9 @@ class _$_SettingsPasswordChanged implements _SettingsPasswordChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String password)? passwordChanged,
-    TResult Function(String password)? passwordConfirmationChanged,
-    TResult Function()? submit,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? passwordConfirmationChanged,
+    TResult? Function()? submit,
   }) {
     return passwordChanged?.call(password);
   }
@@ -1462,10 +1467,10 @@ class _$_SettingsPasswordChanged implements _SettingsPasswordChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SettingsPasswordChanged value)? passwordChanged,
-    TResult Function(_SettingsPasswordConfirmationChanged value)?
+    TResult? Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult? Function(_SettingsPasswordConfirmationChanged value)?
         passwordConfirmationChanged,
-    TResult Function(_SettingsPasswordSubmit value)? submit,
+    TResult? Function(_SettingsPasswordSubmit value)? submit,
   }) {
     return passwordChanged?.call(this);
   }
@@ -1488,43 +1493,41 @@ class _$_SettingsPasswordChanged implements _SettingsPasswordChanged {
 
 abstract class _SettingsPasswordChanged implements SettingsPasswordEvent {
   const factory _SettingsPasswordChanged(final String password) =
-      _$_SettingsPasswordChanged;
+      _$SettingsPasswordChangedImpl;
 
   String get password;
   @JsonKey(ignore: true)
-  _$$_SettingsPasswordChangedCopyWith<_$_SettingsPasswordChanged>
+  _$$SettingsPasswordChangedImplCopyWith<_$SettingsPasswordChangedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SettingsPasswordConfirmationChangedCopyWith<$Res> {
-  factory _$$_SettingsPasswordConfirmationChangedCopyWith(
-          _$_SettingsPasswordConfirmationChanged value,
-          $Res Function(_$_SettingsPasswordConfirmationChanged) then) =
-      __$$_SettingsPasswordConfirmationChangedCopyWithImpl<$Res>;
+abstract class _$$SettingsPasswordConfirmationChangedImplCopyWith<$Res> {
+  factory _$$SettingsPasswordConfirmationChangedImplCopyWith(
+          _$SettingsPasswordConfirmationChangedImpl value,
+          $Res Function(_$SettingsPasswordConfirmationChangedImpl) then) =
+      __$$SettingsPasswordConfirmationChangedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String password});
 }
 
 /// @nodoc
-class __$$_SettingsPasswordConfirmationChangedCopyWithImpl<$Res>
-    extends _$SettingsPasswordEventCopyWithImpl<$Res>
-    implements _$$_SettingsPasswordConfirmationChangedCopyWith<$Res> {
-  __$$_SettingsPasswordConfirmationChangedCopyWithImpl(
-      _$_SettingsPasswordConfirmationChanged _value,
-      $Res Function(_$_SettingsPasswordConfirmationChanged) _then)
-      : super(
-            _value, (v) => _then(v as _$_SettingsPasswordConfirmationChanged));
+class __$$SettingsPasswordConfirmationChangedImplCopyWithImpl<$Res>
+    extends _$SettingsPasswordEventCopyWithImpl<$Res,
+        _$SettingsPasswordConfirmationChangedImpl>
+    implements _$$SettingsPasswordConfirmationChangedImplCopyWith<$Res> {
+  __$$SettingsPasswordConfirmationChangedImplCopyWithImpl(
+      _$SettingsPasswordConfirmationChangedImpl _value,
+      $Res Function(_$SettingsPasswordConfirmationChangedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SettingsPasswordConfirmationChanged get _value =>
-      super._value as _$_SettingsPasswordConfirmationChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? password = freezed,
+    Object? password = null,
   }) {
-    return _then(_$_SettingsPasswordConfirmationChanged(
-      password == freezed
+    return _then(_$SettingsPasswordConfirmationChangedImpl(
+      null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1534,9 +1537,9 @@ class __$$_SettingsPasswordConfirmationChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsPasswordConfirmationChanged
+class _$SettingsPasswordConfirmationChangedImpl
     implements _SettingsPasswordConfirmationChanged {
-  const _$_SettingsPasswordConfirmationChanged(this.password);
+  const _$SettingsPasswordConfirmationChangedImpl(this.password);
 
   @override
   final String password;
@@ -1547,23 +1550,24 @@ class _$_SettingsPasswordConfirmationChanged
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SettingsPasswordConfirmationChanged &&
-            const DeepCollectionEquality().equals(other.password, password));
+            other is _$SettingsPasswordConfirmationChangedImpl &&
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
+  int get hashCode => Object.hash(runtimeType, password);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SettingsPasswordConfirmationChangedCopyWith<
-          _$_SettingsPasswordConfirmationChanged>
-      get copyWith => __$$_SettingsPasswordConfirmationChangedCopyWithImpl<
-          _$_SettingsPasswordConfirmationChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SettingsPasswordConfirmationChangedImplCopyWith<
+          _$SettingsPasswordConfirmationChangedImpl>
+      get copyWith => __$$SettingsPasswordConfirmationChangedImplCopyWithImpl<
+          _$SettingsPasswordConfirmationChangedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1578,9 +1582,9 @@ class _$_SettingsPasswordConfirmationChanged
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String password)? passwordChanged,
-    TResult Function(String password)? passwordConfirmationChanged,
-    TResult Function()? submit,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? passwordConfirmationChanged,
+    TResult? Function()? submit,
   }) {
     return passwordConfirmationChanged?.call(password);
   }
@@ -1613,10 +1617,10 @@ class _$_SettingsPasswordConfirmationChanged
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SettingsPasswordChanged value)? passwordChanged,
-    TResult Function(_SettingsPasswordConfirmationChanged value)?
+    TResult? Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult? Function(_SettingsPasswordConfirmationChanged value)?
         passwordConfirmationChanged,
-    TResult Function(_SettingsPasswordSubmit value)? submit,
+    TResult? Function(_SettingsPasswordSubmit value)? submit,
   }) {
     return passwordConfirmationChanged?.call(this);
   }
@@ -1640,39 +1644,38 @@ class _$_SettingsPasswordConfirmationChanged
 abstract class _SettingsPasswordConfirmationChanged
     implements SettingsPasswordEvent {
   const factory _SettingsPasswordConfirmationChanged(final String password) =
-      _$_SettingsPasswordConfirmationChanged;
+      _$SettingsPasswordConfirmationChangedImpl;
 
   String get password;
   @JsonKey(ignore: true)
-  _$$_SettingsPasswordConfirmationChangedCopyWith<
-          _$_SettingsPasswordConfirmationChanged>
+  _$$SettingsPasswordConfirmationChangedImplCopyWith<
+          _$SettingsPasswordConfirmationChangedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SettingsPasswordSubmitCopyWith<$Res> {
-  factory _$$_SettingsPasswordSubmitCopyWith(_$_SettingsPasswordSubmit value,
-          $Res Function(_$_SettingsPasswordSubmit) then) =
-      __$$_SettingsPasswordSubmitCopyWithImpl<$Res>;
+abstract class _$$SettingsPasswordSubmitImplCopyWith<$Res> {
+  factory _$$SettingsPasswordSubmitImplCopyWith(
+          _$SettingsPasswordSubmitImpl value,
+          $Res Function(_$SettingsPasswordSubmitImpl) then) =
+      __$$SettingsPasswordSubmitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SettingsPasswordSubmitCopyWithImpl<$Res>
-    extends _$SettingsPasswordEventCopyWithImpl<$Res>
-    implements _$$_SettingsPasswordSubmitCopyWith<$Res> {
-  __$$_SettingsPasswordSubmitCopyWithImpl(_$_SettingsPasswordSubmit _value,
-      $Res Function(_$_SettingsPasswordSubmit) _then)
-      : super(_value, (v) => _then(v as _$_SettingsPasswordSubmit));
-
-  @override
-  _$_SettingsPasswordSubmit get _value =>
-      super._value as _$_SettingsPasswordSubmit;
+class __$$SettingsPasswordSubmitImplCopyWithImpl<$Res>
+    extends _$SettingsPasswordEventCopyWithImpl<$Res,
+        _$SettingsPasswordSubmitImpl>
+    implements _$$SettingsPasswordSubmitImplCopyWith<$Res> {
+  __$$SettingsPasswordSubmitImplCopyWithImpl(
+      _$SettingsPasswordSubmitImpl _value,
+      $Res Function(_$SettingsPasswordSubmitImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SettingsPasswordSubmit implements _SettingsPasswordSubmit {
-  const _$_SettingsPasswordSubmit();
+class _$SettingsPasswordSubmitImpl implements _SettingsPasswordSubmit {
+  const _$SettingsPasswordSubmitImpl();
 
   @override
   String toString() {
@@ -1680,10 +1683,10 @@ class _$_SettingsPasswordSubmit implements _SettingsPasswordSubmit {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SettingsPasswordSubmit);
+            other is _$SettingsPasswordSubmitImpl);
   }
 
   @override
@@ -1702,9 +1705,9 @@ class _$_SettingsPasswordSubmit implements _SettingsPasswordSubmit {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String password)? passwordChanged,
-    TResult Function(String password)? passwordConfirmationChanged,
-    TResult Function()? submit,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function(String password)? passwordConfirmationChanged,
+    TResult? Function()? submit,
   }) {
     return submit?.call();
   }
@@ -1737,10 +1740,10 @@ class _$_SettingsPasswordSubmit implements _SettingsPasswordSubmit {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SettingsPasswordChanged value)? passwordChanged,
-    TResult Function(_SettingsPasswordConfirmationChanged value)?
+    TResult? Function(_SettingsPasswordChanged value)? passwordChanged,
+    TResult? Function(_SettingsPasswordConfirmationChanged value)?
         passwordConfirmationChanged,
-    TResult Function(_SettingsPasswordSubmit value)? submit,
+    TResult? Function(_SettingsPasswordSubmit value)? submit,
   }) {
     return submit?.call(this);
   }
@@ -1762,7 +1765,7 @@ class _$_SettingsPasswordSubmit implements _SettingsPasswordSubmit {
 }
 
 abstract class _SettingsPasswordSubmit implements SettingsPasswordEvent {
-  const factory _SettingsPasswordSubmit() = _$_SettingsPasswordSubmit;
+  const factory _SettingsPasswordSubmit() = _$SettingsPasswordSubmitImpl;
 }
 
 /// @nodoc
@@ -1789,7 +1792,8 @@ mixin _$SettingsPasswordState {
 abstract class $SettingsPasswordStateCopyWith<$Res> {
   factory $SettingsPasswordStateCopyWith(SettingsPasswordState value,
           $Res Function(SettingsPasswordState) then) =
-      _$SettingsPasswordStateCopyWithImpl<$Res>;
+      _$SettingsPasswordStateCopyWithImpl<$Res, SettingsPasswordState>;
+  @useResult
   $Res call(
       {String password,
       String passwordConfirmation,
@@ -1806,89 +1810,94 @@ abstract class $SettingsPasswordStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SettingsPasswordStateCopyWithImpl<$Res>
+class _$SettingsPasswordStateCopyWithImpl<$Res,
+        $Val extends SettingsPasswordState>
     implements $SettingsPasswordStateCopyWith<$Res> {
   _$SettingsPasswordStateCopyWithImpl(this._value, this._then);
 
-  final SettingsPasswordState _value;
   // ignore: unused_field
-  final $Res Function(SettingsPasswordState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? password = freezed,
-    Object? passwordConfirmation = freezed,
-    Object? passwordHasMinLength = freezed,
-    Object? passwordHasUppercase = freezed,
-    Object? passwordHasLowercase = freezed,
-    Object? passwordHasDigits = freezed,
-    Object? passwordHasSpecialChars = freezed,
-    Object? passwordsMatch = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
+    Object? password = null,
+    Object? passwordConfirmation = null,
+    Object? passwordHasMinLength = null,
+    Object? passwordHasUppercase = null,
+    Object? passwordHasLowercase = null,
+    Object? passwordHasDigits = null,
+    Object? passwordHasSpecialChars = null,
+    Object? passwordsMatch = null,
+    Object? canSubmit = null,
+    Object? isLoading = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
     return _then(_value.copyWith(
-      password: password == freezed
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      passwordConfirmation: passwordConfirmation == freezed
+      passwordConfirmation: null == passwordConfirmation
           ? _value.passwordConfirmation
           : passwordConfirmation // ignore: cast_nullable_to_non_nullable
               as String,
-      passwordHasMinLength: passwordHasMinLength == freezed
+      passwordHasMinLength: null == passwordHasMinLength
           ? _value.passwordHasMinLength
           : passwordHasMinLength // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasUppercase: passwordHasUppercase == freezed
+      passwordHasUppercase: null == passwordHasUppercase
           ? _value.passwordHasUppercase
           : passwordHasUppercase // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasLowercase: passwordHasLowercase == freezed
+      passwordHasLowercase: null == passwordHasLowercase
           ? _value.passwordHasLowercase
           : passwordHasLowercase // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasDigits: passwordHasDigits == freezed
+      passwordHasDigits: null == passwordHasDigits
           ? _value.passwordHasDigits
           : passwordHasDigits // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasSpecialChars: passwordHasSpecialChars == freezed
+      passwordHasSpecialChars: null == passwordHasSpecialChars
           ? _value.passwordHasSpecialChars
           : passwordHasSpecialChars // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordsMatch: passwordsMatch == freezed
+      passwordsMatch: null == passwordsMatch
           ? _value.passwordsMatch
           : passwordsMatch // ignore: cast_nullable_to_non_nullable
               as bool,
-      canSubmit: canSubmit == freezed
+      canSubmit: null == canSubmit
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_SettingsPasswordStateCopyWith<$Res>
+abstract class _$$SettingsPasswordStateImplCopyWith<$Res>
     implements $SettingsPasswordStateCopyWith<$Res> {
-  factory _$$_SettingsPasswordStateCopyWith(_$_SettingsPasswordState value,
-          $Res Function(_$_SettingsPasswordState) then) =
-      __$$_SettingsPasswordStateCopyWithImpl<$Res>;
+  factory _$$SettingsPasswordStateImplCopyWith(
+          _$SettingsPasswordStateImpl value,
+          $Res Function(_$SettingsPasswordStateImpl) then) =
+      __$$SettingsPasswordStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String password,
       String passwordConfirmation,
@@ -1905,78 +1914,76 @@ abstract class _$$_SettingsPasswordStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SettingsPasswordStateCopyWithImpl<$Res>
-    extends _$SettingsPasswordStateCopyWithImpl<$Res>
-    implements _$$_SettingsPasswordStateCopyWith<$Res> {
-  __$$_SettingsPasswordStateCopyWithImpl(_$_SettingsPasswordState _value,
-      $Res Function(_$_SettingsPasswordState) _then)
-      : super(_value, (v) => _then(v as _$_SettingsPasswordState));
+class __$$SettingsPasswordStateImplCopyWithImpl<$Res>
+    extends _$SettingsPasswordStateCopyWithImpl<$Res,
+        _$SettingsPasswordStateImpl>
+    implements _$$SettingsPasswordStateImplCopyWith<$Res> {
+  __$$SettingsPasswordStateImplCopyWithImpl(_$SettingsPasswordStateImpl _value,
+      $Res Function(_$SettingsPasswordStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SettingsPasswordState get _value =>
-      super._value as _$_SettingsPasswordState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? password = freezed,
-    Object? passwordConfirmation = freezed,
-    Object? passwordHasMinLength = freezed,
-    Object? passwordHasUppercase = freezed,
-    Object? passwordHasLowercase = freezed,
-    Object? passwordHasDigits = freezed,
-    Object? passwordHasSpecialChars = freezed,
-    Object? passwordsMatch = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
+    Object? password = null,
+    Object? passwordConfirmation = null,
+    Object? passwordHasMinLength = null,
+    Object? passwordHasUppercase = null,
+    Object? passwordHasLowercase = null,
+    Object? passwordHasDigits = null,
+    Object? passwordHasSpecialChars = null,
+    Object? passwordsMatch = null,
+    Object? canSubmit = null,
+    Object? isLoading = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
-    return _then(_$_SettingsPasswordState(
-      password: password == freezed
+    return _then(_$SettingsPasswordStateImpl(
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      passwordConfirmation: passwordConfirmation == freezed
+      passwordConfirmation: null == passwordConfirmation
           ? _value.passwordConfirmation
           : passwordConfirmation // ignore: cast_nullable_to_non_nullable
               as String,
-      passwordHasMinLength: passwordHasMinLength == freezed
+      passwordHasMinLength: null == passwordHasMinLength
           ? _value.passwordHasMinLength
           : passwordHasMinLength // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasUppercase: passwordHasUppercase == freezed
+      passwordHasUppercase: null == passwordHasUppercase
           ? _value.passwordHasUppercase
           : passwordHasUppercase // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasLowercase: passwordHasLowercase == freezed
+      passwordHasLowercase: null == passwordHasLowercase
           ? _value.passwordHasLowercase
           : passwordHasLowercase // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasDigits: passwordHasDigits == freezed
+      passwordHasDigits: null == passwordHasDigits
           ? _value.passwordHasDigits
           : passwordHasDigits // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasSpecialChars: passwordHasSpecialChars == freezed
+      passwordHasSpecialChars: null == passwordHasSpecialChars
           ? _value.passwordHasSpecialChars
           : passwordHasSpecialChars // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordsMatch: passwordsMatch == freezed
+      passwordsMatch: null == passwordsMatch
           ? _value.passwordsMatch
           : passwordsMatch // ignore: cast_nullable_to_non_nullable
               as bool,
-      canSubmit: canSubmit == freezed
+      canSubmit: null == canSubmit
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -1986,8 +1993,8 @@ class __$$_SettingsPasswordStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SettingsPasswordState implements _SettingsPasswordState {
-  const _$_SettingsPasswordState(
+class _$SettingsPasswordStateImpl implements _SettingsPasswordState {
+  const _$SettingsPasswordStateImpl(
       {this.password = "",
       this.passwordConfirmation = "",
       this.passwordHasMinLength = false,
@@ -2043,52 +2050,59 @@ class _$_SettingsPasswordState implements _SettingsPasswordState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SettingsPasswordState &&
-            const DeepCollectionEquality().equals(other.password, password) &&
-            const DeepCollectionEquality()
-                .equals(other.passwordConfirmation, passwordConfirmation) &&
-            const DeepCollectionEquality()
-                .equals(other.passwordHasMinLength, passwordHasMinLength) &&
-            const DeepCollectionEquality()
-                .equals(other.passwordHasUppercase, passwordHasUppercase) &&
-            const DeepCollectionEquality()
-                .equals(other.passwordHasLowercase, passwordHasLowercase) &&
-            const DeepCollectionEquality()
-                .equals(other.passwordHasDigits, passwordHasDigits) &&
-            const DeepCollectionEquality().equals(
-                other.passwordHasSpecialChars, passwordHasSpecialChars) &&
-            const DeepCollectionEquality()
-                .equals(other.passwordsMatch, passwordsMatch) &&
-            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
-            const DeepCollectionEquality().equals(other.errorText, errorText));
+            other is _$SettingsPasswordStateImpl &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.passwordConfirmation, passwordConfirmation) ||
+                other.passwordConfirmation == passwordConfirmation) &&
+            (identical(other.passwordHasMinLength, passwordHasMinLength) ||
+                other.passwordHasMinLength == passwordHasMinLength) &&
+            (identical(other.passwordHasUppercase, passwordHasUppercase) ||
+                other.passwordHasUppercase == passwordHasUppercase) &&
+            (identical(other.passwordHasLowercase, passwordHasLowercase) ||
+                other.passwordHasLowercase == passwordHasLowercase) &&
+            (identical(other.passwordHasDigits, passwordHasDigits) ||
+                other.passwordHasDigits == passwordHasDigits) &&
+            (identical(
+                    other.passwordHasSpecialChars, passwordHasSpecialChars) ||
+                other.passwordHasSpecialChars == passwordHasSpecialChars) &&
+            (identical(other.passwordsMatch, passwordsMatch) ||
+                other.passwordsMatch == passwordsMatch) &&
+            (identical(other.canSubmit, canSubmit) ||
+                other.canSubmit == canSubmit) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.isSuccess, isSuccess) ||
+                other.isSuccess == isSuccess) &&
+            (identical(other.errorText, errorText) ||
+                other.errorText == errorText));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(password),
-      const DeepCollectionEquality().hash(passwordConfirmation),
-      const DeepCollectionEquality().hash(passwordHasMinLength),
-      const DeepCollectionEquality().hash(passwordHasUppercase),
-      const DeepCollectionEquality().hash(passwordHasLowercase),
-      const DeepCollectionEquality().hash(passwordHasDigits),
-      const DeepCollectionEquality().hash(passwordHasSpecialChars),
-      const DeepCollectionEquality().hash(passwordsMatch),
-      const DeepCollectionEquality().hash(canSubmit),
-      const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(isSuccess),
-      const DeepCollectionEquality().hash(errorText));
+      password,
+      passwordConfirmation,
+      passwordHasMinLength,
+      passwordHasUppercase,
+      passwordHasLowercase,
+      passwordHasDigits,
+      passwordHasSpecialChars,
+      passwordsMatch,
+      canSubmit,
+      isLoading,
+      isSuccess,
+      errorText);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SettingsPasswordStateCopyWith<_$_SettingsPasswordState> get copyWith =>
-      __$$_SettingsPasswordStateCopyWithImpl<_$_SettingsPasswordState>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SettingsPasswordStateImplCopyWith<_$SettingsPasswordStateImpl>
+      get copyWith => __$$SettingsPasswordStateImplCopyWithImpl<
+          _$SettingsPasswordStateImpl>(this, _$identity);
 }
 
 abstract class _SettingsPasswordState implements SettingsPasswordState {
@@ -2104,7 +2118,7 @@ abstract class _SettingsPasswordState implements SettingsPasswordState {
       final bool canSubmit,
       final bool isLoading,
       final bool isSuccess,
-      final String? errorText}) = _$_SettingsPasswordState;
+      final String? errorText}) = _$SettingsPasswordStateImpl;
 
   @override
   String get password;
@@ -2132,8 +2146,8 @@ abstract class _SettingsPasswordState implements SettingsPasswordState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$$_SettingsPasswordStateCopyWith<_$_SettingsPasswordState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SettingsPasswordStateImplCopyWith<_$SettingsPasswordStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2151,13 +2165,13 @@ mixin _$SignInButtonsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
+    TResult? Function()? signInWithFacebook,
+    TResult? Function()? signInWithGoogle,
+    TResult? Function()? signInWithApple,
+    TResult? Function()? signInWithEmail,
+    TResult? Function(String email)? signInWithEmailLink,
+    TResult? Function()? signInWithPhone,
+    TResult? Function()? signInAnonymously,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2185,13 +2199,13 @@ mixin _$SignInButtonsEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult? Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult? Function(_SignInWithApple value)? signInWithApple,
+    TResult? Function(_SignInWithEmail value)? signInWithEmail,
+    TResult? Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult? Function(_SignInWithPhone value)? signInWithPhone,
+    TResult? Function(_SignInAnonymously value)? signInAnonymously,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2212,42 +2226,40 @@ mixin _$SignInButtonsEvent {
 abstract class $SignInButtonsEventCopyWith<$Res> {
   factory $SignInButtonsEventCopyWith(
           SignInButtonsEvent value, $Res Function(SignInButtonsEvent) then) =
-      _$SignInButtonsEventCopyWithImpl<$Res>;
+      _$SignInButtonsEventCopyWithImpl<$Res, SignInButtonsEvent>;
 }
 
 /// @nodoc
-class _$SignInButtonsEventCopyWithImpl<$Res>
+class _$SignInButtonsEventCopyWithImpl<$Res, $Val extends SignInButtonsEvent>
     implements $SignInButtonsEventCopyWith<$Res> {
   _$SignInButtonsEventCopyWithImpl(this._value, this._then);
 
-  final SignInButtonsEvent _value;
   // ignore: unused_field
-  final $Res Function(SignInButtonsEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_SignInWithFacebookCopyWith<$Res> {
-  factory _$$_SignInWithFacebookCopyWith(_$_SignInWithFacebook value,
-          $Res Function(_$_SignInWithFacebook) then) =
-      __$$_SignInWithFacebookCopyWithImpl<$Res>;
+abstract class _$$SignInWithFacebookImplCopyWith<$Res> {
+  factory _$$SignInWithFacebookImplCopyWith(_$SignInWithFacebookImpl value,
+          $Res Function(_$SignInWithFacebookImpl) then) =
+      __$$SignInWithFacebookImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SignInWithFacebookCopyWithImpl<$Res>
-    extends _$SignInButtonsEventCopyWithImpl<$Res>
-    implements _$$_SignInWithFacebookCopyWith<$Res> {
-  __$$_SignInWithFacebookCopyWithImpl(
-      _$_SignInWithFacebook _value, $Res Function(_$_SignInWithFacebook) _then)
-      : super(_value, (v) => _then(v as _$_SignInWithFacebook));
-
-  @override
-  _$_SignInWithFacebook get _value => super._value as _$_SignInWithFacebook;
+class __$$SignInWithFacebookImplCopyWithImpl<$Res>
+    extends _$SignInButtonsEventCopyWithImpl<$Res, _$SignInWithFacebookImpl>
+    implements _$$SignInWithFacebookImplCopyWith<$Res> {
+  __$$SignInWithFacebookImplCopyWithImpl(_$SignInWithFacebookImpl _value,
+      $Res Function(_$SignInWithFacebookImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SignInWithFacebook implements _SignInWithFacebook {
-  const _$_SignInWithFacebook();
+class _$SignInWithFacebookImpl implements _SignInWithFacebook {
+  const _$SignInWithFacebookImpl();
 
   @override
   String toString() {
@@ -2255,9 +2267,9 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignInWithFacebook);
+        (other.runtimeType == runtimeType && other is _$SignInWithFacebookImpl);
   }
 
   @override
@@ -2280,13 +2292,13 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
+    TResult? Function()? signInWithFacebook,
+    TResult? Function()? signInWithGoogle,
+    TResult? Function()? signInWithApple,
+    TResult? Function()? signInWithEmail,
+    TResult? Function(String email)? signInWithEmailLink,
+    TResult? Function()? signInWithPhone,
+    TResult? Function()? signInAnonymously,
   }) {
     return signInWithFacebook?.call();
   }
@@ -2326,13 +2338,13 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult? Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult? Function(_SignInWithApple value)? signInWithApple,
+    TResult? Function(_SignInWithEmail value)? signInWithEmail,
+    TResult? Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult? Function(_SignInWithPhone value)? signInWithPhone,
+    TResult? Function(_SignInAnonymously value)? signInAnonymously,
   }) {
     return signInWithFacebook?.call(this);
   }
@@ -2357,32 +2369,29 @@ class _$_SignInWithFacebook implements _SignInWithFacebook {
 }
 
 abstract class _SignInWithFacebook implements SignInButtonsEvent {
-  const factory _SignInWithFacebook() = _$_SignInWithFacebook;
+  const factory _SignInWithFacebook() = _$SignInWithFacebookImpl;
 }
 
 /// @nodoc
-abstract class _$$_SignInWithGoogleCopyWith<$Res> {
-  factory _$$_SignInWithGoogleCopyWith(
-          _$_SignInWithGoogle value, $Res Function(_$_SignInWithGoogle) then) =
-      __$$_SignInWithGoogleCopyWithImpl<$Res>;
+abstract class _$$SignInWithGoogleImplCopyWith<$Res> {
+  factory _$$SignInWithGoogleImplCopyWith(_$SignInWithGoogleImpl value,
+          $Res Function(_$SignInWithGoogleImpl) then) =
+      __$$SignInWithGoogleImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SignInWithGoogleCopyWithImpl<$Res>
-    extends _$SignInButtonsEventCopyWithImpl<$Res>
-    implements _$$_SignInWithGoogleCopyWith<$Res> {
-  __$$_SignInWithGoogleCopyWithImpl(
-      _$_SignInWithGoogle _value, $Res Function(_$_SignInWithGoogle) _then)
-      : super(_value, (v) => _then(v as _$_SignInWithGoogle));
-
-  @override
-  _$_SignInWithGoogle get _value => super._value as _$_SignInWithGoogle;
+class __$$SignInWithGoogleImplCopyWithImpl<$Res>
+    extends _$SignInButtonsEventCopyWithImpl<$Res, _$SignInWithGoogleImpl>
+    implements _$$SignInWithGoogleImplCopyWith<$Res> {
+  __$$SignInWithGoogleImplCopyWithImpl(_$SignInWithGoogleImpl _value,
+      $Res Function(_$SignInWithGoogleImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SignInWithGoogle implements _SignInWithGoogle {
-  const _$_SignInWithGoogle();
+class _$SignInWithGoogleImpl implements _SignInWithGoogle {
+  const _$SignInWithGoogleImpl();
 
   @override
   String toString() {
@@ -2390,9 +2399,9 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignInWithGoogle);
+        (other.runtimeType == runtimeType && other is _$SignInWithGoogleImpl);
   }
 
   @override
@@ -2415,13 +2424,13 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
+    TResult? Function()? signInWithFacebook,
+    TResult? Function()? signInWithGoogle,
+    TResult? Function()? signInWithApple,
+    TResult? Function()? signInWithEmail,
+    TResult? Function(String email)? signInWithEmailLink,
+    TResult? Function()? signInWithPhone,
+    TResult? Function()? signInAnonymously,
   }) {
     return signInWithGoogle?.call();
   }
@@ -2461,13 +2470,13 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult? Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult? Function(_SignInWithApple value)? signInWithApple,
+    TResult? Function(_SignInWithEmail value)? signInWithEmail,
+    TResult? Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult? Function(_SignInWithPhone value)? signInWithPhone,
+    TResult? Function(_SignInAnonymously value)? signInAnonymously,
   }) {
     return signInWithGoogle?.call(this);
   }
@@ -2492,32 +2501,29 @@ class _$_SignInWithGoogle implements _SignInWithGoogle {
 }
 
 abstract class _SignInWithGoogle implements SignInButtonsEvent {
-  const factory _SignInWithGoogle() = _$_SignInWithGoogle;
+  const factory _SignInWithGoogle() = _$SignInWithGoogleImpl;
 }
 
 /// @nodoc
-abstract class _$$_SignInWithAppleCopyWith<$Res> {
-  factory _$$_SignInWithAppleCopyWith(
-          _$_SignInWithApple value, $Res Function(_$_SignInWithApple) then) =
-      __$$_SignInWithAppleCopyWithImpl<$Res>;
+abstract class _$$SignInWithAppleImplCopyWith<$Res> {
+  factory _$$SignInWithAppleImplCopyWith(_$SignInWithAppleImpl value,
+          $Res Function(_$SignInWithAppleImpl) then) =
+      __$$SignInWithAppleImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SignInWithAppleCopyWithImpl<$Res>
-    extends _$SignInButtonsEventCopyWithImpl<$Res>
-    implements _$$_SignInWithAppleCopyWith<$Res> {
-  __$$_SignInWithAppleCopyWithImpl(
-      _$_SignInWithApple _value, $Res Function(_$_SignInWithApple) _then)
-      : super(_value, (v) => _then(v as _$_SignInWithApple));
-
-  @override
-  _$_SignInWithApple get _value => super._value as _$_SignInWithApple;
+class __$$SignInWithAppleImplCopyWithImpl<$Res>
+    extends _$SignInButtonsEventCopyWithImpl<$Res, _$SignInWithAppleImpl>
+    implements _$$SignInWithAppleImplCopyWith<$Res> {
+  __$$SignInWithAppleImplCopyWithImpl(
+      _$SignInWithAppleImpl _value, $Res Function(_$SignInWithAppleImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SignInWithApple implements _SignInWithApple {
-  const _$_SignInWithApple();
+class _$SignInWithAppleImpl implements _SignInWithApple {
+  const _$SignInWithAppleImpl();
 
   @override
   String toString() {
@@ -2525,9 +2531,9 @@ class _$_SignInWithApple implements _SignInWithApple {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignInWithApple);
+        (other.runtimeType == runtimeType && other is _$SignInWithAppleImpl);
   }
 
   @override
@@ -2550,13 +2556,13 @@ class _$_SignInWithApple implements _SignInWithApple {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
+    TResult? Function()? signInWithFacebook,
+    TResult? Function()? signInWithGoogle,
+    TResult? Function()? signInWithApple,
+    TResult? Function()? signInWithEmail,
+    TResult? Function(String email)? signInWithEmailLink,
+    TResult? Function()? signInWithPhone,
+    TResult? Function()? signInAnonymously,
   }) {
     return signInWithApple?.call();
   }
@@ -2596,13 +2602,13 @@ class _$_SignInWithApple implements _SignInWithApple {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult? Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult? Function(_SignInWithApple value)? signInWithApple,
+    TResult? Function(_SignInWithEmail value)? signInWithEmail,
+    TResult? Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult? Function(_SignInWithPhone value)? signInWithPhone,
+    TResult? Function(_SignInAnonymously value)? signInAnonymously,
   }) {
     return signInWithApple?.call(this);
   }
@@ -2627,32 +2633,29 @@ class _$_SignInWithApple implements _SignInWithApple {
 }
 
 abstract class _SignInWithApple implements SignInButtonsEvent {
-  const factory _SignInWithApple() = _$_SignInWithApple;
+  const factory _SignInWithApple() = _$SignInWithAppleImpl;
 }
 
 /// @nodoc
-abstract class _$$_SignInWithEmailCopyWith<$Res> {
-  factory _$$_SignInWithEmailCopyWith(
-          _$_SignInWithEmail value, $Res Function(_$_SignInWithEmail) then) =
-      __$$_SignInWithEmailCopyWithImpl<$Res>;
+abstract class _$$SignInWithEmailImplCopyWith<$Res> {
+  factory _$$SignInWithEmailImplCopyWith(_$SignInWithEmailImpl value,
+          $Res Function(_$SignInWithEmailImpl) then) =
+      __$$SignInWithEmailImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SignInWithEmailCopyWithImpl<$Res>
-    extends _$SignInButtonsEventCopyWithImpl<$Res>
-    implements _$$_SignInWithEmailCopyWith<$Res> {
-  __$$_SignInWithEmailCopyWithImpl(
-      _$_SignInWithEmail _value, $Res Function(_$_SignInWithEmail) _then)
-      : super(_value, (v) => _then(v as _$_SignInWithEmail));
-
-  @override
-  _$_SignInWithEmail get _value => super._value as _$_SignInWithEmail;
+class __$$SignInWithEmailImplCopyWithImpl<$Res>
+    extends _$SignInButtonsEventCopyWithImpl<$Res, _$SignInWithEmailImpl>
+    implements _$$SignInWithEmailImplCopyWith<$Res> {
+  __$$SignInWithEmailImplCopyWithImpl(
+      _$SignInWithEmailImpl _value, $Res Function(_$SignInWithEmailImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SignInWithEmail implements _SignInWithEmail {
-  const _$_SignInWithEmail();
+class _$SignInWithEmailImpl implements _SignInWithEmail {
+  const _$SignInWithEmailImpl();
 
   @override
   String toString() {
@@ -2660,9 +2663,9 @@ class _$_SignInWithEmail implements _SignInWithEmail {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignInWithEmail);
+        (other.runtimeType == runtimeType && other is _$SignInWithEmailImpl);
   }
 
   @override
@@ -2685,13 +2688,13 @@ class _$_SignInWithEmail implements _SignInWithEmail {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
+    TResult? Function()? signInWithFacebook,
+    TResult? Function()? signInWithGoogle,
+    TResult? Function()? signInWithApple,
+    TResult? Function()? signInWithEmail,
+    TResult? Function(String email)? signInWithEmailLink,
+    TResult? Function()? signInWithPhone,
+    TResult? Function()? signInAnonymously,
   }) {
     return signInWithEmail?.call();
   }
@@ -2731,13 +2734,13 @@ class _$_SignInWithEmail implements _SignInWithEmail {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult? Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult? Function(_SignInWithApple value)? signInWithApple,
+    TResult? Function(_SignInWithEmail value)? signInWithEmail,
+    TResult? Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult? Function(_SignInWithPhone value)? signInWithPhone,
+    TResult? Function(_SignInAnonymously value)? signInAnonymously,
   }) {
     return signInWithEmail?.call(this);
   }
@@ -2762,34 +2765,33 @@ class _$_SignInWithEmail implements _SignInWithEmail {
 }
 
 abstract class _SignInWithEmail implements SignInButtonsEvent {
-  const factory _SignInWithEmail() = _$_SignInWithEmail;
+  const factory _SignInWithEmail() = _$SignInWithEmailImpl;
 }
 
 /// @nodoc
-abstract class _$$_SignInWithEmailLinkCopyWith<$Res> {
-  factory _$$_SignInWithEmailLinkCopyWith(_$_SignInWithEmailLink value,
-          $Res Function(_$_SignInWithEmailLink) then) =
-      __$$_SignInWithEmailLinkCopyWithImpl<$Res>;
+abstract class _$$SignInWithEmailLinkImplCopyWith<$Res> {
+  factory _$$SignInWithEmailLinkImplCopyWith(_$SignInWithEmailLinkImpl value,
+          $Res Function(_$SignInWithEmailLinkImpl) then) =
+      __$$SignInWithEmailLinkImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$_SignInWithEmailLinkCopyWithImpl<$Res>
-    extends _$SignInButtonsEventCopyWithImpl<$Res>
-    implements _$$_SignInWithEmailLinkCopyWith<$Res> {
-  __$$_SignInWithEmailLinkCopyWithImpl(_$_SignInWithEmailLink _value,
-      $Res Function(_$_SignInWithEmailLink) _then)
-      : super(_value, (v) => _then(v as _$_SignInWithEmailLink));
+class __$$SignInWithEmailLinkImplCopyWithImpl<$Res>
+    extends _$SignInButtonsEventCopyWithImpl<$Res, _$SignInWithEmailLinkImpl>
+    implements _$$SignInWithEmailLinkImplCopyWith<$Res> {
+  __$$SignInWithEmailLinkImplCopyWithImpl(_$SignInWithEmailLinkImpl _value,
+      $Res Function(_$SignInWithEmailLinkImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SignInWithEmailLink get _value => super._value as _$_SignInWithEmailLink;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
+    Object? email = null,
   }) {
-    return _then(_$_SignInWithEmailLink(
-      email == freezed
+    return _then(_$SignInWithEmailLinkImpl(
+      null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
@@ -2799,8 +2801,8 @@ class __$$_SignInWithEmailLinkCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInWithEmailLink implements _SignInWithEmailLink {
-  const _$_SignInWithEmailLink(this.email);
+class _$SignInWithEmailLinkImpl implements _SignInWithEmailLink {
+  const _$SignInWithEmailLinkImpl(this.email);
 
   @override
   final String email;
@@ -2811,21 +2813,21 @@ class _$_SignInWithEmailLink implements _SignInWithEmailLink {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SignInWithEmailLink &&
-            const DeepCollectionEquality().equals(other.email, email));
+            other is _$SignInWithEmailLinkImpl &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
+  int get hashCode => Object.hash(runtimeType, email);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SignInWithEmailLinkCopyWith<_$_SignInWithEmailLink> get copyWith =>
-      __$$_SignInWithEmailLinkCopyWithImpl<_$_SignInWithEmailLink>(
+  @pragma('vm:prefer-inline')
+  _$$SignInWithEmailLinkImplCopyWith<_$SignInWithEmailLinkImpl> get copyWith =>
+      __$$SignInWithEmailLinkImplCopyWithImpl<_$SignInWithEmailLinkImpl>(
           this, _$identity);
 
   @override
@@ -2845,13 +2847,13 @@ class _$_SignInWithEmailLink implements _SignInWithEmailLink {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
+    TResult? Function()? signInWithFacebook,
+    TResult? Function()? signInWithGoogle,
+    TResult? Function()? signInWithApple,
+    TResult? Function()? signInWithEmail,
+    TResult? Function(String email)? signInWithEmailLink,
+    TResult? Function()? signInWithPhone,
+    TResult? Function()? signInAnonymously,
   }) {
     return signInWithEmailLink?.call(email);
   }
@@ -2891,13 +2893,13 @@ class _$_SignInWithEmailLink implements _SignInWithEmailLink {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult? Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult? Function(_SignInWithApple value)? signInWithApple,
+    TResult? Function(_SignInWithEmail value)? signInWithEmail,
+    TResult? Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult? Function(_SignInWithPhone value)? signInWithPhone,
+    TResult? Function(_SignInAnonymously value)? signInAnonymously,
   }) {
     return signInWithEmailLink?.call(this);
   }
@@ -2923,37 +2925,34 @@ class _$_SignInWithEmailLink implements _SignInWithEmailLink {
 
 abstract class _SignInWithEmailLink implements SignInButtonsEvent {
   const factory _SignInWithEmailLink(final String email) =
-      _$_SignInWithEmailLink;
+      _$SignInWithEmailLinkImpl;
 
   String get email;
   @JsonKey(ignore: true)
-  _$$_SignInWithEmailLinkCopyWith<_$_SignInWithEmailLink> get copyWith =>
+  _$$SignInWithEmailLinkImplCopyWith<_$SignInWithEmailLinkImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SignInWithPhoneCopyWith<$Res> {
-  factory _$$_SignInWithPhoneCopyWith(
-          _$_SignInWithPhone value, $Res Function(_$_SignInWithPhone) then) =
-      __$$_SignInWithPhoneCopyWithImpl<$Res>;
+abstract class _$$SignInWithPhoneImplCopyWith<$Res> {
+  factory _$$SignInWithPhoneImplCopyWith(_$SignInWithPhoneImpl value,
+          $Res Function(_$SignInWithPhoneImpl) then) =
+      __$$SignInWithPhoneImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SignInWithPhoneCopyWithImpl<$Res>
-    extends _$SignInButtonsEventCopyWithImpl<$Res>
-    implements _$$_SignInWithPhoneCopyWith<$Res> {
-  __$$_SignInWithPhoneCopyWithImpl(
-      _$_SignInWithPhone _value, $Res Function(_$_SignInWithPhone) _then)
-      : super(_value, (v) => _then(v as _$_SignInWithPhone));
-
-  @override
-  _$_SignInWithPhone get _value => super._value as _$_SignInWithPhone;
+class __$$SignInWithPhoneImplCopyWithImpl<$Res>
+    extends _$SignInButtonsEventCopyWithImpl<$Res, _$SignInWithPhoneImpl>
+    implements _$$SignInWithPhoneImplCopyWith<$Res> {
+  __$$SignInWithPhoneImplCopyWithImpl(
+      _$SignInWithPhoneImpl _value, $Res Function(_$SignInWithPhoneImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SignInWithPhone implements _SignInWithPhone {
-  const _$_SignInWithPhone();
+class _$SignInWithPhoneImpl implements _SignInWithPhone {
+  const _$SignInWithPhoneImpl();
 
   @override
   String toString() {
@@ -2961,9 +2960,9 @@ class _$_SignInWithPhone implements _SignInWithPhone {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignInWithPhone);
+        (other.runtimeType == runtimeType && other is _$SignInWithPhoneImpl);
   }
 
   @override
@@ -2986,13 +2985,13 @@ class _$_SignInWithPhone implements _SignInWithPhone {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
+    TResult? Function()? signInWithFacebook,
+    TResult? Function()? signInWithGoogle,
+    TResult? Function()? signInWithApple,
+    TResult? Function()? signInWithEmail,
+    TResult? Function(String email)? signInWithEmailLink,
+    TResult? Function()? signInWithPhone,
+    TResult? Function()? signInAnonymously,
   }) {
     return signInWithPhone?.call();
   }
@@ -3032,13 +3031,13 @@ class _$_SignInWithPhone implements _SignInWithPhone {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult? Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult? Function(_SignInWithApple value)? signInWithApple,
+    TResult? Function(_SignInWithEmail value)? signInWithEmail,
+    TResult? Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult? Function(_SignInWithPhone value)? signInWithPhone,
+    TResult? Function(_SignInAnonymously value)? signInAnonymously,
   }) {
     return signInWithPhone?.call(this);
   }
@@ -3063,32 +3062,29 @@ class _$_SignInWithPhone implements _SignInWithPhone {
 }
 
 abstract class _SignInWithPhone implements SignInButtonsEvent {
-  const factory _SignInWithPhone() = _$_SignInWithPhone;
+  const factory _SignInWithPhone() = _$SignInWithPhoneImpl;
 }
 
 /// @nodoc
-abstract class _$$_SignInAnonymouslyCopyWith<$Res> {
-  factory _$$_SignInAnonymouslyCopyWith(_$_SignInAnonymously value,
-          $Res Function(_$_SignInAnonymously) then) =
-      __$$_SignInAnonymouslyCopyWithImpl<$Res>;
+abstract class _$$SignInAnonymouslyImplCopyWith<$Res> {
+  factory _$$SignInAnonymouslyImplCopyWith(_$SignInAnonymouslyImpl value,
+          $Res Function(_$SignInAnonymouslyImpl) then) =
+      __$$SignInAnonymouslyImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SignInAnonymouslyCopyWithImpl<$Res>
-    extends _$SignInButtonsEventCopyWithImpl<$Res>
-    implements _$$_SignInAnonymouslyCopyWith<$Res> {
-  __$$_SignInAnonymouslyCopyWithImpl(
-      _$_SignInAnonymously _value, $Res Function(_$_SignInAnonymously) _then)
-      : super(_value, (v) => _then(v as _$_SignInAnonymously));
-
-  @override
-  _$_SignInAnonymously get _value => super._value as _$_SignInAnonymously;
+class __$$SignInAnonymouslyImplCopyWithImpl<$Res>
+    extends _$SignInButtonsEventCopyWithImpl<$Res, _$SignInAnonymouslyImpl>
+    implements _$$SignInAnonymouslyImplCopyWith<$Res> {
+  __$$SignInAnonymouslyImplCopyWithImpl(_$SignInAnonymouslyImpl _value,
+      $Res Function(_$SignInAnonymouslyImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SignInAnonymously implements _SignInAnonymously {
-  const _$_SignInAnonymously();
+class _$SignInAnonymouslyImpl implements _SignInAnonymously {
+  const _$SignInAnonymouslyImpl();
 
   @override
   String toString() {
@@ -3096,9 +3092,9 @@ class _$_SignInAnonymously implements _SignInAnonymously {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignInAnonymously);
+        (other.runtimeType == runtimeType && other is _$SignInAnonymouslyImpl);
   }
 
   @override
@@ -3121,13 +3117,13 @@ class _$_SignInAnonymously implements _SignInAnonymously {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? signInWithFacebook,
-    TResult Function()? signInWithGoogle,
-    TResult Function()? signInWithApple,
-    TResult Function()? signInWithEmail,
-    TResult Function(String email)? signInWithEmailLink,
-    TResult Function()? signInWithPhone,
-    TResult Function()? signInAnonymously,
+    TResult? Function()? signInWithFacebook,
+    TResult? Function()? signInWithGoogle,
+    TResult? Function()? signInWithApple,
+    TResult? Function()? signInWithEmail,
+    TResult? Function(String email)? signInWithEmailLink,
+    TResult? Function()? signInWithPhone,
+    TResult? Function()? signInAnonymously,
   }) {
     return signInAnonymously?.call();
   }
@@ -3167,13 +3163,13 @@ class _$_SignInAnonymously implements _SignInAnonymously {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInWithFacebook value)? signInWithFacebook,
-    TResult Function(_SignInWithGoogle value)? signInWithGoogle,
-    TResult Function(_SignInWithApple value)? signInWithApple,
-    TResult Function(_SignInWithEmail value)? signInWithEmail,
-    TResult Function(_SignInWithEmailLink value)? signInWithEmailLink,
-    TResult Function(_SignInWithPhone value)? signInWithPhone,
-    TResult Function(_SignInAnonymously value)? signInAnonymously,
+    TResult? Function(_SignInWithFacebook value)? signInWithFacebook,
+    TResult? Function(_SignInWithGoogle value)? signInWithGoogle,
+    TResult? Function(_SignInWithApple value)? signInWithApple,
+    TResult? Function(_SignInWithEmail value)? signInWithEmail,
+    TResult? Function(_SignInWithEmailLink value)? signInWithEmailLink,
+    TResult? Function(_SignInWithPhone value)? signInWithPhone,
+    TResult? Function(_SignInAnonymously value)? signInAnonymously,
   }) {
     return signInAnonymously?.call(this);
   }
@@ -3198,7 +3194,7 @@ class _$_SignInAnonymously implements _SignInAnonymously {
 }
 
 abstract class _SignInAnonymously implements SignInButtonsEvent {
-  const factory _SignInAnonymously() = _$_SignInAnonymously;
+  const factory _SignInAnonymously() = _$SignInAnonymouslyImpl;
 }
 
 /// @nodoc
@@ -3213,10 +3209,10 @@ mixin _$SignInButtonsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String errorText)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3238,10 +3234,10 @@ mixin _$SignInButtonsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
+    TResult? Function(_SignInInitial value)? initial,
+    TResult? Function(_SignInLoading value)? loading,
+    TResult? Function(_SignInSuccess value)? success,
+    TResult? Function(_SignInError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3259,42 +3255,40 @@ mixin _$SignInButtonsState {
 abstract class $SignInButtonsStateCopyWith<$Res> {
   factory $SignInButtonsStateCopyWith(
           SignInButtonsState value, $Res Function(SignInButtonsState) then) =
-      _$SignInButtonsStateCopyWithImpl<$Res>;
+      _$SignInButtonsStateCopyWithImpl<$Res, SignInButtonsState>;
 }
 
 /// @nodoc
-class _$SignInButtonsStateCopyWithImpl<$Res>
+class _$SignInButtonsStateCopyWithImpl<$Res, $Val extends SignInButtonsState>
     implements $SignInButtonsStateCopyWith<$Res> {
   _$SignInButtonsStateCopyWithImpl(this._value, this._then);
 
-  final SignInButtonsState _value;
   // ignore: unused_field
-  final $Res Function(SignInButtonsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_SignInInitialCopyWith<$Res> {
-  factory _$$_SignInInitialCopyWith(
-          _$_SignInInitial value, $Res Function(_$_SignInInitial) then) =
-      __$$_SignInInitialCopyWithImpl<$Res>;
+abstract class _$$SignInInitialImplCopyWith<$Res> {
+  factory _$$SignInInitialImplCopyWith(
+          _$SignInInitialImpl value, $Res Function(_$SignInInitialImpl) then) =
+      __$$SignInInitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SignInInitialCopyWithImpl<$Res>
-    extends _$SignInButtonsStateCopyWithImpl<$Res>
-    implements _$$_SignInInitialCopyWith<$Res> {
-  __$$_SignInInitialCopyWithImpl(
-      _$_SignInInitial _value, $Res Function(_$_SignInInitial) _then)
-      : super(_value, (v) => _then(v as _$_SignInInitial));
-
-  @override
-  _$_SignInInitial get _value => super._value as _$_SignInInitial;
+class __$$SignInInitialImplCopyWithImpl<$Res>
+    extends _$SignInButtonsStateCopyWithImpl<$Res, _$SignInInitialImpl>
+    implements _$$SignInInitialImplCopyWith<$Res> {
+  __$$SignInInitialImplCopyWithImpl(
+      _$SignInInitialImpl _value, $Res Function(_$SignInInitialImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SignInInitial implements _SignInInitial {
-  const _$_SignInInitial();
+class _$SignInInitialImpl implements _SignInInitial {
+  const _$SignInInitialImpl();
 
   @override
   String toString() {
@@ -3302,9 +3296,9 @@ class _$_SignInInitial implements _SignInInitial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignInInitial);
+        (other.runtimeType == runtimeType && other is _$SignInInitialImpl);
   }
 
   @override
@@ -3324,10 +3318,10 @@ class _$_SignInInitial implements _SignInInitial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String errorText)? error,
   }) {
     return initial?.call();
   }
@@ -3361,10 +3355,10 @@ class _$_SignInInitial implements _SignInInitial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
+    TResult? Function(_SignInInitial value)? initial,
+    TResult? Function(_SignInLoading value)? loading,
+    TResult? Function(_SignInSuccess value)? success,
+    TResult? Function(_SignInError value)? error,
   }) {
     return initial?.call(this);
   }
@@ -3386,32 +3380,29 @@ class _$_SignInInitial implements _SignInInitial {
 }
 
 abstract class _SignInInitial implements SignInButtonsState {
-  const factory _SignInInitial() = _$_SignInInitial;
+  const factory _SignInInitial() = _$SignInInitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_SignInLoadingCopyWith<$Res> {
-  factory _$$_SignInLoadingCopyWith(
-          _$_SignInLoading value, $Res Function(_$_SignInLoading) then) =
-      __$$_SignInLoadingCopyWithImpl<$Res>;
+abstract class _$$SignInLoadingImplCopyWith<$Res> {
+  factory _$$SignInLoadingImplCopyWith(
+          _$SignInLoadingImpl value, $Res Function(_$SignInLoadingImpl) then) =
+      __$$SignInLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SignInLoadingCopyWithImpl<$Res>
-    extends _$SignInButtonsStateCopyWithImpl<$Res>
-    implements _$$_SignInLoadingCopyWith<$Res> {
-  __$$_SignInLoadingCopyWithImpl(
-      _$_SignInLoading _value, $Res Function(_$_SignInLoading) _then)
-      : super(_value, (v) => _then(v as _$_SignInLoading));
-
-  @override
-  _$_SignInLoading get _value => super._value as _$_SignInLoading;
+class __$$SignInLoadingImplCopyWithImpl<$Res>
+    extends _$SignInButtonsStateCopyWithImpl<$Res, _$SignInLoadingImpl>
+    implements _$$SignInLoadingImplCopyWith<$Res> {
+  __$$SignInLoadingImplCopyWithImpl(
+      _$SignInLoadingImpl _value, $Res Function(_$SignInLoadingImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SignInLoading implements _SignInLoading {
-  const _$_SignInLoading();
+class _$SignInLoadingImpl implements _SignInLoading {
+  const _$SignInLoadingImpl();
 
   @override
   String toString() {
@@ -3419,9 +3410,9 @@ class _$_SignInLoading implements _SignInLoading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignInLoading);
+        (other.runtimeType == runtimeType && other is _$SignInLoadingImpl);
   }
 
   @override
@@ -3441,10 +3432,10 @@ class _$_SignInLoading implements _SignInLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String errorText)? error,
   }) {
     return loading?.call();
   }
@@ -3478,10 +3469,10 @@ class _$_SignInLoading implements _SignInLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
+    TResult? Function(_SignInInitial value)? initial,
+    TResult? Function(_SignInLoading value)? loading,
+    TResult? Function(_SignInSuccess value)? success,
+    TResult? Function(_SignInError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -3503,32 +3494,29 @@ class _$_SignInLoading implements _SignInLoading {
 }
 
 abstract class _SignInLoading implements SignInButtonsState {
-  const factory _SignInLoading() = _$_SignInLoading;
+  const factory _SignInLoading() = _$SignInLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_SignInSuccessCopyWith<$Res> {
-  factory _$$_SignInSuccessCopyWith(
-          _$_SignInSuccess value, $Res Function(_$_SignInSuccess) then) =
-      __$$_SignInSuccessCopyWithImpl<$Res>;
+abstract class _$$SignInSuccessImplCopyWith<$Res> {
+  factory _$$SignInSuccessImplCopyWith(
+          _$SignInSuccessImpl value, $Res Function(_$SignInSuccessImpl) then) =
+      __$$SignInSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SignInSuccessCopyWithImpl<$Res>
-    extends _$SignInButtonsStateCopyWithImpl<$Res>
-    implements _$$_SignInSuccessCopyWith<$Res> {
-  __$$_SignInSuccessCopyWithImpl(
-      _$_SignInSuccess _value, $Res Function(_$_SignInSuccess) _then)
-      : super(_value, (v) => _then(v as _$_SignInSuccess));
-
-  @override
-  _$_SignInSuccess get _value => super._value as _$_SignInSuccess;
+class __$$SignInSuccessImplCopyWithImpl<$Res>
+    extends _$SignInButtonsStateCopyWithImpl<$Res, _$SignInSuccessImpl>
+    implements _$$SignInSuccessImplCopyWith<$Res> {
+  __$$SignInSuccessImplCopyWithImpl(
+      _$SignInSuccessImpl _value, $Res Function(_$SignInSuccessImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SignInSuccess implements _SignInSuccess {
-  const _$_SignInSuccess();
+class _$SignInSuccessImpl implements _SignInSuccess {
+  const _$SignInSuccessImpl();
 
   @override
   String toString() {
@@ -3536,9 +3524,9 @@ class _$_SignInSuccess implements _SignInSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SignInSuccess);
+        (other.runtimeType == runtimeType && other is _$SignInSuccessImpl);
   }
 
   @override
@@ -3558,10 +3546,10 @@ class _$_SignInSuccess implements _SignInSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String errorText)? error,
   }) {
     return success?.call();
   }
@@ -3595,10 +3583,10 @@ class _$_SignInSuccess implements _SignInSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
+    TResult? Function(_SignInInitial value)? initial,
+    TResult? Function(_SignInLoading value)? loading,
+    TResult? Function(_SignInSuccess value)? success,
+    TResult? Function(_SignInError value)? error,
   }) {
     return success?.call(this);
   }
@@ -3620,34 +3608,33 @@ class _$_SignInSuccess implements _SignInSuccess {
 }
 
 abstract class _SignInSuccess implements SignInButtonsState {
-  const factory _SignInSuccess() = _$_SignInSuccess;
+  const factory _SignInSuccess() = _$SignInSuccessImpl;
 }
 
 /// @nodoc
-abstract class _$$_SignInErrorCopyWith<$Res> {
-  factory _$$_SignInErrorCopyWith(
-          _$_SignInError value, $Res Function(_$_SignInError) then) =
-      __$$_SignInErrorCopyWithImpl<$Res>;
+abstract class _$$SignInErrorImplCopyWith<$Res> {
+  factory _$$SignInErrorImplCopyWith(
+          _$SignInErrorImpl value, $Res Function(_$SignInErrorImpl) then) =
+      __$$SignInErrorImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String errorText});
 }
 
 /// @nodoc
-class __$$_SignInErrorCopyWithImpl<$Res>
-    extends _$SignInButtonsStateCopyWithImpl<$Res>
-    implements _$$_SignInErrorCopyWith<$Res> {
-  __$$_SignInErrorCopyWithImpl(
-      _$_SignInError _value, $Res Function(_$_SignInError) _then)
-      : super(_value, (v) => _then(v as _$_SignInError));
+class __$$SignInErrorImplCopyWithImpl<$Res>
+    extends _$SignInButtonsStateCopyWithImpl<$Res, _$SignInErrorImpl>
+    implements _$$SignInErrorImplCopyWith<$Res> {
+  __$$SignInErrorImplCopyWithImpl(
+      _$SignInErrorImpl _value, $Res Function(_$SignInErrorImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SignInError get _value => super._value as _$_SignInError;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? errorText = freezed,
+    Object? errorText = null,
   }) {
-    return _then(_$_SignInError(
-      errorText == freezed
+    return _then(_$SignInErrorImpl(
+      null == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String,
@@ -3657,8 +3644,8 @@ class __$$_SignInErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInError implements _SignInError {
-  const _$_SignInError(this.errorText);
+class _$SignInErrorImpl implements _SignInError {
+  const _$SignInErrorImpl(this.errorText);
 
   @override
   final String errorText;
@@ -3669,21 +3656,22 @@ class _$_SignInError implements _SignInError {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SignInError &&
-            const DeepCollectionEquality().equals(other.errorText, errorText));
+            other is _$SignInErrorImpl &&
+            (identical(other.errorText, errorText) ||
+                other.errorText == errorText));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(errorText));
+  int get hashCode => Object.hash(runtimeType, errorText);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SignInErrorCopyWith<_$_SignInError> get copyWith =>
-      __$$_SignInErrorCopyWithImpl<_$_SignInError>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SignInErrorImplCopyWith<_$SignInErrorImpl> get copyWith =>
+      __$$SignInErrorImplCopyWithImpl<_$SignInErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3699,10 +3687,10 @@ class _$_SignInError implements _SignInError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function(String errorText)? error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String errorText)? error,
   }) {
     return error?.call(errorText);
   }
@@ -3736,10 +3724,10 @@ class _$_SignInError implements _SignInError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInInitial value)? initial,
-    TResult Function(_SignInLoading value)? loading,
-    TResult Function(_SignInSuccess value)? success,
-    TResult Function(_SignInError value)? error,
+    TResult? Function(_SignInInitial value)? initial,
+    TResult? Function(_SignInLoading value)? loading,
+    TResult? Function(_SignInSuccess value)? success,
+    TResult? Function(_SignInError value)? error,
   }) {
     return error?.call(this);
   }
@@ -3761,11 +3749,11 @@ class _$_SignInError implements _SignInError {
 }
 
 abstract class _SignInError implements SignInButtonsState {
-  const factory _SignInError(final String errorText) = _$_SignInError;
+  const factory _SignInError(final String errorText) = _$SignInErrorImpl;
 
   String get errorText;
   @JsonKey(ignore: true)
-  _$$_SignInErrorCopyWith<_$_SignInError> get copyWith =>
+  _$$SignInErrorImplCopyWith<_$SignInErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -3780,9 +3768,9 @@ mixin _$SignInEmailLoginEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function()? submit,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3802,9 +3790,9 @@ mixin _$SignInEmailLoginEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailLoginEmailChanged value)? emailChanged,
-    TResult Function(_EmailLoginPasswordChanged value)? passwordChanged,
-    TResult Function(_EmailLoginSubmit value)? submit,
+    TResult? Function(_EmailLoginEmailChanged value)? emailChanged,
+    TResult? Function(_EmailLoginPasswordChanged value)? passwordChanged,
+    TResult? Function(_EmailLoginSubmit value)? submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3821,45 +3809,48 @@ mixin _$SignInEmailLoginEvent {
 abstract class $SignInEmailLoginEventCopyWith<$Res> {
   factory $SignInEmailLoginEventCopyWith(SignInEmailLoginEvent value,
           $Res Function(SignInEmailLoginEvent) then) =
-      _$SignInEmailLoginEventCopyWithImpl<$Res>;
+      _$SignInEmailLoginEventCopyWithImpl<$Res, SignInEmailLoginEvent>;
 }
 
 /// @nodoc
-class _$SignInEmailLoginEventCopyWithImpl<$Res>
+class _$SignInEmailLoginEventCopyWithImpl<$Res,
+        $Val extends SignInEmailLoginEvent>
     implements $SignInEmailLoginEventCopyWith<$Res> {
   _$SignInEmailLoginEventCopyWithImpl(this._value, this._then);
 
-  final SignInEmailLoginEvent _value;
   // ignore: unused_field
-  final $Res Function(SignInEmailLoginEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_EmailLoginEmailChangedCopyWith<$Res> {
-  factory _$$_EmailLoginEmailChangedCopyWith(_$_EmailLoginEmailChanged value,
-          $Res Function(_$_EmailLoginEmailChanged) then) =
-      __$$_EmailLoginEmailChangedCopyWithImpl<$Res>;
+abstract class _$$EmailLoginEmailChangedImplCopyWith<$Res> {
+  factory _$$EmailLoginEmailChangedImplCopyWith(
+          _$EmailLoginEmailChangedImpl value,
+          $Res Function(_$EmailLoginEmailChangedImpl) then) =
+      __$$EmailLoginEmailChangedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$_EmailLoginEmailChangedCopyWithImpl<$Res>
-    extends _$SignInEmailLoginEventCopyWithImpl<$Res>
-    implements _$$_EmailLoginEmailChangedCopyWith<$Res> {
-  __$$_EmailLoginEmailChangedCopyWithImpl(_$_EmailLoginEmailChanged _value,
-      $Res Function(_$_EmailLoginEmailChanged) _then)
-      : super(_value, (v) => _then(v as _$_EmailLoginEmailChanged));
+class __$$EmailLoginEmailChangedImplCopyWithImpl<$Res>
+    extends _$SignInEmailLoginEventCopyWithImpl<$Res,
+        _$EmailLoginEmailChangedImpl>
+    implements _$$EmailLoginEmailChangedImplCopyWith<$Res> {
+  __$$EmailLoginEmailChangedImplCopyWithImpl(
+      _$EmailLoginEmailChangedImpl _value,
+      $Res Function(_$EmailLoginEmailChangedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_EmailLoginEmailChanged get _value =>
-      super._value as _$_EmailLoginEmailChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
+    Object? email = null,
   }) {
-    return _then(_$_EmailLoginEmailChanged(
-      email == freezed
+    return _then(_$EmailLoginEmailChangedImpl(
+      null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
@@ -3869,8 +3860,8 @@ class __$$_EmailLoginEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmailLoginEmailChanged implements _EmailLoginEmailChanged {
-  const _$_EmailLoginEmailChanged(this.email);
+class _$EmailLoginEmailChangedImpl implements _EmailLoginEmailChanged {
+  const _$EmailLoginEmailChangedImpl(this.email);
 
   @override
   final String email;
@@ -3881,22 +3872,22 @@ class _$_EmailLoginEmailChanged implements _EmailLoginEmailChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EmailLoginEmailChanged &&
-            const DeepCollectionEquality().equals(other.email, email));
+            other is _$EmailLoginEmailChangedImpl &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
+  int get hashCode => Object.hash(runtimeType, email);
 
   @JsonKey(ignore: true)
   @override
-  _$$_EmailLoginEmailChangedCopyWith<_$_EmailLoginEmailChanged> get copyWith =>
-      __$$_EmailLoginEmailChangedCopyWithImpl<_$_EmailLoginEmailChanged>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$EmailLoginEmailChangedImplCopyWith<_$EmailLoginEmailChangedImpl>
+      get copyWith => __$$EmailLoginEmailChangedImplCopyWithImpl<
+          _$EmailLoginEmailChangedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3911,9 +3902,9 @@ class _$_EmailLoginEmailChanged implements _EmailLoginEmailChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function()? submit,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? submit,
   }) {
     return emailChanged?.call(email);
   }
@@ -3945,9 +3936,9 @@ class _$_EmailLoginEmailChanged implements _EmailLoginEmailChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailLoginEmailChanged value)? emailChanged,
-    TResult Function(_EmailLoginPasswordChanged value)? passwordChanged,
-    TResult Function(_EmailLoginSubmit value)? submit,
+    TResult? Function(_EmailLoginEmailChanged value)? emailChanged,
+    TResult? Function(_EmailLoginPasswordChanged value)? passwordChanged,
+    TResult? Function(_EmailLoginSubmit value)? submit,
   }) {
     return emailChanged?.call(this);
   }
@@ -3969,42 +3960,41 @@ class _$_EmailLoginEmailChanged implements _EmailLoginEmailChanged {
 
 abstract class _EmailLoginEmailChanged implements SignInEmailLoginEvent {
   const factory _EmailLoginEmailChanged(final String email) =
-      _$_EmailLoginEmailChanged;
+      _$EmailLoginEmailChangedImpl;
 
   String get email;
   @JsonKey(ignore: true)
-  _$$_EmailLoginEmailChangedCopyWith<_$_EmailLoginEmailChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$EmailLoginEmailChangedImplCopyWith<_$EmailLoginEmailChangedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_EmailLoginPasswordChangedCopyWith<$Res> {
-  factory _$$_EmailLoginPasswordChangedCopyWith(
-          _$_EmailLoginPasswordChanged value,
-          $Res Function(_$_EmailLoginPasswordChanged) then) =
-      __$$_EmailLoginPasswordChangedCopyWithImpl<$Res>;
+abstract class _$$EmailLoginPasswordChangedImplCopyWith<$Res> {
+  factory _$$EmailLoginPasswordChangedImplCopyWith(
+          _$EmailLoginPasswordChangedImpl value,
+          $Res Function(_$EmailLoginPasswordChangedImpl) then) =
+      __$$EmailLoginPasswordChangedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String password});
 }
 
 /// @nodoc
-class __$$_EmailLoginPasswordChangedCopyWithImpl<$Res>
-    extends _$SignInEmailLoginEventCopyWithImpl<$Res>
-    implements _$$_EmailLoginPasswordChangedCopyWith<$Res> {
-  __$$_EmailLoginPasswordChangedCopyWithImpl(
-      _$_EmailLoginPasswordChanged _value,
-      $Res Function(_$_EmailLoginPasswordChanged) _then)
-      : super(_value, (v) => _then(v as _$_EmailLoginPasswordChanged));
+class __$$EmailLoginPasswordChangedImplCopyWithImpl<$Res>
+    extends _$SignInEmailLoginEventCopyWithImpl<$Res,
+        _$EmailLoginPasswordChangedImpl>
+    implements _$$EmailLoginPasswordChangedImplCopyWith<$Res> {
+  __$$EmailLoginPasswordChangedImplCopyWithImpl(
+      _$EmailLoginPasswordChangedImpl _value,
+      $Res Function(_$EmailLoginPasswordChangedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_EmailLoginPasswordChanged get _value =>
-      super._value as _$_EmailLoginPasswordChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? password = freezed,
+    Object? password = null,
   }) {
-    return _then(_$_EmailLoginPasswordChanged(
-      password == freezed
+    return _then(_$EmailLoginPasswordChangedImpl(
+      null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
@@ -4014,8 +4004,8 @@ class __$$_EmailLoginPasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmailLoginPasswordChanged implements _EmailLoginPasswordChanged {
-  const _$_EmailLoginPasswordChanged(this.password);
+class _$EmailLoginPasswordChangedImpl implements _EmailLoginPasswordChanged {
+  const _$EmailLoginPasswordChangedImpl(this.password);
 
   @override
   final String password;
@@ -4026,22 +4016,23 @@ class _$_EmailLoginPasswordChanged implements _EmailLoginPasswordChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EmailLoginPasswordChanged &&
-            const DeepCollectionEquality().equals(other.password, password));
+            other is _$EmailLoginPasswordChangedImpl &&
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
+  int get hashCode => Object.hash(runtimeType, password);
 
   @JsonKey(ignore: true)
   @override
-  _$$_EmailLoginPasswordChangedCopyWith<_$_EmailLoginPasswordChanged>
-      get copyWith => __$$_EmailLoginPasswordChangedCopyWithImpl<
-          _$_EmailLoginPasswordChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$EmailLoginPasswordChangedImplCopyWith<_$EmailLoginPasswordChangedImpl>
+      get copyWith => __$$EmailLoginPasswordChangedImplCopyWithImpl<
+          _$EmailLoginPasswordChangedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4056,9 +4047,9 @@ class _$_EmailLoginPasswordChanged implements _EmailLoginPasswordChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function()? submit,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? submit,
   }) {
     return passwordChanged?.call(password);
   }
@@ -4090,9 +4081,9 @@ class _$_EmailLoginPasswordChanged implements _EmailLoginPasswordChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailLoginEmailChanged value)? emailChanged,
-    TResult Function(_EmailLoginPasswordChanged value)? passwordChanged,
-    TResult Function(_EmailLoginSubmit value)? submit,
+    TResult? Function(_EmailLoginEmailChanged value)? emailChanged,
+    TResult? Function(_EmailLoginPasswordChanged value)? passwordChanged,
+    TResult? Function(_EmailLoginSubmit value)? submit,
   }) {
     return passwordChanged?.call(this);
   }
@@ -4114,37 +4105,34 @@ class _$_EmailLoginPasswordChanged implements _EmailLoginPasswordChanged {
 
 abstract class _EmailLoginPasswordChanged implements SignInEmailLoginEvent {
   const factory _EmailLoginPasswordChanged(final String password) =
-      _$_EmailLoginPasswordChanged;
+      _$EmailLoginPasswordChangedImpl;
 
   String get password;
   @JsonKey(ignore: true)
-  _$$_EmailLoginPasswordChangedCopyWith<_$_EmailLoginPasswordChanged>
+  _$$EmailLoginPasswordChangedImplCopyWith<_$EmailLoginPasswordChangedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_EmailLoginSubmitCopyWith<$Res> {
-  factory _$$_EmailLoginSubmitCopyWith(
-          _$_EmailLoginSubmit value, $Res Function(_$_EmailLoginSubmit) then) =
-      __$$_EmailLoginSubmitCopyWithImpl<$Res>;
+abstract class _$$EmailLoginSubmitImplCopyWith<$Res> {
+  factory _$$EmailLoginSubmitImplCopyWith(_$EmailLoginSubmitImpl value,
+          $Res Function(_$EmailLoginSubmitImpl) then) =
+      __$$EmailLoginSubmitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_EmailLoginSubmitCopyWithImpl<$Res>
-    extends _$SignInEmailLoginEventCopyWithImpl<$Res>
-    implements _$$_EmailLoginSubmitCopyWith<$Res> {
-  __$$_EmailLoginSubmitCopyWithImpl(
-      _$_EmailLoginSubmit _value, $Res Function(_$_EmailLoginSubmit) _then)
-      : super(_value, (v) => _then(v as _$_EmailLoginSubmit));
-
-  @override
-  _$_EmailLoginSubmit get _value => super._value as _$_EmailLoginSubmit;
+class __$$EmailLoginSubmitImplCopyWithImpl<$Res>
+    extends _$SignInEmailLoginEventCopyWithImpl<$Res, _$EmailLoginSubmitImpl>
+    implements _$$EmailLoginSubmitImplCopyWith<$Res> {
+  __$$EmailLoginSubmitImplCopyWithImpl(_$EmailLoginSubmitImpl _value,
+      $Res Function(_$EmailLoginSubmitImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_EmailLoginSubmit implements _EmailLoginSubmit {
-  const _$_EmailLoginSubmit();
+class _$EmailLoginSubmitImpl implements _EmailLoginSubmit {
+  const _$EmailLoginSubmitImpl();
 
   @override
   String toString() {
@@ -4152,9 +4140,9 @@ class _$_EmailLoginSubmit implements _EmailLoginSubmit {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_EmailLoginSubmit);
+        (other.runtimeType == runtimeType && other is _$EmailLoginSubmitImpl);
   }
 
   @override
@@ -4173,9 +4161,9 @@ class _$_EmailLoginSubmit implements _EmailLoginSubmit {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function()? submit,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? submit,
   }) {
     return submit?.call();
   }
@@ -4207,9 +4195,9 @@ class _$_EmailLoginSubmit implements _EmailLoginSubmit {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailLoginEmailChanged value)? emailChanged,
-    TResult Function(_EmailLoginPasswordChanged value)? passwordChanged,
-    TResult Function(_EmailLoginSubmit value)? submit,
+    TResult? Function(_EmailLoginEmailChanged value)? emailChanged,
+    TResult? Function(_EmailLoginPasswordChanged value)? passwordChanged,
+    TResult? Function(_EmailLoginSubmit value)? submit,
   }) {
     return submit?.call(this);
   }
@@ -4230,7 +4218,7 @@ class _$_EmailLoginSubmit implements _EmailLoginSubmit {
 }
 
 abstract class _EmailLoginSubmit implements SignInEmailLoginEvent {
-  const factory _EmailLoginSubmit() = _$_EmailLoginSubmit;
+  const factory _EmailLoginSubmit() = _$EmailLoginSubmitImpl;
 }
 
 /// @nodoc
@@ -4251,7 +4239,8 @@ mixin _$SignInEmailLoginState {
 abstract class $SignInEmailLoginStateCopyWith<$Res> {
   factory $SignInEmailLoginStateCopyWith(SignInEmailLoginState value,
           $Res Function(SignInEmailLoginState) then) =
-      _$SignInEmailLoginStateCopyWithImpl<$Res>;
+      _$SignInEmailLoginStateCopyWithImpl<$Res, SignInEmailLoginState>;
+  @useResult
   $Res call(
       {String email,
       String password,
@@ -4262,59 +4251,64 @@ abstract class $SignInEmailLoginStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SignInEmailLoginStateCopyWithImpl<$Res>
+class _$SignInEmailLoginStateCopyWithImpl<$Res,
+        $Val extends SignInEmailLoginState>
     implements $SignInEmailLoginStateCopyWith<$Res> {
   _$SignInEmailLoginStateCopyWithImpl(this._value, this._then);
 
-  final SignInEmailLoginState _value;
   // ignore: unused_field
-  final $Res Function(SignInEmailLoginState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? password = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
+    Object? email = null,
+    Object? password = null,
+    Object? canSubmit = null,
+    Object? isLoading = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
     return _then(_value.copyWith(
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      password: password == freezed
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      canSubmit: canSubmit == freezed
+      canSubmit: null == canSubmit
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_SignInEmailLoginStateCopyWith<$Res>
+abstract class _$$SignInEmailLoginStateImplCopyWith<$Res>
     implements $SignInEmailLoginStateCopyWith<$Res> {
-  factory _$$_SignInEmailLoginStateCopyWith(_$_SignInEmailLoginState value,
-          $Res Function(_$_SignInEmailLoginState) then) =
-      __$$_SignInEmailLoginStateCopyWithImpl<$Res>;
+  factory _$$SignInEmailLoginStateImplCopyWith(
+          _$SignInEmailLoginStateImpl value,
+          $Res Function(_$SignInEmailLoginStateImpl) then) =
+      __$$SignInEmailLoginStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String email,
       String password,
@@ -4325,48 +4319,46 @@ abstract class _$$_SignInEmailLoginStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SignInEmailLoginStateCopyWithImpl<$Res>
-    extends _$SignInEmailLoginStateCopyWithImpl<$Res>
-    implements _$$_SignInEmailLoginStateCopyWith<$Res> {
-  __$$_SignInEmailLoginStateCopyWithImpl(_$_SignInEmailLoginState _value,
-      $Res Function(_$_SignInEmailLoginState) _then)
-      : super(_value, (v) => _then(v as _$_SignInEmailLoginState));
+class __$$SignInEmailLoginStateImplCopyWithImpl<$Res>
+    extends _$SignInEmailLoginStateCopyWithImpl<$Res,
+        _$SignInEmailLoginStateImpl>
+    implements _$$SignInEmailLoginStateImplCopyWith<$Res> {
+  __$$SignInEmailLoginStateImplCopyWithImpl(_$SignInEmailLoginStateImpl _value,
+      $Res Function(_$SignInEmailLoginStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SignInEmailLoginState get _value =>
-      super._value as _$_SignInEmailLoginState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? password = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
+    Object? email = null,
+    Object? password = null,
+    Object? canSubmit = null,
+    Object? isLoading = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
-    return _then(_$_SignInEmailLoginState(
-      email: email == freezed
+    return _then(_$SignInEmailLoginStateImpl(
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      password: password == freezed
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      canSubmit: canSubmit == freezed
+      canSubmit: null == canSubmit
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -4376,8 +4368,8 @@ class __$$_SignInEmailLoginStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInEmailLoginState implements _SignInEmailLoginState {
-  const _$_SignInEmailLoginState(
+class _$SignInEmailLoginStateImpl implements _SignInEmailLoginState {
+  const _$SignInEmailLoginStateImpl(
       {this.email = "",
       this.password = "",
       this.canSubmit = false,
@@ -4409,33 +4401,33 @@ class _$_SignInEmailLoginState implements _SignInEmailLoginState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SignInEmailLoginState &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.password, password) &&
-            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
-            const DeepCollectionEquality().equals(other.errorText, errorText));
+            other is _$SignInEmailLoginStateImpl &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.canSubmit, canSubmit) ||
+                other.canSubmit == canSubmit) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.isSuccess, isSuccess) ||
+                other.isSuccess == isSuccess) &&
+            (identical(other.errorText, errorText) ||
+                other.errorText == errorText));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(password),
-      const DeepCollectionEquality().hash(canSubmit),
-      const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(isSuccess),
-      const DeepCollectionEquality().hash(errorText));
+      runtimeType, email, password, canSubmit, isLoading, isSuccess, errorText);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SignInEmailLoginStateCopyWith<_$_SignInEmailLoginState> get copyWith =>
-      __$$_SignInEmailLoginStateCopyWithImpl<_$_SignInEmailLoginState>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SignInEmailLoginStateImplCopyWith<_$SignInEmailLoginStateImpl>
+      get copyWith => __$$SignInEmailLoginStateImplCopyWithImpl<
+          _$SignInEmailLoginStateImpl>(this, _$identity);
 }
 
 abstract class _SignInEmailLoginState implements SignInEmailLoginState {
@@ -4445,7 +4437,7 @@ abstract class _SignInEmailLoginState implements SignInEmailLoginState {
       final bool canSubmit,
       final bool isLoading,
       final bool isSuccess,
-      final String? errorText}) = _$_SignInEmailLoginState;
+      final String? errorText}) = _$SignInEmailLoginStateImpl;
 
   @override
   String get email;
@@ -4461,8 +4453,8 @@ abstract class _SignInEmailLoginState implements SignInEmailLoginState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$$_SignInEmailLoginStateCopyWith<_$_SignInEmailLoginState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SignInEmailLoginStateImplCopyWith<_$SignInEmailLoginStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -4475,8 +4467,8 @@ mixin _$SignInEmailLinkEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function()? sendLink,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function()? sendLink,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -4494,8 +4486,8 @@ mixin _$SignInEmailLinkEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LinkEmailChanged value)? emailChanged,
-    TResult Function(_SendLink value)? sendLink,
+    TResult? Function(_LinkEmailChanged value)? emailChanged,
+    TResult? Function(_SendLink value)? sendLink,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -4511,44 +4503,45 @@ mixin _$SignInEmailLinkEvent {
 abstract class $SignInEmailLinkEventCopyWith<$Res> {
   factory $SignInEmailLinkEventCopyWith(SignInEmailLinkEvent value,
           $Res Function(SignInEmailLinkEvent) then) =
-      _$SignInEmailLinkEventCopyWithImpl<$Res>;
+      _$SignInEmailLinkEventCopyWithImpl<$Res, SignInEmailLinkEvent>;
 }
 
 /// @nodoc
-class _$SignInEmailLinkEventCopyWithImpl<$Res>
+class _$SignInEmailLinkEventCopyWithImpl<$Res,
+        $Val extends SignInEmailLinkEvent>
     implements $SignInEmailLinkEventCopyWith<$Res> {
   _$SignInEmailLinkEventCopyWithImpl(this._value, this._then);
 
-  final SignInEmailLinkEvent _value;
   // ignore: unused_field
-  final $Res Function(SignInEmailLinkEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_LinkEmailChangedCopyWith<$Res> {
-  factory _$$_LinkEmailChangedCopyWith(
-          _$_LinkEmailChanged value, $Res Function(_$_LinkEmailChanged) then) =
-      __$$_LinkEmailChangedCopyWithImpl<$Res>;
+abstract class _$$LinkEmailChangedImplCopyWith<$Res> {
+  factory _$$LinkEmailChangedImplCopyWith(_$LinkEmailChangedImpl value,
+          $Res Function(_$LinkEmailChangedImpl) then) =
+      __$$LinkEmailChangedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$_LinkEmailChangedCopyWithImpl<$Res>
-    extends _$SignInEmailLinkEventCopyWithImpl<$Res>
-    implements _$$_LinkEmailChangedCopyWith<$Res> {
-  __$$_LinkEmailChangedCopyWithImpl(
-      _$_LinkEmailChanged _value, $Res Function(_$_LinkEmailChanged) _then)
-      : super(_value, (v) => _then(v as _$_LinkEmailChanged));
+class __$$LinkEmailChangedImplCopyWithImpl<$Res>
+    extends _$SignInEmailLinkEventCopyWithImpl<$Res, _$LinkEmailChangedImpl>
+    implements _$$LinkEmailChangedImplCopyWith<$Res> {
+  __$$LinkEmailChangedImplCopyWithImpl(_$LinkEmailChangedImpl _value,
+      $Res Function(_$LinkEmailChangedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_LinkEmailChanged get _value => super._value as _$_LinkEmailChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
+    Object? email = null,
   }) {
-    return _then(_$_LinkEmailChanged(
-      email == freezed
+    return _then(_$LinkEmailChangedImpl(
+      null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
@@ -4558,8 +4551,8 @@ class __$$_LinkEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LinkEmailChanged implements _LinkEmailChanged {
-  const _$_LinkEmailChanged(this.email);
+class _$LinkEmailChangedImpl implements _LinkEmailChanged {
+  const _$LinkEmailChangedImpl(this.email);
 
   @override
   final String email;
@@ -4570,21 +4563,22 @@ class _$_LinkEmailChanged implements _LinkEmailChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LinkEmailChanged &&
-            const DeepCollectionEquality().equals(other.email, email));
+            other is _$LinkEmailChangedImpl &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
+  int get hashCode => Object.hash(runtimeType, email);
 
   @JsonKey(ignore: true)
   @override
-  _$$_LinkEmailChangedCopyWith<_$_LinkEmailChanged> get copyWith =>
-      __$$_LinkEmailChangedCopyWithImpl<_$_LinkEmailChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$LinkEmailChangedImplCopyWith<_$LinkEmailChangedImpl> get copyWith =>
+      __$$LinkEmailChangedImplCopyWithImpl<_$LinkEmailChangedImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -4598,8 +4592,8 @@ class _$_LinkEmailChanged implements _LinkEmailChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function()? sendLink,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function()? sendLink,
   }) {
     return emailChanged?.call(email);
   }
@@ -4629,8 +4623,8 @@ class _$_LinkEmailChanged implements _LinkEmailChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LinkEmailChanged value)? emailChanged,
-    TResult Function(_SendLink value)? sendLink,
+    TResult? Function(_LinkEmailChanged value)? emailChanged,
+    TResult? Function(_SendLink value)? sendLink,
   }) {
     return emailChanged?.call(this);
   }
@@ -4650,37 +4644,34 @@ class _$_LinkEmailChanged implements _LinkEmailChanged {
 }
 
 abstract class _LinkEmailChanged implements SignInEmailLinkEvent {
-  const factory _LinkEmailChanged(final String email) = _$_LinkEmailChanged;
+  const factory _LinkEmailChanged(final String email) = _$LinkEmailChangedImpl;
 
   String get email;
   @JsonKey(ignore: true)
-  _$$_LinkEmailChangedCopyWith<_$_LinkEmailChanged> get copyWith =>
+  _$$LinkEmailChangedImplCopyWith<_$LinkEmailChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SendLinkCopyWith<$Res> {
-  factory _$$_SendLinkCopyWith(
-          _$_SendLink value, $Res Function(_$_SendLink) then) =
-      __$$_SendLinkCopyWithImpl<$Res>;
+abstract class _$$SendLinkImplCopyWith<$Res> {
+  factory _$$SendLinkImplCopyWith(
+          _$SendLinkImpl value, $Res Function(_$SendLinkImpl) then) =
+      __$$SendLinkImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SendLinkCopyWithImpl<$Res>
-    extends _$SignInEmailLinkEventCopyWithImpl<$Res>
-    implements _$$_SendLinkCopyWith<$Res> {
-  __$$_SendLinkCopyWithImpl(
-      _$_SendLink _value, $Res Function(_$_SendLink) _then)
-      : super(_value, (v) => _then(v as _$_SendLink));
-
-  @override
-  _$_SendLink get _value => super._value as _$_SendLink;
+class __$$SendLinkImplCopyWithImpl<$Res>
+    extends _$SignInEmailLinkEventCopyWithImpl<$Res, _$SendLinkImpl>
+    implements _$$SendLinkImplCopyWith<$Res> {
+  __$$SendLinkImplCopyWithImpl(
+      _$SendLinkImpl _value, $Res Function(_$SendLinkImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SendLink implements _SendLink {
-  const _$_SendLink();
+class _$SendLinkImpl implements _SendLink {
+  const _$SendLinkImpl();
 
   @override
   String toString() {
@@ -4688,9 +4679,9 @@ class _$_SendLink implements _SendLink {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SendLink);
+        (other.runtimeType == runtimeType && other is _$SendLinkImpl);
   }
 
   @override
@@ -4708,8 +4699,8 @@ class _$_SendLink implements _SendLink {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function()? sendLink,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function()? sendLink,
   }) {
     return sendLink?.call();
   }
@@ -4739,8 +4730,8 @@ class _$_SendLink implements _SendLink {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LinkEmailChanged value)? emailChanged,
-    TResult Function(_SendLink value)? sendLink,
+    TResult? Function(_LinkEmailChanged value)? emailChanged,
+    TResult? Function(_SendLink value)? sendLink,
   }) {
     return sendLink?.call(this);
   }
@@ -4760,7 +4751,7 @@ class _$_SendLink implements _SendLink {
 }
 
 abstract class _SendLink implements SignInEmailLinkEvent {
-  const factory _SendLink() = _$_SendLink;
+  const factory _SendLink() = _$SendLinkImpl;
 }
 
 /// @nodoc
@@ -4780,7 +4771,8 @@ mixin _$SignInEmailLinkState {
 abstract class $SignInEmailLinkStateCopyWith<$Res> {
   factory $SignInEmailLinkStateCopyWith(SignInEmailLinkState value,
           $Res Function(SignInEmailLinkState) then) =
-      _$SignInEmailLinkStateCopyWithImpl<$Res>;
+      _$SignInEmailLinkStateCopyWithImpl<$Res, SignInEmailLinkState>;
+  @useResult
   $Res call(
       {String email,
       bool canSubmit,
@@ -4790,54 +4782,58 @@ abstract class $SignInEmailLinkStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SignInEmailLinkStateCopyWithImpl<$Res>
+class _$SignInEmailLinkStateCopyWithImpl<$Res,
+        $Val extends SignInEmailLinkState>
     implements $SignInEmailLinkStateCopyWith<$Res> {
   _$SignInEmailLinkStateCopyWithImpl(this._value, this._then);
 
-  final SignInEmailLinkState _value;
   // ignore: unused_field
-  final $Res Function(SignInEmailLinkState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
+    Object? email = null,
+    Object? canSubmit = null,
+    Object? isLoading = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
     return _then(_value.copyWith(
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      canSubmit: canSubmit == freezed
+      canSubmit: null == canSubmit
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_SignInEmailLinkStateCopyWith<$Res>
+abstract class _$$SignInEmailLinkStateImplCopyWith<$Res>
     implements $SignInEmailLinkStateCopyWith<$Res> {
-  factory _$$_SignInEmailLinkStateCopyWith(_$_SignInEmailLinkState value,
-          $Res Function(_$_SignInEmailLinkState) then) =
-      __$$_SignInEmailLinkStateCopyWithImpl<$Res>;
+  factory _$$SignInEmailLinkStateImplCopyWith(_$SignInEmailLinkStateImpl value,
+          $Res Function(_$SignInEmailLinkStateImpl) then) =
+      __$$SignInEmailLinkStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String email,
       bool canSubmit,
@@ -4847,42 +4843,40 @@ abstract class _$$_SignInEmailLinkStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SignInEmailLinkStateCopyWithImpl<$Res>
-    extends _$SignInEmailLinkStateCopyWithImpl<$Res>
-    implements _$$_SignInEmailLinkStateCopyWith<$Res> {
-  __$$_SignInEmailLinkStateCopyWithImpl(_$_SignInEmailLinkState _value,
-      $Res Function(_$_SignInEmailLinkState) _then)
-      : super(_value, (v) => _then(v as _$_SignInEmailLinkState));
+class __$$SignInEmailLinkStateImplCopyWithImpl<$Res>
+    extends _$SignInEmailLinkStateCopyWithImpl<$Res, _$SignInEmailLinkStateImpl>
+    implements _$$SignInEmailLinkStateImplCopyWith<$Res> {
+  __$$SignInEmailLinkStateImplCopyWithImpl(_$SignInEmailLinkStateImpl _value,
+      $Res Function(_$SignInEmailLinkStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SignInEmailLinkState get _value => super._value as _$_SignInEmailLinkState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
+    Object? email = null,
+    Object? canSubmit = null,
+    Object? isLoading = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
-    return _then(_$_SignInEmailLinkState(
-      email: email == freezed
+    return _then(_$SignInEmailLinkStateImpl(
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      canSubmit: canSubmit == freezed
+      canSubmit: null == canSubmit
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -4892,8 +4886,8 @@ class __$$_SignInEmailLinkStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInEmailLinkState implements _SignInEmailLinkState {
-  const _$_SignInEmailLinkState(
+class _$SignInEmailLinkStateImpl implements _SignInEmailLinkState {
+  const _$SignInEmailLinkStateImpl(
       {this.email = "",
       this.canSubmit = false,
       this.isLoading = false,
@@ -4921,31 +4915,32 @@ class _$_SignInEmailLinkState implements _SignInEmailLinkState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SignInEmailLinkState &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
-            const DeepCollectionEquality().equals(other.errorText, errorText));
+            other is _$SignInEmailLinkStateImpl &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.canSubmit, canSubmit) ||
+                other.canSubmit == canSubmit) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.isSuccess, isSuccess) ||
+                other.isSuccess == isSuccess) &&
+            (identical(other.errorText, errorText) ||
+                other.errorText == errorText));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(canSubmit),
-      const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(isSuccess),
-      const DeepCollectionEquality().hash(errorText));
+      runtimeType, email, canSubmit, isLoading, isSuccess, errorText);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SignInEmailLinkStateCopyWith<_$_SignInEmailLinkState> get copyWith =>
-      __$$_SignInEmailLinkStateCopyWithImpl<_$_SignInEmailLinkState>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SignInEmailLinkStateImplCopyWith<_$SignInEmailLinkStateImpl>
+      get copyWith =>
+          __$$SignInEmailLinkStateImplCopyWithImpl<_$SignInEmailLinkStateImpl>(
+              this, _$identity);
 }
 
 abstract class _SignInEmailLinkState implements SignInEmailLinkState {
@@ -4954,7 +4949,7 @@ abstract class _SignInEmailLinkState implements SignInEmailLinkState {
       final bool canSubmit,
       final bool isLoading,
       final bool isSuccess,
-      final String? errorText}) = _$_SignInEmailLinkState;
+      final String? errorText}) = _$SignInEmailLinkStateImpl;
 
   @override
   String get email;
@@ -4968,8 +4963,8 @@ abstract class _SignInEmailLinkState implements SignInEmailLinkState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$$_SignInEmailLinkStateCopyWith<_$_SignInEmailLinkState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SignInEmailLinkStateImplCopyWith<_$SignInEmailLinkStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -4982,8 +4977,8 @@ mixin _$SignInEmailResetEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function()? submit,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function()? submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -5001,8 +4996,8 @@ mixin _$SignInEmailResetEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ResetEmailChanged value)? emailChanged,
-    TResult Function(_ResetSubmit value)? submit,
+    TResult? Function(_ResetEmailChanged value)? emailChanged,
+    TResult? Function(_ResetSubmit value)? submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -5018,44 +5013,45 @@ mixin _$SignInEmailResetEvent {
 abstract class $SignInEmailResetEventCopyWith<$Res> {
   factory $SignInEmailResetEventCopyWith(SignInEmailResetEvent value,
           $Res Function(SignInEmailResetEvent) then) =
-      _$SignInEmailResetEventCopyWithImpl<$Res>;
+      _$SignInEmailResetEventCopyWithImpl<$Res, SignInEmailResetEvent>;
 }
 
 /// @nodoc
-class _$SignInEmailResetEventCopyWithImpl<$Res>
+class _$SignInEmailResetEventCopyWithImpl<$Res,
+        $Val extends SignInEmailResetEvent>
     implements $SignInEmailResetEventCopyWith<$Res> {
   _$SignInEmailResetEventCopyWithImpl(this._value, this._then);
 
-  final SignInEmailResetEvent _value;
   // ignore: unused_field
-  final $Res Function(SignInEmailResetEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_ResetEmailChangedCopyWith<$Res> {
-  factory _$$_ResetEmailChangedCopyWith(_$_ResetEmailChanged value,
-          $Res Function(_$_ResetEmailChanged) then) =
-      __$$_ResetEmailChangedCopyWithImpl<$Res>;
+abstract class _$$ResetEmailChangedImplCopyWith<$Res> {
+  factory _$$ResetEmailChangedImplCopyWith(_$ResetEmailChangedImpl value,
+          $Res Function(_$ResetEmailChangedImpl) then) =
+      __$$ResetEmailChangedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$_ResetEmailChangedCopyWithImpl<$Res>
-    extends _$SignInEmailResetEventCopyWithImpl<$Res>
-    implements _$$_ResetEmailChangedCopyWith<$Res> {
-  __$$_ResetEmailChangedCopyWithImpl(
-      _$_ResetEmailChanged _value, $Res Function(_$_ResetEmailChanged) _then)
-      : super(_value, (v) => _then(v as _$_ResetEmailChanged));
+class __$$ResetEmailChangedImplCopyWithImpl<$Res>
+    extends _$SignInEmailResetEventCopyWithImpl<$Res, _$ResetEmailChangedImpl>
+    implements _$$ResetEmailChangedImplCopyWith<$Res> {
+  __$$ResetEmailChangedImplCopyWithImpl(_$ResetEmailChangedImpl _value,
+      $Res Function(_$ResetEmailChangedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_ResetEmailChanged get _value => super._value as _$_ResetEmailChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
+    Object? email = null,
   }) {
-    return _then(_$_ResetEmailChanged(
-      email == freezed
+    return _then(_$ResetEmailChangedImpl(
+      null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
@@ -5065,8 +5061,8 @@ class __$$_ResetEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ResetEmailChanged implements _ResetEmailChanged {
-  const _$_ResetEmailChanged(this.email);
+class _$ResetEmailChangedImpl implements _ResetEmailChanged {
+  const _$ResetEmailChangedImpl(this.email);
 
   @override
   final String email;
@@ -5077,21 +5073,21 @@ class _$_ResetEmailChanged implements _ResetEmailChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ResetEmailChanged &&
-            const DeepCollectionEquality().equals(other.email, email));
+            other is _$ResetEmailChangedImpl &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
+  int get hashCode => Object.hash(runtimeType, email);
 
   @JsonKey(ignore: true)
   @override
-  _$$_ResetEmailChangedCopyWith<_$_ResetEmailChanged> get copyWith =>
-      __$$_ResetEmailChangedCopyWithImpl<_$_ResetEmailChanged>(
+  @pragma('vm:prefer-inline')
+  _$$ResetEmailChangedImplCopyWith<_$ResetEmailChangedImpl> get copyWith =>
+      __$$ResetEmailChangedImplCopyWithImpl<_$ResetEmailChangedImpl>(
           this, _$identity);
 
   @override
@@ -5106,8 +5102,8 @@ class _$_ResetEmailChanged implements _ResetEmailChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function()? submit,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function()? submit,
   }) {
     return emailChanged?.call(email);
   }
@@ -5137,8 +5133,8 @@ class _$_ResetEmailChanged implements _ResetEmailChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ResetEmailChanged value)? emailChanged,
-    TResult Function(_ResetSubmit value)? submit,
+    TResult? Function(_ResetEmailChanged value)? emailChanged,
+    TResult? Function(_ResetSubmit value)? submit,
   }) {
     return emailChanged?.call(this);
   }
@@ -5158,37 +5154,35 @@ class _$_ResetEmailChanged implements _ResetEmailChanged {
 }
 
 abstract class _ResetEmailChanged implements SignInEmailResetEvent {
-  const factory _ResetEmailChanged(final String email) = _$_ResetEmailChanged;
+  const factory _ResetEmailChanged(final String email) =
+      _$ResetEmailChangedImpl;
 
   String get email;
   @JsonKey(ignore: true)
-  _$$_ResetEmailChangedCopyWith<_$_ResetEmailChanged> get copyWith =>
+  _$$ResetEmailChangedImplCopyWith<_$ResetEmailChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ResetSubmitCopyWith<$Res> {
-  factory _$$_ResetSubmitCopyWith(
-          _$_ResetSubmit value, $Res Function(_$_ResetSubmit) then) =
-      __$$_ResetSubmitCopyWithImpl<$Res>;
+abstract class _$$ResetSubmitImplCopyWith<$Res> {
+  factory _$$ResetSubmitImplCopyWith(
+          _$ResetSubmitImpl value, $Res Function(_$ResetSubmitImpl) then) =
+      __$$ResetSubmitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ResetSubmitCopyWithImpl<$Res>
-    extends _$SignInEmailResetEventCopyWithImpl<$Res>
-    implements _$$_ResetSubmitCopyWith<$Res> {
-  __$$_ResetSubmitCopyWithImpl(
-      _$_ResetSubmit _value, $Res Function(_$_ResetSubmit) _then)
-      : super(_value, (v) => _then(v as _$_ResetSubmit));
-
-  @override
-  _$_ResetSubmit get _value => super._value as _$_ResetSubmit;
+class __$$ResetSubmitImplCopyWithImpl<$Res>
+    extends _$SignInEmailResetEventCopyWithImpl<$Res, _$ResetSubmitImpl>
+    implements _$$ResetSubmitImplCopyWith<$Res> {
+  __$$ResetSubmitImplCopyWithImpl(
+      _$ResetSubmitImpl _value, $Res Function(_$ResetSubmitImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ResetSubmit implements _ResetSubmit {
-  const _$_ResetSubmit();
+class _$ResetSubmitImpl implements _ResetSubmit {
+  const _$ResetSubmitImpl();
 
   @override
   String toString() {
@@ -5196,9 +5190,9 @@ class _$_ResetSubmit implements _ResetSubmit {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ResetSubmit);
+        (other.runtimeType == runtimeType && other is _$ResetSubmitImpl);
   }
 
   @override
@@ -5216,8 +5210,8 @@ class _$_ResetSubmit implements _ResetSubmit {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function()? submit,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function()? submit,
   }) {
     return submit?.call();
   }
@@ -5247,8 +5241,8 @@ class _$_ResetSubmit implements _ResetSubmit {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ResetEmailChanged value)? emailChanged,
-    TResult Function(_ResetSubmit value)? submit,
+    TResult? Function(_ResetEmailChanged value)? emailChanged,
+    TResult? Function(_ResetSubmit value)? submit,
   }) {
     return submit?.call(this);
   }
@@ -5268,7 +5262,7 @@ class _$_ResetSubmit implements _ResetSubmit {
 }
 
 abstract class _ResetSubmit implements SignInEmailResetEvent {
-  const factory _ResetSubmit() = _$_ResetSubmit;
+  const factory _ResetSubmit() = _$ResetSubmitImpl;
 }
 
 /// @nodoc
@@ -5288,7 +5282,8 @@ mixin _$SignInEmailResetState {
 abstract class $SignInEmailResetStateCopyWith<$Res> {
   factory $SignInEmailResetStateCopyWith(SignInEmailResetState value,
           $Res Function(SignInEmailResetState) then) =
-      _$SignInEmailResetStateCopyWithImpl<$Res>;
+      _$SignInEmailResetStateCopyWithImpl<$Res, SignInEmailResetState>;
+  @useResult
   $Res call(
       {String email,
       bool canSubmit,
@@ -5298,54 +5293,59 @@ abstract class $SignInEmailResetStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SignInEmailResetStateCopyWithImpl<$Res>
+class _$SignInEmailResetStateCopyWithImpl<$Res,
+        $Val extends SignInEmailResetState>
     implements $SignInEmailResetStateCopyWith<$Res> {
   _$SignInEmailResetStateCopyWithImpl(this._value, this._then);
 
-  final SignInEmailResetState _value;
   // ignore: unused_field
-  final $Res Function(SignInEmailResetState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
+    Object? email = null,
+    Object? canSubmit = null,
+    Object? isLoading = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
     return _then(_value.copyWith(
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      canSubmit: canSubmit == freezed
+      canSubmit: null == canSubmit
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_SignInEmailResetStateCopyWith<$Res>
+abstract class _$$SignInEmailResetStateImplCopyWith<$Res>
     implements $SignInEmailResetStateCopyWith<$Res> {
-  factory _$$_SignInEmailResetStateCopyWith(_$_SignInEmailResetState value,
-          $Res Function(_$_SignInEmailResetState) then) =
-      __$$_SignInEmailResetStateCopyWithImpl<$Res>;
+  factory _$$SignInEmailResetStateImplCopyWith(
+          _$SignInEmailResetStateImpl value,
+          $Res Function(_$SignInEmailResetStateImpl) then) =
+      __$$SignInEmailResetStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String email,
       bool canSubmit,
@@ -5355,43 +5355,41 @@ abstract class _$$_SignInEmailResetStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SignInEmailResetStateCopyWithImpl<$Res>
-    extends _$SignInEmailResetStateCopyWithImpl<$Res>
-    implements _$$_SignInEmailResetStateCopyWith<$Res> {
-  __$$_SignInEmailResetStateCopyWithImpl(_$_SignInEmailResetState _value,
-      $Res Function(_$_SignInEmailResetState) _then)
-      : super(_value, (v) => _then(v as _$_SignInEmailResetState));
+class __$$SignInEmailResetStateImplCopyWithImpl<$Res>
+    extends _$SignInEmailResetStateCopyWithImpl<$Res,
+        _$SignInEmailResetStateImpl>
+    implements _$$SignInEmailResetStateImplCopyWith<$Res> {
+  __$$SignInEmailResetStateImplCopyWithImpl(_$SignInEmailResetStateImpl _value,
+      $Res Function(_$SignInEmailResetStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SignInEmailResetState get _value =>
-      super._value as _$_SignInEmailResetState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
+    Object? email = null,
+    Object? canSubmit = null,
+    Object? isLoading = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
-    return _then(_$_SignInEmailResetState(
-      email: email == freezed
+    return _then(_$SignInEmailResetStateImpl(
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      canSubmit: canSubmit == freezed
+      canSubmit: null == canSubmit
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -5401,8 +5399,8 @@ class __$$_SignInEmailResetStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInEmailResetState implements _SignInEmailResetState {
-  const _$_SignInEmailResetState(
+class _$SignInEmailResetStateImpl implements _SignInEmailResetState {
+  const _$SignInEmailResetStateImpl(
       {this.email = "",
       this.canSubmit = false,
       this.isLoading = false,
@@ -5430,31 +5428,31 @@ class _$_SignInEmailResetState implements _SignInEmailResetState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SignInEmailResetState &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
-            const DeepCollectionEquality().equals(other.errorText, errorText));
+            other is _$SignInEmailResetStateImpl &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.canSubmit, canSubmit) ||
+                other.canSubmit == canSubmit) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.isSuccess, isSuccess) ||
+                other.isSuccess == isSuccess) &&
+            (identical(other.errorText, errorText) ||
+                other.errorText == errorText));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(canSubmit),
-      const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(isSuccess),
-      const DeepCollectionEquality().hash(errorText));
+      runtimeType, email, canSubmit, isLoading, isSuccess, errorText);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SignInEmailResetStateCopyWith<_$_SignInEmailResetState> get copyWith =>
-      __$$_SignInEmailResetStateCopyWithImpl<_$_SignInEmailResetState>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SignInEmailResetStateImplCopyWith<_$SignInEmailResetStateImpl>
+      get copyWith => __$$SignInEmailResetStateImplCopyWithImpl<
+          _$SignInEmailResetStateImpl>(this, _$identity);
 }
 
 abstract class _SignInEmailResetState implements SignInEmailResetState {
@@ -5463,7 +5461,7 @@ abstract class _SignInEmailResetState implements SignInEmailResetState {
       final bool canSubmit,
       final bool isLoading,
       final bool isSuccess,
-      final String? errorText}) = _$_SignInEmailResetState;
+      final String? errorText}) = _$SignInEmailResetStateImpl;
 
   @override
   String get email;
@@ -5477,8 +5475,8 @@ abstract class _SignInEmailResetState implements SignInEmailResetState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$$_SignInEmailResetStateCopyWith<_$_SignInEmailResetState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$SignInEmailResetStateImplCopyWith<_$SignInEmailResetStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -5492,9 +5490,9 @@ mixin _$SignInEmailRegisterEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function()? submit,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -5514,9 +5512,9 @@ mixin _$SignInEmailRegisterEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RegisterEmailChanged value)? emailChanged,
-    TResult Function(_RegisterPasswordChanged value)? passwordChanged,
-    TResult Function(_RegisterSubmit value)? submit,
+    TResult? Function(_RegisterEmailChanged value)? emailChanged,
+    TResult? Function(_RegisterPasswordChanged value)? passwordChanged,
+    TResult? Function(_RegisterSubmit value)? submit,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -5533,44 +5531,46 @@ mixin _$SignInEmailRegisterEvent {
 abstract class $SignInEmailRegisterEventCopyWith<$Res> {
   factory $SignInEmailRegisterEventCopyWith(SignInEmailRegisterEvent value,
           $Res Function(SignInEmailRegisterEvent) then) =
-      _$SignInEmailRegisterEventCopyWithImpl<$Res>;
+      _$SignInEmailRegisterEventCopyWithImpl<$Res, SignInEmailRegisterEvent>;
 }
 
 /// @nodoc
-class _$SignInEmailRegisterEventCopyWithImpl<$Res>
+class _$SignInEmailRegisterEventCopyWithImpl<$Res,
+        $Val extends SignInEmailRegisterEvent>
     implements $SignInEmailRegisterEventCopyWith<$Res> {
   _$SignInEmailRegisterEventCopyWithImpl(this._value, this._then);
 
-  final SignInEmailRegisterEvent _value;
   // ignore: unused_field
-  final $Res Function(SignInEmailRegisterEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_RegisterEmailChangedCopyWith<$Res> {
-  factory _$$_RegisterEmailChangedCopyWith(_$_RegisterEmailChanged value,
-          $Res Function(_$_RegisterEmailChanged) then) =
-      __$$_RegisterEmailChangedCopyWithImpl<$Res>;
+abstract class _$$RegisterEmailChangedImplCopyWith<$Res> {
+  factory _$$RegisterEmailChangedImplCopyWith(_$RegisterEmailChangedImpl value,
+          $Res Function(_$RegisterEmailChangedImpl) then) =
+      __$$RegisterEmailChangedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$_RegisterEmailChangedCopyWithImpl<$Res>
-    extends _$SignInEmailRegisterEventCopyWithImpl<$Res>
-    implements _$$_RegisterEmailChangedCopyWith<$Res> {
-  __$$_RegisterEmailChangedCopyWithImpl(_$_RegisterEmailChanged _value,
-      $Res Function(_$_RegisterEmailChanged) _then)
-      : super(_value, (v) => _then(v as _$_RegisterEmailChanged));
+class __$$RegisterEmailChangedImplCopyWithImpl<$Res>
+    extends _$SignInEmailRegisterEventCopyWithImpl<$Res,
+        _$RegisterEmailChangedImpl>
+    implements _$$RegisterEmailChangedImplCopyWith<$Res> {
+  __$$RegisterEmailChangedImplCopyWithImpl(_$RegisterEmailChangedImpl _value,
+      $Res Function(_$RegisterEmailChangedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_RegisterEmailChanged get _value => super._value as _$_RegisterEmailChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
+    Object? email = null,
   }) {
-    return _then(_$_RegisterEmailChanged(
-      email == freezed
+    return _then(_$RegisterEmailChangedImpl(
+      null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
@@ -5580,8 +5580,8 @@ class __$$_RegisterEmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RegisterEmailChanged implements _RegisterEmailChanged {
-  const _$_RegisterEmailChanged(this.email);
+class _$RegisterEmailChangedImpl implements _RegisterEmailChanged {
+  const _$RegisterEmailChangedImpl(this.email);
 
   @override
   final String email;
@@ -5592,22 +5592,23 @@ class _$_RegisterEmailChanged implements _RegisterEmailChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RegisterEmailChanged &&
-            const DeepCollectionEquality().equals(other.email, email));
+            other is _$RegisterEmailChangedImpl &&
+            (identical(other.email, email) || other.email == email));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(email));
+  int get hashCode => Object.hash(runtimeType, email);
 
   @JsonKey(ignore: true)
   @override
-  _$$_RegisterEmailChangedCopyWith<_$_RegisterEmailChanged> get copyWith =>
-      __$$_RegisterEmailChangedCopyWithImpl<_$_RegisterEmailChanged>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$RegisterEmailChangedImplCopyWith<_$RegisterEmailChangedImpl>
+      get copyWith =>
+          __$$RegisterEmailChangedImplCopyWithImpl<_$RegisterEmailChangedImpl>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5622,9 +5623,9 @@ class _$_RegisterEmailChanged implements _RegisterEmailChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function()? submit,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? submit,
   }) {
     return emailChanged?.call(email);
   }
@@ -5656,9 +5657,9 @@ class _$_RegisterEmailChanged implements _RegisterEmailChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RegisterEmailChanged value)? emailChanged,
-    TResult Function(_RegisterPasswordChanged value)? passwordChanged,
-    TResult Function(_RegisterSubmit value)? submit,
+    TResult? Function(_RegisterEmailChanged value)? emailChanged,
+    TResult? Function(_RegisterPasswordChanged value)? passwordChanged,
+    TResult? Function(_RegisterSubmit value)? submit,
   }) {
     return emailChanged?.call(this);
   }
@@ -5680,40 +5681,41 @@ class _$_RegisterEmailChanged implements _RegisterEmailChanged {
 
 abstract class _RegisterEmailChanged implements SignInEmailRegisterEvent {
   const factory _RegisterEmailChanged(final String email) =
-      _$_RegisterEmailChanged;
+      _$RegisterEmailChangedImpl;
 
   String get email;
   @JsonKey(ignore: true)
-  _$$_RegisterEmailChangedCopyWith<_$_RegisterEmailChanged> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$RegisterEmailChangedImplCopyWith<_$RegisterEmailChangedImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_RegisterPasswordChangedCopyWith<$Res> {
-  factory _$$_RegisterPasswordChangedCopyWith(_$_RegisterPasswordChanged value,
-          $Res Function(_$_RegisterPasswordChanged) then) =
-      __$$_RegisterPasswordChangedCopyWithImpl<$Res>;
+abstract class _$$RegisterPasswordChangedImplCopyWith<$Res> {
+  factory _$$RegisterPasswordChangedImplCopyWith(
+          _$RegisterPasswordChangedImpl value,
+          $Res Function(_$RegisterPasswordChangedImpl) then) =
+      __$$RegisterPasswordChangedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String password});
 }
 
 /// @nodoc
-class __$$_RegisterPasswordChangedCopyWithImpl<$Res>
-    extends _$SignInEmailRegisterEventCopyWithImpl<$Res>
-    implements _$$_RegisterPasswordChangedCopyWith<$Res> {
-  __$$_RegisterPasswordChangedCopyWithImpl(_$_RegisterPasswordChanged _value,
-      $Res Function(_$_RegisterPasswordChanged) _then)
-      : super(_value, (v) => _then(v as _$_RegisterPasswordChanged));
+class __$$RegisterPasswordChangedImplCopyWithImpl<$Res>
+    extends _$SignInEmailRegisterEventCopyWithImpl<$Res,
+        _$RegisterPasswordChangedImpl>
+    implements _$$RegisterPasswordChangedImplCopyWith<$Res> {
+  __$$RegisterPasswordChangedImplCopyWithImpl(
+      _$RegisterPasswordChangedImpl _value,
+      $Res Function(_$RegisterPasswordChangedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_RegisterPasswordChanged get _value =>
-      super._value as _$_RegisterPasswordChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? password = freezed,
+    Object? password = null,
   }) {
-    return _then(_$_RegisterPasswordChanged(
-      password == freezed
+    return _then(_$RegisterPasswordChangedImpl(
+      null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
@@ -5723,8 +5725,8 @@ class __$$_RegisterPasswordChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RegisterPasswordChanged implements _RegisterPasswordChanged {
-  const _$_RegisterPasswordChanged(this.password);
+class _$RegisterPasswordChangedImpl implements _RegisterPasswordChanged {
+  const _$RegisterPasswordChangedImpl(this.password);
 
   @override
   final String password;
@@ -5735,23 +5737,23 @@ class _$_RegisterPasswordChanged implements _RegisterPasswordChanged {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RegisterPasswordChanged &&
-            const DeepCollectionEquality().equals(other.password, password));
+            other is _$RegisterPasswordChangedImpl &&
+            (identical(other.password, password) ||
+                other.password == password));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(password));
+  int get hashCode => Object.hash(runtimeType, password);
 
   @JsonKey(ignore: true)
   @override
-  _$$_RegisterPasswordChangedCopyWith<_$_RegisterPasswordChanged>
-      get copyWith =>
-          __$$_RegisterPasswordChangedCopyWithImpl<_$_RegisterPasswordChanged>(
-              this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$RegisterPasswordChangedImplCopyWith<_$RegisterPasswordChangedImpl>
+      get copyWith => __$$RegisterPasswordChangedImplCopyWithImpl<
+          _$RegisterPasswordChangedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5766,9 +5768,9 @@ class _$_RegisterPasswordChanged implements _RegisterPasswordChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function()? submit,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? submit,
   }) {
     return passwordChanged?.call(password);
   }
@@ -5800,9 +5802,9 @@ class _$_RegisterPasswordChanged implements _RegisterPasswordChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RegisterEmailChanged value)? emailChanged,
-    TResult Function(_RegisterPasswordChanged value)? passwordChanged,
-    TResult Function(_RegisterSubmit value)? submit,
+    TResult? Function(_RegisterEmailChanged value)? emailChanged,
+    TResult? Function(_RegisterPasswordChanged value)? passwordChanged,
+    TResult? Function(_RegisterSubmit value)? submit,
   }) {
     return passwordChanged?.call(this);
   }
@@ -5824,37 +5826,34 @@ class _$_RegisterPasswordChanged implements _RegisterPasswordChanged {
 
 abstract class _RegisterPasswordChanged implements SignInEmailRegisterEvent {
   const factory _RegisterPasswordChanged(final String password) =
-      _$_RegisterPasswordChanged;
+      _$RegisterPasswordChangedImpl;
 
   String get password;
   @JsonKey(ignore: true)
-  _$$_RegisterPasswordChangedCopyWith<_$_RegisterPasswordChanged>
+  _$$RegisterPasswordChangedImplCopyWith<_$RegisterPasswordChangedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_RegisterSubmitCopyWith<$Res> {
-  factory _$$_RegisterSubmitCopyWith(
-          _$_RegisterSubmit value, $Res Function(_$_RegisterSubmit) then) =
-      __$$_RegisterSubmitCopyWithImpl<$Res>;
+abstract class _$$RegisterSubmitImplCopyWith<$Res> {
+  factory _$$RegisterSubmitImplCopyWith(_$RegisterSubmitImpl value,
+          $Res Function(_$RegisterSubmitImpl) then) =
+      __$$RegisterSubmitImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_RegisterSubmitCopyWithImpl<$Res>
-    extends _$SignInEmailRegisterEventCopyWithImpl<$Res>
-    implements _$$_RegisterSubmitCopyWith<$Res> {
-  __$$_RegisterSubmitCopyWithImpl(
-      _$_RegisterSubmit _value, $Res Function(_$_RegisterSubmit) _then)
-      : super(_value, (v) => _then(v as _$_RegisterSubmit));
-
-  @override
-  _$_RegisterSubmit get _value => super._value as _$_RegisterSubmit;
+class __$$RegisterSubmitImplCopyWithImpl<$Res>
+    extends _$SignInEmailRegisterEventCopyWithImpl<$Res, _$RegisterSubmitImpl>
+    implements _$$RegisterSubmitImplCopyWith<$Res> {
+  __$$RegisterSubmitImplCopyWithImpl(
+      _$RegisterSubmitImpl _value, $Res Function(_$RegisterSubmitImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_RegisterSubmit implements _RegisterSubmit {
-  const _$_RegisterSubmit();
+class _$RegisterSubmitImpl implements _RegisterSubmit {
+  const _$RegisterSubmitImpl();
 
   @override
   String toString() {
@@ -5862,9 +5861,9 @@ class _$_RegisterSubmit implements _RegisterSubmit {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_RegisterSubmit);
+        (other.runtimeType == runtimeType && other is _$RegisterSubmitImpl);
   }
 
   @override
@@ -5883,9 +5882,9 @@ class _$_RegisterSubmit implements _RegisterSubmit {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String email)? emailChanged,
-    TResult Function(String password)? passwordChanged,
-    TResult Function()? submit,
+    TResult? Function(String email)? emailChanged,
+    TResult? Function(String password)? passwordChanged,
+    TResult? Function()? submit,
   }) {
     return submit?.call();
   }
@@ -5917,9 +5916,9 @@ class _$_RegisterSubmit implements _RegisterSubmit {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_RegisterEmailChanged value)? emailChanged,
-    TResult Function(_RegisterPasswordChanged value)? passwordChanged,
-    TResult Function(_RegisterSubmit value)? submit,
+    TResult? Function(_RegisterEmailChanged value)? emailChanged,
+    TResult? Function(_RegisterPasswordChanged value)? passwordChanged,
+    TResult? Function(_RegisterSubmit value)? submit,
   }) {
     return submit?.call(this);
   }
@@ -5940,7 +5939,7 @@ class _$_RegisterSubmit implements _RegisterSubmit {
 }
 
 abstract class _RegisterSubmit implements SignInEmailRegisterEvent {
-  const factory _RegisterSubmit() = _$_RegisterSubmit;
+  const factory _RegisterSubmit() = _$RegisterSubmitImpl;
 }
 
 /// @nodoc
@@ -5966,7 +5965,8 @@ mixin _$SignInEmailRegisterState {
 abstract class $SignInEmailRegisterStateCopyWith<$Res> {
   factory $SignInEmailRegisterStateCopyWith(SignInEmailRegisterState value,
           $Res Function(SignInEmailRegisterState) then) =
-      _$SignInEmailRegisterStateCopyWithImpl<$Res>;
+      _$SignInEmailRegisterStateCopyWithImpl<$Res, SignInEmailRegisterState>;
+  @useResult
   $Res call(
       {String email,
       String password,
@@ -5982,85 +5982,89 @@ abstract class $SignInEmailRegisterStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SignInEmailRegisterStateCopyWithImpl<$Res>
+class _$SignInEmailRegisterStateCopyWithImpl<$Res,
+        $Val extends SignInEmailRegisterState>
     implements $SignInEmailRegisterStateCopyWith<$Res> {
   _$SignInEmailRegisterStateCopyWithImpl(this._value, this._then);
 
-  final SignInEmailRegisterState _value;
   // ignore: unused_field
-  final $Res Function(SignInEmailRegisterState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? password = freezed,
-    Object? passwordHasMinLength = freezed,
-    Object? passwordHasUppercase = freezed,
-    Object? passwordHasLowercase = freezed,
-    Object? passwordHasDigits = freezed,
-    Object? passwordHasSpecialChars = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
+    Object? email = null,
+    Object? password = null,
+    Object? passwordHasMinLength = null,
+    Object? passwordHasUppercase = null,
+    Object? passwordHasLowercase = null,
+    Object? passwordHasDigits = null,
+    Object? passwordHasSpecialChars = null,
+    Object? canSubmit = null,
+    Object? isLoading = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
     return _then(_value.copyWith(
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      password: password == freezed
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      passwordHasMinLength: passwordHasMinLength == freezed
+      passwordHasMinLength: null == passwordHasMinLength
           ? _value.passwordHasMinLength
           : passwordHasMinLength // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasUppercase: passwordHasUppercase == freezed
+      passwordHasUppercase: null == passwordHasUppercase
           ? _value.passwordHasUppercase
           : passwordHasUppercase // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasLowercase: passwordHasLowercase == freezed
+      passwordHasLowercase: null == passwordHasLowercase
           ? _value.passwordHasLowercase
           : passwordHasLowercase // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasDigits: passwordHasDigits == freezed
+      passwordHasDigits: null == passwordHasDigits
           ? _value.passwordHasDigits
           : passwordHasDigits // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasSpecialChars: passwordHasSpecialChars == freezed
+      passwordHasSpecialChars: null == passwordHasSpecialChars
           ? _value.passwordHasSpecialChars
           : passwordHasSpecialChars // ignore: cast_nullable_to_non_nullable
               as bool,
-      canSubmit: canSubmit == freezed
+      canSubmit: null == canSubmit
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_SignInEmailRegisterStateCopyWith<$Res>
+abstract class _$$SignInEmailRegisterStateImplCopyWith<$Res>
     implements $SignInEmailRegisterStateCopyWith<$Res> {
-  factory _$$_SignInEmailRegisterStateCopyWith(
-          _$_SignInEmailRegisterState value,
-          $Res Function(_$_SignInEmailRegisterState) then) =
-      __$$_SignInEmailRegisterStateCopyWithImpl<$Res>;
+  factory _$$SignInEmailRegisterStateImplCopyWith(
+          _$SignInEmailRegisterStateImpl value,
+          $Res Function(_$SignInEmailRegisterStateImpl) then) =
+      __$$SignInEmailRegisterStateImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String email,
       String password,
@@ -6076,73 +6080,72 @@ abstract class _$$_SignInEmailRegisterStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SignInEmailRegisterStateCopyWithImpl<$Res>
-    extends _$SignInEmailRegisterStateCopyWithImpl<$Res>
-    implements _$$_SignInEmailRegisterStateCopyWith<$Res> {
-  __$$_SignInEmailRegisterStateCopyWithImpl(_$_SignInEmailRegisterState _value,
-      $Res Function(_$_SignInEmailRegisterState) _then)
-      : super(_value, (v) => _then(v as _$_SignInEmailRegisterState));
+class __$$SignInEmailRegisterStateImplCopyWithImpl<$Res>
+    extends _$SignInEmailRegisterStateCopyWithImpl<$Res,
+        _$SignInEmailRegisterStateImpl>
+    implements _$$SignInEmailRegisterStateImplCopyWith<$Res> {
+  __$$SignInEmailRegisterStateImplCopyWithImpl(
+      _$SignInEmailRegisterStateImpl _value,
+      $Res Function(_$SignInEmailRegisterStateImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SignInEmailRegisterState get _value =>
-      super._value as _$_SignInEmailRegisterState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? email = freezed,
-    Object? password = freezed,
-    Object? passwordHasMinLength = freezed,
-    Object? passwordHasUppercase = freezed,
-    Object? passwordHasLowercase = freezed,
-    Object? passwordHasDigits = freezed,
-    Object? passwordHasSpecialChars = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
+    Object? email = null,
+    Object? password = null,
+    Object? passwordHasMinLength = null,
+    Object? passwordHasUppercase = null,
+    Object? passwordHasLowercase = null,
+    Object? passwordHasDigits = null,
+    Object? passwordHasSpecialChars = null,
+    Object? canSubmit = null,
+    Object? isLoading = null,
+    Object? isSuccess = null,
     Object? errorText = freezed,
   }) {
-    return _then(_$_SignInEmailRegisterState(
-      email: email == freezed
+    return _then(_$SignInEmailRegisterStateImpl(
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      password: password == freezed
+      password: null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
               as String,
-      passwordHasMinLength: passwordHasMinLength == freezed
+      passwordHasMinLength: null == passwordHasMinLength
           ? _value.passwordHasMinLength
           : passwordHasMinLength // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasUppercase: passwordHasUppercase == freezed
+      passwordHasUppercase: null == passwordHasUppercase
           ? _value.passwordHasUppercase
           : passwordHasUppercase // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasLowercase: passwordHasLowercase == freezed
+      passwordHasLowercase: null == passwordHasLowercase
           ? _value.passwordHasLowercase
           : passwordHasLowercase // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasDigits: passwordHasDigits == freezed
+      passwordHasDigits: null == passwordHasDigits
           ? _value.passwordHasDigits
           : passwordHasDigits // ignore: cast_nullable_to_non_nullable
               as bool,
-      passwordHasSpecialChars: passwordHasSpecialChars == freezed
+      passwordHasSpecialChars: null == passwordHasSpecialChars
           ? _value.passwordHasSpecialChars
           : passwordHasSpecialChars // ignore: cast_nullable_to_non_nullable
               as bool,
-      canSubmit: canSubmit == freezed
+      canSubmit: null == canSubmit
           ? _value.canSubmit
           : canSubmit // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-      isSuccess: isSuccess == freezed
+      isSuccess: null == isSuccess
           ? _value.isSuccess
           : isSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      errorText: errorText == freezed
+      errorText: freezed == errorText
           ? _value.errorText
           : errorText // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -6152,8 +6155,8 @@ class __$$_SignInEmailRegisterStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInEmailRegisterState implements _SignInEmailRegisterState {
-  const _$_SignInEmailRegisterState(
+class _$SignInEmailRegisterStateImpl implements _SignInEmailRegisterState {
+  const _$SignInEmailRegisterStateImpl(
       {this.email = "",
       this.password = "",
       this.passwordHasMinLength = false,
@@ -6205,48 +6208,55 @@ class _$_SignInEmailRegisterState implements _SignInEmailRegisterState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SignInEmailRegisterState &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.password, password) &&
-            const DeepCollectionEquality()
-                .equals(other.passwordHasMinLength, passwordHasMinLength) &&
-            const DeepCollectionEquality()
-                .equals(other.passwordHasUppercase, passwordHasUppercase) &&
-            const DeepCollectionEquality()
-                .equals(other.passwordHasLowercase, passwordHasLowercase) &&
-            const DeepCollectionEquality()
-                .equals(other.passwordHasDigits, passwordHasDigits) &&
-            const DeepCollectionEquality().equals(
-                other.passwordHasSpecialChars, passwordHasSpecialChars) &&
-            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
-            const DeepCollectionEquality().equals(other.errorText, errorText));
+            other is _$SignInEmailRegisterStateImpl &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.password, password) ||
+                other.password == password) &&
+            (identical(other.passwordHasMinLength, passwordHasMinLength) ||
+                other.passwordHasMinLength == passwordHasMinLength) &&
+            (identical(other.passwordHasUppercase, passwordHasUppercase) ||
+                other.passwordHasUppercase == passwordHasUppercase) &&
+            (identical(other.passwordHasLowercase, passwordHasLowercase) ||
+                other.passwordHasLowercase == passwordHasLowercase) &&
+            (identical(other.passwordHasDigits, passwordHasDigits) ||
+                other.passwordHasDigits == passwordHasDigits) &&
+            (identical(
+                    other.passwordHasSpecialChars, passwordHasSpecialChars) ||
+                other.passwordHasSpecialChars == passwordHasSpecialChars) &&
+            (identical(other.canSubmit, canSubmit) ||
+                other.canSubmit == canSubmit) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading) &&
+            (identical(other.isSuccess, isSuccess) ||
+                other.isSuccess == isSuccess) &&
+            (identical(other.errorText, errorText) ||
+                other.errorText == errorText));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(password),
-      const DeepCollectionEquality().hash(passwordHasMinLength),
-      const DeepCollectionEquality().hash(passwordHasUppercase),
-      const DeepCollectionEquality().hash(passwordHasLowercase),
-      const DeepCollectionEquality().hash(passwordHasDigits),
-      const DeepCollectionEquality().hash(passwordHasSpecialChars),
-      const DeepCollectionEquality().hash(canSubmit),
-      const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(isSuccess),
-      const DeepCollectionEquality().hash(errorText));
+      email,
+      password,
+      passwordHasMinLength,
+      passwordHasUppercase,
+      passwordHasLowercase,
+      passwordHasDigits,
+      passwordHasSpecialChars,
+      canSubmit,
+      isLoading,
+      isSuccess,
+      errorText);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SignInEmailRegisterStateCopyWith<_$_SignInEmailRegisterState>
-      get copyWith => __$$_SignInEmailRegisterStateCopyWithImpl<
-          _$_SignInEmailRegisterState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SignInEmailRegisterStateImplCopyWith<_$SignInEmailRegisterStateImpl>
+      get copyWith => __$$SignInEmailRegisterStateImplCopyWithImpl<
+          _$SignInEmailRegisterStateImpl>(this, _$identity);
 }
 
 abstract class _SignInEmailRegisterState implements SignInEmailRegisterState {
@@ -6261,7 +6271,7 @@ abstract class _SignInEmailRegisterState implements SignInEmailRegisterState {
       final bool canSubmit,
       final bool isLoading,
       final bool isSuccess,
-      final String? errorText}) = _$_SignInEmailRegisterState;
+      final String? errorText}) = _$SignInEmailRegisterStateImpl;
 
   @override
   String get email;
@@ -6287,1460 +6297,7 @@ abstract class _SignInEmailRegisterState implements SignInEmailRegisterState {
   String? get errorText;
   @override
   @JsonKey(ignore: true)
-  _$$_SignInEmailRegisterStateCopyWith<_$_SignInEmailRegisterState>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$SignInPhoneEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(CountryWithPhoneCode country) countryChanged,
-    required TResult Function(String input) phoneChanged,
-    required TResult Function() verifyPhone,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_CountryChanged value) countryChanged,
-    required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_VerifyPhone value) verifyPhone,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SignInPhoneEventCopyWith<$Res> {
-  factory $SignInPhoneEventCopyWith(
-          SignInPhoneEvent value, $Res Function(SignInPhoneEvent) then) =
-      _$SignInPhoneEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$SignInPhoneEventCopyWithImpl<$Res>
-    implements $SignInPhoneEventCopyWith<$Res> {
-  _$SignInPhoneEventCopyWithImpl(this._value, this._then);
-
-  final SignInPhoneEvent _value;
-  // ignore: unused_field
-  final $Res Function(SignInPhoneEvent) _then;
-}
-
-/// @nodoc
-abstract class _$$_CountryChangedCopyWith<$Res> {
-  factory _$$_CountryChangedCopyWith(
-          _$_CountryChanged value, $Res Function(_$_CountryChanged) then) =
-      __$$_CountryChangedCopyWithImpl<$Res>;
-  $Res call({CountryWithPhoneCode country});
-}
-
-/// @nodoc
-class __$$_CountryChangedCopyWithImpl<$Res>
-    extends _$SignInPhoneEventCopyWithImpl<$Res>
-    implements _$$_CountryChangedCopyWith<$Res> {
-  __$$_CountryChangedCopyWithImpl(
-      _$_CountryChanged _value, $Res Function(_$_CountryChanged) _then)
-      : super(_value, (v) => _then(v as _$_CountryChanged));
-
-  @override
-  _$_CountryChanged get _value => super._value as _$_CountryChanged;
-
-  @override
-  $Res call({
-    Object? country = freezed,
-  }) {
-    return _then(_$_CountryChanged(
-      country == freezed
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as CountryWithPhoneCode,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_CountryChanged implements _CountryChanged {
-  const _$_CountryChanged(this.country);
-
-  @override
-  final CountryWithPhoneCode country;
-
-  @override
-  String toString() {
-    return 'SignInPhoneEvent.countryChanged(country: $country)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_CountryChanged &&
-            const DeepCollectionEquality().equals(other.country, country));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(country));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_CountryChangedCopyWith<_$_CountryChanged> get copyWith =>
-      __$$_CountryChangedCopyWithImpl<_$_CountryChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(CountryWithPhoneCode country) countryChanged,
-    required TResult Function(String input) phoneChanged,
-    required TResult Function() verifyPhone,
-  }) {
-    return countryChanged(country);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
-  }) {
-    return countryChanged?.call(country);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
-    required TResult orElse(),
-  }) {
-    if (countryChanged != null) {
-      return countryChanged(country);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_CountryChanged value) countryChanged,
-    required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_VerifyPhone value) verifyPhone,
-  }) {
-    return countryChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
-  }) {
-    return countryChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
-    required TResult orElse(),
-  }) {
-    if (countryChanged != null) {
-      return countryChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CountryChanged implements SignInPhoneEvent {
-  const factory _CountryChanged(final CountryWithPhoneCode country) =
-      _$_CountryChanged;
-
-  CountryWithPhoneCode get country;
-  @JsonKey(ignore: true)
-  _$$_CountryChangedCopyWith<_$_CountryChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_PhoneChangedCopyWith<$Res> {
-  factory _$$_PhoneChangedCopyWith(
-          _$_PhoneChanged value, $Res Function(_$_PhoneChanged) then) =
-      __$$_PhoneChangedCopyWithImpl<$Res>;
-  $Res call({String input});
-}
-
-/// @nodoc
-class __$$_PhoneChangedCopyWithImpl<$Res>
-    extends _$SignInPhoneEventCopyWithImpl<$Res>
-    implements _$$_PhoneChangedCopyWith<$Res> {
-  __$$_PhoneChangedCopyWithImpl(
-      _$_PhoneChanged _value, $Res Function(_$_PhoneChanged) _then)
-      : super(_value, (v) => _then(v as _$_PhoneChanged));
-
-  @override
-  _$_PhoneChanged get _value => super._value as _$_PhoneChanged;
-
-  @override
-  $Res call({
-    Object? input = freezed,
-  }) {
-    return _then(_$_PhoneChanged(
-      input == freezed
-          ? _value.input
-          : input // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_PhoneChanged implements _PhoneChanged {
-  const _$_PhoneChanged(this.input);
-
-  @override
-  final String input;
-
-  @override
-  String toString() {
-    return 'SignInPhoneEvent.phoneChanged(input: $input)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_PhoneChanged &&
-            const DeepCollectionEquality().equals(other.input, input));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(input));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_PhoneChangedCopyWith<_$_PhoneChanged> get copyWith =>
-      __$$_PhoneChangedCopyWithImpl<_$_PhoneChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(CountryWithPhoneCode country) countryChanged,
-    required TResult Function(String input) phoneChanged,
-    required TResult Function() verifyPhone,
-  }) {
-    return phoneChanged(input);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
-  }) {
-    return phoneChanged?.call(input);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
-    required TResult orElse(),
-  }) {
-    if (phoneChanged != null) {
-      return phoneChanged(input);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_CountryChanged value) countryChanged,
-    required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_VerifyPhone value) verifyPhone,
-  }) {
-    return phoneChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
-  }) {
-    return phoneChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
-    required TResult orElse(),
-  }) {
-    if (phoneChanged != null) {
-      return phoneChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _PhoneChanged implements SignInPhoneEvent {
-  const factory _PhoneChanged(final String input) = _$_PhoneChanged;
-
-  String get input;
-  @JsonKey(ignore: true)
-  _$$_PhoneChangedCopyWith<_$_PhoneChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_VerifyPhoneCopyWith<$Res> {
-  factory _$$_VerifyPhoneCopyWith(
-          _$_VerifyPhone value, $Res Function(_$_VerifyPhone) then) =
-      __$$_VerifyPhoneCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_VerifyPhoneCopyWithImpl<$Res>
-    extends _$SignInPhoneEventCopyWithImpl<$Res>
-    implements _$$_VerifyPhoneCopyWith<$Res> {
-  __$$_VerifyPhoneCopyWithImpl(
-      _$_VerifyPhone _value, $Res Function(_$_VerifyPhone) _then)
-      : super(_value, (v) => _then(v as _$_VerifyPhone));
-
-  @override
-  _$_VerifyPhone get _value => super._value as _$_VerifyPhone;
-}
-
-/// @nodoc
-
-class _$_VerifyPhone implements _VerifyPhone {
-  const _$_VerifyPhone();
-
-  @override
-  String toString() {
-    return 'SignInPhoneEvent.verifyPhone()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_VerifyPhone);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(CountryWithPhoneCode country) countryChanged,
-    required TResult Function(String input) phoneChanged,
-    required TResult Function() verifyPhone,
-  }) {
-    return verifyPhone();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
-  }) {
-    return verifyPhone?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CountryWithPhoneCode country)? countryChanged,
-    TResult Function(String input)? phoneChanged,
-    TResult Function()? verifyPhone,
-    required TResult orElse(),
-  }) {
-    if (verifyPhone != null) {
-      return verifyPhone();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_CountryChanged value) countryChanged,
-    required TResult Function(_PhoneChanged value) phoneChanged,
-    required TResult Function(_VerifyPhone value) verifyPhone,
-  }) {
-    return verifyPhone(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
-  }) {
-    return verifyPhone?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_CountryChanged value)? countryChanged,
-    TResult Function(_PhoneChanged value)? phoneChanged,
-    TResult Function(_VerifyPhone value)? verifyPhone,
-    required TResult orElse(),
-  }) {
-    if (verifyPhone != null) {
-      return verifyPhone(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _VerifyPhone implements SignInPhoneEvent {
-  const factory _VerifyPhone() = _$_VerifyPhone;
-}
-
-/// @nodoc
-mixin _$SignInPhoneState {
-  CountryWithPhoneCode get country => throw _privateConstructorUsedError;
-  Map<String, dynamic>? get phoneNumber => throw _privateConstructorUsedError;
-  String? get verificationId => throw _privateConstructorUsedError;
-  bool get canSubmit => throw _privateConstructorUsedError;
-  bool get isLoading => throw _privateConstructorUsedError;
-  bool get isSuccess => throw _privateConstructorUsedError;
-  String? get errorText => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $SignInPhoneStateCopyWith<SignInPhoneState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SignInPhoneStateCopyWith<$Res> {
-  factory $SignInPhoneStateCopyWith(
-          SignInPhoneState value, $Res Function(SignInPhoneState) then) =
-      _$SignInPhoneStateCopyWithImpl<$Res>;
-  $Res call(
-      {CountryWithPhoneCode country,
-      Map<String, dynamic>? phoneNumber,
-      String? verificationId,
-      bool canSubmit,
-      bool isLoading,
-      bool isSuccess,
-      String? errorText});
-}
-
-/// @nodoc
-class _$SignInPhoneStateCopyWithImpl<$Res>
-    implements $SignInPhoneStateCopyWith<$Res> {
-  _$SignInPhoneStateCopyWithImpl(this._value, this._then);
-
-  final SignInPhoneState _value;
-  // ignore: unused_field
-  final $Res Function(SignInPhoneState) _then;
-
-  @override
-  $Res call({
-    Object? country = freezed,
-    Object? phoneNumber = freezed,
-    Object? verificationId = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
-    Object? errorText = freezed,
-  }) {
-    return _then(_value.copyWith(
-      country: country == freezed
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as CountryWithPhoneCode,
-      phoneNumber: phoneNumber == freezed
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      verificationId: verificationId == freezed
-          ? _value.verificationId
-          : verificationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      canSubmit: canSubmit == freezed
-          ? _value.canSubmit
-          : canSubmit // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isSuccess: isSuccess == freezed
-          ? _value.isSuccess
-          : isSuccess // ignore: cast_nullable_to_non_nullable
-              as bool,
-      errorText: errorText == freezed
-          ? _value.errorText
-          : errorText // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$$_SignInPhoneStateCopyWith<$Res>
-    implements $SignInPhoneStateCopyWith<$Res> {
-  factory _$$_SignInPhoneStateCopyWith(
-          _$_SignInPhoneState value, $Res Function(_$_SignInPhoneState) then) =
-      __$$_SignInPhoneStateCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {CountryWithPhoneCode country,
-      Map<String, dynamic>? phoneNumber,
-      String? verificationId,
-      bool canSubmit,
-      bool isLoading,
-      bool isSuccess,
-      String? errorText});
-}
-
-/// @nodoc
-class __$$_SignInPhoneStateCopyWithImpl<$Res>
-    extends _$SignInPhoneStateCopyWithImpl<$Res>
-    implements _$$_SignInPhoneStateCopyWith<$Res> {
-  __$$_SignInPhoneStateCopyWithImpl(
-      _$_SignInPhoneState _value, $Res Function(_$_SignInPhoneState) _then)
-      : super(_value, (v) => _then(v as _$_SignInPhoneState));
-
-  @override
-  _$_SignInPhoneState get _value => super._value as _$_SignInPhoneState;
-
-  @override
-  $Res call({
-    Object? country = freezed,
-    Object? phoneNumber = freezed,
-    Object? verificationId = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
-    Object? errorText = freezed,
-  }) {
-    return _then(_$_SignInPhoneState(
-      country: country == freezed
-          ? _value.country
-          : country // ignore: cast_nullable_to_non_nullable
-              as CountryWithPhoneCode,
-      phoneNumber: phoneNumber == freezed
-          ? _value._phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>?,
-      verificationId: verificationId == freezed
-          ? _value.verificationId
-          : verificationId // ignore: cast_nullable_to_non_nullable
-              as String?,
-      canSubmit: canSubmit == freezed
-          ? _value.canSubmit
-          : canSubmit // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isSuccess: isSuccess == freezed
-          ? _value.isSuccess
-          : isSuccess // ignore: cast_nullable_to_non_nullable
-              as bool,
-      errorText: errorText == freezed
-          ? _value.errorText
-          : errorText // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SignInPhoneState implements _SignInPhoneState {
-  const _$_SignInPhoneState(
-      {required this.country,
-      final Map<String, dynamic>? phoneNumber,
-      this.verificationId,
-      this.canSubmit = false,
-      this.isLoading = false,
-      this.isSuccess = false,
-      this.errorText})
-      : _phoneNumber = phoneNumber;
-
-  @override
-  final CountryWithPhoneCode country;
-  final Map<String, dynamic>? _phoneNumber;
-  @override
-  Map<String, dynamic>? get phoneNumber {
-    final value = _phoneNumber;
-    if (value == null) return null;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(value);
-  }
-
-  @override
-  final String? verificationId;
-  @override
-  @JsonKey()
-  final bool canSubmit;
-  @override
-  @JsonKey()
-  final bool isLoading;
-  @override
-  @JsonKey()
-  final bool isSuccess;
-  @override
-  final String? errorText;
-
-  @override
-  String toString() {
-    return 'SignInPhoneState(country: $country, phoneNumber: $phoneNumber, verificationId: $verificationId, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_SignInPhoneState &&
-            const DeepCollectionEquality().equals(other.country, country) &&
-            const DeepCollectionEquality()
-                .equals(other._phoneNumber, _phoneNumber) &&
-            const DeepCollectionEquality()
-                .equals(other.verificationId, verificationId) &&
-            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
-            const DeepCollectionEquality().equals(other.errorText, errorText));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(country),
-      const DeepCollectionEquality().hash(_phoneNumber),
-      const DeepCollectionEquality().hash(verificationId),
-      const DeepCollectionEquality().hash(canSubmit),
-      const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(isSuccess),
-      const DeepCollectionEquality().hash(errorText));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_SignInPhoneStateCopyWith<_$_SignInPhoneState> get copyWith =>
-      __$$_SignInPhoneStateCopyWithImpl<_$_SignInPhoneState>(this, _$identity);
-}
-
-abstract class _SignInPhoneState implements SignInPhoneState {
-  const factory _SignInPhoneState(
-      {required final CountryWithPhoneCode country,
-      final Map<String, dynamic>? phoneNumber,
-      final String? verificationId,
-      final bool canSubmit,
-      final bool isLoading,
-      final bool isSuccess,
-      final String? errorText}) = _$_SignInPhoneState;
-
-  @override
-  CountryWithPhoneCode get country;
-  @override
-  Map<String, dynamic>? get phoneNumber;
-  @override
-  String? get verificationId;
-  @override
-  bool get canSubmit;
-  @override
-  bool get isLoading;
-  @override
-  bool get isSuccess;
-  @override
-  String? get errorText;
-  @override
-  @JsonKey(ignore: true)
-  _$$_SignInPhoneStateCopyWith<_$_SignInPhoneState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$SignInPhoneVerificationEvent {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() resendCode,
-    required TResult Function(String input) codeChanged,
-    required TResult Function() verifyCode,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? resendCode,
-    TResult Function(String input)? codeChanged,
-    TResult Function()? verifyCode,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? resendCode,
-    TResult Function(String input)? codeChanged,
-    TResult Function()? verifyCode,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ResendCode value) resendCode,
-    required TResult Function(_CodeChanged value) codeChanged,
-    required TResult Function(_VerifyCode value) verifyCode,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ResendCode value)? resendCode,
-    TResult Function(_CodeChanged value)? codeChanged,
-    TResult Function(_VerifyCode value)? verifyCode,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ResendCode value)? resendCode,
-    TResult Function(_CodeChanged value)? codeChanged,
-    TResult Function(_VerifyCode value)? verifyCode,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SignInPhoneVerificationEventCopyWith<$Res> {
-  factory $SignInPhoneVerificationEventCopyWith(
-          SignInPhoneVerificationEvent value,
-          $Res Function(SignInPhoneVerificationEvent) then) =
-      _$SignInPhoneVerificationEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$SignInPhoneVerificationEventCopyWithImpl<$Res>
-    implements $SignInPhoneVerificationEventCopyWith<$Res> {
-  _$SignInPhoneVerificationEventCopyWithImpl(this._value, this._then);
-
-  final SignInPhoneVerificationEvent _value;
-  // ignore: unused_field
-  final $Res Function(SignInPhoneVerificationEvent) _then;
-}
-
-/// @nodoc
-abstract class _$$_ResendCodeCopyWith<$Res> {
-  factory _$$_ResendCodeCopyWith(
-          _$_ResendCode value, $Res Function(_$_ResendCode) then) =
-      __$$_ResendCodeCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_ResendCodeCopyWithImpl<$Res>
-    extends _$SignInPhoneVerificationEventCopyWithImpl<$Res>
-    implements _$$_ResendCodeCopyWith<$Res> {
-  __$$_ResendCodeCopyWithImpl(
-      _$_ResendCode _value, $Res Function(_$_ResendCode) _then)
-      : super(_value, (v) => _then(v as _$_ResendCode));
-
-  @override
-  _$_ResendCode get _value => super._value as _$_ResendCode;
-}
-
-/// @nodoc
-
-class _$_ResendCode implements _ResendCode {
-  const _$_ResendCode();
-
-  @override
-  String toString() {
-    return 'SignInPhoneVerificationEvent.resendCode()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ResendCode);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() resendCode,
-    required TResult Function(String input) codeChanged,
-    required TResult Function() verifyCode,
-  }) {
-    return resendCode();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? resendCode,
-    TResult Function(String input)? codeChanged,
-    TResult Function()? verifyCode,
-  }) {
-    return resendCode?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? resendCode,
-    TResult Function(String input)? codeChanged,
-    TResult Function()? verifyCode,
-    required TResult orElse(),
-  }) {
-    if (resendCode != null) {
-      return resendCode();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ResendCode value) resendCode,
-    required TResult Function(_CodeChanged value) codeChanged,
-    required TResult Function(_VerifyCode value) verifyCode,
-  }) {
-    return resendCode(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ResendCode value)? resendCode,
-    TResult Function(_CodeChanged value)? codeChanged,
-    TResult Function(_VerifyCode value)? verifyCode,
-  }) {
-    return resendCode?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ResendCode value)? resendCode,
-    TResult Function(_CodeChanged value)? codeChanged,
-    TResult Function(_VerifyCode value)? verifyCode,
-    required TResult orElse(),
-  }) {
-    if (resendCode != null) {
-      return resendCode(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ResendCode implements SignInPhoneVerificationEvent {
-  const factory _ResendCode() = _$_ResendCode;
-}
-
-/// @nodoc
-abstract class _$$_CodeChangedCopyWith<$Res> {
-  factory _$$_CodeChangedCopyWith(
-          _$_CodeChanged value, $Res Function(_$_CodeChanged) then) =
-      __$$_CodeChangedCopyWithImpl<$Res>;
-  $Res call({String input});
-}
-
-/// @nodoc
-class __$$_CodeChangedCopyWithImpl<$Res>
-    extends _$SignInPhoneVerificationEventCopyWithImpl<$Res>
-    implements _$$_CodeChangedCopyWith<$Res> {
-  __$$_CodeChangedCopyWithImpl(
-      _$_CodeChanged _value, $Res Function(_$_CodeChanged) _then)
-      : super(_value, (v) => _then(v as _$_CodeChanged));
-
-  @override
-  _$_CodeChanged get _value => super._value as _$_CodeChanged;
-
-  @override
-  $Res call({
-    Object? input = freezed,
-  }) {
-    return _then(_$_CodeChanged(
-      input == freezed
-          ? _value.input
-          : input // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_CodeChanged implements _CodeChanged {
-  const _$_CodeChanged(this.input);
-
-  @override
-  final String input;
-
-  @override
-  String toString() {
-    return 'SignInPhoneVerificationEvent.codeChanged(input: $input)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_CodeChanged &&
-            const DeepCollectionEquality().equals(other.input, input));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(input));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_CodeChangedCopyWith<_$_CodeChanged> get copyWith =>
-      __$$_CodeChangedCopyWithImpl<_$_CodeChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() resendCode,
-    required TResult Function(String input) codeChanged,
-    required TResult Function() verifyCode,
-  }) {
-    return codeChanged(input);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? resendCode,
-    TResult Function(String input)? codeChanged,
-    TResult Function()? verifyCode,
-  }) {
-    return codeChanged?.call(input);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? resendCode,
-    TResult Function(String input)? codeChanged,
-    TResult Function()? verifyCode,
-    required TResult orElse(),
-  }) {
-    if (codeChanged != null) {
-      return codeChanged(input);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ResendCode value) resendCode,
-    required TResult Function(_CodeChanged value) codeChanged,
-    required TResult Function(_VerifyCode value) verifyCode,
-  }) {
-    return codeChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ResendCode value)? resendCode,
-    TResult Function(_CodeChanged value)? codeChanged,
-    TResult Function(_VerifyCode value)? verifyCode,
-  }) {
-    return codeChanged?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ResendCode value)? resendCode,
-    TResult Function(_CodeChanged value)? codeChanged,
-    TResult Function(_VerifyCode value)? verifyCode,
-    required TResult orElse(),
-  }) {
-    if (codeChanged != null) {
-      return codeChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CodeChanged implements SignInPhoneVerificationEvent {
-  const factory _CodeChanged(final String input) = _$_CodeChanged;
-
-  String get input;
-  @JsonKey(ignore: true)
-  _$$_CodeChangedCopyWith<_$_CodeChanged> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_VerifyCodeCopyWith<$Res> {
-  factory _$$_VerifyCodeCopyWith(
-          _$_VerifyCode value, $Res Function(_$_VerifyCode) then) =
-      __$$_VerifyCodeCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_VerifyCodeCopyWithImpl<$Res>
-    extends _$SignInPhoneVerificationEventCopyWithImpl<$Res>
-    implements _$$_VerifyCodeCopyWith<$Res> {
-  __$$_VerifyCodeCopyWithImpl(
-      _$_VerifyCode _value, $Res Function(_$_VerifyCode) _then)
-      : super(_value, (v) => _then(v as _$_VerifyCode));
-
-  @override
-  _$_VerifyCode get _value => super._value as _$_VerifyCode;
-}
-
-/// @nodoc
-
-class _$_VerifyCode implements _VerifyCode {
-  const _$_VerifyCode();
-
-  @override
-  String toString() {
-    return 'SignInPhoneVerificationEvent.verifyCode()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_VerifyCode);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() resendCode,
-    required TResult Function(String input) codeChanged,
-    required TResult Function() verifyCode,
-  }) {
-    return verifyCode();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? resendCode,
-    TResult Function(String input)? codeChanged,
-    TResult Function()? verifyCode,
-  }) {
-    return verifyCode?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? resendCode,
-    TResult Function(String input)? codeChanged,
-    TResult Function()? verifyCode,
-    required TResult orElse(),
-  }) {
-    if (verifyCode != null) {
-      return verifyCode();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ResendCode value) resendCode,
-    required TResult Function(_CodeChanged value) codeChanged,
-    required TResult Function(_VerifyCode value) verifyCode,
-  }) {
-    return verifyCode(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ResendCode value)? resendCode,
-    TResult Function(_CodeChanged value)? codeChanged,
-    TResult Function(_VerifyCode value)? verifyCode,
-  }) {
-    return verifyCode?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ResendCode value)? resendCode,
-    TResult Function(_CodeChanged value)? codeChanged,
-    TResult Function(_VerifyCode value)? verifyCode,
-    required TResult orElse(),
-  }) {
-    if (verifyCode != null) {
-      return verifyCode(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _VerifyCode implements SignInPhoneVerificationEvent {
-  const factory _VerifyCode() = _$_VerifyCode;
-}
-
-/// @nodoc
-mixin _$SignInPhoneVerificationState {
-  int? get countdown => throw _privateConstructorUsedError;
-  Map<String, dynamic> get phoneNumber => throw _privateConstructorUsedError;
-  String get nationalPhoneNumber => throw _privateConstructorUsedError;
-  String get verificationId => throw _privateConstructorUsedError;
-  String get verificationCode => throw _privateConstructorUsedError;
-  bool get canSubmit => throw _privateConstructorUsedError;
-  bool get isLoading => throw _privateConstructorUsedError;
-  bool get isSuccess => throw _privateConstructorUsedError;
-  String? get errorText => throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $SignInPhoneVerificationStateCopyWith<SignInPhoneVerificationState>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SignInPhoneVerificationStateCopyWith<$Res> {
-  factory $SignInPhoneVerificationStateCopyWith(
-          SignInPhoneVerificationState value,
-          $Res Function(SignInPhoneVerificationState) then) =
-      _$SignInPhoneVerificationStateCopyWithImpl<$Res>;
-  $Res call(
-      {int? countdown,
-      Map<String, dynamic> phoneNumber,
-      String nationalPhoneNumber,
-      String verificationId,
-      String verificationCode,
-      bool canSubmit,
-      bool isLoading,
-      bool isSuccess,
-      String? errorText});
-}
-
-/// @nodoc
-class _$SignInPhoneVerificationStateCopyWithImpl<$Res>
-    implements $SignInPhoneVerificationStateCopyWith<$Res> {
-  _$SignInPhoneVerificationStateCopyWithImpl(this._value, this._then);
-
-  final SignInPhoneVerificationState _value;
-  // ignore: unused_field
-  final $Res Function(SignInPhoneVerificationState) _then;
-
-  @override
-  $Res call({
-    Object? countdown = freezed,
-    Object? phoneNumber = freezed,
-    Object? nationalPhoneNumber = freezed,
-    Object? verificationId = freezed,
-    Object? verificationCode = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
-    Object? errorText = freezed,
-  }) {
-    return _then(_value.copyWith(
-      countdown: countdown == freezed
-          ? _value.countdown
-          : countdown // ignore: cast_nullable_to_non_nullable
-              as int?,
-      phoneNumber: phoneNumber == freezed
-          ? _value.phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      nationalPhoneNumber: nationalPhoneNumber == freezed
-          ? _value.nationalPhoneNumber
-          : nationalPhoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      verificationId: verificationId == freezed
-          ? _value.verificationId
-          : verificationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      verificationCode: verificationCode == freezed
-          ? _value.verificationCode
-          : verificationCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      canSubmit: canSubmit == freezed
-          ? _value.canSubmit
-          : canSubmit // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isSuccess: isSuccess == freezed
-          ? _value.isSuccess
-          : isSuccess // ignore: cast_nullable_to_non_nullable
-              as bool,
-      errorText: errorText == freezed
-          ? _value.errorText
-          : errorText // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$$_SignInPhoneVerificationStateCopyWith<$Res>
-    implements $SignInPhoneVerificationStateCopyWith<$Res> {
-  factory _$$_SignInPhoneVerificationStateCopyWith(
-          _$_SignInPhoneVerificationState value,
-          $Res Function(_$_SignInPhoneVerificationState) then) =
-      __$$_SignInPhoneVerificationStateCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {int? countdown,
-      Map<String, dynamic> phoneNumber,
-      String nationalPhoneNumber,
-      String verificationId,
-      String verificationCode,
-      bool canSubmit,
-      bool isLoading,
-      bool isSuccess,
-      String? errorText});
-}
-
-/// @nodoc
-class __$$_SignInPhoneVerificationStateCopyWithImpl<$Res>
-    extends _$SignInPhoneVerificationStateCopyWithImpl<$Res>
-    implements _$$_SignInPhoneVerificationStateCopyWith<$Res> {
-  __$$_SignInPhoneVerificationStateCopyWithImpl(
-      _$_SignInPhoneVerificationState _value,
-      $Res Function(_$_SignInPhoneVerificationState) _then)
-      : super(_value, (v) => _then(v as _$_SignInPhoneVerificationState));
-
-  @override
-  _$_SignInPhoneVerificationState get _value =>
-      super._value as _$_SignInPhoneVerificationState;
-
-  @override
-  $Res call({
-    Object? countdown = freezed,
-    Object? phoneNumber = freezed,
-    Object? nationalPhoneNumber = freezed,
-    Object? verificationId = freezed,
-    Object? verificationCode = freezed,
-    Object? canSubmit = freezed,
-    Object? isLoading = freezed,
-    Object? isSuccess = freezed,
-    Object? errorText = freezed,
-  }) {
-    return _then(_$_SignInPhoneVerificationState(
-      countdown: countdown == freezed
-          ? _value.countdown
-          : countdown // ignore: cast_nullable_to_non_nullable
-              as int?,
-      phoneNumber: phoneNumber == freezed
-          ? _value._phoneNumber
-          : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
-      nationalPhoneNumber: nationalPhoneNumber == freezed
-          ? _value.nationalPhoneNumber
-          : nationalPhoneNumber // ignore: cast_nullable_to_non_nullable
-              as String,
-      verificationId: verificationId == freezed
-          ? _value.verificationId
-          : verificationId // ignore: cast_nullable_to_non_nullable
-              as String,
-      verificationCode: verificationCode == freezed
-          ? _value.verificationCode
-          : verificationCode // ignore: cast_nullable_to_non_nullable
-              as String,
-      canSubmit: canSubmit == freezed
-          ? _value.canSubmit
-          : canSubmit // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isLoading: isLoading == freezed
-          ? _value.isLoading
-          : isLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-      isSuccess: isSuccess == freezed
-          ? _value.isSuccess
-          : isSuccess // ignore: cast_nullable_to_non_nullable
-              as bool,
-      errorText: errorText == freezed
-          ? _value.errorText
-          : errorText // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SignInPhoneVerificationState implements _SignInPhoneVerificationState {
-  const _$_SignInPhoneVerificationState(
-      {this.countdown = delayBeforeUserCanRequestNewCode,
-      required final Map<String, dynamic> phoneNumber,
-      required this.nationalPhoneNumber,
-      required this.verificationId,
-      this.verificationCode = "",
-      this.canSubmit = false,
-      this.isLoading = false,
-      this.isSuccess = false,
-      this.errorText})
-      : _phoneNumber = phoneNumber;
-
-  @override
-  @JsonKey()
-  final int? countdown;
-  final Map<String, dynamic> _phoneNumber;
-  @override
-  Map<String, dynamic> get phoneNumber {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_phoneNumber);
-  }
-
-  @override
-  final String nationalPhoneNumber;
-  @override
-  final String verificationId;
-  @override
-  @JsonKey()
-  final String verificationCode;
-  @override
-  @JsonKey()
-  final bool canSubmit;
-  @override
-  @JsonKey()
-  final bool isLoading;
-  @override
-  @JsonKey()
-  final bool isSuccess;
-  @override
-  final String? errorText;
-
-  @override
-  String toString() {
-    return 'SignInPhoneVerificationState(countdown: $countdown, phoneNumber: $phoneNumber, nationalPhoneNumber: $nationalPhoneNumber, verificationId: $verificationId, verificationCode: $verificationCode, canSubmit: $canSubmit, isLoading: $isLoading, isSuccess: $isSuccess, errorText: $errorText)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_SignInPhoneVerificationState &&
-            const DeepCollectionEquality().equals(other.countdown, countdown) &&
-            const DeepCollectionEquality()
-                .equals(other._phoneNumber, _phoneNumber) &&
-            const DeepCollectionEquality()
-                .equals(other.nationalPhoneNumber, nationalPhoneNumber) &&
-            const DeepCollectionEquality()
-                .equals(other.verificationId, verificationId) &&
-            const DeepCollectionEquality()
-                .equals(other.verificationCode, verificationCode) &&
-            const DeepCollectionEquality().equals(other.canSubmit, canSubmit) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
-            const DeepCollectionEquality().equals(other.isSuccess, isSuccess) &&
-            const DeepCollectionEquality().equals(other.errorText, errorText));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(countdown),
-      const DeepCollectionEquality().hash(_phoneNumber),
-      const DeepCollectionEquality().hash(nationalPhoneNumber),
-      const DeepCollectionEquality().hash(verificationId),
-      const DeepCollectionEquality().hash(verificationCode),
-      const DeepCollectionEquality().hash(canSubmit),
-      const DeepCollectionEquality().hash(isLoading),
-      const DeepCollectionEquality().hash(isSuccess),
-      const DeepCollectionEquality().hash(errorText));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_SignInPhoneVerificationStateCopyWith<_$_SignInPhoneVerificationState>
-      get copyWith => __$$_SignInPhoneVerificationStateCopyWithImpl<
-          _$_SignInPhoneVerificationState>(this, _$identity);
-}
-
-abstract class _SignInPhoneVerificationState
-    implements SignInPhoneVerificationState {
-  const factory _SignInPhoneVerificationState(
-      {final int? countdown,
-      required final Map<String, dynamic> phoneNumber,
-      required final String nationalPhoneNumber,
-      required final String verificationId,
-      final String verificationCode,
-      final bool canSubmit,
-      final bool isLoading,
-      final bool isSuccess,
-      final String? errorText}) = _$_SignInPhoneVerificationState;
-
-  @override
-  int? get countdown;
-  @override
-  Map<String, dynamic> get phoneNumber;
-  @override
-  String get nationalPhoneNumber;
-  @override
-  String get verificationId;
-  @override
-  String get verificationCode;
-  @override
-  bool get canSubmit;
-  @override
-  bool get isLoading;
-  @override
-  bool get isSuccess;
-  @override
-  String? get errorText;
-  @override
-  @JsonKey(ignore: true)
-  _$$_SignInPhoneVerificationStateCopyWith<_$_SignInPhoneVerificationState>
+  _$$SignInEmailRegisterStateImplCopyWith<_$SignInEmailRegisterStateImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -7756,10 +6313,10 @@ mixin _$AuthSplashState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initializing,
-    TResult Function()? notAuthed,
-    TResult Function()? authed,
-    TResult Function(String error)? error,
+    TResult? Function()? initializing,
+    TResult? Function()? notAuthed,
+    TResult? Function()? authed,
+    TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -7781,10 +6338,10 @@ mixin _$AuthSplashState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SplashInitializingAuth value)? initializing,
-    TResult Function(_SplashNotAuthed value)? notAuthed,
-    TResult Function(_SplashAuthed value)? authed,
-    TResult Function(_SplashAuthError value)? error,
+    TResult? Function(_SplashInitializingAuth value)? initializing,
+    TResult? Function(_SplashNotAuthed value)? notAuthed,
+    TResult? Function(_SplashAuthed value)? authed,
+    TResult? Function(_SplashAuthError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -7802,43 +6359,42 @@ mixin _$AuthSplashState {
 abstract class $AuthSplashStateCopyWith<$Res> {
   factory $AuthSplashStateCopyWith(
           AuthSplashState value, $Res Function(AuthSplashState) then) =
-      _$AuthSplashStateCopyWithImpl<$Res>;
+      _$AuthSplashStateCopyWithImpl<$Res, AuthSplashState>;
 }
 
 /// @nodoc
-class _$AuthSplashStateCopyWithImpl<$Res>
+class _$AuthSplashStateCopyWithImpl<$Res, $Val extends AuthSplashState>
     implements $AuthSplashStateCopyWith<$Res> {
   _$AuthSplashStateCopyWithImpl(this._value, this._then);
 
-  final AuthSplashState _value;
   // ignore: unused_field
-  final $Res Function(AuthSplashState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_SplashInitializingAuthCopyWith<$Res> {
-  factory _$$_SplashInitializingAuthCopyWith(_$_SplashInitializingAuth value,
-          $Res Function(_$_SplashInitializingAuth) then) =
-      __$$_SplashInitializingAuthCopyWithImpl<$Res>;
+abstract class _$$SplashInitializingAuthImplCopyWith<$Res> {
+  factory _$$SplashInitializingAuthImplCopyWith(
+          _$SplashInitializingAuthImpl value,
+          $Res Function(_$SplashInitializingAuthImpl) then) =
+      __$$SplashInitializingAuthImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SplashInitializingAuthCopyWithImpl<$Res>
-    extends _$AuthSplashStateCopyWithImpl<$Res>
-    implements _$$_SplashInitializingAuthCopyWith<$Res> {
-  __$$_SplashInitializingAuthCopyWithImpl(_$_SplashInitializingAuth _value,
-      $Res Function(_$_SplashInitializingAuth) _then)
-      : super(_value, (v) => _then(v as _$_SplashInitializingAuth));
-
-  @override
-  _$_SplashInitializingAuth get _value =>
-      super._value as _$_SplashInitializingAuth;
+class __$$SplashInitializingAuthImplCopyWithImpl<$Res>
+    extends _$AuthSplashStateCopyWithImpl<$Res, _$SplashInitializingAuthImpl>
+    implements _$$SplashInitializingAuthImplCopyWith<$Res> {
+  __$$SplashInitializingAuthImplCopyWithImpl(
+      _$SplashInitializingAuthImpl _value,
+      $Res Function(_$SplashInitializingAuthImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SplashInitializingAuth implements _SplashInitializingAuth {
-  const _$_SplashInitializingAuth();
+class _$SplashInitializingAuthImpl implements _SplashInitializingAuth {
+  const _$SplashInitializingAuthImpl();
 
   @override
   String toString() {
@@ -7846,10 +6402,10 @@ class _$_SplashInitializingAuth implements _SplashInitializingAuth {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SplashInitializingAuth);
+            other is _$SplashInitializingAuthImpl);
   }
 
   @override
@@ -7869,10 +6425,10 @@ class _$_SplashInitializingAuth implements _SplashInitializingAuth {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initializing,
-    TResult Function()? notAuthed,
-    TResult Function()? authed,
-    TResult Function(String error)? error,
+    TResult? Function()? initializing,
+    TResult? Function()? notAuthed,
+    TResult? Function()? authed,
+    TResult? Function(String error)? error,
   }) {
     return initializing?.call();
   }
@@ -7906,10 +6462,10 @@ class _$_SplashInitializingAuth implements _SplashInitializingAuth {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SplashInitializingAuth value)? initializing,
-    TResult Function(_SplashNotAuthed value)? notAuthed,
-    TResult Function(_SplashAuthed value)? authed,
-    TResult Function(_SplashAuthError value)? error,
+    TResult? Function(_SplashInitializingAuth value)? initializing,
+    TResult? Function(_SplashNotAuthed value)? notAuthed,
+    TResult? Function(_SplashAuthed value)? authed,
+    TResult? Function(_SplashAuthError value)? error,
   }) {
     return initializing?.call(this);
   }
@@ -7931,32 +6487,29 @@ class _$_SplashInitializingAuth implements _SplashInitializingAuth {
 }
 
 abstract class _SplashInitializingAuth implements AuthSplashState {
-  const factory _SplashInitializingAuth() = _$_SplashInitializingAuth;
+  const factory _SplashInitializingAuth() = _$SplashInitializingAuthImpl;
 }
 
 /// @nodoc
-abstract class _$$_SplashNotAuthedCopyWith<$Res> {
-  factory _$$_SplashNotAuthedCopyWith(
-          _$_SplashNotAuthed value, $Res Function(_$_SplashNotAuthed) then) =
-      __$$_SplashNotAuthedCopyWithImpl<$Res>;
+abstract class _$$SplashNotAuthedImplCopyWith<$Res> {
+  factory _$$SplashNotAuthedImplCopyWith(_$SplashNotAuthedImpl value,
+          $Res Function(_$SplashNotAuthedImpl) then) =
+      __$$SplashNotAuthedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SplashNotAuthedCopyWithImpl<$Res>
-    extends _$AuthSplashStateCopyWithImpl<$Res>
-    implements _$$_SplashNotAuthedCopyWith<$Res> {
-  __$$_SplashNotAuthedCopyWithImpl(
-      _$_SplashNotAuthed _value, $Res Function(_$_SplashNotAuthed) _then)
-      : super(_value, (v) => _then(v as _$_SplashNotAuthed));
-
-  @override
-  _$_SplashNotAuthed get _value => super._value as _$_SplashNotAuthed;
+class __$$SplashNotAuthedImplCopyWithImpl<$Res>
+    extends _$AuthSplashStateCopyWithImpl<$Res, _$SplashNotAuthedImpl>
+    implements _$$SplashNotAuthedImplCopyWith<$Res> {
+  __$$SplashNotAuthedImplCopyWithImpl(
+      _$SplashNotAuthedImpl _value, $Res Function(_$SplashNotAuthedImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SplashNotAuthed implements _SplashNotAuthed {
-  const _$_SplashNotAuthed();
+class _$SplashNotAuthedImpl implements _SplashNotAuthed {
+  const _$SplashNotAuthedImpl();
 
   @override
   String toString() {
@@ -7964,9 +6517,9 @@ class _$_SplashNotAuthed implements _SplashNotAuthed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SplashNotAuthed);
+        (other.runtimeType == runtimeType && other is _$SplashNotAuthedImpl);
   }
 
   @override
@@ -7986,10 +6539,10 @@ class _$_SplashNotAuthed implements _SplashNotAuthed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initializing,
-    TResult Function()? notAuthed,
-    TResult Function()? authed,
-    TResult Function(String error)? error,
+    TResult? Function()? initializing,
+    TResult? Function()? notAuthed,
+    TResult? Function()? authed,
+    TResult? Function(String error)? error,
   }) {
     return notAuthed?.call();
   }
@@ -8023,10 +6576,10 @@ class _$_SplashNotAuthed implements _SplashNotAuthed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SplashInitializingAuth value)? initializing,
-    TResult Function(_SplashNotAuthed value)? notAuthed,
-    TResult Function(_SplashAuthed value)? authed,
-    TResult Function(_SplashAuthError value)? error,
+    TResult? Function(_SplashInitializingAuth value)? initializing,
+    TResult? Function(_SplashNotAuthed value)? notAuthed,
+    TResult? Function(_SplashAuthed value)? authed,
+    TResult? Function(_SplashAuthError value)? error,
   }) {
     return notAuthed?.call(this);
   }
@@ -8048,32 +6601,29 @@ class _$_SplashNotAuthed implements _SplashNotAuthed {
 }
 
 abstract class _SplashNotAuthed implements AuthSplashState {
-  const factory _SplashNotAuthed() = _$_SplashNotAuthed;
+  const factory _SplashNotAuthed() = _$SplashNotAuthedImpl;
 }
 
 /// @nodoc
-abstract class _$$_SplashAuthedCopyWith<$Res> {
-  factory _$$_SplashAuthedCopyWith(
-          _$_SplashAuthed value, $Res Function(_$_SplashAuthed) then) =
-      __$$_SplashAuthedCopyWithImpl<$Res>;
+abstract class _$$SplashAuthedImplCopyWith<$Res> {
+  factory _$$SplashAuthedImplCopyWith(
+          _$SplashAuthedImpl value, $Res Function(_$SplashAuthedImpl) then) =
+      __$$SplashAuthedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SplashAuthedCopyWithImpl<$Res>
-    extends _$AuthSplashStateCopyWithImpl<$Res>
-    implements _$$_SplashAuthedCopyWith<$Res> {
-  __$$_SplashAuthedCopyWithImpl(
-      _$_SplashAuthed _value, $Res Function(_$_SplashAuthed) _then)
-      : super(_value, (v) => _then(v as _$_SplashAuthed));
-
-  @override
-  _$_SplashAuthed get _value => super._value as _$_SplashAuthed;
+class __$$SplashAuthedImplCopyWithImpl<$Res>
+    extends _$AuthSplashStateCopyWithImpl<$Res, _$SplashAuthedImpl>
+    implements _$$SplashAuthedImplCopyWith<$Res> {
+  __$$SplashAuthedImplCopyWithImpl(
+      _$SplashAuthedImpl _value, $Res Function(_$SplashAuthedImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_SplashAuthed implements _SplashAuthed {
-  const _$_SplashAuthed();
+class _$SplashAuthedImpl implements _SplashAuthed {
+  const _$SplashAuthedImpl();
 
   @override
   String toString() {
@@ -8081,9 +6631,9 @@ class _$_SplashAuthed implements _SplashAuthed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_SplashAuthed);
+        (other.runtimeType == runtimeType && other is _$SplashAuthedImpl);
   }
 
   @override
@@ -8103,10 +6653,10 @@ class _$_SplashAuthed implements _SplashAuthed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initializing,
-    TResult Function()? notAuthed,
-    TResult Function()? authed,
-    TResult Function(String error)? error,
+    TResult? Function()? initializing,
+    TResult? Function()? notAuthed,
+    TResult? Function()? authed,
+    TResult? Function(String error)? error,
   }) {
     return authed?.call();
   }
@@ -8140,10 +6690,10 @@ class _$_SplashAuthed implements _SplashAuthed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SplashInitializingAuth value)? initializing,
-    TResult Function(_SplashNotAuthed value)? notAuthed,
-    TResult Function(_SplashAuthed value)? authed,
-    TResult Function(_SplashAuthError value)? error,
+    TResult? Function(_SplashInitializingAuth value)? initializing,
+    TResult? Function(_SplashNotAuthed value)? notAuthed,
+    TResult? Function(_SplashAuthed value)? authed,
+    TResult? Function(_SplashAuthError value)? error,
   }) {
     return authed?.call(this);
   }
@@ -8165,34 +6715,33 @@ class _$_SplashAuthed implements _SplashAuthed {
 }
 
 abstract class _SplashAuthed implements AuthSplashState {
-  const factory _SplashAuthed() = _$_SplashAuthed;
+  const factory _SplashAuthed() = _$SplashAuthedImpl;
 }
 
 /// @nodoc
-abstract class _$$_SplashAuthErrorCopyWith<$Res> {
-  factory _$$_SplashAuthErrorCopyWith(
-          _$_SplashAuthError value, $Res Function(_$_SplashAuthError) then) =
-      __$$_SplashAuthErrorCopyWithImpl<$Res>;
+abstract class _$$SplashAuthErrorImplCopyWith<$Res> {
+  factory _$$SplashAuthErrorImplCopyWith(_$SplashAuthErrorImpl value,
+          $Res Function(_$SplashAuthErrorImpl) then) =
+      __$$SplashAuthErrorImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String error});
 }
 
 /// @nodoc
-class __$$_SplashAuthErrorCopyWithImpl<$Res>
-    extends _$AuthSplashStateCopyWithImpl<$Res>
-    implements _$$_SplashAuthErrorCopyWith<$Res> {
-  __$$_SplashAuthErrorCopyWithImpl(
-      _$_SplashAuthError _value, $Res Function(_$_SplashAuthError) _then)
-      : super(_value, (v) => _then(v as _$_SplashAuthError));
+class __$$SplashAuthErrorImplCopyWithImpl<$Res>
+    extends _$AuthSplashStateCopyWithImpl<$Res, _$SplashAuthErrorImpl>
+    implements _$$SplashAuthErrorImplCopyWith<$Res> {
+  __$$SplashAuthErrorImplCopyWithImpl(
+      _$SplashAuthErrorImpl _value, $Res Function(_$SplashAuthErrorImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SplashAuthError get _value => super._value as _$_SplashAuthError;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
+    Object? error = null,
   }) {
-    return _then(_$_SplashAuthError(
-      error == freezed
+    return _then(_$SplashAuthErrorImpl(
+      null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
@@ -8202,8 +6751,8 @@ class __$$_SplashAuthErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SplashAuthError implements _SplashAuthError {
-  const _$_SplashAuthError(this.error);
+class _$SplashAuthErrorImpl implements _SplashAuthError {
+  const _$SplashAuthErrorImpl(this.error);
 
   @override
   final String error;
@@ -8214,21 +6763,22 @@ class _$_SplashAuthError implements _SplashAuthError {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SplashAuthError &&
-            const DeepCollectionEquality().equals(other.error, error));
+            other is _$SplashAuthErrorImpl &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SplashAuthErrorCopyWith<_$_SplashAuthError> get copyWith =>
-      __$$_SplashAuthErrorCopyWithImpl<_$_SplashAuthError>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SplashAuthErrorImplCopyWith<_$SplashAuthErrorImpl> get copyWith =>
+      __$$SplashAuthErrorImplCopyWithImpl<_$SplashAuthErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -8244,10 +6794,10 @@ class _$_SplashAuthError implements _SplashAuthError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initializing,
-    TResult Function()? notAuthed,
-    TResult Function()? authed,
-    TResult Function(String error)? error,
+    TResult? Function()? initializing,
+    TResult? Function()? notAuthed,
+    TResult? Function()? authed,
+    TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
   }
@@ -8281,10 +6831,10 @@ class _$_SplashAuthError implements _SplashAuthError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SplashInitializingAuth value)? initializing,
-    TResult Function(_SplashNotAuthed value)? notAuthed,
-    TResult Function(_SplashAuthed value)? authed,
-    TResult Function(_SplashAuthError value)? error,
+    TResult? Function(_SplashInitializingAuth value)? initializing,
+    TResult? Function(_SplashNotAuthed value)? notAuthed,
+    TResult? Function(_SplashAuthed value)? authed,
+    TResult? Function(_SplashAuthError value)? error,
   }) {
     return error?.call(this);
   }
@@ -8306,11 +6856,11 @@ class _$_SplashAuthError implements _SplashAuthError {
 }
 
 abstract class _SplashAuthError implements AuthSplashState {
-  const factory _SplashAuthError(final String error) = _$_SplashAuthError;
+  const factory _SplashAuthError(final String error) = _$SplashAuthErrorImpl;
 
   String get error;
   @JsonKey(ignore: true)
-  _$$_SplashAuthErrorCopyWith<_$_SplashAuthError> get copyWith =>
+  _$$SplashAuthErrorImplCopyWith<_$SplashAuthErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -8328,12 +6878,12 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initializing,
-    TResult Function()? notAuthed,
-    TResult Function()? waitingUserCreation,
-    TResult Function()? needUserInformation,
-    TResult Function(dynamic user)? authed,
-    TResult Function(String error)? error,
+    TResult? Function()? initializing,
+    TResult? Function()? notAuthed,
+    TResult? Function()? waitingUserCreation,
+    TResult? Function()? needUserInformation,
+    TResult? Function(dynamic user)? authed,
+    TResult? Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -8359,12 +6909,12 @@ mixin _$AuthState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitializingAuth value)? initializing,
-    TResult Function(_NotAuthed value)? notAuthed,
-    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
-    TResult Function(_NeedUserInformation value)? needUserInformation,
-    TResult Function(_Authed value)? authed,
-    TResult Function(_AuthError value)? error,
+    TResult? Function(_InitializingAuth value)? initializing,
+    TResult? Function(_NotAuthed value)? notAuthed,
+    TResult? Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult? Function(_NeedUserInformation value)? needUserInformation,
+    TResult? Function(_Authed value)? authed,
+    TResult? Function(_AuthError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -8383,41 +6933,40 @@ mixin _$AuthState {
 /// @nodoc
 abstract class $AuthStateCopyWith<$Res> {
   factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
-      _$AuthStateCopyWithImpl<$Res>;
+      _$AuthStateCopyWithImpl<$Res, AuthState>;
 }
 
 /// @nodoc
-class _$AuthStateCopyWithImpl<$Res> implements $AuthStateCopyWith<$Res> {
+class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
+    implements $AuthStateCopyWith<$Res> {
   _$AuthStateCopyWithImpl(this._value, this._then);
 
-  final AuthState _value;
   // ignore: unused_field
-  final $Res Function(AuthState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$$_InitializingAuthCopyWith<$Res> {
-  factory _$$_InitializingAuthCopyWith(
-          _$_InitializingAuth value, $Res Function(_$_InitializingAuth) then) =
-      __$$_InitializingAuthCopyWithImpl<$Res>;
+abstract class _$$InitializingAuthImplCopyWith<$Res> {
+  factory _$$InitializingAuthImplCopyWith(_$InitializingAuthImpl value,
+          $Res Function(_$InitializingAuthImpl) then) =
+      __$$InitializingAuthImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitializingAuthCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_InitializingAuthCopyWith<$Res> {
-  __$$_InitializingAuthCopyWithImpl(
-      _$_InitializingAuth _value, $Res Function(_$_InitializingAuth) _then)
-      : super(_value, (v) => _then(v as _$_InitializingAuth));
-
-  @override
-  _$_InitializingAuth get _value => super._value as _$_InitializingAuth;
+class __$$InitializingAuthImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$InitializingAuthImpl>
+    implements _$$InitializingAuthImplCopyWith<$Res> {
+  __$$InitializingAuthImplCopyWithImpl(_$InitializingAuthImpl _value,
+      $Res Function(_$InitializingAuthImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_InitializingAuth implements _InitializingAuth {
-  const _$_InitializingAuth();
+class _$InitializingAuthImpl implements _InitializingAuth {
+  const _$InitializingAuthImpl();
 
   @override
   String toString() {
@@ -8425,9 +6974,9 @@ class _$_InitializingAuth implements _InitializingAuth {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_InitializingAuth);
+        (other.runtimeType == runtimeType && other is _$InitializingAuthImpl);
   }
 
   @override
@@ -8449,12 +6998,12 @@ class _$_InitializingAuth implements _InitializingAuth {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initializing,
-    TResult Function()? notAuthed,
-    TResult Function()? waitingUserCreation,
-    TResult Function()? needUserInformation,
-    TResult Function(dynamic user)? authed,
-    TResult Function(String error)? error,
+    TResult? Function()? initializing,
+    TResult? Function()? notAuthed,
+    TResult? Function()? waitingUserCreation,
+    TResult? Function()? needUserInformation,
+    TResult? Function(dynamic user)? authed,
+    TResult? Function(String error)? error,
   }) {
     return initializing?.call();
   }
@@ -8492,12 +7041,12 @@ class _$_InitializingAuth implements _InitializingAuth {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitializingAuth value)? initializing,
-    TResult Function(_NotAuthed value)? notAuthed,
-    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
-    TResult Function(_NeedUserInformation value)? needUserInformation,
-    TResult Function(_Authed value)? authed,
-    TResult Function(_AuthError value)? error,
+    TResult? Function(_InitializingAuth value)? initializing,
+    TResult? Function(_NotAuthed value)? notAuthed,
+    TResult? Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult? Function(_NeedUserInformation value)? needUserInformation,
+    TResult? Function(_Authed value)? authed,
+    TResult? Function(_AuthError value)? error,
   }) {
     return initializing?.call(this);
   }
@@ -8521,31 +7070,29 @@ class _$_InitializingAuth implements _InitializingAuth {
 }
 
 abstract class _InitializingAuth implements AuthState {
-  const factory _InitializingAuth() = _$_InitializingAuth;
+  const factory _InitializingAuth() = _$InitializingAuthImpl;
 }
 
 /// @nodoc
-abstract class _$$_NotAuthedCopyWith<$Res> {
-  factory _$$_NotAuthedCopyWith(
-          _$_NotAuthed value, $Res Function(_$_NotAuthed) then) =
-      __$$_NotAuthedCopyWithImpl<$Res>;
+abstract class _$$NotAuthedImplCopyWith<$Res> {
+  factory _$$NotAuthedImplCopyWith(
+          _$NotAuthedImpl value, $Res Function(_$NotAuthedImpl) then) =
+      __$$NotAuthedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NotAuthedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_NotAuthedCopyWith<$Res> {
-  __$$_NotAuthedCopyWithImpl(
-      _$_NotAuthed _value, $Res Function(_$_NotAuthed) _then)
-      : super(_value, (v) => _then(v as _$_NotAuthed));
-
-  @override
-  _$_NotAuthed get _value => super._value as _$_NotAuthed;
+class __$$NotAuthedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$NotAuthedImpl>
+    implements _$$NotAuthedImplCopyWith<$Res> {
+  __$$NotAuthedImplCopyWithImpl(
+      _$NotAuthedImpl _value, $Res Function(_$NotAuthedImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NotAuthed implements _NotAuthed {
-  const _$_NotAuthed();
+class _$NotAuthedImpl implements _NotAuthed {
+  const _$NotAuthedImpl();
 
   @override
   String toString() {
@@ -8553,9 +7100,9 @@ class _$_NotAuthed implements _NotAuthed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NotAuthed);
+        (other.runtimeType == runtimeType && other is _$NotAuthedImpl);
   }
 
   @override
@@ -8577,12 +7124,12 @@ class _$_NotAuthed implements _NotAuthed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initializing,
-    TResult Function()? notAuthed,
-    TResult Function()? waitingUserCreation,
-    TResult Function()? needUserInformation,
-    TResult Function(dynamic user)? authed,
-    TResult Function(String error)? error,
+    TResult? Function()? initializing,
+    TResult? Function()? notAuthed,
+    TResult? Function()? waitingUserCreation,
+    TResult? Function()? needUserInformation,
+    TResult? Function(dynamic user)? authed,
+    TResult? Function(String error)? error,
   }) {
     return notAuthed?.call();
   }
@@ -8620,12 +7167,12 @@ class _$_NotAuthed implements _NotAuthed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitializingAuth value)? initializing,
-    TResult Function(_NotAuthed value)? notAuthed,
-    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
-    TResult Function(_NeedUserInformation value)? needUserInformation,
-    TResult Function(_Authed value)? authed,
-    TResult Function(_AuthError value)? error,
+    TResult? Function(_InitializingAuth value)? initializing,
+    TResult? Function(_NotAuthed value)? notAuthed,
+    TResult? Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult? Function(_NeedUserInformation value)? needUserInformation,
+    TResult? Function(_Authed value)? authed,
+    TResult? Function(_AuthError value)? error,
   }) {
     return notAuthed?.call(this);
   }
@@ -8649,32 +7196,29 @@ class _$_NotAuthed implements _NotAuthed {
 }
 
 abstract class _NotAuthed implements AuthState {
-  const factory _NotAuthed() = _$_NotAuthed;
+  const factory _NotAuthed() = _$NotAuthedImpl;
 }
 
 /// @nodoc
-abstract class _$$_WaitingUserCreationCopyWith<$Res> {
-  factory _$$_WaitingUserCreationCopyWith(_$_WaitingUserCreation value,
-          $Res Function(_$_WaitingUserCreation) then) =
-      __$$_WaitingUserCreationCopyWithImpl<$Res>;
+abstract class _$$WaitingUserCreationImplCopyWith<$Res> {
+  factory _$$WaitingUserCreationImplCopyWith(_$WaitingUserCreationImpl value,
+          $Res Function(_$WaitingUserCreationImpl) then) =
+      __$$WaitingUserCreationImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_WaitingUserCreationCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_WaitingUserCreationCopyWith<$Res> {
-  __$$_WaitingUserCreationCopyWithImpl(_$_WaitingUserCreation _value,
-      $Res Function(_$_WaitingUserCreation) _then)
-      : super(_value, (v) => _then(v as _$_WaitingUserCreation));
-
-  @override
-  _$_WaitingUserCreation get _value => super._value as _$_WaitingUserCreation;
+class __$$WaitingUserCreationImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$WaitingUserCreationImpl>
+    implements _$$WaitingUserCreationImplCopyWith<$Res> {
+  __$$WaitingUserCreationImplCopyWithImpl(_$WaitingUserCreationImpl _value,
+      $Res Function(_$WaitingUserCreationImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_WaitingUserCreation implements _WaitingUserCreation {
-  const _$_WaitingUserCreation();
+class _$WaitingUserCreationImpl implements _WaitingUserCreation {
+  const _$WaitingUserCreationImpl();
 
   @override
   String toString() {
@@ -8682,9 +7226,10 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_WaitingUserCreation);
+        (other.runtimeType == runtimeType &&
+            other is _$WaitingUserCreationImpl);
   }
 
   @override
@@ -8706,12 +7251,12 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initializing,
-    TResult Function()? notAuthed,
-    TResult Function()? waitingUserCreation,
-    TResult Function()? needUserInformation,
-    TResult Function(dynamic user)? authed,
-    TResult Function(String error)? error,
+    TResult? Function()? initializing,
+    TResult? Function()? notAuthed,
+    TResult? Function()? waitingUserCreation,
+    TResult? Function()? needUserInformation,
+    TResult? Function(dynamic user)? authed,
+    TResult? Function(String error)? error,
   }) {
     return waitingUserCreation?.call();
   }
@@ -8749,12 +7294,12 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitializingAuth value)? initializing,
-    TResult Function(_NotAuthed value)? notAuthed,
-    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
-    TResult Function(_NeedUserInformation value)? needUserInformation,
-    TResult Function(_Authed value)? authed,
-    TResult Function(_AuthError value)? error,
+    TResult? Function(_InitializingAuth value)? initializing,
+    TResult? Function(_NotAuthed value)? notAuthed,
+    TResult? Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult? Function(_NeedUserInformation value)? needUserInformation,
+    TResult? Function(_Authed value)? authed,
+    TResult? Function(_AuthError value)? error,
   }) {
     return waitingUserCreation?.call(this);
   }
@@ -8778,32 +7323,29 @@ class _$_WaitingUserCreation implements _WaitingUserCreation {
 }
 
 abstract class _WaitingUserCreation implements AuthState {
-  const factory _WaitingUserCreation() = _$_WaitingUserCreation;
+  const factory _WaitingUserCreation() = _$WaitingUserCreationImpl;
 }
 
 /// @nodoc
-abstract class _$$_NeedUserInformationCopyWith<$Res> {
-  factory _$$_NeedUserInformationCopyWith(_$_NeedUserInformation value,
-          $Res Function(_$_NeedUserInformation) then) =
-      __$$_NeedUserInformationCopyWithImpl<$Res>;
+abstract class _$$NeedUserInformationImplCopyWith<$Res> {
+  factory _$$NeedUserInformationImplCopyWith(_$NeedUserInformationImpl value,
+          $Res Function(_$NeedUserInformationImpl) then) =
+      __$$NeedUserInformationImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NeedUserInformationCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_NeedUserInformationCopyWith<$Res> {
-  __$$_NeedUserInformationCopyWithImpl(_$_NeedUserInformation _value,
-      $Res Function(_$_NeedUserInformation) _then)
-      : super(_value, (v) => _then(v as _$_NeedUserInformation));
-
-  @override
-  _$_NeedUserInformation get _value => super._value as _$_NeedUserInformation;
+class __$$NeedUserInformationImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$NeedUserInformationImpl>
+    implements _$$NeedUserInformationImplCopyWith<$Res> {
+  __$$NeedUserInformationImplCopyWithImpl(_$NeedUserInformationImpl _value,
+      $Res Function(_$NeedUserInformationImpl) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_NeedUserInformation implements _NeedUserInformation {
-  const _$_NeedUserInformation();
+class _$NeedUserInformationImpl implements _NeedUserInformation {
+  const _$NeedUserInformationImpl();
 
   @override
   String toString() {
@@ -8811,9 +7353,10 @@ class _$_NeedUserInformation implements _NeedUserInformation {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_NeedUserInformation);
+        (other.runtimeType == runtimeType &&
+            other is _$NeedUserInformationImpl);
   }
 
   @override
@@ -8835,12 +7378,12 @@ class _$_NeedUserInformation implements _NeedUserInformation {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initializing,
-    TResult Function()? notAuthed,
-    TResult Function()? waitingUserCreation,
-    TResult Function()? needUserInformation,
-    TResult Function(dynamic user)? authed,
-    TResult Function(String error)? error,
+    TResult? Function()? initializing,
+    TResult? Function()? notAuthed,
+    TResult? Function()? waitingUserCreation,
+    TResult? Function()? needUserInformation,
+    TResult? Function(dynamic user)? authed,
+    TResult? Function(String error)? error,
   }) {
     return needUserInformation?.call();
   }
@@ -8878,12 +7421,12 @@ class _$_NeedUserInformation implements _NeedUserInformation {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitializingAuth value)? initializing,
-    TResult Function(_NotAuthed value)? notAuthed,
-    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
-    TResult Function(_NeedUserInformation value)? needUserInformation,
-    TResult Function(_Authed value)? authed,
-    TResult Function(_AuthError value)? error,
+    TResult? Function(_InitializingAuth value)? initializing,
+    TResult? Function(_NotAuthed value)? notAuthed,
+    TResult? Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult? Function(_NeedUserInformation value)? needUserInformation,
+    TResult? Function(_Authed value)? authed,
+    TResult? Function(_AuthError value)? error,
   }) {
     return needUserInformation?.call(this);
   }
@@ -8907,31 +7450,33 @@ class _$_NeedUserInformation implements _NeedUserInformation {
 }
 
 abstract class _NeedUserInformation implements AuthState {
-  const factory _NeedUserInformation() = _$_NeedUserInformation;
+  const factory _NeedUserInformation() = _$NeedUserInformationImpl;
 }
 
 /// @nodoc
-abstract class _$$_AuthedCopyWith<$Res> {
-  factory _$$_AuthedCopyWith(_$_Authed value, $Res Function(_$_Authed) then) =
-      __$$_AuthedCopyWithImpl<$Res>;
+abstract class _$$AuthedImplCopyWith<$Res> {
+  factory _$$AuthedImplCopyWith(
+          _$AuthedImpl value, $Res Function(_$AuthedImpl) then) =
+      __$$AuthedImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({dynamic user});
 }
 
 /// @nodoc
-class __$$_AuthedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_AuthedCopyWith<$Res> {
-  __$$_AuthedCopyWithImpl(_$_Authed _value, $Res Function(_$_Authed) _then)
-      : super(_value, (v) => _then(v as _$_Authed));
+class __$$AuthedImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$AuthedImpl>
+    implements _$$AuthedImplCopyWith<$Res> {
+  __$$AuthedImplCopyWithImpl(
+      _$AuthedImpl _value, $Res Function(_$AuthedImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_Authed get _value => super._value as _$_Authed;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? user = freezed,
   }) {
-    return _then(_$_Authed(
-      user == freezed
+    return _then(_$AuthedImpl(
+      freezed == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
               as dynamic,
@@ -8941,8 +7486,8 @@ class __$$_AuthedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Authed implements _Authed {
-  const _$_Authed(this.user);
+class _$AuthedImpl implements _Authed {
+  const _$AuthedImpl(this.user);
 
   @override
   final dynamic user;
@@ -8953,10 +7498,10 @@ class _$_Authed implements _Authed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Authed &&
+            other is _$AuthedImpl &&
             const DeepCollectionEquality().equals(other.user, user));
   }
 
@@ -8966,8 +7511,9 @@ class _$_Authed implements _Authed {
 
   @JsonKey(ignore: true)
   @override
-  _$$_AuthedCopyWith<_$_Authed> get copyWith =>
-      __$$_AuthedCopyWithImpl<_$_Authed>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$AuthedImplCopyWith<_$AuthedImpl> get copyWith =>
+      __$$AuthedImplCopyWithImpl<_$AuthedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -8985,12 +7531,12 @@ class _$_Authed implements _Authed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initializing,
-    TResult Function()? notAuthed,
-    TResult Function()? waitingUserCreation,
-    TResult Function()? needUserInformation,
-    TResult Function(dynamic user)? authed,
-    TResult Function(String error)? error,
+    TResult? Function()? initializing,
+    TResult? Function()? notAuthed,
+    TResult? Function()? waitingUserCreation,
+    TResult? Function()? needUserInformation,
+    TResult? Function(dynamic user)? authed,
+    TResult? Function(String error)? error,
   }) {
     return authed?.call(user);
   }
@@ -9028,12 +7574,12 @@ class _$_Authed implements _Authed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitializingAuth value)? initializing,
-    TResult Function(_NotAuthed value)? notAuthed,
-    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
-    TResult Function(_NeedUserInformation value)? needUserInformation,
-    TResult Function(_Authed value)? authed,
-    TResult Function(_AuthError value)? error,
+    TResult? Function(_InitializingAuth value)? initializing,
+    TResult? Function(_NotAuthed value)? notAuthed,
+    TResult? Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult? Function(_NeedUserInformation value)? needUserInformation,
+    TResult? Function(_Authed value)? authed,
+    TResult? Function(_AuthError value)? error,
   }) {
     return authed?.call(this);
   }
@@ -9057,38 +7603,38 @@ class _$_Authed implements _Authed {
 }
 
 abstract class _Authed implements AuthState {
-  const factory _Authed(final dynamic user) = _$_Authed;
+  const factory _Authed(final dynamic user) = _$AuthedImpl;
 
   dynamic get user;
   @JsonKey(ignore: true)
-  _$$_AuthedCopyWith<_$_Authed> get copyWith =>
+  _$$AuthedImplCopyWith<_$AuthedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_AuthErrorCopyWith<$Res> {
-  factory _$$_AuthErrorCopyWith(
-          _$_AuthError value, $Res Function(_$_AuthError) then) =
-      __$$_AuthErrorCopyWithImpl<$Res>;
+abstract class _$$AuthErrorImplCopyWith<$Res> {
+  factory _$$AuthErrorImplCopyWith(
+          _$AuthErrorImpl value, $Res Function(_$AuthErrorImpl) then) =
+      __$$AuthErrorImplCopyWithImpl<$Res>;
+  @useResult
   $Res call({String error});
 }
 
 /// @nodoc
-class __$$_AuthErrorCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
-    implements _$$_AuthErrorCopyWith<$Res> {
-  __$$_AuthErrorCopyWithImpl(
-      _$_AuthError _value, $Res Function(_$_AuthError) _then)
-      : super(_value, (v) => _then(v as _$_AuthError));
+class __$$AuthErrorImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$AuthErrorImpl>
+    implements _$$AuthErrorImplCopyWith<$Res> {
+  __$$AuthErrorImplCopyWithImpl(
+      _$AuthErrorImpl _value, $Res Function(_$AuthErrorImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_AuthError get _value => super._value as _$_AuthError;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? error = freezed,
+    Object? error = null,
   }) {
-    return _then(_$_AuthError(
-      error == freezed
+    return _then(_$AuthErrorImpl(
+      null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
               as String,
@@ -9098,8 +7644,8 @@ class __$$_AuthErrorCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AuthError implements _AuthError {
-  const _$_AuthError(this.error);
+class _$AuthErrorImpl implements _AuthError {
+  const _$AuthErrorImpl(this.error);
 
   @override
   final String error;
@@ -9110,21 +7656,21 @@ class _$_AuthError implements _AuthError {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AuthError &&
-            const DeepCollectionEquality().equals(other.error, error));
+            other is _$AuthErrorImpl &&
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+  int get hashCode => Object.hash(runtimeType, error);
 
   @JsonKey(ignore: true)
   @override
-  _$$_AuthErrorCopyWith<_$_AuthError> get copyWith =>
-      __$$_AuthErrorCopyWithImpl<_$_AuthError>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$AuthErrorImplCopyWith<_$AuthErrorImpl> get copyWith =>
+      __$$AuthErrorImplCopyWithImpl<_$AuthErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -9142,12 +7688,12 @@ class _$_AuthError implements _AuthError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initializing,
-    TResult Function()? notAuthed,
-    TResult Function()? waitingUserCreation,
-    TResult Function()? needUserInformation,
-    TResult Function(dynamic user)? authed,
-    TResult Function(String error)? error,
+    TResult? Function()? initializing,
+    TResult? Function()? notAuthed,
+    TResult? Function()? waitingUserCreation,
+    TResult? Function()? needUserInformation,
+    TResult? Function(dynamic user)? authed,
+    TResult? Function(String error)? error,
   }) {
     return error?.call(this.error);
   }
@@ -9185,12 +7731,12 @@ class _$_AuthError implements _AuthError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_InitializingAuth value)? initializing,
-    TResult Function(_NotAuthed value)? notAuthed,
-    TResult Function(_WaitingUserCreation value)? waitingUserCreation,
-    TResult Function(_NeedUserInformation value)? needUserInformation,
-    TResult Function(_Authed value)? authed,
-    TResult Function(_AuthError value)? error,
+    TResult? Function(_InitializingAuth value)? initializing,
+    TResult? Function(_NotAuthed value)? notAuthed,
+    TResult? Function(_WaitingUserCreation value)? waitingUserCreation,
+    TResult? Function(_NeedUserInformation value)? needUserInformation,
+    TResult? Function(_Authed value)? authed,
+    TResult? Function(_AuthError value)? error,
   }) {
     return error?.call(this);
   }
@@ -9214,11 +7760,11 @@ class _$_AuthError implements _AuthError {
 }
 
 abstract class _AuthError implements AuthState {
-  const factory _AuthError(final String error) = _$_AuthError;
+  const factory _AuthError(final String error) = _$AuthErrorImpl;
 
   String get error;
   @JsonKey(ignore: true)
-  _$$_AuthErrorCopyWith<_$_AuthError> get copyWith =>
+  _$$AuthErrorImplCopyWith<_$AuthErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -9247,7 +7793,8 @@ mixin _$SignInTheme {
 abstract class $SignInThemeCopyWith<$Res> {
   factory $SignInThemeCopyWith(
           SignInTheme value, $Res Function(SignInTheme) then) =
-      _$SignInThemeCopyWithImpl<$Res>;
+      _$SignInThemeCopyWithImpl<$Res, SignInTheme>;
+  @useResult
   $Res call(
       {double maxWidth,
       double buttonRadius,
@@ -9265,93 +7812,97 @@ abstract class $SignInThemeCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SignInThemeCopyWithImpl<$Res> implements $SignInThemeCopyWith<$Res> {
+class _$SignInThemeCopyWithImpl<$Res, $Val extends SignInTheme>
+    implements $SignInThemeCopyWith<$Res> {
   _$SignInThemeCopyWithImpl(this._value, this._then);
 
-  final SignInTheme _value;
   // ignore: unused_field
-  final $Res Function(SignInTheme) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? maxWidth = freezed,
-    Object? buttonRadius = freezed,
-    Object? buttonPadding = freezed,
+    Object? maxWidth = null,
+    Object? buttonRadius = null,
+    Object? buttonPadding = null,
     Object? backgroundImage = freezed,
-    Object? primaryColor = freezed,
-    Object? scaffoldBackgroundColor = freezed,
-    Object? textColor = freezed,
-    Object? buttonBackgroundColor = freezed,
-    Object? buttonTextColor = freezed,
-    Object? borderColor = freezed,
-    Object? dividerColor = freezed,
-    Object? buttonFontSize = freezed,
-    Object? spaceBetweenButtons = freezed,
+    Object? primaryColor = null,
+    Object? scaffoldBackgroundColor = null,
+    Object? textColor = null,
+    Object? buttonBackgroundColor = null,
+    Object? buttonTextColor = null,
+    Object? borderColor = null,
+    Object? dividerColor = null,
+    Object? buttonFontSize = null,
+    Object? spaceBetweenButtons = null,
   }) {
     return _then(_value.copyWith(
-      maxWidth: maxWidth == freezed
+      maxWidth: null == maxWidth
           ? _value.maxWidth
           : maxWidth // ignore: cast_nullable_to_non_nullable
               as double,
-      buttonRadius: buttonRadius == freezed
+      buttonRadius: null == buttonRadius
           ? _value.buttonRadius
           : buttonRadius // ignore: cast_nullable_to_non_nullable
               as double,
-      buttonPadding: buttonPadding == freezed
+      buttonPadding: null == buttonPadding
           ? _value.buttonPadding
           : buttonPadding // ignore: cast_nullable_to_non_nullable
               as double,
-      backgroundImage: backgroundImage == freezed
+      backgroundImage: freezed == backgroundImage
           ? _value.backgroundImage
           : backgroundImage // ignore: cast_nullable_to_non_nullable
               as String?,
-      primaryColor: primaryColor == freezed
+      primaryColor: null == primaryColor
           ? _value.primaryColor
           : primaryColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
-      scaffoldBackgroundColor: scaffoldBackgroundColor == freezed
+      scaffoldBackgroundColor: null == scaffoldBackgroundColor
           ? _value.scaffoldBackgroundColor
           : scaffoldBackgroundColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
-      textColor: textColor == freezed
+      textColor: null == textColor
           ? _value.textColor
           : textColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
-      buttonBackgroundColor: buttonBackgroundColor == freezed
+      buttonBackgroundColor: null == buttonBackgroundColor
           ? _value.buttonBackgroundColor
           : buttonBackgroundColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
-      buttonTextColor: buttonTextColor == freezed
+      buttonTextColor: null == buttonTextColor
           ? _value.buttonTextColor
           : buttonTextColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
-      borderColor: borderColor == freezed
+      borderColor: null == borderColor
           ? _value.borderColor
           : borderColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
-      dividerColor: dividerColor == freezed
+      dividerColor: null == dividerColor
           ? _value.dividerColor
           : dividerColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
-      buttonFontSize: buttonFontSize == freezed
+      buttonFontSize: null == buttonFontSize
           ? _value.buttonFontSize
           : buttonFontSize // ignore: cast_nullable_to_non_nullable
               as double,
-      spaceBetweenButtons: spaceBetweenButtons == freezed
+      spaceBetweenButtons: null == spaceBetweenButtons
           ? _value.spaceBetweenButtons
           : spaceBetweenButtons // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_SignInThemeCopyWith<$Res>
+abstract class _$$SignInThemeImplCopyWith<$Res>
     implements $SignInThemeCopyWith<$Res> {
-  factory _$$_SignInThemeCopyWith(
-          _$_SignInTheme value, $Res Function(_$_SignInTheme) then) =
-      __$$_SignInThemeCopyWithImpl<$Res>;
+  factory _$$SignInThemeImplCopyWith(
+          _$SignInThemeImpl value, $Res Function(_$SignInThemeImpl) then) =
+      __$$SignInThemeImplCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {double maxWidth,
       double buttonRadius,
@@ -9369,81 +7920,80 @@ abstract class _$$_SignInThemeCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
-    implements _$$_SignInThemeCopyWith<$Res> {
-  __$$_SignInThemeCopyWithImpl(
-      _$_SignInTheme _value, $Res Function(_$_SignInTheme) _then)
-      : super(_value, (v) => _then(v as _$_SignInTheme));
+class __$$SignInThemeImplCopyWithImpl<$Res>
+    extends _$SignInThemeCopyWithImpl<$Res, _$SignInThemeImpl>
+    implements _$$SignInThemeImplCopyWith<$Res> {
+  __$$SignInThemeImplCopyWithImpl(
+      _$SignInThemeImpl _value, $Res Function(_$SignInThemeImpl) _then)
+      : super(_value, _then);
 
-  @override
-  _$_SignInTheme get _value => super._value as _$_SignInTheme;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? maxWidth = freezed,
-    Object? buttonRadius = freezed,
-    Object? buttonPadding = freezed,
+    Object? maxWidth = null,
+    Object? buttonRadius = null,
+    Object? buttonPadding = null,
     Object? backgroundImage = freezed,
-    Object? primaryColor = freezed,
-    Object? scaffoldBackgroundColor = freezed,
-    Object? textColor = freezed,
-    Object? buttonBackgroundColor = freezed,
-    Object? buttonTextColor = freezed,
-    Object? borderColor = freezed,
-    Object? dividerColor = freezed,
-    Object? buttonFontSize = freezed,
-    Object? spaceBetweenButtons = freezed,
+    Object? primaryColor = null,
+    Object? scaffoldBackgroundColor = null,
+    Object? textColor = null,
+    Object? buttonBackgroundColor = null,
+    Object? buttonTextColor = null,
+    Object? borderColor = null,
+    Object? dividerColor = null,
+    Object? buttonFontSize = null,
+    Object? spaceBetweenButtons = null,
   }) {
-    return _then(_$_SignInTheme(
-      maxWidth: maxWidth == freezed
+    return _then(_$SignInThemeImpl(
+      maxWidth: null == maxWidth
           ? _value.maxWidth
           : maxWidth // ignore: cast_nullable_to_non_nullable
               as double,
-      buttonRadius: buttonRadius == freezed
+      buttonRadius: null == buttonRadius
           ? _value.buttonRadius
           : buttonRadius // ignore: cast_nullable_to_non_nullable
               as double,
-      buttonPadding: buttonPadding == freezed
+      buttonPadding: null == buttonPadding
           ? _value.buttonPadding
           : buttonPadding // ignore: cast_nullable_to_non_nullable
               as double,
-      backgroundImage: backgroundImage == freezed
+      backgroundImage: freezed == backgroundImage
           ? _value.backgroundImage
           : backgroundImage // ignore: cast_nullable_to_non_nullable
               as String?,
-      primaryColor: primaryColor == freezed
+      primaryColor: null == primaryColor
           ? _value.primaryColor
           : primaryColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
-      scaffoldBackgroundColor: scaffoldBackgroundColor == freezed
+      scaffoldBackgroundColor: null == scaffoldBackgroundColor
           ? _value.scaffoldBackgroundColor
           : scaffoldBackgroundColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
-      textColor: textColor == freezed
+      textColor: null == textColor
           ? _value.textColor
           : textColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
-      buttonBackgroundColor: buttonBackgroundColor == freezed
+      buttonBackgroundColor: null == buttonBackgroundColor
           ? _value.buttonBackgroundColor
           : buttonBackgroundColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
-      buttonTextColor: buttonTextColor == freezed
+      buttonTextColor: null == buttonTextColor
           ? _value.buttonTextColor
           : buttonTextColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
-      borderColor: borderColor == freezed
+      borderColor: null == borderColor
           ? _value.borderColor
           : borderColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
-      dividerColor: dividerColor == freezed
+      dividerColor: null == dividerColor
           ? _value.dividerColor
           : dividerColor // ignore: cast_nullable_to_non_nullable
               as ui.Color,
-      buttonFontSize: buttonFontSize == freezed
+      buttonFontSize: null == buttonFontSize
           ? _value.buttonFontSize
           : buttonFontSize // ignore: cast_nullable_to_non_nullable
               as double,
-      spaceBetweenButtons: spaceBetweenButtons == freezed
+      spaceBetweenButtons: null == spaceBetweenButtons
           ? _value.spaceBetweenButtons
           : spaceBetweenButtons // ignore: cast_nullable_to_non_nullable
               as double,
@@ -9453,8 +8003,8 @@ class __$$_SignInThemeCopyWithImpl<$Res> extends _$SignInThemeCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignInTheme implements _SignInTheme {
-  const _$_SignInTheme(
+class _$SignInThemeImpl implements _SignInTheme {
+  const _$SignInThemeImpl(
       {this.maxWidth = 400,
       this.buttonRadius = 8.0,
       this.buttonPadding = 16.0,
@@ -9507,57 +8057,61 @@ class _$_SignInTheme implements _SignInTheme {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SignInTheme &&
-            const DeepCollectionEquality().equals(other.maxWidth, maxWidth) &&
-            const DeepCollectionEquality()
-                .equals(other.buttonRadius, buttonRadius) &&
-            const DeepCollectionEquality()
-                .equals(other.buttonPadding, buttonPadding) &&
-            const DeepCollectionEquality()
-                .equals(other.backgroundImage, backgroundImage) &&
-            const DeepCollectionEquality()
-                .equals(other.primaryColor, primaryColor) &&
-            const DeepCollectionEquality().equals(
-                other.scaffoldBackgroundColor, scaffoldBackgroundColor) &&
-            const DeepCollectionEquality().equals(other.textColor, textColor) &&
-            const DeepCollectionEquality()
-                .equals(other.buttonBackgroundColor, buttonBackgroundColor) &&
-            const DeepCollectionEquality()
-                .equals(other.buttonTextColor, buttonTextColor) &&
-            const DeepCollectionEquality()
-                .equals(other.borderColor, borderColor) &&
-            const DeepCollectionEquality()
-                .equals(other.dividerColor, dividerColor) &&
-            const DeepCollectionEquality()
-                .equals(other.buttonFontSize, buttonFontSize) &&
-            const DeepCollectionEquality()
-                .equals(other.spaceBetweenButtons, spaceBetweenButtons));
+            other is _$SignInThemeImpl &&
+            (identical(other.maxWidth, maxWidth) ||
+                other.maxWidth == maxWidth) &&
+            (identical(other.buttonRadius, buttonRadius) ||
+                other.buttonRadius == buttonRadius) &&
+            (identical(other.buttonPadding, buttonPadding) ||
+                other.buttonPadding == buttonPadding) &&
+            (identical(other.backgroundImage, backgroundImage) ||
+                other.backgroundImage == backgroundImage) &&
+            (identical(other.primaryColor, primaryColor) ||
+                other.primaryColor == primaryColor) &&
+            (identical(
+                    other.scaffoldBackgroundColor, scaffoldBackgroundColor) ||
+                other.scaffoldBackgroundColor == scaffoldBackgroundColor) &&
+            (identical(other.textColor, textColor) ||
+                other.textColor == textColor) &&
+            (identical(other.buttonBackgroundColor, buttonBackgroundColor) ||
+                other.buttonBackgroundColor == buttonBackgroundColor) &&
+            (identical(other.buttonTextColor, buttonTextColor) ||
+                other.buttonTextColor == buttonTextColor) &&
+            (identical(other.borderColor, borderColor) ||
+                other.borderColor == borderColor) &&
+            (identical(other.dividerColor, dividerColor) ||
+                other.dividerColor == dividerColor) &&
+            (identical(other.buttonFontSize, buttonFontSize) ||
+                other.buttonFontSize == buttonFontSize) &&
+            (identical(other.spaceBetweenButtons, spaceBetweenButtons) ||
+                other.spaceBetweenButtons == spaceBetweenButtons));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(maxWidth),
-      const DeepCollectionEquality().hash(buttonRadius),
-      const DeepCollectionEquality().hash(buttonPadding),
-      const DeepCollectionEquality().hash(backgroundImage),
-      const DeepCollectionEquality().hash(primaryColor),
-      const DeepCollectionEquality().hash(scaffoldBackgroundColor),
-      const DeepCollectionEquality().hash(textColor),
-      const DeepCollectionEquality().hash(buttonBackgroundColor),
-      const DeepCollectionEquality().hash(buttonTextColor),
-      const DeepCollectionEquality().hash(borderColor),
-      const DeepCollectionEquality().hash(dividerColor),
-      const DeepCollectionEquality().hash(buttonFontSize),
-      const DeepCollectionEquality().hash(spaceBetweenButtons));
+      maxWidth,
+      buttonRadius,
+      buttonPadding,
+      backgroundImage,
+      primaryColor,
+      scaffoldBackgroundColor,
+      textColor,
+      buttonBackgroundColor,
+      buttonTextColor,
+      borderColor,
+      dividerColor,
+      buttonFontSize,
+      spaceBetweenButtons);
 
   @JsonKey(ignore: true)
   @override
-  _$$_SignInThemeCopyWith<_$_SignInTheme> get copyWith =>
-      __$$_SignInThemeCopyWithImpl<_$_SignInTheme>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$SignInThemeImplCopyWith<_$SignInThemeImpl> get copyWith =>
+      __$$SignInThemeImplCopyWithImpl<_$SignInThemeImpl>(this, _$identity);
 }
 
 abstract class _SignInTheme implements SignInTheme {
@@ -9574,7 +8128,7 @@ abstract class _SignInTheme implements SignInTheme {
       required final ui.Color borderColor,
       required final ui.Color dividerColor,
       final double buttonFontSize,
-      final double spaceBetweenButtons}) = _$_SignInTheme;
+      final double spaceBetweenButtons}) = _$SignInThemeImpl;
 
   @override
   double get maxWidth;
@@ -9604,6 +8158,6 @@ abstract class _SignInTheme implements SignInTheme {
   double get spaceBetweenButtons;
   @override
   @JsonKey(ignore: true)
-  _$$_SignInThemeCopyWith<_$_SignInTheme> get copyWith =>
+  _$$SignInThemeImplCopyWith<_$SignInThemeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
