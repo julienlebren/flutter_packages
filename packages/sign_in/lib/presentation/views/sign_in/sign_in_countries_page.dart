@@ -1,5 +1,5 @@
 part of '../../../sign_in.dart';
-
+/*
 /// A provider which returns the list of the country from Libphonenumber
 /// sorted by country name.
 ///
@@ -157,3 +157,4 @@ class CountryItem extends ConsumerWidget {
         (match) => String.fromCharCode(match.group(0)!.codeUnitAt(0) + 127397));
   }
 }
+*/

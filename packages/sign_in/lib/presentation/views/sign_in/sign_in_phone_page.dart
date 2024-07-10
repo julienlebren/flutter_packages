@@ -1,5 +1,5 @@
 part of '../../../sign_in.dart';
-
+/*
 /// Handles a `SignInPhoneEvent` in the [SignInPhoneController]
 /// This function avoids too much code repetition in this file
 void _handlePhoneEvent(WidgetRef ref, SignInPhoneEvent event) {
@@ -69,7 +69,7 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
     });
   }
 
-  void _onCountryChanged(CountryWithPhoneCode country) {
+  /*void _onCountryChanged(CountryWithPhoneCode country) {
     _handlePhoneEvent(ref, SignInPhoneEvent.countryChanged(country));
     controller.clear();
     focusNode.requestFocus();
@@ -92,9 +92,9 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
       final navigator = SignInNavigatorKeys.modal.currentState!;
       navigator.pushNamed(SignInRoutes.signInCountriesPage);
     }
-  }
+  }*/
 
-  LibPhonenumberTextFormatter phoneNumberFormatter(
+  /*LibPhonenumberTextFormatter phoneNumberFormatter(
       CountryWithPhoneCode country) {
     return LibPhonenumberTextFormatter(
       phoneNumberType: PhoneNumberType.mobile,
@@ -104,7 +104,7 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
         _handlePhoneEvent(ref, SignInPhoneEvent.phoneChanged(input));
       },
     );
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -115,7 +115,7 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
       children: [
         SignInTappableField(
           label: state.country.countryName!,
-          onPressed: () => _openCountries(context, state.country),
+          //onPressed: () => _openCountries(context, state.country),
         ),
         const SignInDivider(),
         const SizedBox(height: 8),
@@ -128,7 +128,7 @@ class _SignInPhoneFormState extends ConsumerState<SignInPhoneForm> {
                   state.country.exampleNumberMobileNational!,
                 )
               : null,
-          inputFormatters: [phoneNumberFormatter(state.country)],
+          //inputFormatters: [phoneNumberFormatter(state.country)],
         ),
         if (isCupertino()) const SignInDivider(),
         if (isMaterial()) const SignInPhoneAutoRetrieve(),
@@ -161,3 +161,4 @@ class SignInPhoneAutoRetrieve extends ConsumerWidget {
     );
   }
 }
+*/

@@ -1,5 +1,5 @@
 part of '../../sign_in.dart';
-
+/*
 /// This value intends to prevent user from requesting new code
 /// too quickly of he does not receive the code instantly.
 const delayBeforeUserCanRequestNewCode = 60;
@@ -169,3 +169,4 @@ class SignInPhoneVerificationController
     }
   }
 }
+*/

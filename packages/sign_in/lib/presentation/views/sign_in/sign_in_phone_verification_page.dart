@@ -1,5 +1,5 @@
 part of '../../../sign_in.dart';
-
+/*
 /// Handles a `SignInPhoneVerificationEvent` in the [SignInPhoneVerificationController]
 /// This function avoids too much code repetition in this file
 void _handlePhoneVerificationEvent(
@@ -141,3 +141,4 @@ class SignInVerificationResendButton extends ConsumerWidget {
     }
   }
 }
+*/

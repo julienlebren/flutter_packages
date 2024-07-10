@@ -65,7 +65,7 @@ class SignInRouter {
           return platformPageRoute(
             builder: (_) => const SignInEmailResetPage(),
           );
-        case SignInRoutes.signInPhonePage:
+        /*case SignInRoutes.signInPhonePage:
           return MaterialWithModalsPageRoute(
             builder: (_) => const SignInPhonePage(),
           );
@@ -77,7 +77,7 @@ class SignInRouter {
           return platformPageRoute(
             builder: (_) => const CountriesPage(),
             fullscreenDialog: true,
-          );
+          );*/
       }
 
       final signInCustomRouter = ref.read(signInCustomRouterProvider);

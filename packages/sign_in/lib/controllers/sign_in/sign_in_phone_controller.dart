@@ -1,5 +1,5 @@
 part of '../../sign_in.dart';
-
+/*
 /// Creates an instance of [SignInPhoneController]
 ///
 /// We are using [StateNotifierProvider] here as a
@@ -125,3 +125,4 @@ class SignInPhoneController extends StateNotifier<SignInPhoneState> {
     }
   }
 }
+*/
