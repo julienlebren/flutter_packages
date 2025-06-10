@@ -1,4 +1,8 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
 import 'sign_in_localizations.dart';
+
+// ignore_for_file: type=lint
 
 /// The translations for French (`fr`).
 class SignInLocalizationsFr extends SignInLocalizations {
@@ -14,7 +18,8 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get emailResetTitle => 'Mot de passe oublié';
 
   @override
-  String get emailResetSubtitle => 'Saisissez votre e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe.';
+  String get emailResetSubtitle =>
+      'Saisissez votre e-mail et nous vous enverrons un lien pour réinitialiser votre mot de passe.';
 
   @override
   String get emailResetSubmitButton => 'Rénitialiser le mot de passe';
@@ -31,7 +36,8 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get errorTitle => 'Aïe ! Il y a eu un problème...';
 
   @override
-  String get passwordRequirements => 'Le mot de passe doit remplir les conditions suivantes :';
+  String get passwordRequirements =>
+      'Le mot de passe doit remplir les conditions suivantes :';
 
   @override
   String get passwordRequirementMinLength => '6 caractères minimum';
@@ -63,13 +69,15 @@ class SignInLocalizationsFr extends SignInLocalizations {
   }
 
   @override
-  String get settingsNoAccount => 'Vous n\'êtes actuellement pas connecté, vos réglages et autres données ne sont pas sauvegardées et pourraient être perdus. Appuyez ici pour créer un compte.';
+  String get settingsNoAccount =>
+      'Vous n\'êtes actuellement pas connecté, vos réglages et autres données ne sont pas sauvegardées et pourraient être perdus. Appuyez ici pour créer un compte.';
 
   @override
   String get settingsDeleteTitle => 'Supprimer le compte';
 
   @override
-  String get settingsDeleteCaption => 'Les informations de votre compte, votre profil, ainsi que toutes les données enregegistrées dans l\'app seront supprimées.';
+  String get settingsDeleteCaption =>
+      'Les informations de votre compte, votre profil, ainsi que toutes les données enregegistrées dans l\'app seront supprimées.';
 
   @override
   String get settingsDeleteButton => 'Supprimer le compte';
@@ -99,13 +107,15 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get settingsPasswordPlaceholder => 'Nouveau mot de passe';
 
   @override
-  String get settingsPasswordConfirmationPlaceholder => 'Confirmez le mot de passe';
+  String get settingsPasswordConfirmationPlaceholder =>
+      'Confirmez le mot de passe';
 
   @override
   String get settingsPasswordEdit => 'Modifier';
 
   @override
-  String get settingsPasswordUndefinedCaption => 'Vous n\'avez pas encore défini de mot de passe, vous ne pourrez donc pas vous connecter à votre compte en utilisant votre adresse e-mail et votre mot de passe. Seule la connexion via un compte tiers sera fonctionnelle.';
+  String get settingsPasswordUndefinedCaption =>
+      'Vous n\'avez pas encore défini de mot de passe, vous ne pourrez donc pas vous connecter à votre compte en utilisant votre adresse e-mail et votre mot de passe. Seule la connexion via un compte tiers sera fonctionnelle.';
 
   @override
   String get settingsThirdPartySectionTitle => 'Connexion via un compte tiers';
@@ -117,13 +127,15 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get settingsThirdPartyNotConnected => 'Non connecté';
 
   @override
-  String get settingsThirdPartyCaption => 'Vous pouvez cumuler plusieurs méthodes de connexion afin de sécuriser l\'accès à votre compte.';
+  String get settingsThirdPartyCaption =>
+      'Vous pouvez cumuler plusieurs méthodes de connexion afin de sécuriser l\'accès à votre compte.';
 
   @override
   String get settingsLogoutButton => 'Déconnexion';
 
   @override
-  String get settingsLogoutConfirmation => 'Êtes-vous sûr de vouloir vous déconnecter ?';
+  String get settingsLogoutConfirmation =>
+      'Êtes-vous sûr de vouloir vous déconnecter ?';
 
   @override
   String get settingsUndefined => 'Non défini';
@@ -146,16 +158,20 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get signInWithEmailLinkTitle => 'S\'identifier avec un e-mail';
 
   @override
-  String get signInWithEmailLinkSubtitle => 'No password required, we just send you an email with a link to log in to the app.';
+  String get signInWithEmailLinkSubtitle =>
+      'No password required, we just send you an email with a link to log in to the app.';
 
   @override
-  String get signInWithEmailLinkSuccess => 'Vérifiez vos e-mails, nous vous avons envoyé un lien pour vous identifier.';
+  String get signInWithEmailLinkSuccess =>
+      'Vérifiez vos e-mails, nous vous avons envoyé un lien pour vous identifier.';
 
   @override
-  String get signInWithEmailLinkRetry => 'You did not receive it? Try again or try another identification method.';
+  String get signInWithEmailLinkRetry =>
+      'You did not receive it? Try again or try another identification method.';
 
   @override
-  String get signInWithEmailCreateAccount => 'Pas encore inscrit ? Créez un compte.';
+  String get signInWithEmailCreateAccount =>
+      'Pas encore inscrit ? Créez un compte.';
 
   @override
   String get signInWithEmailForgotPassword => 'Mot de passe oublié ?';
@@ -167,7 +183,8 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get signInWithEmailPasswordPlaceholder => 'Mot de passe';
 
   @override
-  String get signInWithEmailAlreadyAccount => 'Déjà inscrit ? Identifiez-vous ici.';
+  String get signInWithEmailAlreadyAccount =>
+      'Déjà inscrit ? Identifiez-vous ici.';
 
   @override
   String get signInWithEmailRegisterButton => 'Créer un compte';
@@ -179,10 +196,12 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get signInWithEmailTitle => 'S\'identifier avec un e-mail';
 
   @override
-  String get signInWithEmailSubtitle => 'No password required, we just send you an email with a link to log in to the app.';
+  String get signInWithEmailSubtitle =>
+      'No password required, we just send you an email with a link to log in to the app.';
 
   @override
-  String get signInWithEmailInvalidPasswordConfirmation => 'Passwords do not match';
+  String get signInWithEmailInvalidPasswordConfirmation =>
+      'Passwords do not match';
 
   @override
   String get signInWithPhone => 'un numéro';
@@ -191,7 +210,8 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get signInPhoneTitle => 'Numéro de téléphone';
 
   @override
-  String get signInPhoneSubtitle => 'Nous allons envoyer un SMS pour confirmer votre numéro, cela ne vous coûtera rien.';
+  String get signInPhoneSubtitle =>
+      'Nous allons envoyer un SMS pour confirmer votre numéro, cela ne vous coûtera rien.';
 
   @override
   String signInPhonePlaceholder(String example) {
@@ -199,10 +219,12 @@ class SignInLocalizationsFr extends SignInLocalizations {
   }
 
   @override
-  String get signInPhoneAutoRetrieve => 'Vous n\'aurez peut-être pas besoin de saisir le code car l\'application tentera de le détecter automatiquement.';
+  String get signInPhoneAutoRetrieve =>
+      'Vous n\'aurez peut-être pas besoin de saisir le code car l\'application tentera de le détecter automatiquement.';
 
   @override
-  String get signInPhoneLoadingDialog => 'En attente de la détection automatique du code...';
+  String get signInPhoneLoadingDialog =>
+      'En attente de la détection automatique du code...';
 
   @override
   String get signInVerificationTitle => 'Vérification du numéro';
@@ -227,19 +249,22 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get errorInvalidEmail => 'Cette adresse e-mail n\'est pas valide.';
 
   @override
-  String get errorInvalidVerificationCode => 'Code de vérification non valide !';
+  String get errorInvalidVerificationCode =>
+      'Code de vérification non valide !';
 
   @override
   String get errorUserDisabled => 'Ce compte a été désactivé.';
 
   @override
-  String get errorUserNotFound => 'Nous n\'avons trouvé aucun compte enregistré avec cette adresse e-mail.';
+  String get errorUserNotFound =>
+      'Nous n\'avons trouvé aucun compte enregistré avec cette adresse e-mail.';
 
   @override
   String get errorWrongPassword => 'Le mot de passe est incorrect.';
 
   @override
-  String get errorEmailAlreadyInUse => 'Un compte existe déjà avec cette adresse e-mail.';
+  String get errorEmailAlreadyInUse =>
+      'Un compte existe déjà avec cette adresse e-mail.';
 
   @override
   String errorCredentialAlreadyInUse(String provider) {
@@ -250,10 +275,12 @@ class SignInLocalizationsFr extends SignInLocalizations {
   String get errorWeakPassword => 'Le mot de passe n\'est pas assez complexe.';
 
   @override
-  String get errorOperationNotAllowed => 'Cette opération n\'est pas autorisée.';
+  String get errorOperationNotAllowed =>
+      'Cette opération n\'est pas autorisée.';
 
   @override
-  String get errorPhoneNotMobile => 'Vous devez saisir un numéro de téléphone mobile.';
+  String get errorPhoneNotMobile =>
+      'Vous devez saisir un numéro de téléphone mobile.';
 
   @override
   String get errorUnknown => 'Une erreur inconnue est survenue.';

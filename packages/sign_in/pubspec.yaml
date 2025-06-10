@@ -1,10 +1,11 @@
 name: sign_in
 description: Sign-in Flow Management for Flutter & Firebase
 publish_to: 'none'
-version: 6.16.0
+version: 6.17.0
 
 environment:
-  sdk: '>=2.18.0 <3.0.0'
+  sdk: ">=3.6.0 <4.0.0"
+  flutter: ">=3.16.0"
 
 dependencies:
   flutter:
@@ -15,45 +16,45 @@ dependencies:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/extensions
-    version: ^0.11.1
+    version: ^0.12.0
   firestore_service:
     git: 
       url: https://github.com/julienlebren/flutter_packages
       path: packages/firestore_service
-    version: ^0.8.1
+    version: ^0.9.0
   firebase_storage_service:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/firebase_storage_service 
-    version: ^0.8.2
+    version: ^0.9.0
   layout_builder:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/layout_builder
-    version: ^3.11.1
+    version: ^3.12.0
   localization:
     git:
       url: https://github.com/julienlebren/flutter_packages
       path: packages/localization
-    version: ^1.6.1
-  cloud_functions: ^5.0.3
-  firebase_auth: ^5.1.2
-  freezed_annotation: ^2.4.3
-  flutter_riverpod: ^2.5.1
-  google_sign_in: ^6.2.1
-  intl: ^0.19.0
-  pinput: ^5.0.0
-  riverpod_annotation: ^2.3.5
+    version: ^1.7.0
+  cloud_functions: ^5.5.1
+  firebase_auth: ^5.5.4
+  freezed_annotation: ^2.4.4
+  flutter_riverpod: ^2.6.1
+  google_sign_in: ^6.3.0
+  intl: ^0.20.2
+  pinput: ^5.0.1
+  riverpod_annotation: ^2.6.1
   the_apple_sign_in: ^1.1.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^4.0.0
-  build_runner: ^2.4.11
-  freezed: ^2.5.2
-  json_serializable: ^6.8.0
-  riverpod_generator: ^2.4.0
+  flutter_lints: ^6.0.0
+  build_runner: ^2.4.15
+  freezed: ^2.5.8
+  json_serializable: ^6.9.5
+  riverpod_generator: ^2.6.4
 
 flutter:
   generate: true

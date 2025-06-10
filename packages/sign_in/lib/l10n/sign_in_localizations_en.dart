@@ -1,4 +1,8 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
 import 'sign_in_localizations.dart';
+
+// ignore_for_file: type=lint
 
 /// The translations for English (`en`).
 class SignInLocalizationsEn extends SignInLocalizations {
@@ -14,7 +18,8 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get emailResetTitle => 'Forgot your password';
 
   @override
-  String get emailResetSubtitle => 'Enter your email and we\'ll send you a link to reset your password.';
+  String get emailResetSubtitle =>
+      'Enter your email and we\'ll send you a link to reset your password.';
 
   @override
   String get emailResetSubmitButton => 'Reset your password';
@@ -31,7 +36,8 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get errorTitle => 'Oops! Something went wrong...';
 
   @override
-  String get passwordRequirements => 'The password must meet the following conditions:';
+  String get passwordRequirements =>
+      'The password must meet the following conditions:';
 
   @override
   String get passwordRequirementMinLength => 'Aleast 6 characters';
@@ -46,7 +52,8 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get passwordRequirementDigits => 'At least one number';
 
   @override
-  String get passwordRequirementSpecialChars => 'At least one special character';
+  String get passwordRequirementSpecialChars =>
+      'At least one special character';
 
   @override
   String get passwordRequirementMatch => 'Passwords match';
@@ -63,19 +70,22 @@ class SignInLocalizationsEn extends SignInLocalizations {
   }
 
   @override
-  String get settingsNoAccount => 'You are currently not logged in, your settings and other data are not saved and may be lost. Tap here to create an account.';
+  String get settingsNoAccount =>
+      'You are currently not logged in, your settings and other data are not saved and may be lost. Tap here to create an account.';
 
   @override
   String get settingsDeleteTitle => 'Delete account';
 
   @override
-  String get settingsDeleteCaption => 'Your account information, profile, and all data stored in the app will be deleted.';
+  String get settingsDeleteCaption =>
+      'Your account information, profile, and all data stored in the app will be deleted.';
 
   @override
   String get settingsDeleteButton => 'Delete account';
 
   @override
-  String get settingsDeleteAlertTitle => 'Are you sure you want to continue ? This action is irreversible.';
+  String get settingsDeleteAlertTitle =>
+      'Are you sure you want to continue ? This action is irreversible.';
 
   @override
   String get settingsEmailSectionTitle => 'Login information';
@@ -105,10 +115,12 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get settingsPasswordEdit => 'Change';
 
   @override
-  String get settingsPasswordUndefinedCaption => 'You haven\'t set a password yet, so you won\'t be able to log in to your account using your email address and password. Only login with third-party account will work.';
+  String get settingsPasswordUndefinedCaption =>
+      'You haven\'t set a password yet, so you won\'t be able to log in to your account using your email address and password. Only login with third-party account will work.';
 
   @override
-  String get settingsThirdPartySectionTitle => 'Login with a third-party account';
+  String get settingsThirdPartySectionTitle =>
+      'Login with a third-party account';
 
   @override
   String get settingsThirdPartyConnected => 'Connected';
@@ -117,7 +129,8 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get settingsThirdPartyNotConnected => 'Not connected';
 
   @override
-  String get settingsThirdPartyCaption => 'You can combine several connection methods to secure access to your account.';
+  String get settingsThirdPartyCaption =>
+      'You can combine several connection methods to secure access to your account.';
 
   @override
   String get settingsLogoutButton => 'Logout';
@@ -146,16 +159,20 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get signInWithEmailLinkTitle => 'Sign in with e-mail';
 
   @override
-  String get signInWithEmailLinkSubtitle => 'No password required, we just send you an email with a link to log in to the app.';
+  String get signInWithEmailLinkSubtitle =>
+      'No password required, we just send you an email with a link to log in to the app.';
 
   @override
-  String get signInWithEmailLinkSuccess => 'Check your email, we have sent a sign-in link.';
+  String get signInWithEmailLinkSuccess =>
+      'Check your email, we have sent a sign-in link.';
 
   @override
-  String get signInWithEmailLinkRetry => 'You did not receive it? Try again or try another identification method.';
+  String get signInWithEmailLinkRetry =>
+      'You did not receive it? Try again or try another identification method.';
 
   @override
-  String get signInWithEmailCreateAccount => 'Not yet registered? Create an account here.';
+  String get signInWithEmailCreateAccount =>
+      'Not yet registered? Create an account here.';
 
   @override
   String get signInWithEmailForgotPassword => 'Forgot your password?';
@@ -167,7 +184,8 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get signInWithEmailPasswordPlaceholder => 'Password';
 
   @override
-  String get signInWithEmailAlreadyAccount => 'Already have an account? Sign in here.';
+  String get signInWithEmailAlreadyAccount =>
+      'Already have an account? Sign in here.';
 
   @override
   String get signInWithEmailRegisterButton => 'Register';
@@ -179,10 +197,12 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get signInWithEmailTitle => 'Sign in with e-mail';
 
   @override
-  String get signInWithEmailSubtitle => 'No password required, we just send you an email with a link to log in to the app.';
+  String get signInWithEmailSubtitle =>
+      'No password required, we just send you an email with a link to log in to the app.';
 
   @override
-  String get signInWithEmailInvalidPasswordConfirmation => 'Passwords do not match';
+  String get signInWithEmailInvalidPasswordConfirmation =>
+      'Passwords do not match';
 
   @override
   String get signInWithPhone => 'phone number';
@@ -191,7 +211,8 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get signInPhoneTitle => 'Phone Number';
 
   @override
-  String get signInPhoneSubtitle => 'We will send an SMS to confirm your number, it won\'t cost you nothing.';
+  String get signInPhoneSubtitle =>
+      'We will send an SMS to confirm your number, it won\'t cost you nothing.';
 
   @override
   String signInPhonePlaceholder(String example) {
@@ -199,10 +220,12 @@ class SignInLocalizationsEn extends SignInLocalizations {
   }
 
   @override
-  String get signInPhoneAutoRetrieve => 'You may not need to enter the code as the app will attempt to detect it automatically.';
+  String get signInPhoneAutoRetrieve =>
+      'You may not need to enter the code as the app will attempt to detect it automatically.';
 
   @override
-  String get signInPhoneLoadingDialog => 'Waiting for automatic code detection ...';
+  String get signInPhoneLoadingDialog =>
+      'Waiting for automatic code detection ...';
 
   @override
   String get signInVerificationTitle => 'Number verification';
@@ -233,13 +256,15 @@ class SignInLocalizationsEn extends SignInLocalizations {
   String get errorUserDisabled => 'This account has been disabled.';
 
   @override
-  String get errorUserNotFound => 'There is no account registered with this email address.';
+  String get errorUserNotFound =>
+      'There is no account registered with this email address.';
 
   @override
   String get errorWrongPassword => 'Wrong password.';
 
   @override
-  String get errorEmailAlreadyInUse => 'An account is already registered with this email address.';
+  String get errorEmailAlreadyInUse =>
+      'An account is already registered with this email address.';
 
   @override
   String errorCredentialAlreadyInUse(String provider) {
