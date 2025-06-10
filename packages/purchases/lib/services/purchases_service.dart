@@ -21,6 +21,7 @@ class PurchasesService {
       if (settings.publicAppleKey == null) {
         throw UnimplementedError();
       }
+      print("settings: ${settings}");
       await Purchases.configure(PurchasesConfiguration(settings.publicAppleKey!)
         ..appUserID = settings.userId);
     }
