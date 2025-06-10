@@ -10,7 +10,7 @@ class PurchasesService {
   Offering? subscription;
 
   Future<void> setup() async {
-    if (Platform.isAndroid) {
+    if (Platform.isIOS) {
       if (settings.publicGoogleKey == null) {
         throw UnimplementedError();
       }
