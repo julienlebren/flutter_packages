@@ -1,4 +1,8 @@
+// ignore: unused_import
+import 'package:intl/intl.dart' as intl;
 import 'layout_localizations.dart';
+
+// ignore_for_file: type=lint
 
 /// The translations for French (`fr`).
 class LayoutLocalizationsFr extends LayoutLocalizations {
@@ -17,13 +21,16 @@ class LayoutLocalizationsFr extends LayoutLocalizations {
   String get errorTitle => 'Il y a eu un problème...';
 
   @override
-  String get errorDescription => 'Nous ne pouvons pas traiter votre requête pour le moment.';
+  String get errorDescription =>
+      'Nous ne pouvons pas traiter votre requête pour le moment.';
 
   @override
-  String get networkErrorTitle => 'Vous n\'êtes actuellement pas connecté à internet';
+  String get networkErrorTitle =>
+      'Vous n\'êtes actuellement pas connecté à internet';
 
   @override
-  String get networkErrorCaption => 'L\'app nécessite une connexion internet pour fonctionner, merci de vérifier vos paramètres de connexion';
+  String get networkErrorCaption =>
+      'L\'app nécessite une connexion internet pour fonctionner, merci de vérifier vos paramètres de connexion';
 
   @override
   String get networkErrorWaiting => 'En attente de connexion...';

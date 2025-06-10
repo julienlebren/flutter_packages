@@ -1,5 +1,7 @@
 import 'purchases_localizations.dart';
 
+// ignore_for_file: type=lint
+
 /// The translations for French (`fr`).
 class PurchasesLocalizationsFr extends PurchasesLocalizations {
   PurchasesLocalizationsFr([String locale = 'fr']) : super(locale);
