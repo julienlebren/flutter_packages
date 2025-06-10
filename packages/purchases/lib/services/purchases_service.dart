@@ -16,15 +16,13 @@ class PurchasesService {
       }
       await Purchases.configure(
           PurchasesConfiguration(settings.publicGoogleKey!)
-            ..appUserID = settings.userId
-            ..observerMode = false);
+            ..appUserID = settings.userId);
     } else if (Platform.isIOS) {
       if (settings.publicAppleKey == null) {
         throw UnimplementedError();
       }
       await Purchases.configure(PurchasesConfiguration(settings.publicAppleKey!)
-        ..appUserID = settings.userId
-        ..observerMode = false);
+        ..appUserID = settings.userId);
     }
   }
 
