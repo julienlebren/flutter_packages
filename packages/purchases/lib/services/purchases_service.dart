@@ -27,9 +27,10 @@ class PurchasesService {
   }
 
   Future<void> fetchOfferings() async {
+    print("fetchOfferings");
     if (subscription != null) return;
     Offerings offerings = await Purchases.getOfferings();
-    print(offerings);
+    print("offerings ${offerings}");
     final offering = offerings.current;
     if (offering != null) {
       subscription = offering;
