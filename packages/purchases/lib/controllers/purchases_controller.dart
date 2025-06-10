@@ -47,6 +47,7 @@ class PurchasesController extends StateNotifier<PurchasesState> {
         annualDiscount: annualDiscount,
       );
     } catch (e) {
+      print(e.toString());
       state = state.copyWith(
         isReady: true,
         errorText: e.toString(),
