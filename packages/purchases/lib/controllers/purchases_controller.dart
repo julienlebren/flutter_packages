@@ -19,6 +19,9 @@ class PurchasesController extends StateNotifier<PurchasesState> {
   }
 
   Future<void> _fetchOfferings() async {
+    final products = await Purchases.getProducts(['MCJ_1an', 'test_2025_06']);
+    print('🧪 Products returned: ${products.map((p) => p.identifier)}');
+
     try {
       await _service.fetchOfferings();
 
